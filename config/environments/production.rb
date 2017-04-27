@@ -108,7 +108,7 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = ENV.fetch('SMTP_DELIVERY_METHOD', 'smtp').to_sym
 
-  config.force_ssl = (ENV['LOCAL_HTTPS'] == 'true')
+  config.force_ssl = false
 
   config.react.variant = :production
 
