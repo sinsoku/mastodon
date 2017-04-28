@@ -5,7 +5,7 @@ SecureHeaders::Configuration.default do |config|
     secure: true,
     httponly: true,
     samesite: {
-      strict: true
+      lax: true
     }
   }
   config.referrer_policy = 'origin-when-cross-origin'
