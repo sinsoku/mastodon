@@ -12,4 +12,5 @@
 //
 //= require jquery2
 //= require jquery_ujs
+//= require rollbar
 //= require components
