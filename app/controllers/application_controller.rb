@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   force_ssl if: :https_enabled?
 
   include Localized
-  include Xmstdn::SSL
+  prepend Xmstdn::SSL
 
   helper_method :current_account
   helper_method :single_user_mode?
