@@ -105,3 +105,4 @@ group :production do
 end
 
 gem 'secure_headers'
+gem 'rollbar'

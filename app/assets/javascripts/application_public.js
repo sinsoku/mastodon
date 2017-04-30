@@ -1,5 +1,6 @@
 //= require jquery2
 //= require jquery_ujs
+//= require rollbar
 //= require extras
 //= require best_in_place
 //= require local_time
