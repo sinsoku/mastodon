@@ -204,3 +204,19 @@ def stub_reset_connection_pools
   allow(ActiveRecord::Base).to receive(:establish_connection)
   allow(RedisConnection).to receive(:establish_pool)
 end
+
+RSpec.configure do |config|
+  trace = RBS::Trace.new(log_level: :debug, raises: true)
+
+  config.before(:suite) { trace.enable }
+  config.after(:suite) do
+    trace.disable
+    trace.save_comments if ENV['RBS_TRACE_COMMENT']
+
+    if ENV['RBS_TRACE_MERGE']
+      trace.save_files(out_dir: "sig_#{ENV.fetch('TEST_ENV_NUMBER', nil)}/trace/")
+    else
+      trace.save_files(out_dir: 'sig/trace/')
+    end
+  end
+end

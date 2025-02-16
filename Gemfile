@@ -228,3 +228,5 @@ gem 'rubyzip', '~> 2.3'
 gem 'hcaptcha', '~> 7.1'
 
 gem 'mail', '~> 2.8'
+
+gem 'rbs-trace', path: '/Users/sinsoku/ghq/github.com/sinsoku/rbs-trace'
