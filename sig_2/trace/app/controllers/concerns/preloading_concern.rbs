@@ -1,0 +1,7 @@
+module PreloadingConcern
+  def preload_collection: (Array[untyped], Class) -> void
+                        | (Trends::Statuses::Query, Class) -> void
+                        | (Array[untyped], Class) -> Array[untyped]
+                        | (ActiveRecord::Relation, Class) -> Array[untyped]
+                        | (Trends::Statuses::Query, Class) -> Array[untyped]
+end

@@ -1,0 +1,3 @@
+class ActivityPub::BaseController
+  def skip_temporary_suspension_response?: () -> bool
+end

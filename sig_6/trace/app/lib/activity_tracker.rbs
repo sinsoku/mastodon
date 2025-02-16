@@ -1,0 +1,11 @@
+class ActivityTracker
+  def self.increment: (String) -> void
+
+  def initialize: (String, Symbol) -> void
+
+  def add: (?Integer, ?Time) -> void
+
+  def key_at: (Time) -> String
+
+  def self.record: (String, Integer) -> void
+end

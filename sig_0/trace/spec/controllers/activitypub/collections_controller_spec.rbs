@@ -1,0 +1,27 @@
+module RSpec::ExampleGroups::ActivityPubCollectionsController::LetDefinitions
+  def account: () -> Account
+
+  def private_pinned: () -> Status
+
+  def remote_account: () -> nil
+end
+
+module RSpec::ExampleGroups::ActivityPubCollectionsController::GETShow::LetDefinitions
+  def response: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::ActivityPubCollectionsController::GETShow::WhenIdIsNotFeatured::LetDefinitions
+  def id: () -> String
+end
+
+module RSpec::ExampleGroups::ActivityPubCollectionsController::GETShow::WhenIdIsFeatured::WithoutSignature::LetDefinitions
+  def remote_account: () -> nil
+end
+
+module RSpec::ExampleGroups::ActivityPubCollectionsController::GETShow::WhenIdIsFeatured::LetDefinitions
+  def id: () -> String
+end
+
+module RSpec::ExampleGroups::ActivityPubCollectionsController::GETShow::WhenIdIsFeatured::WithSignature::LetDefinitions
+  def remote_account: () -> Account
+end

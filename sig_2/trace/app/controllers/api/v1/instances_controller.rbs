@@ -1,0 +1,5 @@
+class Api::V1::InstancesController
+  def current_user: () -> nil
+
+  def show: () -> bool
+end

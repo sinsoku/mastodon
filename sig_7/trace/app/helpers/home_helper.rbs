@@ -1,0 +1,13 @@
+module HomeHelper
+  def default_props: () -> Hash[untyped, untyped]
+
+  def account_link_to: (Account, ?String, ?path: String) -> void
+                     | (nil, ?String, ?path: nil) -> ActiveSupport::SafeBuffer
+                     | (Account, ?String, ?path: nil) -> ActiveSupport::SafeBuffer
+
+  def obscured_counter: (Integer) -> void
+
+  def custom_field_classes: (RSpec::Mocks::InstanceVerifyingDouble) -> String
+
+  def sign_up_message: () -> String
+end

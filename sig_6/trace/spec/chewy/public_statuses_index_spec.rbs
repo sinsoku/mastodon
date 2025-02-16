@@ -1,0 +1,3 @@
+class RSpec::ExampleGroups::PublicStatusesIndex
+  def raw_response: () -> void
+end

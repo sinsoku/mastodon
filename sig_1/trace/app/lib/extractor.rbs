@@ -1,0 +1,10 @@
+module Extractor
+  def self.extract_mentions_or_lists_with_indices: (String) -> void
+                                                 | (String) -> Array[untyped]
+
+  def self.extract_hashtags_with_indices: (String, ?Hash[untyped, untyped]) -> Array[untyped]
+
+  def self.extract_entities_with_indices: (String, ?Hash[untyped, untyped]) -> Array[untyped]
+
+  def self.extract_extra_uris_with_indices: (String) -> void
+end

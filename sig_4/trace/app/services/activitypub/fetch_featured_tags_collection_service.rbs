@@ -1,0 +1,11 @@
+class ActivityPub::FetchFeaturedTagsCollectionService
+  def call: (Account, String) -> void
+
+  def local_follower: () -> void
+
+  def collection_items: (Hash[untyped, untyped]) -> void
+
+  def process_items: (Array[untyped]) -> void
+
+  def fetch_collection: (Hash[untyped, untyped]) -> Hash[untyped, untyped]
+end

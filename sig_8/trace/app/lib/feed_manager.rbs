@@ -1,0 +1,18 @@
+class FeedManager
+  def clear_from_home: (Account, Account) -> void
+
+  def key: (Symbol, Integer, ?nil) -> String
+         | (Symbol, Integer, ?String) -> String
+
+  def clear_from_lists: (Account, Account) -> void
+
+  def merge_into_home: (Account, Account) -> void
+
+  def build_crutches: (Integer, Array[untyped]) -> Hash[untyped, untyped]
+
+  def crutches_active_mentions: (Array[untyped]) -> void
+
+  def trim: (Symbol, Integer) -> void
+
+  def clean_feeds!: (Symbol, Array[untyped]) -> void
+end

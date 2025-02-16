@@ -1,0 +1,20 @@
+class ActivityPub::Forwarder
+  def initialize: (Account, ActiveSupport::HashWithIndifferentAccess, Status) -> void
+
+  def forwardable?: () -> void
+
+  def forward!: () -> void
+
+  def inboxes: () -> void
+
+  def inboxes_for_followers_of_reblogged_by_accounts: () -> Array[untyped]
+
+  def reblogged_by_account_ids: () -> void
+                              | () -> Array[untyped]
+
+  def in_reply_to_local?: () -> void
+
+  def payload: () -> void
+
+  def signature_account_id: () -> void
+end

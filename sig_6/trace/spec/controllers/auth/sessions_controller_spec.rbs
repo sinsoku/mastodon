@@ -1,0 +1,55 @@
+module RSpec::ExampleGroups::AuthSessionsController::DELETEDestroy::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::AuthSessionsController::POSTCreate::WhenUsingTwoFactorAuthentication::WithOTPEnabledAsSecondFactor::LetDefinitions
+  def user: () -> User
+
+  def recovery_codes: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::AuthSessionsController::POSTCreate::WhenUsingTwoFactorAuthentication::WithOTPEnabledAsSecondFactor::WhenUsingEmailAndPasswordAfterAnUnfinishedLogInAttemptToA2FAProtectedAccount::LetDefinitions
+  def other_user: () -> User
+end
+
+module RSpec::ExampleGroups::AuthSessionsController::POSTCreate::WhenUsingTwoFactorAuthentication::WithWebAuthnAndOTPEnabledAsSecondFactor::LetDefinitions
+  def user: () -> User
+
+  def webauthn_credential: () -> WebauthnCredential
+
+  def fake_client: () -> WebAuthn::FakeClient
+
+  def domain: () -> String
+
+  def challenge: () -> String
+
+  def fake_credential: () -> Hash[untyped, untyped]
+
+  def sign_count: () -> Integer
+end
+
+module RSpec::ExampleGroups::AuthSessionsController::POSTCreate::WhenUsingPasswordAuthentication::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::AuthSessionsController::POSTCreate::WhenUsingPasswordAuthentication::WhenUsingAValidPasswordOnAPreviouslyUsedAccountWithANewIPAddress::LetDefinitions
+  def previous_ip: () -> String
+
+  def current_ip: () -> String
+
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::AuthSessionsController::POSTCreate::WhenUsingPasswordAuthentication::WhenUsingAnUnconfirmedPassword::LetDefinitions
+  def accept_language: () -> String
+
+  def unconfirmed_user: () -> User
+end
+
+module RSpec::ExampleGroups::AuthSessionsController::POSTCreate::WhenUsingPasswordAuthentication::WhenLoggingInFromTheUserSPage::WithNonSingleUserMode::LetDefinitions
+  def single_user_mode: () -> bool
+end
+
+module RSpec::ExampleGroups::AuthSessionsController::POSTCreate::WhenUsingPasswordAuthentication::WhenLoggingInFromTheUserSPage::WithSingleUserMode::LetDefinitions
+  def single_user_mode: () -> bool
+end

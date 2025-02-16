@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::AccountSilences::Scopes::Silenced::LetDefinitions
+  def silenced_account: () -> Account
+end

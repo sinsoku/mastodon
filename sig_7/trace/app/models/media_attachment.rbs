@@ -1,0 +1,53 @@
+class MediaAttachment
+  def self.supported_file_extensions: () -> Array[untyped]
+
+  def self.supported_mime_types: () -> void
+
+  def local?: () -> bool
+
+  def audio_or_video?: () -> bool
+
+  def self.file_styles: (Paperclip::Attachment) -> void
+
+  def set_type_and_extension: () -> Symbol
+
+  def check_video_dimensions: () -> nil
+
+  def larger_media_format?: () -> void
+
+  def delay_processing_for_attachment?: (Symbol) -> void
+
+  def delay_processing?: () -> void
+
+  def self.file_processors: (MediaAttachment) -> void
+
+  def set_meta: () -> ActiveSupport::HashWithIndifferentAccess
+
+  def populate_meta: () -> void
+
+  def image_geometry: (Paperclip::FileAdapter) -> void
+
+  def set_unknown_type: () -> nil
+
+  def set_processing: () -> Symbol
+
+  def enqueue_processing: () -> nil
+
+  def prepare_cache_bust!: () -> nil
+                         | () -> Array[untyped]
+
+  def bust_cache!: () -> nil
+                 | () -> Array[untyped]
+
+  def ffmpeg_data: (?String) -> VideoMetadataExtractor
+
+  def video_metadata: (Paperclip::FileAdapter) -> void
+
+  def to_param: () -> void
+
+  def needs_redownload?: () -> void
+
+  def not_processed?: () -> void
+
+  def reset_parent_cache: () -> nil
+end

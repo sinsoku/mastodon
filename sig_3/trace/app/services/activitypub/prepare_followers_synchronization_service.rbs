@@ -1,0 +1,3 @@
+class ActivityPub::PrepareFollowersSynchronizationService
+  def call: (Account, Hash[untyped, untyped]) -> void
+end

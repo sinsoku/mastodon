@@ -1,0 +1,25 @@
+module RSpec::ExampleGroups::Setting::ToParam::LetDefinitions
+  def setting: () -> Setting
+
+  def var: () -> String
+end
+
+module RSpec::ExampleGroups::Setting::Nested::LetDefinitions
+  def key: () -> String
+
+  def cache_key: () -> String
+
+  def cache_value: () -> String
+end
+
+module RSpec::ExampleGroups::Setting::Nested::WhenRailsCacheDoesNotExists::LetDefinitions
+  def default_settings: () -> Hash[untyped, untyped]
+
+  def default_value: () -> String
+
+  def save_setting: () -> bool
+end
+
+module RSpec::ExampleGroups::Setting::Nested::WhenRailsCacheDoesNotExists::WhenTheSettingHasNotBeenSavedToDatabase::LetDefinitions
+  def save_setting: () -> bool
+end

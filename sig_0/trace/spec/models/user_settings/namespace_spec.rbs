@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::UserSettingsNamespace::LetDefinitions
+  def subject: () -> UserSettings::Namespace
+
+  def name: () -> Symbol
+end

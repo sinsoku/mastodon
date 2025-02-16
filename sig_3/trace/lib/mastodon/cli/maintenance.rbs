@@ -1,0 +1,104 @@
+class Mastodon::CLI::Maintenance
+  def fix_duplicates: () -> nil
+                    | () -> StringIO
+
+  def verify_system_ready!: () -> void
+
+  def verify_schema_version!: () -> void
+
+  def migrator_version: () -> Integer
+
+  def verify_sidekiq_not_active!: () -> void
+
+  def verify_backup_warning!: () -> void
+
+  def process_deduplications: () -> void
+
+  def deduplicate_users!: () -> void
+
+  def remove_index_if_exists!: (Symbol, String) -> void
+
+  def database_connection: () -> ActiveRecord::ConnectionAdapters::PostgreSQLAdapter
+
+  def deduplicate_users_process_email: () -> void
+
+  def duplicate_record_ids: (Symbol, String) -> ActiveRecord::Result
+
+  def deduplicate_users_process_confirmation_token: () -> void
+
+  def duplicate_record_ids_without_nulls: (Symbol, String) -> ActiveRecord::Result
+
+  def deduplicate_users_process_remember_token: () -> void
+
+  def deduplicate_users_process_password_token: () -> void
+
+  def rebuild_index: (Symbol) -> void
+
+  def deduplicate_account_domain_blocks!: () -> void
+
+  def deduplicate_account_identity_proofs!: () -> void
+
+  def db_table_exists?: (Symbol) -> void
+
+  def deduplicate_announcement_reactions!: () -> void
+
+  def deduplicate_conversations!: () -> void
+
+  def deduplicate_custom_emojis!: () -> void
+
+  def deduplicate_custom_emoji_categories!: () -> void
+
+  def deduplicate_domain_allows!: () -> void
+
+  def deduplicate_domain_blocks!: () -> void
+
+  def deduplicate_unavailable_domains!: () -> void
+
+  def deduplicate_email_domain_blocks!: () -> void
+
+  def deduplicate_media_attachments!: () -> void
+
+  def deduplicate_preview_cards!: () -> void
+
+  def deduplicate_statuses!: () -> void
+
+  def deduplicate_accounts!: () -> void
+
+  def deduplicate_tags!: () -> void
+
+  def deduplicate_webauthn_credentials!: () -> void
+
+  def deduplicate_webhooks!: () -> void
+
+  def deduplicate_software_updates!: () -> void
+
+  def deduplication_cleanup_tasks: () -> void
+
+  def schema_has_instances_view?: () -> void
+
+  def refresh_instances_view: () -> void
+
+  def merge_tags!: (Tag, Tag) -> void
+
+  def merge_custom_emoji_categories!: (Mastodon::CLI::Maintenance::CustomEmojiCategory, Mastodon::CLI::Maintenance::CustomEmojiCategory) -> void
+
+  def deduplicate_local_accounts!: (ActiveRecord::Relation) -> void
+
+  def deduplicate_remote_accounts!: (ActiveRecord::Relation) -> void
+
+  def merge_conversations!: (Conversation, Conversation) -> void
+
+  def merge_statuses!: (Mastodon::CLI::Maintenance::Status, Mastodon::CLI::Maintenance::Status) -> void
+
+  def merge_custom_emojis!: (Mastodon::CLI::Maintenance::CustomEmoji, Mastodon::CLI::Maintenance::CustomEmoji) -> void
+end
+
+class Mastodon::CLI::Maintenance::Account
+  def local?: () -> void
+
+  def merge_with!: (Mastodon::CLI::Maintenance::Account) -> void
+
+  def db_table_exists?: (Symbol) -> void
+
+  def acct: () -> void
+end

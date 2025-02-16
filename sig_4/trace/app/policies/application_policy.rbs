@@ -1,0 +1,14 @@
+class ApplicationPolicy
+  def initialize: (Account, Status) -> void
+                | (Account, Symbol) -> void
+                | (Account, Account) -> void
+                | (Account, User) -> void
+                | (Account, DomainBlock) -> void
+                | (nil, Status) -> void
+                | (Account, AccountWarning) -> void
+                | (Account, Report) -> void
+
+  def role: () -> UserRole
+
+  def current_user: () -> User
+end

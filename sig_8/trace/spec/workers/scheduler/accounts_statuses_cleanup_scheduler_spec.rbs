@@ -1,0 +1,47 @@
+module RSpec::ExampleGroups::SchedulerAccountsStatusesCleanupScheduler::LetDefinitions
+  def account_alice: () -> Account
+
+  def account_bob: () -> Account
+
+  def account_chris: () -> Account
+
+  def account_dave: () -> Account
+
+  def account_erin: () -> Account
+
+  def remote: () -> Account
+
+  def queue_size: () -> Integer
+
+  def queue_latency: () -> Integer
+
+  def subject: () -> Scheduler::AccountsStatusesCleanupScheduler
+
+  def process_set_stub: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::SchedulerAccountsStatusesCleanupScheduler::ComputeBudget::WithALotOfThreads::LetDefinitions
+  def process_set_stub: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::SchedulerAccountsStatusesCleanupScheduler::ComputeBudget::WithASingleThread::LetDefinitions
+  def process_set_stub: () -> Array[untyped]
+end
+
+class RSpec::ExampleGroups::SchedulerAccountsStatusesCleanupScheduler::Perform::WhenTheBudgetIsLowerThanTheNumberOfTootsToDelete
+  def cleanable_statuses_count: () -> Integer
+end
+
+module RSpec::ExampleGroups::SchedulerAccountsStatusesCleanupScheduler::Perform::WhenTheBudgetIsLowerThanTheNumberOfTootsToDelete::WhenGivenABigBudget::LetDefinitions
+  def process_set_stub: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::SchedulerAccountsStatusesCleanupScheduler::Perform::WhenTheBudgetIsLowerThanTheNumberOfTootsToDelete::WhenThereIsNoWorkToBeDone::LetDefinitions
+  def process_set_stub: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::SchedulerAccountsStatusesCleanupScheduler::UnderLoad::WhenNumerousJobsAreQueued::LetDefinitions
+  def queue_size: () -> Integer
+
+  def queue_latency: () -> Integer
+end

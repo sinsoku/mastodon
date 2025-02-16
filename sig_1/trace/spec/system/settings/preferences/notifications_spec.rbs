@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::SettingsPreferencesNotificationsPage::LetDefinitions
+  def user: () -> User
+end
+
+class RSpec::ExampleGroups::SettingsPreferencesNotificationsPage
+  def notifications_follow_field: () -> void
+end

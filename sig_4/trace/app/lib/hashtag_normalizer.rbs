@@ -1,0 +1,11 @@
+class HashtagNormalizer
+  def normalize: (String) -> void
+
+  def cjk_width: (String) -> void
+
+  def lowercase: (String) -> void
+
+  def ascii_folding: (String) -> void
+
+  def remove_invalid_characters: (String) -> void
+end

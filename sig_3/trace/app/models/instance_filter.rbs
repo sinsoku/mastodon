@@ -1,0 +1,7 @@
+class InstanceFilter
+  def initialize: (ActionController::Parameters) -> void
+
+  def results: () -> void
+
+  def scope_for: (String, String) -> void
+end

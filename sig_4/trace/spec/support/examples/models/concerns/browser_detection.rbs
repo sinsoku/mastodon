@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::SessionActivation::LetDefinitions
+  def subject: () -> SessionActivation
+end
+
+module RSpec::ExampleGroups::SessionActivation::Callbacks::PopulatingTheUserAgentValue::LetDefinitions
+  def subject: () -> SessionActivation
+end

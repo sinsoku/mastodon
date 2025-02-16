@@ -1,0 +1,65 @@
+module RSpec::ExampleGroups::AccountsShowResponse::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AccountsShowResponse::GETToShortUsernamePaths::WithExistingStatuses::WithJSON::LetDefinitions
+  def authorized_fetch_mode: () -> bool
+
+  def headers: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AccountsShowResponse::GETToShortUsernamePaths::WithExistingStatuses::WithJSON::WithSignature::LetDefinitions
+  def remote_account: () -> Account
+end
+
+module RSpec::ExampleGroups::AccountsShowResponse::GETToShortUsernamePaths::WithExistingStatuses::WithJSON::WithSignature::WithAuthorizedFetchMode::LetDefinitions
+  def authorized_fetch_mode: () -> bool
+end
+
+module RSpec::ExampleGroups::AccountsShowResponse::GETToShortUsernamePaths::WithExistingStatuses::WithJSON::WithANormalAccountInAJSONRequest::WithAuthorizedFetchMode::LetDefinitions
+  def authorized_fetch_mode: () -> bool
+end
+
+module RSpec::ExampleGroups::AccountsShowResponse::GETToShortUsernamePaths::WithExistingStatuses::WithJSON::WhenSignedIn::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::AccountsShowResponse::GETToShortUsernamePaths::WithExistingStatuses::WithHTML::WithTag::LetDefinitions
+  def status_tag: () -> Status
+
+  def tag: () -> Tag
+end
+
+module RSpec::ExampleGroups::AccountsShowResponse::GETToShortUsernamePaths::WithExistingStatuses::WithHTML::LetDefinitions
+  def format: () -> String
+end
+
+module RSpec::ExampleGroups::AccountsShowResponse::GETToShortUsernamePaths::WithExistingStatuses::WithRSS::LetDefinitions
+  def status: () -> Status
+
+  def status_reply: () -> Status
+
+  def status_self_reply: () -> Status
+
+  def status_media: () -> Status
+
+  def status_pinned: () -> Status
+
+  def status_private: () -> Status
+
+  def status_direct: () -> Status
+
+  def status_reblog: () -> Status
+
+  def format: () -> String
+end
+
+class RSpec::ExampleGroups::AccountsShowResponse
+  def status_tag_for: (Status) -> void
+end
+
+module RSpec::ExampleGroups::AccountsShowResponse::GETToShortUsernamePaths::WithExistingStatuses::WithRSS::WithTag::LetDefinitions
+  def status_tag: () -> Status
+
+  def tag: () -> Tag
+end

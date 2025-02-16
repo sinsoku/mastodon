@@ -1,0 +1,16 @@
+class UnreservedUsernameValidator
+  def validate: (Account) -> nil
+              | (Account) -> ActiveModel::Error
+
+  def reserved_username?: () -> void
+
+  def pam_username_reserved?: () -> void
+
+  def pam_controlled?: () -> void
+
+  def settings_username_reserved?: () -> void
+
+  def settings_has_reserved_usernames?: () -> void
+
+  def settings_reserves_username?: () -> void
+end

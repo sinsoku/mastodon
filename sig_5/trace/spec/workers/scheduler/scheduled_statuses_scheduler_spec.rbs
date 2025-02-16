@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::SchedulerScheduledStatusesScheduler::LetDefinitions
+  def worker: () -> Scheduler::ScheduledStatusesScheduler
+end

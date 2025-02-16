@@ -1,0 +1,10 @@
+module RSpec::ExampleGroups::AccountDomainBlock::LetDefinitions
+  def account: () -> Account
+end
+
+class RSpec::ExampleGroups::AccountDomainBlock
+  def account_has_exclude_domains_cache?: () -> void
+
+  def block_domain_for_account: (String) -> void
+                              | (String) -> AccountDomainBlock
+end

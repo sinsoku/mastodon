@@ -1,0 +1,33 @@
+class AccountSearchService
+  def call: (String, ?nil, ?Hash[untyped, untyped]) -> Array[untyped]
+
+  def search_service_results: () -> Array[untyped]
+
+  def exact_match: () -> void
+                 | () -> nil
+                 | () -> Account
+
+  def username_complete?: () -> void
+
+  def search_results: () -> void
+
+  def limit_for_non_exact_results: () -> Integer
+
+  def exact_match?: () -> void
+
+  def from_database: () -> Array[untyped]
+
+  def simple_search_results: () -> void
+
+  def terms_for_query: () -> void
+
+  def domain_is_local?: () -> void
+
+  def query_domain: () -> void
+
+  def query_without_split?: () -> void
+
+  def split_query_string: () -> Array[untyped]
+
+  def query_username: () -> void
+end

@@ -1,0 +1,5 @@
+class AccountSuggestions::GlobalSource
+  def get: (Account, ?limit: Integer) -> void
+
+  def content_locale: () -> void
+end

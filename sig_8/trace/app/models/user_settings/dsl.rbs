@@ -1,0 +1,4 @@
+module UserSettings::DSL::ClassMethods
+  def definition_for: (String) -> UserSettings::Setting
+                    | (Symbol) -> UserSettings::Setting
+end

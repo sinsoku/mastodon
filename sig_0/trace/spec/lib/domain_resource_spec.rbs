@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::DomainResource::Mx::LetDefinitions
+  def domain: () -> String
+
+  def exchange: () -> String
+
+  def subject: () -> DomainResource
+end

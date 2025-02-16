@@ -1,0 +1,21 @@
+module RSpec::ExampleGroups::StatusActivity::GETUsersAccountUsernameStatusesIdActivity::LetDefinitions
+  def status: () -> Status
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::StatusActivity::GETUsersAccountUsernameStatusesIdActivity::WhenSignedOut::LetDefinitions
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::StatusActivity::GETUsersAccountUsernameStatusesIdActivity::WithSignature::LetDefinitions
+  def subject: () -> Integer
+
+  def remote_account: () -> Account
+end
+
+module RSpec::ExampleGroups::StatusActivity::GETUsersAccountUsernameStatusesIdActivity::WhenSignedIn::LetDefinitions
+  def user: () -> User
+
+  def subject: () -> Integer
+end

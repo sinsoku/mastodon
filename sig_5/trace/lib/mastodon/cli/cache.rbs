@@ -1,0 +1,14 @@
+class Mastodon::CLI::Cache
+  def clear: () -> StringIO
+
+  def recount: (String) -> StringIO
+             | (String) -> nil
+
+  def accounts_with_stats: () -> void
+
+  def recount_account_stats: (Account) -> void
+
+  def statuses_with_stats: () -> void
+
+  def recount_status_stats: (Status) -> void
+end

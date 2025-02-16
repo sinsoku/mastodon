@@ -1,0 +1,17 @@
+class StatusCacheHydrator
+  def initialize: (Status) -> void
+
+  def hydrate: (Integer) -> void
+
+  def payload_application: () -> void
+
+  def hydrate_non_reblog_payload: (Hash[untyped, untyped], Integer) -> void
+
+  def mapped_applied_custom_filter: (Integer, Status) -> void
+
+  def hydrate_reblog_payload: (Hash[untyped, untyped], Integer) -> void
+
+  def serialized_filter: (FilterResultPresenter) -> void
+
+  def payload_reblog_application: () -> void
+end

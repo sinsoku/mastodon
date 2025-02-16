@@ -1,0 +1,23 @@
+module RSpec::ExampleGroups::StatusesHelper::StatusTextSummary::WithPresentText::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusesHelper::StatusTextSummary::WithBlankText::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusesHelper::VisibilityIcon::WithAStatusThatIsPublic::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusesHelper::VisibilityIcon::WithAStatusThatIsDirect::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusesHelper::VisibilityIcon::WithAStatusThatIsPrivate::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusesHelper::VisibilityIcon::WithAStatusThatIsUnlisted::LetDefinitions
+  def status: () -> Status
+end

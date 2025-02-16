@@ -1,0 +1,31 @@
+module RSpec::ExampleGroups::ActivityPubAdapter::SerializableHash::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubAdapter::SerializableHash::WhenSerializerHasChildrenThatDefineANamedContext::LetDefinitions
+  def serializer_class: () -> Class
+end
+
+class TestWithNestedNamedContextSerializer
+  def virtual_object: () -> TestObject
+end
+
+module RSpec::ExampleGroups::ActivityPubAdapter::SerializableHash::WhenSerializerDefinesNoContext::LetDefinitions
+  def serializer_class: () -> Class
+end
+
+module RSpec::ExampleGroups::ActivityPubAdapter::SerializableHash::WhenSerializerDefinesANamedContext::LetDefinitions
+  def serializer_class: () -> Class
+end
+
+module RSpec::ExampleGroups::ActivityPubAdapter::SerializableHash::WhenSerializerDefinesContextExtensions::LetDefinitions
+  def serializer_class: () -> Class
+end
+
+module RSpec::ExampleGroups::ActivityPubAdapter::SerializableHash::WhenSerializerHasChildrenThatDefineContextExtensions::LetDefinitions
+  def serializer_class: () -> Class
+end
+
+class TestWithNestedContextExtensionSerializer
+  def virtual_object: () -> TestObject
+end

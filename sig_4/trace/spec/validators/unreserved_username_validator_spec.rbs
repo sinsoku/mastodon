@@ -1,0 +1,16 @@
+module RSpec::ExampleGroups::UnreservedUsernameValidator::Validate::WhenPAMIsEnabled::WithAPamServiceAvailable::LetDefinitions
+  def pam_class: () -> Class
+
+  def service: () -> RSpec::Mocks::Double
+end
+
+module RSpec::ExampleGroups::UnreservedUsernameValidator::LetDefinitions
+  def record: () -> untyped
+
+  def record_class: () -> Class
+end
+
+class RSpec::ExampleGroups::UnreservedUsernameValidator::Validate::WhenPAMIsEnabled::WithoutAPamService
+  def stub_reserved_usernames: (Array[untyped]) -> void
+                             | (nil) -> void
+end

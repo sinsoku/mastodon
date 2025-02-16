@@ -1,0 +1,4 @@
+module Account::Silences
+  def silenced?: () -> void
+               | () -> bool
+end

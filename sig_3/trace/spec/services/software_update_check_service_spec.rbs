@@ -1,0 +1,59 @@
+module RSpec::ExampleGroups::SoftwareUpdateCheckService::WhenUsingTheDefaultUpdateCheckingAPI::BehavesLikeWhenTheFeatureIsEnabled::LetDefinitions
+  def owner_user: () -> User
+
+  def old_devops_user: () -> User
+
+  def none_user: () -> User
+
+  def devops_role: () -> UserRole
+
+  def patch_user: () -> User
+
+  def critical_user: () -> User
+
+  def full_update_check_url: () -> String
+end
+
+module RSpec::ExampleGroups::SoftwareUpdateCheckService::WhenUsingTheDefaultUpdateCheckingAPI::LetDefinitions
+  def update_check_url: () -> String
+end
+
+module RSpec::ExampleGroups::SoftwareUpdateCheckService::WhenUsingTheDefaultUpdateCheckingAPI::BehavesLikeWhenTheFeatureIsEnabled::WhenTheServerReturnsNewVersions::LetDefinitions
+  def server_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::SoftwareUpdateCheckService::LetDefinitions
+  def subject: () -> SoftwareUpdateCheckService
+end
+
+module RSpec::ExampleGroups::SoftwareUpdateCheckService::WhenUsingTheDefaultUpdateCheckingAPI::BehavesLikeWhenTheFeatureIsEnabled::WhenTheServerReturnsNewVersions::WhenAnUpdateIsUrgent::LetDefinitions
+  def server_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::SoftwareUpdateCheckService::WhenUsingACustomUpdateCheckURL::BehavesLikeWhenTheFeatureIsEnabled::LetDefinitions
+  def owner_user: () -> User
+
+  def old_devops_user: () -> User
+
+  def none_user: () -> User
+
+  def devops_role: () -> UserRole
+
+  def patch_user: () -> User
+
+  def critical_user: () -> User
+
+  def full_update_check_url: () -> String
+end
+
+module RSpec::ExampleGroups::SoftwareUpdateCheckService::WhenUsingACustomUpdateCheckURL::LetDefinitions
+  def update_check_url: () -> String
+end
+
+module RSpec::ExampleGroups::SoftwareUpdateCheckService::WhenUsingACustomUpdateCheckURL::BehavesLikeWhenTheFeatureIsEnabled::WhenTheServerReturnsNewVersions::LetDefinitions
+  def server_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::SoftwareUpdateCheckService::WhenUsingACustomUpdateCheckURL::BehavesLikeWhenTheFeatureIsEnabled::WhenTheServerReturnsNewVersions::WhenAnUpdateIsUrgent::LetDefinitions
+  def server_json: () -> Hash[untyped, untyped]
+end

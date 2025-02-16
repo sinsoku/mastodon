@@ -1,0 +1,7 @@
+class UpdateAccountService
+  def call: (Account, ActionController::Parameters, ?raise_error: bool) -> void
+
+  def check_links: (Account) -> void
+
+  def process_hashtags: (Account) -> void
+end

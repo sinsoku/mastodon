@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::ActivityPubDeliveryWorker::LetDefinitions
+  def sender: () -> Account
+
+  def url: () -> String
+
+  def payload: () -> String
+end
+
+class RSpec::ExampleGroups::ActivityPubDeliveryWorker::Perform::WithSuccessfulRequest
+  def request_to_url: () -> void
+end

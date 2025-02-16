@@ -1,0 +1,33 @@
+module RSpec::ExampleGroups::APIV1StatusesFavouritedByAccounts::LetDefinitions
+  def alice: () -> Account
+
+  def user: () -> User
+
+  def bob: () -> Account
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::APIV1StatusesFavouritedByAccounts::WithAnOauthToken::GETApiV1StatusesStatusIdFavouritedBy::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::APIV1StatusesFavouritedByAccounts::WithAnOauthToken::LetDefinitions
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::APIV1StatusesFavouritedByAccounts::WithoutAnOauthToken::WithAPublicStatus::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::APIV1StatusesFavouritedByAccounts::WithoutAnOauthToken::LetDefinitions
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::APIV1StatusesFavouritedByAccounts::WithoutAnOauthToken::WithAPrivateStatus::LetDefinitions
+  def status: () -> Status
+end

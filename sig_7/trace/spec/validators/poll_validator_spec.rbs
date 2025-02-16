@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::PollValidator::Validate::LetDefinitions
+  def validator: () -> PollValidator
+
+  def poll: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def options: () -> Array[untyped]
+
+  def expires_at: () -> ActiveSupport::TimeWithZone
+
+  def errors: () -> RSpec::Mocks::InstanceVerifyingDouble
+end
+
+module RSpec::ExampleGroups::PollValidator::Validate::WhenExpiresIsJust5MinAgo::LetDefinitions
+  def expires_at: () -> ActiveSupport::TimeWithZone
+end

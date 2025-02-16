@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::CacheBusterWorker::Perform::LetDefinitions
+  def service: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def path: () -> String
+end
+
+module RSpec::ExampleGroups::CacheBusterWorker::LetDefinitions
+  def worker: () -> CacheBusterWorker
+end

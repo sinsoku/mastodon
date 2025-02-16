@@ -1,0 +1,11 @@
+class Admin::ChangeEmailsController
+  def set_account: () -> User
+
+  def require_local_account!: () -> nil
+
+  def update: () -> String
+
+  def resource_params: () -> ActionController::Parameters
+
+  def show: () -> User
+end

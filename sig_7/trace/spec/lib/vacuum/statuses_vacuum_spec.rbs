@@ -1,0 +1,17 @@
+module RSpec::ExampleGroups::VacuumStatusesVacuum::Perform::LetDefinitions
+  def remote_status_old: () -> Status
+
+  def remote_status_recent: () -> Status
+
+  def local_status_old: () -> Status
+
+  def local_status_recent: () -> Status
+end
+
+module RSpec::ExampleGroups::VacuumStatusesVacuum::LetDefinitions
+  def remote_account: () -> Account
+
+  def retention_period: () -> ActiveSupport::Duration
+
+  def subject: () -> Vacuum::StatusesVacuum
+end

@@ -1,0 +1,3 @@
+module Admin::DashboardHelper
+  def date_range: (Range[untyped]) -> void
+end

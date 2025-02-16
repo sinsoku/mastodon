@@ -1,0 +1,12 @@
+module RateLimitable::ClassMethods
+  def rate_limit: (?Hash[untyped, untyped]) -> void
+end
+
+module RateLimitable
+  def rate_limit?: () -> void
+
+  def rate_limit=: (nil) -> nil
+                 | (bool) -> bool
+
+  def rate_limiter: (Account, ?Hash[untyped, untyped]) -> RateLimiter
+end

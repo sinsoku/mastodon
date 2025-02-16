@@ -1,0 +1,3 @@
+class Settings::Preferences::BaseController
+  def after_update_redirect_path: () -> nil
+end

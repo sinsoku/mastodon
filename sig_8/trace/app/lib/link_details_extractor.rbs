@@ -1,0 +1,72 @@
+class LinkDetailsExtractor
+  def initialize: (String, String, String) -> void
+                | (String, String, nil) -> void
+
+  def canonical_url: () -> void
+
+  def link_tag: (String) -> void
+
+  def head: () -> Nokogiri::XML::Element
+
+  def document: () -> Nokogiri::HTML5::Document
+
+  def detect_encoding_and_parse_document: () -> Nokogiri::HTML5::Document
+
+  def detect_encoding: () -> void
+
+  def detector: () -> CharlockHolmes::EncodingDetector
+
+  def header_encoding: () -> void
+
+  def opengraph_tag: (String) -> void
+                   | (String) -> nil
+
+  def valid_url_or_nil: (nil, ?same_origin_only: bool) -> void
+                      | (String, ?same_origin_only: bool) -> void
+
+  def author_account: () -> void
+
+  def to_preview_card_attributes: () -> void
+
+  def title: () -> void
+
+  def html_entities: () -> HTMLEntities
+
+  def structured_data: () -> nil
+
+  def description: () -> void
+
+  def meta_tag: (String) -> void
+
+  def image: () -> void
+
+  def image_alt: () -> void
+
+  def type: () -> void
+
+  def player_url: () -> nil
+
+  def link_type: () -> void
+
+  def width: () -> void
+
+  def height: () -> void
+
+  def html: () -> void
+
+  def provider_name: () -> void
+
+  def provider_url: () -> void
+
+  def host_to_url: (nil) -> void
+
+  def author_name: () -> void
+
+  def author_url: () -> void
+
+  def embed_url: () -> void
+
+  def language: () -> void
+
+  def published_at: () -> nil
+end

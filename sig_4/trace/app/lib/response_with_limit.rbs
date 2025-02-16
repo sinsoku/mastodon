@@ -1,0 +1,4 @@
+class ResponseWithLimit
+  def initialize: (HTTP::Response, Integer) -> void
+                | (nil, Integer) -> void
+end

@@ -1,0 +1,11 @@
+module CacheConcern
+  def enforce_cache_control!: () -> nil
+                            | () -> Hash[untyped, untyped]
+
+  def render_with_cache: (**Symbol | ActiveSupport::Duration) -> void
+end
+
+module CacheConcern::ClassMethods
+  def vary_by: (String, **nil) -> void
+             | (Proc, **nil) -> void
+end

@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::AnnualReportPercentiles::Generate::WithAnActiveAccount::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AnnualReportPercentiles::Generate::LetDefinitions
+  def year: () -> Integer
+
+  def subject: () -> AnnualReport::Percentiles
+end
+
+module RSpec::ExampleGroups::AnnualReportPercentiles::Generate::WithAnInactiveAccount::LetDefinitions
+  def account: () -> Account
+end

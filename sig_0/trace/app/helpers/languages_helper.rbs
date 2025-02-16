@@ -1,0 +1,11 @@
+module LanguagesHelper
+  def available_locale_or_nil: (nil) -> void
+
+  def valid_locale_cascade: (*Symbol?) -> void
+
+  def valid_locale_or_nil: (nil) -> nil
+                         | (Symbol) -> Symbol
+
+  def valid_locale?: (Symbol) -> void
+                   | (String) -> void
+end

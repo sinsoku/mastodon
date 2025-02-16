@@ -1,0 +1,26 @@
+class Report
+  def set_uri: () -> URI::HTTPS
+             | () -> nil
+
+  def local?: (*untyped, **untyped) -> bool
+
+  def trigger_create_webhooks: () -> String
+
+  def trigger_update_webhooks: () -> String
+
+  def to_log_human_identifier: () -> void
+
+  def action_taken?: () -> bool
+
+  def statuses: () -> ActiveRecord::Relation
+
+  def rules: () -> ActiveRecord::Relation
+
+  def unresolved?: () -> void
+
+  def resolve!: (Account) -> void
+
+  def unresolve!: () -> void
+
+  def history: () -> ActiveRecord::Relation
+end

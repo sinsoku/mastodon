@@ -1,0 +1,51 @@
+class Api::V1::Admin::AccountsController
+  def set_accounts: () -> Array[untyped]
+
+  def filtered_accounts: () -> ActiveRecord::Relation
+
+  def translated_filter_params: () -> void
+
+  def filter_params: () -> ActionController::Parameters
+
+  def index: () -> String
+           | () -> nil
+
+  def next_path: () -> void
+
+  def records_continue?: () -> void
+
+  def prev_path: () -> void
+
+  def pagination_collection: () -> Array[untyped]
+
+  def pagination_params: (Hash[untyped, untyped]) -> void
+
+  def set_account: () -> Account
+                 | () -> nil
+
+  def require_local_account!: () -> nil
+
+  def approve: () -> nil
+             | () -> String
+
+  def unsensitive: () -> String
+                 | () -> nil
+
+  def show: () -> String
+          | () -> nil
+
+  def reject: () -> String
+            | () -> nil
+
+  def destroy: () -> String
+             | () -> nil
+
+  def unsuspend: () -> String
+               | () -> nil
+
+  def unsilence: () -> String
+               | () -> nil
+
+  def enable: () -> String
+            | () -> nil
+end

@@ -1,0 +1,41 @@
+module RSpec::ExampleGroups::TrendsStatuses::LetDefinitions
+  def subject: () -> Trends::Statuses
+
+  def at_time: () -> DateTime
+end
+
+module RSpec::ExampleGroups::TrendsStatuses::Refresh::LetDefinitions
+  def today: () -> DateTime
+
+  def yesterday: () -> DateTime
+
+  def status_foo: () -> Status
+
+  def status_bar: () -> Status
+
+  def status_baz: () -> Status
+end
+
+class RSpec::ExampleGroups::TrendsStatuses
+  def default_threshold_value: () -> Integer
+
+  def reblog: (Status, DateTime) -> void
+end
+
+module RSpec::ExampleGroups::TrendsStatuses::TrendsStatusesQuery::LetDefinitions
+  def query: () -> Trends::Statuses::Query
+
+  def today: () -> DateTime
+
+  def status_foo: () -> Status
+
+  def status_bar: () -> Status
+end
+
+module RSpec::ExampleGroups::TrendsStatuses::TrendsStatusesQuery::FilteredFor::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::TrendsStatuses::Add::LetDefinitions
+  def status: () -> Status
+end

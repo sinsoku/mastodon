@@ -1,0 +1,62 @@
+class Mastodon::CLI::Accounts
+  def rotate: (?String) -> StringIO
+            | (?nil) -> StringIO
+            | (?nil) -> nil
+            | (?String) -> nil
+
+  def rotate_keys_for_account: (Account, ?Integer) -> void
+                             | (nil, ?Integer) -> void
+
+  def approve: (?nil) -> StringIO
+             | (?nil) -> nil
+             | (?String) -> nil
+             | (?String) -> StringIO
+
+  def follow: (String) -> nil
+            | (String) -> StringIO
+
+  def refresh: (*nil) -> StringIO
+             | (*String) -> StringIO
+             | (*String) -> nil
+             | (*nil) -> nil
+
+  def prune: () -> StringIO
+
+  def prunable_accounts: () -> void
+
+  def referencing_account: (Class, Symbol) -> void
+
+  def create: (String) -> nil
+            | (String) -> StringIO
+
+  def report_errors: (ActiveModel::Errors) -> void
+
+  def delete: (?String) -> StringIO
+            | (?String) -> nil
+            | (?nil) -> StringIO
+            | (?nil) -> nil
+
+  def modify: (String) -> nil
+            | (String) -> StringIO
+
+  def cull: (*nil) -> Integer
+          | (*String) -> nil
+          | (*nil) -> nil
+
+  def merge: (String, String) -> StringIO
+           | (String, String) -> nil
+
+  def fix_duplicates: () -> Array[untyped]
+
+  def unfollow: (String) -> StringIO
+              | (String) -> nil
+
+  def migrate: (String) -> nil
+             | (String) -> StringIO
+
+  def backup: (String) -> StringIO
+            | (String) -> nil
+
+  def reset_relationships: (String) -> nil
+                         | (String) -> StringIO
+end

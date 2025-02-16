@@ -1,0 +1,13 @@
+class Webhooks::PayloadRenderer
+  def initialize: (String) -> void
+
+  def render: (String) -> void
+end
+
+class Webhooks::PayloadRenderer::DocumentTraverser
+  def initialize: (Hash[untyped, untyped]) -> void
+
+  def get: (String) -> void
+
+  def parse_path: (String) -> void
+end

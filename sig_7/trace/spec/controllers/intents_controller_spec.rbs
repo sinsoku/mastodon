@@ -1,0 +1,31 @@
+module RSpec::ExampleGroups::IntentsController::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::IntentsController::GETShow::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::IntentsController::GETShow::WhenSchemaIsNotWebMastodon::LetDefinitions
+  def uri: () -> String
+end
+
+module RSpec::ExampleGroups::IntentsController::GETShow::WhenUriParamIsBlank::LetDefinitions
+  def uri: () -> String
+end
+
+module RSpec::ExampleGroups::IntentsController::GETShow::WhenSchemaIsWebMastodon::WhenHostIsNoneOfTheAbove::LetDefinitions
+  def uri: () -> String
+end
+
+module RSpec::ExampleGroups::IntentsController::GETShow::WhenSchemaIsWebMastodon::WhenHostIsFollow::LetDefinitions
+  def uri: () -> String
+end
+
+module RSpec::ExampleGroups::IntentsController::GETShow::WhenSchemaIsWebMastodon::WhenHostIsShare::LetDefinitions
+  def uri: () -> String
+end
+
+module RSpec::ExampleGroups::IntentsController::GETShow::WhenUriIsInvalid::LetDefinitions
+  def uri: () -> String
+end

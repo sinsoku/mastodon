@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::PreviewCardProvider::Scopes_2::LetDefinitions
+  def trendable_and_reviewed: () -> PreviewCardProvider
+
+  def not_trendable_and_not_reviewed: () -> PreviewCardProvider
+end

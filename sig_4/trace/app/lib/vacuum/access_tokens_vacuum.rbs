@@ -1,0 +1,7 @@
+class Vacuum::AccessTokensVacuum
+  def perform: () -> void
+
+  def vacuum_revoked_access_tokens!: () -> void
+
+  def vacuum_revoked_access_grants!: () -> void
+end

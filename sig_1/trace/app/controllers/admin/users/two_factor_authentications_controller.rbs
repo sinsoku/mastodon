@@ -1,0 +1,5 @@
+class Admin::Users::TwoFactorAuthenticationsController
+  def set_target_user: () -> User
+
+  def destroy: () -> String
+end

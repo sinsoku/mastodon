@@ -1,0 +1,13 @@
+class ActivityPub::RemoveSerializer
+  def type: () -> String
+
+  def actor: () -> String
+
+  def target: () -> String
+
+  def proper_object: () -> FeaturedTag
+
+  def self.serializer_for: (FeaturedTag, Hash[untyped, untyped]) -> Class
+                         | (Array[untyped], Hash[untyped, untyped]) -> Class
+                         | (Status, Hash[untyped, untyped]) -> Class
+end

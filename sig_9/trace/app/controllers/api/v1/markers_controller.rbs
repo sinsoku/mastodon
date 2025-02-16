@@ -1,0 +1,9 @@
+class Api::V1::MarkersController
+  def index: () -> String
+
+  def serialize_map: (Hash[untyped, untyped]) -> void
+
+  def create: () -> String
+
+  def resource_params: () -> ActionController::Parameters
+end

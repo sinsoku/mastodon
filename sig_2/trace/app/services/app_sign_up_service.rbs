@@ -1,0 +1,17 @@
+class AppSignUpService
+  def call: (Doorkeeper::Application, IPAddr, Hash[untyped, untyped]) -> void
+          | (Doorkeeper::Application, IPAddr, Hash[untyped, untyped]) -> Doorkeeper::AccessToken
+          | (Doorkeeper::Application, IPAddr, Hash[untyped, untyped]) -> nil
+
+  def invite: () -> void
+
+  def create_user!: () -> void
+
+  def user_params: () -> Hash[untyped, untyped]
+
+  def account_params: () -> void
+
+  def invite_request_params: () -> void
+
+  def create_access_token!: () -> void
+end

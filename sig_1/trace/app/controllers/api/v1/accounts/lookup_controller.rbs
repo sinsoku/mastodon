@@ -1,0 +1,5 @@
+class Api::V1::Accounts::LookupController
+  def set_account: () -> Account
+
+  def show: () -> String
+end

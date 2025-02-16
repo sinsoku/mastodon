@@ -1,0 +1,7 @@
+class AccountModerationNotePolicy
+  def destroy?: () -> bool
+
+  def owner?: () -> void
+
+  def create?: () -> bool
+end

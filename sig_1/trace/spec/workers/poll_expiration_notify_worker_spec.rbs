@@ -1,0 +1,17 @@
+module RSpec::ExampleGroups::PollExpirationNotifyWorker::LetDefinitions
+  def worker: () -> PollExpirationNotifyWorker
+
+  def poll: () -> Poll
+
+  def status: () -> Status
+
+  def account: () -> Account
+
+  def remote?: () -> bool
+
+  def poll_vote: () -> PollVote
+end
+
+module RSpec::ExampleGroups::PollExpirationNotifyWorker::Perform::WhenPollIsExpired::WhenPollIsRemote::LetDefinitions
+  def remote?: () -> bool
+end

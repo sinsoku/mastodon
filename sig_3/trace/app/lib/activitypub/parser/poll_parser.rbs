@@ -1,0 +1,6 @@
+class ActivityPub::Parser::PollParser
+  def initialize: (ActiveSupport::HashWithIndifferentAccess) -> void
+                | (Hash[untyped, untyped]) -> void
+
+  def valid?: () -> void
+end

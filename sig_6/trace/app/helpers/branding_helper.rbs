@@ -1,0 +1,7 @@
+module BrandingHelper
+  def logo_as_symbol: (?Symbol) -> void
+
+  def _logo_as_symbol_wordmark: () -> void
+
+  def render_logo: () -> void
+end

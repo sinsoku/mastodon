@@ -1,0 +1,3 @@
+class REST::Admin::MeasureSerializer
+  def total: () -> String
+end

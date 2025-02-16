@@ -1,0 +1,17 @@
+class ConnectionPool::SharedConnectionPool
+  def initialize: (?Hash[untyped, untyped]) -> void
+
+  def with: (String, ?Hash[untyped, untyped]) -> void
+
+  def checkout: (String, ?Hash[untyped, untyped]) -> RequestPool::Connection
+
+  def key: (String) -> void
+
+  def key_count: (String) -> void
+
+  def checkin: (String) -> void
+
+  def size: (*untyped, **untyped) -> Integer
+
+  def flush: (*untyped, **untyped) -> Array[untyped]
+end

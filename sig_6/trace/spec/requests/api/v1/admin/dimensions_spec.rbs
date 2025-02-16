@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::AdminDimensions::LetDefinitions
+  def account: () -> Account
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::AdminDimensions::GETApiV1AdminDimensions::WithCorrectScope::LetDefinitions
+  def scopes: () -> String
+end

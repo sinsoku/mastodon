@@ -1,0 +1,9 @@
+class Api::V1::InvitesController
+  def current_user: () -> nil
+
+  def set_invite: () -> Invite
+
+  def check_enabled_registrations!: () -> nil
+
+  def show: () -> String
+end

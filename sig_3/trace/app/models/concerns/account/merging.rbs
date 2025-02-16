@@ -1,0 +1,3 @@
+module Account::Merging
+  def merge_with!: (Account) -> void
+end

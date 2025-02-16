@@ -1,0 +1,35 @@
+module RSpec::ExampleGroups::ActivityPubFetchFeaturedCollectionService::LetDefinitions
+  def known_status: () -> Status
+
+  def actor: () -> Account
+
+  def status_json_pinned_unknown_reachable: () -> Hash[untyped, untyped]
+
+  def subject: () -> ActivityPub::FetchFeaturedCollectionService
+
+  def items: () -> Array[untyped]
+
+  def status_json_pinned_unknown_inlined: () -> Hash[untyped, untyped]
+
+  def status_json_pinned_known: () -> Hash[untyped, untyped]
+
+  def featured_with_null: () -> Hash[untyped, untyped]
+
+  def payload: () -> ActiveSupport::HashWithIndifferentAccess
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchFeaturedCollectionService::Call::WhenTheEndpointIsAPaginatedCollection::LetDefinitions
+  def payload: () -> ActiveSupport::HashWithIndifferentAccess
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchFeaturedCollectionService::Call::WhenTheEndpointIsAPaginatedCollection::WhenThereIsASingleItemWithTheArrayCompactedAway::LetDefinitions
+  def items: () -> String
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchFeaturedCollectionService::Call::WhenTheEndpointIsAnOrderedCollection::LetDefinitions
+  def payload: () -> ActiveSupport::HashWithIndifferentAccess
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchFeaturedCollectionService::Call::WhenTheEndpointIsAnOrderedCollection::WhenThereIsASingleItemWithTheArrayCompactedAway::LetDefinitions
+  def items: () -> String
+end

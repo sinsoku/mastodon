@@ -1,0 +1,3 @@
+module Account::Sensitizes
+  def sensitized?: () -> void
+end

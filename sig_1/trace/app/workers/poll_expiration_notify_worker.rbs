@@ -1,0 +1,14 @@
+class PollExpirationNotifyWorker
+  def perform: (nil) -> void
+             | (Integer) -> void
+
+  def does_not_expire?: () -> void
+
+  def not_due_yet?: () -> void
+
+  def requeue!: () -> void
+
+  def notify_remote_voters_and_owner!: () -> void
+
+  def notify_local_voters!: () -> void
+end

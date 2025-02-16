@@ -1,0 +1,5 @@
+class Paperclip::BlurhashTranscoder
+  def make: () -> void
+
+  def blurhash_params: () -> Array[untyped]
+end

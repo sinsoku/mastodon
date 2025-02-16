@@ -1,0 +1,9 @@
+class DomainAllow
+  def self.allowed?: (String) -> void
+
+  def self.rule_for: (String) -> nil
+
+  def to_log_human_identifier: () -> void
+
+  def self.allowed_domains: () -> ActiveRecord::Relation
+end

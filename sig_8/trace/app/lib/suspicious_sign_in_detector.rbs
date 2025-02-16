@@ -1,0 +1,16 @@
+class SuspiciousSignInDetector
+  def initialize: (User) -> void
+
+  def suspicious?: (RSpec::Mocks::InstanceVerifyingDouble) -> void
+                 | (ActionDispatch::Request) -> void
+
+  def sufficient_security_measures?: () -> bool
+
+  def freshly_signed_up?: () -> bool
+
+  def previously_seen_ip?: (RSpec::Mocks::InstanceVerifyingDouble) -> bool
+                         | (ActionDispatch::Request) -> bool
+
+  def masked_ip: (RSpec::Mocks::InstanceVerifyingDouble) -> void
+               | (ActionDispatch::Request) -> void
+end

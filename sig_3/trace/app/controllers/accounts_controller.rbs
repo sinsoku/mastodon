@@ -1,0 +1,15 @@
+class AccountsController
+  def username_param: () -> void
+
+  def show: () -> Time
+
+  def rss_url: () -> String
+
+  def tag_requested?: () -> void
+
+  def path_without_format: () -> String
+end
+
+module AccountsController::HelperMethods
+  def rss_url: (*untyped, **untyped) -> void
+end

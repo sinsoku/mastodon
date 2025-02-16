@@ -1,0 +1,93 @@
+class Status
+  def local?: () -> bool
+
+  def set_reblog: () -> nil
+
+  def reblog?: () -> void
+             | () -> bool
+
+  def set_visibility: () -> nil
+
+  def set_conversation: () -> Conversation
+                      | () -> nil
+                      | () -> Integer
+
+  def reply?: () -> void
+            | () -> bool
+
+  def set_local: () -> bool
+
+  def with_media?: () -> void
+
+  def ordered_media_attachments: () -> Array[untyped]
+
+  def set_poll_id: () -> nil
+
+  def trigger_create_webhooks: () -> nil
+                             | () -> String
+
+  def increment_counter_caches: () -> nil
+                              | () -> bool
+
+  def within_realtime_window?: () -> void
+
+  def replies_count: () -> Integer
+
+  def status_stat: () -> StatusStat
+
+  def untrusted_reblogs_count: () -> void
+                             | () -> nil
+
+  def reblogs_count: () -> void
+                   | () -> Integer
+
+  def untrusted_favourites_count: () -> void
+                                | () -> nil
+
+  def favourites_count: () -> void
+                      | () -> Integer
+
+  def emojis: () -> Array[untyped]
+
+  def preview_card: () -> nil
+
+  def distributable?: () -> void
+                    | () -> bool
+
+  def prepare_contents: () -> nil
+
+  def object_type: () -> void
+
+  def store_uri: () -> bool
+
+  def update_statistics: () -> bool
+                       | () -> nil
+
+  def in_reply_to_local_account?: () -> void
+
+  def hidden?: () -> void
+
+  def increment_count!: (Symbol) -> void
+
+  def update_status_stat!: (Hash[untyped, untyped]) -> void
+
+  def proper: () -> Status
+
+  def self.reblogs_map: (Array[untyped], Integer) -> Hash[untyped, untyped]
+
+  def self.favourites_map: (Array[untyped], Integer) -> Hash[untyped, untyped]
+
+  def self.bookmarks_map: (Array[untyped], Integer) -> Hash[untyped, untyped]
+
+  def self.mutes_map: (Array[untyped], Integer) -> Hash[untyped, untyped]
+
+  def self.pins_map: (Array[untyped], Integer) -> Hash[untyped, untyped]
+
+  def trigger_update_webhooks: () -> String
+
+  def carried_over_reply_to_account_id: () -> void
+
+  def unlink_from_conversations!: () -> nil
+
+  def decrement_count!: (Symbol) -> void
+end

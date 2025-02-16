@@ -1,0 +1,3 @@
+class DisallowedHashtagsValidator
+  def validate: (Status) -> nil
+end

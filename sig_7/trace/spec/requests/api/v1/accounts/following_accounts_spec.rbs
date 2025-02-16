@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::APIV1AccountsFollowingAccounts::LetDefinitions
+  def account: () -> Account
+
+  def alice: () -> Account
+
+  def bob: () -> Account
+
+  def user: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::APIV1AccountsFollowingAccounts::GETApiV1AccountsAccountIdFollowing::WhenRequestingUserIsTheAccountOwner::LetDefinitions
+  def user: () -> User
+end

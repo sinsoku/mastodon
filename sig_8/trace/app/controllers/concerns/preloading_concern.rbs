@@ -1,0 +1,3 @@
+module PreloadingConcern
+  def preload_collection: (Trends::Statuses::Query, Class) -> void
+end

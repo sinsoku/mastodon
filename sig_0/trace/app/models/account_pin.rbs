@@ -1,0 +1,4 @@
+class AccountPin
+  def validate_follow_relationship: () -> nil
+                                  | () -> ActiveModel::Error
+end

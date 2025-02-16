@@ -1,0 +1,5 @@
+class AnnouncementFilter
+  def initialize: (ActionController::Parameters) -> void
+
+  def results: () -> ActiveRecord::Relation
+end

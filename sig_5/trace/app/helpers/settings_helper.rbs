@@ -1,0 +1,3 @@
+module SettingsHelper
+  def session_device_icon: (SessionActivation) -> String
+end

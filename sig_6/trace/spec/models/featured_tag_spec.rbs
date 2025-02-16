@@ -1,0 +1,53 @@
+module RSpec::ExampleGroups::FeaturedTag::DisplayName::LetDefinitions
+  def subject: () -> FeaturedTag
+end
+
+module RSpec::ExampleGroups::FeaturedTag::DisplayName::WithAMissingNameValueButAPresentTag::LetDefinitions
+  def name: () -> nil
+
+  def tag: () -> Tag
+end
+
+module RSpec::ExampleGroups::FeaturedTag::DisplayName::WithANameValuePresent::LetDefinitions
+  def name: () -> String
+
+  def tag: () -> nil
+end
+
+module RSpec::ExampleGroups::FeaturedTag::Validations::WhenAccountAlreadyHasAFeaturedTag::LetDefinitions
+  def account: () -> Account
+
+  def subject: () -> FeaturedTag
+end
+
+module RSpec::ExampleGroups::FeaturedTag::Validations::WhenAccountAlreadyHasAFeaturedTag::WhenAccountHasHitLimit::WithALocalAccount::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::FeaturedTag::Validations::WhenAccountAlreadyHasAFeaturedTag::WhenAccountHasHitLimit::WithARemoteAccount::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::FeaturedTag::Decrement::WhenRemovingTheMostRecentUseOfTheTag::LetDefinitions
+  def previous_status: () -> Status
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FeaturedTag::Decrement::LetDefinitions
+  def account: () -> Account
+
+  def tag: () -> Tag
+
+  def featured_tag: () -> FeaturedTag
+end
+
+module RSpec::ExampleGroups::FeaturedTag::Decrement::WhenRemovingAPreviousStatusUsingTheTag::LetDefinitions
+  def previous_status: () -> Status
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FeaturedTag::Decrement::WhenRemovingTheLastStatusUsingTheTag::LetDefinitions
+  def status: () -> Status
+end

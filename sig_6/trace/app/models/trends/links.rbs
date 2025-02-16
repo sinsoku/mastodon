@@ -1,0 +1,14 @@
+class Trends::Links
+  def query: () -> void
+           | () -> Trends::Links::Query
+
+  def key_prefix: () -> void
+
+  def klass: () -> void
+
+  def register: (Status, ?Time) -> void
+end
+
+class Trends::Links::Query
+  def to_arel: () -> ActiveRecord::Relation
+end

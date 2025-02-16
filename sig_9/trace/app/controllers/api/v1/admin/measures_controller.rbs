@@ -1,0 +1,6 @@
+class Api::V1::Admin::MeasuresController
+  def set_measures: () -> Array[untyped]
+
+  def create: () -> nil
+            | () -> String
+end

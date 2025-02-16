@@ -1,0 +1,7 @@
+class REST::ReactionSerializer
+  def count: () -> Integer
+
+  def current_user?: () -> bool
+
+  def custom_emoji?: () -> bool
+end

@@ -1,0 +1,3 @@
+class RSpec::ExampleGroups::AdminSettingsAbout
+  def extended_description_field: () -> void
+end

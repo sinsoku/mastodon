@@ -1,0 +1,5 @@
+module DomainControlHelper
+  def limited_federation_mode?: () -> bool
+
+  def domain_not_allowed?: (nil) -> void
+end

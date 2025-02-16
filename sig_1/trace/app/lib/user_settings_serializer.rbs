@@ -1,0 +1,7 @@
+class UserSettingsSerializer
+  def self.load: (nil) -> void
+               | (String) -> void
+
+  def self.dump: (UserSettings) -> void
+               | (UserSettings) -> String
+end

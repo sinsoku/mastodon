@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::WebhooksDeliveryWorker::LetDefinitions
+  def worker: () -> Webhooks::DeliveryWorker
+end
+
+module RSpec::ExampleGroups::WebhooksDeliveryWorker::Perform::LetDefinitions
+  def webhook: () -> Webhook
+end

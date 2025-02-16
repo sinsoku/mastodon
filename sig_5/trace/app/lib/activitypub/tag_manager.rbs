@@ -1,0 +1,30 @@
+class ActivityPub::TagManager
+  def key_uri_for: (Account) -> void
+
+  def uri_for: (Account) -> void
+             | (Status) -> void
+             | (CustomEmoji) -> void
+             | (Account) -> String
+             | (Status) -> String
+
+  def local_uri?: (String) -> void
+
+  def uri_to_resource: (String, Class) -> Account
+                     | (String, Class) -> nil
+
+  def public_collection?: (String) -> void
+
+  def url_for: (Status) -> void
+             | (Account) -> void
+             | (Account) -> String
+             | (Status) -> String
+             | (Status) -> nil
+             | (Account) -> nil
+
+  def generate_uri_for: (Follow) -> void
+                      | (Block) -> void
+                      | (Report) -> void
+                      | (FollowRequest) -> void
+
+  def uri_to_local_id: (String, ?Symbol) -> void
+end

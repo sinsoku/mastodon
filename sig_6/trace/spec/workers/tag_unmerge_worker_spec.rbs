@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::TagUnmergeWorker::Perform::LetDefinitions
+  def tagged_status: () -> Status
+
+  def followed_tag: () -> Tag
+
+  def unchanged_tagged_status: () -> Status
+
+  def unchanged_followed_tag: () -> Tag
+
+  def follower: () -> Account
+
+  def status_from_followed: () -> Status
+
+  def followed: () -> Account
+end
+
+module RSpec::ExampleGroups::TagUnmergeWorker::LetDefinitions
+  def subject: () -> TagUnmergeWorker
+end

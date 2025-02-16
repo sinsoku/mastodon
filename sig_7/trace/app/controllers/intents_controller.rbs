@@ -1,0 +1,12 @@
+class IntentsController
+  def valid_uri?: () -> bool
+                | () -> nil
+
+  def uri: () -> Addressable::URI
+         | () -> nil
+
+  def handle_invalid_uri: () -> ActiveSupport::SafeBuffer
+
+  def show: () -> ActiveSupport::SafeBuffer
+          | () -> String
+end

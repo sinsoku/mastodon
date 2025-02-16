@@ -1,0 +1,27 @@
+module RSpec::ExampleGroups::MediaAPI::LetDefinitions
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def scopes: () -> String
+
+  def headers: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MediaAPI::POSTApiV2Media::WhenPaperclipErrorsOccur::LetDefinitions
+  def media_attachments: () -> RSpec::Mocks::Double
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MediaAPI::POSTApiV2Media::WhenLargeFormatMediaAttachmentHasNotBeenProcessed::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MediaAPI::POSTApiV2Media::WhenMediaDescriptionIsTooLong::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MediaAPI::POSTApiV2Media::WhenSmallMediaFormatAttachmentIsProcessedImmediately::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end

@@ -1,0 +1,40 @@
+class Admin::Metrics::Measure::BaseMeasure
+  def initialize: (nil, nil, ActionController::Parameters) -> void
+                | (ActiveSupport::TimeWithZone, Time, ActionController::Parameters) -> void
+
+  def read_attribute_for_serialization: (Symbol) -> void
+
+  def unit: () -> nil
+
+  def total: () -> Integer
+
+  def load: () -> ActiveSupport::HashWithIndifferentAccess
+
+  def cache_key: () -> void
+
+  def canonicalized_params: () -> void
+
+  def perform_queries: () -> void
+
+  def data: () -> Array[untyped]
+
+  def params: () -> Hash[untyped, untyped]
+
+  def time_period: () -> void
+
+  def previous_time_period: () -> void
+
+  def length_of_period: () -> void
+end
+
+class Admin::Metrics::Measure::InstanceAccountsMeasure
+  def self.model_name: () -> String
+end
+
+class Admin::Metrics::Measure::InstanceFollowsMeasure
+  def self.model_name: () -> String
+end
+
+class Admin::Metrics::Measure::InstanceFollowersMeasure
+  def self.model_name: () -> String
+end

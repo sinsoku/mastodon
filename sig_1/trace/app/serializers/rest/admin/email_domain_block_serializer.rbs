@@ -1,0 +1,3 @@
+class REST::Admin::EmailDomainBlockSerializer
+  def id: () -> String
+end

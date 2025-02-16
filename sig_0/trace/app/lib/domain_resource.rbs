@@ -1,0 +1,5 @@
+class DomainResource
+  def initialize: (String) -> void
+
+  def mx: () -> void
+end

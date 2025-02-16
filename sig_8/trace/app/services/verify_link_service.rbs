@@ -1,0 +1,10 @@
+class VerifyLinkService
+  def call: (Account::Field) -> void
+
+  def perform_request!: () -> void
+
+  def link_back_present?: () -> void
+
+  def link_redirects_back?: (nil) -> void
+                          | (String) -> void
+end

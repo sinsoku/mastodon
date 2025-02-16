@@ -1,0 +1,3 @@
+class Admin::Metrics::Dimension
+  def self.retrieve: (nil, nil, nil, String, ActionController::Parameters) -> Array[untyped]
+end

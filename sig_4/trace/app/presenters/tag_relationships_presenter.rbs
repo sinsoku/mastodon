@@ -1,0 +1,3 @@
+class TagRelationshipsPresenter
+  def initialize: (Array[untyped], ?Integer, **nil) -> void
+end

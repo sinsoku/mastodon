@@ -1,0 +1,7 @@
+class RSpec::ExampleGroups::TheWellKnownHostMetaRequest
+  def expected_json_template: () -> void
+end
+
+class RSpec::ExampleGroups::TheWellKnownHostMetaRequest::WithoutExtensionFormatOrAcceptHeader
+  def xrd_link_template_value: () -> void
+end

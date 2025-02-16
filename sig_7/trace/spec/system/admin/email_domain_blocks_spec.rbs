@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::AdminEmailDomainBlocks::LetDefinitions
+  def current_user: () -> User
+end
+
+class RSpec::ExampleGroups::AdminEmailDomainBlocks::PerformingBatchUpdates
+  def button_for_delete: () -> void
+
+  def selection_error_text: () -> void
+end

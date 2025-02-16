@@ -1,0 +1,3 @@
+class Mastodon::PrivateNetworkAddressError
+  def initialize: (String) -> void
+end

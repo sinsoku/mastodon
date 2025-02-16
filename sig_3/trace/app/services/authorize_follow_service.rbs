@@ -1,0 +1,3 @@
+class AuthorizeFollowService
+  def call: (Account, Account, **nil) -> void
+end

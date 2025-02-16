@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::SettingsPreferencesOtherPage::LetDefinitions
+  def user: () -> User
+end
+
+class RSpec::ExampleGroups::SettingsPreferencesOtherPage
+  def language_field: (Symbol) -> void
+
+  def mark_sensitive_field: () -> void
+
+  def save_changes: () -> void
+end

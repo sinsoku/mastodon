@@ -1,0 +1,21 @@
+class Form::CustomEmojiBatch
+  def save: () -> void
+
+  def update!: () -> void
+
+  def verify_authorization: (Symbol) -> void
+
+  def custom_emojis: () -> ActiveRecord::Relation
+
+  def enable!: () -> void
+
+  def disable!: () -> void
+
+  def copy!: () -> void
+
+  def list!: () -> void
+
+  def unlist!: () -> void
+
+  def delete!: () -> void
+end

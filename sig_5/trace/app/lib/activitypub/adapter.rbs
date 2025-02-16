@@ -1,0 +1,6 @@
+class ActivityPub::Adapter
+  def serializable_hash: (?Hash[untyped, untyped]) -> void
+                       | (?nil) -> void
+
+  def self.transform_key_casing!: (Hash[untyped, untyped], Hash[untyped, untyped]) -> Hash[untyped, untyped]
+end

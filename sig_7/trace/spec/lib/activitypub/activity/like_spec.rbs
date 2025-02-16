@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::ActivityPubActivityLike::Perform::LetDefinitions
+  def subject: () -> ActivityPub::Activity::Like
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityLike::LetDefinitions
+  def json: () -> ActiveSupport::HashWithIndifferentAccess
+
+  def sender: () -> Account
+
+  def status: () -> Status
+
+  def recipient: () -> Account
+end

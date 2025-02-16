@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::AccountFilter::WithUsername::LetDefinitions
+  def local_account: () -> Account
+end
+
+module RSpec::ExampleGroups::AccountFilter::WithOriginAndByDomainInteracting::LetDefinitions
+  def local_account: () -> Account
+
+  def remote_account_one: () -> Account
+end

@@ -1,0 +1,11 @@
+class UserSettings::Setting
+  def initialize: (Symbol, ?Hash[untyped, untyped]) -> void
+
+  def key: () -> void
+
+  def inverse_of: (Symbol) -> void
+
+  def value_for: (String, nil) -> void
+
+  def default_value: () -> void
+end

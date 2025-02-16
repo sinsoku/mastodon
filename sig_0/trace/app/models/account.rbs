@@ -1,0 +1,99 @@
+class Account
+  def normalize_domain: () -> nil
+                      | () -> String
+
+  def local?: () -> void
+            | () -> bool
+
+  def prepare_contents: () -> nil
+
+  def generate_keys: () -> nil
+                   | () -> String
+
+  def to_param: () -> void
+              | () -> String
+
+  def synchronization_uri_prefix: () -> String
+
+  def self.inboxes: () -> Array[untyped]
+
+  def object_type: () -> void
+
+  def instance_actor?: () -> void
+                     | () -> bool
+
+  def keypair: () -> void
+
+  def trigger_update_webhooks: () -> String
+                             | () -> nil
+
+  def moved?: () -> void
+
+  def user_pending?: (*untyped, **untyped) -> void
+
+  def user_confirmed?: (*untyped, **untyped) -> bool
+
+  def create_canonical_email_block!: () -> void
+
+  def user_email: (*untyped, **untyped) -> String
+
+  def user_role: (*untyped, **untyped) -> UserRole
+
+  def excluded_from_timeline_account_ids: () -> void
+
+  def excluded_from_timeline_domains: () -> void
+                                    | () -> Array[untyped]
+
+  def emojis: () -> void
+            | () -> Array[untyped]
+
+  def emojifiable_text: () -> void
+
+  def fields: () -> Array[untyped]
+
+  def pretty_acct: () -> void
+                 | () -> String
+
+  def bot?: () -> bool
+
+  def group?: () -> bool
+
+  def user_prefers_noindex?: (*untyped, **untyped) -> void
+
+  def acct: () -> void
+          | () -> String
+
+  def user_disabled?: (*untyped, **untyped) -> void
+
+  def user_approved?: (*untyped, **untyped) -> void
+
+  def user_locale: (*untyped, **untyped) -> void
+
+  def chosen_languages: (*untyped, **untyped) -> nil
+
+  def user_shows_application?: (*untyped, **untyped) -> void
+
+  def ensure_keys!: () -> void
+
+  def to_log_human_identifier: () -> void
+
+  def build_fields: () -> void
+
+  def bot=: (String) -> String
+
+  def fields_attributes=: (ActiveSupport::HashWithIndifferentAccess) -> Array[untyped]
+
+  def tags_as_strings=: (Array[untyped]) -> void
+
+  def to_webfinger_s: () -> void
+
+  def local_username_and_domain: () -> String
+
+  def user_time_zone: (*untyped, **untyped) -> void
+
+  def also_known_as: () -> Array[untyped]
+
+  def destroy_canonical_email_block!: () -> void
+
+  def self.from_text: (String) -> Array[untyped]
+end

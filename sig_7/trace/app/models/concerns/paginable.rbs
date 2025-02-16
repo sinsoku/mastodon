@@ -1,0 +1,11 @@
+class IpBlock
+  def self.to_a_paginated_by_id: (Integer, ?ActionController::Parameters) -> Array[untyped]
+end
+
+class Account
+  def self.to_a_paginated_by_id: (Integer, ?ActionController::Parameters) -> Array[untyped]
+end
+
+class DomainBlock
+  def self.to_a_paginated_by_id: (Integer, ?ActionController::Parameters) -> Array[untyped]
+end

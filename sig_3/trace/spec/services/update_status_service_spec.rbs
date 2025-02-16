@@ -1,0 +1,59 @@
+module RSpec::ExampleGroups::UpdateStatusService::LetDefinitions
+  def subject: () -> UpdateStatusService
+end
+
+module RSpec::ExampleGroups::UpdateStatusService::WhenHashtagsInTextChange::LetDefinitions
+  def account: () -> Account
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::UpdateStatusService::WhenMentionsInTextChange::LetDefinitions
+  def account: () -> Account
+
+  def alice: () -> Account
+
+  def bob: () -> Account
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::UpdateStatusService::WhenPollChanges::LetDefinitions
+  def status: () -> Status
+
+  def account: () -> Account
+
+  def poll: () -> Poll
+
+  def voter: () -> Account
+end
+
+module RSpec::ExampleGroups::UpdateStatusService::WhenContentWarningChanges::LetDefinitions
+  def status: () -> Status
+
+  def preview_card: () -> PreviewCard
+end
+
+module RSpec::ExampleGroups::UpdateStatusService::WhenMediaAttachmentsChange::LetDefinitions
+  def status: () -> Status
+
+  def detached_media_attachment: () -> MediaAttachment
+
+  def attached_media_attachment: () -> MediaAttachment
+end
+
+module RSpec::ExampleGroups::UpdateStatusService::WhenTextChanges::LetDefinitions
+  def status: () -> Status
+
+  def preview_card: () -> PreviewCard
+end
+
+module RSpec::ExampleGroups::UpdateStatusService::WhenNothingChanges::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::UpdateStatusService::WhenAlreadyAttachedMediaChanges::LetDefinitions
+  def status: () -> Status
+
+  def media_attachment: () -> MediaAttachment
+end

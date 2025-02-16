@@ -1,0 +1,9 @@
+class Account::Field
+  def initialize: (Account, Hash[untyped, untyped]) -> void
+
+  def sanitize: (String) -> void
+
+  def character_limit: () -> void
+
+  def verified?: () -> void
+end

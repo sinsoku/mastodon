@@ -1,0 +1,13 @@
+class AttachmentBatch
+  def initialize: (Class, Array[untyped]) -> void
+
+  def clear: () -> void
+
+  def remove_files: () -> void
+
+  def logger: () -> ActiveSupport::BroadcastLogger
+
+  def batch: () -> ActiveRecord::Relation
+
+  def nullified_attributes: () -> void
+end

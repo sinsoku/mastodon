@@ -1,0 +1,7 @@
+class Admin::BaseController
+  def set_cache_headers: () -> Hash[untyped, untyped]
+
+  def set_referrer_policy_header: () -> String
+
+  def set_user: () -> User
+end

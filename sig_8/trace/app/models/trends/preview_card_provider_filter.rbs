@@ -1,0 +1,5 @@
+class Trends::PreviewCardProviderFilter
+  def initialize: (ActionController::Parameters) -> void
+
+  def results: () -> void
+end

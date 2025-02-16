@@ -1,0 +1,3 @@
+class FollowRecommendationMute
+  def invalidate_follow_recommendations_cache: () -> bool
+end

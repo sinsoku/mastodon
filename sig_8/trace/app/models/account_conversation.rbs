@@ -1,0 +1,19 @@
+class AccountConversation
+  def participant_account_ids=: (Array[untyped]) -> nil
+
+  def set_last_status: () -> Integer
+
+  def push_to_streaming_api: () -> nil
+
+  def subscribed_to_timeline?: () -> bool
+
+  def streaming_channel: () -> String
+
+  def self.remove_status: (Account, Status) -> void
+
+  def self.participants_from_status: (Account, Status) -> void
+
+  def self.add_status: (Account, Status) -> AccountConversation
+
+  def participant_accounts: () -> void
+end

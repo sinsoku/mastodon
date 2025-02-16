@@ -1,0 +1,24 @@
+class BackupService
+  def call: (Backup) -> void
+
+  def build_archive!: () -> void
+
+  def dump_outbox!: (Zip::File) -> void
+
+  def build_outbox_json!: (Tempfile) -> void
+
+  def collection_presenter: () -> void
+
+  def serialize: (ActivityPub::CollectionPresenter, Class) -> Hash[untyped, untyped]
+               | (Account, Class) -> Hash[untyped, untyped]
+
+  def dump_media_attachments!: (Zip::File) -> void
+
+  def download_to_zip: (Zip::File, Paperclip::Attachment, String) -> void
+
+  def dump_likes!: (Zip::File) -> void
+
+  def dump_bookmarks!: (Zip::File) -> void
+
+  def dump_actor!: (Zip::File) -> void
+end

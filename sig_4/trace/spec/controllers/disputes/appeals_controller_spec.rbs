@@ -1,0 +1,23 @@
+module RSpec::ExampleGroups::DisputesAppealsController::Create::WithInvalidParams::LetDefinitions
+  def current_user: () -> User
+
+  def params: () -> Hash[untyped, untyped]
+
+  def strike: () -> AccountWarning
+end
+
+module RSpec::ExampleGroups::DisputesAppealsController::LetDefinitions
+  def admin: () -> User
+end
+
+module RSpec::ExampleGroups::DisputesAppealsController::Create::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::DisputesAppealsController::Create::WithValidParams::LetDefinitions
+  def current_user: () -> User
+
+  def params: () -> Hash[untyped, untyped]
+
+  def strike: () -> AccountWarning
+end

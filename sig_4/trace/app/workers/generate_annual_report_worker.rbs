@@ -1,0 +1,4 @@
+class GenerateAnnualReportWorker
+  def perform: (Integer, Integer) -> bool
+             | (Integer, Integer) -> GeneratedAnnualReport
+end

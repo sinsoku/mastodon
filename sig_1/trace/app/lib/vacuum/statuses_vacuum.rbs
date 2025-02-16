@@ -1,0 +1,5 @@
+class Vacuum::StatusesVacuum
+  def initialize: (nil) -> void
+
+  def perform: () -> void
+end

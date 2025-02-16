@@ -1,0 +1,9 @@
+class IpBlock
+  def self.blocked?: (String) -> void
+
+  def self.blocked_ips_map: () -> FastIpMap
+
+  def reset_cache: () -> bool
+
+  def to_log_human_identifier: () -> void
+end

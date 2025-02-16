@@ -1,0 +1,11 @@
+class MoveService
+  def call: (AccountMigration) -> void
+
+  def update_redirect!: () -> void
+
+  def process_local_relationships!: () -> void
+
+  def distribute_update!: () -> void
+
+  def distribute_move!: () -> void
+end

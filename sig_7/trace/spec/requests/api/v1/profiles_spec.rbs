@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::DeletingProfileImages::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def account: () -> Account
+
+  def scopes: () -> String
+end

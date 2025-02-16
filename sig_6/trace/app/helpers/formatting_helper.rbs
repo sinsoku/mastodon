@@ -1,0 +1,13 @@
+module FormattingHelper
+  def account_bio_format: (Account) -> void
+
+  def html_aware_format: (String, bool, ?Hash[untyped, untyped]) -> void
+
+  def status_content_format: (Status) -> void
+
+  def url_for_preview_card: (PreviewCard) -> void
+
+  def markdown: (String) -> void
+
+  def linkify: (String, ?Hash[untyped, untyped]) -> void
+end

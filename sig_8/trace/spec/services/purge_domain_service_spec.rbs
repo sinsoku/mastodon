@@ -1,0 +1,17 @@
+module RSpec::ExampleGroups::PurgeDomainService::LetDefinitions
+  def account: () -> Account
+
+  def domain: () -> String
+
+  def status_plain: () -> Status
+
+  def status_with_attachment: () -> Status
+
+  def attachment: () -> MediaAttachment
+
+  def subject: () -> PurgeDomainService
+end
+
+class RSpec::ExampleGroups::PurgeDomainService::ForASuspension
+  def domain_instance_exists: () -> void
+end

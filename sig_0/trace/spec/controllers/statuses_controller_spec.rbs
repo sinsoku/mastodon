@@ -1,0 +1,149 @@
+module RSpec::ExampleGroups::StatusesController::GETShow::WhenStatusIsPrivate::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::LetDefinitions
+  def account: () -> Account
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WhenStatusIsPrivate::WithJSON::LetDefinitions
+  def format: () -> String
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WhenStatusIsPrivate::WithHTML::LetDefinitions
+  def format: () -> String
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WhenStatusIsAReblog::LetDefinitions
+  def status: () -> Status
+
+  def original_status: () -> Status
+
+  def original_account: () -> Account
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WithSignature::LetDefinitions
+  def remote_account: () -> Account
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WithSignature::WhenStatusIsPrivate::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WithSignature::WhenStatusIsPrivate::WhenUserIsNotAuthorizedToSeeIt::WithJSON::LetDefinitions
+  def format: () -> String
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WithSignature::WhenStatusIsPrivate::WhenUserIsNotAuthorizedToSeeIt::WithHTML::LetDefinitions
+  def format: () -> String
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WithSignature::WhenStatusIsPrivate::WhenUserIsAuthorizedToSeeIt::WithHTML::LetDefinitions
+  def format: () -> String
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WithSignature::WhenStatusIsPrivate::WhenUserIsAuthorizedToSeeIt::WithJSON::LetDefinitions
+  def format: () -> String
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WithSignature::WhenStatusIsDirect::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WithSignature::WhenStatusIsDirect::WhenUserIsAuthorizedToSeeIt::WithJSON::LetDefinitions
+  def format: () -> String
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WithSignature::WhenStatusIsDirect::WhenUserIsAuthorizedToSeeIt::WithHTML::LetDefinitions
+  def format: () -> String
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WithSignature::WhenStatusIsDirect::WhenUserIsNotAuthorizedToSeeIt::WithJSON::LetDefinitions
+  def format: () -> String
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WithSignature::WhenStatusIsDirect::WhenUserIsNotAuthorizedToSeeIt::WithHTML::LetDefinitions
+  def format: () -> String
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WithSignature::WhenStatusIsPublic::WithHTML::LetDefinitions
+  def format: () -> String
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WithSignature::WhenStatusIsPublic::WithJSON::LetDefinitions
+  def format: () -> String
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WhenSignedIn::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WhenSignedIn::WhenStatusIsPublic::WithHTML::LetDefinitions
+  def format: () -> String
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WhenSignedIn::WhenStatusIsPublic::WithJSON::LetDefinitions
+  def format: () -> String
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WhenSignedIn::WhenStatusIsPrivate::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WhenSignedIn::WhenStatusIsPrivate::WhenUserIsAuthorizedToSeeIt::WithHTML::LetDefinitions
+  def format: () -> String
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WhenSignedIn::WhenStatusIsPrivate::WhenUserIsAuthorizedToSeeIt::WithJSON::LetDefinitions
+  def format: () -> String
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WhenSignedIn::WhenStatusIsPrivate::WhenUserIsNotAuthorizedToSeeIt::WithJSON::LetDefinitions
+  def format: () -> String
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WhenSignedIn::WhenStatusIsPrivate::WhenUserIsNotAuthorizedToSeeIt::WithHTML::LetDefinitions
+  def format: () -> String
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WhenSignedIn::WhenStatusIsDirect::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WhenSignedIn::WhenStatusIsDirect::WhenUserIsAuthorizedToSeeIt::WithJSON::LetDefinitions
+  def format: () -> String
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WhenSignedIn::WhenStatusIsDirect::WhenUserIsAuthorizedToSeeIt::WithHTML::LetDefinitions
+  def format: () -> String
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WhenSignedIn::WhenStatusIsDirect::WhenUserIsNotAuthorizedToSeeIt::WithJSON::LetDefinitions
+  def format: () -> String
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WhenSignedIn::WhenStatusIsDirect::WhenUserIsNotAuthorizedToSeeIt::WithHTML::LetDefinitions
+  def format: () -> String
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WhenStatusIsPublic::WithHTML::LetDefinitions
+  def format: () -> String
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WhenStatusIsPublic::WithJSON::LetDefinitions
+  def format: () -> String
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WhenStatusIsDirect::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WhenStatusIsDirect::WithJSON::LetDefinitions
+  def format: () -> String
+end
+
+module RSpec::ExampleGroups::StatusesController::GETShow::WhenStatusIsDirect::WithHTML::LetDefinitions
+  def format: () -> String
+end

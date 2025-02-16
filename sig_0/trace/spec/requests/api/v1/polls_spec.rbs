@@ -1,0 +1,21 @@
+module RSpec::ExampleGroups::Polls::GETApiV1PollsId::LetDefinitions
+  def subject: () -> Integer
+
+  def poll: () -> Poll
+
+  def visibility: () -> String
+end
+
+module RSpec::ExampleGroups::Polls::GETApiV1PollsId::WhenParentStatusIsPrivate::LetDefinitions
+  def visibility: () -> String
+end
+
+module RSpec::ExampleGroups::Polls::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def scopes: () -> String
+end

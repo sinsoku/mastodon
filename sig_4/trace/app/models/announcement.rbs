@@ -1,0 +1,3 @@
+class Announcement
+  def set_published: () -> Time
+end

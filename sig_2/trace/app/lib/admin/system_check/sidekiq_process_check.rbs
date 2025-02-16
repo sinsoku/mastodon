@@ -1,0 +1,3 @@
+class Admin::SystemCheck::SidekiqProcessCheck
+  def skip?: () -> void
+end

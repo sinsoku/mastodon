@@ -1,0 +1,19 @@
+class AfterBlockDomainFromAccountService
+  def call: (Account, String) -> void
+
+  def clear_notifications!: () -> void
+
+  def clear_notification_permissions!: () -> void
+
+  def remove_follows!: () -> void
+
+  def domain_block_event: () -> RelationshipSeveranceEvent
+
+  def reject_existing_followers!: () -> void
+
+  def reject_follow!: (Follow) -> void
+
+  def reject_pending_follow_requests!: () -> void
+
+  def notify_of_severed_relationships!: () -> void
+end

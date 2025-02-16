@@ -1,0 +1,18 @@
+class ActivityPub::Parser::MediaAttachmentParser
+  def initialize: (ActiveSupport::HashWithIndifferentAccess) -> void
+
+  def remote_url: () -> nil
+                | () -> String
+
+  def thumbnail_remote_url: () -> void
+
+  def description: () -> void
+
+  def focus: () -> void
+
+  def blurhash: () -> void
+
+  def supported_blurhash?: () -> void
+
+  def file_content_type: () -> void
+end

@@ -1,0 +1,4 @@
+class SignatureParser
+  def self.parse: (String) -> void
+                | (String) -> Hash[untyped, untyped]
+end

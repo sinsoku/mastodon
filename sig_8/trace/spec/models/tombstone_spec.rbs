@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::Tombstone::Validations::LetDefinitions
+  def subject: () -> Tombstone
+end

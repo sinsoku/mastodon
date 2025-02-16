@@ -1,0 +1,9 @@
+class Admin::SystemCheck::BaseCheck
+  def initialize: (User) -> void
+
+  def message: () -> void
+
+  def skip?: () -> void
+
+  def pass?: () -> void
+end

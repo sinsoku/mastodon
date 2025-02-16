@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::AfterAccountDomainBlockWorker::LetDefinitions
+  def service: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def worker: () -> AfterAccountDomainBlockWorker
+end
+
+module RSpec::ExampleGroups::AfterAccountDomainBlockWorker::Perform::LetDefinitions
+  def domain: () -> String
+
+  def account: () -> Account
+end

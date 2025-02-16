@@ -1,0 +1,9 @@
+class ReactionValidator
+  def validate: (AnnouncementReaction) -> nil
+
+  def unicode_emoji?: (String) -> bool
+
+  def new_reaction?: (AnnouncementReaction) -> void
+
+  def limit_reached?: (AnnouncementReaction) -> void
+end

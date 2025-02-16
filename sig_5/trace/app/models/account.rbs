@@ -1,0 +1,105 @@
+class Account
+  def normalize_domain: () -> String
+                      | () -> nil
+
+  def local?: () -> void
+            | () -> bool
+
+  def generate_keys: () -> nil
+                   | () -> String
+
+  def save_with_optional_media!: () -> void
+
+  def trigger_update_webhooks: () -> nil
+                             | () -> String
+
+  def fields: () -> Array[untyped]
+
+  def create_canonical_email_block!: () -> void
+
+  def instance_actor?: () -> bool
+
+  def destroy_canonical_email_block!: () -> void
+
+  def ensure_keys!: () -> void
+
+  def keypair: () -> void
+
+  def object_type: () -> void
+
+  def possibly_stale?: () -> void
+
+  def schedule_refresh_if_stale!: () -> void
+
+  def user_shows_application?: (*untyped, **untyped) -> void
+
+  def pretty_acct: () -> void
+                 | () -> String
+
+  def bot?: () -> bool
+
+  def group?: () -> bool
+
+  def moved?: () -> void
+
+  def emojis: () -> void
+
+  def emojifiable_text: () -> void
+
+  def prepare_contents: () -> nil
+
+  def user_role: (*untyped, **untyped) -> void
+               | (*untyped, **untyped) -> UserRole
+
+  def to_param: () -> void
+
+  def user_prefers_noindex?: (*untyped, **untyped) -> void
+
+  def user_email: (*untyped, **untyped) -> String
+
+  def synchronization_uri_prefix: () -> String
+
+  def user_confirmed?: (*untyped, **untyped) -> void
+                     | (*untyped, **untyped) -> bool
+
+  def user_disabled?: (*untyped, **untyped) -> void
+
+  def user_approved?: (*untyped, **untyped) -> void
+                    | (*untyped, **untyped) -> bool
+
+  def user_locale: (*untyped, **untyped) -> void
+
+  def self.inboxes: () -> Array[untyped]
+
+  def acct: () -> String
+
+  def user_time_zone: (*untyped, **untyped) -> void
+
+  def local_followers_count: () -> Integer
+
+  def user_unconfirmed_email: (*untyped, **untyped) -> nil
+
+  def user_current_sign_in_at: (*untyped, **untyped) -> void
+                             | (*untyped, **untyped) -> ActiveSupport::TimeWithZone
+                             | (*untyped, **untyped) -> nil
+
+  def user_pending?: (*untyped, **untyped) -> void
+
+  def also_known_as: () -> Array[untyped]
+
+  def user_created_at: (*untyped, **untyped) -> void
+
+  def local_username_and_domain: () -> void
+                               | () -> String
+
+  def to_webfinger_s: () -> void
+                    | () -> String
+
+  def hides_followers?: () -> void
+
+  def excluded_from_timeline_account_ids: () -> void
+
+  def excluded_from_timeline_domains: () -> Array[untyped]
+
+  def chosen_languages: (*untyped, **untyped) -> nil
+end

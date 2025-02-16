@@ -1,0 +1,5 @@
+class Mastodon::CLI::CanonicalEmailBlocks
+  def find: (String) -> StringIO
+
+  def remove: (String) -> StringIO
+end

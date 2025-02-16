@@ -1,0 +1,23 @@
+module RSpec::ExampleGroups::DomainBlock::PublicDomain::WithADomainBlockThatIsObfuscated::LetDefinitions
+  def domain_block: () -> DomainBlock
+end
+
+module RSpec::ExampleGroups::DomainBlock::PublicDomain::WithADomainBlockThatIsNotObfuscated::LetDefinitions
+  def domain_block: () -> DomainBlock
+end
+
+module RSpec::ExampleGroups::DomainBlock::Policies::LetDefinitions
+  def subject: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::DomainBlock::Policies::WhenSeverityIsNoop::LetDefinitions
+  def domain_block: () -> DomainBlock
+end
+
+module RSpec::ExampleGroups::DomainBlock::Policies::WhenSeverityIsSilence::LetDefinitions
+  def domain_block: () -> DomainBlock
+end
+
+module RSpec::ExampleGroups::DomainBlock::Policies::WhenSeverityIsSuspend::LetDefinitions
+  def domain_block: () -> DomainBlock
+end

@@ -1,0 +1,634 @@
+module RSpec::ExampleGroups::MastodonCLIAccounts::LetDefinitions
+  def subject: () -> StringIO
+             | () -> nil
+             | () -> Integer
+             | () -> Array[untyped]
+
+  def cli: () -> Mastodon::CLI::Accounts
+
+  def options: () -> Hash[untyped, untyped]
+
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Rotate::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Rotate::WhenAUsernameIsGiven::LetDefinitions
+  def arguments: () -> Array[untyped]
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Rotate::WhenAllOptionIsProvided::LetDefinitions
+  def accounts: () -> Array[untyped]
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Rotate::WhenTheGivenUsernameIsNotFound::LetDefinitions
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Approve::LetDefinitions
+  def total_users: () -> Integer
+
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Approve::WithAllOption::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Approve::WithNumberOption::WhenTheNumberIsPositive::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::MastodonCLIAccounts::Approve::WithNumberOption::WhenTheNumberIsPositive
+  def n_earliest_pending_registrations: () -> Array[untyped]
+
+  def pending_registrations: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Approve::WithNumberOption::WhenTheGivenNumberIsGreaterThanTheNumberOfUsers::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Approve::WithNumberOption::WhenTheNumberIsNegative::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Approve::WithUsernameArgument::WhenTheGivenUsernameIsNotFound::LetDefinitions
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Approve::WithUsernameArgument::WhenTheGivenUsernameIsFound::LetDefinitions
+  def arguments: () -> Array[untyped]
+
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Follow::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Follow::WhenTheGivenUsernameIsNotFound::LetDefinitions
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Follow::WhenTheGivenUsernameIsFound::LetDefinitions
+  def target_account: () -> Account
+
+  def follower_bob: () -> Account
+
+  def follower_rony: () -> Account
+
+  def follower_charles: () -> Account
+
+  def follow_service: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def arguments: () -> Array[untyped]
+end
+
+class RSpec::ExampleGroups::MastodonCLIAccounts
+  def stub_parallelize_with_progress!: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Refresh::WithAllOption::LetDefinitions
+  def local_account: () -> Account
+
+  def remote_com_avatar_url: () -> String
+
+  def remote_com_header_url: () -> String
+
+  def remote_net_avatar_url: () -> String
+
+  def remote_net_header_url: () -> String
+
+  def remote_account_example_com: () -> Account
+
+  def account_example_net: () -> Account
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Refresh::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Refresh::WithAllOption::WithDryRunOption::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Refresh::WithAListOfAccts::LetDefinitions
+  def account_example_com_a: () -> Account
+
+  def account_example_com_b: () -> Account
+
+  def account_example_net: () -> Account
+
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Refresh::WithAListOfAccts::WithDryRunOption::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Refresh::WithDomainOption::LetDefinitions
+  def com_a_avatar_url: () -> String
+
+  def com_a_header_url: () -> String
+
+  def com_b_avatar_url: () -> String
+
+  def com_b_header_url: () -> String
+
+  def net_avatar_url: () -> String
+
+  def net_header_url: () -> String
+
+  def account_example_com_a: () -> Account
+
+  def domain: () -> String
+
+  def account_example_com_b: () -> Account
+
+  def account_example_net: () -> Account
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Prune::LetDefinitions
+  def local_account: () -> Account
+
+  def bot_account: () -> Account
+
+  def group_account: () -> Account
+
+  def mentioned_account: () -> Account
+
+  def prunable_accounts: () -> Array[untyped]
+
+  def action: () -> Symbol
+end
+
+class RSpec::ExampleGroups::MastodonCLIAccounts::Prune
+  def expect_prune_remote_accounts_without_interaction: () -> void
+
+  def expect_not_prune_local_accounts: () -> void
+
+  def expect_not_prune_bot_accounts: () -> void
+
+  def expect_not_prune_group_accounts: () -> void
+
+  def expect_not_prune_mentioned_accounts: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Prune::WithDryRunOption::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::MastodonCLIAccounts::Prune::WithDryRunOption
+  def expect_no_account_prunes: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Create::WhenRequiredUSERNAMEAndEmailAreProvided::WithReattachOption::WhenAccountSUserIsPresent::LetDefinitions
+  def user: () -> User
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Create::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Create::WhenRequiredUSERNAMEAndEmailAreProvided::LetDefinitions
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Create::WhenRequiredUSERNAMEAndEmailAreProvided::WithReattachOption::WhenAccountSUserIsPresent::WithForceOption::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Create::WhenRequiredUSERNAMEAndEmailAreProvided::WithReattachOption::WhenAccountSUserIsNotPresent::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::MastodonCLIAccounts::Create::WhenRequiredUSERNAMEAndEmailAreProvided::WithReattachOption::WhenAccountSUserIsNotPresent::BehavesLikeANewUserWithGivenEmailAddressAndUsername
+  def user_from_options: () -> void
+
+  def account_from_options: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Create::WhenRequiredUSERNAMEAndEmailAreProvided::WithConfirmedOption::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::MastodonCLIAccounts::Create::WhenRequiredUSERNAMEAndEmailAreProvided::WithConfirmedOption::BehavesLikeANewUserWithGivenEmailAddressAndUsername
+  def user_from_options: () -> void
+
+  def account_from_options: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Create::WhenRequiredUSERNAMEAndEmailAreProvided::WithRoleOption::WhenRoleDoesNotExist::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Create::WhenRequiredUSERNAMEAndEmailAreProvided::WithRoleOption::WhenRoleExists::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+
+  def default_role: () -> UserRole
+end
+
+class RSpec::ExampleGroups::MastodonCLIAccounts::Create::WhenRequiredUSERNAMEAndEmailAreProvided::WithRoleOption::WhenRoleExists::BehavesLikeANewUserWithGivenEmailAddressAndUsername
+  def user_from_options: () -> void
+
+  def account_from_options: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Create::WhenRequiredUSERNAMEAndEmailAreProvided::WithUSERNAMEAndEmailOnly::WithInvalidEmailValue::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Create::WhenRequiredUSERNAMEAndEmailAreProvided::WithUSERNAMEAndEmailOnly::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::MastodonCLIAccounts::Create::WhenRequiredUSERNAMEAndEmailAreProvided::WithUSERNAMEAndEmailOnly::BehavesLikeANewUserWithGivenEmailAddressAndUsername
+  def user_from_options: () -> void
+
+  def account_from_options: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Create::WhenRequiredUSERNAMEAndEmailAreProvided::WithApproveOption::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::MastodonCLIAccounts::Create::WhenRequiredUSERNAMEAndEmailAreProvided::WithApproveOption::BehavesLikeANewUserWithGivenEmailAddressAndUsername
+  def user_from_options: () -> void
+
+  def account_from_options: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Create::WhenRequiredEmailOptionIsNotProvided::LetDefinitions
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Delete::LetDefinitions
+  def delete_account_service: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def action: () -> Symbol
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Delete::WhenUsernameIsProvided::LetDefinitions
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Delete::WhenUsernameIsProvided::WhenTheGivenUsernameIsNotFound::LetDefinitions
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Delete::WhenUsernameIsProvided::WithDryRunOption::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Delete::WhenEmailIsProvided::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Delete::WhenEmailIsProvided::WhenTheGivenEmailAddressIsNotFound::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Delete::WhenEmailIsProvided::WithDryRunOption::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Delete::WhenBothUsernameAndEmailAreProvided::LetDefinitions
+  def arguments: () -> Array[untyped]
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Modify::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Modify::WhenTheGivenUsernameIsNotFound::LetDefinitions
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Modify::WhenTheGivenUsernameIsFound::LetDefinitions
+  def arguments: () -> Array[untyped]
+
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Modify::WhenTheGivenUsernameIsFound::WhenProvidedDataIsInvalid::LetDefinitions
+  def user: () -> User
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Modify::WhenTheGivenUsernameIsFound::WithEmailOption::LetDefinitions
+  def user: () -> User
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Modify::WhenTheGivenUsernameIsFound::WithEmailOption::WithConfirmOption::LetDefinitions
+  def user: () -> User
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Modify::WhenTheGivenUsernameIsFound::WithApproveOption::LetDefinitions
+  def user: () -> User
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Modify::WhenTheGivenUsernameIsFound::WithEnableOption::LetDefinitions
+  def user: () -> User
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Modify::WhenTheGivenUsernameIsFound::WithResetPasswordOption::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Modify::WhenTheGivenUsernameIsFound::WithConfirmOption::LetDefinitions
+  def user: () -> User
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Modify::WhenTheGivenUsernameIsFound::WithRemoveRoleOption::LetDefinitions
+  def user: () -> User
+
+  def role: () -> UserRole
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Modify::WhenTheGivenUsernameIsFound::WithDisableOption::LetDefinitions
+  def user: () -> User
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Modify::WhenTheGivenUsernameIsFound::WithRoleOption::WhenTheGivenRoleIsNotFound::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Modify::WhenTheGivenUsernameIsFound::WithRoleOption::WhenTheGivenRoleIsFound::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+
+  def default_role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Modify::WhenTheGivenUsernameIsFound::WithDisable2faOption::LetDefinitions
+  def user: () -> User
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Cull::LetDefinitions
+  def tom: () -> Account
+
+  def bob: () -> Account
+
+  def gon: () -> Account
+
+  def ana: () -> Account
+
+  def tales: () -> Account
+
+  def delete_account_service: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def action: () -> Symbol
+end
+
+class RSpec::ExampleGroups::MastodonCLIAccounts::Cull::WhenADomainIsUnavailable::WhenAnSslErrorOccurs::BehavesLikeAnUnavailableDomain
+  def expect_skip_accounts_from_unavailable_domain: () -> void
+end
+
+class RSpec::ExampleGroups::MastodonCLIAccounts::Cull::WhenADomainIsUnavailable::WhenAPrivateNetworkAddressErrorOccurs::BehavesLikeAnUnavailableDomain
+  def expect_skip_accounts_from_unavailable_domain: () -> void
+end
+
+class RSpec::ExampleGroups::MastodonCLIAccounts::Cull::WhenADomainIsUnavailable::WhenAConnectionErrorOccurs::BehavesLikeAnUnavailableDomain
+  def expect_skip_accounts_from_unavailable_domain: () -> void
+end
+
+class RSpec::ExampleGroups::MastodonCLIAccounts::Cull::WhenADomainIsUnavailable::WhenAConnectionTimeoutOccurs::BehavesLikeAnUnavailableDomain
+  def expect_skip_accounts_from_unavailable_domain: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Cull::WhenADomainIsSpecified::LetDefinitions
+  def arguments: () -> Array[untyped]
+end
+
+class RSpec::ExampleGroups::MastodonCLIAccounts::Cull::WhenADomainIsSpecified
+  def expect_delete_inactive_remote_accounts: () -> void
+end
+
+class RSpec::ExampleGroups::MastodonCLIAccounts::Cull::WhenNoDomainIsSpecified
+  def expect_delete_inactive_remote_accounts: () -> void
+
+  def expect_not_delete_active_accounts: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Merge::WhenFromAccountAndToAccountPublicKeysMatch::LetDefinitions
+  def from_account: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def to_account: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Merge::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Merge::WhenFromAccountIsALocalAccount::LetDefinitions
+  def arguments: () -> Array[untyped]
+
+  def from_account: () -> Account
+
+  def to_account: () -> Account
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Merge::WhenToAccountIsNotFound::LetDefinitions
+  def arguments: () -> Array[untyped]
+
+  def from_account: () -> Account
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Merge::WhenFromAccountAndToAccountPublicKeysDoNotMatch::LetDefinitions
+  def from_account: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def to_account: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Merge::WhenFromAccountAndToAccountPublicKeysDoNotMatch::WithForceOption::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Merge::WhenToAccountIsLocal::LetDefinitions
+  def arguments: () -> Array[untyped]
+
+  def from_account: () -> Account
+
+  def to_account: () -> Account
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Merge::WhenFromAccountIsNotFound::LetDefinitions
+  def arguments: () -> Array[untyped]
+
+  def to_account: () -> Account
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::FixDuplicates::LetDefinitions
+  def uri: () -> String
+
+  def service_double: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Unfollow::WhenTheGivenUsernameIsFound::LetDefinitions
+  def target_account: () -> Account
+
+  def follower_chris: () -> Account
+
+  def follower_rambo: () -> Account
+
+  def follower_ana: () -> Account
+
+  def unfollow_service: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Unfollow::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Unfollow::WhenTheGivenUsernameIsNotFound::LetDefinitions
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Migrate::LetDefinitions
+  def source_account: () -> Account
+
+  def target_account: () -> Account
+
+  def resolve_account_service: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def move_service: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def action: () -> Symbol
+
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Migrate::WithTargetOption::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Migrate::WithTargetOption::WithTargetAndForceOptions::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::MastodonCLIAccounts::Migrate::WithTargetOption::WithTargetAndForceOptions::BehavesLikeASuccessfulMigration
+  def last_migration: () -> void
+end
+
+class RSpec::ExampleGroups::MastodonCLIAccounts::Migrate::WithTargetOption::WhenTheSpecifiedTargetAccountExists::BehavesLikeASuccessfulMigration
+  def last_migration: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Migrate::WithReplayOption::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::MastodonCLIAccounts::Migrate::WithReplayOption::WhenTheSpecifiedAccountHasAPreviousMigration::BehavesLikeASuccessfulMigration
+  def last_migration: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Migrate::WithReplayOption::WhenTheSpecifiedAccountHasAPreviousMigration::WithForceOption::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::MastodonCLIAccounts::Migrate::WithReplayOption::WhenTheSpecifiedAccountHasAPreviousMigration::WithForceOption::BehavesLikeASuccessfulMigration
+  def last_migration: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Migrate::WhenBothReplayAndTargetOptionsAreGiven::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Migrate::WhenTheGivenUsernameIsNotFound::LetDefinitions
+  def arguments: () -> Array[untyped]
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Backup::WhenTheGivenUsernameIsFound::LetDefinitions
+  def user: () -> User
+
+  def account: () -> Account
+
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Backup::LetDefinitions
+  def action: () -> Symbol
+end
+
+class RSpec::ExampleGroups::MastodonCLIAccounts::Backup::WhenTheGivenUsernameIsFound
+  def latest_backup: () -> Backup
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::Backup::WhenTheGivenUsernameIsNotFound::LetDefinitions
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::ResetRelationships::LetDefinitions
+  def action: () -> Symbol
+
+  def arguments: () -> Array[untyped]
+
+  def target_account: () -> Account
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::ResetRelationships::WhenTheGivenUsernameIsFound::LetDefinitions
+  def accounts: () -> Array[untyped]
+
+  def total_relationships: () -> Integer
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::ResetRelationships::WhenTheGivenUsernameIsFound::WithFollowsAndFollowersOptions::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::ResetRelationships::WhenTheGivenUsernameIsFound::WithFollowsOption::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::ResetRelationships::WhenTheGivenUsernameIsFound::WithFollowersOption::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIAccounts::ResetRelationships::WhenTheGivenUsernameIsNotFound::LetDefinitions
+  def arguments: () -> Array[untyped]
+
+  def options: () -> Hash[untyped, untyped]
+end

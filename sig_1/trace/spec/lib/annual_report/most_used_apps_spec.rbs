@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::AnnualReportMostUsedApps::Generate::WithAnActiveAccount::LetDefinitions
+  def account: () -> Account
+
+  def application: () -> Doorkeeper::Application
+
+  def most_application: () -> Doorkeeper::Application
+end
+
+module RSpec::ExampleGroups::AnnualReportMostUsedApps::Generate::LetDefinitions
+  def subject: () -> AnnualReport::MostUsedApps
+end
+
+module RSpec::ExampleGroups::AnnualReportMostUsedApps::Generate::WithAnInactiveAccount::LetDefinitions
+  def account: () -> Account
+end

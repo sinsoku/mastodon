@@ -1,0 +1,7 @@
+class Api::V1::Statuses::MutesController
+  def set_conversation: () -> nil
+
+  def create: () -> String
+
+  def destroy: () -> String
+end

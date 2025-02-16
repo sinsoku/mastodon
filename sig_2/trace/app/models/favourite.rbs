@@ -1,0 +1,7 @@
+class Favourite
+  def increment_cache_counters: () -> bool
+
+  def decrement_cache_counters: () -> bool
+
+  def invalidate_cleanup_info: () -> nil
+end

@@ -1,0 +1,7 @@
+class AppealService
+  def call: (AccountWarning, String) -> void
+
+  def create_appeal!: () -> void
+
+  def notify_staff!: () -> void
+end

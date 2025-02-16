@@ -1,0 +1,7 @@
+class Form::DomainBlockBatch
+  def save: () -> void
+
+  def save!: () -> void
+
+  def domain_blocks: () -> Array[untyped]
+end

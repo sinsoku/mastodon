@@ -1,0 +1,29 @@
+module RSpec::ExampleGroups::DisallowedHashtagsValidator::LetDefinitions
+  def disallowed_tags: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::DisallowedHashtagsValidator::Validate::LetDefinitions
+  def status: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def errors: () -> RSpec::Mocks::InstanceVerifyingDouble
+end
+
+module RSpec::ExampleGroups::DisallowedHashtagsValidator::Validate::WithARemoteReblog::LetDefinitions
+  def local: () -> bool
+
+  def reblog: () -> bool
+end
+
+module RSpec::ExampleGroups::DisallowedHashtagsValidator::Validate::WithALocalOriginalStatus::WhenDoesNotContainAnyDisallowedHashtags::LetDefinitions
+  def disallowed_tags: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::DisallowedHashtagsValidator::Validate::WithALocalOriginalStatus::LetDefinitions
+  def local: () -> bool
+
+  def reblog: () -> bool
+end
+
+module RSpec::ExampleGroups::DisallowedHashtagsValidator::Validate::WithALocalOriginalStatus::WhenContainsDisallowedHashtags::LetDefinitions
+  def disallowed_tags: () -> Array[untyped]
+end

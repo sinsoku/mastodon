@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::LoginActivitiesPage::LetDefinitions
+  def user: () -> User
+
+  def login_activity: () -> LoginActivity
+end
+
+class RSpec::ExampleGroups::LoginActivitiesPage::WhenSignedIn::ViewingTheLoginActivitiesPage
+  def browser_description: () -> void
+end

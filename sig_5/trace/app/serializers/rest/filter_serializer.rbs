@@ -1,0 +1,5 @@
+class REST::FilterSerializer
+  def id: () -> String
+
+  def rules_requested?: () -> bool
+end

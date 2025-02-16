@@ -1,0 +1,11 @@
+class ActivityPub::FetchRemoteStatusService
+  def call: (String, ?prefetched_body: String, ?on_behalf_of: nil, ?expected_actor_uri: nil, ?request_id: nil) -> void
+
+  def supported_context?: () -> void
+
+  def expected_object_type?: () -> void
+
+  def trustworthy_attribution?: (String, String) -> bool
+
+  def account_from_uri: (String) -> Account
+end

@@ -1,0 +1,49 @@
+module RSpec::ExampleGroups::StatusReachFinder::Inboxes::WithALocalStatus::WhenItHasBeenRepliedToByARemoteAccount::LetDefinitions
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::StatusReachFinder::Inboxes::WithALocalStatus::LetDefinitions
+  def status: () -> Status
+
+  def alice: () -> Account
+
+  def parent_status: () -> nil
+
+  def visibility: () -> Symbol
+
+  def subject: () -> StatusReachFinder
+end
+
+module RSpec::ExampleGroups::StatusReachFinder::Inboxes::WithALocalStatus::WhenItHasBeenRepliedToByARemoteAccount::WhenStatusIsNotPublic::LetDefinitions
+  def visibility: () -> Symbol
+end
+
+module RSpec::ExampleGroups::StatusReachFinder::Inboxes::WithALocalStatus::WhenItHasBeenRebloggedByARemoteAccount::LetDefinitions
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::StatusReachFinder::Inboxes::WithALocalStatus::WhenItHasBeenRebloggedByARemoteAccount::WhenStatusIsNotPublic::LetDefinitions
+  def visibility: () -> Symbol
+end
+
+module RSpec::ExampleGroups::StatusReachFinder::Inboxes::WithALocalStatus::WhenItContainsMentionsOfRemoteAccounts::LetDefinitions
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::StatusReachFinder::Inboxes::WithALocalStatus::WhenItHasBeenFavouritedByARemoteAccount::LetDefinitions
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::StatusReachFinder::Inboxes::WithALocalStatus::WhenItHasBeenFavouritedByARemoteAccount::WhenStatusIsNotPublic::LetDefinitions
+  def visibility: () -> Symbol
+end
+
+module RSpec::ExampleGroups::StatusReachFinder::Inboxes::WithALocalStatus::WhenItIsAReplyToARemoteAccount::LetDefinitions
+  def parent_status: () -> Status
+
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::StatusReachFinder::Inboxes::WithALocalStatus::WhenItIsAReplyToARemoteAccount::WhenStatusIsNotPublicAndRepliedToAccountIsNotMentioned::LetDefinitions
+  def visibility: () -> Symbol
+end

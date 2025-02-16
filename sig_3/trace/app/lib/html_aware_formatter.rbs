@@ -1,0 +1,9 @@
+class HtmlAwareFormatter
+  def initialize: (String, bool, ?Hash[untyped, untyped]) -> void
+
+  def to_s: () -> void
+
+  def linkify: () -> void
+
+  def reformat: () -> String
+end

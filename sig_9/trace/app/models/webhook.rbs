@@ -1,0 +1,26 @@
+class Webhook
+  def required_permissions: () -> void
+                          | () -> Array[untyped]
+
+  def self.permission_for_event: (String) -> void
+                               | (nil) -> void
+
+  def generate_secret: () -> nil
+                     | () -> String
+
+  def invalid_events?: () -> bool
+
+  def validate_permissions: () -> nil
+                          | () -> ActiveModel::Error
+
+  def validate_template: () -> nil
+                       | () -> ActiveModel::Error
+
+  def disable!: () -> void
+
+  def events_validation_error: () -> ActiveModel::Error
+
+  def enable!: () -> void
+
+  def rotate_secret!: () -> void
+end

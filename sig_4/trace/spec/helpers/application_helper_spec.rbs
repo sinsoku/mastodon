@@ -1,0 +1,3 @@
+class RSpec::ExampleGroups::ApplicationHelper::BodyClasses::WithABodyClassStringFromAController
+  def controller_helpers: () -> void
+end

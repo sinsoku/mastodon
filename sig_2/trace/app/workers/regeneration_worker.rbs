@@ -1,0 +1,4 @@
+class RegenerationWorker
+  def perform: (Integer, ?Symbol) -> nil
+             | (String, ?Symbol) -> bool
+end

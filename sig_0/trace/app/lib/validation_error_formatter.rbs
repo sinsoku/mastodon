@@ -1,0 +1,9 @@
+class ValidationErrorFormatter
+  def initialize: (ActiveRecord::RecordInvalid, ?Hash[untyped, untyped]) -> void
+
+  def as_json: () -> void
+
+  def details: () -> void
+
+  def errors: () -> ActiveModel::Errors
+end

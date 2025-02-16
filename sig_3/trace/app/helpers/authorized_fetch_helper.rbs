@@ -1,0 +1,3 @@
+module AuthorizedFetchHelper
+  def authorized_fetch_mode?: () -> bool
+end

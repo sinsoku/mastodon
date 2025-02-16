@@ -1,0 +1,7 @@
+class RSpec::ExampleGroups::CustomCSS::GETCustomCss::WithCSSSettings
+  def expected_css: () -> void
+end
+
+class RSpec::ExampleGroups::CustomCSS::GETCustomCss::WithHighlightedColoredUserRoleRecords
+  def expected_css: () -> void
+end

@@ -1,0 +1,15 @@
+class Api::V1::FollowRequestsController
+  def index: () -> String
+
+  def load_accounts: () -> Array[untyped]
+
+  def default_accounts: () -> ActiveRecord::Relation
+
+  def paginated_follow_requests: () -> void
+
+  def next_path: () -> void
+
+  def records_continue?: () -> void
+
+  def prev_path: () -> void
+end

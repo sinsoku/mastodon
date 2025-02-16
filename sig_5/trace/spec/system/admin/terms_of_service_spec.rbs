@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::AdminTermsOfServices::ViewingTermsOfServicesIndexPage::LetDefinitions
+  def terms: () -> TermsOfService
+end

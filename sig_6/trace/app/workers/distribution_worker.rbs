@@ -1,0 +1,3 @@
+class DistributionWorker
+  def perform: (Integer, ?Hash[untyped, untyped]) -> void
+end

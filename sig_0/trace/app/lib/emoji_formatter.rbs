@@ -1,0 +1,21 @@
+class EmojiFormatter
+  def initialize: (ActiveSupport::SafeBuffer, Array[untyped], ?Hash[untyped, untyped]) -> void
+
+  def to_s: () -> void
+
+  def emoji_map: () -> Hash[untyped, untyped]
+
+  def tag_for_emoji: (String, Array[untyped]) -> void
+
+  def raw_shortcode?: () -> void
+
+  def animate?: () -> void
+
+  def image_attributes: () -> Hash[untyped, untyped]
+
+  def image_class_names: () -> void
+
+  def image_style: () -> void
+
+  def image_data_attributes: (String, String) -> void
+end

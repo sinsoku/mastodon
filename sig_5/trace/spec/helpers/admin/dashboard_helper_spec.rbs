@@ -1,0 +1,23 @@
+module RSpec::ExampleGroups::AdminDashboardHelper::RelevantAccountTimestamp::WithAnAccountWithNewerSignIn::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AdminDashboardHelper::RelevantAccountTimestamp::WithAnAccountWithOlderSignIn::LetDefinitions
+  def account: () -> Account
+
+  def stamp: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::AdminDashboardHelper::RelevantAccountTimestamp::WithAnAccountWithoutSignInOrLastStatusOrPending::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AdminDashboardHelper::RelevantAccountTimestamp::WithAnAccountWhereTheUserIsPending::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AdminDashboardHelper::RelevantAccountTimestamp::WithAnAccountWithALastStatusValue::LetDefinitions
+  def account: () -> Account
+
+  def stamp: () -> ActiveSupport::TimeWithZone
+end

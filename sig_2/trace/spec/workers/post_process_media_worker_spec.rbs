@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::PostProcessMediaWorker::LetDefinitions
+  def worker: () -> PostProcessMediaWorker
+end
+
+module RSpec::ExampleGroups::PostProcessMediaWorker::Perform::LetDefinitions
+  def media_attachment: () -> MediaAttachment
+end

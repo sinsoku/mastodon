@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::VerifyAccountLinksWorker::LetDefinitions
+  def worker: () -> VerifyAccountLinksWorker
+end

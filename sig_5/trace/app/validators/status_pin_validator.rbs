@@ -1,0 +1,3 @@
+class StatusPinValidator
+  def validate: (StatusPin) -> nil
+end

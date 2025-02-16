@@ -1,0 +1,22 @@
+class Settings::ImportsController
+  def set_bulk_import: () -> nil
+                     | () -> BulkImport
+
+  def confirm: () -> String
+
+  def create: () -> String
+            | () -> ActiveSupport::SafeBuffer
+
+  def import_params: () -> ActionController::Parameters
+
+  def set_recent_imports: () -> void
+                        | () -> ActiveRecord::AssociationRelation
+
+  def index: () -> Form::Import
+
+  def show: () -> nil
+
+  def failures: () -> String
+
+  def destroy: () -> String
+end

@@ -1,0 +1,30 @@
+class Trends::History
+  def initialize: (String, Integer) -> void
+                | (String, nil) -> void
+
+  def as_json: (*untyped) -> void
+
+  def each: () -> Array[untyped]
+
+  def get: (ActiveSupport::TimeWithZone) -> void
+
+  def add: (IPAddr, ?Time) -> void
+end
+
+class Trends::History::Day
+  def initialize: (String, Integer, ActiveSupport::TimeWithZone) -> void
+                | (String, Integer, Time) -> void
+                | (String, nil, ActiveSupport::TimeWithZone) -> void
+
+  def as_json: () -> Hash[untyped, untyped]
+
+  def accounts: () -> Integer
+
+  def key_for: (Symbol) -> void
+
+  def key_prefix: () -> String
+
+  def uses: () -> Integer
+
+  def add: (IPAddr) -> void
+end

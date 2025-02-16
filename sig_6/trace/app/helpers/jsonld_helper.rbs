@@ -1,0 +1,39 @@
+module JsonLdHelper
+  def fetch_resource: (String, bool, ?nil, ?request_options: Hash[untyped, untyped]) -> nil
+                    | (String, bool, ?nil, ?request_options: Hash[untyped, untyped]) -> Hash[untyped, untyped]
+
+  def fetch_resource_without_id_validation: (String, ?nil, ?bool, ?request_options: Hash[untyped, untyped]) -> nil
+                                          | (String, ?nil, ?bool, ?request_options: Hash[untyped, untyped]) -> Hash[untyped, untyped]
+
+  def build_request: (String, ?Account, ?options: Hash[untyped, untyped]) -> Request
+
+  def response_successful?: (HTTP::Response) -> void
+
+  def response_error_unsalvageable?: (HTTP::Response) -> void
+
+  def value_or_id: (String) -> void
+                 | (ActiveSupport::HashWithIndifferentAccess) -> void
+                 | (String) -> String
+
+  def uri_from_bearcap: (String) -> String
+
+  def canonicalize: (Hash[untyped, untyped]) -> void
+                  | (ActiveSupport::HashWithIndifferentAccess) -> void
+
+  def body_to_json: (String, ?compare_id: String) -> void
+                  | (String, ?compare_id: nil) -> void
+
+  def valid_activitypub_content_type?: (HTTP::Response) -> void
+
+  def supported_context?: (Hash[untyped, untyped]) -> bool
+
+  def equals_or_includes?: (String, String) -> void
+
+  def equals_or_includes_any?: (String, Array[untyped]) -> void
+
+  def unsupported_uri_scheme?: (String) -> void
+
+  def first_of_value: (nil) -> nil
+
+  def as_array: (Array[untyped]) -> Array[untyped]
+end

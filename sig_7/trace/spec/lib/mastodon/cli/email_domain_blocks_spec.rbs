@@ -1,0 +1,62 @@
+module RSpec::ExampleGroups::MastodonCLIEmailDomainBlocks::LetDefinitions
+  def subject: () -> nil
+             | () -> StringIO
+
+  def cli: () -> Mastodon::CLI::EmailDomainBlocks
+
+  def arguments: () -> Array[untyped]
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIEmailDomainBlocks::Add::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLIEmailDomainBlocks::Add::WhenNoBlocksExist::LetDefinitions
+  def arguments: () -> Array[untyped]
+
+  def domain: () -> String
+end
+
+module RSpec::ExampleGroups::MastodonCLIEmailDomainBlocks::Add::WhenBlocksExist::LetDefinitions
+  def domain: () -> String
+
+  def arguments: () -> Array[untyped]
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIEmailDomainBlocks::Add::WithWithDnsRecordsTrue::LetDefinitions
+  def domain: () -> String
+
+  def arguments: () -> Array[untyped]
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIEmailDomainBlocks::Remove::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLIEmailDomainBlocks::Remove::WhenNoBlocksExist::LetDefinitions
+  def arguments: () -> Array[untyped]
+
+  def domain: () -> String
+end
+
+module RSpec::ExampleGroups::MastodonCLIEmailDomainBlocks::Remove::WhenBlocksExist::LetDefinitions
+  def domain: () -> String
+
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIEmailDomainBlocks::List::WithEmailDomainBlockRecords::LetDefinitions
+  def parent_block: () -> EmailDomainBlock
+
+  def child_block: () -> EmailDomainBlock
+end
+
+module RSpec::ExampleGroups::MastodonCLIEmailDomainBlocks::List::LetDefinitions
+  def action: () -> Symbol
+end

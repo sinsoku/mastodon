@@ -1,0 +1,20 @@
+class Form::AdminSettings
+  def registrations_mode: () -> String
+
+  def require_invite_text: () -> bool
+
+  def closed_registrations_message: () -> String
+
+  def save: () -> void
+
+  def status_page_url: () -> nil
+
+  def validate_site_uploads: () -> Array[untyped]
+
+  def typecast_value: (Symbol, String) -> void
+                    | (Symbol, nil) -> void
+
+  def site_contact_username: () -> String
+
+  def site_contact_email: () -> String
+end

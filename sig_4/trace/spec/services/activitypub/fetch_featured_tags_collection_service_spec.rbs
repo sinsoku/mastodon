@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::ActivityPubFetchFeaturedTagsCollectionService::LetDefinitions
+  def collection_url: () -> String
+
+  def payload: () -> ActiveSupport::HashWithIndifferentAccess
+
+  def items: () -> Array[untyped]
+
+  def subject: () -> ActivityPub::FetchFeaturedTagsCollectionService
+
+  def actor: () -> Account
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchFeaturedTagsCollectionService::Call::WhenTheEndpointIsAnOrderedCollection::LetDefinitions
+  def payload: () -> ActiveSupport::HashWithIndifferentAccess
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchFeaturedTagsCollectionService::Call::WhenTheEndpointIsAPaginatedCollection::LetDefinitions
+  def payload: () -> ActiveSupport::HashWithIndifferentAccess
+end

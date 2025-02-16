@@ -1,0 +1,10 @@
+module BrowserDetection
+  def assign_user_agent: () -> String
+
+  def detection: () -> Browser::Unknown
+               | () -> Browser::Safari
+
+  def browser: () -> Symbol
+
+  def platform: () -> Symbol
+end

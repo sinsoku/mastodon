@@ -1,0 +1,7 @@
+module AccountableConcern
+  def log_action: (Symbol, User) -> void
+                | (Symbol, IpBlock) -> void
+                | (Symbol, Relay) -> void
+                | (Symbol, Account) -> void
+                | (Symbol, Appeal) -> void
+end

@@ -1,0 +1,67 @@
+module RSpec::ExampleGroups::UserRole::CallbackForPosition::WhenEveryone::LetDefinitions
+  def subject: () -> UserRole
+end
+
+module RSpec::ExampleGroups::UserRole::CallbackForPosition::WhenNotEveryone::LetDefinitions
+  def subject: () -> UserRole
+end
+
+module RSpec::ExampleGroups::UserRole::Can::LetDefinitions
+  def subject: () -> UserRole
+end
+
+module RSpec::ExampleGroups::UserRole::ComputedPermissions::LetDefinitions
+  def subject: () -> UserRole
+end
+
+module RSpec::ExampleGroups::UserRole::ComputedPermissions::WhenTheRoleIsEveryone::LetDefinitions
+  def subject: () -> UserRole
+end
+
+module RSpec::ExampleGroups::UserRole::ComputedPermissions::WhenTheRoleIsNobody::LetDefinitions
+  def subject: () -> UserRole
+end
+
+module RSpec::ExampleGroups::UserRole::Everyone::LetDefinitions
+  def subject: () -> UserRole
+end
+
+module RSpec::ExampleGroups::UserRole::PermissionsAsKeys_2::WithASingleValue::LetDefinitions
+  def input: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::UserRole::PermissionsAsKeys_2::WithAnUnknownValue::LetDefinitions
+  def input: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::UserRole::PermissionsAsKeys_2::WithMultipleValues::LetDefinitions
+  def input: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::UserRole::Validations::Name::WhenNotEveryone::LetDefinitions
+  def subject: () -> UserRole
+end
+
+module RSpec::ExampleGroups::UserRole::Validations::Name::WhenEveryone::LetDefinitions
+  def subject: () -> UserRole
+end
+
+module RSpec::ExampleGroups::UserRole::Validations::WhenCurrentAccountIsSet::LetDefinitions
+  def subject: () -> UserRole
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::UserRole::Validations::WhenCurrentAccountIsSet::WhenCurrentAccountIsChangingTheirOwnRole::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::UserRole::Validations::Position::LetDefinitions
+  def subject: () -> UserRole
+
+  def limit: () -> Integer
+end
+
+module RSpec::ExampleGroups::UserRole::Nobody::LetDefinitions
+  def subject: () -> UserRole
+end

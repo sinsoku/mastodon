@@ -1,0 +1,18 @@
+class ActivityPub::Activity
+  def initialize: (ActiveSupport::HashWithIndifferentAccess, Account, **nil) -> void
+
+  def object_uri: () -> void
+
+  def account_from_uri: (String) -> Account
+                      | (String) -> nil
+
+  def delete_arrived_first?: (String) -> void
+
+  def status_from_uri: (String) -> void
+
+  def follow_request_from_object: () -> nil
+                                | () -> FollowRequest
+
+  def follow_from_object: () -> nil
+                        | () -> Follow
+end

@@ -1,0 +1,49 @@
+module RSpec::ExampleGroups::ActivityPubProcessAccountService::LetDefinitions
+  def subject: () -> ActivityPub::ProcessAccountService
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessAccountService::WithAttributionDomains::LetDefinitions
+  def payload: () -> ActiveSupport::HashWithIndifferentAccess
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessAccountService::WhenAccountIsSuspended::LetDefinitions
+  def account: () -> Account
+
+  def subject: () -> Account
+
+  def payload: () -> ActiveSupport::HashWithIndifferentAccess
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessAccountService::WhenAccountIsSuspended::WhenRemotely::LetDefinitions
+  def suspension_origin: () -> Symbol
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessAccountService::WhenAccountIsSuspended::WhenLocally::LetDefinitions
+  def suspension_origin: () -> Symbol
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessAccountService::WithPropertyValuesAnAvatarAndAProfileHeader::LetDefinitions
+  def payload: () -> ActiveSupport::HashWithIndifferentAccess
+end
+
+class RSpec::ExampleGroups::ActivityPubProcessAccountService
+  def create_some_remote_accounts: () -> RSpec::Matchers::BuiltIn::ChangeRelatively
+
+  def create_fewer_than_rate_limit_accounts: () -> void
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessAccountService::WhenAccountsReferencingOtherAccounts::LetDefinitions
+  def payload: () -> ActiveSupport::HashWithIndifferentAccess
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessAccountService::WhenDiscoveringManySubdomainsInAShortTimeframe::LetDefinitions
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessAccountService::WhenAccountIsNotSuspended::LetDefinitions
+  def account: () -> Account
+
+  def subject: () -> Account
+
+  def payload: () -> ActiveSupport::HashWithIndifferentAccess
+end

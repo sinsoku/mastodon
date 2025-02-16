@@ -1,0 +1,7 @@
+class AnnualReport::TopHashtags
+  def generate: () -> void
+
+  def top_hashtags: () -> Hash[untyped, untyped]
+
+  def coalesced_tag_names: () -> void
+end

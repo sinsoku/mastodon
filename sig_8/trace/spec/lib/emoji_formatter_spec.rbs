@@ -1,0 +1,34 @@
+module RSpec::ExampleGroups::EmojiFormatter::LetDefinitions
+  def emoji: () -> CustomEmoji
+end
+
+module RSpec::ExampleGroups::EmojiFormatter::ToS::LetDefinitions
+  def subject: () -> ActiveSupport::SafeBuffer
+             | () -> nil
+
+  def emojis: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::EmojiFormatter::ToS::WhenGivenTextWithAnEmojiShortcodeAtTheStart::LetDefinitions
+  def text: () -> ActiveSupport::SafeBuffer
+end
+
+class RSpec::ExampleGroups::EmojiFormatter
+  def preformat_text: (String) -> void
+end
+
+module RSpec::ExampleGroups::EmojiFormatter::ToS::WhenGivenTextWithAnEmojiShortcodeInTheMiddle::LetDefinitions
+  def text: () -> ActiveSupport::SafeBuffer
+end
+
+module RSpec::ExampleGroups::EmojiFormatter::ToS::WhenGivenTextWithAnEmojiShortcodeAtTheEnd::LetDefinitions
+  def text: () -> ActiveSupport::SafeBuffer
+end
+
+module RSpec::ExampleGroups::EmojiFormatter::ToS::WhenGivenTextWithConcatenatedEmojiShortcodes::LetDefinitions
+  def text: () -> ActiveSupport::SafeBuffer
+end
+
+module RSpec::ExampleGroups::EmojiFormatter::ToS::WhenGivenTextThatIsNotMarkedAsHtmlSafe::LetDefinitions
+  def text: () -> String
+end

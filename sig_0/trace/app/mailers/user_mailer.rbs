@@ -1,0 +1,9 @@
+class UserMailer
+  def set_instance: () -> String
+
+  def appeal_approved: (User, Appeal) -> Mail::Message
+
+  def locale: (?use_current_locale: bool) -> void
+
+  def appeal_rejected: (User, Appeal) -> Mail::Message
+end

@@ -1,0 +1,6 @@
+module JsonLdHelper
+  def canonicalize: (Hash[untyped, untyped]) -> void
+                  | (ActiveSupport::HashWithIndifferentAccess) -> void
+
+  def response_successful?: (HTTP::Response) -> void
+end

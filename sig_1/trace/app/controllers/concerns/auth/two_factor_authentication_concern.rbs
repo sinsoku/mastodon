@@ -1,0 +1,14 @@
+module Auth::TwoFactorAuthenticationConcern
+  def two_factor_enabled?: () -> bool
+
+  def authenticate_with_two_factor: () -> ActiveSupport::SafeBuffer
+
+  def prompt_for_two_factor: (User) -> void
+
+  def webauthn_enabled?: () -> bool
+end
+
+module Auth::SessionsController::HelperMethods
+  def webauthn_enabled?: (*untyped, **untyped) -> void
+                       | (*untyped, **untyped) -> bool
+end

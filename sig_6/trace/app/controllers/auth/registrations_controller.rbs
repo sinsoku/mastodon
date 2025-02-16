@@ -1,0 +1,17 @@
+class Auth::RegistrationsController
+  def set_invite: () -> Invite
+
+  def invite_code: () -> void
+
+  def check_enabled_registrations: () -> nil
+
+  def set_rules: () -> ActiveRecord::Relation
+
+  def require_rules_acceptance!: () -> nil
+
+  def new: () -> ActiveSupport::SafeBuffer
+
+  def build_resource: (?nil) -> void
+
+  def determine_layout: () -> String
+end

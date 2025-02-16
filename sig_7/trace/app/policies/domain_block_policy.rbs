@@ -1,0 +1,11 @@
+class DomainBlockPolicy
+  def create?: () -> bool
+
+  def destroy?: () -> bool
+
+  def show?: () -> bool
+
+  def update?: () -> bool
+
+  def index?: () -> bool
+end

@@ -1,0 +1,11 @@
+class Admin::Trends::TagsController
+  def index: () -> Trends::TagBatch
+
+  def filtered_tags: () -> ActiveRecord::Relation
+
+  def filter_params: () -> void
+
+  def batch: () -> String
+
+  def trends_tag_batch_params: () -> nil
+end

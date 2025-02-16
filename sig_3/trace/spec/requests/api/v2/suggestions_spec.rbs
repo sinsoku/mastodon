@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::SuggestionsAPI::GETApiV2Suggestions::LetDefinitions
+  def bob: () -> Account
+
+  def jeff: () -> Account
+end
+
+module RSpec::ExampleGroups::SuggestionsAPI::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def scopes: () -> String
+end

@@ -1,0 +1,71 @@
+class Status
+  def local?: () -> bool
+
+  def prepare_contents: () -> nil
+
+  def set_reblog: () -> nil
+
+  def reblog?: () -> void
+             | () -> bool
+
+  def set_visibility: () -> nil
+
+  def set_conversation: () -> Conversation
+                      | () -> nil
+
+  def reply?: () -> void
+            | () -> bool
+
+  def set_local: () -> bool
+
+  def with_media?: () -> void
+
+  def ordered_media_attachments: () -> Array[untyped]
+
+  def set_poll_id: () -> nil
+                 | () -> bool
+
+  def trigger_create_webhooks: () -> String
+                             | () -> nil
+
+  def increment_counter_caches: () -> nil
+
+  def store_uri: () -> bool
+
+  def object_type: () -> void
+
+  def update_statistics: () -> bool
+                       | () -> nil
+
+  def distributable?: () -> void
+
+  def content: () -> String
+
+  def proper: () -> Status
+
+  def emojis: () -> void
+
+  def increment_count!: (Symbol) -> void
+
+  def untrusted_favourites_count: () -> nil
+                                | () -> Integer
+
+  def favourites_count: () -> Integer
+
+  def status_stat: () -> StatusStat
+
+  def update_status_stat!: (Hash[untyped, untyped]) -> void
+
+  def trigger_update_webhooks: () -> nil
+                             | () -> String
+
+  def reset_preview_card!: () -> void
+
+  def untrusted_reblogs_count: () -> void
+
+  def within_realtime_window?: () -> void
+
+  def discard_with_reblogs: () -> void
+
+  def decrement_count!: (Symbol) -> void
+end

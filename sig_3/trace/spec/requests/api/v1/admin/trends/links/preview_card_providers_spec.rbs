@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::APIV1AdminTrendsLinksPreviewCardProviders::LetDefinitions
+  def preview_card_provider: () -> PreviewCardProvider
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def role: () -> UserRole
+
+  def scopes: () -> String
+
+  def account: () -> Account
+end

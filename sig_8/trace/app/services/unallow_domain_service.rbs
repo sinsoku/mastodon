@@ -1,0 +1,5 @@
+class UnallowDomainService
+  def call: (DomainAllow) -> void
+
+  def suspend_accounts!: (String) -> void
+end

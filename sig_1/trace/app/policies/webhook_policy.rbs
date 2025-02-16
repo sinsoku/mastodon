@@ -1,0 +1,17 @@
+class WebhookPolicy
+  def index?: () -> bool
+
+  def create?: () -> bool
+
+  def update?: () -> bool
+
+  def destroy?: () -> bool
+
+  def show?: () -> bool
+
+  def disable?: () -> bool
+
+  def rotate_secret?: () -> bool
+
+  def enable?: () -> bool
+end

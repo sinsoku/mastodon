@@ -1,0 +1,14 @@
+class Admin::Metrics::Dimension::BaseDimension
+  def initialize: (ActiveSupport::TimeWithZone, Time, Integer, ActionController::Parameters) -> void
+                | (ActiveSupport::TimeWithZone, Time, Integer, Array[untyped]) -> void
+
+  def data: () -> Array[untyped]
+
+  def load: () -> void
+
+  def cache_key: () -> void
+
+  def canonicalized_params: () -> void
+
+  def params: () -> Hash[untyped, untyped]
+end

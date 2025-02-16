@@ -1,0 +1,5 @@
+module Cacheable::ClassMethods
+  def with_includes: () -> ActiveRecord::Relation
+
+  def preload_cacheable_associations: (Array[untyped]) -> void
+end

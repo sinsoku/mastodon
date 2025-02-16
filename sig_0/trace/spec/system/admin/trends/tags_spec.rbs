@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::AdminTrendsTags::LetDefinitions
+  def current_user: () -> User
+end
+
+class RSpec::ExampleGroups::AdminTrendsTags::PerformingBatchUpdates
+  def button_for_allow: () -> void
+
+  def selection_error_text: () -> void
+end

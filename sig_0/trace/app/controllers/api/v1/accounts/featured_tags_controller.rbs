@@ -1,0 +1,7 @@
+class Api::V1::Accounts::FeaturedTagsController
+  def set_account: () -> Account
+
+  def set_featured_tags: () -> ActiveRecord::Associations::CollectionProxy
+
+  def index: () -> String
+end

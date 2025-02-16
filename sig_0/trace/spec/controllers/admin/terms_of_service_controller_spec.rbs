@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::AdminTermsOfServiceController::LetDefinitions
+  def user: () -> User
+end

@@ -1,0 +1,9 @@
+class StatusesController
+  def set_status: () -> Status
+
+  def redirect_to_original: () -> nil
+
+  def show: () -> Time
+
+  def set_link_headers: () -> String
+end

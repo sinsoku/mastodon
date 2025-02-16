@@ -1,0 +1,3 @@
+class Scheduler::Trends::ReviewNotificationsScheduler
+  def perform: () -> void
+end

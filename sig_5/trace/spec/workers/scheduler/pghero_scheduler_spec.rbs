@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::SchedulerPgheroScheduler::LetDefinitions
+  def worker: () -> Scheduler::PgheroScheduler
+end

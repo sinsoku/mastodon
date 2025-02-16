@@ -1,0 +1,105 @@
+class Status
+  def local?: () -> bool
+
+  def prepare_contents: () -> nil
+
+  def set_reblog: () -> nil
+
+  def reblog?: () -> void
+             | () -> bool
+
+  def set_visibility: () -> nil
+
+  def set_conversation: () -> Conversation
+                      | () -> Integer
+                      | () -> nil
+
+  def reply?: () -> void
+            | () -> bool
+
+  def set_local: () -> bool
+
+  def with_media?: () -> void
+
+  def ordered_media_attachments: () -> Array[untyped]
+
+  def set_poll_id: () -> nil
+                 | () -> bool
+
+  def trigger_create_webhooks: () -> String
+                             | () -> nil
+
+  def increment_counter_caches: () -> nil
+                              | () -> bool
+
+  def store_uri: () -> bool
+
+  def object_type: () -> void
+
+  def update_statistics: () -> nil
+                       | () -> bool
+
+  def distributable?: () -> void
+                    | () -> bool
+
+  def increment_count!: (Symbol) -> void
+
+  def untrusted_reblogs_count: () -> nil
+                             | () -> Integer
+
+  def status_stat: () -> StatusStat
+
+  def reblogs_count: () -> Integer
+
+  def update_status_stat!: (Hash[untyped, untyped]) -> void
+
+  def hidden?: () -> void
+
+  def untrusted_favourites_count: () -> nil
+                                | () -> Integer
+
+  def favourites_count: () -> Integer
+
+  def carried_over_reply_to_account_id: () -> void
+
+  def replies_count: () -> Integer
+
+  def in_reply_to_local_account?: () -> void
+
+  def emojis: () -> Array[untyped]
+
+  def preview_card: () -> nil
+
+  def trigger_update_webhooks: () -> String
+                             | () -> nil
+
+  def proper: () -> Status
+
+  def requires_review?: () -> void
+
+  def discard_with_reblogs: () -> void
+
+  def reported?: () -> void
+
+  def unlink_from_conversations!: () -> nil
+
+  def decrement_counter_caches: () -> nil
+
+  def decrement_count!: (Symbol) -> void
+
+  def trendable?: () -> void
+
+  def self.reblogs_map: (Array[untyped], Integer) -> Hash[untyped, untyped]
+
+  def self.favourites_map: (Array[untyped], Integer) -> Hash[untyped, untyped]
+
+  def self.bookmarks_map: (Array[untyped], Integer) -> Hash[untyped, untyped]
+
+  def self.mutes_map: (Array[untyped], Integer) -> Hash[untyped, untyped]
+
+  def self.pins_map: (Array[untyped], Integer) -> Hash[untyped, untyped]
+
+  def within_realtime_window?: () -> void
+
+  def reset_preview_card!: () -> void
+end

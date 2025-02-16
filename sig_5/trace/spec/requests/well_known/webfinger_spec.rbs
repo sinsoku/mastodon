@@ -1,0 +1,63 @@
+module RSpec::ExampleGroups::TheWellKnownWebfingerEndpoint::LetDefinitions
+  def alternate_domains: () -> Array[untyped]
+
+  def alice: () -> Account
+
+  def perform_request!: () -> Integer
+end
+
+module RSpec::ExampleGroups::TheWellKnownWebfingerEndpoint::WhenAnAccountIsTemporarilySuspended::LetDefinitions
+  def resource: () -> String
+end
+
+module RSpec::ExampleGroups::TheWellKnownWebfingerEndpoint::WhenAnAccountIsPermanentlySuspendedOrDeleted::LetDefinitions
+  def resource: () -> String
+end
+
+module RSpec::ExampleGroups::TheWellKnownWebfingerEndpoint::WithAnAlternateDomain::LetDefinitions
+  def alternate_domains: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::TheWellKnownWebfingerEndpoint::WithAnAlternateDomain::WhenAnAccountExists::LetDefinitions
+  def resource: () -> String
+end
+
+module RSpec::ExampleGroups::TheWellKnownWebfingerEndpoint::WithAnAlternateDomain::WhenTheDomainIsWrong::LetDefinitions
+  def resource: () -> String
+end
+
+module RSpec::ExampleGroups::TheWellKnownWebfingerEndpoint::WhenAnAccountIsNotFound::LetDefinitions
+  def resource: () -> String
+end
+
+module RSpec::ExampleGroups::TheWellKnownWebfingerEndpoint::WhenAnAccountExists::LetDefinitions
+  def resource: () -> String
+end
+
+module RSpec::ExampleGroups::TheWellKnownWebfingerEndpoint::WhenTheOldNameSchemeIsUsedToQueryTheInstanceActor::LetDefinitions
+  def resource: () -> String
+end
+
+module RSpec::ExampleGroups::TheWellKnownWebfingerEndpoint::WithNoResourceParameter::LetDefinitions
+  def resource: () -> nil
+end
+
+module RSpec::ExampleGroups::TheWellKnownWebfingerEndpoint::WithANonsenseParameter::LetDefinitions
+  def resource: () -> String
+end
+
+module RSpec::ExampleGroups::TheWellKnownWebfingerEndpoint::WhenAnAccountDoesNotHaveAnAvatar::LetDefinitions
+  def resource: () -> String
+
+  def alice: () -> Account
+end
+
+class RSpec::ExampleGroups::TheWellKnownWebfingerEndpoint
+  def response_avatar_link: () -> void
+end
+
+module RSpec::ExampleGroups::TheWellKnownWebfingerEndpoint::WhenAnAccountHasAnAvatar::LetDefinitions
+  def resource: () -> String
+
+  def alice: () -> Account
+end

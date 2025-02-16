@@ -1,0 +1,31 @@
+module RSpec::ExampleGroups::Media::GETMediaId::WhenTheMediaAttachmentDoesNotHaveAShortcode::LetDefinitions
+  def media_attachment: () -> MediaAttachment
+end
+
+module RSpec::ExampleGroups::Media::GETMediaId::WhenTheMediaAttachmentDoesNotHaveAShortcode::WhenAttachedToAStatus::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::Media::GETMediaId::WhenTheMediaAttachmentDoesNotHaveAShortcode::WhenAttachedToNonPublicStatus::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::Media::GETMediaId::WhenTheMediaAttachmentDoesNotHaveAShortcode::WhenNotAttachedToAStatus::LetDefinitions
+  def status: () -> nil
+end
+
+module RSpec::ExampleGroups::Media::GETMediaId::WhenTheMediaAttachmentHasAShortcode::LetDefinitions
+  def media_attachment: () -> MediaAttachment
+end
+
+module RSpec::ExampleGroups::Media::GETMediaId::WhenTheMediaAttachmentHasAShortcode::WhenAttachedToNonPublicStatus::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::Media::GETMediaId::WhenTheMediaAttachmentHasAShortcode::WhenNotAttachedToAStatus::LetDefinitions
+  def status: () -> nil
+end
+
+module RSpec::ExampleGroups::Media::GETMediaId::WhenTheMediaAttachmentHasAShortcode::WhenAttachedToAStatus::LetDefinitions
+  def status: () -> Status
+end

@@ -1,0 +1,3 @@
+class SignatureParser
+  def self.parse: (String) -> Hash[untyped, untyped]
+end

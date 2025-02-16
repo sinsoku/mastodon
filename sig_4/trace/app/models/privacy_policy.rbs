@@ -1,0 +1,3 @@
+class PrivacyPolicy
+  def self.current: () -> PrivacyPolicy
+end

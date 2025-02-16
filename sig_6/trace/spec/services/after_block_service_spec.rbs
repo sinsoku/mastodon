@@ -1,0 +1,25 @@
+module RSpec::ExampleGroups::AfterBlockService::Lists::LetDefinitions
+  def list_timeline_key: () -> String
+
+  def list: () -> List
+end
+
+module RSpec::ExampleGroups::AfterBlockService::LetDefinitions
+  def account: () -> Account
+
+  def status: () -> Status
+
+  def target_account: () -> Account
+
+  def other_account_status: () -> Status
+
+  def other_account_reblog: () -> Status
+
+  def other_status: () -> Status
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::AfterBlockService::HomeTimeline::LetDefinitions
+  def home_timeline_key: () -> String
+end

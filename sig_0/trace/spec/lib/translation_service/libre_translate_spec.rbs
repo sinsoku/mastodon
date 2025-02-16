@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::TranslationServiceLibreTranslate::LetDefinitions
+  def service: () -> TranslationService::LibreTranslate
+end
+
+module RSpec::ExampleGroups::TranslationServiceLibreTranslate::Languages::LetDefinitions
+  def languages: () -> Hash[untyped, untyped]
+end

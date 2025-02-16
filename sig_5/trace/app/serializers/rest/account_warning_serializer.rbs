@@ -1,0 +1,5 @@
+class REST::AccountWarningSerializer
+  def id: () -> String
+
+  def status_ids: () -> Array[untyped]
+end

@@ -1,0 +1,49 @@
+module RSpec::ExampleGroups::FollowService::LetDefinitions
+  def subject: () -> FollowService
+
+  def sender: () -> Account
+end
+
+module RSpec::ExampleGroups::FollowService::WhenLocalAccount::LockedAccountNoReblogs::LetDefinitions
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::FollowService::WhenLocalAccount::UnlockedAccountNoReblogs::LetDefinitions
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::FollowService::WhenLocalAccount::UnlockedAccountFromSilencedAccount::LetDefinitions
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::FollowService::WhenLocalAccount::AlreadyFollowedAccountTurningReblogsOff::LetDefinitions
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::FollowService::WhenLocalAccount::LockedAccount::LetDefinitions
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::FollowService::WhenLocalAccount::AlreadyFollowedAccountTurningReblogsOn::LetDefinitions
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::FollowService::WhenLocalAccount::AlreadyFollowedAccountChangingLanguages::LetDefinitions
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::FollowService::WhenLocalAccount::UnlockedAccount::LetDefinitions
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::FollowService::WhenLocalAccount::UnlockedAccountFromAMutedAccount::LetDefinitions
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::FollowService::WhenLocalAccount::AlreadyFollowedAccount::LetDefinitions
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::FollowService::WhenRemoteActivityPubAccount::LetDefinitions
+  def bob: () -> Account
+end

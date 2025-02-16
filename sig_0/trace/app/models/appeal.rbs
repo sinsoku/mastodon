@@ -1,0 +1,19 @@
+class Appeal
+  def validate_time_frame: () -> nil
+
+  def approved?: () -> void
+               | () -> bool
+
+  def rejected?: () -> void
+               | () -> bool
+
+  def pending?: () -> void
+
+  def to_log_human_identifier: () -> void
+
+  def to_log_route_param: () -> void
+
+  def approve!: (Account) -> void
+
+  def reject!: (Account) -> void
+end

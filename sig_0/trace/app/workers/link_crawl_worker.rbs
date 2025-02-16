@@ -1,0 +1,3 @@
+class LinkCrawlWorker
+  def perform: (Integer) -> void
+end

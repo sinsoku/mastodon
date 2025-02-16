@@ -1,0 +1,7 @@
+class RejectFollowService
+  def call: (Account, Account) -> void
+
+  def create_notification: (FollowRequest) -> void
+
+  def build_json: (FollowRequest) -> void
+end

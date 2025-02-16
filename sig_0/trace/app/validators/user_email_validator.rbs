@@ -1,0 +1,18 @@
+class UserEmailValidator
+  def validate: (User) -> nil
+              | (RSpec::Mocks::InstanceVerifyingDouble) -> nil
+
+  def blocked_email_provider?: (String, nil) -> void
+                             | (String, String) -> void
+                             | (String, IPAddr) -> void
+
+  def disallowed_through_email_domain_block?: (String, nil) -> void
+                                            | (String, String) -> void
+                                            | (String, IPAddr) -> void
+
+  def disallowed_through_configuration?: (String) -> void
+
+  def not_allowed_through_configuration?: (String) -> void
+
+  def blocked_canonical_email?: (String) -> void
+end

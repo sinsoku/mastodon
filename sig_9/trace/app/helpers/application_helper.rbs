@@ -1,0 +1,27 @@
+module ApplicationHelper
+  def cdn_host?: () -> void
+
+  def cdn_host: () -> nil
+
+  def storage_host?: () -> void
+
+  def storage_host_var: () -> nil
+
+  def render_initial_state: () -> void
+
+  def material_symbol: (String, ?Hash[untyped, untyped]) -> void
+                     | (String, ?Hash[untyped, untyped]) -> ActiveSupport::SafeBuffer
+
+  def html_title: () -> ActiveSupport::SafeBuffer
+
+  def title: () -> void
+
+  def body_classes: () -> void
+
+  def locale_direction: () -> String
+
+  def copyable_input: (?Hash[untyped, untyped]) -> void
+
+  def opengraph: (String, String) -> ActiveSupport::SafeBuffer
+               | (String, ActiveSupport::SafeBuffer) -> ActiveSupport::SafeBuffer
+end

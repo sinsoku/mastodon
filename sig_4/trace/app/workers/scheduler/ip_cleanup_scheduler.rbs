@@ -1,0 +1,7 @@
+class Scheduler::IpCleanupScheduler
+  def perform: () -> void
+
+  def clean_ip_columns!: () -> void
+
+  def clean_expired_ip_blocks!: () -> void
+end

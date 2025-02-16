@@ -1,0 +1,29 @@
+class SearchService
+  def call: (String, nil, Integer, ?Hash[untyped, untyped]) -> Hash[untyped, untyped]
+
+  def default_results: () -> Hash[untyped, untyped]
+
+  def url_query?: () -> void
+
+  def account_searchable?: () -> void
+
+  def account_search?: () -> void
+
+  def perform_accounts_search!: () -> void
+
+  def status_searchable?: () -> void
+
+  def hashtag_searchable?: () -> void
+
+  def hashtag_search?: () -> void
+
+  def perform_hashtags_search!: () -> void
+
+  def url_resource: () -> nil
+                  | () -> Status
+                  | () -> Account
+
+  def url_resource_results: () -> void
+
+  def url_resource_symbol: () -> void
+end

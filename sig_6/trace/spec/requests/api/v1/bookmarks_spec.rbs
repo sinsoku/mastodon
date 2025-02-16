@@ -1,0 +1,27 @@
+module RSpec::ExampleGroups::Bookmarks::GETApiV1Bookmarks::LetDefinitions
+  def bookmarks: () -> Array[untyped]
+
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+
+  def expected_response: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Bookmarks::LetDefinitions
+  def user: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Bookmarks::GETApiV1Bookmarks::WithLimitParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Bookmarks::GETApiV1Bookmarks::WithoutTheAuthorizationHeader::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+end

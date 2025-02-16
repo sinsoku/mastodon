@@ -1,0 +1,5 @@
+class CustomEmojiFilter
+  def initialize: (ActionController::Parameters) -> void
+
+  def results: () -> void
+end

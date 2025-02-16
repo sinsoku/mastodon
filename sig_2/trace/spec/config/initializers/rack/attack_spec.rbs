@@ -1,0 +1,177 @@
+class RSpec::ExampleGroups::RackAttack
+  def app: () -> void
+end
+
+class RSpec::ExampleGroups::RackAttack::ThrottleExcessiveSignInRequestsByIPAddress::WithExactPath::BehavesLikeThrottledEndpoint
+  def counter_prefix: () -> Integer
+
+  def below_limit: () -> Integer
+
+  def increment_counter: () -> void
+
+  def throttle_count: () -> void
+
+  def above_limit: () -> Integer
+end
+
+module RSpec::ExampleGroups::RackAttack::ThrottleExcessiveSignInRequestsByIPAddress::LetDefinitions
+  def period: () -> ActiveSupport::Duration
+
+  def limit: () -> Integer
+
+  def throttle: () -> String
+
+  def request: () -> Proc
+end
+
+module RSpec::ExampleGroups::RackAttack::LetDefinitions
+  def discriminator: () -> String
+
+  def remote_ip: () -> String
+end
+
+module RSpec::ExampleGroups::RackAttack::ThrottleExcessiveSignInRequestsByIPAddress::WithExactPath::LetDefinitions
+  def path: () -> String
+end
+
+class RSpec::ExampleGroups::RackAttack::ThrottleExcessiveSignInRequestsByIPAddress::WithPathWithFormat::BehavesLikeThrottledEndpoint
+  def counter_prefix: () -> Integer
+
+  def below_limit: () -> Integer
+
+  def increment_counter: () -> void
+
+  def throttle_count: () -> void
+
+  def above_limit: () -> Integer
+end
+
+module RSpec::ExampleGroups::RackAttack::ThrottleExcessiveSignInRequestsByIPAddress::WithPathWithFormat::LetDefinitions
+  def path: () -> String
+end
+
+class RSpec::ExampleGroups::RackAttack::ThrottleExcessiveSignUpRequestsByIPAddress::WhenAccessedThroughTheAPI::WithExactPath::BehavesLikeThrottledEndpoint
+  def counter_prefix: () -> Integer
+
+  def below_limit: () -> Integer
+
+  def increment_counter: () -> void
+
+  def throttle_count: () -> void
+
+  def above_limit: () -> Integer
+end
+
+module RSpec::ExampleGroups::RackAttack::ThrottleExcessiveSignUpRequestsByIPAddress::WhenAccessedThroughTheAPI::LetDefinitions
+  def period: () -> ActiveSupport::Duration
+
+  def limit: () -> Integer
+
+  def throttle: () -> String
+
+  def request: () -> Proc
+end
+
+module RSpec::ExampleGroups::RackAttack::ThrottleExcessiveSignUpRequestsByIPAddress::WhenAccessedThroughTheAPI::WithExactPath::LetDefinitions
+  def path: () -> String
+end
+
+module RSpec::ExampleGroups::RackAttack::ThrottleExcessiveSignUpRequestsByIPAddress::WhenAccessedThroughTheAPI::WithPathWithFormat::LetDefinitions
+  def path: () -> String
+end
+
+class RSpec::ExampleGroups::RackAttack::ThrottleExcessiveSignUpRequestsByIPAddress::WhenAccessedThroughTheWebsite::WithPathWithFormat::BehavesLikeThrottledEndpoint
+  def counter_prefix: () -> Integer
+
+  def below_limit: () -> Integer
+
+  def increment_counter: () -> void
+
+  def throttle_count: () -> void
+
+  def above_limit: () -> Integer
+end
+
+module RSpec::ExampleGroups::RackAttack::ThrottleExcessiveSignUpRequestsByIPAddress::WhenAccessedThroughTheWebsite::LetDefinitions
+  def period: () -> ActiveSupport::Duration
+
+  def limit: () -> Integer
+
+  def throttle: () -> String
+
+  def request: () -> Proc
+end
+
+module RSpec::ExampleGroups::RackAttack::ThrottleExcessiveSignUpRequestsByIPAddress::WhenAccessedThroughTheWebsite::WithPathWithFormat::LetDefinitions
+  def path: () -> String
+end
+
+class RSpec::ExampleGroups::RackAttack::ThrottleExcessiveSignUpRequestsByIPAddress::WhenAccessedThroughTheWebsite::WithExactPath::BehavesLikeThrottledEndpoint
+  def counter_prefix: () -> Integer
+
+  def above_limit: () -> Integer
+
+  def increment_counter: () -> void
+
+  def throttle_count: () -> void
+
+  def below_limit: () -> Integer
+end
+
+module RSpec::ExampleGroups::RackAttack::ThrottleExcessiveSignUpRequestsByIPAddress::WhenAccessedThroughTheWebsite::WithExactPath::LetDefinitions
+  def path: () -> String
+end
+
+module RSpec::ExampleGroups::RackAttack::ThrottleExcessivePasswordChangeRequestsByAccount::LetDefinitions
+  def user: () -> User
+
+  def period: () -> ActiveSupport::Duration
+
+  def limit: () -> Integer
+
+  def throttle: () -> String
+
+  def discriminator: () -> Integer
+
+  def request: () -> Proc
+
+  def path: () -> String
+end
+
+class RSpec::ExampleGroups::RackAttack::ThrottleExcessivePasswordChangeRequestsByAccount::BehavesLikeThrottledEndpoint
+  def counter_prefix: () -> Integer
+
+  def above_limit: () -> Integer
+
+  def increment_counter: () -> void
+
+  def throttle_count: () -> void
+
+  def below_limit: () -> Integer
+end
+
+class RSpec::ExampleGroups::RackAttack::ThrottleExcessiveOauthApplicationRegistrationRequestsByIPAddress::BehavesLikeThrottledEndpoint
+  def counter_prefix: () -> Integer
+
+  def above_limit: () -> Integer
+
+  def increment_counter: () -> void
+
+  def throttle_count: () -> void
+
+  def below_limit: () -> Integer
+end
+
+module RSpec::ExampleGroups::RackAttack::ThrottleExcessiveOauthApplicationRegistrationRequestsByIPAddress::LetDefinitions
+  def period: () -> ActiveSupport::Duration
+
+  def limit: () -> Integer
+
+  def throttle: () -> String
+
+  def request: () -> Proc
+
+  def path: () -> String
+
+  def params: () -> Hash[untyped, untyped]
+end

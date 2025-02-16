@@ -1,0 +1,8 @@
+class Object
+  def serialized_record_json: (DomainAllow, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+                            | (DomainBlock, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+                            | (Status, Class, ?adapter: Class, ?options: Hash[untyped, untyped]) -> void
+                            | (StatusEdit, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+
+  def expect_push_bulk_to_match: (Class, Array[untyped]) -> void
+end

@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::ReactionValidator::LetDefinitions
+  def announcement: () -> Announcement
+end

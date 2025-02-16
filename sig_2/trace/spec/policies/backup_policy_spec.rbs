@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::BackupPolicy::LetDefinitions
+  def subject: () -> Class
+
+  def john: () -> Account
+end

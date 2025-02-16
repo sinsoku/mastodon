@@ -1,0 +1,7 @@
+module AccountsHelper
+  def display_name: (Account, **nil) -> String
+
+  def acct: (Account) -> String
+
+  def account_formatted_stat: (Integer) -> ActiveSupport::SafeBuffer
+end

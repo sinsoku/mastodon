@@ -1,0 +1,7 @@
+class Trends::Links
+  def request_review: () -> Array[untyped]
+
+  def refresh: (?Time) -> Integer
+
+  def key_prefix: () -> String
+end

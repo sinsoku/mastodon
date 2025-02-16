@@ -1,0 +1,8 @@
+class Object
+  def expect_push_bulk_to_match: (Class, Array[untyped]) -> void
+
+  def serialized_record_json: (CustomFilter, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+                            | (Status, Class, ?adapter: Class, ?options: Hash[untyped, untyped]) -> void
+                            | (IpBlock, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+                            | (Announcement, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+end

@@ -1,0 +1,11 @@
+class REST::FeaturedTagSerializer
+  def id: () -> String
+
+  def name: () -> String
+
+  def url: () -> String
+
+  def statuses_count: () -> String
+
+  def last_status_at: () -> nil
+end

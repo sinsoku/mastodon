@@ -1,0 +1,5 @@
+class REST::Admin::DomainBlockSerializer
+  def id: () -> String
+
+  def digest: () -> String
+end

@@ -1,0 +1,17 @@
+module RSpec::ExampleGroups::AdminMetricsMeasureTagServersMeasure::LetDefinitions
+  def tag: () -> Tag
+
+  def subject: () -> Admin::Metrics::Measure::TagServersMeasure
+
+  def start_at: () -> ActiveSupport::TimeWithZone
+
+  def end_at: () -> Time
+
+  def params: () -> ActionController::Parameters
+end
+
+module RSpec::ExampleGroups::AdminMetricsMeasureTagServersMeasure::Data::WithTaggedStatuses::LetDefinitions
+  def alice: () -> Account
+
+  def bob: () -> Account
+end

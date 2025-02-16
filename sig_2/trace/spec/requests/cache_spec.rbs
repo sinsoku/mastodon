@@ -1,0 +1,51 @@
+module RSpec::ExampleGroups::CachingBehavior::LetDefinitions
+  def user: () -> User
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def alice: () -> Account
+end
+
+class RSpec::ExampleGroups::CachingBehavior
+  def response_vary_headers: () -> void
+end
+
+module RSpec::ExampleGroups::CachingBehavior::WithAnAuthToken::ApiV1InstanceDomainBlocks::WhenDisabled::LetDefinitions
+  def show_domain_blocks: () -> String
+end
+
+module RSpec::ExampleGroups::CachingBehavior::WithAnAuthToken::ApiV1InstanceDomainBlocks::WhenSetToBePubliclyAvailable::LetDefinitions
+  def show_domain_blocks: () -> String
+end
+
+module RSpec::ExampleGroups::CachingBehavior::WithAnAuthToken::ApiV1InstanceDomainBlocks::WhenAllowedForLocalUsersOnly::LetDefinitions
+  def show_domain_blocks: () -> String
+end
+
+module RSpec::ExampleGroups::CachingBehavior::WhenEnablingAUTHORIZEDFETCHMode::WhenProvidingASignature::LetDefinitions
+  def remote_actor: () -> Account
+end
+
+module RSpec::ExampleGroups::CachingBehavior::WhenEnablingLIMITEDFEDERATIONMODEMode::WhenProvidingASignatureFromANonAllowedDomain::LetDefinitions
+  def remote_actor: () -> Account
+end
+
+module RSpec::ExampleGroups::CachingBehavior::WhenEnablingLIMITEDFEDERATIONMODEMode::WhenProvidingASignatureFromAnAllowedDomain::LetDefinitions
+  def remote_actor: () -> Account
+end
+
+module RSpec::ExampleGroups::CachingBehavior::WithASignatureHeader::LetDefinitions
+  def remote_actor: () -> Account
+end
+
+module RSpec::ExampleGroups::CachingBehavior::WhenAnonymouslyAccessed::ApiV1InstanceDomainBlocks::WhenDisabled::LetDefinitions
+  def show_domain_blocks: () -> String
+end
+
+module RSpec::ExampleGroups::CachingBehavior::WhenAnonymouslyAccessed::ApiV1InstanceDomainBlocks::WhenSetToBePubliclyAvailable::LetDefinitions
+  def show_domain_blocks: () -> String
+end
+
+module RSpec::ExampleGroups::CachingBehavior::WhenAnonymouslyAccessed::ApiV1InstanceDomainBlocks::WhenAllowedForLocalUsersOnly::LetDefinitions
+  def show_domain_blocks: () -> String
+end

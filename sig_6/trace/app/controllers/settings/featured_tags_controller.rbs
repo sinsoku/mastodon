@@ -1,0 +1,18 @@
+class Settings::FeaturedTagsController
+  def create: () -> ActiveSupport::SafeBuffer
+            | () -> String
+
+  def featured_tag_params: () -> ActionController::Parameters
+
+  def set_featured_tags: () -> void
+                       | () -> Array[untyped]
+
+  def set_recently_used_tags: () -> void
+                            | () -> ActiveRecord::Relation
+
+  def set_featured_tag: () -> FeaturedTag
+
+  def destroy: () -> String
+
+  def index: () -> FeaturedTag
+end

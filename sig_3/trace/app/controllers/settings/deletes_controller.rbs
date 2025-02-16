@@ -1,0 +1,14 @@
+class Settings::DeletesController
+  def require_not_suspended!: () -> nil
+                            | () -> ActiveSupport::SafeBuffer
+
+  def show: () -> Form::DeleteConfirmation
+
+  def destroy: () -> String
+
+  def challenge_passed?: () -> void
+
+  def resource_params: () -> ActionController::Parameters
+
+  def destroy_account!: () -> void
+end

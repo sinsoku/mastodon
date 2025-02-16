@@ -1,0 +1,11 @@
+class Admin::FollowRecommendationsController
+  def set_language: () -> String
+
+  def follow_recommendation_filter: () -> FollowRecommendationFilter
+
+  def filter_params: () -> void
+
+  def show: () -> ActiveRecord::Relation
+
+  def filtered_follow_recommendations: () -> ActiveRecord::Relation
+end

@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::URLValidator::LetDefinitions
+  def record: () -> untyped
+
+  def record_class: () -> Class
+end

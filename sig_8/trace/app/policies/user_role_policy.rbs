@@ -1,0 +1,9 @@
+class UserRolePolicy
+  def update?: () -> bool
+
+  def destroy?: () -> bool
+
+  def create?: () -> bool
+
+  def index?: () -> bool
+end

@@ -1,0 +1,13 @@
+class CustomFilter
+  def expires_in: () -> nil
+
+  def context_must_be_valid: () -> nil
+                           | () -> ActiveModel::Error
+
+  def invalid_context_value?: () -> void
+
+  def prepare_cache_invalidation!: () -> bool
+
+  def invalidate_cache!: () -> Integer
+                       | () -> nil
+end

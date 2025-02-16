@@ -1,0 +1,22 @@
+class Api::V1::DomainBlocksController
+  def show: () -> String
+
+  def load_domain_blocks: () -> ActiveRecord::AssociationRelation
+
+  def account_domain_blocks: () -> ActiveRecord::Associations::CollectionProxy
+
+  def next_path: () -> void
+
+  def records_continue?: () -> void
+
+  def prev_path: () -> void
+
+  def pagination_collection: () -> ActiveRecord::AssociationRelation
+
+  def create: () -> String
+            | () -> nil
+
+  def domain_block_params: () -> ActionController::Parameters
+
+  def destroy: () -> String
+end

@@ -1,0 +1,13 @@
+module Admin::AccountModerationNotesHelper
+  def admin_account_inline_link_to: (nil, ?path: nil) -> void
+                                  | (Account, ?path: nil) -> void
+
+  def account_inline_text: (Account) -> void
+
+  def suspended_account?: (Account) -> void
+
+  def admin_account_link_to: (nil, ?path: nil) -> void
+                           | (Account, ?path: nil) -> void
+
+  def labeled_account_avatar: (Account) -> void
+end

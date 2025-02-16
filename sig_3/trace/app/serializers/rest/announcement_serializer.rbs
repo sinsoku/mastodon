@@ -1,0 +1,11 @@
+class REST::AnnouncementSerializer
+  def reactions: () -> Array[untyped]
+
+  def id: () -> String
+
+  def content: () -> ActiveSupport::SafeBuffer
+
+  def current_user?: () -> bool
+
+  def read: () -> bool
+end

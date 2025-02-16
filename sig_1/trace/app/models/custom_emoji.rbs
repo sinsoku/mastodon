@@ -1,0 +1,12 @@
+class CustomEmoji
+  def self.from_text: (String, ?nil) -> Array[untyped]
+                    | (String, ?String) -> Array[untyped]
+
+  def self.search: (String) -> void
+
+  def local?: () -> bool
+
+  def remove_entity_cache: () -> bool
+
+  def object_type: () -> void
+end

@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::APIV1AnnouncementsReactions::LetDefinitions
+  def announcement: () -> Announcement
+
+  def user: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end
+
+class RSpec::ExampleGroups::APIV1AnnouncementsReactions
+  def escaped_emoji: () -> String
+end

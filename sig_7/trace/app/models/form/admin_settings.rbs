@@ -1,0 +1,21 @@
+class Form::AdminSettings
+  def site_extended_description: () -> String
+
+  def show_domain_blocks: () -> String
+
+  def show_domain_blocks_rationale: () -> String
+
+  def status_page_url: () -> nil
+                     | () -> String
+
+  def site_terms: () -> String
+
+  def save: () -> void
+
+  def validate_site_uploads: () -> Array[untyped]
+
+  def typecast_value: (Symbol, String) -> void
+                    | (Symbol, nil) -> void
+
+  def registrations_mode: () -> String
+end

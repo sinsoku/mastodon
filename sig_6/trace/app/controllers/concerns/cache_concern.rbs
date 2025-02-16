@@ -1,0 +1,13 @@
+module CacheConcern
+  def enforce_cache_control!: () -> nil
+                            | () -> Hash[untyped, untyped]
+
+  def render_with_cache: (**Class) -> void
+                       | (**ActivityPub::ActivityPresenter | String | Class) -> void
+end
+
+module CacheConcern::ClassMethods
+  def vary_by: (String, **nil) -> void
+             | (Proc, **nil) -> void
+             | (String, **Symbol) -> void
+end

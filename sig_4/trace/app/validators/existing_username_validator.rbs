@@ -1,0 +1,12 @@
+class ExistingUsernameValidator
+  def validate_each: (Record, Symbol, String) -> void
+                   | (Record, Symbol, nil) -> void
+
+  def usernames_with_no_accounts: () -> Array[untyped]
+
+  def usernames_and_domains: () -> Array[untyped]
+
+  def not_found_message: () -> void
+
+  def not_found_multiple_message: () -> void
+end

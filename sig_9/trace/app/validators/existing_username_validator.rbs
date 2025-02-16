@@ -1,0 +1,3 @@
+class ExistingUsernameValidator
+  def validate_each: (Form::AdminSettings, Symbol, String) -> void
+end

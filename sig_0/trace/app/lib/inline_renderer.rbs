@@ -1,0 +1,13 @@
+class InlineRenderer
+  def self.render: (Status, nil, Symbol) -> Hash[untyped, untyped]
+                 | (Announcement, nil, Symbol) -> Hash[untyped, untyped]
+
+  def initialize: (Status, nil, Symbol) -> void
+                | (Announcement, nil, Symbol) -> void
+
+  def render: () -> void
+
+  def preload_associations_for_status: () -> void
+
+  def current_user: () -> void
+end

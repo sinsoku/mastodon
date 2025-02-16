@@ -1,0 +1,13 @@
+class FollowMigrationService
+  def call: (Account, Account, Account, ?bypass_locked: bool) -> void
+
+  def request_follow!: () -> void
+
+  def migrate_list_accounts!: () -> void
+
+  def change_follow_request_options!: () -> void
+
+  def change_follow_options!: () -> void
+
+  def direct_follow!: () -> void
+end

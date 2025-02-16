@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::RESTMarkerSerializer::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+
+  def marker: () -> Marker
+end

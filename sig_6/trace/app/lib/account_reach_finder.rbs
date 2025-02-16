@@ -1,0 +1,17 @@
+class AccountReachFinder
+  def initialize: (Account) -> void
+
+  def inboxes: () -> Array[untyped]
+
+  def followers_inboxes: () -> Array[untyped]
+
+  def reporters_inboxes: () -> void
+
+  def recently_mentioned_inboxes: () -> void
+
+  def recent_statuses: () -> void
+
+  def oldest_status_id: () -> void
+
+  def relay_inboxes: () -> void
+end

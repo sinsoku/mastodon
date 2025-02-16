@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::AdminTrendsStatusesHelper::OneLinePreview::WithARemoteStatus::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::AdminTrendsStatusesHelper::OneLinePreview::WithALocalStatus::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::AdminTrendsStatusesHelper::OneLinePreview::WithAStatusThatHasEmoji::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::AdminTrendsStatusesHelper::OneLinePreview::WithAStatusThatHasEmptyText::LetDefinitions
+  def status: () -> Status
+end

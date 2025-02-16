@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::SettingsExports::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::SettingsExports::POSTSettingsApplications::LetDefinitions
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::SettingsExports::GETSettingsApplicationId::WhenUserDoesNotOwnApplication::LetDefinitions
+  def application: () -> Doorkeeper::Application
+end

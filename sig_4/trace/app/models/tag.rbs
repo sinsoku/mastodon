@@ -1,0 +1,19 @@
+class Tag
+  def self.matching_name: (Array[untyped]) -> ActiveRecord::Relation
+                        | (String) -> ActiveRecord::Relation
+
+  def display_name: () -> String
+
+  def to_param: () -> void
+
+  def history: () -> Trends::History
+
+  def self.normalize: (String) -> void
+
+  def self.find_or_create_by_names: (Array[untyped]) -> Array[untyped]
+                                  | (String) -> Array[untyped]
+
+  def usable: () -> bool
+
+  def self.find_normalized: (String) -> Tag
+end

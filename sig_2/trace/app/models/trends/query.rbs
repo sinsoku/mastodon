@@ -1,0 +1,33 @@
+class Trends::Query
+  def initialize: (String, Class) -> void
+
+  def allowed: () -> Trends::Statuses::Query
+
+  def allowed!: () -> void
+
+  def in_locale: (String) -> Trends::Statuses::Query
+
+  def in_locale!: (String) -> void
+
+  def filtered_for: (Account) -> Trends::Statuses::Query
+
+  def filtered_for!: (Account) -> void
+
+  def offset: (Integer) -> Trends::Statuses::Query
+
+  def offset!: (Integer) -> void
+
+  def limit: (Integer) -> void
+
+  def limit!: (Integer) -> void
+
+  def to_ary: () -> Array[untyped]
+
+  def records: () -> Array[untyped]
+
+  def load: () -> void
+
+  def perform_queries: () -> Array[untyped]
+
+  def preferred_languages: () -> String
+end

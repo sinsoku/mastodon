@@ -1,0 +1,37 @@
+module RSpec::ExampleGroups::ActivityPubInboxesController::POSTCreate::WithSignature::LetDefinitions
+  def remote_account: () -> Account
+end
+
+module RSpec::ExampleGroups::ActivityPubInboxesController::POSTCreate::WithSignature::WithASpecificAccount::LetDefinitions
+  def account: () -> Account
+
+  def response: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::ActivityPubInboxesController::LetDefinitions
+  def remote_account: () -> nil
+end
+
+module RSpec::ExampleGroups::ActivityPubInboxesController::POSTCreate::WithCollectionSynchronizationHeader::LetDefinitions
+  def remote_account: () -> Account
+
+  def synchronization_header: () -> String
+
+  def synchronization_collection: () -> String
+
+  def synchronization_hash: () -> String
+
+  def synchronization_url: () -> String
+end
+
+module RSpec::ExampleGroups::ActivityPubInboxesController::POSTCreate::WithCollectionSynchronizationHeader::WithMismatchingTargetCollection::LetDefinitions
+  def synchronization_collection: () -> String
+end
+
+module RSpec::ExampleGroups::ActivityPubInboxesController::POSTCreate::WithCollectionSynchronizationHeader::WithMismatchingDigest::LetDefinitions
+  def synchronization_hash: () -> String
+end
+
+module RSpec::ExampleGroups::ActivityPubInboxesController::POSTCreate::WithCollectionSynchronizationHeader::WithMismatchingDomainInPartialCollectionAttribute::LetDefinitions
+  def synchronization_url: () -> String
+end

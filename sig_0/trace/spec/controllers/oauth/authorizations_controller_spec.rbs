@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::OauthAuthorizationsController::GETNew::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::OauthAuthorizationsController::LetDefinitions
+  def app: () -> Doorkeeper::Application
+end
+
+class RSpec::ExampleGroups::OauthAuthorizationsController::GETNew
+  def authorize_path_for: (Doorkeeper::Application) -> void
+end
+
+module RSpec::ExampleGroups::OauthAuthorizationsController::GETNew::WhenSignedIn::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::OauthAuthorizationsController::GETNew::WhenSignedIn::WhenAppIsAlreadyAuthorized::WithForceLoginParamTrue::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end

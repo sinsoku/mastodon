@@ -1,0 +1,3 @@
+class Admin::AccountStatusesFilter
+  def blocked?: () -> void
+end

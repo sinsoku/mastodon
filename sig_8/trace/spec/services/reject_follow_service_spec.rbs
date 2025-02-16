@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::RejectFollowService::Local::LetDefinitions
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::RejectFollowService::LetDefinitions
+  def sender: () -> Account
+
+  def subject: () -> RejectFollowService
+end
+
+module RSpec::ExampleGroups::RejectFollowService::RemoteActivityPub::LetDefinitions
+  def bob: () -> Account
+end

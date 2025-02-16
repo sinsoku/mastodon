@@ -1,0 +1,5 @@
+class ActivityPub::Activity::Add
+  def perform: () -> void
+
+  def add_featured: () -> void
+end

@@ -1,0 +1,44 @@
+class Admin::AccountAction
+  def initialize: (?ActionController::Parameters) -> void
+
+  def save!: () -> void
+
+  def process_action!: () -> void
+
+  def handle_sensitive!: () -> void
+
+  def process_strike!: () -> void
+
+  def report: () -> void
+            | () -> nil
+
+  def text_for_warning: () -> void
+
+  def warning_preset: () -> nil
+
+  def status_ids: () -> void
+
+  def with_report?: () -> void
+
+  def process_reports!: () -> void
+
+  def reports: () -> ActiveRecord::Relation
+             | () -> Array[untyped]
+
+  def process_notification!: () -> void
+
+  def warnable?: () -> void
+
+  def process_queue!: () -> void
+
+  def self.i18n_scope: () -> void
+                     | () -> Symbol
+
+  def handle_silence!: () -> void
+
+  def handle_disable!: () -> void
+
+  def handle_suspend!: () -> void
+
+  def queue_suspension_worker!: () -> void
+end

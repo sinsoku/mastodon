@@ -1,0 +1,16 @@
+class Trends::History
+  def initialize: (String, Integer) -> void
+
+  def add: (IPAddr, ?Time) -> void
+end
+
+class Trends::History::Day
+  def initialize: (String, Integer, Time) -> void
+
+  def add: (IPAddr) -> void
+
+  def key_for: (Symbol) -> void
+
+  def key_prefix: () -> void
+                | () -> String
+end

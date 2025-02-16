@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::AdminRelaysController::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::AdminRelaysController::POSTEnable::LetDefinitions
+  def relay: () -> Relay
+end
+
+module RSpec::ExampleGroups::AdminRelaysController::DELETEDestroy::LetDefinitions
+  def relay: () -> Relay
+end
+
+module RSpec::ExampleGroups::AdminRelaysController::POSTDisable::LetDefinitions
+  def relay: () -> Relay
+end
+
+module RSpec::ExampleGroups::AdminRelaysController::POSTCreate::WithValidData::LetDefinitions
+  def inbox_url: () -> String
+end

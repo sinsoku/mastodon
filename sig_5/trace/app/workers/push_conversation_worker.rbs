@@ -1,0 +1,4 @@
+class PushConversationWorker
+  def perform: (nil) -> void
+             | (Integer) -> void
+end

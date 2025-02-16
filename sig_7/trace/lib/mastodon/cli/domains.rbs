@@ -1,0 +1,15 @@
+class Mastodon::CLI::Domains
+  def purge: (*nil) -> nil
+           | (*String) -> StringIO
+           | (*String) -> nil
+
+  def crawl: (?nil) -> bool
+
+  def domain_block_suspended_domains: () -> void
+
+  def stats_to_domains: (Concurrent::Hash) -> void
+
+  def stats_to_json: (Concurrent::Hash) -> void
+
+  def stats_to_summary: (Concurrent::Hash, Concurrent::AtomicFixnum, Concurrent::AtomicFixnum, Float) -> void
+end

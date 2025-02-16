@@ -1,0 +1,9 @@
+module UserSettings::DSL::ClassMethods
+  def definition_for: (String) -> UserSettings::Setting
+                    | (Symbol) -> UserSettings::Setting
+                    | (Symbol) -> nil
+
+  def definition_for?: (Symbol) -> void
+
+  def keys: () -> void
+end

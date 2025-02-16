@@ -1,0 +1,9 @@
+class Import::RelationshipWorker
+  def perform: (Integer, String, String, Hash[untyped, untyped]) -> void
+
+  def domain: (String) -> String
+            | (String) -> nil
+
+  def stoplight_wrapper: (String) -> Stoplight::Light
+                       | (nil) -> Stoplight::Builder
+end

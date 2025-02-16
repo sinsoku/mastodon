@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::SchedulerTrendsReviewNotificationsScheduler::LetDefinitions
+  def worker: () -> Scheduler::Trends::ReviewNotificationsScheduler
+end

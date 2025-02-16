@@ -1,0 +1,3 @@
+class ActivityPub::FetchRemoteKeyService
+  def call: (String, ?suppress_errors: bool) -> void
+end

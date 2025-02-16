@@ -1,0 +1,11 @@
+class DomainValidator
+  def validate_each: (DomainAllow, Symbol, String) -> void
+                   | (DomainBlock, Symbol, String) -> void
+                   | (EmailDomainBlock, Symbol, String) -> void
+                   | (AccountMigration, Symbol, String) -> void
+                   | (PreviewCardProvider, Symbol, String) -> void
+                   | (AccountDomainBlock, Symbol, String) -> void
+                   | (DomainBlock, Symbol, nil) -> void
+
+  def compliant?: (String) -> void
+end

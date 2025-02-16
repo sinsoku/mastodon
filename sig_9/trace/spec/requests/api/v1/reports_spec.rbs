@@ -1,0 +1,43 @@
+module RSpec::ExampleGroups::Reports::POSTApiV1Reports::LetDefinitions
+  def admin: () -> User
+
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+
+  def status: () -> Status
+
+  def target_account: () -> Account
+
+  def category: () -> String
+
+  def rule_ids: () -> nil
+
+  def forward: () -> nil
+end
+
+module RSpec::ExampleGroups::Reports::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Reports::POSTApiV1Reports::WhenAStatusDoesNotBelongToTheReportedAccount::LetDefinitions
+  def target_account: () -> Account
+end
+
+module RSpec::ExampleGroups::Reports::POSTApiV1Reports::WhenACategoryIsChosen::LetDefinitions
+  def category: () -> String
+end
+
+module RSpec::ExampleGroups::Reports::POSTApiV1Reports::WhenViolatedRulesAreChosen::LetDefinitions
+  def category: () -> String
+
+  def rule_ids: () -> Array[untyped]
+
+  def rule: () -> Rule
+end

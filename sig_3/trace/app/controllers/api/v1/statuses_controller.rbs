@@ -1,0 +1,37 @@
+class Api::V1::StatusesController
+  def set_status: () -> String
+                | () -> Status
+
+  def show: () -> String
+
+  def context: () -> String
+
+  def set_thread: () -> nil
+                | () -> String
+
+  def status_params: () -> ActionController::Parameters
+
+  def create: () -> nil
+            | () -> String
+
+  def serializer_for_status: () -> void
+
+  def unexpected_accounts_error_json: (PostStatusService::UnexpectedMentionsError) -> void
+
+  def serialized_accounts: (Array[untyped]) -> void
+
+  def set_statuses: () -> Array[untyped]
+
+  def status_ids: () -> void
+                | () -> Array[untyped]
+
+  def statuses_params: () -> ActionController::Parameters
+
+  def check_statuses_limit: () -> nil
+
+  def index: () -> String
+
+  def destroy: () -> String
+
+  def update: () -> String
+end

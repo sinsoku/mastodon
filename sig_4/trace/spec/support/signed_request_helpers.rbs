@@ -1,0 +1,8 @@
+module SignedRequestHelpers
+  def get: (String, ?headers: Hash[untyped, untyped], ?sign_with: nil, **Hash[untyped, untyped]) -> void
+         | (String, ?headers: nil, ?sign_with: nil, **nil) -> void
+         | (String, ?headers: nil, ?sign_with: nil, **Symbol) -> void
+         | (String, ?headers: nil, ?sign_with: nil, **String) -> void
+         | (String, ?headers: Hash[untyped, untyped], ?sign_with: Account, **nil) -> void
+         | (String, ?headers: Hash[untyped, untyped], ?sign_with: nil, **nil) -> void
+end

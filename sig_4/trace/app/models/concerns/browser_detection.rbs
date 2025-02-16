@@ -1,0 +1,10 @@
+module BrowserDetection
+  def assign_user_agent: () -> String
+
+  def detection: () -> void
+               | () -> Browser::Safari
+
+  def browser: () -> void
+
+  def platform: () -> void
+end

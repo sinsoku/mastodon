@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::LinkHeaders::OnTheAccountShowPage::LetDefinitions
+  def account: () -> Account
+end

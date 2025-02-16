@@ -1,0 +1,28 @@
+class Api::V1::Admin::DomainAllowsController
+  def set_domain_allow: () -> DomainAllow
+                      | () -> nil
+
+  def destroy: () -> String
+             | () -> nil
+
+  def create: () -> nil
+            | () -> String
+
+  def resource_params: () -> ActionController::Parameters
+
+  def show: () -> String
+          | () -> nil
+
+  def set_domain_allows: () -> Array[untyped]
+
+  def index: () -> nil
+           | () -> String
+
+  def next_path: () -> void
+
+  def records_continue?: () -> void
+
+  def prev_path: () -> void
+
+  def pagination_collection: () -> Array[untyped]
+end

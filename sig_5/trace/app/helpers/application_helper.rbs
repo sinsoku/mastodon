@@ -1,0 +1,47 @@
+module ApplicationHelper
+  def material_symbol: (String, ?Hash[untyped, untyped]) -> void
+                     | (String, ?Hash[untyped, untyped]) -> ActiveSupport::SafeBuffer
+
+  def render_initial_state: () -> void
+
+  def cdn_host?: () -> void
+
+  def cdn_host: () -> nil
+
+  def storage_host?: () -> void
+
+  def storage_host_var: () -> nil
+
+  def html_title: () -> ActiveSupport::SafeBuffer
+
+  def title: () -> void
+
+  def body_classes: () -> void
+
+  def locale_direction: () -> String
+
+  def link_to_login: (?String, ?nil) -> ActiveSupport::SafeBuffer
+
+  def prerender_custom_emojis: (ActiveSupport::SafeBuffer, Array[untyped], ?Hash[untyped, untyped]) -> void
+
+  def can?: (Symbol, User) -> void
+          | (Symbol, Symbol) -> void
+          | (Symbol, Account) -> void
+          | (Symbol, AccountModerationNote) -> bool
+          | (Symbol, User) -> bool
+          | (Symbol, Symbol) -> bool
+          | (Symbol, Account) -> bool
+
+  def copyable_input: (?Hash[untyped, untyped]) -> void
+
+  def opengraph: (String, String) -> ActiveSupport::SafeBuffer
+               | (String, ActiveSupport::SafeBuffer) -> ActiveSupport::SafeBuffer
+
+  def check_icon: () -> ActiveSupport::SafeBuffer
+
+  def approved_registrations?: () -> void
+
+  def closed_registrations?: () -> void
+
+  def open_registrations?: () -> void
+end

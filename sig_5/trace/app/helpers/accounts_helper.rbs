@@ -1,0 +1,9 @@
+module AccountsHelper
+  def display_name: (Account, **nil) -> void
+                  | (Account, **nil) -> String
+                  | (Account, **bool) -> ActiveSupport::SafeBuffer
+
+  def acct: (Account) -> String
+
+  def account_formatted_stat: (Integer) -> ActiveSupport::SafeBuffer
+end

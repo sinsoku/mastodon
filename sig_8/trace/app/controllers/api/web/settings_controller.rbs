@@ -1,0 +1,5 @@
+class Api::Web::SettingsController
+  def set_setting: () -> Web::Setting
+
+  def update: () -> String
+end

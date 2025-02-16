@@ -1,0 +1,13 @@
+class RSS::Item
+  def initialize: () -> void
+
+  def link: (String) -> void
+
+  def pub_date: (ActiveSupport::TimeWithZone) -> void
+
+  def description: (String) -> void
+
+  def media_content: (String, String, Integer) -> void
+
+  def category: (String) -> void
+end

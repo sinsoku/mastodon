@@ -1,0 +1,6 @@
+class Notification
+  def set_from_account: () -> Integer
+
+  def type: () -> void
+          | () -> Symbol
+end

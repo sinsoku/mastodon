@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::AccountMigration::Validations::WithUnresolvableAccount::LetDefinitions
+  def target_acct: () -> String
+end
+
+module RSpec::ExampleGroups::AccountMigration::Validations::LetDefinitions
+  def subject: () -> AccountMigration
+
+  def source_account: () -> Account
+
+  def target_acct: () -> String
+end
+
+module RSpec::ExampleGroups::AccountMigration::Validations::WithASpaceInTheDomainPart::LetDefinitions
+  def target_acct: () -> String
+end
+
+module RSpec::ExampleGroups::AccountMigration::Validations::WithValidProperties::LetDefinitions
+  def target_account: () -> Account
+end

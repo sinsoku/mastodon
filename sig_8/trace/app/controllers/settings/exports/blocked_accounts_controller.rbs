@@ -1,0 +1,5 @@
+class Settings::Exports::BlockedAccountsController
+  def index: () -> String
+
+  def export_data: () -> void
+end

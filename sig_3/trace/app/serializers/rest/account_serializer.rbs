@@ -1,0 +1,61 @@
+class REST::AccountSerializer
+  def id: () -> String
+
+  def acct: () -> String
+
+  def display_name: () -> String
+
+  def locked: () -> bool
+
+  def bot: () -> bool
+
+  def discoverable: () -> bool
+
+  def indexable: () -> bool
+
+  def created_at: () -> String
+
+  def note: () -> ActiveSupport::SafeBuffer
+          | () -> String
+
+  def url: () -> String
+         | () -> nil
+
+  def uri: () -> String
+
+  def avatar: () -> String
+
+  def avatar_static: () -> String
+
+  def header: () -> String
+
+  def header_static: () -> String
+
+  def last_status_at: () -> nil
+                    | () -> String
+
+  def suspended?: (*untyped, **untyped) -> bool
+
+  def silenced?: (*untyped, **untyped) -> bool
+
+  def local?: (*untyped, **untyped) -> bool
+
+  def noindex: () -> bool
+             | () -> nil
+
+  def memorial?: (*untyped, **untyped) -> bool
+
+  def moved_and_not_nested?: () -> bool
+
+  def emojis: () -> Array[untyped]
+
+  def roles: () -> Array[untyped]
+
+  def fields: () -> Array[untyped]
+
+  def suspended: () -> bool
+end
+
+class REST::AccountSerializer::RoleSerializer
+  def id: () -> String
+end

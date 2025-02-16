@@ -1,0 +1,12 @@
+class DomainBlock
+  def self.suspend?: (String) -> bool
+
+  def self.rule_for: (String) -> nil
+                   | (String) -> DomainBlock
+
+  def to_log_human_identifier: () -> void
+
+  def policies: () -> Array[untyped]
+
+  def stricter_than?: (DomainBlock) -> bool
+end

@@ -1,0 +1,117 @@
+module RSpec::ExampleGroups::Accounts::GETApiV1AdminAccounts::LetDefinitions
+  def remote_account: () -> Account
+
+  def suspended_account: () -> Account
+
+  def disabled_account: () -> Account
+
+  def pending_account: () -> Account
+
+  def admin_account: () -> Account
+
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Accounts::LetDefinitions
+  def user: () -> User
+
+  def role: () -> UserRole
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Accounts::GETApiV1AdminAccounts::WhenRequestingSuspendedAccounts::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+
+  def expected_results: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Accounts::GETApiV1AdminAccounts::WithLimitParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Accounts::GETApiV1AdminAccounts::WhenNoParameterIsGiven::LetDefinitions
+  def expected_results: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Accounts::GETApiV1AdminAccounts::WhenRequestingActiveLocalStaffAccounts::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+
+  def expected_results: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Accounts::GETApiV1AdminAccounts::WhenRequestingRemoteAccountsFromASpecifiedDomain::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+
+  def expected_results: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Accounts::GETApiV1AdminAccounts::WhenRequestingDisabledAccounts::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+
+  def expected_results: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Accounts::GETApiV1AdminAccounts::WhenRequestingPendingAccounts::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+
+  def expected_results: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Accounts::POSTApiV1AdminAccountsIdApprove::LetDefinitions
+  def subject: () -> Integer
+
+  def account: () -> Account
+end
+
+class RSpec::ExampleGroups::Accounts
+  def latest_admin_action_log: () -> void
+end
+
+module RSpec::ExampleGroups::Accounts::POSTApiV1AdminAccountsIdUnsensitive::LetDefinitions
+  def account: () -> Account
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::Accounts::GETApiV1AdminAccountsId::LetDefinitions
+  def subject: () -> Integer
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::Accounts::POSTApiV1AdminAccountsIdReject::LetDefinitions
+  def account: () -> Account
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::Accounts::DELETEApiV1AdminAccountsId::LetDefinitions
+  def account: () -> Account
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::Accounts::POSTApiV1AdminAccountsIdUnsuspend::LetDefinitions
+  def account: () -> Account
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::Accounts::POSTApiV1AdminAccountsIdUnsilence::LetDefinitions
+  def account: () -> Account
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::Accounts::POSTApiV1AdminAccountsIdEnable::LetDefinitions
+  def account: () -> Account
+
+  def subject: () -> Integer
+end

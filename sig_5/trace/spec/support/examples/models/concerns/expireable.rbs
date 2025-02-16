@@ -1,0 +1,47 @@
+module RSpec::ExampleGroups::Mute::LetDefinitions
+  def subject: () -> Mute
+
+  def expires_at: () -> nil
+end
+
+module RSpec::ExampleGroups::Mute::Expired::Expires::WhenValueIsMissing::LetDefinitions
+  def expires_at: () -> nil
+end
+
+module RSpec::ExampleGroups::Mute::Expired::Expires::WhenValueIsPresent::LetDefinitions
+  def expires_at: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::Mute::Expired::Expire::LetDefinitions
+  def subject: () -> Mute
+end
+
+class RSpec::ExampleGroups::Mute
+  def factory_name: () -> void
+end
+
+module RSpec::ExampleGroups::Mute::Expired::WhenExpiresAtIsInThePast::LetDefinitions
+  def expires_at: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::Mute::Expired::WhenExpiresAtIsNil::LetDefinitions
+  def expires_at: () -> nil
+end
+
+module RSpec::ExampleGroups::Mute::Expired::WhenExpiresAtIsInTheFuture::LetDefinitions
+  def expires_at: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::Mute::ExpiresIn::WhenExpiresAtIsNil::LetDefinitions
+  def expires_at: () -> nil
+end
+
+module RSpec::ExampleGroups::Mute::Scopes::LetDefinitions
+  def expired_record: () -> Mute
+
+  def un_expired_record: () -> Mute
+end
+
+module RSpec::ExampleGroups::Mute::ExpiresIn_2::LetDefinitions
+  def record: () -> Mute
+end

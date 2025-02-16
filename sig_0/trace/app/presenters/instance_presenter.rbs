@@ -1,0 +1,27 @@
+class InstancePresenter
+  def domain: () -> void
+
+  def mascot: () -> nil
+
+  def source_url: () -> void
+
+  def title: () -> void
+
+  def version: () -> void
+
+  def favicon: () -> nil
+             | () -> SiteUpload
+
+  def app_icon: () -> nil
+              | () -> SiteUpload
+
+  def contact: () -> InstancePresenter::ContactPresenter
+
+  def thumbnail: () -> nil
+
+  def description: () -> String
+end
+
+class InstancePresenter::ContactPresenter
+  def email: () -> void
+end

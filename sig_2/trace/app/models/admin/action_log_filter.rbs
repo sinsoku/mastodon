@@ -1,0 +1,9 @@
+class Admin::ActionLogFilter
+  def initialize: (Hash[untyped, untyped]) -> void
+
+  def results: () -> ActiveRecord::Relation
+
+  def latest_action_logs: () -> ActiveRecord::Relation
+
+  def scope_for: (String, String) -> void
+end

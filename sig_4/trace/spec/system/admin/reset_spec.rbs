@@ -1,0 +1,9 @@
+class RSpec::ExampleGroups::AdminReset
+  def admin_user: () -> void
+
+  def submit_reset: () -> void
+
+  def password_change_subject: () -> void
+
+  def reset_instructions_subject: () -> void
+end

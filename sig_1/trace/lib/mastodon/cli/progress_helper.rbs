@@ -1,0 +1,5 @@
+module Mastodon::CLI::ProgressHelper
+  def create_progress_bar: (?nil) -> ProgressBar::Base
+
+  def progress_output_options: () -> void
+end

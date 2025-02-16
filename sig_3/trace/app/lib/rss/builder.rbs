@@ -1,0 +1,11 @@
+class RSS::Builder
+  def self.build: () -> void
+
+  def initialize: () -> void
+
+  def to_xml: () -> String
+
+  def wrap_in_document: () -> void
+
+  def xml_instruct: () -> void
+end

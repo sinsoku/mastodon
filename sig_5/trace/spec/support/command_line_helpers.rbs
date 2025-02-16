@@ -1,0 +1,4 @@
+module CommandLineHelpers
+  def output_results: (*untyped) -> void
+                    | (*untyped) -> RSpec::Matchers::BuiltIn::Output
+end

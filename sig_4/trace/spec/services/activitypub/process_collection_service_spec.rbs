@@ -1,0 +1,75 @@
+module RSpec::ExampleGroups::ActivityPubProcessCollectionService::LetDefinitions
+  def actor: () -> Account
+
+  def subject: () -> ActivityPub::ProcessCollectionService
+
+  def json: () -> String
+
+  def payload: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessCollectionService::Call::WhenActorIsSuspended::WithFollowActivity::LetDefinitions
+  def payload: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessCollectionService::Call::WhenActorIsSuspended::WithMoveActivity::LetDefinitions
+  def payload: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessCollectionService::Call::WhenActorIsSuspended::WithAnnounceActivity::LetDefinitions
+  def payload: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessCollectionService::Call::WhenActorIsSuspended::WithUpdateActivity::LetDefinitions
+  def payload: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessCollectionService::Call::WhenActorIsSuspended::WithAddActivity::LetDefinitions
+  def payload: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessCollectionService::Call::WhenActorIsSuspended::WithCreateActivity::LetDefinitions
+  def payload: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessCollectionService::Call::WhenActorIsSuspended::WithRemoveActivity::LetDefinitions
+  def payload: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessCollectionService::Call::WhenActorIsSuspended::WithBlockActivity::LetDefinitions
+  def payload: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessCollectionService::Call::WhenActorIsSuspended::WithUndoActivity::LetDefinitions
+  def payload: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessCollectionService::Call::WhenActorIsSuspended::WithDeleteActivity::LetDefinitions
+  def payload: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessCollectionService::Call::WhenActorIsSuspended::WithFlagActivity::LetDefinitions
+  def payload: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessCollectionService::Call::WhenActorIsSuspended::WithAcceptActivity::LetDefinitions
+  def payload: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessCollectionService::Call::WhenActorIsSuspended::WithRejectActivity::LetDefinitions
+  def payload: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessCollectionService::Call::WhenActorIsSuspended::WithLikeActivity::LetDefinitions
+  def payload: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessCollectionService::Call::WhenActorDiffersFromSender::LetDefinitions
+  def forwarder: () -> Account
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessCollectionService::Call::WhenActorDiffersFromSender::WhenReceivingAFabricatedStatus::LetDefinitions
+  def actor: () -> Account
+
+  def payload: () -> Hash[untyped, untyped]
+end

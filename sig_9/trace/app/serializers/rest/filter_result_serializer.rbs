@@ -1,0 +1,3 @@
+class REST::FilterResultSerializer
+  def status_matches: () -> nil
+end

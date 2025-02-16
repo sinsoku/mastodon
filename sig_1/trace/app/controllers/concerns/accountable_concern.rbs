@@ -1,0 +1,9 @@
+module AccountableConcern
+  def log_action: (Symbol, TermsOfService) -> void
+                | (Symbol, User) -> void
+                | (Symbol, CanonicalEmailBlock) -> void
+                | (Symbol, EmailDomainBlock) -> void
+                | (Symbol, Account) -> void
+                | (Symbol, Report) -> void
+                | (Symbol, DomainAllow) -> void
+end

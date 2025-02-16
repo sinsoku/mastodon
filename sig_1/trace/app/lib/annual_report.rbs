@@ -1,0 +1,9 @@
+class AnnualReport
+  def initialize: (Account, Integer) -> void
+
+  def generate: () -> void
+
+  def data: () -> void
+
+  def self.table_name_prefix: () -> void
+end

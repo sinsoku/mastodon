@@ -1,0 +1,26 @@
+class EmailDomainBlock
+  def self.requires_approval?: (Array[untyped], ?attempt_ip: nil) -> void
+
+  def self.block?: (Array[untyped], ?attempt_ip: nil) -> void
+                 | (String, ?attempt_ip: nil) -> void
+
+  def to_log_human_identifier: () -> void
+
+  def history: () -> Trends::History
+end
+
+class EmailDomainBlock::Matcher
+  def initialize: (Array[untyped], ?attempt_ip: nil) -> void
+                | (String, ?attempt_ip: nil) -> void
+
+  def extract_uris: (Array[untyped]) -> Array[untyped]
+                  | (String) -> Array[untyped]
+
+  def match?: (*untyped, **untyped) -> void
+
+  def blocking?: (?allow_with_approval: bool) -> void
+
+  def domains_with_variants: () -> void
+
+  def invalid_uri?: () -> void
+end

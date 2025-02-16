@@ -1,0 +1,47 @@
+module RSpec::ExampleGroups::ActivityPubActivityAnnounce::LetDefinitions
+  def subject: () -> ActivityPub::Activity::Announce
+
+  def json: () -> ActiveSupport::HashWithIndifferentAccess
+
+  def sender: () -> Account
+
+  def status: () -> Status
+
+  def recipient: () -> Account
+
+  def unknown_object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityAnnounce::Perform::WhenTheSenderHasNoRelevanceToLocalActivity::LetDefinitions
+  def object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityAnnounce::Perform::WhenTheStatusBelongsToALocalUser::LetDefinitions
+  def object_json: () -> String
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityAnnounce::Perform::WhenSenderIsFollowedByALocalAccount::WhenSelfBoostOfAPreviouslyUnknownStatusWithCorrectAttributedTo::LetDefinitions
+  def object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityAnnounce::Perform::WhenSenderIsFollowedByALocalAccount::WithUnknownStatus::LetDefinitions
+  def object_json: () -> String
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityAnnounce::Perform::WhenSenderIsFollowedByALocalAccount::WhenSelfBoostOfAPreviouslyUnknownStatusWithCorrectAttributedToInlinedCollectionInAudience::LetDefinitions
+  def object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityAnnounce::Perform::WhenSenderIsFollowedByALocalAccount::WithKnownStatus::LetDefinitions
+  def object_json: () -> String
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityAnnounce::Perform::WhenTheSenderIsRelayed::LetDefinitions
+  def relay_account: () -> Account
+
+  def relay: () -> Relay
+
+  def subject: () -> ActivityPub::Activity::Announce
+
+  def object_json: () -> String
+end

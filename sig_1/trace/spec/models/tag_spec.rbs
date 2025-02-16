@@ -1,0 +1,55 @@
+module RSpec::ExampleGroups::Tag::HASHTAGRE::LetDefinitions
+  def subject: () -> Regexp
+end
+
+module RSpec::ExampleGroups::Tag::NotFeaturedBy::LetDefinitions
+  def account: () -> Account
+
+  def fun: () -> Tag
+
+  def games: () -> Tag
+end
+
+module RSpec::ExampleGroups::Tag::Validations::Name::WithANewRecord::LetDefinitions
+  def subject: () -> Tag
+end
+
+module RSpec::ExampleGroups::Tag::Validations::Name::WithAnExistingRecord::LetDefinitions
+  def subject: () -> Tag
+end
+
+class RSpec::ExampleGroups::Tag::Validations
+  def previous_name_error_message: () -> void
+end
+
+module RSpec::ExampleGroups::Tag::Validations::DisplayName::WithANewRecord::LetDefinitions
+  def subject: () -> Tag
+end
+
+module RSpec::ExampleGroups::Tag::Validations::DisplayName::WithAnExistingRecord::LetDefinitions
+  def subject: () -> Tag
+end
+
+module RSpec::ExampleGroups::Tag::FindOrCreateByNames::LetDefinitions
+  def upcase_string: () -> String
+
+  def downcase_string: () -> String
+end
+
+module RSpec::ExampleGroups::Tag::RecentlyUsed::LetDefinitions
+  def other_person_status: () -> Status
+
+  def used_tag_one: () -> Tag
+
+  def out_of_range: () -> Status
+
+  def account: () -> Account
+
+  def used_tag_on_out_of_range: () -> Tag
+
+  def older_in_range: () -> Status
+
+  def used_tag_two: () -> Tag
+
+  def newer_in_range: () -> Status
+end

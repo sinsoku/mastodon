@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::RESTAdminAccountSerializer::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::RESTAdminAccountSerializer::CreatedByApplicationId::WhenAccountIsApplicationCreated::LetDefinitions
+  def record: () -> Account
+
+  def application: () -> Doorkeeper::Application
+end
+
+module RSpec::ExampleGroups::RESTAdminAccountSerializer::WhenCreatedAtIsPopulated::LetDefinitions
+  def record: () -> Account
+end
+
+module RSpec::ExampleGroups::RESTAdminAccountSerializer::InvitedByAccountId::WhenAccountWasInvited::LetDefinitions
+  def record: () -> Account
+
+  def invite: () -> Invite
+end

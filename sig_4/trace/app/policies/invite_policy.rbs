@@ -1,0 +1,3 @@
+class InvitePolicy
+  def create?: () -> bool
+end

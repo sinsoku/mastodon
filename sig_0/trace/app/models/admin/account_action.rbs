@@ -1,0 +1,41 @@
+class Admin::AccountAction
+  def initialize: (?ActionController::Parameters) -> void
+                | (?Hash[untyped, untyped]) -> void
+
+  def save!: () -> void
+
+  def process_action!: () -> void
+
+  def handle_silence!: () -> void
+
+  def process_strike!: () -> void
+
+  def report: () -> void
+            | () -> nil
+
+  def text_for_warning: () -> void
+
+  def warning_preset: () -> nil
+
+  def status_ids: () -> void
+
+  def with_report?: () -> void
+
+  def process_reports!: () -> void
+
+  def reports: () -> ActiveRecord::Relation
+
+  def process_notification!: () -> void
+
+  def warnable?: () -> void
+
+  def process_queue!: () -> void
+
+  def send_email_notification=: (bool) -> bool
+
+  def include_statuses=: (bool) -> bool
+
+  def self.types_for_account: (Account) -> Array[untyped]
+
+  def self.disabled_types_for_account: (Account) -> nil
+end

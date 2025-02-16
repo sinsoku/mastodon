@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::AccountWarningPolicy::LetDefinitions
+  def subject: () -> Class
+
+  def account: () -> Account
+
+  def admin: () -> Account
+end

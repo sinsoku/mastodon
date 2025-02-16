@@ -1,0 +1,54 @@
+class RSpec::ExampleGroups::APIV1PushSubscriptions
+  def create_subscription_with_token: () -> void
+
+  def endpoint_push_subscription: () -> Web::PushSubscription
+                                | () -> nil
+
+  def endpoint_push_subscriptions: () -> ActiveRecord::Relation
+end
+
+module RSpec::ExampleGroups::APIV1PushSubscriptions::LetDefinitions
+  def create_payload: () -> ActiveSupport::HashWithIndifferentAccess
+
+  def endpoint: () -> String
+
+  def keys: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def scopes: () -> String
+
+  def alerts_payload: () -> ActiveSupport::HashWithIndifferentAccess
+
+  def headers: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::APIV1PushSubscriptions::PUTApiV1PushSubscription::LetDefinitions
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::APIV1PushSubscriptions::DELETEApiV1PushSubscription::LetDefinitions
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::APIV1PushSubscriptions::POSTApiV1PushSubscription::LetDefinitions
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::APIV1PushSubscriptions::POSTApiV1PushSubscription::WithInvalidBase64P256dhKey::LetDefinitions
+  def keys: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::APIV1PushSubscriptions::POSTApiV1PushSubscription::WithInvalidEndpointURL::LetDefinitions
+  def endpoint: () -> String
+end
+
+module RSpec::ExampleGroups::APIV1PushSubscriptions::POSTApiV1PushSubscription::WithInvalidP256dhKey::LetDefinitions
+  def keys: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::APIV1PushSubscriptions::GETApiV1PushSubscription::LetDefinitions
+  def subject: () -> Integer
+end

@@ -1,0 +1,14 @@
+class Api::V1::Timelines::ListController
+  def set_list: () -> List
+              | () -> nil
+
+  def set_statuses: () -> Array[untyped]
+
+  def preloaded_list_statuses: () -> Array[untyped]
+
+  def list_statuses: () -> void
+
+  def list_feed: () -> ListFeed
+
+  def show: () -> String
+end

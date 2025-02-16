@@ -1,0 +1,11 @@
+class ActivityPub::UndoAnnounceSerializer
+  def id: () -> String
+
+  def type: () -> String
+
+  def actor: () -> String
+
+  def to: () -> Array[untyped]
+
+  def virtual_object: () -> ActivityPub::ActivityPresenter
+end

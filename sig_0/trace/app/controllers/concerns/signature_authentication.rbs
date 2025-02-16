@@ -1,0 +1,5 @@
+module SignatureAuthentication
+  def current_account: () -> void
+                     | () -> Account
+                     | () -> nil
+end

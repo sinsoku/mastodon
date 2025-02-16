@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::AnnualReportTopHashtags::Generate::LetDefinitions
+  def subject: () -> AnnualReport::TopHashtags
+end
+
+module RSpec::ExampleGroups::AnnualReportTopHashtags::Generate::WithAnInactiveAccount::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AnnualReportTopHashtags::Generate::WithAnActiveAccount::LetDefinitions
+  def account: () -> Account
+
+  def tag: () -> Tag
+
+  def most_tag: () -> Tag
+end

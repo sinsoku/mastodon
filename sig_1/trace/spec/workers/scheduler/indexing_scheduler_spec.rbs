@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::SchedulerIndexingScheduler::LetDefinitions
+  def worker: () -> Scheduler::IndexingScheduler
+end

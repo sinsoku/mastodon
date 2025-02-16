@@ -1,0 +1,3 @@
+class SoftwareUpdatePolicy
+  def index?: () -> bool
+end

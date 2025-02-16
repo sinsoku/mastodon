@@ -1,0 +1,17 @@
+class Api::V1::BookmarksController
+  def index: () -> String
+
+  def load_statuses: () -> Array[untyped]
+
+  def preloaded_bookmarks: () -> void
+
+  def results: () -> Array[untyped]
+
+  def account_bookmarks: () -> ActiveRecord::Associations::CollectionProxy
+
+  def next_path: () -> void
+
+  def records_continue?: () -> void
+
+  def prev_path: () -> void
+end

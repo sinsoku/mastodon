@@ -1,0 +1,24 @@
+module RSpec::ExampleGroups::VacuumImportsVacuum::LetDefinitions
+  def old_unconfirmed: () -> BulkImport
+
+  def new_unconfirmed: () -> BulkImport
+
+  def recent_ongoing: () -> BulkImport
+
+  def recent_finished: () -> BulkImport
+
+  def old_finished: () -> BulkImport
+
+  def subject: () -> Vacuum::ImportsVacuum
+end
+
+class RSpec::ExampleGroups::VacuumImportsVacuum::Perform
+  def original_import_ids: () -> void
+                         | () -> Array[untyped]
+
+  def remaining_import_ids: () -> void
+
+  def vacuumed_import_ids: () -> void
+
+  def ordered_bulk_imports: () -> ActiveRecord::Relation
+end

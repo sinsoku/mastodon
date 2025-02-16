@@ -1,0 +1,14 @@
+class ActivityPub::CollectionsController
+  def set_items: () -> String
+               | () -> Array[untyped]
+
+  def for_signed_account: () -> Array[untyped]
+
+  def set_size: () -> Integer
+
+  def set_type: () -> Symbol
+
+  def show: () -> bool
+
+  def collection_presenter: () -> void
+end

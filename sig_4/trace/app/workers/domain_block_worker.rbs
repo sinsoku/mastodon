@@ -1,0 +1,3 @@
+class DomainBlockWorker
+  def perform: (Integer, ?bool) -> void
+end

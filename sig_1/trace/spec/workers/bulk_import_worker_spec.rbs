@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::BulkImportWorker::Perform::LetDefinitions
+  def service_double: () -> RSpec::Mocks::InstanceVerifyingDouble
+end
+
+module RSpec::ExampleGroups::BulkImportWorker::LetDefinitions
+  def import: () -> BulkImport
+
+  def subject: () -> BulkImportWorker
+end

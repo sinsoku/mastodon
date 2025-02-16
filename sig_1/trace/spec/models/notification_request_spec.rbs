@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::NotificationRequest::ReconsiderExistence::LetDefinitions
+  def subject: () -> NotificationRequest
+end

@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::ExistingUsernameValidator::LetDefinitions
+  def record: () -> Record
+
+  def record_class: () -> Class
+end

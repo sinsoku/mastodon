@@ -1,0 +1,17 @@
+class BlockDomainService
+  def call: (DomainBlock, ?bool) -> void
+
+  def process_domain_block!: () -> void
+
+  def suspend_accounts!: () -> void
+
+  def blocked_domain_accounts: () -> ActiveRecord::Relation
+
+  def blocked_domain: () -> void
+
+  def domain_block_event: () -> void
+
+  def notify_of_severed_relationships!: () -> void
+
+  def silence_accounts!: () -> void
+end

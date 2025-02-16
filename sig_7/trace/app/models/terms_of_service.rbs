@@ -1,0 +1,8 @@
+class TermsOfService
+  def published?: () -> void
+                | () -> bool
+
+  def scope_for_notification: () -> ActiveRecord::Relation
+
+  def notification_sent?: () -> bool
+end

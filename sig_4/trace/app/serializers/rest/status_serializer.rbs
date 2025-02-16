@@ -1,0 +1,61 @@
+class REST::StatusSerializer
+  def id: () -> String
+
+  def in_reply_to_id: () -> nil
+
+  def in_reply_to_account_id: () -> nil
+
+  def sensitive: () -> bool
+
+  def current_user?: () -> void
+                   | () -> bool
+
+  def visibility: () -> String
+
+  def uri: () -> String
+
+  def url: () -> String
+
+  def reblogs_count: () -> Integer
+
+  def relationships: () -> nil
+                   | () -> StatusRelationshipsPresenter
+
+  def favourites_count: () -> Integer
+
+  def pinnable?: () -> bool
+
+  def source_requested?: () -> nil
+
+  def content: () -> ActiveSupport::SafeBuffer
+
+  def show_application?: () -> bool
+
+  def ordered_mentions: () -> Array[untyped]
+
+  def favourited: () -> bool
+
+  def reblogged: () -> bool
+
+  def muted: () -> bool
+
+  def bookmarked: () -> bool
+
+  def pinned: () -> bool
+
+  def filtered: () -> Array[untyped]
+end
+
+class REST::StatusSerializer::MentionSerializer
+  def id: () -> String
+
+  def username: () -> String
+
+  def url: () -> String
+
+  def acct: () -> String
+end
+
+class REST::StatusSerializer::TagSerializer
+  def url: () -> String
+end

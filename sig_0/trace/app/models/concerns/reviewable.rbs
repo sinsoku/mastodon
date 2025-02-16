@@ -1,0 +1,9 @@
+module Reviewable
+  def requested_review?: () -> bool
+
+  def reviewed?: () -> bool
+
+  def requires_review?: () -> bool
+
+  def requires_review_notification?: () -> bool
+end

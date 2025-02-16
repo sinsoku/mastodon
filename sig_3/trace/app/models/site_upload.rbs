@@ -1,0 +1,3 @@
+class SiteUpload
+  def cache_key: () -> void
+end

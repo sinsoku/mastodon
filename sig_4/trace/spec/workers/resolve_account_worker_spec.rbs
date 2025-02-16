@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::ResolveAccountWorker::LetDefinitions
+  def worker: () -> ResolveAccountWorker
+
+  def service: () -> RSpec::Mocks::InstanceVerifyingDouble
+end
+
+class RSpec::ExampleGroups::ResolveAccountWorker::Perform::WithAURI
+  def stub_service: () -> void
+end
+
+module RSpec::ExampleGroups::ResolveAccountWorker::Perform::WithAURI::LetDefinitions
+  def uri: () -> String
+end

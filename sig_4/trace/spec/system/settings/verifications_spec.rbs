@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::SettingsVerificationPage::LetDefinitions
+  def user: () -> User
+end
+
+class RSpec::ExampleGroups::SettingsVerificationPage
+  def verification_summary: () -> void
+
+  def attribution_field: () -> void
+end

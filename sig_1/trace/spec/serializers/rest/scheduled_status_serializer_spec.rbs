@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::RESTScheduledStatusSerializer::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+
+  def scheduled_status: () -> ScheduledStatus
+end

@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::ProcessHashtagsService::Call::LetDefinitions
+  def status: () -> Status
+end

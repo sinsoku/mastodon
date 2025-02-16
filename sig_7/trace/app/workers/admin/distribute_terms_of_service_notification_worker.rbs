@@ -1,0 +1,4 @@
+class Admin::DistributeTermsOfServiceNotificationWorker
+  def perform: (Integer) -> void
+             | (nil) -> void
+end

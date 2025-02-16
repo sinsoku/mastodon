@@ -1,0 +1,5 @@
+class AccountSuggestions::FriendsOfFriendsSource
+  def get: (Account, ?limit: Integer) -> void
+
+  def source_query: (Account, ?limit: Integer) -> Array[untyped]
+end

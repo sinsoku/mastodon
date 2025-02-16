@@ -1,0 +1,3 @@
+module Admin::ActionLogsHelper
+  def log_target: (Admin::ActionLog) -> ActiveSupport::SafeBuffer
+end

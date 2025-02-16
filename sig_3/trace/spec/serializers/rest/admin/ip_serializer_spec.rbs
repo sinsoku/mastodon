@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::RESTAdminIpSerializer::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+
+  def record: () -> UserIp
+end

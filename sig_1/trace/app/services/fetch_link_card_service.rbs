@@ -1,0 +1,5 @@
+class FetchLinkCardService
+  def call: (Status) -> void
+
+  def parse_urls: () -> nil
+end

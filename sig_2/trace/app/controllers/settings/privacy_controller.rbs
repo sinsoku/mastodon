@@ -1,0 +1,10 @@
+class Settings::PrivacyController
+  def set_account: () -> Account
+
+  def update: () -> ActiveSupport::SafeBuffer
+            | () -> String
+
+  def account_params: () -> ActionController::Parameters
+
+  def show: () -> nil
+end

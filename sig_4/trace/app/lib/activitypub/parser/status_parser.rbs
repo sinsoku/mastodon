@@ -1,0 +1,29 @@
+class ActivityPub::Parser::StatusParser
+  def initialize: (Hash[untyped, untyped], **nil) -> void
+
+  def uri: () -> String
+
+  def edited_at: () -> void
+               | () -> DateTime
+               | () -> nil
+
+  def text: () -> void
+
+  def spoiler_text: () -> void
+
+  def sensitive: () -> void
+
+  def language: () -> void
+
+  def raw_language_code: () -> nil
+
+  def content_language_map?: () -> void
+
+  def name_language_map?: () -> void
+
+  def summary_language_map?: () -> void
+
+  def favourites_count: () -> nil
+
+  def reblogs_count: () -> nil
+end

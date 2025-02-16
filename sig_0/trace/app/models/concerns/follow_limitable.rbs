@@ -1,0 +1,6 @@
+module FollowLimitable
+  def bypass_follow_limit=: (bool) -> bool
+
+  def bypass_follow_limit?: () -> bool
+                          | () -> nil
+end

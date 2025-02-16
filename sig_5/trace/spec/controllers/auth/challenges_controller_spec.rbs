@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::AuthChallengesController::LetDefinitions
+  def user: () -> User
+
+  def password: () -> String
+end
+
+module RSpec::ExampleGroups::AuthChallengesController::POSTCreate::LetDefinitions
+  def return_to: () -> String
+end

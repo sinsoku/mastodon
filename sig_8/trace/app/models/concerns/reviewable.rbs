@@ -1,0 +1,10 @@
+module Reviewable
+  def requires_review_notification?: () -> bool
+
+  def requires_review?: () -> void
+                      | () -> bool
+
+  def requested_review?: () -> bool
+
+  def reviewed?: () -> bool
+end

@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::ListAccount::CallbacksToSetFollows::WhenListOwnerFollowsAccount::LetDefinitions
+  def follow: () -> Follow
+
+  def list: () -> List
+end
+
+module RSpec::ExampleGroups::ListAccount::CallbacksToSetFollows::WhenListOwnerHasAFollowRequestForAccount::LetDefinitions
+  def follow_request: () -> FollowRequest
+
+  def list: () -> List
+end

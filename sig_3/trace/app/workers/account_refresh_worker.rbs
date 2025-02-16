@@ -1,0 +1,3 @@
+class AccountRefreshWorker
+  def perform: (Integer) -> void
+end

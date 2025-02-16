@@ -1,0 +1,3 @@
+class RSpec::ExampleGroups::APIV1TrendsLinks::GETApiV1TrendsLinks::WhenTrendsAreEnabled
+  def prepare_trends: () -> void
+end

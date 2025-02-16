@@ -1,0 +1,9 @@
+class Mute
+  def expires_in=: (nil) -> void
+end
+
+class Poll
+  def expired?: () -> bool
+
+  def expires?: () -> void
+end

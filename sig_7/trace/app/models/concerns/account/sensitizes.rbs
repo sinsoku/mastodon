@@ -1,0 +1,8 @@
+module Account::Sensitizes
+  def sensitized?: () -> void
+                 | () -> bool
+
+  def sensitize!: (?Time) -> void
+
+  def unsensitize!: () -> void
+end

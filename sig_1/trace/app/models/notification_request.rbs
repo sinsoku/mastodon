@@ -1,0 +1,5 @@
+class NotificationRequest
+  def prepare_notifications_count: () -> Integer
+
+  def reconsider_existence!: () -> void
+end

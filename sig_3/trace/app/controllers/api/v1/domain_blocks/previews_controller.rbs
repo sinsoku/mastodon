@@ -1,0 +1,7 @@
+class Api::V1::DomainBlocks::PreviewsController
+  def set_domain: () -> String
+
+  def set_domain_block_preview: () -> DomainBlockPreviewPresenter
+
+  def show: () -> String
+end

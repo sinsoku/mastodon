@@ -1,0 +1,13 @@
+class RSpec::ExampleGroups::EmailMxValidator
+  def resolv_double_mx: (String) -> void
+
+  def configure_resolver: (String, ?Hash[untyped, untyped]) -> void
+
+  def resolv_double_a: (String) -> void
+end
+
+module RSpec::ExampleGroups::EmailMxValidator::Validate::LetDefinitions
+  def resolv_dns_double: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def user: () -> RSpec::Mocks::InstanceVerifyingDouble
+end

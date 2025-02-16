@@ -1,0 +1,15 @@
+class Notification
+  def set_from_account: () -> Integer
+                      | () -> nil
+
+  def type: () -> Symbol
+
+  def target_status: () -> Status
+                   | () -> nil
+
+  def remove_from_notification_request: () -> nil
+
+  def self.browserable: (?types: Array[untyped], ?exclude_types: Array[untyped], ?from_account_id: nil, ?include_filtered: nil) -> ActiveRecord::AssociationRelation
+
+  def self.preload_cache_collection_target_statuses: (Array[untyped]) -> void
+end

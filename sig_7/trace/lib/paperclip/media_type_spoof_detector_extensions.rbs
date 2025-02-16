@@ -1,0 +1,5 @@
+module Paperclip::MediaTypeSpoofDetectorExtensions
+  def calculated_content_type: () -> String
+
+  def type_from_marcel: () -> String
+end

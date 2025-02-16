@@ -1,0 +1,7 @@
+class RSpec::ExampleGroups::APIV1TrendsStatuses::GETApiV1TrendsStatuses::WhenTrendsAreEnabled
+  def prepare_trends: () -> void
+end
+
+class RSpec::ExampleGroups::APIV1TrendsStatuses::GETApiV1TrendsStatuses::WhenTrendsAreEnabled::WithAComicallyInflatedExternalInteractionsCount
+  def prepare_fake_trends: () -> void
+end

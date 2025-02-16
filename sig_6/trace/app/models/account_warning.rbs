@@ -1,0 +1,3 @@
+class AccountWarning
+  def statuses: () -> ActiveRecord::Relation
+end

@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::ApiRateLimitHeaders::RateLimiting::WhenThrottlingIsOn::LetDefinitions
+  def start_time: () -> Time
+end
+
+class AnonymousController
+  def show: () -> bool
+end

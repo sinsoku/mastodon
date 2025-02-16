@@ -1,0 +1,41 @@
+module RSpec::ExampleGroups::Suggestions::GETApiV1Suggestions::LetDefinitions
+  def bob: () -> Account
+
+  def jeff: () -> Account
+
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Suggestions::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Suggestions::GETApiV1Suggestions::WithLimitParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Suggestions::GETApiV1Suggestions::WithoutAnAuthorizationHeader::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Suggestions::DELETEApiV1SuggestionsId::LetDefinitions
+  def bob: () -> Account
+
+  def jeff: () -> Account
+
+  def subject: () -> Integer
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Suggestions::DELETEApiV1SuggestionsId::WithoutAnAuthorizationHeader::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+end

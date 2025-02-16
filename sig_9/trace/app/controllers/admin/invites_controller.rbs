@@ -1,0 +1,15 @@
+class Admin::InvitesController
+  def index: () -> Invite
+
+  def filtered_invites: () -> ActiveRecord::Relation
+
+  def filter_params: () -> void
+
+  def deactivate_all: () -> String
+
+  def create: () -> String
+
+  def resource_params: () -> void
+
+  def destroy: () -> String
+end

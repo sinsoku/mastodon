@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::RESTAppealSerializer::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::RESTAppealSerializer::State::WhenAppealIsRejected::LetDefinitions
+  def record: () -> Appeal
+end
+
+module RSpec::ExampleGroups::RESTAppealSerializer::State::WhenAppealIsApproved::LetDefinitions
+  def record: () -> Appeal
+end
+
+module RSpec::ExampleGroups::RESTAppealSerializer::State::WhenAppealIsNotApprovedOrRejected::LetDefinitions
+  def record: () -> Appeal
+end

@@ -1,0 +1,3 @@
+class ResolveAccountService
+  def call: (nil, ?Hash[untyped, untyped]) -> void
+end

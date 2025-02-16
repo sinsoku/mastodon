@@ -1,0 +1,25 @@
+class ReportService
+  def call: (Account, Account, ?Hash[untyped, untyped]) -> void
+          | (Account, Account, ?Hash[untyped, untyped]) -> Report
+
+  def create_report!: () -> void
+
+  def reported_status_ids: () -> void
+
+  def forward_to_origin?: () -> void
+
+  def forward?: () -> void
+
+  def notify_staff!: () -> void
+
+  def forward_to_domains: () -> Array[untyped]
+
+  def forward_to_origin!: () -> void
+
+  def payload: () -> void
+
+  def some_local_account: () -> void
+                        | () -> Account
+
+  def forward_to_replied_to!: () -> void
+end

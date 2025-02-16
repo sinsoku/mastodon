@@ -1,0 +1,5 @@
+class Api::V1::Accounts::IdentityProofsController
+  def set_account: () -> Account
+
+  def index: () -> String
+end

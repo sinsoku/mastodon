@@ -1,0 +1,47 @@
+module RSpec::ExampleGroups::UsingOAuthFromAnExternalApp::WhenTheUserIsAlreadyLoggedIn::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::UsingOAuthFromAnExternalApp::LetDefinitions
+  def subject: () -> nil
+
+  def params: () -> Hash[untyped, untyped]
+
+  def client_app: () -> Doorkeeper::Application
+end
+
+class RSpec::ExampleGroups::UsingOAuthFromAnExternalApp
+  def oauth_deny_text: () -> void
+
+  def user_has_grant_with_client_app?: () -> void
+
+  def redirect_to_callback_url: () -> void
+
+  def oauth_authorize_text: () -> void
+
+  def fill_in_otp_details: (String) -> void
+end
+
+module RSpec::ExampleGroups::UsingOAuthFromAnExternalApp::WhenTheUserIsAlreadyLoggedIn::WhenUsingPKCE::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+
+  def pkce_code_challenge: () -> String
+
+  def pkce_code_challenge_method: () -> String
+end
+
+module RSpec::ExampleGroups::UsingOAuthFromAnExternalApp::WhenTheUserIsAlreadyLoggedIn::WhenUsingPKCE::WhenUsingPlainCodeChallengeMethod::LetDefinitions
+  def pkce_code_challenge_method: () -> String
+end
+
+module RSpec::ExampleGroups::UsingOAuthFromAnExternalApp::WhenTheUserIsNotAlreadyLoggedIn::LetDefinitions
+  def user: () -> User
+
+  def email: () -> String
+
+  def password: () -> String
+end
+
+module RSpec::ExampleGroups::UsingOAuthFromAnExternalApp::WhenTheUserIsNotAlreadyLoggedIn::WhenTheUserHasSetUpTOTP::LetDefinitions
+  def user: () -> User
+end

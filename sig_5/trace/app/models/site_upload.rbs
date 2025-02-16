@@ -1,0 +1,7 @@
+class SiteUpload
+  def set_meta: () -> Hash[untyped, untyped]
+
+  def clear_cache: () -> bool
+
+  def cache_key: () -> void
+end

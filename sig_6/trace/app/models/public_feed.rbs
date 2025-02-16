@@ -1,0 +1,16 @@
+class PublicFeed
+  def initialize: (Account, ?Hash[untyped, untyped]) -> void
+                | (nil, ?Hash[untyped, untyped]) -> void
+
+  def public_scope: () -> ActiveRecord::Relation
+
+  def local_only?: () -> void
+
+  def remote_only?: () -> void
+
+  def account?: () -> void
+
+  def account_filters_scope: () -> void
+
+  def media_only?: () -> void
+end

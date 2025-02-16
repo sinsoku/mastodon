@@ -1,0 +1,5 @@
+class FamiliarFollowersPresenter
+  def initialize: (ActiveRecord::Relation, Integer) -> void
+
+  def accounts: () -> void
+end

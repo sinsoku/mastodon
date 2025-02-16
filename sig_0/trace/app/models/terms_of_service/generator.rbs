@@ -1,0 +1,3 @@
+class TermsOfService::Generator
+  def render: () -> void
+end

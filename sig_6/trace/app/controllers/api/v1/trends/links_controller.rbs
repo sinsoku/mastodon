@@ -1,0 +1,16 @@
+class Api::V1::Trends::LinksController
+  def set_links: () -> Trends::Links::Query
+
+  def enabled?: () -> bool
+
+  def offset_param: () -> void
+                  | () -> Integer
+
+  def next_path: () -> void
+
+  def records_continue?: () -> void
+
+  def prev_path: () -> void
+
+  def links_from_trends: () -> Trends::Links::Query
+end

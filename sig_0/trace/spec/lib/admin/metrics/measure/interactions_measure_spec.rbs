@@ -1,0 +1,13 @@
+class RSpec::ExampleGroups::AdminMetricsMeasureInteractionsMeasure::Data::WithActivityTrackingRecords
+  def record_interaction_activity: () -> void
+end
+
+module RSpec::ExampleGroups::AdminMetricsMeasureInteractionsMeasure::LetDefinitions
+  def subject: () -> Admin::Metrics::Measure::InteractionsMeasure
+
+  def start_at: () -> ActiveSupport::TimeWithZone
+
+  def end_at: () -> Time
+
+  def params: () -> ActionController::Parameters
+end

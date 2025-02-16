@@ -1,0 +1,18 @@
+class FeedInsertWorker
+  def perform: (Integer, nil, ?String, ?Hash[untyped, untyped]) -> bool
+             | (nil, Integer, ?String, ?Hash[untyped, untyped]) -> bool
+             | (Integer, Integer, ?String, ?Hash[untyped, untyped]) -> nil
+             | (Integer, Integer, ?Symbol, ?Hash[untyped, untyped]) -> nil
+
+  def check_and_insert: () -> void
+
+  def feed_filter: () -> Symbol
+                 | () -> nil
+
+  def update?: () -> void
+
+  def notify?: (Symbol) -> void
+             | (nil) -> void
+
+  def perform_push: () -> void
+end

@@ -1,0 +1,5 @@
+module SessionTrackingConcern
+  def set_session_activity: () -> nil
+
+  def session_needs_update?: () -> void
+end

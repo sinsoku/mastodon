@@ -1,0 +1,7 @@
+class AdminMailer
+  def process_params: () -> Account
+
+  def set_instance: () -> String
+
+  def new_appeal: (Appeal) -> Mail::Message
+end

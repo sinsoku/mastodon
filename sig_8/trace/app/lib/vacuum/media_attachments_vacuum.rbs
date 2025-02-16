@@ -1,0 +1,15 @@
+class Vacuum::MediaAttachmentsVacuum
+  def initialize: (ActiveSupport::Duration) -> void
+
+  def perform: () -> void
+
+  def vacuum_orphaned_records!: () -> void
+
+  def orphaned_media_attachments: () -> ActiveRecord::Relation
+
+  def retention_period?: () -> void
+
+  def vacuum_cached_files!: () -> void
+
+  def media_attachments_past_retention_period: () -> ActiveRecord::Relation
+end

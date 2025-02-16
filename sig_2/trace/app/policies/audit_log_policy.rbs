@@ -1,0 +1,3 @@
+class AuditLogPolicy
+  def index?: () -> bool
+end

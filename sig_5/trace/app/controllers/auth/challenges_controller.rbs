@@ -1,0 +1,4 @@
+class Auth::ChallengesController
+  def create: () -> ActiveSupport::SafeBuffer
+            | () -> String
+end

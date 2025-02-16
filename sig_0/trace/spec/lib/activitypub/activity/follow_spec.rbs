@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::ActivityPubActivityFollow::LetDefinitions
+  def sender: () -> Account
+
+  def recipient: () -> Account
+
+  def json: () -> ActiveSupport::HashWithIndifferentAccess
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityFollow::Perform::LetDefinitions
+  def subject: () -> ActivityPub::Activity::Follow
+end

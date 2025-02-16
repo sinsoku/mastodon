@@ -1,0 +1,10 @@
+class Mastodon::CLI::Main
+  def self_destruct: () -> nil
+                   | () -> StringIO
+
+  def domain_match_confirmed?: () -> void
+
+  def proceed_prompt_negative?: () -> void
+
+  def self_destruct_value: () -> String
+end

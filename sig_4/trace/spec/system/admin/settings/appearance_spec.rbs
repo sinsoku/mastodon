@@ -1,0 +1,3 @@
+class RSpec::ExampleGroups::AdminSettingsAppearance
+  def custom_css_field: () -> void
+end

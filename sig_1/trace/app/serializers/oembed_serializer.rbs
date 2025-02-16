@@ -1,0 +1,21 @@
+class OEmbedSerializer
+  def type: () -> String
+
+  def version: () -> String
+
+  def author_name: () -> String
+
+  def author_url: () -> String
+
+  def provider_name: () -> String
+
+  def provider_url: () -> String
+
+  def cache_age: () -> Integer
+
+  def html: () -> String
+
+  def width: () -> Integer
+
+  def height: () -> nil
+end

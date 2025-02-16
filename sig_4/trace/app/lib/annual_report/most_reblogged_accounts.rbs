@@ -1,0 +1,5 @@
+class AnnualReport::MostRebloggedAccounts
+  def generate: () -> void
+
+  def most_reblogged_accounts: () -> Hash[untyped, untyped]
+end

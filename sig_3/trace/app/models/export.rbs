@@ -1,0 +1,7 @@
+class Export
+  def initialize: (Account) -> void
+
+  def to_lists_csv: () -> void
+
+  def acct: (Account) -> void
+end

@@ -1,0 +1,8 @@
+class PreviewCard
+  def extract_dimensions: () -> Integer
+                        | () -> nil
+
+  def local?: () -> bool
+
+  def self.image_styles: (Paperclip::Attachment) -> void
+end

@@ -1,0 +1,3 @@
+module WebAppControllerConcern
+  def skip_csrf_meta_tags?: () -> bool
+end

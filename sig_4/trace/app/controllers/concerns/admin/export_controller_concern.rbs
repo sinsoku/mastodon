@@ -1,0 +1,7 @@
+module Admin::ExportControllerConcern
+  def set_dummy_import!: () -> Admin::Import
+
+  def import_params: () -> void
+
+  def send_export_file: () -> void
+end

@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::PublishScheduledStatusWorker::LetDefinitions
+  def subject: () -> PublishScheduledStatusWorker
+
+  def scheduled_status: () -> ScheduledStatus
+end
+
+module RSpec::ExampleGroups::PublishScheduledStatusWorker::Perform::WhenTheAccountIsDisabled::LetDefinitions
+  def scheduled_status: () -> ScheduledStatus
+end

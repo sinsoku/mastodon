@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::LoginActivity::Validations::LetDefinitions
+  def subject: () -> LoginActivity
+end

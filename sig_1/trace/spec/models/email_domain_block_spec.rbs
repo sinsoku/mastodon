@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::EmailDomainBlock::Block::WhenGivenAnArrayOfDomains::LetDefinitions
+  def input: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::EmailDomainBlock::Block::WhenGivenAnEMailAddress::LetDefinitions
+  def input: () -> String
+end
+
+module RSpec::ExampleGroups::EmailDomainBlock::Block::WhenGivenAnEMailAddress::WithASubdomain::LetDefinitions
+  def domain: () -> String
+end
+
+module RSpec::ExampleGroups::EmailDomainBlock::Block::WhenGivenAnEMailAddress::WithATopLevelDomain::LetDefinitions
+  def domain: () -> String
+end

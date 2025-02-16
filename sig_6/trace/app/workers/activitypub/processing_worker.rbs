@@ -1,0 +1,3 @@
+class ActivityPub::ProcessingWorker
+  def perform: (Integer, String, ?nil, ?String) -> void
+end

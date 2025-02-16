@@ -1,0 +1,71 @@
+module RSpec::ExampleGroups::Media::POSTApiV1Media::LetDefinitions
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Media::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Media::POSTApiV1Media::WithVideoWebm::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Media::POSTApiV1Media::WithImageJpeg::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Media::POSTApiV1Media::WithImageGif::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Media::POSTApiV1Media::WhenPaperclipErrorsOccur::LetDefinitions
+  def media_attachments: () -> RSpec::Mocks::Double
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Media::PUTApiV1MediaId::LetDefinitions
+  def subject: () -> Integer
+
+  def media: () -> MediaAttachment
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Media::PUTApiV1MediaId::WhenTheMediaBelongsToSomebodyElse::LetDefinitions
+  def media: () -> MediaAttachment
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Media::PUTApiV1MediaId::WhenTheRequestingUserOwnsTheMedia::LetDefinitions
+  def status: () -> nil
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Media::PUTApiV1MediaId::WhenTheRequestingUserOwnsTheMedia::WhenTheMediaIsAttachedToAStatus::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::Media::GETApiV1MediaId::LetDefinitions
+  def subject: () -> Integer
+
+  def media: () -> MediaAttachment
+end
+
+module RSpec::ExampleGroups::Media::GETApiV1MediaId::WhenTheMediaBelongsToSomebodyElse::LetDefinitions
+  def media: () -> MediaAttachment
+end
+
+module RSpec::ExampleGroups::Media::GETApiV1MediaId::WhenMediaIsAttachedToAStatus::LetDefinitions
+  def media: () -> MediaAttachment
+end

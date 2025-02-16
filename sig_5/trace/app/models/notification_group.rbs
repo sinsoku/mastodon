@@ -1,0 +1,13 @@
+class NotificationGroup
+  def self.from_notifications: (Array[untyped], ?pagination_range: Range[untyped], ?grouped_types: nil) -> void
+                             | (Array[untyped], ?pagination_range: Range[untyped], ?grouped_types: Array[untyped]) -> void
+                             | (Array[untyped], ?pagination_range: nil, ?grouped_types: nil) -> void
+
+  def self.load_groups_data: (Integer, Array[untyped], ?pagination_range: Range[untyped]) -> Hash[untyped, untyped]
+                           | (Integer, Array[untyped], ?pagination_range: nil) -> Hash[untyped, untyped]
+
+  def target_status: (*untyped, **untyped) -> nil
+                   | (*untyped, **untyped) -> Status
+
+  def type: (*untyped, **untyped) -> Symbol
+end

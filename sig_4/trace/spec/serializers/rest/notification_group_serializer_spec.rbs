@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::RESTNotificationGroupSerializer::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+
+  def notification_group: () -> NotificationGroup
+end

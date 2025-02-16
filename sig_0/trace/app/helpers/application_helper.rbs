@@ -1,0 +1,37 @@
+module ApplicationHelper
+  def prerender_custom_emojis: (ActiveSupport::SafeBuffer, Array[untyped], ?Hash[untyped, untyped]) -> ActiveSupport::SafeBuffer
+
+  def render_initial_state: () -> void
+
+  def material_symbol: (String, ?Hash[untyped, untyped]) -> void
+                     | (String, ?Hash[untyped, untyped]) -> ActiveSupport::SafeBuffer
+
+  def cdn_host?: () -> void
+
+  def cdn_host: () -> nil
+
+  def storage_host?: () -> void
+
+  def storage_host_var: () -> nil
+
+  def html_title: () -> ActiveSupport::SafeBuffer
+
+  def title: () -> void
+
+  def body_classes: () -> void
+
+  def locale_direction: () -> String
+
+  def opengraph: (String, String) -> ActiveSupport::SafeBuffer
+               | (String, ActiveSupport::SafeBuffer) -> ActiveSupport::SafeBuffer
+
+  def can?: (Symbol, Symbol) -> void
+
+  def check_icon: () -> ActiveSupport::SafeBuffer
+
+  def approved_registrations?: () -> void
+
+  def available_sign_up_path: () -> void
+
+  def closed_registrations?: () -> void
+end

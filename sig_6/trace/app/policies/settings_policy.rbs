@@ -1,0 +1,3 @@
+class SettingsPolicy
+  def update?: () -> bool
+end

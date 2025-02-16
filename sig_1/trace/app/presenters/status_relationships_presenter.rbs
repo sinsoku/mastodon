@@ -1,0 +1,5 @@
+class StatusRelationshipsPresenter
+  def initialize: (Array[untyped], ?Integer, **nil) -> void
+
+  def build_filters_map: (Array[untyped], Integer) -> Hash[untyped, untyped]
+end

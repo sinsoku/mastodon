@@ -1,0 +1,89 @@
+class Account
+  def normalize_domain: () -> nil
+                      | () -> String
+
+  def local?: () -> void
+            | () -> bool
+
+  def prepare_contents: () -> nil
+
+  def generate_keys: () -> nil
+
+  def to_param: () -> void
+              | () -> String
+
+  def user_role: (*untyped, **untyped) -> void
+               | (*untyped, **untyped) -> UserRole
+               | (*untyped, **untyped) -> nil
+
+  def pretty_acct: () -> void
+                 | () -> String
+
+  def bot?: () -> bool
+
+  def group?: () -> bool
+
+  def object_type: () -> void
+
+  def instance_actor?: () -> void
+                     | () -> bool
+
+  def user_prefers_noindex?: (*untyped, **untyped) -> void
+
+  def moved?: () -> void
+
+  def emojis: () -> void
+            | () -> Array[untyped]
+
+  def emojifiable_text: () -> void
+
+  def fields: () -> Array[untyped]
+
+  def synchronization_uri_prefix: () -> String
+
+  def self.inboxes: () -> Array[untyped]
+
+  def keypair: () -> void
+             | () -> OpenSSL::PKey::RSA
+
+  def trigger_update_webhooks: () -> nil
+                             | () -> String
+
+  def user_pending?: (*untyped, **untyped) -> void
+                   | (*untyped, **untyped) -> bool
+
+  def user_confirmed?: (*untyped, **untyped) -> bool
+                     | (*untyped, **untyped) -> nil
+
+  def create_canonical_email_block!: () -> void
+
+  def user_email: (*untyped, **untyped) -> String
+                | (*untyped, **untyped) -> nil
+
+  def acct: () -> void
+          | () -> String
+
+  def also_known_as: () -> Array[untyped]
+
+  def user_unconfirmed?: (*untyped, **untyped) -> void
+
+  def user_current_sign_in_at: (*untyped, **untyped) -> ActiveSupport::TimeWithZone
+
+  def user_disabled?: (*untyped, **untyped) -> void
+
+  def user_approved?: (*untyped, **untyped) -> void
+
+  def user_locale: (*untyped, **untyped) -> void
+
+  def user_unconfirmed_or_pending?: (*untyped, **untyped) -> void
+
+  def clean_feed_manager: () -> nil
+
+  def to_log_human_identifier: () -> void
+
+  def previous_strikes_count: () -> void
+
+  def user_shows_application?: (*untyped, **untyped) -> void
+
+  def sign?: () -> void
+end

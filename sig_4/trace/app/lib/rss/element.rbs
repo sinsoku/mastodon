@@ -1,0 +1,17 @@
+class RSS::Element
+  def create_element: (String, ?nil) -> Ox::Element
+                    | (String, ?String) -> Ox::Element
+
+  def append_element: (String, ?String) -> void
+                    | (String, ?nil) -> void
+
+  def to_element: () -> void
+end
+
+class RSS::Item
+  def self.with: (*untyped) -> void
+end
+
+class RSS::MediaContent
+  def self.with: (*untyped) -> void
+end

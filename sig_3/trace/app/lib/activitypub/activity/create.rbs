@@ -1,0 +1,51 @@
+class ActivityPub::Activity::Create
+  def perform: () -> void
+
+  def create_status: () -> void
+
+  def tombstone_exists?: () -> void
+
+  def related_to_local_activity?: () -> bool
+
+  def poll_vote?: () -> void
+
+  def replied_to_status: () -> nil
+
+  def in_reply_to_uri: () -> nil
+
+  def find_existing_status: () -> nil
+
+  def process_status: () -> void
+
+  def process_status_params: () -> void
+
+  def process_attachments: () -> Array[untyped]
+
+  def conversation_from_uri: (nil) -> void
+
+  def process_poll: () -> void
+
+  def process_tags: () -> void
+
+  def process_audience: () -> void
+
+  def audience_to: () -> Array[untyped]
+
+  def audience_cc: () -> void
+
+  def attach_tags: (Status) -> void
+
+  def attach_mentions: (Status) -> void
+
+  def attach_counts: (Status) -> void
+
+  def resolve_thread: (Status) -> void
+
+  def resolve_unresolved_mentions: (Status) -> void
+
+  def fetch_replies: (Status) -> void
+
+  def distribute: () -> void
+
+  def forward_for_reply: () -> void
+end

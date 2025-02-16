@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::AdminTrendsLinksPreviewCardProvidersController::LetDefinitions
+  def user: () -> User
+end

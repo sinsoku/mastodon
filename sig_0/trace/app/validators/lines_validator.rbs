@@ -1,0 +1,4 @@
+class LinesValidator
+  def validate_each: (untyped, Symbol, String) -> void
+                   | (untyped, Symbol, nil) -> void
+end

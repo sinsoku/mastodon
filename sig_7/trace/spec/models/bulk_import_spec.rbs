@@ -1,0 +1,17 @@
+module RSpec::ExampleGroups::BulkImport::Scopes::ConfirmationMissed::LetDefinitions
+  def old_unconfirmed_import: () -> BulkImport
+
+  def old_scheduled_import: () -> BulkImport
+
+  def new_unconfirmed_import: () -> BulkImport
+end
+
+module RSpec::ExampleGroups::BulkImport::Scopes::ArchivalCompleted::LetDefinitions
+  def old_import: () -> BulkImport
+
+  def new_import: () -> BulkImport
+end
+
+module RSpec::ExampleGroups::BulkImport::Validations::LetDefinitions
+  def subject: () -> BulkImport
+end

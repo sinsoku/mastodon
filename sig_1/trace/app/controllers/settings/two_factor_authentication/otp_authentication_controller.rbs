@@ -1,0 +1,8 @@
+class Settings::TwoFactorAuthentication::OtpAuthenticationController
+  def create: () -> String
+
+  def verify_otp_not_enabled: () -> String
+                            | () -> nil
+
+  def show: () -> Form::TwoFactorConfirmation
+end

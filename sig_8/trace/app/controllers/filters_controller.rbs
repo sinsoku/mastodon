@@ -1,0 +1,21 @@
+class FiltersController
+  def set_cache_headers: () -> Hash[untyped, untyped]
+
+  def index: () -> ActiveRecord::AssociationRelation
+
+  def new: () -> CustomFilterKeyword
+
+  def create: () -> String
+            | () -> ActiveSupport::SafeBuffer
+
+  def resource_params: () -> void
+
+  def set_filter: () -> CustomFilter
+
+  def destroy: () -> String
+
+  def edit: () -> nil
+
+  def update: () -> ActiveSupport::SafeBuffer
+            | () -> String
+end

@@ -1,0 +1,11 @@
+class Admin::Trends::StatusesController
+  def index: () -> Trends::StatusBatch
+
+  def filtered_statuses: () -> ActiveRecord::Relation
+
+  def filter_params: () -> ActionController::Parameters
+
+  def batch: () -> String
+
+  def trends_status_batch_params: () -> nil
+end

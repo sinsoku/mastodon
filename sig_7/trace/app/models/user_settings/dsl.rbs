@@ -1,0 +1,15 @@
+module UserSettings::DSL
+  def self.included: (Class) -> Class
+end
+
+module UserSettings::DSL::ClassMethods
+  def setting: (Symbol, ?Hash[untyped, untyped]) -> void
+
+  def setting_inverse_alias: (Symbol, Symbol) -> void
+
+  def namespace: (Symbol) -> void
+
+  def keys: () -> Array[untyped]
+
+  def definition_for: (String) -> UserSettings::Setting
+end

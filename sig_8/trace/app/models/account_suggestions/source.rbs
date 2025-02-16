@@ -1,0 +1,9 @@
+class AccountSuggestions::Source
+  def base_account_scope: (Account) -> ActiveRecord::Relation
+
+  def follows_sql: () -> void
+
+  def follow_requests_sql: () -> void
+
+  def follow_recommendation_mutes_sql: () -> void
+end

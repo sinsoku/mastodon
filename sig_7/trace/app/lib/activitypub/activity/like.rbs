@@ -1,0 +1,3 @@
+class ActivityPub::Activity::Like
+  def perform: () -> void
+end

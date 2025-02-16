@@ -1,0 +1,57 @@
+module RSpec::ExampleGroups::Announcement::Statuses::LetDefinitions
+  def announcement: () -> Announcement
+end
+
+module RSpec::ExampleGroups::Announcement::Statuses::WithRelevantStatusIds::LetDefinitions
+  def status_ids: () -> Array[untyped]
+
+  def status: () -> Status
+
+  def direct_status: () -> Status
+end
+
+module RSpec::ExampleGroups::Announcement::Statuses::WithEmptyStatusIds::LetDefinitions
+  def status_ids: () -> nil
+end
+
+module RSpec::ExampleGroups::Announcement::Scopes::WithTimestampedAnnouncements::LetDefinitions
+  def adam_announcement: () -> Announcement
+
+  def brenda_announcement: () -> Announcement
+
+  def clara_announcement: () -> Announcement
+
+  def darnelle_announcement: () -> Announcement
+end
+
+module RSpec::ExampleGroups::Announcement::Scopes::WithPublishedAndUnpublishedRecords::LetDefinitions
+  def published: () -> Announcement
+
+  def unpublished: () -> Announcement
+end
+
+module RSpec::ExampleGroups::Announcement::Validations::StartsAt::WhenEndsAtIsPresent::LetDefinitions
+  def subject: () -> Announcement
+end
+
+module RSpec::ExampleGroups::Announcement::Validations::StartsAt::WhenEndsAtIsMissing::LetDefinitions
+  def subject: () -> Announcement
+end
+
+module RSpec::ExampleGroups::Announcement::Validations::EndsAt::WhenStartsAtIsMissing::LetDefinitions
+  def subject: () -> Announcement
+end
+
+module RSpec::ExampleGroups::Announcement::Validations::EndsAt::WhenStartsAtIsPresent::LetDefinitions
+  def subject: () -> Announcement
+end
+
+module RSpec::ExampleGroups::Announcement::Reactions::WithAnnouncementReactionsPresent::LetDefinitions
+  def account: () -> Account
+
+  def announcement: () -> Announcement
+
+  def other_reaction_emoji: () -> CustomEmoji
+
+  def account_reaction_emoji: () -> CustomEmoji
+end

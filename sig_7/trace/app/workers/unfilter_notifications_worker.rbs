@@ -1,0 +1,20 @@
+class UnfilterNotificationsWorker
+  def perform: (Integer, ?nil) -> void
+             | (Integer, ?Integer) -> void
+
+  def push_to_conversations!: () -> void
+
+  def notifications_with_private_mentions: () -> ActiveRecord::Relation
+
+  def filtered_notifications: () -> ActiveRecord::Relation
+
+  def unfilter_notifications!: () -> void
+
+  def remove_request!: () -> void
+
+  def decrement_worker_count!: () -> void
+
+  def subscribed_to_streaming_api?: () -> void
+
+  def push_streaming_event!: () -> void
+end

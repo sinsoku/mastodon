@@ -1,0 +1,4 @@
+module PreloadingConcern
+  def preload_collection: (ActiveRecord::Associations::CollectionProxy, Class) -> void
+                        | (Array[untyped], Class) -> void
+end

@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::AppealPolicy::LetDefinitions
+  def appeal: () -> Appeal
+
+  def policy: () -> Class
+
+  def admin: () -> Account
+
+  def john: () -> Account
+end

@@ -1,0 +1,19 @@
+class ApplicationPolicy
+  def initialize: (Account, nil) -> void
+                | (Account, Status) -> void
+                | (nil, Status) -> void
+                | (Account, Symbol) -> void
+                | (Account, Class) -> void
+                | (nil, Class) -> void
+                | (Account, Account) -> void
+                | (nil, Symbol) -> void
+                | (Account, DomainAllow) -> void
+                | (Account, CustomEmoji) -> void
+
+  def role: () -> UserRole
+
+  def current_user: () -> User
+                  | () -> nil
+
+  def user_signed_in?: () -> void
+end

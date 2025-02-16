@@ -1,0 +1,15 @@
+class RSpec::ExampleGroups::ReactComponentHelper
+  def parsed_html: () -> Nokogiri::XML::Document
+end
+
+module RSpec::ExampleGroups::ReactComponentHelper::ReactAdminComponent::LetDefinitions
+  def result: () -> ActiveSupport::SafeBuffer
+end
+
+module RSpec::ExampleGroups::ReactComponentHelper::ReactComponent::WithABlockPassedIn::LetDefinitions
+  def result: () -> ActiveSupport::SafeBuffer
+end
+
+module RSpec::ExampleGroups::ReactComponentHelper::ReactComponent::WithNoBlockPassedIn::LetDefinitions
+  def result: () -> ActiveSupport::SafeBuffer
+end

@@ -1,0 +1,17 @@
+class FeaturedTag
+  def validate_tag_uniqueness: () -> nil
+
+  def tag_already_featured_for_account?: () -> void
+
+  def validate_featured_tags_limit: () -> nil
+
+  def set_tag: () -> Tag
+
+  def reset_data: () -> nil
+
+  def visible_tagged_account_statuses: () -> ActiveRecord::AssociationRelation
+
+  def increment: (DateTime) -> void
+
+  def display_name: () -> void
+end

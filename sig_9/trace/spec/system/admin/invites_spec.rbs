@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::AdminInvites::InviteInteraction::LetDefinitions
+  def invite: () -> Invite
+
+  def user: () -> User
+end
+
+class RSpec::ExampleGroups::AdminInvites::InviteInteraction
+  def for_invite: (Invite) -> void
+
+  def max_use_field: () -> void
+
+  def generate_invite: () -> void
+
+  def expire_invite: () -> void
+end

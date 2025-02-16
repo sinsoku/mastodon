@@ -1,0 +1,53 @@
+module RSpec::ExampleGroups::RemoveStatusService::LetDefinitions
+  def alice: () -> Account
+
+  def bob: () -> Account
+
+  def jeff: () -> Account
+
+  def hank: () -> Account
+
+  def bill: () -> Account
+
+  def subject: () -> RemoveStatusService
+end
+
+module RSpec::ExampleGroups::RemoveStatusService::WhenRemovedStatusIsAReblogOfANonFollower::LetDefinitions
+  def original_status: () -> Status
+
+  def status: () -> Status
+end
+
+class RSpec::ExampleGroups::RemoveStatusService
+  def undo_delivery: (Account, Status) -> void
+
+  def undo_activity_for: (Status) -> void
+end
+
+module RSpec::ExampleGroups::RemoveStatusService::WhenRemovedStatusIsPublicSelfReblog::LetDefinitions
+  def original_status: () -> Status
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::RemoveStatusService::WhenRemovedStatusIsAPrivateSelfReblog::LetDefinitions
+  def original_status: () -> Status
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::RemoveStatusService::WhenRemovedStatusIsNotAReblog::LetDefinitions
+  def media_attachment: () -> MediaAttachment
+
+  def status: () -> Status
+end
+
+class RSpec::ExampleGroups::RemoveStatusService::WhenRemovedStatusIsNotAReblog
+  def remove_status_from_notifications: () -> void
+
+  def home_feed_ids: (Account) -> void
+
+  def delete_delivery: (Account, Status) -> void
+
+  def delete_activity_for: (Status) -> void
+end

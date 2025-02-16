@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::SanitizeConfig::MASTODONSTRICT::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+end

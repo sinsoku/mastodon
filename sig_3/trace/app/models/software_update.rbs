@@ -1,0 +1,9 @@
+class SoftwareUpdate
+  def outdated?: () -> void
+
+  def runtime_version: () -> Gem::Version
+
+  def gem_version: () -> void
+
+  def self.check_enabled?: () -> void
+end

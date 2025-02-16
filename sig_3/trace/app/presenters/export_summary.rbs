@@ -1,0 +1,35 @@
+class ExportSummary
+  def initialize: (Account) -> void
+
+  def populate_counts: () -> Hash[untyped, untyped]
+
+  def account_blocking: (*untyped, **untyped) -> ActiveRecord::Associations::CollectionProxy
+
+  def account_bookmarks: (*untyped, **untyped) -> ActiveRecord::Associations::CollectionProxy
+
+  def account_domain_blocks: (*untyped, **untyped) -> ActiveRecord::Associations::CollectionProxy
+
+  def account_owned_lists: (*untyped, **untyped) -> ActiveRecord::Associations::CollectionProxy
+
+  def account_muting: (*untyped, **untyped) -> ActiveRecord::Associations::CollectionProxy
+
+  def account_media_attachments: (*untyped, **untyped) -> ActiveRecord::Associations::CollectionProxy
+
+  def total_storage: () -> void
+
+  def total_statuses: () -> void
+
+  def total_follows: () -> void
+
+  def total_lists: () -> void
+
+  def total_followers: () -> void
+
+  def total_mutes: () -> void
+
+  def total_blocks: () -> void
+
+  def total_domain_blocks: () -> void
+
+  def total_bookmarks: () -> void
+end

@@ -1,0 +1,6 @@
+class Api::V1::Instances::TranslationLanguagesController
+  def set_languages: () -> Hash[untyped, untyped]
+                   | () -> Array[untyped]
+
+  def show: () -> String
+end

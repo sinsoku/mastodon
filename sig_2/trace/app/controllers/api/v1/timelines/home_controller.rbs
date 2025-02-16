@@ -1,0 +1,11 @@
+class Api::V1::Timelines::HomeController
+  def show: () -> String
+
+  def load_statuses: () -> Array[untyped]
+
+  def preloaded_home_statuses: () -> void
+
+  def home_statuses: () -> void
+
+  def account_home_feed: () -> HomeFeed
+end

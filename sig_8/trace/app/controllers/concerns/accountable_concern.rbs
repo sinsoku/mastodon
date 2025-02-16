@@ -1,0 +1,4 @@
+module AccountableConcern
+  def log_action: (Symbol, Account) -> void
+                | (Symbol, UserRole) -> void
+end

@@ -1,0 +1,3 @@
+class REST::Admin::CanonicalEmailBlockSerializer
+  def id: () -> String
+end

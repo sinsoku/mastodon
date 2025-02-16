@@ -1,0 +1,23 @@
+class Api::V1::Accounts::FollowerAccountsController
+  def set_account: () -> Account
+
+  def index: () -> String
+
+  def load_accounts: () -> Array[untyped]
+
+  def hide_results?: () -> void
+
+  def default_accounts: () -> ActiveRecord::Relation
+
+  def paginated_follows: () -> void
+
+  def next_path: () -> void
+
+  def records_continue?: () -> void
+
+  def prev_path: () -> void
+
+  def pagination_since_id: () -> void
+
+  def pagination_max_id: () -> void
+end

@@ -1,0 +1,3 @@
+class Identity
+  def self.find_for_omniauth: (Identity) -> void
+end

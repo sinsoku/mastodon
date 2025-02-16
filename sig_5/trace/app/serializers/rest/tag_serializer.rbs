@@ -1,0 +1,11 @@
+class REST::TagSerializer
+  def id: () -> String
+
+  def name: () -> String
+
+  def url: () -> String
+
+  def current_user?: () -> bool
+
+  def following: () -> bool
+end

@@ -1,0 +1,3 @@
+class Admin::ResetsController
+  def create: () -> String
+end

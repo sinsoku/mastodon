@@ -1,0 +1,11 @@
+class Admin::Trends::Links::PreviewCardProvidersController
+  def index: () -> Trends::PreviewCardProviderBatch
+
+  def filtered_preview_card_providers: () -> ActiveRecord::Relation
+
+  def filter_params: () -> void
+
+  def batch: () -> String
+
+  def trends_preview_card_provider_batch_params: () -> nil
+end

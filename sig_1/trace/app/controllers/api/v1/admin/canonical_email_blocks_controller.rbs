@@ -1,0 +1,34 @@
+class Api::V1::Admin::CanonicalEmailBlocksController
+  def set_canonical_email_blocks: () -> Array[untyped]
+
+  def index: () -> nil
+           | () -> String
+
+  def next_path: () -> void
+
+  def records_continue?: () -> void
+
+  def prev_path: () -> void
+
+  def pagination_collection: () -> Array[untyped]
+
+  def set_canonical_email_block: () -> CanonicalEmailBlock
+                               | () -> nil
+
+  def show: () -> nil
+          | () -> String
+
+  def set_canonical_email_blocks_from_test: () -> ActiveRecord::Relation
+                                          | () -> nil
+
+  def test: () -> nil
+          | () -> String
+
+  def destroy: () -> String
+             | () -> nil
+
+  def create: () -> String
+            | () -> nil
+
+  def resource_params: () -> void
+end

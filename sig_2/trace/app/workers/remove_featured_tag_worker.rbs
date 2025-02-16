@@ -1,0 +1,4 @@
+class RemoveFeaturedTagWorker
+  def perform: (Integer, Integer) -> void
+             | (nil, nil) -> void
+end

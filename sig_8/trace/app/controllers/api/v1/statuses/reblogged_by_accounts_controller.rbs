@@ -1,0 +1,19 @@
+class Api::V1::Statuses::RebloggedByAccountsController
+  def index: () -> String
+
+  def load_accounts: () -> Array[untyped]
+
+  def default_accounts: () -> ActiveRecord::Relation
+
+  def paginated_statuses: () -> void
+
+  def next_path: () -> void
+
+  def records_continue?: () -> void
+
+  def prev_path: () -> void
+
+  def pagination_since_id: () -> void
+
+  def pagination_max_id: () -> void
+end

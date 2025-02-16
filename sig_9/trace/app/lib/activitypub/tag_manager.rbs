@@ -1,0 +1,32 @@
+class ActivityPub::TagManager
+  def uri_for: (Status) -> void
+             | (Account) -> void
+             | (Follow) -> void
+             | (Account) -> String
+             | (Status) -> String
+             | (Follow) -> String
+
+  def generate_uri_for: (Follow) -> void
+                      | (Report) -> void
+                      | (FollowRequest) -> void
+                      | (Block) -> void
+
+  def url_for: (Account) -> void
+             | (Account) -> String
+             | (Status) -> String
+             | (Status) -> nil
+             | (Account) -> nil
+
+  def key_uri_for: (Account) -> void
+
+  def uri_to_resource: (String, Class) -> void
+                     | (String, Class) -> Account
+                     | (String, Class) -> nil
+                     | (String, Class) -> Status
+
+  def local_uri?: (String) -> void
+
+  def uri_to_local_id: (String, ?Symbol) -> void
+
+  def public_collection?: (String) -> void
+end

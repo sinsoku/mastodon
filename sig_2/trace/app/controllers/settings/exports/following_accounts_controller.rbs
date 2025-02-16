@@ -1,0 +1,5 @@
+class Settings::Exports::FollowingAccountsController
+  def index: () -> String
+
+  def export_data: () -> void
+end

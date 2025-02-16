@@ -1,0 +1,63 @@
+module RSpec::ExampleGroups::FormCustomEmojiBatch::Save::LetDefinitions
+  def subject: () -> Form::CustomEmojiBatch
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::FormCustomEmojiBatch::Save::TheUpdateAction::WithACategoryId::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::FormCustomEmojiBatch::Save::TheUpdateAction::LetDefinitions
+  def custom_emoji: () -> CustomEmoji
+
+  def custom_emoji_category: () -> CustomEmojiCategory
+end
+
+module RSpec::ExampleGroups::FormCustomEmojiBatch::Save::TheUpdateAction::WithoutAnythingToChange::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::FormCustomEmojiBatch::Save::TheUpdateAction::WithACategoryName::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::FormCustomEmojiBatch::Save::TheEnableAction::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+
+  def custom_emoji: () -> CustomEmoji
+end
+
+module RSpec::ExampleGroups::FormCustomEmojiBatch::Save::TheDisableAction::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+
+  def custom_emoji: () -> CustomEmoji
+end
+
+module RSpec::ExampleGroups::FormCustomEmojiBatch::Save::WithEmptyCustomEmojiIds::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::FormCustomEmojiBatch::Save::TheCopyAction::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+
+  def custom_emoji: () -> CustomEmoji
+end
+
+module RSpec::ExampleGroups::FormCustomEmojiBatch::Save::TheListAction::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+
+  def custom_emoji: () -> CustomEmoji
+end
+
+module RSpec::ExampleGroups::FormCustomEmojiBatch::Save::TheUnlistAction::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+
+  def custom_emoji: () -> CustomEmoji
+end
+
+module RSpec::ExampleGroups::FormCustomEmojiBatch::Save::TheDeleteAction::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+
+  def custom_emoji: () -> CustomEmoji
+end

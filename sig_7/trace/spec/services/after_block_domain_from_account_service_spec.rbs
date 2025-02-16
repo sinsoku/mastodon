@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::AfterBlockDomainFromAccountService::LetDefinitions
+  def alice: () -> Account
+
+  def wolf: () -> Account
+
+  def dog: () -> Account
+
+  def subject: () -> AfterBlockDomainFromAccountService
+end

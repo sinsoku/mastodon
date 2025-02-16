@@ -1,0 +1,23 @@
+class RSpec::ExampleGroups::AccountRefreshWorker::Perform
+  def stub_service: () -> void
+end
+
+module RSpec::ExampleGroups::AccountRefreshWorker::LetDefinitions
+  def service: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def worker: () -> AccountRefreshWorker
+end
+
+module RSpec::ExampleGroups::AccountRefreshWorker::Perform::WhenAccountExists::WhenAccountNeedsRefreshing::LetDefinitions
+  def account: () -> Account
+end
+
+class RSpec::ExampleGroups::AccountRefreshWorker::Perform::WhenAccountExists
+  def outdated_webfinger_at: () -> void
+
+  def recent_webfinger_at: () -> void
+end
+
+module RSpec::ExampleGroups::AccountRefreshWorker::Perform::WhenAccountExists::WhenAccountDoesNotNeedRefreshing::LetDefinitions
+  def account: () -> Account
+end

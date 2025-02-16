@@ -1,0 +1,6 @@
+module Payloadable
+  def serialize_payload: (Status, Class, ?Hash[untyped, untyped]) -> void
+                       | (PollVote, Class, ?Hash[untyped, untyped]) -> void
+
+  def signing_enabled?: () -> void
+end

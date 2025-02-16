@@ -1,0 +1,34 @@
+module RSpec::ExampleGroups::PaperclipResponseWithLimitAdapter::LetDefinitions
+  def url: () -> String
+
+  def headers: () -> nil
+
+  def body: () -> String
+
+  def subject: () -> Paperclip::ResponseWithLimitAdapter
+             | () -> nil
+
+  def response_with_limit: () -> ResponseWithLimit
+
+  def response: () -> HTTP::Response
+end
+
+module RSpec::ExampleGroups::PaperclipResponseWithLimitAdapter::WithContentDispositionHeader::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::PaperclipResponseWithLimitAdapter::WithoutFilenameInPath::LetDefinitions
+  def url: () -> String
+end
+
+module RSpec::ExampleGroups::PaperclipResponseWithLimitAdapter::WithVeryLongFilename::LetDefinitions
+  def url: () -> String
+end
+
+module RSpec::ExampleGroups::PaperclipResponseWithLimitAdapter::WhenResponseSizeExceedsLimit::WithoutContentLengthHeader::LetDefinitions
+  def body: () -> String
+end
+
+module RSpec::ExampleGroups::PaperclipResponseWithLimitAdapter::WhenResponseSizeExceedsLimit::WithContentLengthHeader::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+end

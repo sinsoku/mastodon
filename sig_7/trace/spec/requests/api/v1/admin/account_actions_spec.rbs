@@ -1,0 +1,61 @@
+module RSpec::ExampleGroups::AccountActions::POSTApiV1AdminAccountsIdAction::LetDefinitions
+  def target_account: () -> Account
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::AccountActions::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def role: () -> UserRole
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::AccountActions::POSTApiV1AdminAccountsIdAction::WithTypeOfSensitive::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::AccountActions::POSTApiV1AdminAccountsIdAction::WithTypeOfSensitive::BehavesLikeASuccessfulLoggedAction
+  def latest_admin_action_log: () -> void
+end
+
+module RSpec::ExampleGroups::AccountActions::POSTApiV1AdminAccountsIdAction::WithInvalidType::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AccountActions::POSTApiV1AdminAccountsIdAction::WithTypeOfSilence::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::AccountActions::POSTApiV1AdminAccountsIdAction::WithTypeOfSilence::BehavesLikeASuccessfulLoggedAction
+  def latest_admin_action_log: () -> void
+end
+
+module RSpec::ExampleGroups::AccountActions::POSTApiV1AdminAccountsIdAction::WithTypeOfDisable::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::AccountActions::POSTApiV1AdminAccountsIdAction::WithTypeOfDisable::BehavesLikeASuccessfulLoggedAction
+  def latest_admin_action_log: () -> void
+end
+
+module RSpec::ExampleGroups::AccountActions::POSTApiV1AdminAccountsIdAction::WithNoType::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AccountActions::POSTApiV1AdminAccountsIdAction::WithTypeOfNone::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AccountActions::POSTApiV1AdminAccountsIdAction::WithTypeOfSuspend::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::AccountActions::POSTApiV1AdminAccountsIdAction::WithTypeOfSuspend::BehavesLikeASuccessfulLoggedAction
+  def latest_admin_action_log: () -> void
+end

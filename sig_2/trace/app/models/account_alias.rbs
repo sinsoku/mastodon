@@ -1,0 +1,5 @@
+class AccountAlias
+  def set_uri: () -> nil
+
+  def validate_target_account: () -> ActiveModel::Error
+end

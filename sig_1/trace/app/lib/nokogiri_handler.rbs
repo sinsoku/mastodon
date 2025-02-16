@@ -1,0 +1,5 @@
+class NokogiriHandler
+  def self.casecmp: (Nokogiri::XML::NodeSet, String) -> bool
+
+  def self.link_rel_include: (Nokogiri::XML::NodeSet, String) -> bool
+end

@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::AdminSystemCheckDatabaseSchemaCheck::LetDefinitions
+  def check: () -> Admin::SystemCheck::DatabaseSchemaCheck
+
+  def user: () -> User
+end

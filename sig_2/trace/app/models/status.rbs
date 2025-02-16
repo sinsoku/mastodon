@@ -1,0 +1,95 @@
+class Status
+  def local?: () -> bool
+
+  def prepare_contents: () -> nil
+
+  def set_reblog: () -> nil
+
+  def reblog?: () -> void
+             | () -> bool
+
+  def set_visibility: () -> nil
+
+  def set_conversation: () -> Conversation
+                      | () -> Integer
+                      | () -> nil
+
+  def reply?: () -> void
+            | () -> bool
+
+  def set_local: () -> bool
+
+  def with_media?: () -> void
+
+  def ordered_media_attachments: () -> Array[untyped]
+
+  def set_poll_id: () -> nil
+
+  def trigger_create_webhooks: () -> String
+                             | () -> nil
+
+  def increment_counter_caches: () -> nil
+                              | () -> bool
+
+  def store_uri: () -> bool
+
+  def object_type: () -> void
+
+  def update_statistics: () -> bool
+                       | () -> nil
+
+  def distributable?: () -> void
+
+  def increment_count!: (Symbol) -> void
+
+  def untrusted_favourites_count: () -> nil
+
+  def favourites_count: () -> Integer
+
+  def status_stat: () -> StatusStat
+
+  def update_status_stat!: (Hash[untyped, untyped]) -> void
+
+  def proper: () -> Status
+
+  def replies_count: () -> Integer
+
+  def untrusted_reblogs_count: () -> void
+                             | () -> nil
+
+  def reblogs_count: () -> void
+                   | () -> Integer
+
+  def emojis: () -> Array[untyped]
+
+  def preview_card: () -> nil
+
+  def carried_over_reply_to_account_id: () -> void
+
+  def account_domain: (*untyped, **untyped) -> String
+                    | (*untyped, **untyped) -> nil
+
+  def unlink_from_conversations!: () -> nil
+
+  def decrement_counter_caches: () -> nil
+
+  def trigger_update_webhooks: () -> String
+
+  def self.reblogs_map: (Array[untyped], Integer) -> Hash[untyped, untyped]
+
+  def self.favourites_map: (Array[untyped], Integer) -> Hash[untyped, untyped]
+
+  def self.bookmarks_map: (Array[untyped], Integer) -> Hash[untyped, untyped]
+
+  def self.mutes_map: (Array[untyped], Integer) -> Hash[untyped, untyped]
+
+  def self.pins_map: (Array[untyped], Integer) -> Hash[untyped, untyped]
+
+  def decrement_count!: (Symbol) -> void
+
+  def non_sensitive_with_media?: () -> void
+
+  def cache_key: () -> void
+
+  def self.selectable_visibilities: () -> Array[untyped]
+end

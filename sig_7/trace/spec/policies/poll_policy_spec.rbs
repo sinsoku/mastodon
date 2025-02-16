@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::PollPolicy::LetDefinitions
+  def poll: () -> Poll
+
+  def subject: () -> Class
+
+  def account: () -> Account
+end

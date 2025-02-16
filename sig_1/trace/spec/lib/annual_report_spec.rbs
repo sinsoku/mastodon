@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::AnnualReport::Generate::LetDefinitions
+  def subject: () -> AnnualReport
+
+  def account: () -> Account
+end

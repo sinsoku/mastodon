@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::RESTMutedAccountSerializer::LetDefinitions
+  def account: () -> Account
+
+  def current_user: () -> User
+
+  def mutee: () -> Account
+
+  def subject: () -> Hash[untyped, untyped]
+end

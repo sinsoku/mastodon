@@ -1,0 +1,18 @@
+class Api::V1::DirectoriesController
+  def require_enabled!: () -> nil
+
+  def set_accounts: () -> ActiveRecord::Relation
+
+  def accounts_scope: () -> ActiveRecord::Relation
+
+  def account_order_scope: () -> void
+
+  def local_accounts?: () -> void
+                     | () -> nil
+
+  def account_exclusion_scope: () -> void
+
+  def account_domain_block_scope: () -> void
+
+  def show: () -> String
+end

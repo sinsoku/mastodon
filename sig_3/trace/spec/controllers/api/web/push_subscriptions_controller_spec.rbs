@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::ApiWebPushSubscriptionsController::LetDefinitions
+  def user: () -> User
+
+  def create_payload: () -> Hash[untyped, untyped]
+
+  def alerts_payload: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::ApiWebPushSubscriptionsController
+  def created_push_subscription: () -> Web::PushSubscription
+end
+
+module RSpec::ExampleGroups::ApiWebPushSubscriptionsController::POSTCreate::WithAUserWhoHasASessionWithAPriorSubscription::LetDefinitions
+  def prior_subscription: () -> Web::PushSubscription
+end

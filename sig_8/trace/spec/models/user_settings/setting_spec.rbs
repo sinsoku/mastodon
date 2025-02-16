@@ -1,0 +1,43 @@
+module RSpec::ExampleGroups::UserSettingsSetting::LetDefinitions
+  def subject: () -> UserSettings::Setting
+
+  def name: () -> Symbol
+
+  def options: () -> Hash[untyped, untyped]
+
+  def default: () -> bool
+
+  def namespace: () -> nil
+end
+
+module RSpec::ExampleGroups::UserSettingsSetting::Type::WhenDefaultValueIsALambdaReturningAString::LetDefinitions
+  def default: () -> Proc
+end
+
+module RSpec::ExampleGroups::UserSettingsSetting::Type::WhenDefaultValueIsABoolean::LetDefinitions
+  def default: () -> bool
+end
+
+module RSpec::ExampleGroups::UserSettingsSetting::Type::WhenDefaultValueIsAString::LetDefinitions
+  def default: () -> String
+end
+
+module RSpec::ExampleGroups::UserSettingsSetting::Type::WhenDefaultValueIsALambdaReturningABoolean::LetDefinitions
+  def default: () -> Proc
+end
+
+module RSpec::ExampleGroups::UserSettingsSetting::Key::WhenThereIsANamespace::LetDefinitions
+  def namespace: () -> Symbol
+end
+
+module RSpec::ExampleGroups::UserSettingsSetting::TypeCast::WhenDefaultValueIsAString::LetDefinitions
+  def default: () -> String
+end
+
+module RSpec::ExampleGroups::UserSettingsSetting::TypeCast::WhenDefaultValueIsABoolean::LetDefinitions
+  def default: () -> bool
+end
+
+module RSpec::ExampleGroups::UserSettingsSetting::DefaultValue::WhenDefaultValueIsAProc::LetDefinitions
+  def default: () -> Proc
+end

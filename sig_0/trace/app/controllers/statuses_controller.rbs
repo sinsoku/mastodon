@@ -1,0 +1,14 @@
+class StatusesController
+  def set_status: () -> String
+                | () -> ActiveSupport::SafeBuffer
+                | () -> Status
+
+  def redirect_to_original: () -> String
+                          | () -> nil
+
+  def show: () -> nil
+          | () -> bool
+          | () -> Time
+
+  def set_link_headers: () -> String
+end

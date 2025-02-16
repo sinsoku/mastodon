@@ -1,0 +1,30 @@
+class Webfinger
+  def initialize: (String) -> void
+
+  def perform: () -> void
+             | () -> Webfinger::Response
+
+  def standard_url: () -> void
+
+  def body_from_webfinger: (?String, ?bool) -> void
+
+  def webfinger_request: (String) -> Request
+end
+
+class Webfinger::Response
+  def initialize: (String, String) -> void
+
+  def validate_response!: () -> void
+
+  def subject: () -> String
+
+  def self_link: () -> nil
+               | () -> Hash[untyped, untyped]
+
+  def links: () -> Hash[untyped, untyped]
+
+  def self_link_href: () -> void
+                    | () -> String
+
+  def link: (String, String) -> void
+end

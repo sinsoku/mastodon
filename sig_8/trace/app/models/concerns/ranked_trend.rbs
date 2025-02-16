@@ -1,0 +1,3 @@
+module RankedTrend::ClassMethods
+  def recalculate_ordered_rank: () -> void
+end

@@ -1,0 +1,3 @@
+class ManifestsController
+  def show: () -> String
+end

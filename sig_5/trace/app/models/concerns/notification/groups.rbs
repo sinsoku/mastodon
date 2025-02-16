@@ -1,0 +1,18 @@
+module Notification::Groups
+  def set_group_key!: () -> void
+end
+
+module Notification::Groups::ClassMethods
+  def to_a_grouped_paginated_by_id: (Integer, ?ActionController::Parameters) -> Array[untyped]
+
+  def paginate_groups_by_max_id: (Integer, ?max_id: nil, ?since_id: nil, ?grouped_types: nil) -> ActiveRecord::Relation
+                               | (Integer, ?max_id: nil, ?since_id: nil, ?grouped_types: Array[untyped]) -> ActiveRecord::Relation
+                               | (Integer, ?max_id: nil, ?since_id: String, ?grouped_types: nil) -> ActiveRecord::Relation
+
+  def paginate_groups: (Integer, Symbol, ?grouped_types: nil) -> ActiveRecord::Relation
+                     | (Integer, Symbol, ?grouped_types: Array[untyped]) -> ActiveRecord::Relation
+
+  def paginate_groups_by_min_id: (Integer, ?max_id: nil, ?min_id: nil, ?grouped_types: Array[untyped]) -> ActiveRecord::Relation
+                               | (Integer, ?max_id: nil, ?min_id: nil, ?grouped_types: nil) -> ActiveRecord::Relation
+                               | (Integer, ?max_id: nil, ?min_id: Integer, ?grouped_types: nil) -> ActiveRecord::Relation
+end

@@ -1,0 +1,10 @@
+class Admin::TermsOfService::GeneratesController
+  def set_instance_presenter: () -> InstancePresenter
+
+  def show: () -> TermsOfService::Generator
+
+  def create: () -> String
+            | () -> ActiveSupport::SafeBuffer
+
+  def resource_params: () -> void
+end

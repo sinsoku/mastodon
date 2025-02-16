@@ -1,0 +1,25 @@
+class Setting
+  def self.method_missing: (Symbol, *nil) -> Array[untyped]
+                         | (Symbol, *nil) -> bool
+                         | (Symbol, *nil) -> String
+                         | (Symbol, *nil) -> nil
+                         | (Symbol, *String) -> String
+
+  def self.[]: (String) -> void
+
+  def self.cache_key: (String) -> void
+
+  def self.cache_prefix_by_startup: () -> String
+
+  def self.default_settings: () -> Hash[untyped, untyped]
+
+  def value: () -> void
+
+  def self.[]=: (String, String) -> void
+
+  def value=: (String) -> void
+
+  def rewrite_cache: () -> bool
+
+  def cache_key: () -> void
+end

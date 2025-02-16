@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::Bookmark::Validations::LetDefinitions
+  def subject: () -> Bookmark
+end
+
+module RSpec::ExampleGroups::Bookmark::Callbacks::ReblogStatuses::WhenStatusIsNotAReblog::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::Bookmark::Callbacks::ReblogStatuses::WhenStatusIsAReblog::LetDefinitions
+  def status: () -> Status
+
+  def original: () -> Status
+end

@@ -1,0 +1,5 @@
+class PreviewCard
+  def extract_dimensions: () -> Integer
+
+  def local?: () -> bool
+end

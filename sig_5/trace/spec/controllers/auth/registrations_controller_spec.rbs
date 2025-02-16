@@ -1,0 +1,53 @@
+module RSpec::ExampleGroups::AuthRegistrationsController::POSTCreate::WithApprovalBasedRegistrationsWithoutInvite::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::AuthRegistrationsController::POSTCreate::LetDefinitions
+  def accept_language: () -> String
+end
+
+module RSpec::ExampleGroups::AuthRegistrationsController::POSTCreate::WhenUserHasAnEmailAddressRequiringApproval::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::AuthRegistrationsController::POSTCreate::WhenUserHasAnEmailAddressRequiringApprovalThroughAMXRecord::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::AuthRegistrationsController::POSTCreate::WhenAnAcceptLanguageIsPresentInHeaders::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::AuthRegistrationsController::POSTCreate::WithAnAlreadyTakenUsername::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+class RSpec::ExampleGroups::AuthRegistrationsController::POSTCreate::WithAnAlreadyTakenUsername
+  def username_error_text: () -> void
+end
+
+module RSpec::ExampleGroups::AuthRegistrationsController::POSTCreate::WhenUserHasNotAgreedToTermsOfService::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::AuthRegistrationsController::POSTCreate::WithApprovalBasedRegistrationsWithValidInviteAndRequiredInviteText::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::AuthRegistrationsController::POSTCreate::WithApprovalBasedRegistrationsWithExpiredInvite::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::AuthRegistrationsController::DELETEDestroy::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::AuthRegistrationsController::PUTUpdate::LetDefinitions
+  def user: () -> User
+
+  def current_password: () -> String
+end
+
+module RSpec::ExampleGroups::AuthRegistrationsController::PUTUpdate::WhenSuspended::LetDefinitions
+  def user: () -> User
+end

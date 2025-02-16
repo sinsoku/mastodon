@@ -1,0 +1,7 @@
+class Importer::PublicStatusesIndexImporter
+  def import!: () -> void
+
+  def scope: () -> ActiveRecord::Relation
+
+  def index: () -> Class
+end

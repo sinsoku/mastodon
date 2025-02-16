@@ -1,0 +1,7 @@
+class REST::Admin::CohortSerializer
+  def period: () -> String
+end
+
+class REST::Admin::CohortSerializer::CohortDataSerializer
+  def date: () -> String
+end

@@ -1,0 +1,36 @@
+module JsonLdHelper
+  def value_or_id: (String) -> void
+                 | (ActiveSupport::HashWithIndifferentAccess) -> void
+                 | (String) -> String
+                 | (Hash[untyped, untyped]) -> String
+                 | (nil) -> nil
+
+  def uri_from_bearcap: (String) -> String
+
+  def equals_or_includes_any?: (String, Array[untyped]) -> void
+
+  def equals_or_includes?: (String, String) -> void
+
+  def non_matching_uri_hosts?: (String, String) -> void
+
+  def unsupported_uri_scheme?: (String) -> void
+
+  def first_of_value: (ActiveSupport::HashWithIndifferentAccess) -> ActiveSupport::HashWithIndifferentAccess
+                    | (nil) -> nil
+                    | (String) -> String
+
+  def as_array: (Array[untyped]) -> Array[untyped]
+              | (nil) -> Array[untyped]
+
+  def fetch_resource_without_id_validation: (String, ?nil, ?bool, ?request_options: Hash[untyped, untyped]) -> nil
+
+  def build_request: (String, ?Account, ?options: Hash[untyped, untyped]) -> Request
+
+  def response_successful?: (HTTP::Response) -> void
+
+  def response_error_unsalvageable?: (HTTP::Response) -> void
+
+  def body_to_json: (String, ?compare_id: String) -> void
+
+  def supported_context?: (Hash[untyped, untyped]) -> bool
+end

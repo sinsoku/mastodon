@@ -1,0 +1,7 @@
+class FavouriteService
+  def call: (Account, Status) -> void
+
+  def create_notification: (Favourite) -> void
+
+  def increment_statistics: () -> void
+end

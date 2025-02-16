@@ -1,0 +1,7 @@
+class CanonicalEmailBlock
+  def email=: (String) -> String
+
+  def self.block?: (String) -> void
+
+  def to_log_human_identifier: () -> void
+end

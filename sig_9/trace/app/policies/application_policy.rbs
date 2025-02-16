@@ -1,0 +1,16 @@
+class ApplicationPolicy
+  def initialize: (Account, TermsOfService) -> void
+                | (nil, Status) -> void
+                | (Account, Symbol) -> void
+                | (Account, Invite) -> void
+                | (Account, ReportNote) -> void
+                | (Account, Class) -> void
+                | (Account, Status) -> void
+                | (nil, Symbol) -> void
+                | (Account, Poll) -> void
+
+  def role: () -> UserRole
+
+  def current_user: () -> User
+                  | () -> nil
+end

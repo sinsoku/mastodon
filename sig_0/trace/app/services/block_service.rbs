@@ -1,0 +1,3 @@
+class BlockService
+  def call: (Account, Account) -> void
+end

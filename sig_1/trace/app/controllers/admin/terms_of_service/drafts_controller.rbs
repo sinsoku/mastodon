@@ -1,0 +1,12 @@
+class Admin::TermsOfService::DraftsController
+  def set_terms_of_service: () -> TermsOfService
+
+  def current_terms_of_service: () -> nil
+
+  def show: () -> Symbol
+
+  def update: () -> String
+            | () -> ActiveSupport::SafeBuffer
+
+  def resource_params: () -> void
+end

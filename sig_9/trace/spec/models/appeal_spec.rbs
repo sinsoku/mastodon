@@ -1,0 +1,71 @@
+module RSpec::ExampleGroups::Appeal::QueryMethods::Rejected::LetDefinitions
+  def subject: () -> Appeal
+end
+
+module RSpec::ExampleGroups::Appeal::QueryMethods::Rejected::WithNotRejected::LetDefinitions
+  def rejected_at: () -> nil
+end
+
+module RSpec::ExampleGroups::Appeal::QueryMethods::Rejected::WithRejected::LetDefinitions
+  def rejected_at: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::Appeal::QueryMethods::Pending::LetDefinitions
+  def subject: () -> Appeal
+end
+
+module RSpec::ExampleGroups::Appeal::QueryMethods::Pending::WithNotApprovedAndNotRejected::LetDefinitions
+  def approved_at: () -> nil
+
+  def rejected_at: () -> nil
+end
+
+module RSpec::ExampleGroups::Appeal::QueryMethods::Pending::WithApprovedAndNotRejected::LetDefinitions
+  def approved_at: () -> ActiveSupport::TimeWithZone
+
+  def rejected_at: () -> nil
+end
+
+module RSpec::ExampleGroups::Appeal::QueryMethods::Pending::WithApprovedAndRejected::LetDefinitions
+  def approved_at: () -> ActiveSupport::TimeWithZone
+
+  def rejected_at: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::Appeal::QueryMethods::Pending::WithNotApprovedAndRejected::LetDefinitions
+  def approved_at: () -> nil
+
+  def rejected_at: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::Appeal::QueryMethods::Approved::LetDefinitions
+  def subject: () -> Appeal
+end
+
+module RSpec::ExampleGroups::Appeal::QueryMethods::Approved::WithApproved::LetDefinitions
+  def approved_at: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::Appeal::QueryMethods::Approved::WithNotApproved::LetDefinitions
+  def approved_at: () -> nil
+end
+
+module RSpec::ExampleGroups::Appeal::Scopes::Rejected::LetDefinitions
+  def rejected_appeal: () -> Appeal
+end
+
+module RSpec::ExampleGroups::Appeal::Scopes::Approved::LetDefinitions
+  def approved_appeal: () -> Appeal
+end
+
+module RSpec::ExampleGroups::Appeal::Scopes::Pending::LetDefinitions
+  def pending_appeal: () -> Appeal
+end
+
+module RSpec::ExampleGroups::Appeal::Validations::LetDefinitions
+  def subject: () -> Appeal
+end
+
+module RSpec::ExampleGroups::Appeal::Validations::WithAStrikeCreatedTooLongAgo::LetDefinitions
+  def strike: () -> AccountWarning
+end

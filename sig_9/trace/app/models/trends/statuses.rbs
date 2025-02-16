@@ -1,0 +1,26 @@
+class Trends::Statuses
+  def query: () -> void
+           | () -> Trends::Statuses::Query
+
+  def key_prefix: () -> void
+                | () -> String
+
+  def klass: () -> void
+
+  def add: (Status, Integer, ?DateTime) -> void
+         | (Status, Integer, ?Time) -> void
+
+  def refresh: (?DateTime) -> void
+
+  def calculate_scores: (Array[untyped], DateTime) -> void
+
+  def eligible?: (Status) -> bool
+
+  def register: (Status, ?Time) -> void
+end
+
+class Trends::Statuses::Query
+  def to_arel: () -> ActiveRecord::Relation
+
+  def language_order_clause: () -> Arel::Nodes::Case
+end

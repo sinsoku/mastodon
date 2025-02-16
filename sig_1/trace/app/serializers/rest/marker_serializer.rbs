@@ -1,0 +1,5 @@
+class REST::MarkerSerializer
+  def last_read_id: () -> String
+
+  def version: () -> Integer
+end

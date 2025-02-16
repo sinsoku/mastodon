@@ -1,0 +1,3 @@
+class List
+  def validate_account_lists_limit: () -> nil
+end

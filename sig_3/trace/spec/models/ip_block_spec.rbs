@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::IpBlock::ToLogHumanIdentifier::LetDefinitions
+  def ip_block: () -> IpBlock
+end
+
+module RSpec::ExampleGroups::IpBlock::Validations::LetDefinitions
+  def subject: () -> IpBlock
+end

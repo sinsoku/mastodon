@@ -1,0 +1,21 @@
+module RSpec::ExampleGroups::ActivityPubFollowersSynchronizationsController::LetDefinitions
+  def account: () -> Account
+
+  def follower_example_com_user_a: () -> Account
+
+  def follower_example_com_user_b: () -> Account
+
+  def follower_foo_com_user_a: () -> Account
+
+  def follower_example_com_instance_actor: () -> Account
+end
+
+module RSpec::ExampleGroups::ActivityPubFollowersSynchronizationsController::GETShow::WithoutSignature::LetDefinitions
+  def remote_account: () -> nil
+end
+
+module RSpec::ExampleGroups::ActivityPubFollowersSynchronizationsController::GETShow::WithSignatureFromExampleCom::LetDefinitions
+  def remote_account: () -> Account
+
+  def response: () -> ActionDispatch::TestResponse
+end

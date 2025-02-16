@@ -1,0 +1,15 @@
+class FollowService
+  def call: (Account, Account, ?Hash[untyped, untyped]) -> FollowRequest
+
+  def following_not_possible?: () -> void
+
+  def following_not_allowed?: () -> void
+
+  def follow_options: () -> Hash[untyped, untyped]
+
+  def build_json: (FollowRequest) -> void
+
+  def mark_home_feed_as_partial!: () -> void
+
+  def request_follow!: () -> void
+end

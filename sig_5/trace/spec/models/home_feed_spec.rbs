@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::HomeFeed::LetDefinitions
+  def account: () -> Account
+
+  def subject: () -> HomeFeed
+end

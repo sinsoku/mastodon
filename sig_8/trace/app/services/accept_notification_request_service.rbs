@@ -1,0 +1,5 @@
+class AcceptNotificationRequestService
+  def call: (NotificationRequest) -> void
+
+  def increment_worker_count!: (NotificationRequest) -> void
+end

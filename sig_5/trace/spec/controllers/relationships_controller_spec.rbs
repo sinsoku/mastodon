@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::RelationshipsController::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::RelationshipsController::PATCHUpdate::LetDefinitions
+  def alice: () -> Account
+end
+
+module RSpec::ExampleGroups::RelationshipsController::PATCHUpdate::WhenSelectParameterIsProvided::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::RelationshipsController::PATCHUpdate::WhenSelectParameterIsNotProvided::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end

@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::SchedulerSelfDestructScheduler::Perform::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::SchedulerSelfDestructScheduler::LetDefinitions
+  def worker: () -> Scheduler::SelfDestructScheduler
+end

@@ -1,0 +1,17 @@
+class CustomFilter
+  def self.cached_filters_for: (Integer) -> Array[untyped]
+
+  def self.apply_cached_filters: (Array[untyped], Status) -> Array[untyped]
+
+  def context_must_be_valid: () -> nil
+                           | () -> ActiveModel::Error
+
+  def invalid_context_value?: () -> void
+
+  def prepare_cache_invalidation!: () -> bool
+
+  def invalidate_cache!: () -> Integer
+                       | () -> nil
+
+  def expires_in: () -> void
+end

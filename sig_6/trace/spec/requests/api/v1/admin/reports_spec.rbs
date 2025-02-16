@@ -1,0 +1,91 @@
+module RSpec::ExampleGroups::Reports::LetDefinitions
+  def user: () -> User
+
+  def role: () -> UserRole
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end
+
+class RSpec::ExampleGroups::Reports
+  def create_an_action_log: () -> void
+end
+
+module RSpec::ExampleGroups::Reports::POSTAssignToSelf::LetDefinitions
+  def report: () -> Report
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::Reports::POSTResolve::LetDefinitions
+  def report: () -> Report
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::Reports::GETApiV1AdminReportsId::LetDefinitions
+  def subject: () -> Integer
+
+  def report: () -> Report
+end
+
+module RSpec::ExampleGroups::Reports::GETApiV1AdminReports::WhenThereAreReports::LetDefinitions
+  def reporter: () -> Account
+
+  def spammer: () -> Account
+
+  def expected_response: () -> Array[untyped]
+
+  def scope: () -> ActiveRecord::Relation
+end
+
+module RSpec::ExampleGroups::Reports::GETApiV1AdminReports::LetDefinitions
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Reports::GETApiV1AdminReports::WhenThereAreReports::WithTargetAccountIdParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+
+  def scope: () -> ActiveRecord::Relation
+end
+
+module RSpec::ExampleGroups::Reports::GETApiV1AdminReports::WhenThereAreReports::WithAccountIdParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+
+  def scope: () -> ActiveRecord::Relation
+end
+
+module RSpec::ExampleGroups::Reports::GETApiV1AdminReports::WhenThereAreReports::WithLimitParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Reports::GETApiV1AdminReports::WhenThereAreReports::WithResolvedParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+
+  def scope: () -> ActiveRecord::Relation
+end
+
+module RSpec::ExampleGroups::Reports::POSTReopen::LetDefinitions
+  def report: () -> Report
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::Reports::POSTUnassign::LetDefinitions
+  def report: () -> Report
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::Reports::PUTApiV1AdminReportsId::LetDefinitions
+  def report: () -> Report
+
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end

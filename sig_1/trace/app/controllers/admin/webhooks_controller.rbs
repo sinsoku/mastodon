@@ -1,0 +1,25 @@
+class Admin::WebhooksController
+  def index: () -> ActiveRecord::Relation
+
+  def set_webhook: () -> Webhook
+
+  def show: () -> Webhook
+
+  def destroy: () -> String
+
+  def new: () -> Webhook
+
+  def create: () -> ActiveSupport::SafeBuffer
+            | () -> String
+
+  def resource_params: () -> void
+
+  def disable: () -> String
+
+  def enable: () -> String
+
+  def edit: () -> Webhook
+
+  def update: () -> ActiveSupport::SafeBuffer
+            | () -> String
+end

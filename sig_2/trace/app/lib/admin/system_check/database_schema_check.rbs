@@ -1,0 +1,3 @@
+class Admin::SystemCheck::DatabaseSchemaCheck
+  def skip?: () -> void
+end

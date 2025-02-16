@@ -1,0 +1,11 @@
+module Remotable::ClassMethods
+  def remotable_attachment: (Symbol, Integer, ?suppress_errors: bool, ?download_on_assign: bool, ?attribute_name: Symbol) -> void
+                          | (Symbol, Integer, ?suppress_errors: bool, ?download_on_assign: bool, ?attribute_name: nil) -> void
+end
+
+class Account
+  def header_remote_url=: (String) -> nil
+
+  def download_header!: (?String) -> nil
+                      | (?nil) -> nil
+end

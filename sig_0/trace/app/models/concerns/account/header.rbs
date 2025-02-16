@@ -1,0 +1,9 @@
+module Account::Header::ClassMethods
+  def header_styles: (Paperclip::Attachment) -> void
+end
+
+module Account::Header
+  def header_original_url: () -> void
+
+  def header_static_url: () -> void
+end

@@ -1,0 +1,19 @@
+class UserRole
+  def everyone?: () -> void
+               | () -> bool
+
+  def can?: (*Symbol) -> void
+          | (*Symbol) -> bool
+
+  def in_permissions?: (Symbol) -> void
+
+  def computed_permissions: () -> Integer
+
+  def nobody?: () -> void
+
+  def self.everyone: () -> UserRole
+
+  def self.nobody: () -> void
+
+  def overrides?: (UserRole) -> void
+end

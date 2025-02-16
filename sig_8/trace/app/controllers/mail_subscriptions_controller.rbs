@@ -1,0 +1,14 @@
+class MailSubscriptionsController
+  def set_user: () -> nil
+              | () -> ActiveSupport::SafeBuffer
+
+  def set_type: () -> String
+              | () -> ActiveSupport::SafeBuffer
+
+  def email_type_from_param: () -> String
+                           | () -> ActiveSupport::SafeBuffer
+
+  def show: () -> nil
+
+  def create: () -> bool
+end

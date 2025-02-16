@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::MastodonMigrationWarning::MigrationDurationWarning::LetDefinitions
+  def migration: () -> Class
+end

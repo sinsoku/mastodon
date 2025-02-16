@@ -1,0 +1,10 @@
+class ReactionValidator
+  def validate: (AnnouncementReaction) -> nil
+              | (AnnouncementReaction) -> ActiveModel::Error
+
+  def unicode_emoji?: (String) -> bool
+
+  def new_reaction?: (AnnouncementReaction) -> void
+
+  def limit_reached?: (AnnouncementReaction) -> void
+end

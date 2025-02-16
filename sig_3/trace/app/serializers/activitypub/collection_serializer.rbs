@@ -1,0 +1,18 @@
+class ActivityPub::CollectionSerializer
+  def self.serializer_for: (String, Hash[untyped, untyped]) -> void
+                         | (Array[untyped], Hash[untyped, untyped]) -> void
+                         | (FeaturedTag, Hash[untyped, untyped]) -> void
+                         | (Status, Hash[untyped, untyped]) -> void
+                         | (ActivityPub::CollectionPresenter, Hash[untyped, untyped]) -> void
+                         | (ActivityPub::CollectionPresenter, Hash[untyped, untyped]) -> Class
+                         | (Array[untyped], Hash[untyped, untyped]) -> Class
+
+  def type: () -> String
+
+  def page?: () -> void
+
+  def ordered?: () -> void
+              | () -> bool
+
+  def total_items: () -> Integer
+end

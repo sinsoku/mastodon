@@ -1,0 +1,4 @@
+class FastGeometryParser
+  def self.from_file: (Paperclip::DataUriAdapter) -> Paperclip::Geometry
+                    | (Paperclip::FileAdapter) -> Paperclip::Geometry
+end

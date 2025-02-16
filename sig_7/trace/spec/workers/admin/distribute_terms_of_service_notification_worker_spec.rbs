@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::AdminDistributeTermsOfServiceNotificationWorker::Perform::WithValidTerms::LetDefinitions
+  def user: () -> User
+
+  def terms: () -> TermsOfService
+end
+
+module RSpec::ExampleGroups::AdminDistributeTermsOfServiceNotificationWorker::LetDefinitions
+  def worker: () -> Admin::DistributeTermsOfServiceNotificationWorker
+end

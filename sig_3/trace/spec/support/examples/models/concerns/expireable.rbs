@@ -1,0 +1,45 @@
+module RSpec::ExampleGroups::IpBlock::Expired::Expire::LetDefinitions
+  def subject: () -> IpBlock
+end
+
+class RSpec::ExampleGroups::IpBlock
+  def factory_name: () -> void
+end
+
+module RSpec::ExampleGroups::IpBlock::LetDefinitions
+  def subject: () -> IpBlock
+end
+
+module RSpec::ExampleGroups::IpBlock::Expired::WhenExpiresAtIsNil::LetDefinitions
+  def expires_at: () -> nil
+end
+
+module RSpec::ExampleGroups::IpBlock::Expired::WhenExpiresAtIsInThePast::LetDefinitions
+  def expires_at: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::IpBlock::Expired::WhenExpiresAtIsInTheFuture::LetDefinitions
+  def expires_at: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::IpBlock::Expired::Expires::WhenValueIsMissing::LetDefinitions
+  def expires_at: () -> nil
+end
+
+module RSpec::ExampleGroups::IpBlock::Expired::Expires::WhenValueIsPresent::LetDefinitions
+  def expires_at: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::IpBlock::Scopes::LetDefinitions
+  def expired_record: () -> IpBlock
+
+  def un_expired_record: () -> IpBlock
+end
+
+module RSpec::ExampleGroups::IpBlock::ExpiresIn_2::LetDefinitions
+  def record: () -> IpBlock
+end
+
+module RSpec::ExampleGroups::IpBlock::ExpiresIn::WhenExpiresAtIsNil::LetDefinitions
+  def expires_at: () -> nil
+end

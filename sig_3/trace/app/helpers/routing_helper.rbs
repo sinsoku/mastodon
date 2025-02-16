@@ -1,0 +1,49 @@
+class ActivityPub::TagManager
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+module RoutingHelper
+  def full_asset_url: (String, **untyped) -> void
+
+  def use_storage?: () -> void
+
+  def asset_host: () -> void
+
+  def frontend_asset_path: (String, **untyped) -> void
+end
+
+class REST::AccountSerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class PermalinkRedirector
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class ActivityPub::DeliveryWorker
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class REST::MediaAttachmentSerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class ActivityPub::NoteSerializer::MediaAttachmentSerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class ActivityPub::ActorSerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class ActivityPub::ActorSerializer::EndpointsSerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class REST::TagSerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::ActivityPubTagManager
+  def default_url_options: () -> Hash[untyped, untyped]
+end

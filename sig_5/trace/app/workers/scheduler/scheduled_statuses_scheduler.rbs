@@ -1,0 +1,17 @@
+class Scheduler::ScheduledStatusesScheduler
+  def perform: () -> void
+
+  def publish_scheduled_statuses!: () -> void
+
+  def due_statuses: () -> ActiveRecord::Relation
+
+  def time_due_at: () -> void
+
+  def publish_scheduled_announcements!: () -> void
+
+  def due_announcements: () -> ActiveRecord::Relation
+
+  def unpublish_expired_announcements!: () -> void
+
+  def expired_announcements: () -> ActiveRecord::Relation
+end

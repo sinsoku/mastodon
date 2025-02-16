@@ -1,0 +1,21 @@
+module RSpec::ExampleGroups::SuspiciousSignInDetector::Suspicious::LetDefinitions
+  def user: () -> User
+
+  def subject: () -> bool
+
+  def request: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def remote_ip: () -> nil
+end
+
+module RSpec::ExampleGroups::SuspiciousSignInDetector::Suspicious::WhenIPIsCompletelyUnfamiliar::LetDefinitions
+  def remote_ip: () -> String
+end
+
+module RSpec::ExampleGroups::SuspiciousSignInDetector::Suspicious::WhenExactIPHasBeenUsedBefore::LetDefinitions
+  def remote_ip: () -> String
+end
+
+module RSpec::ExampleGroups::SuspiciousSignInDetector::Suspicious::WhenSimilarIPHasBeenUsedBefore::LetDefinitions
+  def remote_ip: () -> String
+end

@@ -1,0 +1,17 @@
+class Admin::Metrics::Measure::InstanceStatusesMeasure
+  def key: () -> String
+
+  def params: () -> ActionController::Parameters
+
+  def perform_total_query: () -> void
+
+  def perform_previous_total_query: () -> void
+
+  def sql_array: () -> void
+
+  def sql_query_string: () -> void
+
+  def earliest_status_id: () -> void
+
+  def latest_status_id: () -> void
+end

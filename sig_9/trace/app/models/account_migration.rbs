@@ -1,0 +1,11 @@
+class AccountMigration
+  def set_target_account: () -> Account
+
+  def set_followers_count: () -> Integer
+
+  def validate_migration_cooldown: () -> nil
+
+  def self.cooldown_duration_ago: () -> ActiveSupport::TimeWithZone
+
+  def validate_target_account: () -> nil
+end

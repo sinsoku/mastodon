@@ -1,0 +1,29 @@
+class Api::BaseController
+  def current_user: () -> nil
+                  | () -> User
+
+  def current_resource_owner: () -> void
+
+  def disallow_unauthenticated_api_access?: () -> bool
+
+  def require_not_suspended!: () -> nil
+
+  def doorkeeper_forbidden_render_options: (*untyped) -> void
+
+  def require_user!: () -> nil
+                   | () -> String
+
+  def limit_param: (Integer, ?nil) -> void
+                 | (Integer, ?Integer) -> Integer
+                 | (Integer, ?nil) -> Integer
+
+  def render_empty: () -> void
+
+  def doorkeeper_unauthorized_render_options: (?error: Doorkeeper::OAuth::InvalidTokenResponse) -> void
+
+  def respond_with_error: (Integer) -> void
+
+  def authorize_if_got_token!: (*Symbol) -> void
+
+  def params_slice: (*Symbol) -> void
+end

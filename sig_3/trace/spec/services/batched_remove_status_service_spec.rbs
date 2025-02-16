@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::BatchedRemoveStatusService::LetDefinitions
+  def alice: () -> Account
+
+  def bob: () -> Account
+
+  def jeff: () -> Account
+
+  def hank: () -> Account
+
+  def status_alice_hello: () -> Status
+
+  def status_alice_other: () -> Status
+
+  def subject: () -> BatchedRemoveStatusService
+end
+
+class RSpec::ExampleGroups::BatchedRemoveStatusService
+  def feed_ids_for: (Account) -> void
+end

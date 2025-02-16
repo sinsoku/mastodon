@@ -1,0 +1,7 @@
+class BulkImportRowService
+  def call: (BulkImportRow) -> bool
+
+  def domain: (String) -> String
+
+  def stoplight_wrapper: (String) -> Stoplight::Light
+end

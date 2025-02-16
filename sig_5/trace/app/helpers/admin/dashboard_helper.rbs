@@ -1,0 +1,4 @@
+module Admin::DashboardHelper
+  def relevant_account_timestamp: (Account) -> String
+                                | (Account) -> ActiveSupport::SafeBuffer
+end

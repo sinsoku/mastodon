@@ -1,0 +1,3 @@
+class RemovalWorker
+  def perform: (Integer, ?Hash[untyped, untyped]) -> void
+end

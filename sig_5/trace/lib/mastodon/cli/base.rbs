@@ -1,0 +1,13 @@
+class Mastodon::CLI::Settings
+  def self.exit_on_failure?: () -> void
+end
+
+class Mastodon::CLI::Base
+  def reset_connection_pools!: () -> void
+
+  def fail_with_message: (String) -> void
+end
+
+class Mastodon::CLI::Cache
+  def self.exit_on_failure?: () -> void
+end

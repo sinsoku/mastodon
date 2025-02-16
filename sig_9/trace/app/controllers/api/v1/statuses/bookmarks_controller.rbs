@@ -1,0 +1,5 @@
+class Api::V1::Statuses::BookmarksController
+  def create: () -> String
+
+  def destroy: () -> String
+end

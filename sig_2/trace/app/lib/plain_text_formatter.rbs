@@ -1,0 +1,7 @@
+class PlainTextFormatter
+  def initialize: (String, bool) -> void
+
+  def to_s: () -> void
+
+  def insert_newlines: () -> void
+end

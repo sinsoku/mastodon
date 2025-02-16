@@ -1,0 +1,3 @@
+class RemoteInteractionHelperController
+  def index: () -> ActiveSupport::SafeBuffer
+end

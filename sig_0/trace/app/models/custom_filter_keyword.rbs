@@ -1,0 +1,7 @@
+class CustomFilterKeyword
+  def to_regex: () -> Regexp
+
+  def to_regex_sb: () -> String
+
+  def to_regex_eb: () -> String
+end

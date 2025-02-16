@@ -1,0 +1,11 @@
+class ActivityPub::DistributePollUpdateWorker
+  def perform: (Integer) -> void
+
+  def inboxes: () -> void
+
+  def payload: () -> void
+
+  def relayable?: () -> void
+
+  def relay!: () -> void
+end

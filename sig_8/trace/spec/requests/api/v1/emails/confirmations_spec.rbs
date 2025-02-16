@@ -1,0 +1,57 @@
+module RSpec::ExampleGroups::Confirmations::GETApiV1EmailsCheckConfirmation::LetDefinitions
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::Confirmations::GETApiV1EmailsCheckConfirmation::WithoutAnOauthTokenAndAnAuthenticationCookie::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Confirmations::LetDefinitions
+  def user: () -> User
+
+  def confirmed_at: () -> nil
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Confirmations::GETApiV1EmailsCheckConfirmation::WithAnAuthenticationCookie::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Confirmations::GETApiV1EmailsCheckConfirmation::WithAnAuthenticationCookie::WhenTheAccountIsConfirmed::LetDefinitions
+  def confirmed_at: () -> Time
+end
+
+module RSpec::ExampleGroups::Confirmations::GETApiV1EmailsCheckConfirmation::WithAnOauthToken::WhenTheAccountIsConfirmed::LetDefinitions
+  def confirmed_at: () -> Time
+end
+
+module RSpec::ExampleGroups::Confirmations::POSTApiV1EmailsConfirmations::LetDefinitions
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Confirmations::POSTApiV1EmailsConfirmations::WithoutAnOauthToken::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Confirmations::POSTApiV1EmailsConfirmations::WithAnOauthToken::WhenUserWasCreatedByTheSameApplication::WithInvalidEmailParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Confirmations::POSTApiV1EmailsConfirmations::WithAnOauthToken::WhenUserWasCreatedByTheSameApplication::WithEmailParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Confirmations::POSTApiV1EmailsConfirmations::WithAnOauthToken::WhenUserWasCreatedByTheSameApplication::WhenTheAccountIsAlreadyConfirmed::LetDefinitions
+  def confirmed_at: () -> Time
+end
+
+module RSpec::ExampleGroups::Confirmations::POSTApiV1EmailsConfirmations::WithAnOauthToken::WhenUserWasCreatedByADifferentApplication::LetDefinitions
+  def user: () -> User
+end

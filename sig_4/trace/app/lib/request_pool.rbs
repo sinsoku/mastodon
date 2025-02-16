@@ -1,0 +1,29 @@
+class RequestPool
+  def self.current: () -> void
+
+  def initialize: () -> void
+
+  def with: (String) -> void
+
+  def flush: (*untyped, **untyped) -> void
+end
+
+class RequestPool::Reaper
+  def initialize: (RequestPool, Integer) -> void
+
+  def run: () -> void
+end
+
+class RequestPool::Connection
+  def initialize: (String) -> void
+
+  def http_client: () -> HTTP::Client
+
+  def current_time: () -> Float
+
+  def use: () -> void
+
+  def close: () -> void
+
+  def seconds_idle: () -> Float
+end

@@ -1,0 +1,3 @@
+class UnfavouriteWorker
+  def perform: (Integer, Integer) -> void
+end

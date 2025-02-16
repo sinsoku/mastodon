@@ -1,0 +1,9 @@
+class Admin::ConfirmationsController
+  def create: () -> String
+
+  def user_confirmed?: () -> bool
+
+  def resend: () -> String
+
+  def redirect_confirmed_user: () -> String
+end

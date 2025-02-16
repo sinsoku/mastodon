@@ -1,0 +1,17 @@
+module RSpec::ExampleGroups::AdminMetricsDimensionLanguagesDimension::Data::LetDefinitions
+  def alice: () -> User
+
+  def bob: () -> User
+end
+
+module RSpec::ExampleGroups::AdminMetricsDimensionLanguagesDimension::LetDefinitions
+  def subject: () -> Admin::Metrics::Dimension::LanguagesDimension
+
+  def start_at: () -> ActiveSupport::TimeWithZone
+
+  def end_at: () -> Time
+
+  def limit: () -> Integer
+
+  def params: () -> ActionController::Parameters
+end

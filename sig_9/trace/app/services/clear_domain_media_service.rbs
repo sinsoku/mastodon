@@ -1,0 +1,19 @@
+class ClearDomainMediaService
+  def call: (DomainBlock) -> void
+
+  def clear_media!: () -> void
+
+  def clear_account_images!: () -> void
+
+  def blocked_domain_accounts: () -> ActiveRecord::Relation
+
+  def blocked_domain: () -> void
+
+  def clear_account_attachments!: () -> void
+
+  def media_from_blocked_domain: () -> ActiveRecord::Relation
+
+  def clear_emojos!: () -> void
+
+  def emojis_from_blocked_domains: () -> ActiveRecord::Relation
+end

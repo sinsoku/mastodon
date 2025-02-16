@@ -1,0 +1,5 @@
+class LanguagePresenter
+  def initialize: (Symbol) -> void
+
+  def name: () -> String
+end

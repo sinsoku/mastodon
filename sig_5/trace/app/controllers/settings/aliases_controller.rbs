@@ -1,0 +1,14 @@
+class Settings::AliasesController
+  def set_aliases: () -> Array[untyped]
+
+  def create: () -> String
+            | () -> ActiveSupport::SafeBuffer
+
+  def resource_params: () -> void
+
+  def index: () -> AccountAlias
+
+  def set_alias: () -> AccountAlias
+
+  def destroy: () -> String
+end

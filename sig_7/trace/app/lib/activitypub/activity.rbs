@@ -1,0 +1,26 @@
+class ActivityPub::Activity
+  def initialize: (ActiveSupport::HashWithIndifferentAccess, Account, **nil) -> void
+                | (Hash[untyped, untyped], Account, **String) -> void
+
+  def object_uri: () -> void
+                | () -> String
+
+  def status_from_uri: (String) -> Status
+                     | (String) -> nil
+
+  def delete_arrived_first?: (String) -> void
+
+  def dereference_object!: () -> void
+
+  def self.factory: (Hash[untyped, untyped], Account, **untyped) -> ActivityPub::Activity::Create
+
+  def self.klass: () -> Class
+
+  def unsupported_object_type?: () -> void
+
+  def supported_object_type?: () -> void
+
+  def fetch?: () -> void
+
+  def converted_object_type?: () -> void
+end

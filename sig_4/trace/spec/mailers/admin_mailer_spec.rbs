@@ -1,0 +1,55 @@
+module RSpec::ExampleGroups::AdminMailer::NewCriticalSoftwareUpdates::LetDefinitions
+  def recipient: () -> Account
+
+  def mail: () -> ActionMailer::Parameterized::MessageDelivery
+end
+
+module RSpec::ExampleGroups::AdminMailer::AutoCloseRegistrations::LetDefinitions
+  def recipient: () -> Account
+
+  def mail: () -> ActionMailer::Parameterized::MessageDelivery
+end
+
+module RSpec::ExampleGroups::AdminMailer::NewSoftwareUpdates::LetDefinitions
+  def recipient: () -> Account
+
+  def mail: () -> ActionMailer::Parameterized::MessageDelivery
+end
+
+module RSpec::ExampleGroups::AdminMailer::NewTrends::LetDefinitions
+  def link: () -> PreviewCard
+
+  def status: () -> Status
+
+  def tag: () -> Tag
+
+  def recipient: () -> Account
+
+  def mail: () -> ActionMailer::Parameterized::MessageDelivery
+end
+
+module RSpec::ExampleGroups::AdminMailer::NewPendingAccount::LetDefinitions
+  def recipient: () -> Account
+
+  def mail: () -> ActionMailer::Parameterized::MessageDelivery
+
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::AdminMailer::NewReport::LetDefinitions
+  def recipient: () -> Account
+
+  def mail: () -> ActionMailer::Parameterized::MessageDelivery
+
+  def report: () -> Report
+
+  def sender: () -> Account
+end
+
+module RSpec::ExampleGroups::AdminMailer::NewAppeal::LetDefinitions
+  def recipient: () -> Account
+
+  def mail: () -> ActionMailer::Parameterized::MessageDelivery
+
+  def appeal: () -> Appeal
+end

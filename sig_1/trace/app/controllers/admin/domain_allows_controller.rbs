@@ -1,0 +1,12 @@
+class Admin::DomainAllowsController
+  def new: () -> DomainAllow
+
+  def create: () -> ActiveSupport::SafeBuffer
+            | () -> String
+
+  def resource_params: () -> void
+
+  def set_domain_allow: () -> DomainAllow
+
+  def destroy: () -> String
+end

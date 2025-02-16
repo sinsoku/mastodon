@@ -1,0 +1,3 @@
+module AccountableConcern
+  def log_action: (Symbol, User) -> void
+end

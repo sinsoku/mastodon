@@ -1,0 +1,11 @@
+class Scheduler::SelfDestructScheduler
+  def perform: () -> void
+
+  def sidekiq_overwhelmed?: () -> void
+
+  def delete_accounts!: () -> void
+
+  def delete_account!: (Account) -> void
+
+  def inboxes: () -> void
+end

@@ -1,0 +1,25 @@
+module RSpec::ExampleGroups::MastodonCLISettings::SubcommandRegistrations::LetDefinitions
+  def subject: () -> StringIO
+
+  def cli: () -> Mastodon::CLI::Registrations
+
+  def arguments: () -> Array[untyped]
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLISettings::SubcommandRegistrations::Close::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLISettings::SubcommandRegistrations::Open::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLISettings::SubcommandRegistrations::Approved::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLISettings::SubcommandRegistrations::Approved::WithRequireReason::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end

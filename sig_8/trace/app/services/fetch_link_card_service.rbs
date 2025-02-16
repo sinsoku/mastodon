@@ -1,0 +1,24 @@
+class FetchLinkCardService
+  def call: (Status) -> void
+
+  def parse_urls: () -> Addressable::URI
+                | () -> nil
+
+  def skip_link?: (Nokogiri::XML::Element) -> void
+
+  def mention_link?: (Nokogiri::XML::Element) -> void
+
+  def bad_url?: (Addressable::URI) -> void
+
+  def process_url: () -> void
+
+  def attempt_oembed: () -> void
+
+  def html: () -> void
+          | () -> nil
+          | () -> String
+
+  def attempt_opengraph: () -> void
+
+  def attach_card: () -> void
+end

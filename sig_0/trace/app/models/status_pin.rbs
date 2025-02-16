@@ -1,0 +1,8 @@
+class StatusPin
+  def account_matches_status_account?: () -> bool
+
+  def account_local?: (*untyped, **untyped) -> bool
+
+  def invalidate_cleanup_info: () -> nil
+                             | () -> String
+end

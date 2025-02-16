@@ -1,0 +1,3 @@
+class Redirect::StatusesController
+  def set_resource: () -> nil
+end

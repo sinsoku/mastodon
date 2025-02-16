@@ -1,0 +1,8 @@
+module DomainNormalizable::ClassMethods
+  def domain_char_length: () -> Arel::Nodes::SqlLiteral
+end
+
+module DomainNormalizable
+  def normalize_domain: () -> String
+                      | () -> ActiveModel::Error
+end

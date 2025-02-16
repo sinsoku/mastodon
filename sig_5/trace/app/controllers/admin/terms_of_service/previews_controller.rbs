@@ -1,0 +1,5 @@
+class Admin::TermsOfService::PreviewsController
+  def set_terms_of_service: () -> TermsOfService
+
+  def show: () -> Integer
+end

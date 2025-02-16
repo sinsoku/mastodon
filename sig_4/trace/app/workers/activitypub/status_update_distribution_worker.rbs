@@ -1,0 +1,3 @@
+class ActivityPub::StatusUpdateDistributionWorker
+  def perform: (Integer, ?Hash[untyped, untyped]) -> void
+end

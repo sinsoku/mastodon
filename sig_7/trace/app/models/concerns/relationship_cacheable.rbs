@@ -1,0 +1,3 @@
+module RelationshipCacheable
+  def remove_relationship_cache: () -> bool
+end

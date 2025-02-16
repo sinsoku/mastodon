@@ -1,0 +1,3 @@
+module SystemHelpers
+  def submit_button: () -> void
+end

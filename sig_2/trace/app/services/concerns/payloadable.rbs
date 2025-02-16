@@ -1,0 +1,6 @@
+module Payloadable
+  def serialize_payload: (Follow, Class, ?Hash[untyped, untyped]) -> void
+                       | (Account, Class, ?Hash[untyped, untyped]) -> void
+
+  def signing_enabled?: () -> void
+end

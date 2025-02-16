@@ -1,0 +1,47 @@
+module RSpec::ExampleGroups::CustomFilter::LetDefinitions
+  def subject: () -> CustomFilter
+
+  def expires_at: () -> nil
+end
+
+module RSpec::ExampleGroups::CustomFilter::ExpiresIn::WhenExpiresAtIsNil::LetDefinitions
+  def expires_at: () -> nil
+end
+
+module RSpec::ExampleGroups::CustomFilter::Scopes::LetDefinitions
+  def expired_record: () -> CustomFilter
+
+  def un_expired_record: () -> CustomFilter
+end
+
+class RSpec::ExampleGroups::CustomFilter
+  def factory_name: () -> void
+end
+
+module RSpec::ExampleGroups::CustomFilter::ExpiresIn_2::LetDefinitions
+  def record: () -> CustomFilter
+end
+
+module RSpec::ExampleGroups::CustomFilter::Expired::WhenExpiresAtIsNil::LetDefinitions
+  def expires_at: () -> nil
+end
+
+module RSpec::ExampleGroups::CustomFilter::Expired::WhenExpiresAtIsInTheFuture::LetDefinitions
+  def expires_at: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::CustomFilter::Expired::Expire::LetDefinitions
+  def subject: () -> CustomFilter
+end
+
+module RSpec::ExampleGroups::CustomFilter::Expired::Expires::WhenValueIsMissing::LetDefinitions
+  def expires_at: () -> nil
+end
+
+module RSpec::ExampleGroups::CustomFilter::Expired::Expires::WhenValueIsPresent::LetDefinitions
+  def expires_at: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::CustomFilter::Expired::WhenExpiresAtIsInThePast::LetDefinitions
+  def expires_at: () -> ActiveSupport::TimeWithZone
+end

@@ -1,0 +1,3 @@
+module Notification::Groups
+  def set_group_key!: () -> void
+end

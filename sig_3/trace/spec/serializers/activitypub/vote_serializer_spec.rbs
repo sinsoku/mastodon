@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::ActivityPubVoteSerializer::LetDefinitions
+  def serialization: () -> Hash[untyped, untyped]
+
+  def record: () -> PollVote
+end

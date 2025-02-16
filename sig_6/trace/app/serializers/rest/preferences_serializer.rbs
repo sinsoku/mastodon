@@ -1,0 +1,13 @@
+class REST::PreferencesSerializer
+  def posting_default_privacy: () -> String
+
+  def posting_default_sensitive: () -> bool
+
+  def posting_default_language: () -> Symbol
+
+  def reading_default_sensitive_media: () -> String
+
+  def reading_default_sensitive_text: () -> bool
+
+  def reading_autoplay_gifs: () -> bool
+end

@@ -1,0 +1,5 @@
+module Account::Header
+  def header_original_url: () -> void
+
+  def header_static_url: () -> void
+end

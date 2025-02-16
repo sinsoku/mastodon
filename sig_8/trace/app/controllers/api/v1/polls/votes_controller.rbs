@@ -1,0 +1,8 @@
+class Api::V1::Polls::VotesController
+  def set_poll: () -> Status
+
+  def create: () -> String
+            | () -> nil
+
+  def vote_params: () -> void
+end

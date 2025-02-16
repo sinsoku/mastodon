@@ -1,0 +1,4 @@
+class ASCIIFolding
+  def fold: (String) -> void
+          | (String) -> String
+end

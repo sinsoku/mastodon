@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::AccountableConcern::LetDefinitions
+  def hoge: () -> untyped
+
+  def hoge_class: () -> Class
+
+  def user: () -> Account
+
+  def target: () -> Account
+end

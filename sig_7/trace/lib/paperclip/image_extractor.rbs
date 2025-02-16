@@ -1,0 +1,5 @@
+class Paperclip::ImageExtractor
+  def make: () -> void
+
+  def extract_image_from_file!: () -> Paperclip::Tempfile
+end

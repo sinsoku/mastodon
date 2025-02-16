@@ -1,0 +1,7 @@
+class BlockService
+  def call: (Account, Account) -> void
+
+  def create_notification: (Block) -> void
+
+  def build_json: (Block) -> void
+end

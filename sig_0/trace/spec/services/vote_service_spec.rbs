@@ -1,0 +1,17 @@
+module RSpec::ExampleGroups::VoteService::Call::LetDefinitions
+  def subject: () -> String
+end
+
+module RSpec::ExampleGroups::VoteService::Call::WithAPollAndPollOptions::LetDefinitions
+  def voter: () -> Account
+
+  def poll: () -> Poll
+end
+
+module RSpec::ExampleGroups::VoteService::Call::WithAPollAndPollOptions::WhenThePollWasCreatedByALocalAccount::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::VoteService::Call::WithAPollAndPollOptions::WhenThePollWasCreatedByARemoteAccount::LetDefinitions
+  def account: () -> Account
+end

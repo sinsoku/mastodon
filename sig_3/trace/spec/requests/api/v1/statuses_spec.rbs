@@ -1,0 +1,101 @@
+module RSpec::ExampleGroups::ApiV1Statuses::WithoutAnOauthToken::WithAPrivateStatus::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::ApiV1Statuses::WithoutAnOauthToken::WithAPublicStatus::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::ApiV1Statuses::WithAnOauthToken::POSTApiV1Statuses::LetDefinitions
+  def subject: () -> Integer
+
+  def scopes: () -> String
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ApiV1Statuses::WithAnOauthToken::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def client_app: () -> Doorkeeper::Application
+end
+
+module RSpec::ExampleGroups::ApiV1Statuses::WithAnOauthToken::POSTApiV1Statuses::WithMissingParameters::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ApiV1Statuses::WithAnOauthToken::POSTApiV1Statuses::WhenSchedulingAStatus::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::ApiV1Statuses::WithAnOauthToken::POSTApiV1Statuses::WhenSchedulingAStatus::WhenTheSchedulingTimeIsLessThan5Minutes::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ApiV1Statuses::WithAnOauthToken::POSTApiV1Statuses::WithMissingThread::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ApiV1Statuses::WithAnOauthToken::POSTApiV1Statuses::WithASafeguard::LetDefinitions
+  def alice: () -> Account
+
+  def bob: () -> Account
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ApiV1Statuses::WithAnOauthToken::GETApiV1StatusesIdId::LetDefinitions
+  def scopes: () -> String
+
+  def status: () -> Status
+
+  def other_status: () -> Status
+end
+
+module RSpec::ExampleGroups::ApiV1Statuses::WithAnOauthToken::GETApiV1StatusesId::LetDefinitions
+  def subject: () -> Integer
+
+  def status: () -> Status
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Statuses::WithAnOauthToken::GETApiV1StatusesId::WhenPostIncludesFilteredTerms::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::ApiV1Statuses::WithAnOauthToken::GETApiV1StatusesId::WhenPostIsExplicitlyFiltered::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::ApiV1Statuses::WithAnOauthToken::GETApiV1StatusesId::WhenReblogIncludesFilteredTerms::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::ApiV1Statuses::WithAnOauthToken::DELETEApiV1StatusesId::LetDefinitions
+  def subject: () -> Integer
+
+  def status: () -> Status
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Statuses::WithAnOauthToken::GETApiV1StatusesIdContext::LetDefinitions
+  def status: () -> Status
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Statuses::WithAnOauthToken::PUTApiV1StatusesId::LetDefinitions
+  def subject: () -> Integer
+
+  def status: () -> Status
+
+  def scopes: () -> String
+end

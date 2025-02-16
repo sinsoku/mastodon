@@ -1,0 +1,4 @@
+class TagRelationshipsPresenter
+  def initialize: (Trends::Tags::Query, ?nil, **nil) -> void
+                | (Array[untyped], ?nil, **nil) -> void
+end

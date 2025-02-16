@@ -1,0 +1,5 @@
+class EmojiFormatter
+  def initialize: (ActiveSupport::SafeBuffer, Array[untyped], ?Hash[untyped, untyped]) -> void
+
+  def to_s: () -> void
+end

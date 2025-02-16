@@ -1,0 +1,45 @@
+module RSpec::ExampleGroups::AccountRelationshipsPresenter::Initialize::LetDefinitions
+  def accounts: () -> Array[untyped]
+
+  def current_account_id: () -> Integer
+
+  def default_map: () -> Hash[untyped, untyped]
+
+  def presenter: () -> AccountRelationshipsPresenter
+end
+
+module RSpec::ExampleGroups::AccountRelationshipsPresenter::Initialize::WithAWarmCache::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AccountRelationshipsPresenter::Initialize::WhenOptionsRequestedMapIsSet::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AccountRelationshipsPresenter::Initialize::WhenOptionsBlockingMapIsSet::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AccountRelationshipsPresenter::Initialize::WhenOptionsFollowingMapIsSet::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AccountRelationshipsPresenter::Initialize::WhenOptionsRequestedByMapIsSet::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AccountRelationshipsPresenter::Initialize::WhenOptionsFollowedByMapIsSet::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AccountRelationshipsPresenter::Initialize::WhenOptionsAreNotSet::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AccountRelationshipsPresenter::Initialize::WhenOptionsDomainBlockingMapIsSet::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AccountRelationshipsPresenter::Initialize::WhenOptionsMutingMapIsSet::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end

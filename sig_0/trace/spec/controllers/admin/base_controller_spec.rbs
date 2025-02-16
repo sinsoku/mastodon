@@ -1,0 +1,4 @@
+class Admin::BaseController
+  def success: () -> String
+             | () -> nil
+end

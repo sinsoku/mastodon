@@ -1,0 +1,13 @@
+class Admin::TagFilter
+  def initialize: (Hash[untyped, untyped]) -> void
+                | (ActionController::Parameters) -> void
+
+  def results: () -> void
+
+  def scope_for: (Symbol, String) -> void
+               | (Symbol, bool) -> void
+
+  def status_scope: (String) -> void
+
+  def order_scope: (String) -> void
+end

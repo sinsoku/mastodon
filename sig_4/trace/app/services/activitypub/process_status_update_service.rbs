@@ -1,0 +1,47 @@
+class ActivityPub::ProcessStatusUpdateService
+  def call: (Status, Hash[untyped, untyped], Hash[untyped, untyped], ?request_id: nil) -> void
+
+  def expected_type?: () -> bool
+
+  def already_updated_more_recently?: () -> void
+
+  def handle_explicit_update!: () -> void
+
+  def record_previous_edit!: () -> void
+
+  def update_media_attachments!: () -> void
+
+  def update_poll!: (?allow_significant_changes: bool) -> void
+
+  def update_immediate_attributes!: () -> void
+
+  def text_significantly_changed?: () -> void
+
+  def significant_changes?: () -> void
+
+  def update_metadata!: () -> void
+
+  def update_tags!: () -> void
+
+  def update_mentions!: () -> void
+
+  def update_emojis!: () -> void
+
+  def skip_download?: () -> void
+
+  def update_counts!: () -> void
+
+  def create_edits!: () -> void
+
+  def download_media_files!: () -> void
+
+  def queue_poll_notifications!: () -> void
+
+  def reset_preview_card!: () -> void
+
+  def broadcast_updates!: () -> void
+
+  def unsupported_media_type?: (String) -> void
+
+  def handle_implicit_update!: () -> void
+end

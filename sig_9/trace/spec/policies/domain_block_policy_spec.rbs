@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::DomainBlockPolicy::LetDefinitions
+  def subject: () -> Class
+
+  def john: () -> Account
+
+  def admin: () -> Account
+end

@@ -1,0 +1,3 @@
+class RefollowWorker
+  def perform: (Integer) -> nil
+end

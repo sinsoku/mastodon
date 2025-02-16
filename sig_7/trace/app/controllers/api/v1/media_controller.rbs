@@ -1,0 +1,22 @@
+class Api::V1::MediaController
+  def create: () -> String
+
+  def media_attachment_params: () -> void
+
+  def file_type_error: () -> void
+
+  def processing_error: () -> void
+
+  def set_media_attachment: () -> nil
+                          | () -> MediaAttachment
+
+  def check_processing: () -> nil
+
+  def update: () -> String
+
+  def updateable_media_attachment_params: () -> void
+
+  def status_code_for_media_attachment: () -> void
+
+  def show: () -> String
+end

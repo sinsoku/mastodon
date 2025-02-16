@@ -1,0 +1,6 @@
+class Api::V1::Admin::DimensionsController
+  def set_dimensions: () -> Array[untyped]
+
+  def create: () -> String
+            | () -> nil
+end

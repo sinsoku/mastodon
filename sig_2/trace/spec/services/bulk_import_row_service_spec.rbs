@@ -1,0 +1,83 @@
+module RSpec::ExampleGroups::BulkImportRowService::Call::WhenImportingAMute::LetDefinitions
+  def service_double: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def import_type: () -> String
+
+  def data: () -> Hash[untyped, untyped]
+
+  def target_account: () -> Account
+end
+
+module RSpec::ExampleGroups::BulkImportRowService::LetDefinitions
+  def subject: () -> BulkImportRowService
+
+  def import_row: () -> BulkImportRow
+
+  def import: () -> BulkImport
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::BulkImportRowService::Call::WhenImportingABlock::LetDefinitions
+  def service_double: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def import_type: () -> String
+
+  def data: () -> Hash[untyped, untyped]
+
+  def target_account: () -> Account
+end
+
+module RSpec::ExampleGroups::BulkImportRowService::Call::WhenImportingAFollow::LetDefinitions
+  def service_double: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def import_type: () -> String
+
+  def data: () -> Hash[untyped, untyped]
+
+  def target_account: () -> Account
+end
+
+class RSpec::ExampleGroups::BulkImportRowService::Call::WhenImportingAListRow::WhenTheListDoesNotExistYet
+  def add_target_account_to_list: () -> void
+
+  def target_account_on_list?: () -> void
+end
+
+module RSpec::ExampleGroups::BulkImportRowService::Call::WhenImportingAListRow::LetDefinitions
+  def target_account: () -> Account
+
+  def list_name: () -> String
+
+  def import_type: () -> String
+
+  def data: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::BulkImportRowService::Call::WhenImportingAListRow::WhenTheListDoesNotExistYet::WhenTheTargetAccountIsTheUserThemself::LetDefinitions
+  def target_account: () -> Account
+end
+
+class RSpec::ExampleGroups::BulkImportRowService::Call::WhenImportingAListRow::WhenTheListExists
+  def add_target_account_to_list: () -> void
+
+  def target_account_on_list?: () -> void
+end
+
+module RSpec::ExampleGroups::BulkImportRowService::Call::WhenImportingAListRow::WhenTheListExists::WhenTheTargetAccountIsTheUserThemself::LetDefinitions
+  def target_account: () -> Account
+end
+
+module RSpec::ExampleGroups::BulkImportRowService::Call::WhenImportingABookmark::LetDefinitions
+  def import_type: () -> String
+
+  def data: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::BulkImportRowService::Call::WhenImportingABookmark::WhenTheStatusIsNotAccessibleToTheUser::LetDefinitions
+  def target_status: () -> Status
+end
+
+module RSpec::ExampleGroups::BulkImportRowService::Call::WhenImportingABookmark::WhenTheStatusIsPublic::LetDefinitions
+  def target_status: () -> Status
+end

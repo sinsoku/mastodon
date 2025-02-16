@@ -1,0 +1,7 @@
+class UnfavouriteService
+  def call: (Account, Status) -> void
+
+  def create_notification: (Favourite) -> void
+
+  def build_json: (Favourite) -> void
+end

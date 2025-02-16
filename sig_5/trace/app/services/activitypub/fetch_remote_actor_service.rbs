@@ -1,0 +1,12 @@
+class ActivityPub::FetchRemoteActorService
+  def call: (String, ?prefetched_body: nil, ?break_on_redirect: bool, ?only_key: bool, ?suppress_errors: bool, ?request_id: String) -> nil
+          | (String, ?prefetched_body: nil, ?break_on_redirect: bool, ?only_key: bool, ?suppress_errors: bool, ?request_id: String) -> Account
+
+  def supported_context?: () -> void
+
+  def expected_type?: () -> void
+
+  def check_webfinger!: () -> void
+
+  def split_acct: (String) -> Array[untyped]
+end

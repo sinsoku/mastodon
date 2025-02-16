@@ -1,0 +1,25 @@
+module RSpec::ExampleGroups::ActivityPubNoteSerializer::LetDefinitions
+  def account: () -> Account
+
+  def other: () -> Account
+
+  def parent: () -> Status
+
+  def reply_by_account_first: () -> Status
+
+  def reply_by_account_next: () -> Status
+
+  def reply_by_other_first: () -> Status
+
+  def reply_by_account_third: () -> Status
+
+  def reply_by_account_visibility_direct: () -> Status
+
+  def subject: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::ActivityPubNoteSerializer
+  def replies_collection_values: () -> void
+
+  def reply_items: () -> void
+end

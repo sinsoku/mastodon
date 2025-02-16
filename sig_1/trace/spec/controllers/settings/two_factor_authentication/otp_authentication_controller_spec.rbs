@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::SettingsTwoFactorAuthenticationOtpAuthenticationController::LetDefinitions
+  def user: () -> User
+end

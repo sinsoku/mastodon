@@ -1,0 +1,34 @@
+class RSpec::ExampleGroups::MastodonCLIFeeds::Clear
+  def key_namespace: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIFeeds::LetDefinitions
+  def subject: () -> StringIO
+             | () -> nil
+
+  def cli: () -> Mastodon::CLI::Feeds
+
+  def arguments: () -> Array[untyped]
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIFeeds::Clear::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLIFeeds::Build::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLIFeeds::Build::WithAUsername::LetDefinitions
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIFeeds::Build::WithInvalidUsername::LetDefinitions
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIFeeds::Build::WithAllOption::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end

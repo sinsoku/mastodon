@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::SettingsAliasesController::LetDefinitions
+  def user: () -> User
+end
+
+class RSpec::ExampleGroups::SettingsAliasesController
+  def stub_resolver: () -> void
+end
+
+module RSpec::ExampleGroups::SettingsAliasesController::DELETEDestroy::LetDefinitions
+  def account_alias: () -> AccountAlias
+end

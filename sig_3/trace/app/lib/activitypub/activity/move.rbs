@@ -1,0 +1,11 @@
+class ActivityPub::Activity::Move
+  def perform: () -> void
+
+  def origin_account: () -> Account
+
+  def mark_as_processing!: () -> void
+
+  def target_uri: () -> void
+
+  def unmark_as_processing!: () -> void
+end

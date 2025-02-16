@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::ActivityPubActivityAccept::WhenGivenARelay::LetDefinitions
+  def relay: () -> Relay
+
+  def subject: () -> ActivityPub::Activity::Accept
+
+  def json: () -> ActiveSupport::HashWithIndifferentAccess
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityAccept::LetDefinitions
+  def sender: () -> Account
+
+  def recipient: () -> Account
+
+  def json: () -> ActiveSupport::HashWithIndifferentAccess
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityAccept::Perform::LetDefinitions
+  def subject: () -> ActivityPub::Activity::Accept
+end

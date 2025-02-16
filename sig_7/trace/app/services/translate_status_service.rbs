@@ -1,0 +1,21 @@
+class TranslateStatusService
+  def call: (Status, String) -> Translation
+
+  def source_texts: () -> Hash[untyped, untyped]
+
+  def wrap_emoji_shortcodes: (ActiveSupport::SafeBuffer) -> void
+
+  def target_languages: () -> Array[untyped]
+
+  def languages: () -> Hash[untyped, untyped]
+
+  def permitted?: () -> void
+
+  def content_hash: () -> String
+
+  def translation_backend: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def build_status_translation: (Array[untyped]) -> void
+
+  def unwrap_emoji_shortcodes: (String) -> Nokogiri::HTML5::DocumentFragment
+end

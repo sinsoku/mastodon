@@ -1,0 +1,7 @@
+class Status
+  def self.to_a_paginated_by_id: (Integer, ?Hash[untyped, untyped]) -> Array[untyped]
+end
+
+class Notification
+  def self.to_a_paginated_by_id: (Integer, ?ActionController::Parameters) -> Array[untyped]
+end

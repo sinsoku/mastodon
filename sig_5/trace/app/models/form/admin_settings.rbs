@@ -1,0 +1,21 @@
+class Form::AdminSettings
+  def media_cache_retention_period: () -> nil
+                                  | () -> String
+                                  | () -> Integer
+
+  def backups_retention_period: () -> Integer
+                              | () -> String
+
+  def content_cache_retention_period: () -> nil
+                                    | () -> String
+
+  def save: () -> void
+
+  def status_page_url: () -> nil
+
+  def validate_site_uploads: () -> Array[untyped]
+
+  def typecast_value: (Symbol, String) -> void
+                    | (Symbol, nil) -> void
+                    | (Symbol, bool) -> void
+end

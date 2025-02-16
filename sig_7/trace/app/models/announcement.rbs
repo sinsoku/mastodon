@@ -1,0 +1,12 @@
+class Announcement
+  def set_published: () -> Time
+                   | () -> nil
+
+  def self.coalesced_chronology_timestamps: () -> Arel::Nodes::SqlLiteral
+
+  def to_log_human_identifier: () -> void
+
+  def publish!: () -> void
+
+  def unpublish!: () -> void
+end

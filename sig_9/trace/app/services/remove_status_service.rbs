@@ -1,0 +1,23 @@
+class RemoveStatusService
+  def call: (Status, **bool) -> void
+
+  def remove_from_followers: () -> void
+
+  def remove_from_lists: () -> void
+
+  def remove_from_mentions: () -> void
+
+  def skip_streaming?: () -> void
+
+  def remove_reblogs: () -> void
+
+  def remove_from_hashtags: () -> void
+
+  def remove_from_public: () -> void
+
+  def remove_media: () -> void
+
+  def permanently?: () -> bool
+
+  def remove_from_self: () -> void
+end

@@ -1,0 +1,33 @@
+class RSpec::ExampleGroups::ThemeHelper
+  def html_theme_colors: () -> Nokogiri::XML::NodeSet
+
+  def html_links: () -> Nokogiri::XML::NodeSet
+end
+
+module RSpec::ExampleGroups::ThemeHelper::ThemeColorTags::LetDefinitions
+  def result: () -> ActiveSupport::SafeBuffer
+end
+
+module RSpec::ExampleGroups::ThemeHelper::ThemeColorTags::WhenUsingMastodonLightTheme::LetDefinitions
+  def theme: () -> String
+end
+
+module RSpec::ExampleGroups::ThemeHelper::ThemeColorTags::WhenUsingOtherTheme::LetDefinitions
+  def theme: () -> String
+end
+
+module RSpec::ExampleGroups::ThemeHelper::ThemeColorTags::WhenUsingSystemTheme::LetDefinitions
+  def theme: () -> String
+end
+
+module RSpec::ExampleGroups::ThemeHelper::ThemeStyleTags::LetDefinitions
+  def result: () -> ActiveSupport::SafeBuffer
+end
+
+module RSpec::ExampleGroups::ThemeHelper::ThemeStyleTags::WhenUsingSystemTheme::LetDefinitions
+  def theme: () -> String
+end
+
+module RSpec::ExampleGroups::ThemeHelper::ThemeStyleTags::WhenUsingOtherTheme::LetDefinitions
+  def theme: () -> String
+end

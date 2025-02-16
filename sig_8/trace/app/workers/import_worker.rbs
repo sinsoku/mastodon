@@ -1,0 +1,3 @@
+class ImportWorker
+  def perform: (Integer) -> void
+end

@@ -1,0 +1,18 @@
+module RSpec::ExampleGroups::MastodonCLIStatuses::LetDefinitions
+  def subject: () -> nil
+             | () -> PG::Result
+
+  def cli: () -> Mastodon::CLI::Statuses
+
+  def arguments: () -> Array[untyped]
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIStatuses::Remove::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLIStatuses::Remove::WithSmallBatchSize::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end

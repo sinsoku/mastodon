@@ -1,0 +1,9 @@
+module Payloadable
+  def serialize_payload: (FollowRequest, Class, ?Hash[untyped, untyped]) -> void
+                       | (Follow, Class, ?Hash[untyped, untyped]) -> void
+                       | (Favourite, Class, ?Hash[untyped, untyped]) -> void
+                       | (ActivityPub::ActivityPresenter, Class, ?Hash[untyped, untyped]) -> void
+                       | (Status, Class, ?Hash[untyped, untyped]) -> void
+
+  def signing_enabled?: () -> void
+end

@@ -1,0 +1,67 @@
+module RSpec::ExampleGroups::Tags::POSTApiV1TagsIdFollow::LetDefinitions
+  def tag: () -> Tag
+
+  def subject: () -> Integer
+
+  def name: () -> String
+end
+
+module RSpec::ExampleGroups::Tags::POSTApiV1TagsIdFollow::WhenTheTagNameIsInvalid::LetDefinitions
+  def name: () -> String
+end
+
+module RSpec::ExampleGroups::Tags::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Tags::POSTApiV1TagsIdFollow::WhenTheAuthorizationHeaderIsMissing::LetDefinitions
+  def name: () -> String
+
+  def headers: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Tags::POSTApiV1TagsIdFollow::WhenTheTagDoesNotExist::LetDefinitions
+  def name: () -> String
+end
+
+module RSpec::ExampleGroups::Tags::GETApiV1TagsId::WhenTheTagExists::LetDefinitions
+  def tag: () -> Tag
+
+  def name: () -> String
+end
+
+module RSpec::ExampleGroups::Tags::GETApiV1TagsId::LetDefinitions
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::Tags::GETApiV1TagsId::WhenTheTagNameIsInvalid::LetDefinitions
+  def name: () -> String
+end
+
+module RSpec::ExampleGroups::Tags::GETApiV1TagsId::WhenTheTagDoesNotExist::LetDefinitions
+  def name: () -> String
+end
+
+module RSpec::ExampleGroups::Tags::POSTUnfollow::LetDefinitions
+  def tag: () -> Tag
+
+  def subject: () -> Integer
+
+  def name: () -> String
+end
+
+module RSpec::ExampleGroups::Tags::POSTUnfollow::WhenTheTagNameIsInvalid::LetDefinitions
+  def name: () -> String
+end
+
+module RSpec::ExampleGroups::Tags::POSTUnfollow::WhenTheAuthorizationHeaderIsMissing::LetDefinitions
+  def name: () -> String
+
+  def headers: () -> Hash[untyped, untyped]
+end

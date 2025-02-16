@@ -1,0 +1,5 @@
+class ResolveAccountService
+  def call: (String, ?Hash[untyped, untyped]) -> void
+
+  def process_options!: (String, Hash[untyped, untyped]) -> void
+end

@@ -1,0 +1,11 @@
+class AnnualReport::Source
+  def initialize: (Account, Integer) -> void
+
+  def report_statuses: () -> ActiveRecord::AssociationRelation
+
+  def year_as_snowflake_range: () -> void
+
+  def beginning_snowflake_id: () -> void
+
+  def ending_snowflake_id: () -> void
+end

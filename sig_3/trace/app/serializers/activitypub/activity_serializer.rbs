@@ -1,0 +1,6 @@
+class ActivityPub::ActivitySerializer
+  def published: () -> String
+
+  def self.serializer_for: (String, Hash[untyped, untyped]) -> nil
+                         | (Status, Hash[untyped, untyped]) -> Class
+end

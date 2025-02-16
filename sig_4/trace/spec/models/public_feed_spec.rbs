@@ -1,0 +1,73 @@
+module RSpec::ExampleGroups::PublicFeed::Get::LetDefinitions
+  def subject: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::PublicFeed::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::PublicFeed::Get::WithALocalOnlyOptionSet::LetDefinitions
+  def local_account: () -> Account
+
+  def remote_account: () -> Account
+
+  def local_status: () -> Status
+
+  def remote_status: () -> Status
+
+  def subject: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::PublicFeed::Get::WithALocalOnlyOptionSet::WithoutAViewer::LetDefinitions
+  def viewer: () -> nil
+end
+
+module RSpec::ExampleGroups::PublicFeed::Get::WithALocalOnlyOptionSet::WithAViewer::LetDefinitions
+  def viewer: () -> Account
+end
+
+module RSpec::ExampleGroups::PublicFeed::Get::WithAnAccountPassedIn::LetDefinitions
+  def account: () -> Account
+
+  def subject: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::PublicFeed::Get::WithoutLocalOnlyOption::LetDefinitions
+  def local_account: () -> Account
+
+  def remote_account: () -> Account
+
+  def local_status: () -> Status
+
+  def remote_status: () -> Status
+
+  def subject: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::PublicFeed::Get::WithoutLocalOnlyOption::WithAViewer::LetDefinitions
+  def viewer: () -> Account
+end
+
+module RSpec::ExampleGroups::PublicFeed::Get::WithoutLocalOnlyOption::WithoutAViewer::LetDefinitions
+  def viewer: () -> nil
+end
+
+module RSpec::ExampleGroups::PublicFeed::Get::WithARemoteOnlyOptionSet::LetDefinitions
+  def local_account: () -> Account
+
+  def remote_account: () -> Account
+
+  def local_status: () -> Status
+
+  def remote_status: () -> Status
+
+  def subject: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::PublicFeed::Get::WithARemoteOnlyOptionSet::WithAViewer::LetDefinitions
+  def viewer: () -> Account
+end
+
+module RSpec::ExampleGroups::PublicFeed::Get::WithARemoteOnlyOptionSet::WithoutAViewer::LetDefinitions
+  def viewer: () -> nil
+end

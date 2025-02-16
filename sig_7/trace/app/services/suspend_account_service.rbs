@@ -1,0 +1,13 @@
+class SuspendAccountService
+  def call: (Account) -> void
+
+  def reject_remote_follows!: () -> void
+
+  def distribute_update_actor!: () -> void
+
+  def unmerge_from_home_timelines!: () -> void
+
+  def unmerge_from_list_timelines!: () -> void
+
+  def privatize_media_attachments!: () -> void
+end

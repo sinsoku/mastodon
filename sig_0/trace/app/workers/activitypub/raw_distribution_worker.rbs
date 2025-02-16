@@ -1,0 +1,3 @@
+class ActivityPub::RawDistributionWorker
+  def distribute!: () -> void
+end

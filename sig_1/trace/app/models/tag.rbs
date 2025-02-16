@@ -1,0 +1,28 @@
+class Tag
+  def self.matching_name: (Array[untyped]) -> ActiveRecord::Relation
+                        | (String) -> ActiveRecord::Relation
+
+  def display_name: () -> String
+
+  def to_param: () -> void
+              | () -> String
+
+  def self.find_or_create_by_names: (String) -> Array[untyped]
+                                  | (Array[untyped]) -> Array[untyped]
+
+  def self.normalize: (String) -> void
+
+  def self.find_normalized: (String) -> void
+
+  def formatted_name: () -> void
+
+  def self.search_for: (String, ?Integer, ?Integer, ?Hash[untyped, untyped]) -> ActiveRecord::Relation
+
+  def validate_name_change: () -> ActiveModel::Error
+
+  def validate_display_name_change: () -> ActiveModel::Error
+
+  def history: () -> Trends::History
+
+  def usable: () -> bool
+end

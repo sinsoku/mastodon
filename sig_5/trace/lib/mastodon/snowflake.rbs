@@ -1,0 +1,3 @@
+class Mastodon::Snowflake::Callbacks
+  def self.around_create: (Status) -> Integer
+end

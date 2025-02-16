@@ -1,0 +1,14 @@
+class StatusLengthValidator
+  def validate: (Status) -> nil
+
+  def too_long?: (Status) -> void
+
+  def combined_text: (Status) -> void
+
+  def countable_text: (String) -> void
+                    | (nil) -> void
+
+  def rewrite_entities: (String, Array[untyped]) -> void
+
+  def countable_length: (String) -> Integer
+end

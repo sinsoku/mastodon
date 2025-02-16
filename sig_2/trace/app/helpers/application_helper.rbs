@@ -1,0 +1,47 @@
+module ApplicationHelper
+  def material_symbol: (String, ?Hash[untyped, untyped]) -> void
+                     | (String, ?Hash[untyped, untyped]) -> ActiveSupport::SafeBuffer
+
+  def render_initial_state: () -> void
+
+  def cdn_host?: () -> void
+
+  def cdn_host: () -> nil
+
+  def storage_host?: () -> void
+
+  def storage_host_var: () -> nil
+
+  def html_title: () -> ActiveSupport::SafeBuffer
+
+  def title: () -> void
+
+  def body_classes: () -> void
+
+  def locale_direction: () -> String
+
+  def label_for_scope: (String) -> ActiveSupport::SafeBuffer
+
+  def opengraph: (String, String) -> ActiveSupport::SafeBuffer
+               | (String, ActiveSupport::SafeBuffer) -> ActiveSupport::SafeBuffer
+
+  def prerender_custom_emojis: (ActiveSupport::SafeBuffer, Array[untyped], ?Hash[untyped, untyped]) -> void
+
+  def friendly_number_to_human: (Integer, **nil) -> ActiveSupport::SafeBuffer
+
+  def check_icon: () -> ActiveSupport::SafeBuffer
+
+  def approved_registrations?: () -> void
+
+  def link_to_login: (?String, ?nil) -> ActiveSupport::SafeBuffer
+
+  def available_sign_up_path: () -> void
+
+  def closed_registrations?: () -> void
+
+  def grouped_scopes: (Doorkeeper::OAuth::Scopes) -> Array[untyped]
+
+  def interrelationships_icon: (AccountRelationshipsPresenter, Integer) -> void
+
+  def open_registrations?: () -> void
+end

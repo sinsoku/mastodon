@@ -1,0 +1,93 @@
+class NotifyService
+  def call: (Account, String, Favourite) -> void
+          | (Account, Symbol, Follow) -> void
+          | (Account, Symbol, Mention) -> void
+          | (Account, Symbol, Status) -> void
+
+  def drop?: () -> void
+
+  def filter?: () -> void
+
+  def push_notification!: () -> void
+
+  def subscribed_to_streaming_api?: () -> void
+
+  def push_to_web_push_subscriptions!: () -> void
+
+  def web_push_subscriptions: () -> Array[untyped]
+
+  def direct_message?: () -> void
+
+  def email_needed?: () -> void
+
+  def recipient_online?: () -> bool
+
+  def subscribed_to_web_push?: () -> void
+
+  def send_email_for_notification_type?: () -> void
+
+  def send_email!: () -> void
+
+  def update_notification_request!: () -> void
+end
+
+class NotifyService::BaseCondition
+  def initialize: (Notification) -> void
+
+  def filterable_type?: () -> void
+
+  def override_for_sender?: () -> void
+
+  def not_following?: () -> void
+
+  def private_mention_not_in_response?: () -> void
+
+  def not_follower?: () -> void
+
+  def new_account?: () -> void
+
+  def response_to_recipient?: () -> bool
+
+  def statuses_that_mention_sender: () -> Integer
+end
+
+class NotifyService::DropCondition
+  def drop?: () -> void
+
+  def from_self?: () -> void
+
+  def message?: () -> void
+
+  def domain_blocking?: () -> bool
+
+  def conversation_muted?: () -> bool
+                         | () -> nil
+
+  def blocked_by_limited_accounts_policy?: () -> void
+
+  def blocked_by_not_following_policy?: () -> void
+
+  def blocked_by_not_followers_policy?: () -> void
+
+  def blocked_by_new_accounts_policy?: () -> void
+
+  def blocked_by_private_mentions_policy?: () -> void
+
+  def from_staff?: () -> void
+
+  def blocked_mention?: () -> bool
+end
+
+class NotifyService::FilterCondition
+  def filter?: () -> void
+
+  def filtered_by_limited_accounts_policy?: () -> void
+
+  def filtered_by_not_following_policy?: () -> void
+
+  def filtered_by_not_followers_policy?: () -> void
+
+  def filtered_by_new_accounts_policy?: () -> void
+
+  def filtered_by_private_mentions_policy?: () -> void
+end

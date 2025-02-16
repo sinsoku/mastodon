@@ -1,0 +1,4 @@
+class UniqueUsernameValidator
+  def validate: (Account) -> nil
+              | (Account) -> ActiveModel::Error
+end

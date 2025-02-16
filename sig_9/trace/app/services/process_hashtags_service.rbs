@@ -1,0 +1,7 @@
+class ProcessHashtagsService
+  def call: (Status, ?Array[untyped]) -> void
+
+  def assign_tags!: () -> void
+
+  def update_featured_tags!: () -> void
+end

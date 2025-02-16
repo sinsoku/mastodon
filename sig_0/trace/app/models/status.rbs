@@ -1,0 +1,89 @@
+class Status
+  def local?: () -> bool
+
+  def prepare_contents: () -> nil
+
+  def set_reblog: () -> nil
+
+  def reblog?: () -> void
+             | () -> bool
+
+  def set_visibility: () -> nil
+
+  def set_conversation: () -> Conversation
+
+  def reply?: () -> void
+            | () -> bool
+
+  def set_local: () -> bool
+
+  def with_media?: () -> void
+
+  def ordered_media_attachments: () -> Array[untyped]
+
+  def set_poll_id: () -> bool
+                 | () -> nil
+
+  def trigger_create_webhooks: () -> String
+                             | () -> nil
+
+  def increment_counter_caches: () -> nil
+
+  def store_uri: () -> bool
+               | () -> nil
+
+  def object_type: () -> void
+
+  def update_statistics: () -> bool
+                       | () -> nil
+
+  def distributable?: () -> void
+                    | () -> bool
+
+  def emojis: () -> void
+            | () -> Array[untyped]
+
+  def favourites_count: () -> void
+                      | () -> Integer
+
+  def status_stat: () -> StatusStat
+
+  def reblogs_count: () -> void
+                   | () -> Integer
+
+  def increment_count!: (Symbol) -> void
+
+  def untrusted_reblogs_count: () -> nil
+
+  def update_status_stat!: (Hash[untyped, untyped]) -> void
+
+  def proper: () -> Status
+
+  def self.reblogs_map: (Array[untyped], Integer) -> Hash[untyped, untyped]
+
+  def self.favourites_map: (Array[untyped], Integer) -> Hash[untyped, untyped]
+
+  def self.bookmarks_map: (Array[untyped], Integer) -> Hash[untyped, untyped]
+
+  def self.mutes_map: (Array[untyped], Integer) -> Hash[untyped, untyped]
+
+  def self.pins_map: (Array[untyped], Integer) -> Hash[untyped, untyped]
+
+  def preview_card: () -> PreviewCard
+                  | () -> nil
+
+  def replies_count: () -> Integer
+
+  def untrusted_favourites_count: () -> void
+                                | () -> nil
+
+  def non_sensitive_with_media?: () -> void
+
+  def cache_key: () -> void
+
+  def in_reply_to_local_account?: () -> void
+
+  def hidden?: () -> void
+
+  def self.from_text: (String) -> Array[untyped]
+end

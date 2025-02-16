@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::RESTExtendedDescriptionSerializer::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+
+  def default_datetime: () -> DateTime
+end
+
+module RSpec::ExampleGroups::RESTExtendedDescriptionSerializer::Serialization::WithTextPresent::LetDefinitions
+  def record: () -> ExtendedDescription
+end
+
+module RSpec::ExampleGroups::RESTExtendedDescriptionSerializer::Serialization::WithTextMissing::LetDefinitions
+  def record: () -> ExtendedDescription
+end

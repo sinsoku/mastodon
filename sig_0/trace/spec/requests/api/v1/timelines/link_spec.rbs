@@ -1,0 +1,49 @@
+module RSpec::ExampleGroups::Link::GETApiV1TimelinesLink::LetDefinitions
+  def preview_card: () -> PreviewCard
+
+  def url: () -> String
+
+  def private_status: () -> Status
+
+  def undiscoverable_status: () -> Status
+
+  def remote_status: () -> Status
+
+  def local_status: () -> Status
+
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+
+  def expected_statuses: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Link::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Link::GETApiV1TimelinesLink::WhenThereIsNoPreviewCard::LetDefinitions
+  def preview_card: () -> nil
+end
+
+module RSpec::ExampleGroups::Link::GETApiV1TimelinesLink::WhenTheInstanceDoesNotAllowPublicPreview::WithAnApplicationAccessTokenNotBoundToAUser::LetDefinitions
+  def token: () -> Doorkeeper::AccessToken
+end
+
+module RSpec::ExampleGroups::Link::GETApiV1TimelinesLink::WhenTheInstanceDoesNotAllowPublicPreview::WithoutAnAuthenticationToken::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Link::GETApiV1TimelinesLink::WhenTheInstanceAllowsPublicPreview::WithAnAnonymousUser::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Link::GETApiV1TimelinesLink::WhenTheInstanceAllowsPublicPreview::WithLimitParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end

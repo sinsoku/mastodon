@@ -1,0 +1,3 @@
+module PrivateAddressCheck
+  def self.private_address?: (IPAddr) -> void
+end

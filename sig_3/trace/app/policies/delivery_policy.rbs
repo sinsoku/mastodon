@@ -1,0 +1,7 @@
+class DeliveryPolicy
+  def clear_delivery_errors?: () -> bool
+
+  def restart_delivery?: () -> bool
+
+  def stop_delivery?: () -> bool
+end

@@ -1,0 +1,55 @@
+class ActivityPub::ActorSerializer
+  def id: () -> String
+
+  def type: () -> String
+
+  def following: () -> String
+
+  def followers: () -> String
+
+  def inbox: () -> String
+
+  def outbox: () -> String
+
+  def featured: () -> String
+
+  def featured_tags: () -> String
+
+  def preferred_username: () -> String
+
+  def name: () -> String
+
+  def summary: () -> ActiveSupport::SafeBuffer
+
+  def url: () -> String
+
+  def manually_approves_followers: () -> bool
+
+  def discoverable: () -> bool
+
+  def indexable: () -> bool
+
+  def published: () -> String
+
+  def moved?: () -> bool
+
+  def also_known_as?: () -> bool
+
+  def suspended?: (*untyped, **untyped) -> bool
+
+  def public_key: () -> Account
+
+  def virtual_tags: () -> Array[untyped]
+
+  def virtual_attachments: () -> Array[untyped]
+
+  def endpoints: () -> Account
+
+  def avatar_exists?: () -> bool
+
+  def header_exists?: () -> bool
+end
+
+class ActivityPub::ActorSerializer::EndpointsSerializer
+  def shared_inbox: () -> String
+end

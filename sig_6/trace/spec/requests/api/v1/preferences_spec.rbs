@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::Preferences::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::Preferences::GETApiV1Preferences::WithCorrectScope::LetDefinitions
+  def scopes: () -> String
+end

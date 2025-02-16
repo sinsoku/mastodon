@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::SettingsExportsBlockedAccounts::GETSettingsExportsBlocks::WithASignedInUserWhoHasBlockedAccounts::LetDefinitions
+  def user: () -> User
+end

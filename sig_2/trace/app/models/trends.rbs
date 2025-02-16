@@ -1,0 +1,5 @@
+module Trends
+  def self.tags: () -> Trends::Tags
+
+  def self.statuses: () -> Trends::Statuses
+end

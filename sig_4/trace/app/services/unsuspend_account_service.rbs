@@ -1,0 +1,15 @@
+class UnsuspendAccountService
+  def call: (Account) -> void
+
+  def refresh_remote_account!: () -> void
+
+  def merge_into_home_timelines!: () -> void
+
+  def merge_into_list_timelines!: () -> void
+
+  def publish_media_attachments!: () -> void
+
+  def distribute_update_actor!: () -> void
+
+  def signed_activity_json: () -> void
+end

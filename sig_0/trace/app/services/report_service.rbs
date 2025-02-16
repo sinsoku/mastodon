@@ -1,0 +1,13 @@
+class ReportService
+  def call: (Account, Account, ?Hash[untyped, untyped]) -> void
+
+  def create_report!: () -> void
+
+  def reported_status_ids: () -> void
+
+  def forward_to_origin?: () -> void
+
+  def forward?: () -> void
+
+  def notify_staff!: () -> void
+end

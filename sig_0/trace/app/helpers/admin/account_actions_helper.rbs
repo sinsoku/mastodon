@@ -1,0 +1,3 @@
+module Admin::AccountActionsHelper
+  def account_action_type_label: (String) -> ActiveSupport::SafeBuffer
+end

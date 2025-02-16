@@ -1,0 +1,11 @@
+module FormattingHelper
+  def account_bio_format: (Account) -> void
+
+  def html_aware_format: (String, bool, ?Hash[untyped, untyped]) -> void
+
+  def account_field_value_format: (Account::Field, ?with_rel_me: bool) -> void
+
+  def status_content_format: (Status) -> void
+
+  def extract_status_plain_text: (Status) -> void
+end

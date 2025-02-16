@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::Instances::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+end
+
+class RSpec::ExampleGroups::Instances::GETApiV2Instance
+  def include_api_versions: () -> RSpec::Matchers::BuiltIn::Include
+
+  def include_configuration_limits: () -> void
+end

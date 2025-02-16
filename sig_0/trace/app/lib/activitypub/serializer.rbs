@@ -1,0 +1,22 @@
+class ActivityPub::Serializer
+  def self.inherited: (Class) -> Hash[untyped, untyped]
+
+  def serializable_hash: (?Hash[untyped, untyped], ?Hash[untyped, untyped], ?Class) -> Hash[untyped, untyped]
+                       | (?Hash[untyped, untyped], ?Hash[untyped, untyped], ?ActiveModelSerializers::Adapter::Attributes) -> Hash[untyped, untyped]
+end
+
+class ActivityPub::NoteSerializer
+  def self.context_extensions: (*Symbol) -> void
+end
+
+class ActivityPub::NoteSerializer::MediaAttachmentSerializer
+  def self.context_extensions: (*Symbol) -> void
+end
+
+class ActivityPub::NoteSerializer::TagSerializer
+  def self.context_extensions: (*Symbol) -> void
+end
+
+class ActivityPub::EmojiSerializer
+  def self.inherited: (Class) -> Hash[untyped, untyped]
+end

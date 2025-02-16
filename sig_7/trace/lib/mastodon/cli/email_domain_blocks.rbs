@@ -1,0 +1,11 @@
+class Mastodon::CLI::EmailDomainBlocks
+  def add: (*nil) -> nil
+         | (*String) -> StringIO
+
+  def color: (Integer, Integer) -> void
+
+  def remove: (*String) -> StringIO
+            | (*nil) -> nil
+
+  def list: () -> nil
+end

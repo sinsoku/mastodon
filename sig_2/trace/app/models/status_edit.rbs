@@ -1,0 +1,40 @@
+class StatusEdit
+  def local?: (*untyped, **untyped) -> void
+
+  def emojis: () -> void
+            | () -> Array[untyped]
+
+  def ordered_media_attachments: () -> Array[untyped]
+
+  def language: (*untyped, **untyped) -> nil
+
+  def reblog?: () -> bool
+end
+
+class StatusEdit::PreservedMediaAttachment
+  def video?: (*untyped, **untyped) -> void
+
+  def audio?: (*untyped, **untyped) -> void
+
+  def id: (*untyped, **untyped) -> Integer
+
+  def type: (*untyped, **untyped) -> String
+
+  def not_processed?: (*untyped, **untyped) -> void
+
+  def needs_redownload?: (*untyped, **untyped) -> void
+
+  def file: (*untyped, **untyped) -> Paperclip::Attachment
+
+  def thumbnail: (*untyped, **untyped) -> Paperclip::Attachment
+
+  def remote_url: (*untyped, **untyped) -> String
+
+  def thumbnail_remote_url: (*untyped, **untyped) -> nil
+
+  def local?: (*untyped, **untyped) -> void
+
+  def shortcode: (*untyped, **untyped) -> nil
+
+  def blurhash: (*untyped, **untyped) -> nil
+end

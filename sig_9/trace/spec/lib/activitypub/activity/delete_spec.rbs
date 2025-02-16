@@ -1,0 +1,27 @@
+module RSpec::ExampleGroups::ActivityPubActivityDelete::Perform::LetDefinitions
+  def subject: () -> ActivityPub::Activity::Delete
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityDelete::LetDefinitions
+  def json: () -> ActiveSupport::HashWithIndifferentAccess
+
+  def sender: () -> Account
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityDelete::WhenTheStatusHasBeenReblogged::Perform::LetDefinitions
+  def reblogger: () -> Account
+
+  def follower: () -> Account
+
+  def reblog: () -> Status
+
+  def subject: () -> ActivityPub::Activity::Delete
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityDelete::WhenTheStatusHasBeenReported::Perform::LetDefinitions
+  def reporter: () -> Account
+
+  def subject: () -> ActivityPub::Activity::Delete
+end

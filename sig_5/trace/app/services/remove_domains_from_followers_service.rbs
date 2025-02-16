@@ -1,0 +1,3 @@
+class RemoveDomainsFromFollowersService
+  def call: (Account, Array[untyped]) -> void
+end

@@ -1,0 +1,21 @@
+class InitialStateSerializer
+  def meta: () -> Hash[untyped, untyped]
+
+  def default_meta_store: () -> Hash[untyped, untyped]
+
+  def instance_presenter: () -> InstancePresenter
+
+  def sso_redirect: () -> void
+
+  def object_account_user: () -> User
+
+  def compose: () -> Hash[untyped, untyped]
+
+  def accounts: () -> Hash[untyped, untyped]
+
+  def serialized_account: (Account) -> void
+
+  def media_attachments: () -> Hash[untyped, untyped]
+
+  def languages: () -> Array[untyped]
+end

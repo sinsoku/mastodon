@@ -1,0 +1,3 @@
+class PreviewCardProvider
+  def self.matching_domain: (String) -> nil
+end

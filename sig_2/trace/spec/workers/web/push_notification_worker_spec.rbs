@@ -1,0 +1,35 @@
+module RSpec::ExampleGroups::WebPushNotificationWorker::LetDefinitions
+  def vapid_private_key: () -> String
+
+  def vapid_public_key: () -> String
+
+  def contact_email: () -> String
+
+  def payload: () -> Hash[untyped, untyped]
+
+  def ciphertext: () -> String
+
+  def salt: () -> String
+
+  def server_public_key: () -> String
+
+  def shared_secret: () -> String
+
+  def endpoint: () -> String
+
+  def subject: () -> Web::PushNotificationWorker
+
+  def subscription: () -> Web::PushSubscription
+
+  def user: () -> User
+
+  def p256dh: () -> String
+
+  def auth: () -> String
+
+  def notification: () -> Notification
+end
+
+class RSpec::ExampleGroups::WebPushNotificationWorker::Perform
+  def web_push_endpoint_request: () -> void
+end

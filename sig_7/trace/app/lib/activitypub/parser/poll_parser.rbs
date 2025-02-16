@@ -1,0 +1,20 @@
+class ActivityPub::Parser::PollParser
+  def initialize: (ActiveSupport::HashWithIndifferentAccess) -> void
+                | (Hash[untyped, untyped]) -> void
+
+  def valid?: () -> void
+
+  def items: () -> Array[untyped]
+
+  def significantly_changes?: (Poll) -> void
+
+  def options: () -> void
+
+  def multiple: () -> void
+
+  def expires_at: () -> void
+
+  def voters_count: () -> void
+
+  def cached_tallies: () -> void
+end

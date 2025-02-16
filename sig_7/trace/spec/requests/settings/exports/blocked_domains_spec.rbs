@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::SettingsExportsBlockedDomains::GETSettingsExportsDomainBlocks::WithASignedInUserWhoHasBlockedDomains::LetDefinitions
+  def account: () -> Account
+
+  def user: () -> User
+end

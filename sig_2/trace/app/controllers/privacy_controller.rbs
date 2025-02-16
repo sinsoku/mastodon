@@ -1,0 +1,4 @@
+class PrivacyController
+  def show: () -> nil
+          | () -> Time
+end

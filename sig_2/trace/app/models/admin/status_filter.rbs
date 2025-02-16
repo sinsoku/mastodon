@@ -1,0 +1,7 @@
+class Admin::StatusFilter
+  def initialize: (Account, ActionController::Parameters) -> void
+
+  def results: () -> ActiveRecord::AssociationRelation
+
+  def scope_for: (String, String) -> void
+end

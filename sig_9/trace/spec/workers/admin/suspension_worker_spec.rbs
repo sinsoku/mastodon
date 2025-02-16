@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::AdminSuspensionWorker::LetDefinitions
+  def service: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def worker: () -> Admin::SuspensionWorker
+end
+
+module RSpec::ExampleGroups::AdminSuspensionWorker::Perform::LetDefinitions
+  def account: () -> Account
+end

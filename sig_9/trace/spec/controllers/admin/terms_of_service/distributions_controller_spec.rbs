@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::AdminTermsOfServiceDistributionsController::LetDefinitions
+  def user: () -> User
+
+  def terms_of_service: () -> TermsOfService
+end

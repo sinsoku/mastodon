@@ -1,0 +1,12 @@
+class EmailMxValidator
+  def validate: (RSpec::Mocks::InstanceVerifyingDouble) -> void
+
+  def get_domain: (String) -> String
+                | (String) -> nil
+
+  def on_allowlist?: (String) -> bool
+
+  def resolve_mx: (String) -> Array[untyped]
+
+  def email_domain_blocked?: (Array[untyped], String) -> void
+end

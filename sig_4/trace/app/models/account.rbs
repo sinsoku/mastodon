@@ -1,0 +1,111 @@
+class Account
+  def local?: () -> bool
+
+  def normalize_domain: () -> nil
+                      | () -> String
+
+  def prepare_contents: () -> nil
+
+  def generate_keys: () -> nil
+
+  def to_param: () -> void
+
+  def excluded_from_timeline_account_ids: () -> void
+
+  def chosen_languages: (*untyped, **untyped) -> nil
+                      | (*untyped, **untyped) -> Array[untyped]
+
+  def excluded_from_timeline_domains: () -> Array[untyped]
+
+  def trigger_update_webhooks: () -> String
+                             | () -> nil
+
+  def synchronization_uri_prefix: () -> String
+
+  def self.inboxes: () -> Array[untyped]
+
+  def object_type: () -> void
+
+  def instance_actor?: () -> void
+                     | () -> bool
+
+  def keypair: () -> void
+             | () -> OpenSSL::PKey::RSA
+
+  def group?: () -> void
+            | () -> bool
+
+  def acct: () -> String
+
+  def ensure_keys!: () -> void
+
+  def save_with_optional_media!: () -> void
+
+  def fields: () -> Array[untyped]
+
+  def user_role: (*untyped, **untyped) -> void
+               | (*untyped, **untyped) -> UserRole
+               | (*untyped, **untyped) -> nil
+
+  def pretty_acct: () -> void
+                 | () -> String
+
+  def bot?: () -> bool
+
+  def user_prefers_noindex?: (*untyped, **untyped) -> void
+
+  def moved?: () -> void
+
+  def emojis: () -> void
+            | () -> Array[untyped]
+
+  def emojifiable_text: () -> void
+
+  def user_email: (*untyped, **untyped) -> void
+                | (*untyped, **untyped) -> String
+                | (*untyped, **untyped) -> nil
+
+  def user_confirmed?: (*untyped, **untyped) -> void
+                     | (*untyped, **untyped) -> bool
+                     | (*untyped, **untyped) -> nil
+
+  def user_disabled?: (*untyped, **untyped) -> void
+
+  def user_approved?: (*untyped, **untyped) -> void
+                    | (*untyped, **untyped) -> bool
+                    | (*untyped, **untyped) -> nil
+
+  def user_locale: (*untyped, **untyped) -> void
+
+  def user_shows_application?: (*untyped, **untyped) -> void
+
+  def user_time_zone: (*untyped, **untyped) -> void
+
+  def create_canonical_email_block!: () -> void
+
+  def memorialize!: () -> void
+
+  def local_followers_count: () -> Integer
+
+  def user_unconfirmed_email: (*untyped, **untyped) -> nil
+
+  def user_current_sign_in_at: (*untyped, **untyped) -> void
+
+  def user_pending?: (*untyped, **untyped) -> void
+
+  def also_known_as: () -> Array[untyped]
+
+  def to_webfinger_s: () -> void
+
+  def local_username_and_domain: () -> String
+
+  def to_log_human_identifier: () -> void
+
+  def tags_as_strings=: (Array[untyped]) -> void
+
+  def destroy_canonical_email_block!: () -> void
+
+  def sign?: () -> void
+
+  def user_sign_up_ip: (*untyped, **untyped) -> nil
+end

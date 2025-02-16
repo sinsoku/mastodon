@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::DeliveryFailureTracker::LetDefinitions
+  def subject: () -> DeliveryFailureTracker
+end

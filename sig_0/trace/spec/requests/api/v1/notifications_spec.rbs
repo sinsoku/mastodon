@@ -1,0 +1,90 @@
+module RSpec::ExampleGroups::Notifications::LetDefinitions
+  def user: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Notifications::POSTApiV1NotificationsClear::LetDefinitions
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV1NotificationsId::LetDefinitions
+  def subject: () -> Integer
+
+  def notification: () -> Notification
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV1NotificationsId::WhenNotificationBelongsToSomeoneElse::LetDefinitions
+  def notification: () -> Notification
+end
+
+module RSpec::ExampleGroups::Notifications::POSTApiV1NotificationsIdDismiss::LetDefinitions
+  def notification: () -> Notification
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::Notifications::POSTApiV1NotificationsIdDismiss::WhenNotificationBelongsToSomeoneElse::LetDefinitions
+  def notification: () -> Notification
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV1Notifications::LetDefinitions
+  def bob: () -> User
+
+  def tom: () -> User
+
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::Notifications::GETApiV1Notifications
+  def body_json_types: () -> void
+                     | () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV1Notifications::WithTypesParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV1Notifications::WithAccountIdParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::Notifications::GETApiV1Notifications::WithAccountIdParam
+  def body_json_account_ids: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV1Notifications::WithIncludeFiltered::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV1Notifications::WithExcludeTypesParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV1Notifications::WithInvalidAccountIdParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV1Notifications::WithLimitParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV1NotificationsUnreadCount::LetDefinitions
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV1NotificationsUnreadCount::WithAUserProvidedLimit::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV1NotificationsUnreadCount::WithExcludeTypesParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end

@@ -1,0 +1,3 @@
+class Admin::Metrics::Dimension::InstanceAccountsDimension
+  def self.with_params?: () -> void
+end

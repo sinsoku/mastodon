@@ -1,0 +1,11 @@
+class CustomFilterKeyword
+  def prepare_cache_invalidation!: (*untyped, **untyped) -> bool
+
+  def invalidate_cache!: (*untyped, **untyped) -> nil
+end
+
+class CustomFilterStatus
+  def prepare_cache_invalidation!: (*untyped, **untyped) -> bool
+
+  def invalidate_cache!: (*untyped, **untyped) -> Integer
+end

@@ -1,0 +1,5 @@
+module Reviewable
+  def requires_review?: () -> bool
+
+  def requested_review?: () -> void
+end

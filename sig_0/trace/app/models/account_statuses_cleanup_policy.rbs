@@ -1,0 +1,11 @@
+class AccountStatusesCleanupPolicy
+  def validate_local_account: () -> nil
+
+  def update_last_inspected: () -> nil
+
+  def record_last_inspected: (Integer) -> void
+
+  def last_inspected: () -> Integer
+
+  def invalidate_last_inspected: (Status, Symbol) -> void
+end

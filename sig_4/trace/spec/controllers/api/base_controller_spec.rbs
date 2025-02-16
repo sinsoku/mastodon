@@ -1,0 +1,9 @@
+class Api::BaseController
+  def success: () -> bool
+end
+
+module RSpec::ExampleGroups::ApiBaseController::NonFunctionalAccountsHandling::LetDefinitions
+  def user: () -> User
+
+  def token: () -> Doorkeeper::AccessToken
+end

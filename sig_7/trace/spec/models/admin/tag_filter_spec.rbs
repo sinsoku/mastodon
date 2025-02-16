@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::AdminTagFilter::Results::LetDefinitions
+  def listable_tag: () -> Tag
+
+  def not_listable_tag: () -> Tag
+end

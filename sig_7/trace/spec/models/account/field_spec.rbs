@@ -1,0 +1,87 @@
+module RSpec::ExampleGroups::AccountField::Verified::LetDefinitions
+  def subject: () -> Account::Field
+
+  def account: () -> RSpec::Mocks::InstanceVerifyingDouble
+end
+
+module RSpec::ExampleGroups::AccountField::Verified::WhenVerifiedAtIsSet::LetDefinitions
+  def verified_at: () -> String
+end
+
+module RSpec::ExampleGroups::AccountField::Verified::WhenVerifiedAtIsNotSet::LetDefinitions
+  def verified_at: () -> nil
+end
+
+module RSpec::ExampleGroups::AccountField::Verifiable::LetDefinitions
+  def subject: () -> Account::Field
+
+  def account: () -> RSpec::Mocks::InstanceVerifyingDouble
+end
+
+module RSpec::ExampleGroups::AccountField::Verifiable::WithLocalAccounts::LetDefinitions
+  def local: () -> bool
+end
+
+module RSpec::ExampleGroups::AccountField::Verifiable::WithLocalAccounts::WithAnIDNURL::LetDefinitions
+  def value: () -> String
+end
+
+module RSpec::ExampleGroups::AccountField::Verifiable::WithLocalAccounts::WithAURLWithMisleadingAuthentication::LetDefinitions
+  def value: () -> String
+end
+
+module RSpec::ExampleGroups::AccountField::Verifiable::WithLocalAccounts::WithAURL::LetDefinitions
+  def value: () -> String
+end
+
+module RSpec::ExampleGroups::AccountField::Verifiable::WithLocalAccounts::WithTextThatIsNotAURL::LetDefinitions
+  def value: () -> String
+end
+
+module RSpec::ExampleGroups::AccountField::Verifiable::WithLocalAccounts::WithTextThatContainsAURL::LetDefinitions
+  def value: () -> String
+end
+
+module RSpec::ExampleGroups::AccountField::Verifiable::WithLocalAccounts::WithTextWhichIsBlank::LetDefinitions
+  def value: () -> String
+end
+
+module RSpec::ExampleGroups::AccountField::Verifiable::WithLocalAccounts::WithAURLWithANonNormalizedPath::LetDefinitions
+  def value: () -> String
+end
+
+module RSpec::ExampleGroups::AccountField::Verifiable::WithRemoteAccounts::LetDefinitions
+  def local: () -> bool
+end
+
+module RSpec::ExampleGroups::AccountField::Verifiable::WithRemoteAccounts::WithALink::LetDefinitions
+  def value: () -> String
+end
+
+module RSpec::ExampleGroups::AccountField::Verifiable::WithRemoteAccounts::WithHTMLThatHasMoreThanJustALink::LetDefinitions
+  def value: () -> String
+end
+
+module RSpec::ExampleGroups::AccountField::Verifiable::WithRemoteAccounts::WithALinkWithMisleadingAuthentication::LetDefinitions
+  def value: () -> String
+end
+
+module RSpec::ExampleGroups::AccountField::Verifiable::WithRemoteAccounts::WithALinkWithDifferentVisibleText::LetDefinitions
+  def value: () -> String
+end
+
+module RSpec::ExampleGroups::AccountField::Verifiable::WithRemoteAccounts::WithTextWhichIsBlank::LetDefinitions
+  def value: () -> String
+end
+
+module RSpec::ExampleGroups::AccountField::Verifiable::WithRemoteAccounts::WithTextThatIsAURLButIsNotLinked::LetDefinitions
+  def value: () -> String
+end
+
+module RSpec::ExampleGroups::AccountField::MarkVerified::LetDefinitions
+  def subject: () -> Account::Field
+
+  def account: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def original_hash: () -> Hash[untyped, untyped]
+end

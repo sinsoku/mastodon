@@ -1,0 +1,17 @@
+class Importer::StatusesIndexImporter
+  def import!: () -> void
+
+  def scopes: () -> Array[untyped]
+
+  def local_statuses_scope: () -> void
+
+  def local_mentions_scope: () -> void
+
+  def local_favourites_scope: () -> void
+
+  def local_votes_scope: () -> void
+
+  def local_bookmarks_scope: () -> void
+
+  def index: () -> Class
+end

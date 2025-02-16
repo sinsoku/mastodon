@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::VacuumPreviewCardsVacuum::Perform::LetDefinitions
+  def orphaned_preview_card: () -> PreviewCard
+
+  def old_preview_card: () -> PreviewCard
+
+  def new_preview_card: () -> PreviewCard
+end
+
+module RSpec::ExampleGroups::VacuumPreviewCardsVacuum::LetDefinitions
+  def retention_period: () -> ActiveSupport::Duration
+
+  def subject: () -> Vacuum::PreviewCardsVacuum
+end

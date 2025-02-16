@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::Webfinger::SelfLink::WhenSelfLinkIsSpecifiedWithIncorrectType::LetDefinitions
+  def webfinger: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Webfinger::SelfLink::WhenSelfLinkIsSpecifiedWithTypeApplicationActivityJson::LetDefinitions
+  def webfinger: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Webfinger::SelfLink::WhenSelfLinkIsSpecifiedWithTypeApplicationLdJson::LetDefinitions
+  def webfinger: () -> Hash[untyped, untyped]
+end

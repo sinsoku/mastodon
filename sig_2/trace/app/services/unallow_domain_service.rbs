@@ -1,0 +1,3 @@
+class UnallowDomainService
+  def call: (DomainAllow) -> void
+end

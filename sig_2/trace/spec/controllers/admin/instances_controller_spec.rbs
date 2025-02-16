@@ -1,0 +1,31 @@
+module RSpec::ExampleGroups::AdminInstancesController::LetDefinitions
+  def account_popular_main: () -> Account
+
+  def current_user: () -> User
+end
+
+class RSpec::ExampleGroups::AdminInstancesController::GETIndex
+  def instance_directory_links: () -> Nokogiri::XML::NodeSet
+end
+
+module RSpec::ExampleGroups::AdminInstancesController::POSTRestartDelivery::LetDefinitions
+  def tracker: () -> RSpec::Mocks::InstanceVerifyingDouble
+end
+
+module RSpec::ExampleGroups::AdminInstancesController::DELETEDestroy::LetDefinitions
+  def current_user: () -> User
+
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::AdminInstancesController::DELETEDestroy::WhenUserIsNotAdmin::LetDefinitions
+  def role: () -> nil
+end
+
+module RSpec::ExampleGroups::AdminInstancesController::DELETEDestroy::WhenUserIsAdmin::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AdminInstancesController::POSTClearDeliveryErrors::LetDefinitions
+  def tracker: () -> RSpec::Mocks::InstanceVerifyingDouble
+end

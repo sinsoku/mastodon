@@ -1,0 +1,5 @@
+class REST::Admin::IpBlockSerializer
+  def id: () -> String
+
+  def ip: () -> String
+end

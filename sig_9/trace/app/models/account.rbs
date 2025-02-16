@@ -1,0 +1,91 @@
+class Account
+  def normalize_domain: () -> nil
+                      | () -> String
+
+  def local?: () -> void
+            | () -> bool
+
+  def prepare_contents: () -> nil
+
+  def generate_keys: () -> nil
+
+  def to_param: () -> void
+              | () -> String
+
+  def user_pending?: (*untyped, **untyped) -> void
+
+  def user_confirmed?: (*untyped, **untyped) -> bool
+                     | (*untyped, **untyped) -> nil
+
+  def instance_actor?: () -> bool
+
+  def synchronization_uri_prefix: () -> String
+
+  def self.inboxes: () -> Array[untyped]
+
+  def preferred_inbox_url: () -> String
+
+  def user_role: (*untyped, **untyped) -> void
+               | (*untyped, **untyped) -> UserRole
+               | (*untyped, **untyped) -> nil
+
+  def pretty_acct: () -> void
+                 | () -> String
+
+  def bot?: () -> bool
+
+  def group?: () -> bool
+
+  def object_type: () -> void
+
+  def user_prefers_noindex?: (*untyped, **untyped) -> void
+
+  def moved?: () -> void
+
+  def emojis: () -> void
+
+  def emojifiable_text: () -> void
+
+  def fields: () -> Array[untyped]
+
+  def acct: () -> void
+          | () -> String
+
+  def also_known_as: () -> Array[untyped]
+
+  def keypair: () -> void
+
+  def user_email: (*untyped, **untyped) -> void
+                | (*untyped, **untyped) -> String
+                | (*untyped, **untyped) -> nil
+
+  def user_disabled?: (*untyped, **untyped) -> void
+
+  def user_approved?: (*untyped, **untyped) -> void
+
+  def user_locale: (*untyped, **untyped) -> void
+
+  def user_shows_application?: (*untyped, **untyped) -> void
+
+  def excluded_from_timeline_domains: () -> void
+                                    | () -> Array[untyped]
+
+  def excluded_from_timeline_account_ids: () -> void
+
+  def ensure_keys!: () -> void
+
+  def trigger_update_webhooks: () -> String
+                             | () -> nil
+
+  def chosen_languages: (*untyped, **untyped) -> nil
+
+  def create_canonical_email_block!: () -> void
+
+  def sign?: () -> void
+
+  def user_time_zone: (*untyped, **untyped) -> void
+
+  def possibly_stale?: () -> void
+
+  def schedule_refresh_if_stale!: () -> void
+end

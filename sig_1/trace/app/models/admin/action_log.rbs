@@ -1,0 +1,12 @@
+class Admin::ActionLog
+  def set_human_identifier: () -> nil
+                          | () -> String
+                          | () -> Integer
+
+  def set_route_param: () -> nil
+                     | () -> Integer
+
+  def set_permalink: () -> nil
+
+  def action: () -> Symbol
+end

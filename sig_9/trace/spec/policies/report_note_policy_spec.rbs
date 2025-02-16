@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::ReportNotePolicy::LetDefinitions
+  def john: () -> Account
+
+  def subject: () -> Class
+
+  def admin: () -> Account
+end

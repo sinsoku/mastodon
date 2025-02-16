@@ -1,0 +1,9 @@
+module ActivityPub::CaseTransform
+  def self.camel_lower: (String) -> String
+                      | (Symbol) -> void
+                      | (Symbol) -> Symbol
+                      | (Hash[untyped, untyped]) -> void
+                      | (Hash[untyped, untyped]) -> Hash[untyped, untyped]
+
+  def self.camel_lower_cache: () -> Hash[untyped, untyped]
+end

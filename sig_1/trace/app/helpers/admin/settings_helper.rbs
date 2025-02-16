@@ -1,0 +1,17 @@
+module Admin::SettingsHelper
+  def captcha_available?: () -> bool
+
+  def login_activity_title: (LoginActivity) -> ActiveSupport::SafeBuffer
+
+  def login_activity_key: (LoginActivity) -> String
+
+  def login_activity_method: (LoginActivity) -> void
+
+  def login_activity_method_string: (LoginActivity) -> void
+
+  def login_activity_ip: (LoginActivity) -> void
+
+  def login_activity_browser: (LoginActivity) -> void
+
+  def login_activity_browser_description: (LoginActivity) -> void
+end

@@ -1,0 +1,11 @@
+class ActivityPub::DeleteActorSerializer
+  def id: () -> String
+
+  def type: () -> String
+
+  def actor: () -> String
+
+  def to: () -> Array[untyped]
+
+  def virtual_object: () -> String
+end

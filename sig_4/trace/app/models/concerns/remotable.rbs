@@ -1,0 +1,22 @@
+module Remotable::ClassMethods
+  def remotable_attachment: (Symbol, Integer, ?suppress_errors: bool, ?download_on_assign: bool, ?attribute_name: Symbol) -> void
+                          | (Symbol, Integer, ?suppress_errors: bool, ?download_on_assign: bool, ?attribute_name: nil) -> void
+end
+
+class Account
+  def avatar_remote_url=: (String) -> nil
+
+  def download_avatar!: (?String) -> nil
+
+  def header_remote_url=: (String) -> nil
+
+  def download_header!: (?String) -> nil
+end
+
+class MediaAttachment
+  def remote_url=: (String) -> nil
+
+  def download_file!: (?nil) -> nil
+
+  def thumbnail_remote_url=: (nil) -> nil
+end

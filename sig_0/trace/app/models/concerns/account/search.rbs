@@ -1,0 +1,5 @@
+module Account::Search::ClassMethods
+  def search_for: (String, ?limit: Integer, ?offset: Integer) -> void
+
+  def generate_query_for_search: (String) -> String
+end

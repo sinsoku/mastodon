@@ -1,0 +1,7 @@
+class NotificationPolicy
+  def summarize!: () -> void
+
+  def pending_notification_requests: () -> Array[untyped]
+
+  def filter_not_following=: (String) -> Symbol
+end

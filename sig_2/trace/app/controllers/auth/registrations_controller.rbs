@@ -1,0 +1,39 @@
+class Auth::RegistrationsController
+  def set_sessions: () -> ActiveRecord::AssociationRelation
+
+  def set_strikes: () -> ActiveRecord::AssociationRelation
+
+  def set_cache_headers: () -> Hash[untyped, untyped]
+
+  def edit: () -> ActiveSupport::SafeBuffer
+
+  def determine_layout: () -> String
+
+  def after_sign_in_path_for: (User) -> void
+
+  def set_invite: () -> void
+                | () -> nil
+
+  def invite_code: () -> void
+
+  def check_enabled_registrations: () -> nil
+
+  def set_rules: () -> ActiveRecord::Relation
+
+  def require_rules_acceptance!: () -> nil
+
+  def new: () -> ActiveSupport::SafeBuffer
+
+  def build_resource: (?nil) -> void
+                    | (?ActiveSupport::HashWithIndifferentAccess) -> void
+
+  def configure_sign_up_params: () -> nil
+
+  def create: () -> ActiveSupport::SafeBuffer
+
+  def require_not_suspended!: () -> nil
+
+  def update: () -> ActiveSupport::SafeBuffer
+
+  def update_resource: (User, ActiveSupport::HashWithIndifferentAccess) -> bool
+end

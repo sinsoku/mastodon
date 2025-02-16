@@ -1,0 +1,9 @@
+class Settings::ProfilesController
+  def set_account: () -> Account
+
+  def show: () -> Array[untyped]
+
+  def update: () -> String
+
+  def account_params: () -> void
+end

@@ -1,0 +1,4 @@
+class Webhooks::EventPresenter
+  def initialize: (String, Account) -> void
+                | (String, Status) -> void
+end

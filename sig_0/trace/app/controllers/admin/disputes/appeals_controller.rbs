@@ -1,0 +1,13 @@
+class Admin::Disputes::AppealsController
+  def index: () -> ActiveRecord::Relation
+
+  def filtered_appeals: () -> ActiveRecord::Relation
+
+  def filter_params: () -> ActionController::Parameters
+
+  def set_appeal: () -> Appeal
+
+  def approve: () -> String
+
+  def reject: () -> String
+end

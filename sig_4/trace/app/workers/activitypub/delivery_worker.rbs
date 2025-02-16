@@ -1,0 +1,16 @@
+class ActivityPub::DeliveryWorker
+  def perform: (String, Integer, String, ?Hash[untyped, untyped]) -> void
+             | (String, Integer, String, ?Hash[untyped, untyped]) -> bool
+
+  def perform_request: () -> void
+
+  def stoplight_wrapper: () -> Stoplight::Builder
+
+  def request_pool: () -> RequestPool
+
+  def build_request: (HTTP::Client) -> Request
+
+  def failure_tracker: () -> DeliveryFailureTracker
+
+  def synchronization_header: () -> void
+end

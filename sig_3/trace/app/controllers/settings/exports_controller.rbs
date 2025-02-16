@@ -1,0 +1,7 @@
+class Settings::ExportsController
+  def show: () -> ActiveRecord::Associations::CollectionProxy
+
+  def preloaded_account: () -> void
+
+  def create: () -> String
+end

@@ -1,0 +1,3 @@
+class FetchReplyWorker
+  def perform: (String, ?Hash[untyped, untyped]) -> void
+end

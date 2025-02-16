@@ -1,0 +1,7 @@
+module DatabaseHelper
+  def with_read_replica: () -> void
+
+  def replica_enabled?: () -> void
+
+  def with_primary: () -> void
+end

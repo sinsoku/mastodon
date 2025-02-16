@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::AdminWarningPresetsController::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::AdminWarningPresetsController::PUTUpdate::LetDefinitions
+  def account_warning_preset: () -> AccountWarningPreset
+end
+
+module RSpec::ExampleGroups::AdminWarningPresetsController::DELETEDestroy::LetDefinitions
+  def account_warning_preset: () -> AccountWarningPreset
+end
+
+module RSpec::ExampleGroups::AdminWarningPresetsController::GETEdit::LetDefinitions
+  def account_warning_preset: () -> AccountWarningPreset
+end

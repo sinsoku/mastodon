@@ -1,0 +1,20 @@
+class AccountFilter
+  def initialize: (Hash[untyped, untyped]) -> void
+
+  def results: () -> void
+
+  def relevant_params: () -> Hash[untyped, untyped]
+
+  def origin_is_remote_and_domain_present?: () -> void
+
+  def scope_for: (Symbol, String) -> void
+               | (Symbol, Array[untyped]) -> void
+
+  def origin_scope: (String) -> void
+
+  def status_scope: (String) -> void
+
+  def role_scope: (Array[untyped]) -> void
+
+  def accounts_with_users: () -> ActiveRecord::Relation
+end

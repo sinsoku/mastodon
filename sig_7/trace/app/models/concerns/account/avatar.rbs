@@ -1,0 +1,9 @@
+module Account::Avatar
+  def avatar_original_url: () -> void
+
+  def avatar_static_url: () -> void
+end
+
+module Account::Avatar::ClassMethods
+  def avatar_styles: (Paperclip::Attachment) -> void
+end

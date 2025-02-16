@@ -1,0 +1,47 @@
+class AccountStatusesFilter
+  def initialize: (Account, Account, ?Hash[untyped, untyped]) -> void
+                | (Account, nil, ?Hash[untyped, untyped]) -> void
+
+  def results: () -> void
+             | () -> ActiveRecord::AssociationRelation
+             | () -> ActiveRecord::Relation
+
+  def initial_scope: () -> ActiveRecord::AssociationRelation
+                   | () -> ActiveRecord::Relation
+
+  def anonymous?: () -> void
+
+  def author?: () -> void
+
+  def blocked?: () -> void
+
+  def filtered_scope: () -> void
+
+  def follower?: () -> void
+
+  def reblogs_may_occur?: () -> void
+
+  def exclude_reblogs?: () -> nil
+                      | () -> bool
+
+  def truthy_param?: (Symbol) -> void
+
+  def only_media?: () -> nil
+                 | () -> bool
+
+  def tagged?: () -> bool
+
+  def filtered_reblogs_scope: () -> void
+
+  def pinned?: () -> void
+
+  def exclude_replies?: () -> void
+
+  def only_media_scope: () -> void
+
+  def hashtag_scope: () -> void
+
+  def no_replies_scope: () -> void
+
+  def no_reblogs_scope: () -> void
+end

@@ -1,0 +1,115 @@
+module RSpec::ExampleGroups::AccountStatusesCleanupPolicy::SaveHooks::WhenNarrowingAPolicy::LetDefinitions
+  def account_statuses_cleanup_policy: () -> AccountStatusesCleanupPolicy
+end
+
+module RSpec::ExampleGroups::AccountStatusesCleanupPolicy::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AccountStatusesCleanupPolicy::SaveHooks::WhenWideningAPolicy::LetDefinitions
+  def account_statuses_cleanup_policy: () -> AccountStatusesCleanupPolicy
+
+  def subject: () -> nil
+end
+
+module RSpec::ExampleGroups::AccountStatusesCleanupPolicy::RecordLastInspected::LetDefinitions
+  def account_statuses_cleanup_policy: () -> AccountStatusesCleanupPolicy
+end
+
+module RSpec::ExampleGroups::AccountStatusesCleanupPolicy::Validations::LetDefinitions
+  def subject: () -> AccountStatusesCleanupPolicy
+
+  def remote_account: () -> Account
+end
+
+module RSpec::ExampleGroups::AccountStatusesCleanupPolicy::InvalidateLastInspected::LetDefinitions
+  def account_statuses_cleanup_policy: () -> AccountStatusesCleanupPolicy
+
+  def subject: () -> nil
+             | () -> String
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::AccountStatusesCleanupPolicy::InvalidateLastInspected::WhenTheActionIsUnfav::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::AccountStatusesCleanupPolicy::InvalidateLastInspected::WhenTheActionIsUnpin::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::AccountStatusesCleanupPolicy::InvalidateLastInspected::WhenTheActionIsUnbookmark::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::AccountStatusesCleanupPolicy::InvalidateLastInspected::WhenTheStatusIsMoreRecentThanTheRecordedInspectedId::LetDefinitions
+  def status: () -> Status
+
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::AccountStatusesCleanupPolicy::StatusesToDelete::LetDefinitions
+  def unrelated_status: () -> Status
+
+  def very_old_status: () -> Status
+
+  def pinned_status: () -> Status
+
+  def direct_message: () -> Status
+
+  def self_faved: () -> Status
+
+  def self_bookmarked: () -> Status
+
+  def status_with_poll: () -> Status
+
+  def status_with_media: () -> Status
+
+  def faved_primary: () -> Status
+
+  def faved_secondary: () -> Status
+
+  def reblogged_primary: () -> Status
+
+  def reblogged_secondary: () -> Status
+
+  def recent_status: () -> Status
+
+  def account_statuses_cleanup_policy: () -> AccountStatusesCleanupPolicy
+
+  def subject: () -> ActiveRecord::Relation
+end
+
+class RSpec::ExampleGroups::AccountStatusesCleanupPolicy::StatusesToDelete
+  def establish_policy: (?Hash[untyped, untyped]) -> void
+
+  def default_policy_options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AccountStatusesCleanupPolicy::StatusesToDelete::WhenPassedAMinId::LetDefinitions
+  def old_status: () -> Status
+
+  def slightly_less_old_status: () -> Status
+
+  def subject: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::AccountStatusesCleanupPolicy::StatusesToDelete::WhenPassedAMaxId::LetDefinitions
+  def old_status: () -> Status
+
+  def slightly_less_old_status: () -> Status
+
+  def subject: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::AccountStatusesCleanupPolicy::ComputeCutoffId::WhenTheAccountHasPostedMultipleToots::LetDefinitions
+  def old_status: () -> Status
+end
+
+module RSpec::ExampleGroups::AccountStatusesCleanupPolicy::ComputeCutoffId::LetDefinitions
+  def subject: () -> Integer
+             | () -> nil
+
+  def account_statuses_cleanup_policy: () -> AccountStatusesCleanupPolicy
+end

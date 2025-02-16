@@ -1,0 +1,11 @@
+class Webhook
+  def generate_secret: () -> nil
+
+  def invalid_events?: () -> bool
+
+  def validate_permissions: () -> nil
+
+  def validate_template: () -> nil
+
+  def rotate_secret!: () -> void
+end

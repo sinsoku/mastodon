@@ -1,0 +1,43 @@
+module RSpec::ExampleGroups::Tags_2::GETApiV1AdminTagsId::LetDefinitions
+  def tag: () -> Tag
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::Tags_2::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def role: () -> UserRole
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Tags_2::PUTApiV1AdminTagsId::LetDefinitions
+  def tag: () -> Tag
+
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Tags_2::PUTApiV1AdminTagsId::WhenTheUpdatedDisplayNameIsInvalid::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Tags_2::GETApiV1AdminTags::LetDefinitions
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Tags_2::GETApiV1AdminTags::WhenThereAreTagss::LetDefinitions
+  def tags: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Tags_2::GETApiV1AdminTags::WhenThereAreTagss::WithLimitParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end

@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::OauthTokensController::POSTRevoke::LetDefinitions
+  def user: () -> User
+
+  def application: () -> Doorkeeper::Application
+
+  def access_token: () -> Doorkeeper::AccessToken
+
+  def web_push_subscription: () -> Web::PushSubscription
+end

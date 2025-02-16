@@ -1,0 +1,17 @@
+class ApproveAppealService
+  def call: (Appeal, Account) -> void
+
+  def undo_strike_action!: () -> void
+
+  def undo_suspend!: () -> void
+
+  def target_account: () -> Account
+
+  def mark_strike_as_appealed!: () -> void
+
+  def queue_workers!: () -> void
+
+  def notify_target_account!: () -> void
+
+  def undo_mark_statuses_as_sensitive!: () -> void
+end

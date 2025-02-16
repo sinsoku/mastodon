@@ -1,0 +1,31 @@
+module RSpec::ExampleGroups::MailSubscriptionsController::LetDefinitions
+  def token: () -> String
+
+  def user: () -> User
+
+  def type: () -> String
+end
+
+module RSpec::ExampleGroups::MailSubscriptionsController::OnTheUnsubscribeConfirmationPage::BehavesLikeNotFoundWithInvalidToken::WithInvalidToken::LetDefinitions
+  def token: () -> String
+end
+
+module RSpec::ExampleGroups::MailSubscriptionsController::OnTheUnsubscribeConfirmationPage::BehavesLikeNotFoundWithInvalidType::WithInvalidType::LetDefinitions
+  def type: () -> String
+end
+
+module RSpec::ExampleGroups::MailSubscriptionsController::UnsubscribingWithListUnsubscribePost::BehavesLikeNotFoundWithInvalidType::WithInvalidType::LetDefinitions
+  def type: () -> String
+end
+
+module RSpec::ExampleGroups::MailSubscriptionsController::UnsubscribingWithListUnsubscribePost::BehavesLikeNotFoundWithInvalidToken::WithInvalidToken::LetDefinitions
+  def token: () -> String
+end
+
+module RSpec::ExampleGroups::MailSubscriptionsController::SubmittingTheUnsubscribeConfirmationPage::BehavesLikeNotFoundWithInvalidType::WithInvalidType::LetDefinitions
+  def type: () -> String
+end
+
+module RSpec::ExampleGroups::MailSubscriptionsController::SubmittingTheUnsubscribeConfirmationPage::BehavesLikeNotFoundWithInvalidToken::WithInvalidToken::LetDefinitions
+  def token: () -> String
+end

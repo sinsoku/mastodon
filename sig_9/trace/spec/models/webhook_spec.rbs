@@ -1,0 +1,84 @@
+module RSpec::ExampleGroups::Webhook::RequiredPermissions::LetDefinitions
+  def subject: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Webhook::RequiredPermissions::WithEmptyEvents::LetDefinitions
+  def events: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Webhook::RequiredPermissions::WithMultipleEventTypes::LetDefinitions
+  def events: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Webhook::Disable::LetDefinitions
+  def webhook: () -> Webhook
+end
+
+module RSpec::ExampleGroups::Webhook::Validations::LetDefinitions
+  def subject: () -> Webhook
+end
+
+module RSpec::ExampleGroups::Webhook::Validations::WhenCurrentAccountIsAssigned::LetDefinitions
+  def subject: () -> Webhook
+end
+
+module RSpec::ExampleGroups::Webhook::Validations::WhenCurrentAccountIsAssigned::WithAccountThatHasPermissions::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::Webhook::Validations::WhenCurrentAccountIsAssigned::WithAccountLackingPermissions::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::Webhook::Callbacks::GeneratingASecret::WhenSecretExistsAlready::LetDefinitions
+  def subject: () -> Webhook
+end
+
+module RSpec::ExampleGroups::Webhook::Callbacks::GeneratingASecret::WhenSecretDoesNotExist::LetDefinitions
+  def subject: () -> Webhook
+end
+
+module RSpec::ExampleGroups::Webhook::Enable::LetDefinitions
+  def webhook: () -> Webhook
+end
+
+module RSpec::ExampleGroups::Webhook::LetDefinitions
+  def webhook: () -> Webhook
+end
+
+module RSpec::ExampleGroups::Webhook::PermissionForEvent::LetDefinitions
+  def subject: () -> Symbol
+             | () -> nil
+end
+
+module RSpec::ExampleGroups::Webhook::PermissionForEvent::WithAnAccountApprovedEvent::LetDefinitions
+  def event: () -> String
+end
+
+module RSpec::ExampleGroups::Webhook::PermissionForEvent::WithANilValue::LetDefinitions
+  def event: () -> nil
+end
+
+module RSpec::ExampleGroups::Webhook::PermissionForEvent::WithAnStatusUpdatedEvent::LetDefinitions
+  def event: () -> String
+end
+
+module RSpec::ExampleGroups::Webhook::PermissionForEvent::WithAnReportCreatedEvent::LetDefinitions
+  def event: () -> String
+end
+
+module RSpec::ExampleGroups::Webhook::PermissionForEvent::WithAnStatusCreatedEvent::LetDefinitions
+  def event: () -> String
+end
+
+module RSpec::ExampleGroups::Webhook::PermissionForEvent::WithAnAccountUpdatedEvent::LetDefinitions
+  def event: () -> String
+end
+
+module RSpec::ExampleGroups::Webhook::PermissionForEvent::WithAnReportUpdatedEvent::LetDefinitions
+  def event: () -> String
+end
+
+module RSpec::ExampleGroups::Webhook::PermissionForEvent::WithAnAccountCreatedEvent::LetDefinitions
+  def event: () -> String
+end

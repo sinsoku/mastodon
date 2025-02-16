@@ -1,0 +1,19 @@
+class Admin::ReportsController
+  def index: () -> ActiveRecord::Relation
+
+  def filtered_reports: () -> ActiveRecord::Relation
+
+  def filter_params: () -> void
+
+  def set_report: () -> Report
+
+  def assign_to_self: () -> String
+
+  def unassign: () -> String
+
+  def reopen: () -> String
+
+  def resolve: () -> String
+
+  def show: () -> ActiveRecord::Relation
+end

@@ -1,0 +1,23 @@
+class RSpec::ExampleGroups::FormattingHelper::RssStatusContentFormat
+  def parsed_result: () -> Nokogiri::HTML4::DocumentFragment
+end
+
+module RSpec::ExampleGroups::FormattingHelper::RssStatusContentFormat::LetDefinitions
+  def subject: () -> String
+end
+
+module RSpec::ExampleGroups::FormattingHelper::RssStatusContentFormat::WithASimpleStatus::LetDefinitions
+  def status: () -> Status
+end
+
+class RSpec::ExampleGroups::FormattingHelper::RssStatusContentFormat::WithASpoilerAndAnEmojiAndAPoll
+  def spoiler_node: () -> Nokogiri::XML::Element
+
+  def content_node: () -> Nokogiri::XML::Element
+
+  def poll_node: () -> Nokogiri::XML::Element
+end
+
+module RSpec::ExampleGroups::FormattingHelper::RssStatusContentFormat::WithASpoilerAndAnEmojiAndAPoll::LetDefinitions
+  def status: () -> Status
+end

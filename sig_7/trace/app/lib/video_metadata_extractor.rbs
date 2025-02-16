@@ -1,0 +1,12 @@
+class VideoMetadataExtractor
+  def initialize: (String) -> void
+
+  def ffmpeg_command_output: () -> void
+
+  def parse_metadata: () -> void
+
+  def parse_framerate: (String) -> Rational
+                     | (String) -> nil
+
+  def valid?: () -> void
+end

@@ -1,0 +1,15 @@
+class SeveredRelationshipsController
+  def set_cache_headers: () -> Hash[untyped, untyped]
+
+  def index: () -> ActiveRecord::Relation
+
+  def set_event: () -> AccountRelationshipSeveranceEvent
+
+  def following: () -> String
+
+  def following_data: () -> void
+
+  def followers: () -> String
+
+  def followers_data: () -> void
+end

@@ -1,0 +1,41 @@
+module RSpec::ExampleGroups::ActivityPubLinkedDataSignature::LetDefinitions
+  def sender: () -> Account
+
+  def subject: () -> ActivityPub::LinkedDataSignature
+
+  def json: () -> Hash[untyped, untyped]
+
+  def raw_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubLinkedDataSignature::VerifyActor::WhenSignatureIsMissing::LetDefinitions
+  def signature: () -> nil
+end
+
+module RSpec::ExampleGroups::ActivityPubLinkedDataSignature::VerifyActor::WhenSignatureIsTampered::LetDefinitions
+  def signature: () -> Hash[untyped, untyped]
+
+  def raw_signature: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubLinkedDataSignature::VerifyActor::WhenSignatureMatches::LetDefinitions
+  def signature: () -> Hash[untyped, untyped]
+
+  def raw_signature: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::ActivityPubLinkedDataSignature
+  def sign: (Account, Hash[untyped, untyped], Hash[untyped, untyped]) -> void
+end
+
+module RSpec::ExampleGroups::ActivityPubLinkedDataSignature::VerifyActor::WhenLocalAccountRecordIsMissingAPublicKey::LetDefinitions
+  def signature: () -> Hash[untyped, untyped]
+
+  def raw_signature: () -> Hash[untyped, untyped]
+
+  def service_stub: () -> RSpec::Mocks::InstanceVerifyingDouble
+end
+
+module RSpec::ExampleGroups::ActivityPubLinkedDataSignature::Sign::LetDefinitions
+  def subject: () -> ActiveSupport::HashWithIndifferentAccess
+end

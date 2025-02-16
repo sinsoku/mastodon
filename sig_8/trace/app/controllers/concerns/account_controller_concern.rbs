@@ -1,0 +1,9 @@
+module AccountControllerConcern
+  def set_link_headers: () -> String
+
+  def webfinger_account_link: () -> void
+
+  def webfinger_account_url: () -> void
+
+  def actor_url_link: () -> void
+end

@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::FollowLimitValidator::Validate::WithALocalAccount::LetDefinitions
+  def account: () -> Account
+end

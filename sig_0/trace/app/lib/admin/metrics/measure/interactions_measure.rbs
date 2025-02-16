@@ -1,0 +1,11 @@
+class Admin::Metrics::Measure::InteractionsMeasure
+  def key: () -> String
+
+  def perform_total_query: () -> void
+
+  def activity_tracker: () -> ActivityTracker
+
+  def perform_previous_total_query: () -> void
+
+  def perform_data_query: () -> void
+end

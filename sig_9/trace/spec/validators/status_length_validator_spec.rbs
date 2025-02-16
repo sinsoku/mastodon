@@ -1,0 +1,9 @@
+class RSpec::ExampleGroups::StatusLengthValidator
+  def status_double: (?spoiler_text: String, ?text: String) -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def activemodel_errors: () -> void
+
+  def starting_string: () -> void
+
+  def example_link: () -> void
+end

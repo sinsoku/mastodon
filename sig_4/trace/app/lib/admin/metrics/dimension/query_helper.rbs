@@ -1,0 +1,5 @@
+module Admin::Metrics::Dimension::QueryHelper
+  def dimension_data_rows: () -> ActiveRecord::Result
+
+  def sanitized_sql_string: () -> void
+end

@@ -1,0 +1,5 @@
+module Admin::DisputesHelper
+  def strike_action_label: (Appeal) -> ActiveSupport::SafeBuffer
+
+  def key_for_action: (Appeal) -> void
+end

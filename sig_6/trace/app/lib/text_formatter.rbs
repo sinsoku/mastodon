@@ -1,0 +1,13 @@
+class TextFormatter
+  def initialize: (String, ?Hash[untyped, untyped]) -> void
+
+  def to_s: () -> void
+
+  def rewrite: () -> String
+
+  def entities: () -> Array[untyped]
+
+  def multiline?: () -> void
+
+  def link_to_hashtag: (Hash[untyped, untyped]) -> void
+end

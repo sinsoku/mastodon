@@ -1,0 +1,45 @@
+module JsonLdHelper
+  def canonicalize: (Hash[untyped, untyped]) -> void
+                  | (ActiveSupport::HashWithIndifferentAccess) -> void
+
+  def non_matching_uri_hosts?: (String, String) -> void
+
+  def unsupported_uri_scheme?: (String) -> void
+
+  def fetch_resource_without_id_validation: (String, ?nil, ?bool, ?request_options: Hash[untyped, untyped]) -> void
+
+  def build_request: (String, ?Account, ?options: Hash[untyped, untyped]) -> Request
+
+  def response_successful?: (HTTP::Response) -> void
+
+  def valid_activitypub_content_type?: (HTTP::Response) -> void
+
+  def body_to_json: (String, ?compare_id: nil) -> void
+                  | (String, ?compare_id: String) -> void
+                  | (String, ?compare_id: nil) -> Hash[untyped, untyped]
+                  | (String, ?compare_id: String) -> Hash[untyped, untyped]
+
+  def as_array: (Array[untyped]) -> void
+              | (nil) -> Array[untyped]
+              | (Array[untyped]) -> Array[untyped]
+              | (String) -> Array[untyped]
+              | (ActiveSupport::HashWithIndifferentAccess) -> Array[untyped]
+
+  def value_or_id: (String) -> void
+                 | (String) -> String
+                 | (Hash[untyped, untyped]) -> String
+                 | (nil) -> nil
+                 | (ActiveSupport::HashWithIndifferentAccess) -> String
+
+  def uri_from_bearcap: (String) -> String
+
+  def supported_context?: (Hash[untyped, untyped]) -> bool
+
+  def equals_or_includes?: (String, String) -> void
+
+  def equals_or_includes_any?: (String, Array[untyped]) -> void
+
+  def first_of_value: (String) -> void
+
+  def url_to_href: (Array[untyped], ?String) -> void
+end

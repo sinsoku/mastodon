@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::SettingsMigrationRedirectsController::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::SettingsMigrationRedirectsController::DELETEDestroy::LetDefinitions
+  def account: () -> Account
+end
+
+class RSpec::ExampleGroups::SettingsMigrationRedirectsController
+  def stub_resolver: () -> void
+end

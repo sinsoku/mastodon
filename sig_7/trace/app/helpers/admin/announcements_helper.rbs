@@ -1,0 +1,5 @@
+module Admin::AnnouncementsHelper
+  def datetime_pattern: () -> String
+
+  def datetime_placeholder: () -> String
+end

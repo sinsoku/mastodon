@@ -1,0 +1,11 @@
+class RSpec::ExampleGroups::EmailConfirmationFlowWhenCaptchaIsEnabled
+  def stubbed_controller: () -> void
+end
+
+module RSpec::ExampleGroups::EmailConfirmationFlowWhenCaptchaIsEnabled::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::EmailConfirmationFlowWhenCaptchaIsEnabled::WhenTheUserSignedUpThroughAnApp::LetDefinitions
+  def client_app: () -> Doorkeeper::Application
+end

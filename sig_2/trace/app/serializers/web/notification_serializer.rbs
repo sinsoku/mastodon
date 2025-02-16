@@ -1,0 +1,15 @@
+class Web::NotificationSerializer
+  def access_token: () -> String
+
+  def preferred_locale: () -> Symbol
+
+  def notification_id: () -> Integer
+
+  def notification_type: () -> Symbol
+
+  def icon: () -> String
+
+  def title: () -> String
+
+  def body: () -> ActiveSupport::SafeBuffer
+end

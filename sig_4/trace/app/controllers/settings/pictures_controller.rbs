@@ -1,0 +1,10 @@
+class Settings::PicturesController
+  def set_account: () -> Account
+
+  def set_picture: () -> String
+
+  def destroy: () -> String
+             | () -> ActiveSupport::SafeBuffer
+
+  def valid_picture?: () -> void
+end

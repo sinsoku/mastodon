@@ -1,0 +1,6 @@
+module ThemeHelper
+  def theme_color_tags: (String) -> ActiveSupport::SafeBuffer
+
+  def theme_style_tags: (String) -> void
+                      | (String) -> ActiveSupport::SafeBuffer
+end

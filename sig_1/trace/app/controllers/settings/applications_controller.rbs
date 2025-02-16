@@ -1,0 +1,9 @@
+class Settings::ApplicationsController
+  def prepare_scopes: () -> nil
+
+  def create: () -> String
+
+  def application_params: () -> void
+
+  def set_application: () -> nil
+end

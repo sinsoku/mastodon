@@ -1,0 +1,3 @@
+class REST::StatusEditSerializer
+  def content: () -> ActiveSupport::SafeBuffer
+end

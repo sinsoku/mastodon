@@ -1,0 +1,5 @@
+class RSpec::ExampleGroups::TranslationLanguages::GETApiV1InstancesTranslationLanguages::WhenATranslationServiceIsConfigured
+  def configure_translation_service: () -> void
+
+  def service_double: () -> void
+end

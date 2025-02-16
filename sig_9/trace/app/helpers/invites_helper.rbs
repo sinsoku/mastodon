@@ -1,0 +1,5 @@
+module InvitesHelper
+  def invites_max_uses_options: () -> void
+
+  def invites_expires_options: () -> Array[untyped]
+end

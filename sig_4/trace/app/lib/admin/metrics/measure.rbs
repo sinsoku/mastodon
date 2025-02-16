@@ -1,0 +1,3 @@
+class Admin::Metrics::Measure
+  def self.retrieve: (Array[untyped], ActiveSupport::TimeWithZone, Time, ActionController::Parameters) -> void
+end

@@ -1,0 +1,14 @@
+class Api::V1::Peers::SearchController
+  def require_enabled_api!: () -> bool
+                          | () -> nil
+
+  def set_domains: () -> Array[untyped]
+                 | () -> nil
+
+  def normalized_domain: () -> nil
+                       | () -> String
+
+  def query_value: () -> void
+
+  def index: () -> String
+end

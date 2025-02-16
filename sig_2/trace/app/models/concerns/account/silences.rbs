@@ -1,0 +1,5 @@
+module Account::Silences
+  def silenced?: () -> bool
+
+  def silence!: (?Time) -> void
+end

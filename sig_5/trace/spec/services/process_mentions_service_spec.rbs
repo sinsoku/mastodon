@@ -1,0 +1,53 @@
+module RSpec::ExampleGroups::ProcessMentionsService::WithResolvingAMentionToARemoteAccount::WithATemporarilyUnreachableActivityPubUser::LetDefinitions
+  def remote_user: () -> Account
+end
+
+module RSpec::ExampleGroups::ProcessMentionsService::LetDefinitions
+  def subject: () -> ProcessMentionsService
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::ProcessMentionsService::WithResolvingAMentionToARemoteAccount::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::ProcessMentionsService::WithResolvingAMentionToARemoteAccount::WithActivityPub::WithAnIDNTLD::LetDefinitions
+  def remote_user: () -> Account
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::ProcessMentionsService::WithResolvingAMentionToARemoteAccount::WithActivityPub::WithAValidRemoteUser::LetDefinitions
+  def remote_user: () -> Account
+end
+
+module RSpec::ExampleGroups::ProcessMentionsService::WithResolvingAMentionToARemoteAccount::WithActivityPub::WhenMentioningAUserSeveralTimesWhenNotSavingRecords::LetDefinitions
+  def remote_user: () -> Account
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::ProcessMentionsService::WithResolvingAMentionToARemoteAccount::WithActivityPub::WithAnIDNDomain::LetDefinitions
+  def remote_user: () -> Account
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::ProcessMentionsService::WhenMentionsContainBlockedAccounts::LetDefinitions
+  def individually_blocked_account: () -> Account
+
+  def domain_blocked_account: () -> Account
+
+  def status: () -> Status
+
+  def non_blocked_account: () -> Account
+end
+
+class RSpec::ExampleGroups::ProcessMentionsService::WhenMentionsContainBlockedAccounts
+  def create_mention_for_non_blocked: () -> RSpec::Matchers::BuiltIn::ChangeToValue
+
+  def skip_mention_for_individual: () -> RSpec::Matchers::AliasedNegatedMatcher
+
+  def skip_mention_for_domain_blocked: () -> void
+end

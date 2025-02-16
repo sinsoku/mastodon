@@ -1,0 +1,12 @@
+class PushUpdateWorker
+  def perform: (nil, nil, ?nil, ?Hash[untyped, untyped]) -> void
+             | (Integer, Integer, ?nil, ?Hash[untyped, untyped]) -> void
+
+  def render_payload!: () -> void
+
+  def publish!: () -> void
+
+  def message: () -> void
+
+  def update?: () -> void
+end

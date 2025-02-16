@@ -1,0 +1,4 @@
+module PreloadingConcern
+  def preload_collection: (Trends::Statuses::Query, Class) -> void
+                        | (Array[untyped], Class) -> void
+end

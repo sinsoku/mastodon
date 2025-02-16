@@ -1,0 +1,5 @@
+module Admin::FilterHelper
+  def table_link_to: (String, String, String, **nil) -> void
+                   | (String, String, String, **nil) -> ActiveSupport::SafeBuffer
+                   | (String, String, String, **Symbol | Hash[untyped, untyped]) -> ActiveSupport::SafeBuffer
+end

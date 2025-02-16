@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::AdminMetricsMeasureOpenedReportsMeasure::LetDefinitions
+  def subject: () -> Admin::Metrics::Measure::OpenedReportsMeasure
+
+  def start_at: () -> ActiveSupport::TimeWithZone
+
+  def end_at: () -> Time
+
+  def params: () -> ActionController::Parameters
+end

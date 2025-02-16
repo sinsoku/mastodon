@@ -1,0 +1,10 @@
+module SettingsHelper
+  def session_device_icon: (SessionActivation) -> String
+
+  def featured_tags_hint: (ActiveRecord::Relation) -> bool
+                        | (ActiveRecord::Relation) -> ActiveSupport::SafeBuffer
+
+  def links_for_featured_tags: (ActiveRecord::Relation) -> void
+
+  def post_link_to_featured_tag: (Tag) -> void
+end

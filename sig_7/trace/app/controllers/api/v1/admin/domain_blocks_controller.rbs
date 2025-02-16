@@ -1,0 +1,37 @@
+class Api::V1::Admin::DomainBlocksController
+  def create: () -> String
+            | () -> nil
+
+  def resource_params: () -> void
+                     | () -> ActionController::Parameters
+
+  def conflicts_with_existing_block?: (DomainBlock, nil) -> void
+                                    | (DomainBlock, DomainBlock) -> void
+
+  def set_domain_block: () -> DomainBlock
+                      | () -> nil
+
+  def destroy: () -> String
+             | () -> nil
+
+  def show: () -> String
+          | () -> nil
+
+  def update: () -> String
+            | () -> nil
+
+  def domain_block_params: () -> void
+
+  def set_domain_blocks: () -> Array[untyped]
+
+  def index: () -> String
+           | () -> nil
+
+  def next_path: () -> void
+
+  def records_continue?: () -> void
+
+  def prev_path: () -> void
+
+  def pagination_collection: () -> Array[untyped]
+end

@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::UnfilterNotificationsWorker::LetDefinitions
+  def sender: () -> Account
+
+  def recipient: () -> Account
+end
+
+module RSpec::ExampleGroups::UnfilterNotificationsWorker::Perform::WithSingleArgumentPrereleaseBehavior::LetDefinitions
+  def notification_request: () -> NotificationRequest
+
+  def subject: () -> nil
+end
+
+module RSpec::ExampleGroups::UnfilterNotificationsWorker::Perform::WithTwoArguments::LetDefinitions
+  def subject: () -> nil
+end

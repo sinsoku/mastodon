@@ -1,0 +1,18 @@
+class ActivityPub::ProcessCollectionService
+  def call: (String, Account, **nil) -> void
+
+  def supported_context?: () -> bool
+
+  def different_actor?: () -> void
+
+  def suspended_actor?: () -> void
+
+  def activity_allowed_while_suspended?: () -> bool
+
+  def process_items: (Array[untyped]) -> void
+
+  def process_item: (Hash[untyped, untyped]) -> void
+
+  def verify_account!: () -> nil
+                     | () -> Account
+end

@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::RedownloadMediaWorker::LetDefinitions
+  def worker: () -> RedownloadMediaWorker
+end
+
+module RSpec::ExampleGroups::RedownloadMediaWorker::Perform::WithAValidRemoteUrl::LetDefinitions
+  def url: () -> String
+end

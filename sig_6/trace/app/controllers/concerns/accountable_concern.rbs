@@ -1,0 +1,5 @@
+module AccountableConcern
+  def log_action: (Symbol, Report) -> void
+                | (Symbol, Account) -> void
+                | (Symbol, CustomEmoji) -> void
+end

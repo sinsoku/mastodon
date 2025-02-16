@@ -1,0 +1,29 @@
+class Mastodon::CLI::Base
+  def fail_with_message: (String) -> void
+
+  def reset_connection_pools!: () -> void
+
+  def dry_run?: () -> void
+
+  def dry_run_mode_suffix: () -> String
+end
+
+class Mastodon::CLI::Domains
+  def self.exit_on_failure?: () -> void
+end
+
+class Mastodon::CLI::Search
+  def self.exit_on_failure?: () -> void
+end
+
+class Mastodon::CLI::PreviewCards
+  def self.exit_on_failure?: () -> void
+end
+
+class Mastodon::CLI::EmailDomainBlocks
+  def self.exit_on_failure?: () -> void
+end
+
+class Mastodon::CLI::Accounts
+  def self.exit_on_failure?: () -> void
+end

@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::DomainValidator::LetDefinitions
+  def record: () -> untyped
+end
+
+module RSpec::ExampleGroups::DomainValidator::WithAcctOption::LetDefinitions
+  def record_class: () -> Class
+end
+
+module RSpec::ExampleGroups::DomainValidator::WithNoOptions::LetDefinitions
+  def record_class: () -> Class
+end

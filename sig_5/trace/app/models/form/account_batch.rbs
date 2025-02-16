@@ -1,0 +1,11 @@
+class Form::AccountBatch
+  def save: () -> void
+
+  def remove_domains_from_followers!: () -> void
+
+  def account_domains: () -> void
+
+  def accounts: () -> ActiveRecord::Relation
+
+  def select_all_matching?: () -> void
+end

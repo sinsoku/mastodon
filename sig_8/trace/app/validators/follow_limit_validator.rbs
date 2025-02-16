@@ -1,0 +1,8 @@
+class FollowLimitValidator
+  def validate: (FollowRequest) -> nil
+              | (Follow) -> nil
+
+  def limit_reached?: (Account) -> void
+
+  def self.limit_for_account: (Account) -> void
+end

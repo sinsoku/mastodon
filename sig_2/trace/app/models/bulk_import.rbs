@@ -1,0 +1,3 @@
+class BulkImport
+  def self.progress!: (Integer, ?imported: bool) -> void
+end

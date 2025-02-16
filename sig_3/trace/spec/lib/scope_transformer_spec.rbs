@@ -1,0 +1,51 @@
+module RSpec::ExampleGroups::ScopeTransformer::Apply::LetDefinitions
+  def subject: () -> ScopeTransformer::Scope
+end
+
+module RSpec::ExampleGroups::ScopeTransformer::Apply::WithScopeAdminRead::LetDefinitions
+  def input: () -> String
+end
+
+module RSpec::ExampleGroups::ScopeTransformer::Apply::WithScopeAdminWriteAccounts::LetDefinitions
+  def input: () -> String
+end
+
+module RSpec::ExampleGroups::ScopeTransformer::Apply::WithScopeCrypto::LetDefinitions
+  def input: () -> String
+end
+
+module RSpec::ExampleGroups::ScopeTransformer::Apply::WithScopeWrite::LetDefinitions
+  def input: () -> String
+end
+
+module RSpec::ExampleGroups::ScopeTransformer::Apply::WithScopeAdminWrite::LetDefinitions
+  def input: () -> String
+end
+
+module RSpec::ExampleGroups::ScopeTransformer::Apply::WithScopePush::LetDefinitions
+  def input: () -> String
+end
+
+module RSpec::ExampleGroups::ScopeTransformer::Apply::WithScopeReadAccounts::LetDefinitions
+  def input: () -> String
+end
+
+module RSpec::ExampleGroups::ScopeTransformer::Apply::WithScopeFollow::LetDefinitions
+  def input: () -> String
+end
+
+module RSpec::ExampleGroups::ScopeTransformer::Apply::WithScopeWriteAccounts::LetDefinitions
+  def input: () -> String
+end
+
+module RSpec::ExampleGroups::ScopeTransformer::Apply::WithScopeRead::LetDefinitions
+  def input: () -> String
+end
+
+module RSpec::ExampleGroups::ScopeTransformer::Apply::WithScopeAdminReadAccounts::LetDefinitions
+  def input: () -> String
+end
+
+module RSpec::ExampleGroups::ScopeTransformer::Apply::WithScopeProfile::LetDefinitions
+  def input: () -> String
+end

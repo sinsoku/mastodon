@@ -1,0 +1,11 @@
+class AccountRelationshipsPresenter
+  def initialize: (ActiveRecord::Relation, Integer, **nil) -> void
+
+  def cached: () -> Hash[untyped, untyped]
+
+  def relationship_cache_key: (Integer) -> void
+
+  def domain_blocking_map: () -> Hash[untyped, untyped]
+
+  def cache_uncached!: () -> void
+end

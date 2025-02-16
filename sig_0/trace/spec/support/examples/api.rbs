@@ -1,0 +1,87 @@
+module RSpec::ExampleGroups::Polls::GETApiV1PollsId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Link::GETApiV1TimelinesLink::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Link::GETApiV1TimelinesLink::WhenTheInstanceDoesNotAllowPublicPreview::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1AccountsIdFollow::WhenUserTriesToFollowTheirOwnAccount::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1AccountsIdFollow::WhenPostingToAnOtherAccount::WithUnlockedAccount::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1AccountsIdFollow::WhenPostingToAnOtherAccount::WithLockedAccount::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1AccountsIdRemoveFromFollowers::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1AccountsIdMute::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1AccountsIdMuteWithNonzeroDurationSet::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1AccountsIdUnmute::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1AccountsIdUnblock::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1AccountsIdMuteWithNotificationsSetToFalse::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1AccountsIdBlock::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::GETApiV1AccountsId::WhenLoggedIn::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1AccountsIdUnfollow::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Notifications::POSTApiV1NotificationsClear::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV1NotificationsId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Notifications::POSTApiV1NotificationsIdDismiss::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV1Notifications::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV1NotificationsUnreadCount::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Policies::GETApiV1NotificationsPolicy::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Policies::PUTApiV1NotificationsPolicy::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end

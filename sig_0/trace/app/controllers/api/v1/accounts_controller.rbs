@@ -1,0 +1,49 @@
+class Api::V1::AccountsController
+  def set_account: () -> Account
+                 | () -> nil
+
+  def check_account_approval: () -> nil
+
+  def check_account_confirmation: () -> nil
+
+  def check_following_self: () -> nil
+                          | () -> String
+
+  def follow: () -> String
+
+  def relationships: (**untyped) -> void
+
+  def remove_from_followers: () -> String
+
+  def mute: () -> String
+
+  def unmute: () -> String
+
+  def set_accounts: () -> ActiveRecord::Relation
+
+  def account_ids: () -> void
+                 | () -> Array[untyped]
+
+  def accounts_params: () -> ActionController::Parameters
+
+  def check_accounts_limit: () -> nil
+
+  def index: () -> String
+
+  def unblock: () -> String
+
+  def check_enabled_registrations: () -> nil
+
+  def invite: () -> void
+
+  def create: () -> Symbol
+            | () -> String
+
+  def account_params: () -> void
+
+  def block: () -> String
+
+  def show: () -> String
+
+  def unfollow: () -> String
+end

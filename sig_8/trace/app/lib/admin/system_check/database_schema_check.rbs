@@ -1,0 +1,7 @@
+class Admin::SystemCheck::DatabaseSchemaCheck
+  def message: () -> void
+
+  def pass?: () -> void
+
+  def skip?: () -> void
+end

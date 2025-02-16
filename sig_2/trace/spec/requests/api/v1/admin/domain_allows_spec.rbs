@@ -1,0 +1,53 @@
+module RSpec::ExampleGroups::DomainAllows::DELETEApiV1AdminDomainAllowsId::LetDefinitions
+  def domain_allow: () -> DomainAllow
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::DomainAllows::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def role: () -> UserRole
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::DomainAllows::POSTApiV1AdminDomainAllows::LetDefinitions
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::DomainAllows::POSTApiV1AdminDomainAllows::WhenDomainNameIsNotSpecified::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::DomainAllows::POSTApiV1AdminDomainAllows::WithInvalidDomainName::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::DomainAllows::GETApiV1AdminDomainAllowsId::LetDefinitions
+  def domain_allow: () -> DomainAllow
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::DomainAllows::GETApiV1AdminDomainAllows::LetDefinitions
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::DomainAllows::GETApiV1AdminDomainAllows::WhenThereAreAllowedDomains::LetDefinitions
+  def domain_allows: () -> Array[untyped]
+
+  def expected_response: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::DomainAllows::GETApiV1AdminDomainAllows::WhenThereAreAllowedDomains::WithLimitParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end

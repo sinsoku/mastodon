@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::RequestPool::LetDefinitions
+  def subject: () -> RequestPool
+end
+
+class RSpec::ExampleGroups::RequestPool::With::WithAnIdleConnection
+  def reaper_observes_idle_timeout: () -> void
+end

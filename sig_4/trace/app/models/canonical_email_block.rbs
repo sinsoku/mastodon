@@ -1,0 +1,5 @@
+class CanonicalEmailBlock
+  def self.block?: (String) -> void
+
+  def email=: (String) -> String
+end

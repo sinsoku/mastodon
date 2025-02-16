@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::AccountConversation::LetDefinitions
+  def alice: () -> Account
+
+  def bob: () -> Account
+
+  def mark: () -> Account
+end

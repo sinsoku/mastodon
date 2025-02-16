@@ -1,0 +1,9 @@
+module Auth::CaptchaConcern
+  def extend_csp_for_captcha!: () -> nil
+
+  def captcha_required?: () -> void
+
+  def captcha_enabled?: () -> void
+
+  def captcha_available?: () -> void
+end

@@ -1,0 +1,5 @@
+class Themes
+  def initialize: () -> void
+
+  def names: () -> Array[untyped]
+end

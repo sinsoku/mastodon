@@ -1,0 +1,39 @@
+class Trends::History
+  def initialize: (String, Integer) -> void
+
+  def add: (Integer, ?Time) -> void
+
+  def aggregate: (Range[untyped]) -> Trends::History::Aggregate
+
+  def get: (Date) -> Trends::History::Day
+         | (ActiveSupport::TimeWithZone) -> Trends::History::Day
+
+  def as_json: (*untyped) -> void
+
+  def each: () -> Array[untyped]
+end
+
+class Trends::History::Day
+  def initialize: (String, Integer, Time) -> void
+                | (String, Integer, Date) -> void
+                | (String, Integer, ActiveSupport::TimeWithZone) -> void
+
+  def add: (Integer) -> void
+
+  def key_for: (Symbol) -> void
+
+  def key_prefix: () -> void
+                | () -> String
+
+  def uses: () -> Integer
+
+  def as_json: () -> Hash[untyped, untyped]
+
+  def accounts: () -> Integer
+end
+
+class Trends::History::Aggregate
+  def initialize: (String, Integer, Range[untyped]) -> void
+
+  def uses: () -> void
+end

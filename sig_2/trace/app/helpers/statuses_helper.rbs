@@ -1,0 +1,15 @@
+module StatusesHelper
+  def nothing_here: (?String) -> ActiveSupport::SafeBuffer
+
+  def prefers_autoplay?: () -> void
+
+  def visibility_icon: (Status) -> void
+
+  def status_description: (Status) -> String
+
+  def media_summary: (Status) -> void
+
+  def status_text_summary: (Status) -> void
+
+  def poll_summary: (Status) -> void
+end

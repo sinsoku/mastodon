@@ -1,0 +1,4 @@
+class MuteService
+  def call: (Account, Account, ?notifications: nil, ?duration: Integer) -> void
+          | (Account, Account, ?notifications: bool, ?duration: Integer) -> void
+end

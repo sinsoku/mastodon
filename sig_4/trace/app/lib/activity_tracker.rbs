@@ -1,0 +1,17 @@
+class ActivityTracker
+  def self.increment: (String) -> void
+
+  def initialize: (String, Symbol) -> void
+
+  def add: (?Integer, ?Time) -> void
+
+  def key_at: (Time) -> String
+
+  def self.record: (String, Integer) -> void
+
+  def sum: (Date, ?Date) -> void
+
+  def legacy_key_at: (Date) -> void
+
+  def get: (Date, ?Date) -> Array[untyped]
+end

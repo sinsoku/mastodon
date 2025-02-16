@@ -1,0 +1,15 @@
+class REST::MediaAttachmentSerializer
+  def id: () -> String
+
+  def url: () -> String
+
+  def preview_url: () -> String
+
+  def remote_url: () -> nil
+
+  def preview_remote_url: () -> nil
+
+  def text_url: () -> nil
+
+  def meta: () -> nil
+end

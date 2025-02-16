@@ -1,0 +1,23 @@
+module RSpec::ExampleGroups::FollowRequest::Authorize::LetDefinitions
+  def follow_request: () -> FollowRequest
+
+  def account: () -> Account
+
+  def target_account: () -> Account
+end
+
+module RSpec::ExampleGroups::FollowRequest::Authorize::WhenTheToBeFollowedPersonHasBeenAddedToAList::LetDefinitions
+  def list: () -> List
+end
+
+module RSpec::ExampleGroups::FollowRequest::Reject::LetDefinitions
+  def follow_request: () -> FollowRequest
+
+  def account: () -> Account
+
+  def target_account: () -> Account
+end
+
+module RSpec::ExampleGroups::FollowRequest::Reject::WhenTheToBeFollowedPersonHasBeenAddedToAList::LetDefinitions
+  def list: () -> List
+end

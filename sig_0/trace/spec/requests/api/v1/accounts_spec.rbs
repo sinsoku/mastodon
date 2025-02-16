@@ -1,0 +1,133 @@
+module RSpec::ExampleGroups::ApiV1Accounts::LetDefinitions
+  def user: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1AccountsIdFollow::LetDefinitions
+  def other_account: () -> Account
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1AccountsIdFollow::WhenModifyingFollowOptions::LetDefinitions
+  def locked: () -> bool
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1AccountsIdFollow::WhenUserTriesToFollowTheirOwnAccount::LetDefinitions
+  def subject: () -> Integer
+
+  def other_account: () -> Account
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1AccountsIdFollow::WhenPostingToAnOtherAccount::LetDefinitions
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1AccountsIdFollow::WhenPostingToAnOtherAccount::WithUnlockedAccount::LetDefinitions
+  def locked: () -> bool
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1AccountsIdFollow::WhenPostingToAnOtherAccount::WithLockedAccount::LetDefinitions
+  def locked: () -> bool
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1AccountsIdRemoveFromFollowers::LetDefinitions
+  def other_account: () -> Account
+
+  def subject: () -> Integer
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1AccountsIdMute::LetDefinitions
+  def other_account: () -> Account
+
+  def subject: () -> Integer
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1AccountsIdMuteWithNonzeroDurationSet::LetDefinitions
+  def other_account: () -> Account
+
+  def subject: () -> Integer
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1AccountsIdUnmute::LetDefinitions
+  def other_account: () -> Account
+
+  def subject: () -> Integer
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::GETApiV1AccountsIdId::LetDefinitions
+  def scopes: () -> String
+
+  def account: () -> Account
+
+  def other_account: () -> Account
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1AccountsIdUnblock::LetDefinitions
+  def other_account: () -> Account
+
+  def subject: () -> Integer
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1AccountsIdMuteWithNotificationsSetToFalse::LetDefinitions
+  def other_account: () -> Account
+
+  def subject: () -> Integer
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1Accounts::LetDefinitions
+  def subject: () -> Integer
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def client_app: () -> Doorkeeper::Application
+
+  def agreement: () -> nil
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1Accounts::WhenGivenTruthyAgreement::LetDefinitions
+  def agreement: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1AccountsIdBlock::LetDefinitions
+  def other_account: () -> Account
+
+  def subject: () -> Integer
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::GETApiV1AccountsId::WhenLoggedOut::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::GETApiV1AccountsId::WhenLoggedIn::LetDefinitions
+  def subject: () -> Integer
+
+  def account: () -> Account
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Accounts::POSTApiV1AccountsIdUnfollow::LetDefinitions
+  def other_account: () -> Account
+
+  def subject: () -> Integer
+
+  def scopes: () -> String
+end

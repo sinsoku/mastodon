@@ -1,0 +1,7 @@
+module Account::StatusesSearch
+  def enqueue_remove_from_public_statuses_index: () -> void
+
+  def enqueue_update_public_statuses_index: () -> void
+
+  def enqueue_add_to_public_statuses_index: () -> void
+end

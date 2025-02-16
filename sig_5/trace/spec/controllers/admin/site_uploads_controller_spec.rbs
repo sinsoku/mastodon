@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::AdminSiteUploadsController::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::AdminSiteUploadsController::DELETEDestroy::LetDefinitions
+  def site_upload: () -> SiteUpload
+end

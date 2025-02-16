@@ -1,0 +1,6 @@
+module DomainMaterializable
+  def refresh_instances_view: () -> nil
+                            | () -> bool
+
+  def count_unique_subdomains!: () -> void
+end

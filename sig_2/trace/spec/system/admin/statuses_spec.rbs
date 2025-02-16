@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::AdminStatuses::LetDefinitions
+  def current_user: () -> User
+end
+
+class RSpec::ExampleGroups::AdminStatuses::PerformingBatchUpdates
+  def button_for_report: () -> void
+
+  def selection_error_text: () -> void
+end

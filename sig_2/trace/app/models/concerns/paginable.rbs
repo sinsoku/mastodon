@@ -1,0 +1,15 @@
+class Bookmark
+  def self.to_a_paginated_by_id: (Integer, ?ActionController::Parameters) -> Array[untyped]
+end
+
+class Favourite
+  def self.to_a_paginated_by_id: (Integer, ?ActionController::Parameters) -> Array[untyped]
+end
+
+class Notification
+  def self.to_a_paginated_by_id: (Integer, ?ActionController::Parameters) -> Array[untyped]
+end
+
+class DomainAllow
+  def self.to_a_paginated_by_id: (Integer, ?ActionController::Parameters) -> Array[untyped]
+end

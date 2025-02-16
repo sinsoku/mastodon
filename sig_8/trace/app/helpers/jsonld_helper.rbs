@@ -1,0 +1,53 @@
+module JsonLdHelper
+  def response_successful?: (HTTP::Response) -> void
+
+  def fetch_resource: (String, bool, ?nil, ?request_options: Hash[untyped, untyped]) -> void
+
+  def fetch_resource_without_id_validation: (String, ?nil, ?bool, ?request_options: Hash[untyped, untyped]) -> Hash[untyped, untyped]
+                                          | (String, ?nil, ?bool, ?request_options: Hash[untyped, untyped]) -> nil
+
+  def build_request: (String, ?Account, ?options: Hash[untyped, untyped]) -> Request
+
+  def valid_activitypub_content_type?: (HTTP::Response) -> void
+
+  def body_to_json: (String, ?compare_id: nil) -> void
+                  | (String, ?compare_id: nil) -> Hash[untyped, untyped]
+                  | (String, ?compare_id: String) -> Hash[untyped, untyped]
+                  | (String, ?compare_id: String) -> nil
+
+  def unsupported_uri_scheme?: (String) -> void
+
+  def response_error_unsalvageable?: (HTTP::Response) -> void
+
+  def supported_context?: (nil) -> void
+                        | (Hash[untyped, untyped]) -> void
+                        | (Hash[untyped, untyped]) -> bool
+
+  def equals_or_includes?: (String, String) -> void
+                         | (Array[untyped], String) -> void
+
+  def uri_from_bearcap: (String) -> void
+                      | (String) -> String
+
+  def first_of_value: (Array[untyped]) -> void
+                    | (String) -> void
+                    | (nil) -> nil
+
+  def compact: (Hash[untyped, untyped]) -> Hash[untyped, untyped]
+
+  def patch_for_forwarding!: (Hash[untyped, untyped], Hash[untyped, untyped]) -> void
+
+  def safe_for_forwarding?: (Hash[untyped, untyped], Hash[untyped, untyped]) -> void
+
+  def equals_or_includes_any?: (String, Array[untyped]) -> void
+
+  def value_or_id: (String) -> String
+
+  def non_matching_uri_hosts?: (String, String) -> void
+
+  def as_array: (Array[untyped]) -> void
+              | (Array[untyped]) -> Array[untyped]
+
+  def canonicalize: (Hash[untyped, untyped]) -> void
+                  | (ActiveSupport::HashWithIndifferentAccess) -> void
+end

@@ -1,0 +1,15 @@
+class Admin::EmailDomainBlocksController
+  def index: () -> Form::EmailDomainBlockBatch
+
+  def new: () -> EmailDomainBlock
+
+  def create: () -> String
+            | () -> ActiveSupport::SafeBuffer
+
+  def resource_params: () -> void
+
+  def action_from_button: () -> String
+                        | () -> nil
+
+  def set_resolved_records: () -> void
+end

@@ -1,0 +1,4 @@
+class REST::MutedAccountSerializer
+  def mute_expires_at: () -> ActiveSupport::TimeWithZone
+                     | () -> nil
+end

@@ -1,0 +1,27 @@
+module RSpec::ExampleGroups::Sources::LetDefinitions
+  def user: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Sources::GETApiV1StatusesStatusIdSource::WithPrivateStatusOfFollowedAccount::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::Sources::GETApiV1StatusesStatusIdSource::LetDefinitions
+  def subject: () -> Integer
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::Sources::GETApiV1StatusesStatusIdSource::WithoutAnAuthorizationHeader::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Sources::GETApiV1StatusesStatusIdSource::WithPrivateStatusOfNonFollowedAccount::LetDefinitions
+  def status: () -> Status
+end

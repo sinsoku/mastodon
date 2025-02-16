@@ -1,0 +1,3 @@
+class UnfavouriteService
+  def call: (Account, Status) -> void
+end

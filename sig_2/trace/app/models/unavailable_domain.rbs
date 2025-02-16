@@ -1,0 +1,5 @@
+class UnavailableDomain
+  def reset_cache!: () -> bool
+
+  def to_log_human_identifier: () -> void
+end

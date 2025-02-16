@@ -1,0 +1,16 @@
+class FetchOEmbedService
+  def call: (String, ?Hash[untyped, untyped]) -> void
+
+  def parse_cached_endpoint!: () -> void
+
+  def fetch!: () -> void
+
+  def parse_for_format: (String) -> void
+
+  def discover_endpoint!: () -> void
+
+  def html: () -> nil
+          | () -> String
+
+  def cache_endpoint!: () -> void
+end

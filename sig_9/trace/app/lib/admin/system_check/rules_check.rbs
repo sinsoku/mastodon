@@ -1,0 +1,7 @@
+class Admin::SystemCheck::RulesCheck
+  def message: () -> void
+
+  def skip?: () -> void
+
+  def pass?: () -> void
+end

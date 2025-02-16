@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::AdminDomainPurgeWorker::LetDefinitions
+  def subject: () -> Admin::DomainPurgeWorker
+end

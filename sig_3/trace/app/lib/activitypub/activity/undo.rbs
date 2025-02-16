@@ -1,0 +1,7 @@
+class ActivityPub::Activity::Undo
+  def perform: () -> void
+
+  def undo_block: () -> void
+
+  def target_uri: () -> void
+end

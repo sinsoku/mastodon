@@ -1,0 +1,18 @@
+module SignatureVerification
+  def require_account_signature!: () -> nil
+                                | () -> String
+
+  def signed_request_account: () -> void
+                            | () -> Account
+                            | () -> nil
+
+  def signature_verification_failure_reason: () -> void
+
+  def signature_verification_failure_code: () -> void
+
+  def signed_request_actor: () -> void
+
+  def signed_request?: () -> void
+
+  def fail_with!: (String, **nil) -> void
+end

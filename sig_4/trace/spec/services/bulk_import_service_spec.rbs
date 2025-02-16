@@ -1,0 +1,123 @@
+module RSpec::ExampleGroups::BulkImportService::LetDefinitions
+  def import: () -> BulkImport
+
+  def account: () -> Account
+
+  def subject: () -> BulkImportService
+end
+
+module RSpec::ExampleGroups::BulkImportService::Call::WhenImportingDomainBlocksWithOverwrite::LetDefinitions
+  def import_type: () -> String
+
+  def overwrite: () -> bool
+
+  def rows: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::BulkImportService::Call::WhenImportingMutes::LetDefinitions
+  def import_type: () -> String
+
+  def overwrite: () -> bool
+
+  def rows: () -> Array[untyped]
+end
+
+class RSpec::ExampleGroups::BulkImportService::Call
+  def row_worker_job_args: () -> void
+
+  def stub_resolve_account_and_drain_workers: () -> void
+
+  def stub_fetch_remote_and_drain_workers: () -> void
+end
+
+module RSpec::ExampleGroups::BulkImportService::Call::WhenImportingFollows::LetDefinitions
+  def import_type: () -> String
+
+  def overwrite: () -> bool
+
+  def rows: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::BulkImportService::Call::WhenImportingBlocks::LetDefinitions
+  def import_type: () -> String
+
+  def overwrite: () -> bool
+
+  def rows: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::BulkImportService::Call::WhenImportingBlocksWithOverwrite::LetDefinitions
+  def import_type: () -> String
+
+  def overwrite: () -> bool
+
+  def blocked: () -> Account
+
+  def to_be_unblocked: () -> Account
+
+  def rows: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::BulkImportService::Call::WhenImportingBookmarksWithOverwrite::LetDefinitions
+  def import_type: () -> String
+
+  def overwrite: () -> bool
+
+  def already_bookmarked: () -> Status
+
+  def status: () -> Status
+
+  def inaccessible_status: () -> Status
+
+  def bookmarked: () -> Status
+
+  def rows: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::BulkImportService::Call::WhenImportingDomainBlocks::LetDefinitions
+  def import_type: () -> String
+
+  def overwrite: () -> bool
+
+  def rows: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::BulkImportService::Call::WhenImportingFollowsWithOverwrite::LetDefinitions
+  def import_type: () -> String
+
+  def overwrite: () -> bool
+
+  def followed: () -> Account
+
+  def to_be_unfollowed: () -> Account
+
+  def rows: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::BulkImportService::Call::WhenImportingMutesWithOverwrite::LetDefinitions
+  def import_type: () -> String
+
+  def overwrite: () -> bool
+
+  def muted: () -> Account
+
+  def to_be_unmuted: () -> Account
+
+  def rows: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::BulkImportService::Call::WhenImportingBookmarks::LetDefinitions
+  def import_type: () -> String
+
+  def overwrite: () -> bool
+
+  def already_bookmarked: () -> Status
+
+  def status: () -> Status
+
+  def inaccessible_status: () -> Status
+
+  def bookmarked: () -> Status
+
+  def rows: () -> Array[untyped]
+end

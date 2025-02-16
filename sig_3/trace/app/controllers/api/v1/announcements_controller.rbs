@@ -1,0 +1,9 @@
+class Api::V1::AnnouncementsController
+  def set_announcements: () -> ActiveRecord::Relation
+
+  def index: () -> String
+
+  def set_announcement: () -> Announcement
+
+  def dismiss: () -> String
+end

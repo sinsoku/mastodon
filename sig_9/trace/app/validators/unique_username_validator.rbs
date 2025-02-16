@@ -1,0 +1,3 @@
+class UniqueUsernameValidator
+  def validate: (Account) -> nil
+end

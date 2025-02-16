@@ -1,0 +1,54 @@
+class UserSettings
+  def initialize: (Hash[untyped, untyped]) -> void
+
+  def as_json: () -> void
+
+  def []: (String) -> void
+        | (Symbol) -> void
+
+  def `notification_emails.follow`: () -> bool
+
+  def `notification_emails.follow_request`: () -> bool
+
+  def `notification_emails.reblog`: () -> bool
+
+  def `notification_emails.favourite`: () -> bool
+
+  def `notification_emails.mention`: () -> bool
+
+  def always_send_emails: () -> bool
+
+  def update: (ActiveSupport::HashWithIndifferentAccess) -> void
+
+  def []=: (String, String) -> void
+
+  def theme: () -> String
+
+  def `web.advanced_layout`: () -> bool
+
+  def `web.use_pending_items`: () -> bool
+
+  def `web.auto_play`: () -> bool
+
+  def `web.reduce_motion`: () -> bool
+
+  def `web.disable_swiping`: () -> bool
+
+  def `web.disable_hover_cards`: () -> bool
+
+  def `web.use_system_font`: () -> bool
+
+  def `web.use_system_scrollbars`: () -> bool
+
+  def `web.trends`: () -> bool
+
+  def `web.reblog_modal`: () -> bool
+
+  def `web.delete_modal`: () -> bool
+
+  def `web.display_media`: () -> String
+
+  def `web.use_blurhash`: () -> bool
+
+  def `web.expand_content_warnings`: () -> bool
+end

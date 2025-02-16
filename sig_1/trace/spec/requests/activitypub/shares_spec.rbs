@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::ActivityPubShares::LetDefinitions
+  def status: () -> Status
+
+  def account: () -> Account
+end

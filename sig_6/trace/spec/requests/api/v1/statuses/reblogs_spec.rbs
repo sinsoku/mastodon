@@ -1,0 +1,29 @@
+module RSpec::ExampleGroups::APIV1StatusesReblogs::LetDefinitions
+  def user: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::APIV1StatusesReblogs::WithAnOauthToken::POSTApiV1StatusesStatusIdUnreblog::WithPublicStatus::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::APIV1StatusesReblogs::WithAnOauthToken::POSTApiV1StatusesStatusIdUnreblog::WithPrivateStatusThatWasNotReblogged::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::APIV1StatusesReblogs::WithAnOauthToken::POSTApiV1StatusesStatusIdUnreblog::WithPublicStatusWhenBlockedByItsAuthor::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::APIV1StatusesReblogs::WithAnOauthToken::POSTApiV1StatusesStatusIdReblog::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::APIV1StatusesReblogs::WithAnOauthToken::POSTApiV1StatusesStatusIdReblog::WithPrivateStatusOfNotFollowedAccount::LetDefinitions
+  def status: () -> Status
+end

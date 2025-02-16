@@ -1,0 +1,5 @@
+class UnmergeWorker
+  def perform: (Integer, Integer, ?String) -> void
+
+  def unmerge_from_home!: (Integer) -> void
+end

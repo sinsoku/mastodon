@@ -1,0 +1,11 @@
+class ActivityPub::FetchRepliesService
+  def call: (Status, String, ?allow_synchronous_requests: bool, ?request_id: nil) -> void
+
+  def collection_items: (String) -> Array[untyped]
+                      | (String) -> nil
+
+  def fetch_collection: (String) -> Hash[untyped, untyped]
+                      | (String) -> nil
+
+  def filtered_replies: () -> void
+end

@@ -1,0 +1,7 @@
+class Api::V1::PollsController
+  def set_poll: () -> Status
+
+  def refresh_poll: () -> nil
+
+  def show: () -> String
+end

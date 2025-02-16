@@ -1,0 +1,17 @@
+module RSpec::ExampleGroups::AdminCustomEmojis::LetDefinitions
+  def current_user: () -> User
+end
+
+module RSpec::ExampleGroups::AdminCustomEmojis::ListingExistingEmoji::LetDefinitions
+  def custom_emoji: () -> CustomEmoji
+end
+
+class RSpec::ExampleGroups::AdminCustomEmojis::CreatingANewEmoji
+  def submit_form: () -> void
+end
+
+class RSpec::ExampleGroups::AdminCustomEmojis::PerformingBatchUpdates
+  def button_for_enable: () -> void
+
+  def selection_error_text: () -> void
+end

@@ -1,0 +1,30 @@
+class Form::AdminSettings
+  def trends: () -> bool
+
+  def trends_as_landing_page: () -> bool
+
+  def trendable_by_default: () -> bool
+
+  def timeline_preview: () -> bool
+
+  def noindex: () -> bool
+
+  def activity_api_enabled: () -> bool
+
+  def peers_api_enabled: () -> bool
+
+  def authorized_fetch: () -> bool
+
+  def bootstrap_timeline_accounts: () -> String
+
+  def profile_directory: () -> bool
+
+  def save: () -> void
+
+  def status_page_url: () -> nil
+
+  def validate_site_uploads: () -> Array[untyped]
+
+  def typecast_value: (Symbol, String) -> void
+                    | (Symbol, nil) -> void
+end

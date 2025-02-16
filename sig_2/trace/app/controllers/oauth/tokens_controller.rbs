@@ -1,0 +1,5 @@
+class Oauth::TokensController
+  def revoke: () -> String
+
+  def unsubscribe_for_token: () -> void
+end

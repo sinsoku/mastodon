@@ -1,0 +1,16 @@
+class URLValidator
+  def validate_each: (untyped, Symbol, String) -> void
+                   | (untyped, Symbol, nil) -> void
+                   | (Doorkeeper::Application, Symbol, String) -> void
+                   | (PreviewCard, Symbol, String) -> void
+
+  def compliant_url?: () -> void
+
+  def parsed_url: () -> Addressable::URI
+                | () -> nil
+                | () -> bool
+
+  def valid_url_scheme?: () -> void
+
+  def valid_url_host?: () -> void
+end

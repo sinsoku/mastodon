@@ -1,0 +1,60 @@
+class UserSettings
+  def initialize: (Hash[untyped, untyped]) -> void
+
+  def as_json: () -> void
+
+  def []: (String) -> void
+        | (Symbol) -> void
+
+  def update: (Hash[untyped, untyped]) -> void
+            | (ActiveSupport::HashWithIndifferentAccess) -> void
+            | (ActionController::Parameters) -> void
+
+  def []=: (Symbol, String) -> void
+         | (String, String) -> void
+         | (Symbol, bool) -> void
+
+  def theme: () -> String
+
+  def `web.advanced_layout`: () -> bool
+
+  def `web.use_pending_items`: () -> bool
+
+  def `web.auto_play`: () -> bool
+
+  def `web.reduce_motion`: () -> bool
+
+  def `web.disable_swiping`: () -> bool
+
+  def `web.disable_hover_cards`: () -> bool
+
+  def `web.use_system_font`: () -> bool
+
+  def `web.use_system_scrollbars`: () -> bool
+
+  def `web.trends`: () -> bool
+
+  def `web.reblog_modal`: () -> bool
+
+  def `web.delete_modal`: () -> bool
+
+  def `web.display_media`: () -> String
+
+  def `web.use_blurhash`: () -> bool
+
+  def `web.expand_content_warnings`: () -> bool
+
+  def aggregate_reblogs: () -> bool
+
+  def default_privacy: () -> nil
+                     | () -> String
+
+  def default_language: () -> nil
+                      | () -> String
+
+  def default_sensitive: () -> bool
+
+  def indexable: () -> bool
+
+  def show_application: () -> bool
+end

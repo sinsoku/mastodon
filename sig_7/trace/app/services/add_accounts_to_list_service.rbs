@@ -1,0 +1,9 @@
+class AddAccountsToListService
+  def call: (List, Array[untyped]) -> void
+
+  def update_list!: () -> void
+
+  def merge_into_list!: () -> void
+
+  def merge_account_ids: () -> void
+end

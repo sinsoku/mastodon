@@ -1,0 +1,3 @@
+class MuteWorker
+  def perform: (Integer, Integer) -> void
+end

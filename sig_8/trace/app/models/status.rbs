@@ -1,0 +1,97 @@
+class Status
+  def local?: () -> bool
+
+  def prepare_contents: () -> nil
+
+  def set_reblog: () -> nil
+                | () -> Status
+
+  def reblog?: () -> void
+             | () -> bool
+
+  def set_visibility: () -> nil
+
+  def set_conversation: () -> Conversation
+                      | () -> nil
+                      | () -> Integer
+
+  def reply?: () -> void
+            | () -> bool
+
+  def set_local: () -> bool
+
+  def with_media?: () -> void
+
+  def ordered_media_attachments: () -> Array[untyped]
+
+  def set_poll_id: () -> nil
+                 | () -> bool
+
+  def trigger_create_webhooks: () -> String
+                             | () -> nil
+
+  def increment_counter_caches: () -> nil
+                              | () -> bool
+
+  def store_uri: () -> bool
+               | () -> nil
+
+  def object_type: () -> void
+
+  def update_statistics: () -> bool
+                       | () -> nil
+
+  def distributable?: () -> void
+
+  def content: () -> String
+
+  def proper: () -> Status
+
+  def emojis: () -> void
+            | () -> Array[untyped]
+
+  def favourites_count: () -> void
+                      | () -> Integer
+
+  def status_stat: () -> StatusStat
+
+  def reblogs_count: () -> void
+                   | () -> Integer
+
+  def trigger_update_webhooks: () -> nil
+                             | () -> String
+
+  def carried_over_reply_to_account_id: () -> void
+
+  def increment_count!: (Symbol) -> void
+
+  def replies_count: () -> Integer
+
+  def update_status_stat!: (Hash[untyped, untyped]) -> void
+
+  def untrusted_reblogs_count: () -> nil
+                             | () -> Integer
+
+  def with_preview_card?: () -> void
+
+  def preview_card: () -> void
+                  | () -> PreviewCard
+                  | () -> nil
+
+  def cache_key: () -> String
+
+  def untrusted_favourites_count: () -> void
+                                | () -> nil
+                                | () -> Integer
+
+  def unlink_from_conversations!: () -> nil
+                                | () -> Array[untyped]
+
+  def decrement_counter_caches: () -> nil
+
+  def discard_with_reblogs: () -> void
+
+  def trendable?: () -> void
+
+  def non_sensitive_with_media?: () -> void
+end

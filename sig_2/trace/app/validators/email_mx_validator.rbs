@@ -1,0 +1,11 @@
+class EmailMxValidator
+  def validate: (User) -> nil
+
+  def get_domain: (String) -> String
+
+  def on_allowlist?: (String) -> bool
+
+  def resolve_mx: (String) -> Array[untyped]
+
+  def email_domain_blocked?: (Array[untyped], IPAddr) -> void
+end

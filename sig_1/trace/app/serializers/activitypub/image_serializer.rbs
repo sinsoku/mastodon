@@ -1,0 +1,9 @@
+class ActivityPub::ImageSerializer
+  def type: () -> String
+
+  def media_type: () -> String
+
+  def url: () -> String
+
+  def focal_point?: () -> bool
+end

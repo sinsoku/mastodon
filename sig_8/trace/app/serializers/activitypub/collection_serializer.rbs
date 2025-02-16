@@ -1,0 +1,13 @@
+class ActivityPub::CollectionSerializer
+  def type: () -> String
+
+  def page?: () -> void
+
+  def ordered?: () -> void
+              | () -> bool
+
+  def self.serializer_for: (ActivityPub::CollectionPresenter, Hash[untyped, untyped]) -> Class
+                         | (Array[untyped], Hash[untyped, untyped]) -> Class
+
+  def total_items: () -> Integer
+end

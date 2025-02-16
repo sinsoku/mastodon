@@ -1,0 +1,23 @@
+module RSpec::ExampleGroups::TagTrend::RecalculateOrderedRank::LetDefinitions
+  def low_score: () -> TagTrend
+
+  def high_score: () -> TagTrend
+end
+
+class RSpec::ExampleGroups::TagTrend
+  def factory_name: () -> void
+end
+
+module RSpec::ExampleGroups::TagTrend::Scopes::ByRank::LetDefinitions
+  def lower_rank: () -> TagTrend
+
+  def higher_rank: () -> TagTrend
+end
+
+module RSpec::ExampleGroups::TagTrend::Scopes::RankedBelow::LetDefinitions
+  def low_rank: () -> TagTrend
+
+  def med_rank: () -> TagTrend
+
+  def high_rank: () -> TagTrend
+end

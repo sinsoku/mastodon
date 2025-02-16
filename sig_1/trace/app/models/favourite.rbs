@@ -1,0 +1,3 @@
+class Favourite
+  def increment_cache_counters: () -> bool
+end

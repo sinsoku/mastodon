@@ -1,0 +1,17 @@
+module RSpec::ExampleGroups::UnfollowFollowWorker::LetDefinitions
+  def local_follower: () -> Account
+
+  def source_account: () -> Account
+
+  def subject: () -> UnfollowFollowWorker
+
+  def target_account: () -> Account
+end
+
+module RSpec::ExampleGroups::UnfollowFollowWorker::WhenShowReblogsIsTrue::LetDefinitions
+  def show_reblogs: () -> bool
+end
+
+module RSpec::ExampleGroups::UnfollowFollowWorker::WhenShowReblogsIsFalse::LetDefinitions
+  def show_reblogs: () -> bool
+end

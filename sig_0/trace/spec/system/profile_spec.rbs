@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::Profile::LetDefinitions
+  def subject: () -> Capybara::Session
+
+  def local_domain: () -> String
+end

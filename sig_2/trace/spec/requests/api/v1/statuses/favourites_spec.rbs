@@ -1,0 +1,37 @@
+module RSpec::ExampleGroups::Favourites::POSTApiV1StatusesStatusIdFavourite::LetDefinitions
+  def subject: () -> Integer
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::Favourites::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Favourites::POSTApiV1StatusesStatusIdFavourite::WithPrivateStatusOfNotFollowedAccount::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::Favourites::POSTApiV1StatusesStatusIdFavourite::WithPrivateStatusOfFollowedAccount::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::Favourites::POSTApiV1StatusesStatusIdFavourite::WithoutAnAuthorizationHeader::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Favourites::POSTApiV1StatusesStatusIdUnfavourite::LetDefinitions
+  def subject: () -> Integer
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::Favourites::POSTApiV1StatusesStatusIdUnfavourite::WithPrivateStatusThatWasNotFavourited::LetDefinitions
+  def status: () -> Status
+end

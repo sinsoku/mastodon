@@ -1,0 +1,7 @@
+class FollowRequest
+  def set_uri: () -> URI::HTTPS
+
+  def invalidate_follow_recommendations_cache: () -> bool
+
+  def authorize!: () -> void
+end

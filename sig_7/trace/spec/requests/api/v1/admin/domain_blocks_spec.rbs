@@ -1,0 +1,61 @@
+module RSpec::ExampleGroups::DomainBlocks::POSTApiV1AdminDomainBlocks::LetDefinitions
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::DomainBlocks::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def role: () -> UserRole
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::DomainBlocks::POSTApiV1AdminDomainBlocks::WhenALooserDomainBlockAlreadyExistsOnAHigherLevelDomain::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::DomainBlocks::POSTApiV1AdminDomainBlocks::WhenGivenDomainNameIsInvalid::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::DomainBlocks::DELETEApiV1AdminDomainBlocksId::LetDefinitions
+  def domain_block: () -> DomainBlock
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::DomainBlocks::GETApiV1AdminDomainBlocksId::LetDefinitions
+  def domain_block: () -> DomainBlock
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::DomainBlocks::PUTApiV1AdminDomainBlocksId::LetDefinitions
+  def domain_block: () -> DomainBlock
+
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::DomainBlocks::GETApiV1AdminDomainBlocks::LetDefinitions
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::DomainBlocks::GETApiV1AdminDomainBlocks::WhenThereAreDomainBlocks::LetDefinitions
+  def domain_blocks: () -> Array[untyped]
+
+  def expected_responde: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::DomainBlocks::GETApiV1AdminDomainBlocks::WhenThereAreDomainBlocks::WithLimitParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end

@@ -1,0 +1,3 @@
+class AccountStatusesCleanupService
+  def call: (AccountStatusesCleanupPolicy, ?Integer) -> Integer
+end

@@ -1,0 +1,3 @@
+class Mastodon::RedisConfiguration
+  def base: () -> Hash[untyped, untyped]
+end

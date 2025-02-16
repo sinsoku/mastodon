@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::ImporterStatusesIndexImporter::Import::LetDefinitions
+  def importer: () -> Importer::StatusesIndexImporter
+
+  def pool: () -> Concurrent::FixedThreadPool
+end

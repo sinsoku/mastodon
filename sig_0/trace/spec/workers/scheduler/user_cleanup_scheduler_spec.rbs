@@ -1,0 +1,17 @@
+module RSpec::ExampleGroups::SchedulerUserCleanupScheduler::LetDefinitions
+  def new_unconfirmed_user: () -> User
+
+  def old_unconfirmed_user: () -> User
+
+  def confirmed_user: () -> User
+
+  def moderation_note: () -> AccountModerationNote
+
+  def webauthn_credential: () -> WebauthnCredential
+
+  def subject: () -> Scheduler::UserCleanupScheduler
+end
+
+class RSpec::ExampleGroups::SchedulerUserCleanupScheduler::Perform
+  def expect_preservation_of: (User) -> void
+end

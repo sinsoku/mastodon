@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::AccountsListsAPI::LetDefinitions
+  def user: () -> User
+
+  def account: () -> Account
+
+  def list: () -> List
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end

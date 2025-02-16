@@ -1,0 +1,3 @@
+class Paperclip::TypeCorrector
+  def make: () -> void
+end

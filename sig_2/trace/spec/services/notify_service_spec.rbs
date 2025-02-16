@@ -1,0 +1,95 @@
+module RSpec::ExampleGroups::NotifyService::LetDefinitions
+  def recipient: () -> Account
+
+  def user: () -> User
+
+  def sender: () -> Account
+
+  def subject: () -> ActionMailer::MailDeliveryJob
+             | () -> nil
+             | () -> bool
+
+  def type: () -> Symbol
+
+  def activity: () -> Follow
+end
+
+module RSpec::ExampleGroups::NotifyService::WithFilteredNotifications::LetDefinitions
+  def type: () -> Symbol
+
+  def activity: () -> Mention
+
+  def status: () -> Status
+
+  def unknown: () -> Account
+end
+
+module RSpec::ExampleGroups::NotifyService::WithFilteredNotifications::WhenANotificationRequestExists::LetDefinitions
+  def notification_request: () -> NotificationRequest
+end
+
+module RSpec::ExampleGroups::NotifyService::WithSenderAsRecipient::LetDefinitions
+  def sender: () -> Account
+end
+
+module RSpec::ExampleGroups::NotifyService::WhenTheBlockedSenderHasARole::LetDefinitions
+  def sender: () -> Account
+
+  def type: () -> Symbol
+
+  def activity: () -> Mention
+end
+
+module RSpec::ExampleGroups::NotifyService::WhenTheBlockedSenderHasARole::WhenTheRoleIsANonVisibleModerator::LetDefinitions
+  def sender_role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::NotifyService::WhenTheBlockedSenderHasARole::WhenTheRoleIsAVisibleModerator::LetDefinitions
+  def sender_role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::NotifyService::WhenTheBlockedSenderHasARole::WhenTheRoleIsAVisibleNonModerator::LetDefinitions
+  def sender_role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::NotifyService::NotifyServiceFilterCondition::LetDefinitions
+  def notification: () -> Notification
+
+  def activity: () -> Mention
+
+  def subject: () -> NotifyService::FilterCondition
+end
+
+module RSpec::ExampleGroups::NotifyService::Email::WhenEmailNotificationIsDisabled::LetDefinitions
+  def enabled: () -> bool
+end
+
+module RSpec::ExampleGroups::NotifyService::Email::WhenEmailNotificationIsEnabled::LetDefinitions
+  def enabled: () -> bool
+end
+
+module RSpec::ExampleGroups::NotifyService::WithMutedAndBlockedUsers::LetDefinitions
+  def activity: () -> Mention
+
+  def reply_to: () -> Status
+
+  def asshole: () -> Account
+
+  def type: () -> Symbol
+end
+
+module RSpec::ExampleGroups::NotifyService::Reblogs::LetDefinitions
+  def type: () -> Symbol
+
+  def activity: () -> Status
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::NotifyService::NotifyServiceDropCondition::LetDefinitions
+  def notification: () -> Notification
+
+  def activity: () -> Mention
+
+  def subject: () -> NotifyService::DropCondition
+end

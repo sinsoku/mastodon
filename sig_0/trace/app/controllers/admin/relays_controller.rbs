@@ -1,0 +1,20 @@
+class Admin::RelaysController
+  def set_relay: () -> Relay
+
+  def warn_signatures_not_enabled!: () -> nil
+
+  def enable: () -> String
+
+  def destroy: () -> String
+
+  def disable: () -> String
+
+  def create: () -> String
+            | () -> ActiveSupport::SafeBuffer
+
+  def resource_params: () -> void
+
+  def new: () -> Relay
+
+  def index: () -> ActiveRecord::Relation
+end

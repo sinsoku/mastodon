@@ -1,0 +1,28 @@
+module Status::ThreadingConcern
+  def ancestors: (Integer, ?nil) -> void
+               | (Integer, ?Account) -> void
+
+  def ancestor_ids: (Integer) -> void
+
+  def ancestor_statuses: (Integer) -> Array[untyped]
+
+  def find_statuses_from_tree_path: (Array[untyped], nil, ?promote: bool) -> void
+                                  | (Array[untyped], Account, ?promote: bool) -> void
+
+  def descendants: (Integer, ?nil, ?nil) -> void
+                 | (Integer, ?Account, ?nil) -> void
+                 | (Integer, ?Account, ?nil) -> Array[untyped]
+                 | (Integer, ?nil, ?Integer) -> Array[untyped]
+
+  def descendant_ids: (Integer, nil) -> void
+                    | (Integer, Integer) -> void
+
+  def promote_by!: (Array[untyped]) -> void
+
+  def self_replies: (Integer) -> ActiveRecord::AssociationRelation
+end
+
+module Status::ThreadingConcern::ClassMethods
+  def permitted_statuses_from_ids: (Array[untyped], nil, ?stable: bool) -> Array[untyped]
+                                 | (Array[untyped], Account, ?stable: bool) -> Array[untyped]
+end

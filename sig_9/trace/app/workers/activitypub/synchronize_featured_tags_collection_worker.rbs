@@ -1,0 +1,4 @@
+class ActivityPub::SynchronizeFeaturedTagsCollectionWorker
+  def perform: (Integer, String) -> void
+             | (Integer, String) -> bool
+end

@@ -1,0 +1,3 @@
+class Announcement
+  def self.coalesced_chronology_timestamps: () -> Arel::Nodes::SqlLiteral
+end

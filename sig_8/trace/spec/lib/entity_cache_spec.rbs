@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::EntityCache::Emoji::LetDefinitions
+  def subject: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::EntityCache::Emoji::WhenCalledWithAnEmptyListOfShortcodes::LetDefinitions
+  def shortcodes: () -> Array[untyped]
+
+  def domain: () -> String
+end

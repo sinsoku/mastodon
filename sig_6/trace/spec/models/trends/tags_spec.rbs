@@ -1,0 +1,21 @@
+module RSpec::ExampleGroups::TrendsTags::LetDefinitions
+  def at_time: () -> DateTime
+
+  def subject: () -> Trends::Tags
+end
+
+module RSpec::ExampleGroups::TrendsTags::Add::LetDefinitions
+  def tag: () -> Tag
+end
+
+module RSpec::ExampleGroups::TrendsTags::Refresh::LetDefinitions
+  def today: () -> DateTime
+
+  def yesterday: () -> DateTime
+
+  def tag_cats: () -> Tag
+
+  def tag_dogs: () -> Tag
+
+  def tag_ocs: () -> Tag
+end

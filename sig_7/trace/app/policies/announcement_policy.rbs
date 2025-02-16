@@ -1,0 +1,9 @@
+class AnnouncementPolicy
+  def index?: () -> bool
+
+  def update?: () -> bool
+
+  def destroy?: () -> bool
+
+  def create?: () -> bool
+end

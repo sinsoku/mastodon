@@ -1,0 +1,24 @@
+module Auth::TwoFactorAuthenticationConcern
+  def two_factor_enabled?: () -> bool
+
+  def authenticate_with_two_factor: () -> ActiveSupport::SafeBuffer
+                                  | () -> nil
+                                  | () -> String
+
+  def prompt_for_two_factor: (User) -> void
+
+  def webauthn_enabled?: () -> bool
+
+  def authenticate_with_two_factor_via_otp: (User) -> void
+
+  def valid_otp_attempt?: (User) -> void
+
+  def authenticate_with_two_factor_via_webauthn: (User) -> void
+
+  def valid_webauthn_credential?: (User, WebAuthn::PublicKeyCredentialWithAssertion) -> void
+end
+
+module Auth::SessionsController::HelperMethods
+  def webauthn_enabled?: (*untyped, **untyped) -> void
+                       | (*untyped, **untyped) -> bool
+end

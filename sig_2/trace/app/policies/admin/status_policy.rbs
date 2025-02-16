@@ -1,0 +1,8 @@
+class Admin::StatusPolicy
+  def initialize: (Account, Symbol, ?Hash[untyped, untyped]) -> void
+                | (Account, Status, ?Hash[untyped, untyped]) -> void
+
+  def index?: () -> bool
+
+  def show?: () -> bool
+end

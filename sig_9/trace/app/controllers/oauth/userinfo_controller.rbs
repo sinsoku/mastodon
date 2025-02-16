@@ -1,0 +1,3 @@
+class Oauth::UserinfoController
+  def show: () -> String
+end

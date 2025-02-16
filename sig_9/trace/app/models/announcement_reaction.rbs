@@ -1,0 +1,5 @@
+class AnnouncementReaction
+  def set_custom_emoji: () -> CustomEmoji
+
+  def queue_publish: () -> String
+end

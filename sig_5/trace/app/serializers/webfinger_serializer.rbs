@@ -1,0 +1,13 @@
+class WebfingerSerializer
+  def subject: () -> String
+
+  def aliases: () -> Array[untyped]
+
+  def links: () -> Array[untyped]
+
+  def profile_page_href: () -> void
+
+  def self_href: () -> void
+
+  def show_avatar?: () -> void
+end

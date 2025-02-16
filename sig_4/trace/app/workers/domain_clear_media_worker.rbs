@@ -1,0 +1,4 @@
+class DomainClearMediaWorker
+  def perform: (Integer) -> nil
+             | (String) -> bool
+end

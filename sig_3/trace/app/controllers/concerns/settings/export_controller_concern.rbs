@@ -1,0 +1,7 @@
+module Settings::ExportControllerConcern
+  def load_export: () -> Export
+
+  def send_export_file: () -> void
+
+  def export_filename: () -> void
+end

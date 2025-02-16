@@ -1,0 +1,12 @@
+class Admin::Users::RolesController
+  def set_user: () -> User
+
+  def update: () -> String
+            | () -> nil
+            | () -> ActiveSupport::SafeBuffer
+
+  def resource_params: () -> void
+
+  def show: () -> User
+          | () -> nil
+end

@@ -1,0 +1,3 @@
+class AfterUnallowDomainService
+  def call: (String) -> void
+end

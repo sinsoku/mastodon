@@ -1,0 +1,3 @@
+class AccountPolicy
+  def suspend?: () -> bool
+end

@@ -1,0 +1,17 @@
+module RSpec::ExampleGroups::FavouriteService::LetDefinitions
+  def subject: () -> FavouriteService
+
+  def sender: () -> Account
+end
+
+module RSpec::ExampleGroups::FavouriteService::RemoteActivityPub::LetDefinitions
+  def status: () -> Status
+
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::FavouriteService::Local::LetDefinitions
+  def status: () -> Status
+
+  def bob: () -> Account
+end

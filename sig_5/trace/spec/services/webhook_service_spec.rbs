@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::WebhookService::Call::WithoutAnyRelevantEventWebhooks::LetDefinitions
+  def report: () -> Report
+end
+
+module RSpec::ExampleGroups::WebhookService::Call::WithARelevantEventWebhook::LetDefinitions
+  def report: () -> Report
+
+  def webhook: () -> Webhook
+end

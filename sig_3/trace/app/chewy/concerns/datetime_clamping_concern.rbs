@@ -1,0 +1,3 @@
+module DatetimeClampingConcern::ClassMethods
+  def clamp_date: (ActiveSupport::TimeWithZone) -> void
+end

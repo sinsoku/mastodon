@@ -1,0 +1,17 @@
+class AuthorizeInteractionsController
+  def set_resource: () -> nil
+
+  def located_resource: () -> Account
+                      | () -> nil
+
+  def uri_param_is_url?: () -> void
+
+  def parsed_uri: () -> Addressable::URI
+
+  def uri_param: () -> void
+
+  def show: () -> String
+          | () -> ActiveSupport::SafeBuffer
+
+  def account_from_remote_follow: () -> void
+end

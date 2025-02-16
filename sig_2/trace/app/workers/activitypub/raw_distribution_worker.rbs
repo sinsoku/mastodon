@@ -1,0 +1,7 @@
+class ActivityPub::RawDistributionWorker
+  def distribute!: () -> void
+
+  def source_account_id: () -> void
+
+  def options: () -> void
+end

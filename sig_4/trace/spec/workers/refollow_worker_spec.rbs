@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::RefollowWorker::Perform::LetDefinitions
+  def service: () -> RSpec::Mocks::InstanceVerifyingDouble
+end
+
+module RSpec::ExampleGroups::RefollowWorker::LetDefinitions
+  def alice: () -> Account
+
+  def account: () -> Account
+
+  def bob: () -> Account
+
+  def subject: () -> RefollowWorker
+end

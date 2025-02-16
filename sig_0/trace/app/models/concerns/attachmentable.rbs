@@ -1,0 +1,15 @@
+class MediaAttachment
+  def self.has_attached_file: (Symbol, ?Hash[untyped, untyped]) -> void
+end
+
+class CustomEmoji
+  def self.has_attached_file: (Symbol, ?Hash[untyped, untyped]) -> void
+end
+
+class PreviewCard
+  def self.has_attached_file: (Symbol, ?Hash[untyped, untyped]) -> void
+end
+
+class SiteUpload
+  def self.has_attached_file: (Symbol, ?Hash[untyped, untyped]) -> void
+end

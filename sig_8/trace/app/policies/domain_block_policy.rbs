@@ -1,0 +1,3 @@
+class DomainBlockPolicy
+  def create?: () -> bool
+end

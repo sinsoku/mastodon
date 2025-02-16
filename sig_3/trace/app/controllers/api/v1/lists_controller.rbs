@@ -1,0 +1,17 @@
+class Api::V1::ListsController
+  def create: () -> String
+            | () -> nil
+
+  def list_params: () -> ActionController::Parameters
+
+  def set_list: () -> List
+              | () -> nil
+
+  def show: () -> String
+
+  def index: () -> String
+
+  def destroy: () -> String
+
+  def update: () -> String
+end

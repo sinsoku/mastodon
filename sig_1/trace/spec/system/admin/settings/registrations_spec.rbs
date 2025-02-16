@@ -1,0 +1,5 @@
+class RSpec::ExampleGroups::AdminSettingsRegistrations
+  def open_mode_option: () -> void
+
+  def registrations_mode_field: () -> void
+end

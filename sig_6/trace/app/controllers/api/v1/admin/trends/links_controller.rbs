@@ -1,0 +1,13 @@
+class Api::V1::Admin::Trends::LinksController
+  def enabled?: () -> void
+
+  def links_from_trends: () -> Trends::Links::Query
+
+  def reject: () -> String
+            | () -> nil
+
+  def approve: () -> String
+             | () -> nil
+
+  def index: () -> String
+end

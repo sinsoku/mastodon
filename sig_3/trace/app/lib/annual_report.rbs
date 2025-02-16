@@ -1,0 +1,3 @@
+class AnnualReport
+  def self.table_name_prefix: () -> void
+end

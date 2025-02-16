@@ -1,0 +1,3 @@
+module ApplicationExtension
+  def redirect_uris: () -> Array[untyped]
+end

@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::AccountAlias::Validations::LetDefinitions
+  def subject: () -> AccountAlias
+
+  def account: () -> Account
+end
+
+class RSpec::ExampleGroups::AccountAlias::Validations
+  def not_found_message: () -> void
+
+  def account_uri: () -> void
+
+  def self_move_message: () -> void
+end

@@ -1,0 +1,9 @@
+class Mastodon::CLI::Base
+  def dry_run_mode_suffix: () -> String
+
+  def dry_run?: () -> void
+end
+
+class Mastodon::CLI::Upgrade
+  def self.exit_on_failure?: () -> void
+end

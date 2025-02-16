@@ -1,0 +1,34 @@
+module RSpec::ExampleGroups::CustomEmojiFilter::Results::LetDefinitions
+  def custom_emoji_domain_a: () -> CustomEmoji
+
+  def custom_emoji_domain_b: () -> CustomEmoji
+
+  def custom_emoji_domain_nil: () -> CustomEmoji
+
+  def subject: () -> ActiveRecord::Relation
+             | () -> nil
+end
+
+module RSpec::ExampleGroups::CustomEmojiFilter::Results::WhenParamsWithoutValue::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::CustomEmojiFilter::Results::WhenParamsHaveValues::WhenRemote::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::CustomEmojiFilter::Results::WhenParamsHaveValues::WhenShortcode::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::CustomEmojiFilter::Results::WhenParamsHaveValues::WhenSomeOtherCase::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::CustomEmojiFilter::Results::WhenParamsHaveValues::WithByDomain::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::CustomEmojiFilter::Results::WhenParamsHaveValues::WhenLocal::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end

@@ -1,0 +1,5 @@
+module BrowserDetection
+  def assign_user_agent: () -> String
+
+  def detection: () -> Browser::Unknown
+end

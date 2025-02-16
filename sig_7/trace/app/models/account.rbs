@@ -1,0 +1,110 @@
+class Account
+  def normalize_domain: () -> nil
+                      | () -> String
+
+  def local?: () -> void
+            | () -> bool
+
+  def prepare_contents: () -> nil
+
+  def generate_keys: () -> nil
+                   | () -> String
+
+  def user_role: (*untyped, **untyped) -> void
+               | (*untyped, **untyped) -> UserRole
+               | (*untyped, **untyped) -> nil
+
+  def to_log_human_identifier: () -> void
+
+  def acct: () -> void
+          | () -> String
+
+  def trigger_update_webhooks: () -> String
+                             | () -> nil
+
+  def user_email: (*untyped, **untyped) -> void
+                | (*untyped, **untyped) -> String
+                | (*untyped, **untyped) -> nil
+
+  def user_confirmed?: (*untyped, **untyped) -> void
+                     | (*untyped, **untyped) -> bool
+
+  def user_disabled?: (*untyped, **untyped) -> void
+
+  def user_approved?: (*untyped, **untyped) -> void
+                    | (*untyped, **untyped) -> bool
+
+  def user_locale: (*untyped, **untyped) -> void
+
+  def pretty_acct: () -> void
+                 | () -> String
+
+  def bot?: () -> bool
+
+  def group?: () -> bool
+
+  def object_type: () -> void
+
+  def instance_actor?: () -> void
+                     | () -> bool
+
+  def to_param: () -> void
+
+  def user_prefers_noindex?: (*untyped, **untyped) -> void
+
+  def moved?: () -> void
+
+  def emojis: () -> void
+
+  def emojifiable_text: () -> void
+
+  def fields: () -> Array[untyped]
+
+  def local_username_and_domain: () -> String
+
+  def create_canonical_email_block!: () -> void
+
+  def self.inboxes: () -> Array[untyped]
+
+  def build_fields: () -> void
+
+  def clean_feed_manager: () -> nil
+
+  def user_unconfirmed_or_pending?: (*untyped, **untyped) -> void
+
+  def destroy_canonical_email_block!: () -> void
+
+  def synchronization_uri_prefix: () -> String
+
+  def tags_as_strings=: (Array[untyped]) -> void
+
+  def memorialize!: () -> void
+
+  def user_pending?: (*untyped, **untyped) -> bool
+
+  def user_unconfirmed?: (*untyped, **untyped) -> void
+
+  def user_current_sign_in_at: (*untyped, **untyped) -> ActiveSupport::TimeWithZone
+
+  def local_followers_count: () -> Integer
+
+  def user_unconfirmed_email: (*untyped, **untyped) -> nil
+
+  def schedule_refresh_if_stale!: () -> void
+
+  def ensure_keys!: () -> void
+
+  def keypair: () -> void
+
+  def save_with_optional_media!: () -> void
+
+  def hides_following?: () -> void
+
+  def excluded_from_timeline_account_ids: () -> void
+
+  def possibly_stale?: () -> void
+
+  def bot=: (bool) -> String
+
+  def also_known_as: () -> Array[untyped]
+end

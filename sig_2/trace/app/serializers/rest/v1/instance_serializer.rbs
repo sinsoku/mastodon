@@ -1,0 +1,27 @@
+class REST::V1::InstanceSerializer
+  def uri: () -> String
+
+  def short_description: () -> String
+
+  def description: () -> String
+
+  def email: () -> String
+
+  def urls: () -> Hash[untyped, untyped]
+
+  def stats: () -> Hash[untyped, untyped]
+
+  def instance_presenter: () -> InstancePresenter
+
+  def thumbnail: () -> String
+
+  def registrations: () -> bool
+
+  def approval_required: () -> bool
+
+  def invites_enabled: () -> bool
+
+  def configuration: () -> Hash[untyped, untyped]
+
+  def contact_account: () -> nil
+end

@@ -1,0 +1,29 @@
+class Api::V1::Admin::IpBlocksController
+  def set_ip_blocks: () -> Array[untyped]
+
+  def index: () -> String
+           | () -> nil
+
+  def next_path: () -> void
+
+  def records_continue?: () -> void
+
+  def prev_path: () -> void
+
+  def pagination_collection: () -> Array[untyped]
+
+  def create: () -> String
+            | () -> nil
+
+  def resource_params: () -> void
+
+  def set_ip_block: () -> IpBlock
+                  | () -> nil
+
+  def show: () -> String
+          | () -> nil
+
+  def destroy: () -> String
+
+  def update: () -> String
+end

@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::FeedInsertWorker::LetDefinitions
+  def subject: () -> FeedInsertWorker
+end
+
+module RSpec::ExampleGroups::FeedInsertWorker::Perform::LetDefinitions
+  def status: () -> Status
+
+  def follower: () -> Account
+
+  def list: () -> List
+end

@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::OStatusTagManager::UriFor::WhenPersonObject::LetDefinitions
+  def target: () -> Account
+end
+
+module RSpec::ExampleGroups::OStatusTagManager::UriFor::LetDefinitions
+  def subject: () -> String
+end
+
+module RSpec::ExampleGroups::OStatusTagManager::UriFor::WithNoteObject::LetDefinitions
+  def target: () -> Status
+end
+
+module RSpec::ExampleGroups::OStatusTagManager::UriFor::WithCommentObject::LetDefinitions
+  def target: () -> Status
+end

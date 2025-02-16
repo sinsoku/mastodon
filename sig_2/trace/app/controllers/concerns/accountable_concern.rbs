@@ -1,0 +1,6 @@
+module AccountableConcern
+  def log_action: (Symbol, UnavailableDomain) -> void
+                | (Symbol, Instance) -> void
+                | (Symbol, DomainAllow) -> void
+                | (Symbol, CustomEmoji) -> void
+end

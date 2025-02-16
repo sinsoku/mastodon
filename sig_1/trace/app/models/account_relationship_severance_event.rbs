@@ -1,0 +1,10 @@
+class AccountRelationshipSeveranceEvent
+  def set_relationships_count!: () -> Integer
+
+  def type: (*untyped, **untyped) -> String
+
+  def target_name: (*untyped, **untyped) -> void
+                 | (*untyped, **untyped) -> String
+
+  def purged?: (*untyped, **untyped) -> void
+end

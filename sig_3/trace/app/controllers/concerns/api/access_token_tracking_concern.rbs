@@ -1,0 +1,6 @@
+module Api::AccessTokenTrackingConcern
+  def update_access_token_last_used: () -> nil
+                                   | () -> bool
+
+  def access_token_needs_update?: () -> void
+end

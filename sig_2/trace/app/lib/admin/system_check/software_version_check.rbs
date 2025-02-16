@@ -1,0 +1,3 @@
+class Admin::SystemCheck::SoftwareVersionCheck
+  def skip?: () -> void
+end

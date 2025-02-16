@@ -1,0 +1,5 @@
+class RSpec::ExampleGroups::TheAccountShowPage
+  def head_link_icons: () -> Nokogiri::XML::NodeSet
+
+  def head_meta_content: (String) -> void
+end

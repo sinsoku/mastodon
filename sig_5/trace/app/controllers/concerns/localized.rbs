@@ -1,0 +1,23 @@
+module Localized
+  def set_locale: () -> bool
+                | () -> Integer
+                | () -> ActiveRecord::Relation
+                | () -> String
+                | () -> ActiveRecord::Associations::CollectionProxy
+                | () -> ActiveSupport::SafeBuffer
+                | () -> Form::AccountBatch
+                | () -> nil
+                | () -> AccountAlias
+                | () -> User
+                | () -> Invite
+                | () -> Trends::PreviewCardBatch
+                | () -> Form::AdminSettings
+                | () -> TermsOfService
+
+  def requested_locale: () -> void
+
+  def available_locale_or_nil: (nil) -> nil
+
+  def http_accept_language: () -> nil
+                          | () -> String
+end

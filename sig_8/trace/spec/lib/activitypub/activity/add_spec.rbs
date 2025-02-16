@@ -1,0 +1,17 @@
+module RSpec::ExampleGroups::ActivityPubActivityAdd::Perform::LetDefinitions
+  def subject: () -> ActivityPub::Activity::Add
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityAdd::LetDefinitions
+  def json: () -> ActiveSupport::HashWithIndifferentAccess
+
+  def sender: () -> Account
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityAdd::Perform::WhenStatusWasNotKnownBefore::LetDefinitions
+  def service_stub: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def json: () -> ActiveSupport::HashWithIndifferentAccess
+end

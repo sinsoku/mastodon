@@ -1,0 +1,9 @@
+class ActivityPub::Serializer
+  def self.inherited: (Class) -> Hash[untyped, untyped]
+
+  def serializable_hash: (?Hash[untyped, untyped], ?Hash[untyped, untyped], ?Class) -> Hash[untyped, untyped]
+end
+
+class ActivityPub::HashtagSerializer
+  def self.context_extensions: (*Symbol) -> void
+end

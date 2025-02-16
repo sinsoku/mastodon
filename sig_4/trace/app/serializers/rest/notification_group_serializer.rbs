@@ -1,0 +1,23 @@
+class REST::NotificationGroupSerializer
+  def paginated?: () -> bool
+
+  def page_min_id: () -> String
+
+  def page_max_id: () -> String
+
+  def latest_page_notification_at: () -> ActiveSupport::TimeWithZone
+
+  def sample_account_ids: () -> Array[untyped]
+
+  def status_type?: () -> bool
+
+  def status_id: () -> nil
+
+  def report_type?: () -> bool
+
+  def relationship_severance_event?: () -> bool
+
+  def moderation_warning_event?: () -> bool
+
+  def annual_report_event?: () -> bool
+end

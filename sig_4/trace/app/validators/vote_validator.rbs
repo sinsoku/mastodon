@@ -1,0 +1,20 @@
+class VoteValidator
+  def validate: (PollVote) -> nil
+              | (PollVote) -> ActiveModel::Error
+
+  def invalid_choice?: (PollVote) -> void
+
+  def self_vote?: (PollVote) -> void
+
+  def additional_voting_not_allowed?: (PollVote) -> void
+
+  def poll_multiple_and_already_voted?: (PollVote) -> void
+
+  def poll_non_multiple_and_already_voted?: (PollVote) -> void
+
+  def already_voted_on_non_multiple_poll?: (PollVote) -> void
+
+  def account_votes_on_same_poll: (PollVote) -> ActiveRecord::AssociationRelation
+
+  def already_voted_for_same_choice_on_multiple_poll?: (PollVote) -> void
+end

@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::DismissNotificationRequestService::Call::LetDefinitions
+  def request: () -> NotificationRequest
+
+  def receiver: () -> Account
+
+  def sender: () -> Account
+end

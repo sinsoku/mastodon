@@ -1,0 +1,27 @@
+module RSpec::ExampleGroups::ActivityPubTagManager::LetDefinitions
+  def subject: () -> ActivityPub::TagManager
+end
+
+module RSpec::ExampleGroups::ActivityPubTagManager::To::WithFollowersAndRequestedFollowers::LetDefinitions
+  def bob: () -> Account
+
+  def alice: () -> Account
+
+  def foo: () -> Account
+
+  def author: () -> Account
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::ActivityPubTagManager::Cc::WithFollowersAndRequestedFollowers::LetDefinitions
+  def bob: () -> Account
+
+  def alice: () -> Account
+
+  def foo: () -> Account
+
+  def author: () -> Account
+
+  def status: () -> Status
+end

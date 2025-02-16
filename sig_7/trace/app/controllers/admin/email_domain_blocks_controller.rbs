@@ -1,0 +1,7 @@
+class Admin::EmailDomainBlocksController
+  def index: () -> Form::EmailDomainBlockBatch
+
+  def batch: () -> String
+
+  def form_email_domain_block_batch_params: () -> nil
+end

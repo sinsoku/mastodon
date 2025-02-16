@@ -1,0 +1,3 @@
+class Appeal
+  def validate_time_frame: () -> nil
+end

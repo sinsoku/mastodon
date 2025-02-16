@@ -1,0 +1,61 @@
+module RSpec::ExampleGroups::EmailDomainBlocks::POSTApiV1AdminEmailDomainBlocks::LetDefinitions
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::EmailDomainBlocks::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def role: () -> UserRole
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::EmailDomainBlocks::POSTApiV1AdminEmailDomainBlocks::WhenProvidedDomainNameHasAnInvalidCharacter::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::EmailDomainBlocks::POSTApiV1AdminEmailDomainBlocks::WhenDomainParamIsNotProvided::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::EmailDomainBlocks::GETApiV1AdminEmailDomainBlocks::LetDefinitions
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::EmailDomainBlocks::GETApiV1AdminEmailDomainBlocks::WhenThereAreEmailDomainBlocks::LetDefinitions
+  def email_domain_blocks: () -> Array[untyped]
+
+  def blocked_email_domains: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::EmailDomainBlocks::GETApiV1AdminEmailDomainBlocks::WhenThereAreEmailDomainBlocks::WithSinceIdParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::EmailDomainBlocks::GETApiV1AdminEmailDomainBlocks::WhenThereAreEmailDomainBlocks::WithMaxIdParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::EmailDomainBlocks::GETApiV1AdminEmailDomainBlocks::WhenThereAreEmailDomainBlocks::WithLimitParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::EmailDomainBlocks::GETApiV1AdminEmailDomainBlocksId::LetDefinitions
+  def email_domain_block: () -> EmailDomainBlock
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::EmailDomainBlocks::DELETEApiV1AdminEmailDomainBlocks::LetDefinitions
+  def email_domain_block: () -> EmailDomainBlock
+
+  def subject: () -> Integer
+end

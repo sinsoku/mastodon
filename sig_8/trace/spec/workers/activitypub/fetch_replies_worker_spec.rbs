@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::ActivityPubFetchRepliesWorker::LetDefinitions
+  def json: () -> String
+
+  def payload: () -> Hash[untyped, untyped]
+
+  def subject: () -> ActivityPub::FetchRepliesWorker
+
+  def status: () -> Status
+
+  def account: () -> Account
+end

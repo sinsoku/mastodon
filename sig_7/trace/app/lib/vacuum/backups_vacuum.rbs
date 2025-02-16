@@ -1,0 +1,11 @@
+class Vacuum::BackupsVacuum
+  def initialize: (ActiveSupport::Duration) -> void
+
+  def perform: () -> void
+
+  def retention_period?: () -> void
+
+  def vacuum_expired_backups!: () -> void
+
+  def backups_past_retention_period: () -> ActiveRecord::Relation
+end

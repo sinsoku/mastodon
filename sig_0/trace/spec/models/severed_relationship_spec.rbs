@@ -1,0 +1,23 @@
+module RSpec::ExampleGroups::SeveredRelationship::Account::WhenTheLocalAccountIsTheFollower::LetDefinitions
+  def severed_relationship: () -> SeveredRelationship
+end
+
+module RSpec::ExampleGroups::SeveredRelationship::LetDefinitions
+  def event: () -> RelationshipSeveranceEvent
+
+  def local_account: () -> Account
+
+  def remote_account: () -> Account
+end
+
+module RSpec::ExampleGroups::SeveredRelationship::Account::WhenTheLocalAccountIsBeingFollowed::LetDefinitions
+  def severed_relationship: () -> SeveredRelationship
+end
+
+module RSpec::ExampleGroups::SeveredRelationship::TargetAccount::WhenTheLocalAccountIsBeingFollowed::LetDefinitions
+  def severed_relationship: () -> SeveredRelationship
+end
+
+module RSpec::ExampleGroups::SeveredRelationship::TargetAccount::WhenTheLocalAccountIsTheFollower::LetDefinitions
+  def severed_relationship: () -> SeveredRelationship
+end

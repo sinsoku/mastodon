@@ -1,0 +1,17 @@
+module RSpec::ExampleGroups::LogIn::LetDefinitions
+  def email: () -> String
+
+  def password: () -> String
+
+  def confirmed_at: () -> ActiveSupport::TimeWithZone
+
+  def subject: () -> Capybara::Session
+end
+
+class RSpec::ExampleGroups::LogIn
+  def failure_message: (String) -> void
+end
+
+module RSpec::ExampleGroups::LogIn::WhenConfirmedAtIsNil::LetDefinitions
+  def confirmed_at: () -> nil
+end

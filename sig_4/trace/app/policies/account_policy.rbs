@@ -1,0 +1,13 @@
+class AccountPolicy
+  def show?: () -> bool
+
+  def warn?: () -> bool
+
+  def sensitive?: () -> bool
+
+  def silence?: () -> bool
+
+  def suspend?: () -> bool
+
+  def memorialize?: () -> bool
+end

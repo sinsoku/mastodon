@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::InstanceActorEndpoint::GETActor::LetDefinitions
+  def original_federation_mode: () -> bool
+end
+
+class RSpec::ExampleGroups::InstanceActorEndpoint::GETActor
+  def disable_instance_actor: () -> void
+end

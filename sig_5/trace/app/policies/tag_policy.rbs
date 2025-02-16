@@ -1,0 +1,7 @@
+class TagPolicy
+  def show?: () -> bool
+
+  def update?: () -> bool
+
+  def index?: () -> bool
+end

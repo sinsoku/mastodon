@@ -1,0 +1,43 @@
+module RSpec::ExampleGroups::Reports::POSTApiV1Reports::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::APIV1AdminTrendsStatuses::POSTApiV1AdminTrendsStatusesIdApprove::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::APIV1AdminTrendsStatuses::POSTApiV1AdminTrendsStatusesIdApprove::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::APIV1AdminTrendsStatuses::POSTApiV1AdminTrendsStatusesIdUnapprove::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::APIV1AdminTrendsStatuses::POSTApiV1AdminTrendsStatusesIdUnapprove::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Bookmarks::POSTApiV1StatusesStatusIdBookmark::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Bookmarks::POSTApiV1StatusesStatusIdUnbookmark::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::OauthUserinfoEndpoint::GETOauthUserinfo::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::OauthUserinfoEndpoint::POSTOauthUserinfo::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Favourites::GETApiV1Favourites::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::AccountsInGroupedNotifications::GETApiV2NotificationsGroupKeyAccounts::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end

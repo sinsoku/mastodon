@@ -1,0 +1,7 @@
+class Admin::Trends::StatusesController
+  def index: () -> Trends::StatusBatch
+
+  def filtered_statuses: () -> ActiveRecord::Relation
+
+  def filter_params: () -> ActionController::Parameters
+end

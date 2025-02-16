@@ -1,0 +1,7 @@
+class Notification
+  def set_from_account: () -> Integer
+
+  def type: () -> Symbol
+
+  def target_status: () -> nil
+end

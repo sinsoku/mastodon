@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::AuditLogPolicy::LetDefinitions
+  def subject: () -> Class
+
+  def admin: () -> Account
+
+  def account: () -> Account
+end

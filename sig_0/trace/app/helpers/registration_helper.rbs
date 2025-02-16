@@ -1,0 +1,10 @@
+module RegistrationHelper
+  def omniauth_only?: () -> void
+                    | () -> bool
+
+  def allowed_registration?: (String, nil) -> void
+
+  def registrations_open?: () -> void
+
+  def ip_blocked?: (String) -> bool
+end

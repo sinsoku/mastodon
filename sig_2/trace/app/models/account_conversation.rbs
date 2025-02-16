@@ -1,0 +1,5 @@
+class AccountConversation
+  def self.to_a_paginated_by_id: (Integer, ?ActionController::Parameters) -> Array[untyped]
+
+  def self.paginate_by_max_id: (Integer, ?nil, ?nil) -> ActiveRecord::Relation
+end

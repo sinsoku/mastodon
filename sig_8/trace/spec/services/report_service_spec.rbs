@@ -1,0 +1,47 @@
+module RSpec::ExampleGroups::ReportService::WhenTheReportedStatusIsADM::LetDefinitions
+  def subject: () -> Proc
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::ReportService::WhenTheReportedStatusIsADM::WhenTheReporterIsRemote::LetDefinitions
+  def source_account: () -> Account
+end
+
+module RSpec::ExampleGroups::ReportService::LetDefinitions
+  def target_account: () -> Account
+
+  def source_account: () -> Account
+
+  def subject: () -> ReportService
+end
+
+module RSpec::ExampleGroups::ReportService::WhenPassedAnApplication::LetDefinitions
+  def application: () -> Doorkeeper::Application
+end
+
+module RSpec::ExampleGroups::ReportService::WithARemoteAccount::LetDefinitions
+  def remote_account: () -> Account
+
+  def forward: () -> bool
+end
+
+module RSpec::ExampleGroups::ReportService::WithARemoteAccount::WhenForwardIsTrue::LetDefinitions
+  def forward: () -> bool
+end
+
+module RSpec::ExampleGroups::ReportService::WithARemoteAccount::WhenForwardIsTrue::WhenReportingAReplyOnADifferentRemoteServer::LetDefinitions
+  def reported_status: () -> Status
+
+  def remote_thread_account: () -> Account
+end
+
+module RSpec::ExampleGroups::ReportService::WithARemoteAccount::WhenForwardIsTrue::WhenReportingAReplyOnTheSameRemoteServerAsThePersonBeingRepliedTo::LetDefinitions
+  def reported_status: () -> Status
+
+  def remote_thread_account: () -> Account
+end
+
+module RSpec::ExampleGroups::ReportService::WhenOtherReportsAlreadyExistForTheSameTarget::LetDefinitions
+  def subject: () -> Proc
+end

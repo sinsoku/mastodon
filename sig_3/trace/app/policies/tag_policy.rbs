@@ -1,0 +1,3 @@
+class TagPolicy
+  def review?: () -> bool
+end

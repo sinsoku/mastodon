@@ -1,0 +1,9 @@
+class RulePolicy
+  def update?: () -> bool
+
+  def create?: () -> bool
+
+  def index?: () -> bool
+
+  def destroy?: () -> bool
+end

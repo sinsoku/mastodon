@@ -1,0 +1,40 @@
+class REST::Admin::AccountSerializer
+  def id: () -> String
+
+  def email: () -> String
+           | () -> nil
+
+  def ip: () -> nil
+
+  def ips: () -> ActiveRecord::Associations::CollectionProxy
+         | () -> nil
+
+  def confirmed: () -> bool
+               | () -> nil
+
+  def suspended: () -> bool
+
+  def silenced: () -> bool
+
+  def sensitized: () -> bool
+
+  def disabled: () -> bool
+              | () -> nil
+
+  def approved: () -> bool
+              | () -> nil
+
+  def locale: () -> nil
+
+  def invite_request: () -> nil
+
+  def created_by_application?: () -> nil
+
+  def invited?: () -> bool
+              | () -> nil
+
+  def account: () -> Account
+
+  def role: () -> UserRole
+          | () -> nil
+end

@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::UnfavouriteService::Call::WithAFavouritedStatus::LetDefinitions
+  def favourite: () -> Favourite
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::UnfavouriteService::Call::WithAFavouritedStatus::WhenTheStatusAccountIsLocal::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::UnfavouriteService::Call::WithAFavouritedStatus::WhenTheStatusAccountIsARemoteActivitypubAccount::LetDefinitions
+  def account: () -> Account
+end

@@ -1,0 +1,7 @@
+class Settings::Preferences::BaseController
+  def show: () -> nil
+
+  def update: () -> String
+
+  def user_params: () -> void
+end

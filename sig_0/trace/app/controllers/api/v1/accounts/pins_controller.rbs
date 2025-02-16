@@ -1,0 +1,9 @@
+class Api::V1::Accounts::PinsController
+  def set_account: () -> Account
+
+  def create: () -> String
+
+  def relationships_presenter: () -> void
+
+  def destroy: () -> String
+end

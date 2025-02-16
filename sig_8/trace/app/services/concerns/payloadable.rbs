@@ -1,0 +1,4 @@
+module Payloadable
+  def serialize_payload: (FollowRequest, Class, ?Hash[untyped, untyped]) -> void
+                       | (Report, Class, ?Hash[untyped, untyped]) -> void
+end

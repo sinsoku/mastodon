@@ -1,0 +1,21 @@
+class Api::V1::FiltersController
+  def create: () -> String
+
+  def filter_params: () -> void
+
+  def resource_params: () -> ActionController::Parameters
+
+  def keyword_params: () -> void
+
+  def set_filter: () -> CustomFilterKeyword
+
+  def show: () -> String
+
+  def destroy: () -> String
+
+  def update: () -> String
+
+  def set_filters: () -> ActiveRecord::Relation
+
+  def index: () -> String
+end

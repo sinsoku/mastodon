@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::NotificationPolicy::Summarize::LetDefinitions
+  def subject: () -> NotificationPolicy
+
+  def sender: () -> Account
+
+  def suspended_sender: () -> Account
+end

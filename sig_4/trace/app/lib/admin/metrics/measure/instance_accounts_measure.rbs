@@ -1,0 +1,3 @@
+class Admin::Metrics::Measure::InstanceAccountsMeasure
+  def self.with_params?: () -> void
+end

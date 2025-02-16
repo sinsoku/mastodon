@@ -1,0 +1,37 @@
+class Poll
+  def expired?: () -> void
+              | () -> bool
+
+  def expires?: () -> void
+end
+
+class Mute
+  def expires_in=: (nil) -> void
+                 | (Integer) -> void
+                 | (ActiveSupport::Duration) -> void
+
+  def expired?: () -> bool
+
+  def expires?: () -> void
+end
+
+class IpBlock
+  def expires_in=: (ActiveSupport::Duration) -> ActiveSupport::Duration
+                 | (String) -> String
+
+  def expires_in: () -> ActiveSupport::Duration
+                | () -> String
+end
+
+class CustomFilter
+  def expires_in=: (Integer) -> void
+                 | (nil) -> void
+                 | (String) -> void
+
+  def expired?: () -> bool
+
+  def expires?: () -> void
+              | () -> bool
+
+  def expire!: () -> void
+end

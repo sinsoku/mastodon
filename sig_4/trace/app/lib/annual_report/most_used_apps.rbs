@@ -1,0 +1,5 @@
+class AnnualReport::MostUsedApps
+  def generate: () -> void
+
+  def most_used_apps: () -> Hash[untyped, untyped]
+end

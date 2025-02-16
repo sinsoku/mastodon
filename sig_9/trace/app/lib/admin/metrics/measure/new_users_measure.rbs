@@ -1,0 +1,11 @@
+class Admin::Metrics::Measure::NewUsersMeasure
+  def key: () -> String
+
+  def perform_total_query: () -> void
+
+  def perform_previous_total_query: () -> void
+
+  def sql_array: () -> void
+
+  def sql_query_string: () -> void
+end

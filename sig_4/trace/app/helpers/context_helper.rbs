@@ -1,0 +1,5 @@
+module ContextHelper
+  def serialized_context: (Hash[untyped, untyped], Hash[untyped, untyped]) -> void
+
+  def full_context: () -> void
+end

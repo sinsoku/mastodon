@@ -1,0 +1,23 @@
+module RSpec::ExampleGroups::ActivityPubActorSerializer::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActorSerializer::Type::WithTheInstanceActor::LetDefinitions
+  def record: () -> Account
+end
+
+module RSpec::ExampleGroups::ActivityPubActorSerializer::Type::WithAGroupActor::LetDefinitions
+  def record: () -> Account
+end
+
+module RSpec::ExampleGroups::ActivityPubActorSerializer::Type::WithAServiceActor::LetDefinitions
+  def record: () -> Account
+end
+
+module RSpec::ExampleGroups::ActivityPubActorSerializer::Type::WithAPersonActor::LetDefinitions
+  def record: () -> Account
+end
+
+module RSpec::ExampleGroups::ActivityPubActorSerializer::Type::WithAnApplicationActor::LetDefinitions
+  def record: () -> Account
+end

@@ -1,0 +1,49 @@
+module SignatureVerification
+  def signed_request?: () -> void
+
+  def signed_request_actor: () -> nil
+                          | () -> Account
+
+  def missing_required_signature_parameters?: () -> void
+
+  def signature_params: () -> Hash[untyped, untyped]
+
+  def signature_algorithm: () -> void
+                         | () -> String
+
+  def matches_time_window?: () -> void
+
+  def verify_signature_strength!: () -> void
+
+  def signed_headers: () -> Array[untyped]
+
+  def verify_body_digest!: () -> void
+
+  def actor_from_key_id: (String) -> nil
+                       | (String) -> Account
+
+  def stoplight_wrapper: () -> Stoplight::Light
+
+  def fail_with!: (String, **nil) -> void
+
+  def signature_verification_failure_reason: () -> void
+
+  def require_actor_signature!: () -> String
+
+  def signature_verification_failure_code: () -> void
+
+  def body_digest: () -> String
+
+  def request_body: () -> void
+
+  def build_signed_string: (?include_query_string: bool) -> String
+
+  def to_header_name: (String) -> void
+
+  def verify_signature: (Account, String, String) -> Account
+                      | (Account, String, String) -> nil
+
+  def actor_refresh_key!: (Account) -> void
+
+  def signed_request_account: () -> void
+end

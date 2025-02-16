@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::AdminUsersTwoFactorAuthenticationsController::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::AdminUsersTwoFactorAuthenticationsController::DELETEDestroy::WhenUserHasOTPAndWebAuthnEnabled::LetDefinitions
+  def fake_client: () -> WebAuthn::FakeClient
+end

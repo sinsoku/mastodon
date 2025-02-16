@@ -1,0 +1,23 @@
+class Admin::Metrics::Dimension::SoftwareVersionsDimension
+  def key: () -> String
+
+  def perform_query: () -> void
+
+  def mastodon_version: () -> void
+
+  def ruby_version: () -> void
+
+  def postgresql_version: () -> void
+
+  def redis_version: () -> void
+
+  def redis_info: () -> Hash[untyped, untyped]
+
+  def elasticsearch_version: () -> void
+
+  def libvips_version: () -> void
+
+  def imagemagick_version: () -> void
+
+  def ffmpeg_version: () -> void
+end

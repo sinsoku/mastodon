@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::AdminTermsOfServiceGeneratesController::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::AdminTermsOfServiceGeneratesController::POSTCreate::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::AdminTermsOfServiceGeneratesController::POSTCreate::WithValidParams::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AdminTermsOfServiceGeneratesController::POSTCreate::WithInvalidParams::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end

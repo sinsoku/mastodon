@@ -1,0 +1,3 @@
+class AfterAccountDomainBlockWorker
+  def perform: (Integer, String) -> bool
+end

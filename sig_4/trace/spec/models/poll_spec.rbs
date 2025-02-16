@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::Poll::Validations::LetDefinitions
+  def subject: () -> Poll
+end
+
+module RSpec::ExampleGroups::Poll::ResetVotes::LetDefinitions
+  def vote: () -> PollVote
+
+  def poll: () -> Poll
+end

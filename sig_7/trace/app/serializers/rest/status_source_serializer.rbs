@@ -1,0 +1,3 @@
+class REST::StatusSourceSerializer
+  def id: () -> String
+end

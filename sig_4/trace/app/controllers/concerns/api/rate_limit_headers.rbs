@@ -1,0 +1,23 @@
+module Api::RateLimitHeaders
+  def rate_limited_request?: () -> bool
+
+  def set_rate_limit_headers: () -> String
+
+  def apply_header_limit: () -> void
+
+  def rate_limit_limit: () -> void
+
+  def api_throttle_data: () -> Hash[untyped, untyped]
+
+  def apply_header_remaining: () -> void
+
+  def rate_limit_remaining: () -> void
+
+  def apply_header_reset: () -> void
+
+  def rate_limit_reset: () -> void
+
+  def request_time: () -> Time
+
+  def reset_period_offset: () -> void
+end

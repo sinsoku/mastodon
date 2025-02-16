@@ -1,0 +1,3 @@
+class EmailAddressValidator
+  def validate_each: (User, Symbol, String) -> void
+end

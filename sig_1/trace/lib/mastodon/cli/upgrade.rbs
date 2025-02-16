@@ -1,0 +1,3 @@
+class Mastodon::CLI::Upgrade
+  def storage_schema: () -> StringIO
+end

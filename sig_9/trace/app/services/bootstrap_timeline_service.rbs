@@ -1,0 +1,7 @@
+class BootstrapTimelineService
+  def call: (Account) -> void
+
+  def autofollow_inviter!: () -> void
+
+  def notify_staff!: () -> void
+end

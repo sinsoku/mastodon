@@ -1,0 +1,621 @@
+module RSpec::ExampleGroups::FormImport::LetDefinitions
+  def subject: () -> Form::Import
+
+  def account: () -> Account
+
+  def import_mode: () -> String
+
+  def data: () -> Rack::Test::UploadedFile
+end
+
+module RSpec::ExampleGroups::FormImport::Validations::BehavesLikeIncompatibleImportType_2::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Validations::BehavesLikeIncompatibleImportType_3::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Validations::BehavesLikeIncompatibleImportType::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Validations::BehavesLikeValidImport::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Validations::BehavesLikeValidImport_4::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Validations::BehavesLikeIncompatibleImportType_4::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Validations::WhenImportingMoreFollowsThanAllowed::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Validations::BehavesLikeValidImport_3::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Validations::BehavesLikeValidImport_2::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Validations::WhenTheFileTooLarge::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Validations::BehavesLikeValidImport_7::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Validations::BehavesLikeTooManyCSVRows_3::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Validations::BehavesLikeValidImport_9::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Validations::BehavesLikeTooManyCSVRows_4::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Validations::BehavesLikeTooManyCSVRows::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Validations::BehavesLikeTooManyCSVRows_2::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Validations::BehavesLikeIncompatibleImportType_6::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Validations::WhenTheCSVFileIsMalformedCSV::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Validations::BehavesLikeValidImport_6::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Validations::BehavesLikeTooManyCSVRows_5::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Validations::BehavesLikeValidImport_5::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Validations::BehavesLikeValidImport_8::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Validations::BehavesLikeTooManyCSVRows_6::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Validations::BehavesLikeIncompatibleImportType_5::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Save::BehavesLikeOnSuccessfulImport_2::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Save::BehavesLikeOnSuccessfulImport_2::WithABulkImport::LetDefinitions
+  def bulk_import: () -> BulkImport
+end
+
+module RSpec::ExampleGroups::FormImport::Save::BehavesLikeOnSuccessfulImport_6::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Save::BehavesLikeOnSuccessfulImport_6::WithABulkImport::LetDefinitions
+  def bulk_import: () -> BulkImport
+end
+
+module RSpec::ExampleGroups::FormImport::Save::BehavesLikeOnSuccessfulImport_5::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Save::BehavesLikeOnSuccessfulImport_5::WithABulkImport::LetDefinitions
+  def bulk_import: () -> BulkImport
+end
+
+module RSpec::ExampleGroups::FormImport::Save::BehavesLikeOnSuccessfulImport_11::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Save::BehavesLikeOnSuccessfulImport_11::WithABulkImport::LetDefinitions
+  def bulk_import: () -> BulkImport
+end
+
+module RSpec::ExampleGroups::FormImport::Save::BehavesLikeOnSuccessfulImport_3::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Save::BehavesLikeOnSuccessfulImport_3::WithABulkImport::LetDefinitions
+  def bulk_import: () -> BulkImport
+end
+
+module RSpec::ExampleGroups::FormImport::Save::BehavesLikeOnSuccessfulImport_8::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Save::BehavesLikeOnSuccessfulImport_8::WithABulkImport::LetDefinitions
+  def bulk_import: () -> BulkImport
+end
+
+module RSpec::ExampleGroups::FormImport::Save::BehavesLikeOnSuccessfulImport_4::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Save::BehavesLikeOnSuccessfulImport_4::WithABulkImport::LetDefinitions
+  def bulk_import: () -> BulkImport
+end
+
+module RSpec::ExampleGroups::FormImport::Save::BehavesLikeOnSuccessfulImport_10::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Save::BehavesLikeOnSuccessfulImport_10::WithABulkImport::LetDefinitions
+  def bulk_import: () -> BulkImport
+end
+
+module RSpec::ExampleGroups::FormImport::Save::BehavesLikeOnSuccessfulImport_9::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Save::BehavesLikeOnSuccessfulImport_9::WithABulkImport::LetDefinitions
+  def bulk_import: () -> BulkImport
+end
+
+module RSpec::ExampleGroups::FormImport::Save::BehavesLikeOnSuccessfulImport::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Save::BehavesLikeOnSuccessfulImport::WithABulkImport::LetDefinitions
+  def bulk_import: () -> BulkImport
+end
+
+module RSpec::ExampleGroups::FormImport::Save::BehavesLikeOnSuccessfulImport_7::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::Save::BehavesLikeOnSuccessfulImport_7::WithABulkImport::LetDefinitions
+  def bulk_import: () -> BulkImport
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMismatchingTypes_7::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMismatchingTypes_13::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMismatchingTypes_5::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMismatchingTypes_12::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMatchingTypes_5::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMismatchingTypes_18::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMatchingTypes_3::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMatchingTypes_10::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMismatchingTypes_2::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMismatchingTypes_20::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMatchingTypes_12::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMismatchingTypes_6::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMatchingTypes_7::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMismatchingTypes_19::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMatchingTypes_11::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMismatchingTypes::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMismatchingTypes_11::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMatchingTypes_9::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMismatchingTypes_16::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMismatchingTypes_9::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMatchingTypes_2::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMismatchingTypes_17::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMismatchingTypes_10::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMismatchingTypes_3::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMismatchingTypes_8::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMismatchingTypes_4::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMismatchingTypes_14::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMatchingTypes_8::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMatchingTypes_4::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMatchingTypes_6::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMatchingTypes::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::LikelyMismatched::BehavesLikeWithMismatchingTypes_15::LetDefinitions
+  def import_type: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::GuessedType::WhenTheFileNameIsEnoughToDisambiguate::BehavesLikeWithEnoughInformation_16::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::GuessedType::WhenTheFileNameIsEnoughToDisambiguate::BehavesLikeWithEnoughInformation_13::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::GuessedType::WhenTheFileNameIsEnoughToDisambiguate::BehavesLikeWithEnoughInformation_15::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::GuessedType::WhenTheFileNameIsEnoughToDisambiguate::BehavesLikeWithEnoughInformation_8::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::GuessedType::WhenTheFileNameIsEnoughToDisambiguate::BehavesLikeWithEnoughInformation_3::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::GuessedType::WhenTheFileNameIsEnoughToDisambiguate::BehavesLikeWithEnoughInformation_9::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::GuessedType::WhenTheFileNameIsEnoughToDisambiguate::BehavesLikeWithEnoughInformation_4::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::GuessedType::WhenTheFileNameIsEnoughToDisambiguate::BehavesLikeWithEnoughInformation_10::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::GuessedType::WhenTheFileNameIsEnoughToDisambiguate::BehavesLikeWithEnoughInformation_17::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::GuessedType::WhenTheFileNameIsEnoughToDisambiguate::BehavesLikeWithEnoughInformation_18::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::GuessedType::WhenTheFileNameIsEnoughToDisambiguate::BehavesLikeWithEnoughInformation_11::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::GuessedType::WhenTheFileNameIsEnoughToDisambiguate::BehavesLikeWithEnoughInformation_12::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::GuessedType::WhenTheFileNameIsEnoughToDisambiguate::BehavesLikeWithEnoughInformation::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::GuessedType::WhenTheFileNameIsEnoughToDisambiguate::BehavesLikeWithEnoughInformation_6::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::GuessedType::WhenTheFileNameIsEnoughToDisambiguate::BehavesLikeWithEnoughInformation_5::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::GuessedType::WhenTheFileNameIsEnoughToDisambiguate::BehavesLikeWithEnoughInformation_7::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::GuessedType::WhenTheFileNameIsEnoughToDisambiguate::BehavesLikeWithEnoughInformation_2::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::GuessedType::WhenTheFileNameIsEnoughToDisambiguate::BehavesLikeWithEnoughInformation_14::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::GuessedType::WhenTheHeadersAreEnoughToDisambiguate::BehavesLikeWithEnoughInformation_2::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::GuessedType::WhenTheHeadersAreEnoughToDisambiguate::BehavesLikeWithEnoughInformation_5::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::GuessedType::WhenTheHeadersAreEnoughToDisambiguate::BehavesLikeWithEnoughInformation_4::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::GuessedType::WhenTheHeadersAreEnoughToDisambiguate::BehavesLikeWithEnoughInformation::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::GuessedType::WhenTheHeadersAreEnoughToDisambiguate::BehavesLikeWithEnoughInformation_3::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::FormImport::GuessedType::WhenTheHeadersAreEnoughToDisambiguate::BehavesLikeWithEnoughInformation_6::LetDefinitions
+  def import_file: () -> String
+
+  def import_type: () -> String
+end

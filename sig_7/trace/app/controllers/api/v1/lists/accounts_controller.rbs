@@ -1,0 +1,27 @@
+class Api::V1::Lists::AccountsController
+  def set_list: () -> List
+              | () -> nil
+
+  def show: () -> String
+
+  def load_accounts: () -> ActiveRecord::AssociationRelation
+
+  def unlimited?: () -> void
+
+  def next_path: () -> void
+
+  def prev_path: () -> void
+
+  def records_continue?: () -> void
+
+  def pagination_collection: () -> ActiveRecord::AssociationRelation
+
+  def destroy: () -> String
+
+  def account_ids: () -> void
+
+  def resource_params: () -> ActionController::Parameters
+
+  def create: () -> nil
+            | () -> String
+end

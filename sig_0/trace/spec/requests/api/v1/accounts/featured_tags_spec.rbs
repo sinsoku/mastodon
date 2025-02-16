@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::AccountFeaturedTagsAPI::LetDefinitions
+  def account: () -> Account
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::AccountFeaturedTagsAPI::GETApiV1AccountsIdFeaturedTags::LetDefinitions
+  def subject: () -> Integer
+end

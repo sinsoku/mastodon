@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::SeveredRelationships::LetDefinitions
+  def account_rs_event: () -> AccountRelationshipSeveranceEvent
+end

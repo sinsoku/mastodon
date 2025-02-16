@@ -1,0 +1,22 @@
+class Rack::Attack::Request
+  def remote_ip: () -> void
+
+  def api_request?: () -> void
+
+  def authenticated_user_id: () -> void
+                           | () -> nil
+                           | () -> Integer
+
+  def authenticated_token: () -> nil
+                         | () -> Doorkeeper::AccessToken
+
+  def authenticated_token_id: () -> void
+
+  def unauthenticated?: () -> void
+
+  def throttleable_remote_ip: () -> void
+
+  def paging_request?: () -> void
+
+  def path_matches?: (String) -> void
+end

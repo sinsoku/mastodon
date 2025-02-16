@@ -1,0 +1,38 @@
+class Admin::AccountAction
+  def initialize: (?Hash[untyped, untyped]) -> void
+
+  def send_email_notification=: (bool) -> bool
+
+  def save!: () -> void
+
+  def process_action!: () -> void
+
+  def handle_suspend!: () -> void
+
+  def process_strike!: () -> void
+
+  def report: () -> void
+            | () -> Report
+
+  def text_for_warning: () -> void
+
+  def warning_preset: () -> nil
+
+  def status_ids: () -> void
+
+  def with_report?: () -> void
+
+  def process_reports!: () -> void
+
+  def reports: () -> ActiveRecord::Relation
+
+  def process_notification!: () -> void
+
+  def warnable?: () -> void
+
+  def process_queue!: () -> void
+
+  def queue_suspension_worker!: () -> void
+
+  def handle_silence!: () -> void
+end

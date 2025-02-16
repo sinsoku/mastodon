@@ -1,0 +1,3 @@
+class Api::V1::InstancesController
+  def current_user: () -> nil
+end

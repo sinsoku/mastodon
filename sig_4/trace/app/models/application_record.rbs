@@ -1,0 +1,7 @@
+class AccountStat
+  def self.update_index: (String, *Symbol) -> void
+end
+
+class ApplicationRecord
+  def boolean_with_default: (String, bool) -> void
+end

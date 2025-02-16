@@ -1,0 +1,23 @@
+module RSpec::ExampleGroups::VacuumMediaAttachmentsVacuum::Perform::LetDefinitions
+  def old_remote_media: () -> MediaAttachment
+
+  def old_local_media: () -> MediaAttachment
+
+  def new_remote_media: () -> MediaAttachment
+
+  def new_local_media: () -> MediaAttachment
+
+  def old_unattached_media: () -> MediaAttachment
+
+  def new_unattached_media: () -> MediaAttachment
+end
+
+module RSpec::ExampleGroups::VacuumMediaAttachmentsVacuum::LetDefinitions
+  def remote_status: () -> Status
+
+  def retention_period: () -> ActiveSupport::Duration
+
+  def local_status: () -> Status
+
+  def subject: () -> Vacuum::MediaAttachmentsVacuum
+end

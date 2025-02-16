@@ -1,0 +1,15 @@
+class Api::V1::Timelines::PublicController
+  def show: () -> String
+
+  def load_statuses: () -> Array[untyped]
+
+  def preloaded_public_statuses_page: () -> void
+
+  def public_statuses: () -> void
+
+  def public_feed: () -> PublicFeed
+
+  def next_path: () -> void
+
+  def prev_path: () -> void
+end

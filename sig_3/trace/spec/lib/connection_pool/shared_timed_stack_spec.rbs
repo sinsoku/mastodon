@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::ConnectionPoolSharedTimedStack::LetDefinitions
+  def subject: () -> ConnectionPool::SharedTimedStack
+
+  def mini_connection_class: () -> Class
+end

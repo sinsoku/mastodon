@@ -1,0 +1,3 @@
+class DomainAllow
+  def to_log_human_identifier: () -> void
+end

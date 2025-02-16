@@ -1,0 +1,9 @@
+class ActivityPub::SharesController
+  def set_status: () -> Status
+
+  def pundit_user: () -> void
+
+  def index: () -> String
+
+  def shares_collection_presenter: () -> void
+end

@@ -1,0 +1,253 @@
+module RSpec::ExampleGroups::SettingsImportsController::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::POSTConfirm::WithAnAlreadyConfirmedImport::LetDefinitions
+  def bulk_import: () -> BulkImport
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::POSTConfirm::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::POSTConfirm::WithAnUnconfirmedImport::LetDefinitions
+  def bulk_import: () -> BulkImport
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::POSTConfirm::WithSomeoneElseSImport::LetDefinitions
+  def bulk_import: () -> BulkImport
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::POSTCreate::BehavesLikeSuccessfulImport_10::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::POSTCreate::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::POSTCreate::BehavesLikeUnsuccessfulImport_5::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::POSTCreate::BehavesLikeUnsuccessfulImport_6::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::POSTCreate::BehavesLikeUnsuccessfulImport_3::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::POSTCreate::BehavesLikeSuccessfulImport::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::POSTCreate::BehavesLikeUnsuccessfulImport_8::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::POSTCreate::BehavesLikeSuccessfulImport_8::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::POSTCreate::BehavesLikeUnsuccessfulImport_4::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::POSTCreate::BehavesLikeSuccessfulImport_7::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::POSTCreate::BehavesLikeSuccessfulImport_2::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::POSTCreate::BehavesLikeSuccessfulImport_3::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::POSTCreate::BehavesLikeUnsuccessfulImport_7::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::POSTCreate::BehavesLikeUnsuccessfulImport_2::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::POSTCreate::BehavesLikeUnsuccessfulImport::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::POSTCreate::BehavesLikeSuccessfulImport_4::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::POSTCreate::BehavesLikeSuccessfulImport_9::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::POSTCreate::BehavesLikeSuccessfulImport_6::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::POSTCreate::BehavesLikeSuccessfulImport_5::LetDefinitions
+  def import_type: () -> String
+
+  def import_mode: () -> String
+
+  def import_file: () -> String
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::GETIndex::LetDefinitions
+  def import: () -> BulkImport
+
+  def other_import: () -> BulkImport
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::GETShow::WithSomeoneElseSImport::LetDefinitions
+  def bulk_import: () -> BulkImport
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::GETShow::WithAnAlreadyConfirmedImport::LetDefinitions
+  def bulk_import: () -> BulkImport
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::GETShow::WithAnUnconfirmedImport::LetDefinitions
+  def bulk_import: () -> BulkImport
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::GETFailures::WithFollows::LetDefinitions
+  def rows: () -> Array[untyped]
+
+  def bulk_import: () -> BulkImport
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::GETFailures::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::GETFailures::WithBlocks::LetDefinitions
+  def rows: () -> Array[untyped]
+
+  def bulk_import: () -> BulkImport
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::GETFailures::WithLists::LetDefinitions
+  def rows: () -> Array[untyped]
+
+  def bulk_import: () -> BulkImport
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::GETFailures::WithBookmarks::LetDefinitions
+  def rows: () -> Array[untyped]
+
+  def bulk_import: () -> BulkImport
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::GETFailures::WithDomainBlocks::LetDefinitions
+  def rows: () -> Array[untyped]
+
+  def bulk_import: () -> BulkImport
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::GETFailures::WithMutes::LetDefinitions
+  def rows: () -> Array[untyped]
+
+  def bulk_import: () -> BulkImport
+
+  def import_type: () -> String
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::DELETEDestroy::WithAnUnconfirmedImport::LetDefinitions
+  def bulk_import: () -> BulkImport
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::DELETEDestroy::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::DELETEDestroy::WithSomeoneElseSImport::LetDefinitions
+  def bulk_import: () -> BulkImport
+end
+
+module RSpec::ExampleGroups::SettingsImportsController::DELETEDestroy::WithAnAlreadyConfirmedImport::LetDefinitions
+  def bulk_import: () -> BulkImport
+end

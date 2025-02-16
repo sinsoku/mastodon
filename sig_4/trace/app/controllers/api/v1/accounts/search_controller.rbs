@@ -1,0 +1,5 @@
+class Api::V1::Accounts::SearchController
+  def show: () -> String
+
+  def account_search: () -> Array[untyped]
+end

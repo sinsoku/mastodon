@@ -1,0 +1,4 @@
+class RedownloadMediaWorker
+  def perform: (Integer) -> nil
+             | (Integer) -> bool
+end

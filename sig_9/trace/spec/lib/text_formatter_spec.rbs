@@ -1,0 +1,165 @@
+module RSpec::ExampleGroups::TextFormatter::ToS::LetDefinitions
+  def subject: () -> ActiveSupport::SafeBuffer
+
+  def preloaded_accounts: () -> nil
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenTextContainingAHashtag::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenAURLWithATrailingPeriod::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenAURLWithAQueryString::WithEscapedAndNotEscapedUnicodeCharacters::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenAURLWithAQueryString::WithUnicodeCharacterAtTheEnd::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenAURLWithAQueryString::WithEscapedUnicodeCharacter::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenAURLWithAQueryString::WithUnicodeCharacter::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenAURLWithATrailingAngleBracket::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenTextContainingUnlinkableMentions::LetDefinitions
+  def text: () -> String
+
+  def preloaded_accounts: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenAStandAloneGoogleURL::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenAURLWithTraditionalChinesePathString::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenAURLContainingUnsafeCodeXSSAttackVisiblePart::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenAURLEnclosedWithParentheses::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenAStandAloneIDNURL::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenTextContainingPlainText::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenTextContainingAMagnetURI::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenTextWithAStandAloneXmppURI::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenAURLWithTrailingSymbol::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenTextWithAnXmppURIWithAQueryString::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenAURLWithParenthesesInIt::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenTextContainingAHashtagWithUnicodeChars::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenAStandAloneMediumURL::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenAURLWithKoreanPathString::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenAURLContainingUnsafeCodeXSSAttackInvisiblePart::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenAURLWithJapanesePathString::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenAURLWithATrailingExclamationPoint::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenAStandAloneURLWithANewerTLD::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenTextContainingLinkableMentions::LetDefinitions
+  def text: () -> String
+
+  def preloaded_accounts: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenAURLInAngleBrackets::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenAURLWithAFullWidthSpace::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenAURLInJapaneseQuotationMarks::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenAURLWithSimplifiedChinesePathString::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenTextContainingHTMLCodeScriptTag::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenASufficientlyShortURL::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenAnInvalidURL::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenAURLInQuotationMarks::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenALengthyURL::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenAURLWithATrailingSingleQuote::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenTextContainingHTMLXSSAttack::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TextFormatter::ToS::WhenGivenTextContainingLineFeeds::LetDefinitions
+  def text: () -> String
+end

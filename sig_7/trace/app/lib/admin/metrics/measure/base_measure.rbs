@@ -1,0 +1,23 @@
+class Admin::Metrics::Measure::BaseMeasure
+  def initialize: (ActiveSupport::TimeWithZone, Time, ActionController::Parameters) -> void
+
+  def data: () -> Array[untyped]
+
+  def load: () -> ActiveSupport::HashWithIndifferentAccess
+
+  def cache_key: () -> void
+
+  def canonicalized_params: () -> void
+
+  def params: () -> Hash[untyped, untyped]
+
+  def perform_queries: () -> void
+
+  def time_period: () -> void
+
+  def previous_time_period: () -> void
+
+  def length_of_period: () -> void
+
+  def total: () -> void
+end

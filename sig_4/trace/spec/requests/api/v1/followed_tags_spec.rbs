@@ -1,0 +1,23 @@
+module RSpec::ExampleGroups::FollowedTags::GETApiV1FollowedTags::LetDefinitions
+  def tag_follows: () -> Array[untyped]
+
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+
+  def expected_response: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::FollowedTags::LetDefinitions
+  def user: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::FollowedTags::GETApiV1FollowedTags::WithLimitParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end

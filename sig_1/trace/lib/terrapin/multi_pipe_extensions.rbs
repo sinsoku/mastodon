@@ -1,0 +1,11 @@
+module Terrapin::MultiPipeExtensions
+  def initialize: () -> void
+
+  def clear_nonblocking_flags!: () -> void
+
+  def pipe_options: () -> void
+
+  def read: () -> void
+
+  def read_nonblocking!: (IO, String, Array[untyped]) -> void
+end

@@ -1,0 +1,7 @@
+class Mastodon::UnexpectedResponseError
+  def initialize: (?nil) -> void
+end
+
+class Mastodon::PrivateNetworkAddressError
+  def initialize: (String) -> void
+end

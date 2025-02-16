@@ -1,0 +1,14 @@
+class Admin::AccountsController
+  def index: () -> Form::AccountBatch
+
+  def filtered_accounts: () -> ActiveRecord::Relation
+
+  def filter_params: () -> ActionController::Parameters
+
+  def batch: () -> nil
+           | () -> String
+
+  def form_account_batch_params: () -> void
+
+  def action_from_button: () -> void
+end

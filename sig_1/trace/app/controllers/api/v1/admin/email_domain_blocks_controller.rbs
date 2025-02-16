@@ -1,0 +1,28 @@
+class Api::V1::Admin::EmailDomainBlocksController
+  def create: () -> String
+            | () -> nil
+
+  def resource_params: () -> void
+
+  def set_email_domain_blocks: () -> Array[untyped]
+
+  def index: () -> String
+           | () -> nil
+
+  def next_path: () -> void
+
+  def records_continue?: () -> void
+
+  def prev_path: () -> void
+
+  def pagination_collection: () -> Array[untyped]
+
+  def set_email_domain_block: () -> EmailDomainBlock
+                            | () -> nil
+
+  def show: () -> nil
+          | () -> String
+
+  def destroy: () -> String
+             | () -> nil
+end

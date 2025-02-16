@@ -1,0 +1,9 @@
+class Mastodon::CLI::Feeds
+  def clear: () -> StringIO
+
+  def build: (?String) -> StringIO
+           | (?String) -> nil
+           | (?nil) -> StringIO
+
+  def active_user_accounts: () -> void
+end

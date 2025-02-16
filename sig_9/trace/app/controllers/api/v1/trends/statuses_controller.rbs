@@ -1,0 +1,16 @@
+class Api::V1::Trends::StatusesController
+  def set_statuses: () -> Array[untyped]
+
+  def enabled?: () -> bool
+
+  def offset_param: () -> void
+                  | () -> Integer
+
+  def next_path: () -> void
+
+  def records_continue?: () -> void
+
+  def prev_path: () -> void
+
+  def statuses_from_trends: () -> Trends::Statuses::Query
+end

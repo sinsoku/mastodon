@@ -1,0 +1,9 @@
+class Admin::SystemCheck::SidekiqProcessCheck
+  def skip?: () -> void
+
+  def pass?: () -> void
+
+  def missing_queues: () -> Array[untyped]
+
+  def message: () -> void
+end

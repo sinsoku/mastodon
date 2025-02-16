@@ -1,0 +1,5 @@
+class InstancePolicy
+  def index?: () -> bool
+
+  def show?: () -> bool
+end

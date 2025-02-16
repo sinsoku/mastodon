@@ -1,0 +1,23 @@
+module RSpec::ExampleGroups::AccountStatusesSearch::EnqueueRemoveFromPublicStatusesIndex::LetDefinitions
+  def worker: () -> Class
+
+  def indexable: () -> bool
+end
+
+module RSpec::ExampleGroups::AccountStatusesSearch::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AccountStatusesSearch::EnqueueUpdatePublicStatusesIndex::WhenAccountIsNotIndexable::LetDefinitions
+  def indexable: () -> bool
+end
+
+module RSpec::ExampleGroups::AccountStatusesSearch::EnqueueUpdatePublicStatusesIndex::WhenAccountIsIndexable::LetDefinitions
+  def indexable: () -> bool
+end
+
+module RSpec::ExampleGroups::AccountStatusesSearch::EnqueueAddToPublicStatusesIndex::LetDefinitions
+  def worker: () -> Class
+
+  def indexable: () -> bool
+end

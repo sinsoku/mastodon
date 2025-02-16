@@ -1,0 +1,11 @@
+class Vacuum::MediaAttachmentsVacuum
+  def initialize: (nil) -> void
+
+  def perform: () -> void
+
+  def vacuum_orphaned_records!: () -> void
+
+  def orphaned_media_attachments: () -> ActiveRecord::Relation
+
+  def retention_period?: () -> void
+end

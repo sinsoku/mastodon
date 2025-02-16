@@ -1,0 +1,107 @@
+module RSpec::ExampleGroups::DeleteAccountService::CallOnRemoteAccount::LetDefinitions
+  def account: () -> Account
+
+  def status: () -> Status
+
+  def mention: () -> Mention
+
+  def local_follower: () -> Account
+
+  def status_with_mention: () -> Status
+
+  def media_attachment: () -> MediaAttachment
+
+  def notification: () -> Notification
+
+  def favourite: () -> Favourite
+
+  def poll: () -> Poll
+
+  def poll_vote: () -> PollVote
+
+  def active_relationship: () -> Follow
+
+  def passive_relationship: () -> Follow
+
+  def endorsement: () -> AccountPin
+
+  def mention_notification: () -> Notification
+
+  def status_notification: () -> Notification
+
+  def poll_notification: () -> Notification
+
+  def favourite_notification: () -> Notification
+
+  def follow_notification: () -> Notification
+
+  def account_note: () -> AccountNote
+
+  def subject: () -> nil
+end
+
+class RSpec::ExampleGroups::DeleteAccountService::CallOnRemoteAccount
+  def post_to_inbox_with_reject: () -> void
+
+  def post_to_inbox_with_undo: () -> void
+
+  def expect_deletion_of_associated_owned_records: () -> void
+
+  def expect_deletion_of_associated_target_records: () -> void
+
+  def expect_deletion_of_associated_target_notifications: () -> void
+end
+
+module RSpec::ExampleGroups::DeleteAccountService::CallOnLocalAccount::LetDefinitions
+  def remote_alice: () -> Account
+
+  def remote_bob: () -> Account
+
+  def status: () -> Status
+
+  def account: () -> Account
+
+  def mention: () -> Mention
+
+  def local_follower: () -> Account
+
+  def status_with_mention: () -> Status
+
+  def media_attachment: () -> MediaAttachment
+
+  def notification: () -> Notification
+
+  def favourite: () -> Favourite
+
+  def poll: () -> Poll
+
+  def poll_vote: () -> PollVote
+
+  def active_relationship: () -> Follow
+
+  def passive_relationship: () -> Follow
+
+  def endorsement: () -> AccountPin
+
+  def mention_notification: () -> Notification
+
+  def status_notification: () -> Notification
+
+  def poll_notification: () -> Notification
+
+  def favourite_notification: () -> Notification
+
+  def follow_notification: () -> Notification
+
+  def account_note: () -> AccountNote
+
+  def subject: () -> nil
+end
+
+class RSpec::ExampleGroups::DeleteAccountService::CallOnLocalAccount
+  def expect_deletion_of_associated_owned_records: () -> void
+
+  def expect_deletion_of_associated_target_records: () -> void
+
+  def expect_deletion_of_associated_target_notifications: () -> void
+end

@@ -1,0 +1,3 @@
+class TagUnmergeWorker
+  def perform: (Integer, Integer) -> void
+end

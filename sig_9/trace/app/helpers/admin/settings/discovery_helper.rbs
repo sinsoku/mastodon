@@ -1,0 +1,7 @@
+module Admin::Settings::DiscoveryHelper
+  def discovery_hint_text: () -> String
+
+  def discovery_recommended_value: () -> nil
+
+  def discovery_warning_hint_text: () -> nil
+end

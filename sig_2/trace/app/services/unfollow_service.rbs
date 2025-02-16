@@ -1,0 +1,13 @@
+class UnfollowService
+  def call: (Account, Account, ?Hash[untyped, untyped]) -> void
+
+  def unfollow!: () -> void
+
+  def create_reject_notification: (Follow) -> void
+
+  def build_reject_json: (Follow) -> void
+
+  def create_notification: (Follow) -> void
+
+  def build_json: (Follow) -> void
+end

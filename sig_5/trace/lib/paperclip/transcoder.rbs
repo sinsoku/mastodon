@@ -1,0 +1,13 @@
+class Paperclip::Transcoder
+  def initialize: (Paperclip::UploadedFileAdapter, ?Hash[untyped, untyped], ?Paperclip::Attachment) -> void
+
+  def make: () -> void
+
+  def update_attachment_type: (VideoMetadataExtractor) -> void
+
+  def update_options_from_metadata: (VideoMetadataExtractor) -> void
+
+  def eligible_to_passthrough?: (VideoMetadataExtractor) -> void
+
+  def prepare_command: (Paperclip::Tempfile) -> Array[untyped]
+end

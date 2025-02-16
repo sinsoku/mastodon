@@ -1,0 +1,21 @@
+class Mastodon::CLI::Media
+  def refresh: () -> StringIO
+             | () -> nil
+
+  def lookup: (String) -> StringIO
+            | (String) -> nil
+
+  def usage: () -> nil
+
+  def object_storage_summary: () -> void
+
+  def combined_media_sum: () -> void
+
+  def remove_orphans: () -> nil
+                    | () -> StringIO
+
+  def orphaned_file?: (Array[untyped], ?nil) -> void
+
+  def remove: () -> StringIO
+            | () -> nil
+end

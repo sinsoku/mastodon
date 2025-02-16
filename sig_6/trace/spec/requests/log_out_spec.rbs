@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::LogOut::DELETEAuthSignOut::LetDefinitions
+  def user: () -> User
+end

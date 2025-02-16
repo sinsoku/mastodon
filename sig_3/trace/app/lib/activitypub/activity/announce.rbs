@@ -1,0 +1,24 @@
+class ActivityPub::Activity::Announce
+  def perform: () -> void
+
+  def related_to_local_activity?: () -> nil
+                                | () -> bool
+
+  def requested_through_relay?: () -> void
+
+  def reblog_of_local_status?: () -> void
+
+  def announceable?: (Status) -> bool
+
+  def visibility_from_audience: () -> void
+
+  def audience_to: () -> Array[untyped]
+
+  def audience_cc: () -> Array[untyped]
+
+  def distribute: () -> void
+
+  def reblog_of_local_account?: (Status) -> void
+
+  def reblog_by_following_group_account?: (Status) -> bool
+end

@@ -1,0 +1,8 @@
+class Api::V1::Instances::PeersController
+  def current_user: () -> nil
+
+  def require_enabled_api!: () -> bool
+                          | () -> nil
+
+  def index: () -> bool
+end

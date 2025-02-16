@@ -1,0 +1,41 @@
+class Request
+  def initialize: (Symbol, String, **nil) -> void
+
+  def use_proxy?: () -> void
+
+  def proxy_url: () -> Hash[untyped, untyped]
+
+  def hidden_service?: () -> void
+
+  def block_hidden_service?: () -> void
+
+  def set_common_headers!: () -> void
+
+  def request_target: () -> void
+
+  def perform: () -> void
+             | () -> Integer
+             | () -> nil
+
+  def http_client: () -> HTTP::Client
+
+  def self.http_client: () -> HTTP::Client
+
+  def headers: () -> void
+
+  def on_behalf_of: (Account, ?sign_with: nil) -> void
+
+  def add_headers: (Hash[untyped, untyped]) -> void
+
+  def signature: () -> void
+
+  def signed_string: () -> void
+
+  def signed_headers: () -> Hash[untyped, untyped]
+
+  def key_id: () -> String
+end
+
+module Request::ClientLimit
+  def require_limit_not_exceeded!: (Integer) -> void
+end

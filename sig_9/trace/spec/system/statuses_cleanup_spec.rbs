@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::AutomatedPostDeletionSettings::LetDefinitions
+  def user: () -> User
+
+  def account: () -> Account
+end
+
+class RSpec::ExampleGroups::AutomatedPostDeletionSettings::UpdatingSettings
+  def submit_form: () -> void
+end

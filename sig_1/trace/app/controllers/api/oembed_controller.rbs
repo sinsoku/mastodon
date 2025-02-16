@@ -1,0 +1,10 @@
+class Api::OEmbedController
+  def set_status: () -> Status
+
+  def status_finder: () -> StatusFinder
+
+  def require_public_status!: () -> nil
+                            | () -> String
+
+  def show: () -> String
+end

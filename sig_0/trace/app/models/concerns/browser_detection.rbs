@@ -1,0 +1,3 @@
+module BrowserDetection
+  def assign_user_agent: () -> String
+end

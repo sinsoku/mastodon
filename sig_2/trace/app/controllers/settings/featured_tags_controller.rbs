@@ -1,0 +1,7 @@
+class Settings::FeaturedTagsController
+  def set_featured_tags: () -> Array[untyped]
+
+  def set_recently_used_tags: () -> ActiveRecord::Relation
+
+  def index: () -> FeaturedTag
+end

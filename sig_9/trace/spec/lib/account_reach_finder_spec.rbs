@@ -1,0 +1,27 @@
+module RSpec::ExampleGroups::AccountReachFinder::LetDefinitions
+  def ap_follower_example_com: () -> Account
+
+  def account: () -> Account
+
+  def ap_follower_example_org: () -> Account
+
+  def ap_follower_with_shared: () -> Account
+
+  def ap_mentioned_with_shared: () -> Account
+
+  def ap_mentioned_example_com: () -> Account
+
+  def ap_mentioned_example_org: () -> Account
+
+  def unrelated_account: () -> Account
+end
+
+module RSpec::ExampleGroups::AccountReachFinder::Inboxes::LetDefinitions
+  def subject: () -> Array[untyped]
+end
+
+class RSpec::ExampleGroups::AccountReachFinder::Inboxes
+  def follower_inbox_urls: () -> void
+
+  def mentioned_account_inbox_urls: () -> void
+end

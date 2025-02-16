@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::FeaturedTagsSuggestionsAPI::GETApiV1FeaturedTagsSuggestions::LetDefinitions
+  def unused_featured_tag: () -> Tag
+
+  def used_tag: () -> Tag
+
+  def used_featured_tag: () -> Tag
+end
+
+module RSpec::ExampleGroups::FeaturedTagsSuggestionsAPI::LetDefinitions
+  def account: () -> Account
+
+  def user: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end

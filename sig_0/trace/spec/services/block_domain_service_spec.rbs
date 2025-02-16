@@ -1,0 +1,17 @@
+module RSpec::ExampleGroups::BlockDomainService::LetDefinitions
+  def bad_account: () -> Account
+
+  def bad_status_plain: () -> Status
+
+  def bad_status_with_attachment: () -> Status
+
+  def bad_attachment: () -> MediaAttachment
+
+  def already_banned_account: () -> Account
+
+  def local_account: () -> Account
+
+  def bystander: () -> Account
+
+  def subject: () -> BlockDomainService
+end

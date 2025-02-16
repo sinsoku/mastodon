@@ -1,0 +1,36 @@
+module RSpec::ExampleGroups::RemoteFollow::Initialize::LetDefinitions
+  def subject: () -> String
+             | () -> nil
+end
+
+module RSpec::ExampleGroups::RemoteFollow::LetDefinitions
+  def remote_follow: () -> RemoteFollow
+end
+
+module RSpec::ExampleGroups::RemoteFollow::Initialize::WhenAttrsWithAcct::LetDefinitions
+  def attrs: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::RemoteFollow::Initialize::WhenAttrsWithoutAcct::LetDefinitions
+  def attrs: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::RemoteFollow::Valid::LetDefinitions
+  def subject: () -> bool
+end
+
+module RSpec::ExampleGroups::RemoteFollow::Valid::WhenAttrsWithAcct::LetDefinitions
+  def attrs: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::RemoteFollow::Valid::WhenAttrsWithoutAcct::LetDefinitions
+  def attrs: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::RemoteFollow::SubscribeAddressFor::LetDefinitions
+  def attrs: () -> Hash[untyped, untyped]
+
+  def subject: () -> String
+
+  def account: () -> Account
+end

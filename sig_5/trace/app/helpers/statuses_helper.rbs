@@ -1,0 +1,5 @@
+module StatusesHelper
+  def nothing_here: (?String) -> ActiveSupport::SafeBuffer
+
+  def prefers_autoplay?: () -> void
+end

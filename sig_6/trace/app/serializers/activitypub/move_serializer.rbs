@@ -1,0 +1,11 @@
+class ActivityPub::MoveSerializer
+  def id: () -> String
+
+  def type: () -> String
+
+  def target: () -> String
+
+  def actor: () -> String
+
+  def virtual_object: () -> String
+end

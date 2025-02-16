@@ -1,0 +1,6 @@
+module AccountsHelper
+  def display_name: (Account, **bool) -> void
+                  | (Account, **bool) -> ActiveSupport::SafeBuffer
+
+  def acct: (Account) -> void
+end

@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::AdminStatusPolicy::LetDefinitions
+  def policy: () -> Class
+
+  def admin: () -> Account
+
+  def john: () -> Account
+
+  def status: () -> Status
+
+  def status_visibility: () -> Symbol
+end
+
+module RSpec::ExampleGroups::AdminStatusPolicy::Show::WithAnAdmin::WithANotPublicVisibleStatus::LetDefinitions
+  def status_visibility: () -> Symbol
+end
+
+module RSpec::ExampleGroups::AdminStatusPolicy::Show::WithAnAdmin::WithAPublicVisibleStatus::LetDefinitions
+  def status_visibility: () -> Symbol
+end

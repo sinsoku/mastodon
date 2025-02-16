@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::FamiliarFollowersPresenter::Accounts::LetDefinitions
+  def familiar_follower: () -> Account
+
+  def requested_accounts: () -> Array[untyped]
+
+  def account: () -> Account
+
+  def subject: () -> FamiliarFollowersPresenter
+end

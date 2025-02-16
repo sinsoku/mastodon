@@ -1,0 +1,3 @@
+class ExtendedDescription
+  def self.current: () -> ExtendedDescription
+end

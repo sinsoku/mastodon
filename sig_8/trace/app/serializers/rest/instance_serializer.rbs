@@ -1,0 +1,15 @@
+class REST::InstanceSerializer
+  def usage: () -> Hash[untyped, untyped]
+
+  def thumbnail: () -> Hash[untyped, untyped]
+
+  def icon: () -> Array[untyped]
+
+  def configuration: () -> Hash[untyped, untyped]
+
+  def registrations: () -> Hash[untyped, untyped]
+
+  def registrations_enabled?: () -> void
+
+  def api_versions: () -> Hash[untyped, untyped]
+end

@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::LanguageValidator::LetDefinitions
+  def record: () -> untyped
+
+  def record_class: () -> Class
+end

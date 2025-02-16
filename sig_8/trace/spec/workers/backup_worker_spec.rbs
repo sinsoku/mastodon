@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::BackupWorker::LetDefinitions
+  def service: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def worker: () -> BackupWorker
+end
+
+module RSpec::ExampleGroups::BackupWorker::Perform::LetDefinitions
+  def other_backup: () -> Backup
+
+  def backup: () -> Backup
+end

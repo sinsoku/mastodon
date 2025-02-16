@@ -1,0 +1,3 @@
+class PublicFileServerMiddleware
+  def call: (Hash[untyped, untyped]) -> void
+end

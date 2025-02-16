@@ -1,0 +1,32 @@
+module RSpec::ExampleGroups::AdminDomainBlocksController::GETEdit::LetDefinitions
+  def domain_block: () -> DomainBlock
+end
+
+module RSpec::ExampleGroups::AdminDomainBlocksController::PUTUpdate::LetDefinitions
+  def remote_account: () -> Account
+
+  def domain_block: () -> DomainBlock
+
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::AdminDomainBlocksController::PUTUpdate::WhenDowngradingADomainSuspensionToSilence::LetDefinitions
+  def original_severity: () -> String
+
+  def new_severity: () -> String
+end
+
+class RSpec::ExampleGroups::AdminDomainBlocksController::PUTUpdate
+  def change_severity: (String, String) -> RSpec::Matchers::BuiltIn::ChangeFromValue
+
+  def change_suspended: (bool, bool) -> RSpec::Matchers::BuiltIn::ChangeFromValue
+
+  def change_silenced: (bool, bool) -> void
+                     | (bool, bool) -> RSpec::Matchers::BuiltIn::ChangeFromValue
+end
+
+module RSpec::ExampleGroups::AdminDomainBlocksController::PUTUpdate::WhenUpgradingADomainSilenceToSuspend::LetDefinitions
+  def original_severity: () -> String
+
+  def new_severity: () -> String
+end

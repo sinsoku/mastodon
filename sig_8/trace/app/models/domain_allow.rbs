@@ -1,0 +1,6 @@
+class DomainAllow
+  def self.allowed?: (String) -> void
+
+  def self.rule_for: (String) -> DomainAllow
+                   | (String) -> nil
+end

@@ -1,0 +1,7 @@
+class DomainBlock
+  def self.suspend?: (String) -> bool
+
+  def self.rule_for: (String) -> nil
+                   | (nil) -> nil
+                   | (String) -> DomainBlock
+end

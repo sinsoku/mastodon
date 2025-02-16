@@ -1,0 +1,105 @@
+module RSpec::ExampleGroups::ImportService::LetDefinitions
+  def account: () -> Account
+
+  def bob: () -> Account
+
+  def eve: () -> Account
+end
+
+module RSpec::ExampleGroups::ImportService::WithAUtf8EncodedDomains::LetDefinitions
+  def nare: () -> Account
+
+  def subject: () -> ImportService
+
+  def import: () -> Import
+
+  def csv: () -> File
+end
+
+module RSpec::ExampleGroups::ImportService::WhenImportingBookmarks::LetDefinitions
+  def remote_status: () -> Status
+
+  def direct_status: () -> Status
+
+  def local_account: () -> Account
+
+  def subject: () -> ImportService
+
+  def csv: () -> File
+end
+
+module RSpec::ExampleGroups::ImportService::WhenImportingBookmarks::WhenNoBookmarksAreSet::LetDefinitions
+  def import: () -> Import
+end
+
+module RSpec::ExampleGroups::ImportService::WhenImportingNewStyleListOfMutedUsers::LetDefinitions
+  def subject: () -> ImportService
+
+  def csv: () -> File
+end
+
+module RSpec::ExampleGroups::ImportService::WhenImportingNewStyleListOfMutedUsers::WhenSomeAccountsAreMutedAndOverwriteIsNotSet::LetDefinitions
+  def import: () -> Import
+end
+
+module RSpec::ExampleGroups::ImportService::WhenImportingNewStyleListOfMutedUsers::WhenSomeAccountsAreMutedAndOverwriteIsSet::LetDefinitions
+  def import: () -> Import
+end
+
+module RSpec::ExampleGroups::ImportService::WhenImportingNewStyleListOfMutedUsers::WhenNoAccountsAreMuted::LetDefinitions
+  def import: () -> Import
+end
+
+module RSpec::ExampleGroups::ImportService::WhenImportingNewStyleListOfFollowedUsers::LetDefinitions
+  def subject: () -> ImportService
+
+  def csv: () -> File
+end
+
+module RSpec::ExampleGroups::ImportService::WhenImportingNewStyleListOfFollowedUsers::WhenSomeAccountsAreAlreadyFollowedAndOverwriteIsNotSet::LetDefinitions
+  def import: () -> Import
+end
+
+module RSpec::ExampleGroups::ImportService::WhenImportingNewStyleListOfFollowedUsers::WhenNoAccountsAreFollowed::LetDefinitions
+  def import: () -> Import
+end
+
+module RSpec::ExampleGroups::ImportService::WhenImportingNewStyleListOfFollowedUsers::WhenSomeAccountsAreAlreadyFollowedAndOverwriteIsSet::LetDefinitions
+  def import: () -> Import
+end
+
+module RSpec::ExampleGroups::ImportService::WhenImportingOldStyleListOfMutedUsers::LetDefinitions
+  def subject: () -> ImportService
+
+  def csv: () -> File
+end
+
+module RSpec::ExampleGroups::ImportService::WhenImportingOldStyleListOfMutedUsers::WhenSomeAccountsAreMutedAndOverwriteIsNotSet::LetDefinitions
+  def import: () -> Import
+end
+
+module RSpec::ExampleGroups::ImportService::WhenImportingOldStyleListOfMutedUsers::WhenNoAccountsAreMuted::LetDefinitions
+  def import: () -> Import
+end
+
+module RSpec::ExampleGroups::ImportService::WhenImportingOldStyleListOfMutedUsers::WhenSomeAccountsAreMutedAndOverwriteIsSet::LetDefinitions
+  def import: () -> Import
+end
+
+module RSpec::ExampleGroups::ImportService::WhenImportingOldStyleListOfFollowedUsers::LetDefinitions
+  def subject: () -> ImportService
+
+  def csv: () -> File
+end
+
+module RSpec::ExampleGroups::ImportService::WhenImportingOldStyleListOfFollowedUsers::WhenSomeAccountsAreAlreadyFollowedAndOverwriteIsSet::LetDefinitions
+  def import: () -> Import
+end
+
+module RSpec::ExampleGroups::ImportService::WhenImportingOldStyleListOfFollowedUsers::WhenNoAccountsAreFollowed::LetDefinitions
+  def import: () -> Import
+end
+
+module RSpec::ExampleGroups::ImportService::WhenImportingOldStyleListOfFollowedUsers::WhenSomeAccountsAreAlreadyFollowedAndOverwriteIsNotSet::LetDefinitions
+  def import: () -> Import
+end

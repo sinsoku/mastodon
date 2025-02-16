@@ -1,0 +1,5 @@
+class Api::V1::Instances::TermsOfServicesController
+  def set_terms_of_service: () -> TermsOfService
+
+  def show: () -> String
+end

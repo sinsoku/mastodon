@@ -1,0 +1,11 @@
+class PreviewCard
+  def local?: () -> bool
+
+  def authors: () -> Array[untyped]
+
+  def serialized_authors: () -> void
+end
+
+class PreviewCard::Author
+  def initialize: (PreviewCard) -> void
+end

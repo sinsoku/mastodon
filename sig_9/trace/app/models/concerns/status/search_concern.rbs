@@ -1,0 +1,3 @@
+module Status::SearchConcern
+  def searchable_text: () -> void
+end

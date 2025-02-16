@@ -1,0 +1,27 @@
+class Api::Web::PushSubscriptionsController
+  def prior_subscriptions?: () -> bool
+
+  def active_session: () -> SessionActivation
+
+  def create: () -> String
+
+  def web_push_subscription_params: () -> void
+
+  def subscription_data: () -> void
+
+  def default_subscription_data: () -> Hash[untyped, untyped]
+
+  def alerts_enabled: () -> void
+
+  def subscription_params: () -> ActionController::Parameters
+
+  def update_session_with_subscription: () -> bool
+
+  def set_push_subscription: () -> Web::PushSubscription
+
+  def update: () -> String
+
+  def data_params: () -> void
+
+  def destroy_previous_subscriptions: () -> bool
+end

@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::RESTRuleSerializer::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+
+  def record: () -> Rule
+end

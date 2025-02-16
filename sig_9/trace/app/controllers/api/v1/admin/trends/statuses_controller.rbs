@@ -1,0 +1,13 @@
+class Api::V1::Admin::Trends::StatusesController
+  def enabled?: () -> void
+
+  def statuses_from_trends: () -> Trends::Statuses::Query
+
+  def approve: () -> String
+             | () -> nil
+
+  def reject: () -> String
+            | () -> nil
+
+  def index: () -> String
+end

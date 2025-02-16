@@ -1,0 +1,28 @@
+class Form::Import
+  def mode=: (String) -> bool
+
+  def save: () -> void
+
+  def validate_data: () -> nil
+                   | () -> ActiveModel::Error
+
+  def default_csv_headers: () -> Array[untyped]
+
+  def csv_data: () -> CSV
+              | () -> nil
+
+  def csv_row_count: () -> Integer
+
+  def likely_mismatched?: () -> void
+
+  def guessed_type: () -> nil
+                  | () -> Symbol
+
+  def csv_headers_match?: (String) -> void
+
+  def file_name_matches?: (String) -> void
+
+  def parsed_rows: () -> Array[untyped]
+
+  def mode: () -> Symbol
+end

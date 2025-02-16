@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::APIV1Conversations::LetDefinitions
+  def user: () -> User
+
+  def other: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end

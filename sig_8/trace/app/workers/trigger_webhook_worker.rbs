@@ -1,0 +1,3 @@
+class TriggerWebhookWorker
+  def perform: (String, String, Integer) -> void
+end

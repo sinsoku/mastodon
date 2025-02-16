@@ -1,0 +1,37 @@
+module RSpec::ExampleGroups::ReblogService::WithActivityPub::LetDefinitions
+  def bob: () -> Account
+
+  def subject: () -> ReblogService
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::ReblogService::LetDefinitions
+  def alice: () -> Account
+end
+
+module RSpec::ExampleGroups::ReblogService::WhenTheRebloggedStatusIsDiscardedInTheMeantime::LetDefinitions
+  def status: () -> Status
+end
+
+class Status
+  def discard_status: () -> Integer
+end
+
+module RSpec::ExampleGroups::ReblogService::WhenCreatesAReblogWithAppropriateVisibility::LetDefinitions
+  def subject: () -> ReblogService
+
+  def status: () -> Status
+
+  def visibility: () -> Symbol
+end
+
+module RSpec::ExampleGroups::ReblogService::WhenCreatesAReblogWithAppropriateVisibility::PublicReblogsOfPrivateTootsShouldRemainPrivate::LetDefinitions
+  def visibility: () -> Symbol
+
+  def reblog_visibility: () -> Symbol
+end
+
+module RSpec::ExampleGroups::ReblogService::WhenCreatesAReblogWithAppropriateVisibility::BoostingPrivately::LetDefinitions
+  def reblog_visibility: () -> Symbol
+end

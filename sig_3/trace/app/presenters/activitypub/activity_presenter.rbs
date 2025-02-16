@@ -1,0 +1,3 @@
+class ActivityPub::ActivityPresenter
+  def self.from_status: (Status, ?allow_inlining: bool) -> void
+end

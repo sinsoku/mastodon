@@ -1,0 +1,19 @@
+class RSpec::ExampleGroups::MediaProxy::GETMediaProxyId
+  def stub_attachment_request: () -> void
+end
+
+module RSpec::ExampleGroups::MediaProxy::GETMediaProxyId::WhenNotPermittedToView::LetDefinitions
+  def media_attachment: () -> MediaAttachment
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::MediaProxy::GETMediaProxyId::WhenAttachedToAStatus::LetDefinitions
+  def media_attachment: () -> MediaAttachment
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::MediaProxy::GETMediaProxyId::WhenThereIsNotAnAttachedStatus::LetDefinitions
+  def media_attachment: () -> MediaAttachment
+end

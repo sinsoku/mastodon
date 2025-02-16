@@ -1,0 +1,22 @@
+class SearchService
+  def call: (String, Account, Integer, ?ActionController::Parameters) -> void
+          | (String, nil, Integer, ?ActionController::Parameters) -> void
+
+  def default_results: () -> Hash[untyped, untyped]
+
+  def url_query?: () -> void
+
+  def account_searchable?: () -> void
+
+  def account_search?: () -> void
+
+  def perform_accounts_search!: () -> void
+
+  def status_searchable?: () -> void
+
+  def hashtag_searchable?: () -> void
+
+  def hashtag_search?: () -> void
+
+  def perform_hashtags_search!: () -> void
+end

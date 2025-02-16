@@ -1,0 +1,63 @@
+module RSpec::ExampleGroups::VerifyLinkService::WhenGivenALocalAccount::LetDefinitions
+  def account: () -> Account
+
+  def field: () -> Account::Field
+end
+
+module RSpec::ExampleGroups::VerifyLinkService::WhenGivenALocalAccount::WhenALinkContainsAnARelMeNoopenerNoreferrerBack::LetDefinitions
+  def html: () -> String
+end
+
+module RSpec::ExampleGroups::VerifyLinkService::LetDefinitions
+  def subject: () -> VerifyLinkService
+end
+
+module RSpec::ExampleGroups::VerifyLinkService::WhenGivenALocalAccount::WhenLinkHasNoHrefAttribute::LetDefinitions
+  def html: () -> String
+end
+
+module RSpec::ExampleGroups::VerifyLinkService::WhenGivenALocalAccount::WhenALinkDoesNotContainALinkBack::LetDefinitions
+  def html: () -> String
+end
+
+module RSpec::ExampleGroups::VerifyLinkService::WhenGivenALocalAccount::WhenALinkContainsAnABack::LetDefinitions
+  def html: () -> String
+end
+
+module RSpec::ExampleGroups::VerifyLinkService::WhenGivenALocalAccount::WhenALinkContainsAnARelMEBack::LetDefinitions
+  def html: () -> String
+end
+
+module RSpec::ExampleGroups::VerifyLinkService::WhenGivenALocalAccount::WhenADocumentIsTruncatedButTheLinkBackIsValid::LetDefinitions
+  def html: () -> String
+end
+
+module RSpec::ExampleGroups::VerifyLinkService::WhenGivenALocalAccount::WhenALinkContainsALinkToAnUnexpectedURL::LetDefinitions
+  def html: () -> String
+end
+
+module RSpec::ExampleGroups::VerifyLinkService::WhenGivenALocalAccount::WhenALinkTagMightBeTruncated::LetDefinitions
+  def html: () -> String
+end
+
+module RSpec::ExampleGroups::VerifyLinkService::WhenGivenALocalAccount::WhenALinkContainsALinkBack::LetDefinitions
+  def html: () -> String
+end
+
+module RSpec::ExampleGroups::VerifyLinkService::WhenGivenALocalAccount::WhenALinkGoesThroughARedirectBack::LetDefinitions
+  def html: () -> String
+end
+
+module RSpec::ExampleGroups::VerifyLinkService::WhenGivenARemoteAccount::WhenALinkContainsAnABack::LetDefinitions
+  def html: () -> String
+end
+
+module RSpec::ExampleGroups::VerifyLinkService::WhenGivenARemoteAccount::LetDefinitions
+  def field: () -> Account::Field
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::VerifyLinkService::WhenGivenARemoteAccount::WhenTheLinkContainsALinkWithAMissingProtocolSlash::LetDefinitions
+  def html: () -> String
+end

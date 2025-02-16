@@ -1,0 +1,55 @@
+class ActivityPub::ProcessAccountService
+  def call: (String, String, Hash[untyped, untyped], ?Hash[untyped, untyped]) -> void
+
+  def create_account: () -> void
+
+  def auto_suspend?: () -> void
+
+  def domain_block: () -> nil
+
+  def auto_silence?: () -> void
+
+  def set_immediate_protocol_attributes!: () -> void
+
+  def url: () -> void
+
+  def actor_type: () -> void
+
+  def update_account: () -> void
+
+  def set_suspension!: () -> void
+
+  def set_fetchable_key!: () -> void
+
+  def public_key: () -> void
+
+  def set_immediate_attributes!: () -> void
+
+  def property_values: () -> void
+
+  def set_fetchable_attributes!: () -> void
+
+  def skip_download?: () -> void
+
+  def image_url: (String) -> void
+
+  def outbox_total_items: () -> void
+
+  def collection_info: (String) -> Array[untyped]
+
+  def following_total_items: () -> void
+
+  def followers_total_items: () -> void
+
+  def following_private?: () -> void
+
+  def process_tags: () -> void
+
+  def process_duplicate_accounts!: () -> void
+
+  def protocol_changed?: () -> void
+
+  def key_changed?: () -> void
+
+  def suspension_changed?: () -> void
+end

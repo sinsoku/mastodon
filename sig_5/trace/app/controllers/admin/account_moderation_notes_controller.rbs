@@ -1,0 +1,10 @@
+class Admin::AccountModerationNotesController
+  def create: () -> ActiveSupport::SafeBuffer
+            | () -> String
+
+  def resource_params: () -> void
+
+  def set_account_moderation_note: () -> AccountModerationNote
+
+  def destroy: () -> String
+end

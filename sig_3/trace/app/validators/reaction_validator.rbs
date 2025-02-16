@@ -1,0 +1,7 @@
+class ReactionValidator
+  def validate: (AnnouncementReaction) -> nil
+
+  def new_reaction?: (AnnouncementReaction) -> void
+
+  def limit_reached?: (AnnouncementReaction) -> void
+end

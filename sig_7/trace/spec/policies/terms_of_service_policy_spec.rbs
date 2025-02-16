@@ -1,0 +1,47 @@
+module RSpec::ExampleGroups::TermsOfServicePolicy::LetDefinitions
+  def subject: () -> Class
+
+  def admin: () -> Account
+
+  def john: () -> Account
+end
+
+module RSpec::ExampleGroups::TermsOfServicePolicy::Distribute::LetDefinitions
+  def terms: () -> TermsOfService
+end
+
+module RSpec::ExampleGroups::TermsOfServicePolicy::Distribute::WithNotificationAlreadySent::WithPublishedFalse::LetDefinitions
+  def published: () -> nil
+end
+
+module RSpec::ExampleGroups::TermsOfServicePolicy::Distribute::WithNotificationAlreadySent::LetDefinitions
+  def notification: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::TermsOfServicePolicy::Distribute::WithNotificationAlreadySent::WithPublishedTrue::LetDefinitions
+  def published: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::TermsOfServicePolicy::Distribute::WithNotificationNotYetSent::WithPublishedTrue::LetDefinitions
+  def published: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::TermsOfServicePolicy::Distribute::WithNotificationNotYetSent::LetDefinitions
+  def notification: () -> nil
+end
+
+module RSpec::ExampleGroups::TermsOfServicePolicy::Distribute::WithNotificationNotYetSent::WithPublishedFalse::LetDefinitions
+  def published: () -> nil
+end
+
+module RSpec::ExampleGroups::TermsOfServicePolicy::UpdateAndDestroy::LetDefinitions
+  def terms: () -> TermsOfService
+end
+
+module RSpec::ExampleGroups::TermsOfServicePolicy::UpdateAndDestroy::WithAnUnpublishedTerms::LetDefinitions
+  def published: () -> nil
+end
+
+module RSpec::ExampleGroups::TermsOfServicePolicy::UpdateAndDestroy::WithAPublishedTerms::LetDefinitions
+  def published: () -> ActiveSupport::TimeWithZone
+end

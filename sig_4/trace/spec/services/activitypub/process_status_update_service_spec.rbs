@@ -1,0 +1,91 @@
+module RSpec::ExampleGroups::ActivityPubProcessStatusUpdateService::LetDefinitions
+  def status: () -> Status
+
+  def mentions: () -> Array[untyped]
+
+  def tags: () -> Array[untyped]
+
+  def media_attachments: () -> Array[untyped]
+
+  def bogus_mention: () -> String
+
+  def subject: () -> ActivityPub::ProcessStatusUpdateService
+
+  def json: () -> Hash[untyped, untyped]
+
+  def payload: () -> Hash[untyped, untyped]
+
+  def alice: () -> Account
+
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessStatusUpdateService::Call::WhenOriginallyWithTags::LetDefinitions
+  def tags: () -> Array[untyped]
+
+  def payload: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessStatusUpdateService::Call::WhenTheChangesAreOnlyInSanitizedOutHTML::LetDefinitions
+  def status: () -> Status
+
+  def payload: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessStatusUpdateService::Call::WhenOriginallyWithMediaAttachments::LetDefinitions
+  def media_attachments: () -> Array[untyped]
+
+  def payload: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessStatusUpdateService::Call::WhenOriginallyWithSilentMentions::LetDefinitions
+  def mentions: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessStatusUpdateService::Call::WhenOriginallyWithoutMediaAttachments::LetDefinitions
+  def payload: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessStatusUpdateService::Call::WhenTheStatusChangesAPollDespiteBeingNotExplicitlyMarkedAsUpdated::LetDefinitions
+  def status: () -> Status
+
+  def account: () -> Account
+
+  def expiration: () -> Time
+
+  def payload: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::ActivityPubProcessStatusUpdateService
+  def poll_option_json: (String, Integer) -> void
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessStatusUpdateService::Call::WhenOriginallyWithMentions::LetDefinitions
+  def mentions: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessStatusUpdateService::Call::WhenOriginallyWithoutAPoll::LetDefinitions
+  def payload: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessStatusUpdateService::Call::WhenTheStatusHasNotBeenExplicitlyEdited::LetDefinitions
+  def payload: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessStatusUpdateService::Call::WhenTheStatusHasNotBeenExplicitlyEditedAndFeaturesAPoll::LetDefinitions
+  def status: () -> Status
+
+  def account: () -> Account
+
+  def expiration: () -> Time
+
+  def payload: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessStatusUpdateService::Call::WithNoChangesAndOriginallyWithNoOrderedMediaAttachmentIds::LetDefinitions
+  def payload: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubProcessStatusUpdateService::Call::WithNoChangesAtAll::LetDefinitions
+  def payload: () -> Hash[untyped, untyped]
+end

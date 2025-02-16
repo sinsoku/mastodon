@@ -1,0 +1,5 @@
+class AnnualReport::TopStatuses
+  def generate: () -> void
+
+  def base_scope: () -> ActiveRecord::AssociationRelation
+end

@@ -1,0 +1,20 @@
+class Api::V1::Push::SubscriptionsController
+  def set_push_subscription: () -> Web::PushSubscription
+
+  def check_push_subscription: () -> nil
+
+  def update: () -> String
+
+  def data_params: () -> void
+
+  def destroy: () -> String
+
+  def destroy_web_push_subscriptions!: () -> void
+
+  def create: () -> String
+            | () -> nil
+
+  def subscription_params: () -> ActionController::Parameters
+
+  def show: () -> String
+end

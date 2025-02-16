@@ -1,0 +1,3 @@
+class Api::Web::PushSubscriptionsController
+  def destroy: () -> bool
+end

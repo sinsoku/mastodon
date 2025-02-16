@@ -1,0 +1,7 @@
+class AccountStat
+  def followers_count: () -> Integer
+
+  def following_count: () -> Integer
+
+  def statuses_count: () -> Integer
+end

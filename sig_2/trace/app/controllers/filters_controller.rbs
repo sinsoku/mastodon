@@ -1,0 +1,5 @@
+class FiltersController
+  def set_cache_headers: () -> Hash[untyped, untyped]
+
+  def index: () -> ActiveRecord::AssociationRelation
+end

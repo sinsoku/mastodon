@@ -1,0 +1,8 @@
+class Disputes::AppealsController
+  def set_strike: () -> AccountWarning
+
+  def create: () -> ActiveSupport::SafeBuffer
+            | () -> String
+
+  def appeal_params: () -> ActionController::Parameters
+end

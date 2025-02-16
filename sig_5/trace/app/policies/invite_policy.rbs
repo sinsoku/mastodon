@@ -1,0 +1,12 @@
+class InvitePolicy
+  def create?: () -> bool
+
+  def destroy?: () -> void
+              | () -> bool
+
+  def owner?: () -> void
+
+  def index?: () -> bool
+
+  def deactivate_all?: () -> bool
+end

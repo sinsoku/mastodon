@@ -1,0 +1,3 @@
+class SoftwareUpdate
+  def self.check_enabled?: () -> void
+end

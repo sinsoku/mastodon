@@ -1,0 +1,13 @@
+class ActivityPub::FetchRepliesService
+  def call: (Status, ActiveSupport::HashWithIndifferentAccess, ?allow_synchronous_requests: bool, ?request_id: nil) -> void
+          | (Status, String, ?allow_synchronous_requests: bool, ?request_id: nil) -> void
+
+  def collection_items: (ActiveSupport::HashWithIndifferentAccess) -> Array[untyped]
+                      | (String) -> Array[untyped]
+
+  def fetch_collection: (ActiveSupport::HashWithIndifferentAccess) -> ActiveSupport::HashWithIndifferentAccess
+                      | (String) -> Hash[untyped, untyped]
+                      | (Hash[untyped, untyped]) -> Hash[untyped, untyped]
+
+  def filtered_replies: () -> void
+end

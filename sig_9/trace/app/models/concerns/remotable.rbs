@@ -1,0 +1,20 @@
+module Remotable::ClassMethods
+  def remotable_attachment: (Symbol, Integer, ?suppress_errors: bool, ?download_on_assign: bool, ?attribute_name: nil) -> void
+                          | (Symbol, Integer, ?suppress_errors: bool, ?download_on_assign: bool, ?attribute_name: Symbol) -> void
+end
+
+class MediaAttachment
+  def remote_url=: (String) -> nil
+
+  def thumbnail_remote_url=: (nil) -> nil
+
+  def download_file!: (?nil) -> nil
+
+  def download_thumbnail!: (?nil) -> nil
+end
+
+class CustomEmoji
+  def image_remote_url=: (String) -> nil
+
+  def download_image!: (?String) -> nil
+end

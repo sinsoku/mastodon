@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::AfterUnallowDomainService::Call::WithAccountsForADomain::LetDefinitions
+  def account: () -> Account
+
+  def test_account: () -> Account
+
+  def service_double: () -> RSpec::Mocks::InstanceVerifyingDouble
+end

@@ -1,0 +1,16 @@
+class ActivityPub::Activity::Accept
+  def perform: () -> void
+
+  def relay_follow?: () -> void
+
+  def relay: () -> Relay
+           | () -> nil
+
+  def accept_follow_for_relay: () -> void
+
+  def accept_embedded_follow: () -> void
+
+  def target_uri: () -> void
+
+  def accept_follow!: (FollowRequest) -> void
+end

@@ -1,0 +1,16 @@
+class RemoteFollow
+  def initialize: (?Hash[untyped, untyped]) -> void
+
+  def normalize_acct: (String) -> String
+                    | (nil) -> nil
+
+  def valid?: () -> void
+
+  def fetch_template!: () -> void
+
+  def redirect_uri_template: () -> String
+
+  def acct_resource: () -> Webfinger::Response
+
+  def subscribe_address_for: (Account) -> void
+end

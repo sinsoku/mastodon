@@ -1,0 +1,17 @@
+class Announcement
+  def set_published: () -> Time
+
+  def mentions: () -> Array[untyped]
+
+  def statuses: () -> ActiveRecord::Relation
+
+  def tags: () -> Array[untyped]
+
+  def emojis: () -> Array[untyped]
+
+  def reactions: (?nil) -> void
+
+  def grouped_ordered_announcement_reactions: () -> ActiveRecord::AssociationRelation
+
+  def value_for_reaction_me_column: (nil) -> void
+end

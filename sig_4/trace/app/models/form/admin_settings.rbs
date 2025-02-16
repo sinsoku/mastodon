@@ -1,0 +1,17 @@
+class Form::AdminSettings
+  def theme: () -> String
+
+  def custom_css: () -> nil
+                | () -> String
+
+  def mascot: () -> SiteUpload
+
+  def save: () -> void
+
+  def status_page_url: () -> nil
+
+  def validate_site_uploads: () -> Array[untyped]
+
+  def typecast_value: (Symbol, String) -> void
+                    | (Symbol, nil) -> void
+end

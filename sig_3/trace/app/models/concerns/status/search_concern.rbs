@@ -1,0 +1,7 @@
+module Status::SearchConcern
+  def searchable_text: () -> void
+
+  def searchable_by: () -> Array[untyped]
+
+  def searchable_properties: () -> void
+end

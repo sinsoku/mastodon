@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::PreviewCardPolicy::LetDefinitions
+  def policy: () -> Class
+
+  def john: () -> Account
+
+  def admin: () -> Account
+end

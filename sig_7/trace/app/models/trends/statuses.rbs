@@ -1,0 +1,11 @@
+class Trends::Statuses
+  def request_review: () -> Array[untyped]
+
+  def register: (Status, ?Time) -> void
+
+  def eligible?: (Status) -> void
+
+  def refresh: (?Time) -> Integer
+
+  def key_prefix: () -> String
+end

@@ -1,0 +1,5 @@
+class TermsOfService
+  def published?: () -> void
+
+  def scope_for_notification: () -> void
+end

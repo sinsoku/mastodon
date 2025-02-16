@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::RESTInstanceSerializer::LetDefinitions
+  def serialization: () -> Hash[untyped, untyped]
+
+  def record: () -> InstancePresenter
+end

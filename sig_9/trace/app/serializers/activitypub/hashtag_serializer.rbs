@@ -1,0 +1,7 @@
+class ActivityPub::HashtagSerializer
+  def type: () -> String
+
+  def href: () -> String
+
+  def name: () -> String
+end

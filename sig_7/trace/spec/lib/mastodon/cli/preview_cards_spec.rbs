@@ -1,0 +1,21 @@
+module RSpec::ExampleGroups::MastodonCLIPreviewCards::LetDefinitions
+  def subject: () -> StringIO
+
+  def cli: () -> Mastodon::CLI::PreviewCards
+
+  def arguments: () -> Array[untyped]
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIPreviewCards::Remove::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLIPreviewCards::Remove::WithRelevantPreviewCards::WithTheLinkOption::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIPreviewCards::Remove::WithRelevantPreviewCards::WithTheDaysOption::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end

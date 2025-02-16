@@ -1,0 +1,8 @@
+class REST::ReportSerializer
+  def id: () -> String
+
+  def status_ids: () -> Array[untyped]
+
+  def rule_ids: () -> nil
+              | () -> Array[untyped]
+end

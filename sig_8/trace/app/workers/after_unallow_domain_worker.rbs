@@ -1,0 +1,3 @@
+class AfterUnallowDomainWorker
+  def perform: (String) -> void
+end

@@ -1,0 +1,12 @@
+class ContentRetentionPolicy
+  def self.current: () -> void
+
+  def content_cache_retention_period: () -> void
+
+  def retention_period: (nil) -> void
+                      | (Integer) -> void
+
+  def media_cache_retention_period: () -> void
+
+  def backups_retention_period: () -> void
+end

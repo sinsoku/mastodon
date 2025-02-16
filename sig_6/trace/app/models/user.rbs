@@ -1,0 +1,87 @@
+class User
+  def sanitize_role: () -> nil
+
+  def role: () -> UserRole
+
+  def password_required?: () -> bool
+
+  def external?: () -> void
+               | () -> bool
+
+  def invite_text_required?: () -> bool
+
+  def confirmed?: () -> bool
+
+  def validate_email_dns?: () -> bool
+
+  def self.skip_mx_check?: () -> bool
+
+  def validate_role_elevation: () -> nil
+
+  def set_approved: () -> bool
+
+  def sign_up_from_ip_requires_approval?: () -> void
+                                        | () -> bool
+
+  def sign_up_email_requires_approval?: () -> void
+                                      | () -> bool
+
+  def open_registrations?: () -> void
+
+  def send_pending_devise_notifications: () -> Array[untyped]
+
+  def pending_devise_notifications: () -> Array[untyped]
+
+  def trigger_webhooks: () -> String
+
+  def activate_session: (ActionDispatch::Request) -> void
+                      | (ActionDispatch::Request) -> String
+
+  def active_for_authentication?: () -> bool
+
+  def functional?: () -> void
+                 | () -> bool
+
+  def functional_or_moved?: () -> void
+
+  def invited?: () -> void
+
+  def web_push_subscription: (SessionActivation) -> void
+
+  def can?: (*untyped, **untyped) -> void
+
+  def signed_in_recently?: () -> void
+
+  def mark_email_as_confirmed!: () -> void
+
+  def wrap_email_confirmation: () -> void
+
+  def grant_approval_on_confirmation?: () -> void
+
+  def valid_invitation?: () -> void
+
+  def pending?: () -> bool
+
+  def two_factor_enabled?: () -> void
+
+  def external_or_valid_password?: (String) -> void
+
+  def webauthn_enabled?: () -> bool
+
+  def update_sign_in!: (?new_sign_in: bool) -> void
+
+  def prepare_returning_user!: () -> void
+
+  def needs_feed_update?: () -> void
+
+  def regenerate_feed!: () -> void
+
+  def send_devise_notification: (Symbol, *nil, **String) -> void
+                              | (Symbol, *String | Hash[untyped, untyped], **nil) -> void
+
+  def render_and_send_devise_message: (Symbol, *untyped, **untyped) -> void
+
+  def invite_code=: (String) -> void
+
+  def otp_enabled?: () -> void
+end

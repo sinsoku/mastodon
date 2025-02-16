@@ -1,0 +1,45 @@
+module RSpec::ExampleGroups::DomainBlocks::GETApiV1DomainBlocks::LetDefinitions
+  def blocked_domains: () -> Array[untyped]
+
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::DomainBlocks::LetDefinitions
+  def user: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::DomainBlocks::GETApiV1DomainBlocks::WithLimitParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::DomainBlocks::POSTApiV1DomainBlocks::LetDefinitions
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::DomainBlocks::POSTApiV1DomainBlocks::WhenNoDomainNameIsGiven::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::DomainBlocks::POSTApiV1DomainBlocks::WhenTheGivenDomainNameIsInvalid::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::DomainBlocks::DELETEApiV1DomainBlocks::LetDefinitions
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::DomainBlocks::DELETEApiV1DomainBlocks::WhenTheGivenDomainNameIsNotBlocked::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end

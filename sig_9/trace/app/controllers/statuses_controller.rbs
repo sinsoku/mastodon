@@ -1,0 +1,8 @@
+class StatusesController
+  def set_status: () -> ActiveSupport::SafeBuffer
+                | () -> Status
+
+  def embed: () -> ActiveSupport::SafeBuffer
+
+  def set_link_headers: () -> String
+end

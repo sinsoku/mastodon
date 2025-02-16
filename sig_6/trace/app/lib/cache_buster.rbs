@@ -1,0 +1,9 @@
+class CacheBuster
+  def initialize: (?Hash[untyped, untyped]) -> void
+
+  def bust: (String) -> void
+
+  def request_pool: () -> RequestPool
+
+  def build_request: (String, HTTP::Client) -> Request
+end

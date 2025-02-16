@@ -1,0 +1,4 @@
+class ResolveAccountWorker
+  def perform: (nil) -> void
+             | (String) -> void
+end

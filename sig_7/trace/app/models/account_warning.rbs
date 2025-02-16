@@ -1,0 +1,5 @@
+class AccountWarning
+  def statuses: () -> ActiveRecord::Relation
+
+  def overruled?: () -> void
+end

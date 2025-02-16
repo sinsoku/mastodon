@@ -1,0 +1,3 @@
+class CustomFilterStatus
+  def validate_status_access: () -> nil
+end

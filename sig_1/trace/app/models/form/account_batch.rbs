@@ -1,0 +1,19 @@
+class Form::AccountBatch
+  def save: () -> void
+
+  def approve!: () -> void
+
+  def accounts: () -> ActiveRecord::Relation
+
+  def select_all_matching?: () -> void
+
+  def approve_account: (Account) -> void
+
+  def reject!: () -> void
+
+  def reject_account: (Account) -> void
+
+  def suspend!: () -> void
+
+  def suspend_account: (Account) -> void
+end

@@ -1,0 +1,19 @@
+class ConnectionPool::SharedTimedStack
+  def initialize: (?Integer) -> void
+
+  def pop: (String, ?Integer) -> void
+
+  def current_time: () -> Float
+
+  def try_create: (String) -> RequestPool::Connection
+
+  def push: (RequestPool::Connection) -> void
+
+  def store_connection: (RequestPool::Connection) -> void
+
+  def fetch_preferred_connection: (String) -> void
+
+  def size: () -> Integer
+
+  def flush: () -> Array[untyped]
+end

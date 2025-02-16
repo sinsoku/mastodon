@@ -1,0 +1,3 @@
+class UnavailableDomain
+  def reset_cache!: () -> bool
+end

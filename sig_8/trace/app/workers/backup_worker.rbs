@@ -1,0 +1,3 @@
+class BackupWorker
+  def perform: (Integer) -> void
+end

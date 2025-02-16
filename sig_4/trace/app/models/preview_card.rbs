@@ -1,0 +1,7 @@
+class PreviewCard
+  def extract_dimensions: () -> Integer
+
+  def local?: () -> bool
+
+  def history: () -> Trends::History
+end

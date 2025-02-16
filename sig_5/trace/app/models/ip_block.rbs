@@ -1,0 +1,5 @@
+class IpBlock
+  def self.blocked?: (String) -> void
+
+  def self.blocked_ips_map: () -> FastIpMap
+end

@@ -1,0 +1,13 @@
+class TranslationService::LibreTranslate
+  def initialize: (String, String) -> void
+
+  def translate: (Array[untyped], String, String) -> Array[untyped]
+               | (Array[untyped], nil, String) -> Array[untyped]
+
+  def request: (Symbol, String, **untyped) -> void
+
+  def transform_response: (String, String) -> void
+                        | (String, nil) -> void
+
+  def languages: () -> void
+end

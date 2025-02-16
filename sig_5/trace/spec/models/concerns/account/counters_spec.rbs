@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::AccountCounters::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AccountCounters::DecrementCount::LetDefinitions
+  def decrement_by: () -> Integer
+end
+
+module RSpec::ExampleGroups::AccountCounters::IncrementCount::LetDefinitions
+  def increment_by: () -> Integer
+end

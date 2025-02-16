@@ -1,0 +1,15 @@
+module Trends
+  def self.request_review!: () -> void
+
+  def self.skip_review?: () -> void
+
+  def self.enabled?: () -> bool
+
+  def self.links: () -> Trends::Links
+
+  def self.tags: () -> Trends::Tags
+
+  def self.statuses: () -> Trends::Statuses
+
+  def self.refresh!: () -> void
+end

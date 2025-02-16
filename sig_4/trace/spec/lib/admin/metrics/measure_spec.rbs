@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::AdminMetricsMeasure::Retrieve::LetDefinitions
+  def subject: () -> Array[untyped]
+
+  def reports: () -> Array[untyped]
+
+  def start_at: () -> ActiveSupport::TimeWithZone
+
+  def end_at: () -> Time
+
+  def params: () -> ActionController::Parameters
+end

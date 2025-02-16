@@ -1,0 +1,15 @@
+class Api::V1::ConversationsController
+  def index: () -> String
+
+  def paginated_conversations: () -> Array[untyped]
+
+  def next_path: () -> void
+
+  def records_continue?: () -> void
+
+  def pagination_max_id: () -> void
+
+  def prev_path: () -> void
+
+  def pagination_since_id: () -> void
+end

@@ -1,0 +1,16 @@
+class Paperclip::ResponseWithLimitAdapter
+  def initialize: (ResponseWithLimit, ?Hash[untyped, untyped]) -> void
+
+  def cache_current_values: () -> void
+
+  def truncated_filename: () -> String
+
+  def filename_from_content_disposition: () -> nil
+                                       | () -> String
+
+  def filename_from_path: () -> String
+                        | () -> nil
+
+  def copy_to_tempfile: (ResponseWithLimit) -> Paperclip::Tempfile
+                      | (ResponseWithLimit) -> nil
+end

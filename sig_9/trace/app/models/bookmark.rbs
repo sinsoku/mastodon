@@ -1,0 +1,3 @@
+class Bookmark
+  def invalidate_cleanup_info: () -> nil
+end

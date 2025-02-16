@@ -1,0 +1,14 @@
+module FormattingHelper
+  def account_bio_format: (Account) -> void
+
+  def html_aware_format: (String, bool, ?Hash[untyped, untyped]) -> void
+
+  def status_content_format: (Status) -> void
+                           | (StatusEdit) -> void
+
+  def extract_status_plain_text: (Status) -> void
+
+  def linkify: (String, ?Hash[untyped, untyped]) -> void
+
+  def self.extract_status_plain_text: (Status) -> void
+end

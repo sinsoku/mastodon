@@ -1,0 +1,16 @@
+class Api::V1::Timelines::LinkController
+  def set_preview_card: () -> nil
+                      | () -> PreviewCard
+
+  def set_statuses: () -> Array[untyped]
+
+  def link_timeline_statuses: () -> void
+
+  def link_feed: () -> LinkFeed
+
+  def show: () -> String
+
+  def next_path: () -> void
+
+  def prev_path: () -> void
+end

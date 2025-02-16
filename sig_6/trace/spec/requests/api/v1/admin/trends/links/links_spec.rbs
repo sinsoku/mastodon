@@ -1,0 +1,45 @@
+module RSpec::ExampleGroups::Links::POSTApiV1AdminTrendsLinksIdReject::LetDefinitions
+  def subject: () -> Integer
+
+  def preview_card: () -> PreviewCard
+end
+
+module RSpec::ExampleGroups::Links::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def role: () -> UserRole
+
+  def scopes: () -> String
+end
+
+class RSpec::ExampleGroups::Links::POSTApiV1AdminTrendsLinksIdReject
+  def change_link_trendable: () -> void
+end
+
+module RSpec::ExampleGroups::Links::POSTApiV1AdminTrendsLinksIdReject::WithoutAnAuthorizationHeader::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::Links::POSTApiV1AdminTrendsLinksIdApprove
+  def change_link_trendable_to_true: () -> void
+
+  def expects_correct_link_data: () -> void
+end
+
+module RSpec::ExampleGroups::Links::POSTApiV1AdminTrendsLinksIdApprove::LetDefinitions
+  def preview_card: () -> PreviewCard
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::Links::POSTApiV1AdminTrendsLinksIdApprove::WithoutAnAuthorizationHeader::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Links::GETApiV1AdminTrendsLinks::LetDefinitions
+  def subject: () -> Integer
+end

@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::I18n::PluralizingLocaleTranslations::LetDefinitions
+  def subject: () -> String
+end

@@ -1,0 +1,32 @@
+class Api::V1::NotificationsController
+  def clear: () -> String
+
+  def show: () -> String
+          | () -> nil
+
+  def dismiss: () -> String
+             | () -> nil
+
+  def index: () -> String
+
+  def load_notifications: () -> Array[untyped]
+
+  def browserable_account_notifications: () -> ActiveRecord::AssociationRelation
+
+  def browserable_params: () -> ActionController::Parameters
+
+  def target_statuses_from_notifications: () -> void
+
+  def next_path: () -> void
+
+  def pagination_collection: () -> Array[untyped]
+
+  def pagination_params: (Hash[untyped, untyped]) -> void
+
+  def prev_path: () -> void
+
+  def unread_count: () -> String
+
+  def notification_marker: () -> nil
+                         | () -> Marker
+end

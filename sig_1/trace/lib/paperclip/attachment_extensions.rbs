@@ -1,0 +1,15 @@
+module Paperclip::AttachmentExtensions
+  def save: () -> bool
+
+  def assign_attributes: () -> void
+
+  def storage_schema_version: () -> Integer
+
+  def meta: () -> nil
+
+  def process_style?: (Symbol, Array[untyped]) -> void
+
+  def post_process_style: (Symbol, Paperclip::Style) -> void
+
+  def default_url: (?Symbol) -> void
+end

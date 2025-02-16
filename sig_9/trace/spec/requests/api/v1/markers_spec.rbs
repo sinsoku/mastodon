@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::APIMarkers::LetDefinitions
+  def user: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end

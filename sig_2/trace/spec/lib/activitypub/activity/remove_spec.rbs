@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::ActivityPubActivityRemove::LetDefinitions
+  def sender: () -> Account
+
+  def status: () -> Status
+
+  def json: () -> ActiveSupport::HashWithIndifferentAccess
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityRemove::Perform::LetDefinitions
+  def subject: () -> ActivityPub::Activity::Remove
+end

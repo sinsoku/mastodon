@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::AuthorizeFollowService::Local::LetDefinitions
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::AuthorizeFollowService::LetDefinitions
+  def sender: () -> Account
+
+  def subject: () -> AuthorizeFollowService
+end
+
+module RSpec::ExampleGroups::AuthorizeFollowService::RemoteActivityPub::LetDefinitions
+  def bob: () -> Account
+end

@@ -1,0 +1,7 @@
+module ChallengableConcern
+  def challenge_passed?: () -> void
+
+  def challenge_params: () -> ActionController::Parameters
+
+  def render_challenge: () -> void
+end

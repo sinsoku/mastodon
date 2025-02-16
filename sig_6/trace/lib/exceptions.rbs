@@ -1,0 +1,3 @@
+class Mastodon::UnexpectedResponseError
+  def initialize: (?nil) -> void
+end

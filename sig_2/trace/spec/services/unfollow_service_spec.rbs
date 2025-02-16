@@ -1,0 +1,17 @@
+module RSpec::ExampleGroups::UnfollowService::RemoteActivityPubReverse::LetDefinitions
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::UnfollowService::LetDefinitions
+  def sender: () -> Account
+
+  def subject: () -> UnfollowService
+end
+
+module RSpec::ExampleGroups::UnfollowService::Local::LetDefinitions
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::UnfollowService::RemoteActivityPub::LetDefinitions
+  def bob: () -> Account
+end

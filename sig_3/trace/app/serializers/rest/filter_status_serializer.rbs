@@ -1,0 +1,5 @@
+class REST::FilterStatusSerializer
+  def id: () -> String
+
+  def status_id: () -> String
+end

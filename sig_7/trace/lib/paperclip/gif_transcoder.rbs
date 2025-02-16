@@ -1,0 +1,15 @@
+class Paperclip::GifTranscoder
+  def make: () -> void
+
+  def needs_convert?: () -> void
+end
+
+class GifReader
+  def self.animated?: (String) -> void
+
+  def initialize: (String, ?Integer) -> void
+
+  def skip_sub_blocks!: (File) -> void
+
+  def skip_extension_block!: (File) -> void
+end

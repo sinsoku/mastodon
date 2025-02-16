@@ -1,0 +1,33 @@
+module RSpec::ExampleGroups::FeaturedTags::DELETEApiV1FeaturedTags::LetDefinitions
+  def featured_tag: () -> FeaturedTag
+
+  def id: () -> Integer
+end
+
+module RSpec::ExampleGroups::FeaturedTags::LetDefinitions
+  def user: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::FeaturedTags::DELETEApiV1FeaturedTags::WhenDeletingAFeaturedTagOfAnotherUser::LetDefinitions
+  def other_user_featured_tag: () -> FeaturedTag
+
+  def id: () -> Integer
+end
+
+module RSpec::ExampleGroups::FeaturedTags::POSTApiV1FeaturedTags::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::FeaturedTags::POSTApiV1FeaturedTags::WhenProvidedTagNameIsInvalid::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::FeaturedTags::GETApiV1FeaturedTags::WhenTheRequestingUserHasFeaturedTags::LetDefinitions
+  def user_featured_tags: () -> Array[untyped]
+end

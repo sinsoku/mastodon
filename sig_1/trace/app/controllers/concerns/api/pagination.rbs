@@ -1,0 +1,14 @@
+module Api::Pagination
+  def insert_pagination_headers: () -> nil
+                               | () -> String
+
+  def set_pagination_headers: (?nil, ?nil) -> void
+                            | (?nil, ?String) -> void
+                            | (?String, ?String) -> void
+
+  def pagination_since_id: () -> void
+
+  def pagination_params: (Hash[untyped, untyped]) -> void
+
+  def pagination_max_id: () -> void
+end

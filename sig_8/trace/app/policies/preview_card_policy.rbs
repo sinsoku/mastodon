@@ -1,0 +1,5 @@
+class PreviewCardPolicy
+  def index?: () -> bool
+
+  def review?: () -> bool
+end

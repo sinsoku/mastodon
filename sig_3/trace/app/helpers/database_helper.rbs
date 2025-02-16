@@ -1,0 +1,9 @@
+module DatabaseHelper
+  def with_primary: () -> void
+
+  def replica_enabled?: () -> void
+
+  def with_read_replica: () -> void
+                       | () -> DomainBlockPreviewPresenter
+                       | () -> nil
+end

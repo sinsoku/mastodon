@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::Confirmations::GETApiV1EmailsCheckConfirmation::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Confirmations::POSTApiV1EmailsConfirmations::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Suggestions::GETApiV1Suggestions::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Suggestions::DELETEApiV1SuggestionsId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Endorsements::GETApiV1Endorsements::WithWrongScope::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end

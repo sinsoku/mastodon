@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::SecurityKeyOptions::GETAuthSessionsSecurityKeyOptions::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::SecurityKeyOptions::GETAuthSessionsSecurityKeyOptions::WithWebAuthnAndOTPEnabledAsSecondFactor::LetDefinitions
+  def public_key_credential: () -> WebAuthn::PublicKeyCredentialWithAttestation
+
+  def fake_client: () -> WebAuthn::FakeClient
+
+  def domain: () -> String
+end

@@ -1,0 +1,21 @@
+module RSpec::ExampleGroups::BootstrapTimelineService::WhenTheNewUserHasRegisteredFromAnInvite::LetDefinitions
+  def service: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def new_user: () -> User
+
+  def invite: () -> Invite
+
+  def inviter: () -> User
+end
+
+module RSpec::ExampleGroups::BootstrapTimelineService::LetDefinitions
+  def subject: () -> BootstrapTimelineService
+end
+
+module RSpec::ExampleGroups::BootstrapTimelineService::WhenTheNewUserHasRegisteredFromAnInvite::WhenTheInviteHasAutoFollowEnabled::LetDefinitions
+  def autofollow: () -> bool
+end
+
+module RSpec::ExampleGroups::BootstrapTimelineService::WhenTheNewUserHasRegisteredFromAnInvite::WhenTheInviteDoesNotHaveAutoFollowEnable::LetDefinitions
+  def autofollow: () -> bool
+end

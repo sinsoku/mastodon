@@ -1,0 +1,3 @@
+module Lockable
+  def with_redis_lock: (String, ?autorelease: ActiveSupport::Duration, ?raise_on_failure: bool) -> void
+end

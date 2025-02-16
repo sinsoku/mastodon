@@ -1,0 +1,7 @@
+class ExistingUsernameValidator
+  def validate_each: (Form::AdminSettings, Symbol, String) -> void
+
+  def usernames_with_no_accounts: () -> Array[untyped]
+
+  def usernames_and_domains: () -> Array[untyped]
+end

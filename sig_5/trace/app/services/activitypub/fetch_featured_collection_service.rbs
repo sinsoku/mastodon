@@ -1,0 +1,13 @@
+class ActivityPub::FetchFeaturedCollectionService
+  def call: (Account, **bool | String) -> void
+
+  def local_follower: () -> void
+
+  def collection_items: (Hash[untyped, untyped]) -> void
+
+  def process_items: (Array[untyped]) -> void
+
+  def process_note_items: (Array[untyped]) -> void
+
+  def process_hashtag_items: (Array[untyped]) -> void
+end

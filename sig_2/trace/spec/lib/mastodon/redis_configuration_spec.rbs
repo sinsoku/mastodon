@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::MastodonRedisConfiguration::Base::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonRedisConfiguration::LetDefinitions
+  def redis_environment: () -> Mastodon::RedisConfiguration
+end
+
+module RSpec::ExampleGroups::MastodonRedisConfiguration::Sidekiq::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonRedisConfiguration::Cache::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+end

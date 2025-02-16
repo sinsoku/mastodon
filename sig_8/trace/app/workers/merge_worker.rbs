@@ -1,0 +1,5 @@
+class MergeWorker
+  def perform: (Integer, Integer, ?String) -> void
+
+  def merge_into_home!: (Integer) -> void
+end

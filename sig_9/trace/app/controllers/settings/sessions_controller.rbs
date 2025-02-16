@@ -1,0 +1,6 @@
+class Settings::SessionsController
+  def set_session: () -> SessionActivation
+                 | () -> nil
+
+  def destroy: () -> String
+end

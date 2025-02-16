@@ -1,0 +1,15 @@
+class BulkImportService
+  def call: (BulkImport) -> void
+
+  def import_domain_blocks!: () -> void
+
+  def import_mutes!: () -> void
+
+  def extract_rows_by_acct: () -> Hash[untyped, untyped]
+
+  def import_follows!: () -> void
+
+  def import_blocks!: () -> void
+
+  def import_bookmarks!: () -> void
+end

@@ -1,0 +1,49 @@
+module RSpec::ExampleGroups::ActivityPubActivityUndo::Perform::WithAnnounce::LetDefinitions
+  def status: () -> Status
+
+  def object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityUndo::LetDefinitions
+  def sender: () -> Account
+
+  def subject: () -> ActivityPub::Activity::Undo
+
+  def json: () -> ActiveSupport::HashWithIndifferentAccess
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityUndo::Perform::WithAnnounce::WithOnlyObjectUri::LetDefinitions
+  def object_json: () -> String
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityUndo::Perform::WithAccept::LetDefinitions
+  def recipient: () -> Account
+
+  def object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityUndo::Perform::WithBlock::LetDefinitions
+  def recipient: () -> Account
+
+  def object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityUndo::Perform::WithBlock::WithOnlyObjectUri::LetDefinitions
+  def object_json: () -> String
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityUndo::Perform::WithFollow::LetDefinitions
+  def recipient: () -> Account
+
+  def object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityUndo::Perform::WithFollow::WithOnlyObjectUri::LetDefinitions
+  def object_json: () -> String
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityUndo::Perform::WithLike::LetDefinitions
+  def status: () -> Status
+
+  def object_json: () -> Hash[untyped, untyped]
+end

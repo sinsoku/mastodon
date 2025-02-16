@@ -1,0 +1,5 @@
+class Import::RowWorker
+  def perform: (Integer) -> void
+
+  def mark_as_processed!: (BulkImportRow, bool) -> void
+end

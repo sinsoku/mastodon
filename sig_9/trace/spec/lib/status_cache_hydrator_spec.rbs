@@ -1,0 +1,107 @@
+module RSpec::ExampleGroups::StatusCacheHydrator::Hydrate::WhenCacheIsCold::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::StatusCacheHydrator::Hydrate::WhenCacheIsCold::BehavesLikeSharedBehavior::WhenHandlingANewStatusWithOwnPoll::LetDefinitions
+  def status: () -> Status
+
+  def poll: () -> Poll
+end
+
+module RSpec::ExampleGroups::StatusCacheHydrator::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::StatusCacheHydrator::Hydrate::LetDefinitions
+  def compare_to_hash: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::StatusCacheHydrator::Hydrate::WhenCacheIsCold::BehavesLikeSharedBehavior::WhenHandlingAReblog::LetDefinitions
+  def reblog: () -> Status
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusCacheHydrator::Hydrate::WhenCacheIsCold::BehavesLikeSharedBehavior::WhenHandlingAReblog::WhenItHasBeenFollowedTags::LetDefinitions
+  def followed_tag: () -> Tag
+end
+
+module RSpec::ExampleGroups::StatusCacheHydrator::Hydrate::WhenCacheIsCold::BehavesLikeSharedBehavior::WhenHandlingAReblog::WhenItMatchesAccountFilters::LetDefinitions
+  def reblog: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusCacheHydrator::Hydrate::WhenCacheIsCold::BehavesLikeSharedBehavior::WhenHandlingAReblog::WhenItHasAPollAuthoredByTheUser::LetDefinitions
+  def reblog: () -> Status
+
+  def poll: () -> Poll
+end
+
+module RSpec::ExampleGroups::StatusCacheHydrator::Hydrate::WhenCacheIsCold::BehavesLikeSharedBehavior::WhenHandlingAReblog::WhenItHasBeenPinned::LetDefinitions
+  def reblog: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusCacheHydrator::Hydrate::WhenCacheIsCold::BehavesLikeSharedBehavior::WhenHandlingAReblog::WhenItHasBeenVotedIn::LetDefinitions
+  def poll: () -> Poll
+
+  def reblog: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusCacheHydrator::Hydrate::WhenCacheIsCold::BehavesLikeSharedBehavior::WhenHandlingANewStatus::LetDefinitions
+  def status: () -> Status
+
+  def poll: () -> Poll
+end
+
+module RSpec::ExampleGroups::StatusCacheHydrator::Hydrate::WhenCacheIsCold::BehavesLikeSharedBehavior::WhenHandlingAFilteredStatus::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusCacheHydrator::Hydrate::WhenCacheIsWarm::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::StatusCacheHydrator::Hydrate::WhenCacheIsWarm::BehavesLikeSharedBehavior::WhenHandlingAFilteredStatus::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusCacheHydrator::Hydrate::WhenCacheIsWarm::BehavesLikeSharedBehavior::WhenHandlingAReblog::WhenItHasBeenVotedIn::LetDefinitions
+  def poll: () -> Poll
+
+  def reblog: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusCacheHydrator::Hydrate::WhenCacheIsWarm::BehavesLikeSharedBehavior::WhenHandlingAReblog::LetDefinitions
+  def status: () -> Status
+
+  def reblog: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusCacheHydrator::Hydrate::WhenCacheIsWarm::BehavesLikeSharedBehavior::WhenHandlingAReblog::WhenItHasAPollAuthoredByTheUser::LetDefinitions
+  def reblog: () -> Status
+
+  def poll: () -> Poll
+end
+
+module RSpec::ExampleGroups::StatusCacheHydrator::Hydrate::WhenCacheIsWarm::BehavesLikeSharedBehavior::WhenHandlingAReblog::WhenItMatchesAccountFilters::LetDefinitions
+  def reblog: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusCacheHydrator::Hydrate::WhenCacheIsWarm::BehavesLikeSharedBehavior::WhenHandlingAReblog::WhenItHasBeenPinned::LetDefinitions
+  def reblog: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusCacheHydrator::Hydrate::WhenCacheIsWarm::BehavesLikeSharedBehavior::WhenHandlingAReblog::WhenItHasBeenFollowedTags::LetDefinitions
+  def followed_tag: () -> Tag
+end
+
+module RSpec::ExampleGroups::StatusCacheHydrator::Hydrate::WhenCacheIsWarm::BehavesLikeSharedBehavior::WhenHandlingANewStatus::LetDefinitions
+  def status: () -> Status
+
+  def poll: () -> Poll
+end
+
+module RSpec::ExampleGroups::StatusCacheHydrator::Hydrate::WhenCacheIsWarm::BehavesLikeSharedBehavior::WhenHandlingANewStatusWithOwnPoll::LetDefinitions
+  def status: () -> Status
+
+  def poll: () -> Poll
+end

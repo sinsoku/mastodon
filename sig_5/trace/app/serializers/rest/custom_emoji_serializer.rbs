@@ -1,0 +1,9 @@
+class REST::CustomEmojiSerializer
+  def url: () -> String
+
+  def static_url: () -> String
+
+  def category_loaded?: () -> bool
+
+  def category: () -> String
+end

@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::Block::Callbacks::SettingAURI::WhenURIIsBlank::LetDefinitions
+  def subject: () -> Follow
+end
+
+module RSpec::ExampleGroups::Block::Callbacks::SettingAURI::WhenURIExists::LetDefinitions
+  def subject: () -> Block
+end

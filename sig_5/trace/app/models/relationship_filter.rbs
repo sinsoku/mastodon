@@ -1,0 +1,14 @@
+class RelationshipFilter
+  def initialize: (Account, ActionController::Parameters) -> void
+
+  def set_defaults!: () -> void
+
+  def results: () -> ActiveRecord::AssociationRelation
+
+  def scope_for: (String, String) -> ActiveRecord::AssociationRelation
+               | (String, String) -> ActiveRecord::Relation
+
+  def relationship_scope: (String) -> void
+
+  def order_scope: (String) -> void
+end

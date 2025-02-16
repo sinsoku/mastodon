@@ -1,0 +1,81 @@
+module RSpec::ExampleGroups::CanonicalEmailBlocks::GETApiV1AdminCanonicalEmailBlocks::LetDefinitions
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def scopes: () -> String
+
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::GETApiV1AdminCanonicalEmailBlocks::WhenThereAreCanonicalEmailBlocks::LetDefinitions
+  def canonical_email_blocks: () -> Array[untyped]
+
+  def expected_email_hashes: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::GETApiV1AdminCanonicalEmailBlocks::WhenThereAreCanonicalEmailBlocks::WithSinceIdParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::GETApiV1AdminCanonicalEmailBlocks::WhenThereAreCanonicalEmailBlocks::WithLimitParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::GETApiV1AdminCanonicalEmailBlocks::WhenThereAreCanonicalEmailBlocks::WithMaxIdParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::GETApiV1AdminCanonicalEmailBlocksId::LetDefinitions
+  def canonical_email_block: () -> CanonicalEmailBlock
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::POSTApiV1AdminCanonicalEmailBlocksTest::LetDefinitions
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::POSTApiV1AdminCanonicalEmailBlocksTest::WhenTheRequiredEmailParamIsNotProvided::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::POSTApiV1AdminCanonicalEmailBlocksTest::WhenTheRequiredEmailParamIsProvided::WhenThereIsAMatchingCanonicalEmailBlock::LetDefinitions
+  def canonical_email_block: () -> CanonicalEmailBlock
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::DELETEApiV1AdminCanonicalEmailBlocksId::LetDefinitions
+  def canonical_email_block: () -> CanonicalEmailBlock
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::POSTApiV1AdminCanonicalEmailBlocks::LetDefinitions
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+
+  def canonical_email_block: () -> CanonicalEmailBlock
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::POSTApiV1AdminCanonicalEmailBlocks::WhenBothEmailAndCanonicalEmailHashParamsAreProvided::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::POSTApiV1AdminCanonicalEmailBlocks::WhenTheCanonicalEmailHashParamIsProvidedInsteadOfEmail::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::POSTApiV1AdminCanonicalEmailBlocks::WhenTheRequiredEmailParamIsNotProvided::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end

@@ -1,0 +1,3 @@
+class REST::Admin::DomainAllowSerializer
+  def id: () -> String
+end

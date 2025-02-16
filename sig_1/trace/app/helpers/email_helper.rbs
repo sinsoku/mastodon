@@ -1,0 +1,8 @@
+module EmailHelper
+  def self.included: (Class) -> Class
+
+  def email_to_canonical_email_hash: (String) -> void
+                                   | (String) -> String
+
+  def email_to_canonical_email: (String) -> void
+end

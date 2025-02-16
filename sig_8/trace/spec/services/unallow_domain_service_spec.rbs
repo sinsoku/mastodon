@@ -1,0 +1,23 @@
+module RSpec::ExampleGroups::UnallowDomainService::LetDefinitions
+  def bad_account: () -> Account
+
+  def bad_domain: () -> String
+
+  def bad_status_harassment: () -> Status
+
+  def bad_status_mean: () -> Status
+
+  def bad_attachment: () -> MediaAttachment
+
+  def already_banned_account: () -> Account
+
+  def domain_allow: () -> DomainAllow
+
+  def subject: () -> UnallowDomainService
+end
+
+class RSpec::ExampleGroups::UnallowDomainService
+  def bad_domain_account_exists: () -> void
+
+  def bad_domain_allowed: () -> void
+end

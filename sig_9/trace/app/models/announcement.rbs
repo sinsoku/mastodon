@@ -1,0 +1,21 @@
+class Announcement
+  def set_published: () -> Time
+                   | () -> nil
+
+  def statuses: () -> ActiveRecord::Relation
+              | () -> Array[untyped]
+
+  def self.coalesced_chronology_timestamps: () -> Arel::Nodes::SqlLiteral
+
+  def unpublish!: () -> void
+
+  def reactions: (?nil) -> Array[untyped]
+               | (?Account) -> Array[untyped]
+
+  def grouped_ordered_announcement_reactions: () -> ActiveRecord::AssociationRelation
+
+  def value_for_reaction_me_column: (nil) -> void
+                                  | (Account) -> void
+
+  def publish!: () -> void
+end

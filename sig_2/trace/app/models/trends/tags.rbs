@@ -1,0 +1,3 @@
+class Trends::Tags
+  def register: (Status, ?Time) -> void
+end

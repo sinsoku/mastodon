@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::ImporterTagsIndexImporter::Import::LetDefinitions
+  def importer: () -> Importer::TagsIndexImporter
+
+  def pool: () -> Concurrent::FixedThreadPool
+end

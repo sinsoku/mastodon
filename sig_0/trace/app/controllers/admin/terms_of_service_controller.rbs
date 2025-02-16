@@ -1,0 +1,3 @@
+class Admin::TermsOfServiceController
+  def index: () -> nil
+end

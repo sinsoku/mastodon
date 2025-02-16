@@ -1,0 +1,3 @@
+class DomainAllowPolicy
+  def create?: () -> bool
+end

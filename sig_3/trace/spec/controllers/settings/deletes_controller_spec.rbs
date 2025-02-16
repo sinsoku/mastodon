@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::SettingsDeletesController::GETShow::WhenSignedIn::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::SettingsDeletesController::GETShow::WhenSignedIn::WhenSuspended::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::SettingsDeletesController::DELETEDestroy::WhenSignedIn::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::SettingsDeletesController::DELETEDestroy::WhenSignedIn::WithCorrectPassword::WhenSuspended::LetDefinitions
+  def user: () -> User
+end

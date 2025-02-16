@@ -1,0 +1,45 @@
+class InstancePresenter
+  def domain: () -> void
+            | () -> String
+
+  def mascot: () -> nil
+
+  def source_url: () -> void
+                | () -> String
+
+  def title: () -> void
+           | () -> String
+
+  def version: () -> void
+             | () -> String
+
+  def favicon: () -> nil
+
+  def app_icon: () -> nil
+
+  def thumbnail: () -> nil
+
+  def description: () -> String
+
+  def active_user_count: (?Integer) -> void
+
+  def languages: () -> Array[untyped]
+
+  def status_page_url: () -> void
+
+  def contact: () -> InstancePresenter::ContactPresenter
+
+  def rules: () -> ActiveRecord::Relation
+
+  def user_count: () -> void
+
+  def status_count: () -> void
+
+  def domain_count: () -> void
+end
+
+class InstancePresenter::ContactPresenter
+  def email: () -> String
+
+  def account: () -> nil
+end

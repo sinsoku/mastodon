@@ -1,0 +1,31 @@
+class MediaAttachment
+  def self.has_attached_file: (Symbol, ?Hash[untyped, untyped]) -> void
+end
+
+class CustomEmoji
+  def self.has_attached_file: (Symbol, ?Hash[untyped, untyped]) -> void
+end
+
+class PreviewCardProvider
+  def self.has_attached_file: (Symbol, ?Hash[untyped, untyped]) -> void
+end
+
+class SiteUpload
+  def self.has_attached_file: (Symbol, ?Hash[untyped, untyped]) -> void
+end
+
+module Attachmentable
+  def check_image_dimension: (Paperclip::Attachment) -> void
+
+  def set_file_content_type: (Paperclip::Attachment) -> void
+
+  def obfuscate_file_name: (Paperclip::Attachment) -> void
+
+  def set_file_extension: (Paperclip::Attachment) -> void
+
+  def appropriate_extension: (Paperclip::Attachment) -> void
+end
+
+class PreviewCard
+  def self.has_attached_file: (Symbol, ?Hash[untyped, untyped]) -> void
+end

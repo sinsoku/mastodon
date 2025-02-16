@@ -1,0 +1,26 @@
+class StatusFilter
+  def initialize: (Status, nil, ?Hash[untyped, untyped]) -> void
+                | (Status, Account, ?Hash[untyped, untyped]) -> void
+
+  def filtered?: () -> void
+
+  def blocked_by_policy?: () -> void
+
+  def policy_allows_show?: () -> bool
+
+  def account_present?: () -> void
+
+  def silenced_account?: () -> void
+
+  def status_account_silenced?: () -> void
+
+  def filtered_status?: () -> void
+
+  def blocking_account?: () -> void
+
+  def blocking_domain?: () -> void
+
+  def muting_account?: () -> void
+
+  def account_following_status_account?: () -> nil
+end

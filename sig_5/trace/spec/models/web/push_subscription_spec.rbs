@@ -1,0 +1,51 @@
+module RSpec::ExampleGroups::WebPushSubscription::LetDefinitions
+  def subject: () -> Web::PushSubscription
+
+  def data: () -> Hash[untyped, untyped]
+
+  def policy: () -> String
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::WebPushSubscription::Pushable::LetDefinitions
+  def notification: () -> Notification
+
+  def notification_type: () -> Symbol
+end
+
+module RSpec::ExampleGroups::WebPushSubscription::Pushable::WhenNotificationIsAReblog::LetDefinitions
+  def notification_type: () -> Symbol
+end
+
+module RSpec::ExampleGroups::WebPushSubscription::Pushable::WhenPolicyIsNone::LetDefinitions
+  def policy: () -> String
+end
+
+module RSpec::ExampleGroups::WebPushSubscription::Pushable::WhenNotificationIsAFavourite::LetDefinitions
+  def notification_type: () -> Symbol
+end
+
+module RSpec::ExampleGroups::WebPushSubscription::Pushable::WhenNotificationIsAFollowRequest::LetDefinitions
+  def notification_type: () -> Symbol
+end
+
+module RSpec::ExampleGroups::WebPushSubscription::Pushable::WhenPolicyIsFollower::LetDefinitions
+  def policy: () -> String
+end
+
+module RSpec::ExampleGroups::WebPushSubscription::Pushable::WhenPolicyIsFollowed::LetDefinitions
+  def policy: () -> String
+end
+
+module RSpec::ExampleGroups::WebPushSubscription::Pushable::WhenPolicyIsAll::LetDefinitions
+  def policy: () -> String
+end
+
+module RSpec::ExampleGroups::WebPushSubscription::Pushable::WhenNotificationIsAMention::LetDefinitions
+  def notification_type: () -> Symbol
+end
+
+module RSpec::ExampleGroups::WebPushSubscription::Pushable::WhenNotificationIsAFollow::LetDefinitions
+  def notification_type: () -> Symbol
+end

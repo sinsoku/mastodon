@@ -1,0 +1,27 @@
+class Admin::DomainBlocksController
+  def batch: () -> String
+
+  def form_domain_block_batch_params: () -> ActionController::Parameters
+
+  def action_from_button: () -> void
+
+  def set_domain_block: () -> DomainBlock
+
+  def destroy: () -> String
+
+  def edit: () -> Symbol
+
+  def create: () -> ActiveSupport::SafeBuffer
+            | () -> String
+
+  def resource_params: () -> void
+                     | () -> ActionController::Parameters
+
+  def requires_confirmation?: () -> void
+
+  def new: () -> DomainBlock
+
+  def update: () -> String
+
+  def update_params: () -> void
+end

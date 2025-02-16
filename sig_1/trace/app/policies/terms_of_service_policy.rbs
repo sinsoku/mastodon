@@ -1,0 +1,5 @@
+class TermsOfServicePolicy
+  def create?: () -> bool
+
+  def update?: () -> bool
+end

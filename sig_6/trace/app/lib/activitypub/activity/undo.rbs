@@ -1,0 +1,27 @@
+class ActivityPub::Activity::Undo
+  def perform: () -> void
+
+  def handle_reference: () -> void
+
+  def try_undo_announce: () -> void
+
+  def undo_announce: () -> void
+
+  def undo_accept: () -> void
+
+  def target_uri: () -> void
+
+  def undo_block: () -> void
+
+  def try_undo_accept: () -> void
+
+  def try_undo_follow: () -> void
+
+  def try_undo_like: () -> void
+
+  def try_undo_block: () -> void
+
+  def undo_follow: () -> void
+
+  def undo_like: () -> void
+end

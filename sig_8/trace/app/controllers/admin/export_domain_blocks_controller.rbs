@@ -1,0 +1,16 @@
+class Admin::ExportDomainBlocksController
+  def import: () -> ActiveSupport::SafeBuffer
+            | () -> Array[untyped]
+
+  def export: () -> String
+
+  def export_data: () -> void
+
+  def export_headers: () -> void
+
+  def export_filename: () -> void
+
+  def instances_from_imported_blocks: () -> ActiveRecord::Relation
+
+  def new: () -> Symbol
+end

@@ -1,0 +1,3 @@
+class Mention
+  def account_username: (*untyped, **untyped) -> void
+end

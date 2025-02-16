@@ -1,0 +1,11 @@
+class CanonicalEmailBlock
+  def self.to_a_paginated_by_id: (Integer, ?ActionController::Parameters) -> Array[untyped]
+end
+
+class EmailDomainBlock
+  def self.to_a_paginated_by_id: (Integer, ?ActionController::Parameters) -> Array[untyped]
+end
+
+class Account
+  def self.to_a_paginated_by_id: (Integer, ?ActionController::Parameters) -> Array[untyped]
+end

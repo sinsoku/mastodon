@@ -1,0 +1,3 @@
+module ActionDispatch::RemoteIp::GetIpExtensions
+  def calculate_ip: () -> String
+end

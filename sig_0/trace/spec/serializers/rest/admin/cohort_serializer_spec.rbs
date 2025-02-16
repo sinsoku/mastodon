@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::RESTAdminCohortSerializer::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+
+  def record: () -> Admin::Metrics::Retention::Cohort
+end

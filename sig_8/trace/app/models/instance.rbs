@@ -1,0 +1,3 @@
+class Instance
+  def self.domain_account_follows: () -> Arel::Nodes::SqlLiteral
+end

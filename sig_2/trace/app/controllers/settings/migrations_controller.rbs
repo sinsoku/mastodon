@@ -1,0 +1,19 @@
+class Settings::MigrationsController
+  def set_migrations: () -> Array[untyped]
+
+  def set_cooldown: () -> nil
+                  | () -> AccountMigration
+
+  def show: () -> AccountMigration
+
+  def on_cooldown?: () -> bool
+
+  def create: () -> ActiveSupport::SafeBuffer
+            | () -> String
+
+  def resource_params: () -> void
+end
+
+module Settings::MigrationsController::HelperMethods
+  def on_cooldown?: (*untyped, **untyped) -> void
+end

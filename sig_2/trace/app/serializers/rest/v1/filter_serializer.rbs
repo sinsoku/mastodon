@@ -1,0 +1,13 @@
+class REST::V1::FilterSerializer
+  def id: () -> String
+
+  def phrase: () -> String
+
+  def context: (*untyped, **untyped) -> Array[untyped]
+
+  def custom_filter: () -> CustomFilter
+
+  def expires_at: (*untyped, **untyped) -> nil
+
+  def irreversible: () -> bool
+end

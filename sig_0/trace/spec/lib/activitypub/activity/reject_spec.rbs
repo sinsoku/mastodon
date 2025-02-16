@@ -1,0 +1,29 @@
+module RSpec::ExampleGroups::ActivityPubActivityReject::WhenGivenARelay::LetDefinitions
+  def relay: () -> Relay
+
+  def subject: () -> ActivityPub::Activity::Reject
+
+  def json: () -> ActiveSupport::HashWithIndifferentAccess
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityReject::LetDefinitions
+  def sender: () -> Account
+
+  def recipient: () -> Account
+
+  def json: () -> ActiveSupport::HashWithIndifferentAccess
+
+  def object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityReject::Perform::LetDefinitions
+  def subject: () -> ActivityPub::Activity::Reject
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityReject::Perform::WhenRejectingAnExistingFollowRelationshipByUriOnly::LetDefinitions
+  def object_json: () -> String
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityReject::Perform::WhenRejectingAPendingFollowRequestByUriOnly::LetDefinitions
+  def object_json: () -> String
+end

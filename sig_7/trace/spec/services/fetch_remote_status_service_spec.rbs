@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::FetchRemoteStatusService::WhenProtocolIsActivitypub::LetDefinitions
+  def subject: () -> Status
+
+  def prefetched_body: () -> String
+end
+
+module RSpec::ExampleGroups::FetchRemoteStatusService::LetDefinitions
+  def note: () -> Hash[untyped, untyped]
+
+  def account: () -> Account
+end

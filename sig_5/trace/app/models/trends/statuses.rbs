@@ -1,0 +1,9 @@
+class Trends::Statuses
+  def register: (Status, ?Time) -> void
+
+  def eligible?: (Status) -> void
+
+  def add: (Status, Integer, ?Time) -> void
+
+  def key_prefix: () -> String
+end

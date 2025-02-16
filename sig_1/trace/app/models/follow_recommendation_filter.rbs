@@ -1,0 +1,7 @@
+class FollowRecommendationFilter
+  def initialize: (ActionController::Parameters) -> void
+
+  def usable_language: (Symbol) -> String
+
+  def results: () -> void
+end

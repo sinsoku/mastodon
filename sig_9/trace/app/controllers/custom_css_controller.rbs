@@ -1,0 +1,13 @@
+class CustomCssController
+  def set_user_roles: () -> ActiveRecord::Relation
+
+  def show: () -> ActiveSupport::SafeBuffer
+
+  def custom_css_styles: () -> String
+                       | () -> nil
+end
+
+module CustomCssController::HelperMethods
+  def custom_css_styles: (*untyped, **untyped) -> String
+                       | (*untyped, **untyped) -> nil
+end

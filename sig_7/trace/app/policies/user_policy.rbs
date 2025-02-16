@@ -1,0 +1,17 @@
+class UserPolicy
+  def disable?: () -> bool
+
+  def approve?: () -> bool
+
+  def reject?: () -> bool
+
+  def enable?: () -> bool
+
+  def change_role?: () -> bool
+
+  def change_email?: () -> bool
+
+  def confirm?: () -> bool
+
+  def reset_password?: () -> bool
+end

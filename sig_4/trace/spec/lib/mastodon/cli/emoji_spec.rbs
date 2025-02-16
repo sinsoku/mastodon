@@ -1,0 +1,29 @@
+module RSpec::ExampleGroups::MastodonCLIEmoji::Export::WithExistingCustomEmoji::LetDefinitions
+  def export_path: () -> Pathname
+
+  def action: () -> Symbol
+
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIEmoji::LetDefinitions
+  def subject: () -> StringIO
+
+  def cli: () -> Mastodon::CLI::Emoji
+
+  def options: () -> Hash[untyped, untyped]
+
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIEmoji::Purge::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLIEmoji::Import::WithExistingCustomEmoji::LetDefinitions
+  def action: () -> Symbol
+
+  def arguments: () -> Array[untyped]
+
+  def import_path: () -> Pathname
+end

@@ -1,0 +1,3 @@
+class PreviewCardPolicy
+  def review?: () -> bool
+end

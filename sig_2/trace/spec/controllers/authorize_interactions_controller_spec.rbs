@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::AuthorizeInteractionsController::GETShow::WhenSignedIn::LetDefinitions
+  def user: () -> User
+end

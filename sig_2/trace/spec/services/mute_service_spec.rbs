@@ -1,0 +1,23 @@
+module RSpec::ExampleGroups::MuteService::LetDefinitions
+  def account: () -> Account
+
+  def target_account: () -> Account
+
+  def subject: () -> Mute
+end
+
+module RSpec::ExampleGroups::MuteService::HomeTimeline::LetDefinitions
+  def home_timeline_key: () -> String
+
+  def status: () -> Status
+
+  def other_account_status: () -> Status
+end
+
+module RSpec::ExampleGroups::MuteService::WithATrueNotificationsParameter::LetDefinitions
+  def subject: () -> Mute
+end
+
+module RSpec::ExampleGroups::MuteService::WithAFalseNotificationsParameter::LetDefinitions
+  def subject: () -> Mute
+end

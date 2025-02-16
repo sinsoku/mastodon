@@ -1,0 +1,3 @@
+class RSpec::ExampleGroups::BlockingDomainsThroughTheModerationInterface
+  def submit_domain_block: (String, String) -> void
+end

@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::AuthConfirmationsController::GETShow::WhenUserIsAlreadyConfirmedButUnapproved::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::AuthConfirmationsController::GETShow::WhenUserIsAlreadyConfirmed::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::AuthConfirmationsController::GETShow::WhenUserIsUnconfirmed::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::AuthConfirmationsController::GETShow::WhenUserIsUnconfirmedAndUnapproved::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::AuthConfirmationsController::GETShow::WhenUserIsUpdatingEmail::LetDefinitions
+  def user: () -> User
+end

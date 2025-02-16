@@ -1,0 +1,8 @@
+class EntityCache
+  def to_key: (Symbol, *String?) -> void
+            | (Symbol, *String) -> void
+
+  def mention: (String, nil) -> nil
+
+  def emoji: (Array[untyped], String) -> void
+end

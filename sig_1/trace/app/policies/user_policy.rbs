@@ -1,0 +1,7 @@
+class UserPolicy
+  def disable_2fa?: () -> bool
+
+  def approve?: () -> bool
+
+  def reject?: () -> bool
+end

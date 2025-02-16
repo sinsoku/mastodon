@@ -1,0 +1,4 @@
+class DisallowedHashtagsValidator
+  def validate: (Status) -> nil
+              | (RSpec::Mocks::InstanceVerifyingDouble) -> nil
+end

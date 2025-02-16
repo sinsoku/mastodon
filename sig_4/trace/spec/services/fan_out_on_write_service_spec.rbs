@@ -1,0 +1,37 @@
+module RSpec::ExampleGroups::FanOutOnWriteService::LetDefinitions
+  def alice: () -> Account
+
+  def last_active_at: () -> Time
+
+  def bob: () -> Account
+
+  def tom: () -> Account
+
+  def eve: () -> Account
+
+  def status: () -> Status
+
+  def subject: () -> FanOutOnWriteService
+end
+
+module RSpec::ExampleGroups::FanOutOnWriteService::WhenStatusIsPublic::LetDefinitions
+  def visibility: () -> String
+end
+
+class RSpec::ExampleGroups::FanOutOnWriteService
+  def home_feed_of: (Account) -> void
+
+  def expect_no_broadcasting: () -> void
+end
+
+module RSpec::ExampleGroups::FanOutOnWriteService::WhenStatusIsLimited::LetDefinitions
+  def visibility: () -> String
+end
+
+module RSpec::ExampleGroups::FanOutOnWriteService::WhenStatusIsDirect::LetDefinitions
+  def visibility: () -> String
+end
+
+module RSpec::ExampleGroups::FanOutOnWriteService::WhenStatusIsPrivate::LetDefinitions
+  def visibility: () -> String
+end

@@ -1,0 +1,24 @@
+class Admin::RolesController
+  def set_role: () -> UserRole
+
+  def edit: () -> UserRole
+          | () -> nil
+
+  def create: () -> String
+            | () -> ActiveSupport::SafeBuffer
+
+  def resource_params: () -> void
+
+  def update: () -> nil
+            | () -> ActiveSupport::SafeBuffer
+            | () -> String
+
+  def index: () -> nil
+           | () -> ActiveRecord::Relation
+
+  def new: () -> nil
+         | () -> UserRole
+
+  def destroy: () -> nil
+             | () -> String
+end

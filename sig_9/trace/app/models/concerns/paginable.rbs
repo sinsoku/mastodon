@@ -1,0 +1,3 @@
+class Favourite
+  def self.to_a_paginated_by_id: (Integer, ?ActionController::Parameters) -> Array[untyped]
+end

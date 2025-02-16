@@ -1,0 +1,5 @@
+class RSpec::ExampleGroups::ContentSecurityPolicy
+  def response_csp_headers: () -> void
+
+  def expected_csp_headers: () -> void
+end

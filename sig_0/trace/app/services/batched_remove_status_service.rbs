@@ -1,0 +1,9 @@
+class BatchedRemoveStatusService
+  def call: (ActiveRecord::AssociationRelation, **nil) -> void
+
+  def unpush_from_home_timelines: (Account, Array[untyped]) -> void
+
+  def unpush_from_list_timelines: (Account, Array[untyped]) -> void
+
+  def unpush_from_public_timelines: (Status, Redis::Namespace) -> void
+end

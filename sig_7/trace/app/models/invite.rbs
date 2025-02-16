@@ -1,0 +1,5 @@
+class Invite
+  def set_code: () -> nil
+
+  def valid_for_use?: () -> void
+end

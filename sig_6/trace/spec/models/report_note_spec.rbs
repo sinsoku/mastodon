@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::ReportNote::Validations::LetDefinitions
+  def subject: () -> ReportNote
+end

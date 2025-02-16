@@ -1,0 +1,5 @@
+class Chewy::Strategy::Mastodon
+  def initialize: () -> void
+
+  def leave: () -> void
+end

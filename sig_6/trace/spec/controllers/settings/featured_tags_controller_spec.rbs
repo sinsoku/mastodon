@@ -1,0 +1,27 @@
+module RSpec::ExampleGroups::SettingsFeaturedTagsController::WhenUserIsSignedIn::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::SettingsFeaturedTagsController::WhenUserIsSignedIn::POSTCreate::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::SettingsFeaturedTagsController::WhenUserIsSignedIn::POSTCreate::WhenParameterIsInvalid::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::SettingsFeaturedTagsController::WhenUserIsSignedIn::POSTCreate::WhenParameterIsValid::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::SettingsFeaturedTagsController::WhenUserIsSignedIn::DELETEToDestroy::LetDefinitions
+  def featured_tag: () -> FeaturedTag
+end
+
+module RSpec::ExampleGroups::SettingsFeaturedTagsController::WhenUserIsSignedIn::GETToIndex::LetDefinitions
+  def tag: () -> Tag
+end
+
+module RSpec::ExampleGroups::SettingsFeaturedTagsController::WhenUserIsNotSignedIn::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end

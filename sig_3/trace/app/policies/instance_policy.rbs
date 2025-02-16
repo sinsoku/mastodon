@@ -1,0 +1,3 @@
+class InstancePolicy
+  def index?: () -> bool
+end

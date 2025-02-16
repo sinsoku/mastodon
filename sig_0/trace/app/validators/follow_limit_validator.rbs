@@ -1,0 +1,10 @@
+class FollowLimitValidator
+  def validate: (Follow) -> nil
+              | (FollowRequest) -> nil
+              | (Follow) -> ActiveModel::Error
+
+  def limit_reached?: (Account) -> void
+
+  def self.limit_for_account: (Account) -> void
+                            | (Account) -> Integer
+end

@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::CustomEmojis::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+end

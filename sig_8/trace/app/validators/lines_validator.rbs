@@ -1,0 +1,3 @@
+class LinesValidator
+  def validate_each: (Account, Symbol, String) -> void
+end

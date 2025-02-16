@@ -1,0 +1,4 @@
+module StatusesHelper
+  def nothing_here: (?String) -> void
+                  | (?String) -> ActiveSupport::SafeBuffer
+end

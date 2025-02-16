@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::APIV1AnnualReports::LetDefinitions
+  def user: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+end
+
+module RSpec::ExampleGroups::APIV1AnnualReports::POSTApiV1AnnualReportsIdRead::WithCorrectScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::APIV1AnnualReports::GETApiV1AnnualReports::WithCorrectScope::LetDefinitions
+  def scopes: () -> String
+end

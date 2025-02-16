@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::AdminSystemCheckBaseCheck::LetDefinitions
+  def check: () -> Admin::SystemCheck::BaseCheck
+
+  def user: () -> User
+end

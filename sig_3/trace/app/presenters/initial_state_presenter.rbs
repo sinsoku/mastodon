@@ -1,0 +1,4 @@
+class InitialStatePresenter
+  def role: () -> nil
+          | () -> UserRole
+end

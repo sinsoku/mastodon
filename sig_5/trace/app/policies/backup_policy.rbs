@@ -1,0 +1,3 @@
+class BackupPolicy
+  def create?: () -> void
+end

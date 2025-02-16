@@ -1,0 +1,12 @@
+class UserSettings
+  def initialize: (Hash[untyped, untyped]) -> void
+
+  def as_json: () -> void
+
+  def []: (String) -> void
+
+  def []=: (String, bool) -> void
+         | (Symbol, bool) -> void
+
+  def update: (Hash[untyped, untyped]) -> void
+end

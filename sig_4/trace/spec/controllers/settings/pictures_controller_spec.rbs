@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::SettingsPicturesController::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::SettingsPicturesController::DELETEDestroy::WithValidPictureId::WhenAccountCannotUpdate::LetDefinitions
+  def service: () -> RSpec::Mocks::InstanceVerifyingDouble
+end
+
+module RSpec::ExampleGroups::SettingsPicturesController::DELETEDestroy::WithValidPictureId::WhenAccountUpdatesCorrectly::LetDefinitions
+  def service: () -> RSpec::Mocks::InstanceVerifyingDouble
+end

@@ -1,0 +1,8 @@
+class Webhooks::DeliveryWorker
+  def perform: (Integer, String) -> bool
+             | (Integer, String) -> nil
+
+  def perform_request: () -> void
+
+  def signature: () -> String
+end

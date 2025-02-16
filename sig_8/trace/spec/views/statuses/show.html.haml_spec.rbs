@@ -1,0 +1,11 @@
+class RSpec::ExampleGroups::StatusesShowHtmlHaml
+  def view_helpers: () -> void
+
+  def header_tags: () -> void
+end
+
+module RSpec::ExampleGroups::StatusesShowHtmlHaml::LetDefinitions
+  def alice: () -> Account
+
+  def status: () -> Status
+end

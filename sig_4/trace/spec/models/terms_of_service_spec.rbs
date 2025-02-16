@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::TermsOfService::ScopeForNotification::LetDefinitions
+  def user_before_suspended: () -> User
+
+  def published_at: () -> Time
+
+  def user_before_unconfirmed: () -> User
+
+  def user_before: () -> User
+
+  def user_after: () -> User
+
+  def subject: () -> ActiveRecord::Relation
+
+  def terms_of_service: () -> TermsOfService
+end

@@ -1,0 +1,3 @@
+class RelayPolicy
+  def update?: () -> bool
+end

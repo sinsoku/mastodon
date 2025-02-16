@@ -1,0 +1,3 @@
+class Admin::DomainPurgeWorker
+  def perform: (String) -> nil
+end

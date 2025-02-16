@@ -1,0 +1,23 @@
+class ResolveAccountService
+  def call: (String, ?Hash[untyped, untyped]) -> void
+          | (String, ?Hash[untyped, untyped]) -> Account
+          | (String, ?Hash[untyped, untyped]) -> nil
+
+  def process_options!: (String, Hash[untyped, untyped]) -> void
+
+  def webfinger_update_due?: () -> bool
+
+  def process_webfinger!: (String) -> void
+
+  def split_acct: (String) -> Array[untyped]
+
+  def gone_from_origin?: () -> void
+
+  def fetch_account!: () -> void
+
+  def actor_url: () -> void
+
+  def not_yet_deleted?: () -> void
+
+  def queue_deletion!: () -> void
+end

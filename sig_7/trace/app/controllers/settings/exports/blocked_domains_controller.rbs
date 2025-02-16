@@ -1,0 +1,5 @@
+class Settings::Exports::BlockedDomainsController
+  def index: () -> String
+
+  def export_data: () -> void
+end

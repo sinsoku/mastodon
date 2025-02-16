@@ -1,0 +1,10 @@
+class Object
+  def attachment_fixture: (String) -> void
+
+  def stub_reset_connection_pools: () -> void
+end
+
+module Devise::Test::ControllerHelpers
+  def sign_in: (User, ?nil, ?scope: Symbol) -> void
+             | (User, ?nil, ?scope: nil) -> void
+end

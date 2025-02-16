@@ -1,0 +1,4 @@
+class TermsOfService
+  def published?: () -> void
+                | () -> bool
+end

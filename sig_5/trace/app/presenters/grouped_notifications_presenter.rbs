@@ -1,0 +1,14 @@
+class GroupedNotificationsPresenter
+  def initialize: (Array[untyped], ?Hash[untyped, untyped]) -> void
+
+  def accounts: () -> void
+              | () -> Array[untyped]
+
+  def partial_avatars?: () -> void
+
+  def partial_accounts: () -> Array[untyped]
+
+  def statuses: () -> Array[untyped]
+
+  def notification_groups: () -> Array[untyped]
+end

@@ -1,0 +1,19 @@
+class UpdateStatusService
+  def call: (Status, Integer, ?Hash[untyped, untyped]) -> void
+
+  def create_previous_edit!: () -> void
+
+  def update_immediate_attributes!: () -> void
+
+  def significant_changes?: () -> void
+
+  def create_edit!: () -> void
+
+  def queue_poll_notifications!: () -> void
+
+  def reset_preview_card!: () -> void
+
+  def update_metadata!: () -> void
+
+  def broadcast_updates!: () -> void
+end

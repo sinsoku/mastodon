@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::WebhooksPayloadRenderer::LetDefinitions
+  def renderer: () -> Webhooks::PayloadRenderer
+
+  def json: () -> String
+
+  def payload: () -> Hash[untyped, untyped]
+
+  def event: () -> Webhooks::EventPresenter
+end
+
+module RSpec::ExampleGroups::WebhooksPayloadRenderer::Render::WhenEventIsAccountApproved::LetDefinitions
+  def type: () -> String
+
+  def object: () -> Account
+end

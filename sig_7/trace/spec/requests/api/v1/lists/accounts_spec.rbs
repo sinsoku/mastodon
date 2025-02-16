@@ -1,0 +1,63 @@
+module RSpec::ExampleGroups::Accounts_2::GETApiV1ListsIdAccounts::LetDefinitions
+  def accounts: () -> Array[untyped]
+
+  def list: () -> List
+
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+
+  def expected_response: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Accounts_2::LetDefinitions
+  def user: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Accounts_2::GETApiV1ListsIdAccounts::WithLimitParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Accounts_2::DELETEApiV1ListsIdAccounts::WhenTheListIsOwnedByTheRequestingUser::LetDefinitions
+  def bob: () -> Account
+
+  def peter: () -> Account
+
+  def list: () -> List
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Accounts_2::DELETEApiV1ListsIdAccounts::LetDefinitions
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::Accounts_2::DELETEApiV1ListsIdAccounts::WhenTheListIsOwnedByTheRequestingUser::WhenTheSpecifiedAccountIsNotInTheList::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Accounts_2::DELETEApiV1ListsIdAccounts::WhenTheListIsNotOwnedByTheRequestingUser::LetDefinitions
+  def list: () -> List
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Accounts_2::POSTApiV1ListsIdAccounts::LetDefinitions
+  def subject: () -> Integer
+
+  def list: () -> List
+
+  def params: () -> Hash[untyped, untyped]
+
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::Accounts_2::POSTApiV1ListsIdAccounts::WhenTheListIsNotOwnedByTheRequestingUser::LetDefinitions
+  def list: () -> List
+end

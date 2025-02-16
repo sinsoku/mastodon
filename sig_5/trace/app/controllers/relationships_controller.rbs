@@ -1,0 +1,32 @@
+class RelationshipsController
+  def set_accounts: () -> ActiveRecord::AssociationRelation
+
+  def filter_params: () -> void
+
+  def set_relationships: () -> AccountRelationshipsPresenter
+
+  def set_cache_headers: () -> Hash[untyped, untyped]
+
+  def show: () -> Form::AccountBatch
+
+  def followed_by_relationship?: () -> bool
+
+  def mutual_relationship?: () -> bool
+
+  def following_relationship?: () -> bool
+
+  def update: () -> nil
+
+  def form_account_batch_params: () -> ActionController::Parameters
+                               | () -> nil
+
+  def action_from_button: () -> void
+end
+
+module RelationshipsController::HelperMethods
+  def followed_by_relationship?: (*untyped, **untyped) -> void
+
+  def mutual_relationship?: (*untyped, **untyped) -> bool
+
+  def following_relationship?: (*untyped, **untyped) -> void
+end

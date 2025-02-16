@@ -1,0 +1,3 @@
+class ActivityPub::AccountRawDistributionWorker
+  def inboxes: () -> Array[untyped]
+end

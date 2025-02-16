@@ -1,0 +1,34 @@
+class UserRole
+  def self.everyone: () -> void
+                   | () -> UserRole
+
+  def everyone?: () -> void
+               | () -> bool
+
+  def can?: (*Symbol) -> void
+          | (*Symbol) -> bool
+
+  def in_permissions?: (Symbol) -> void
+
+  def computed_permissions: () -> Integer
+
+  def nobody?: () -> void
+
+  def set_position: () -> nil
+
+  def validate_permissions_elevation: () -> nil
+
+  def validate_position_elevation: () -> nil
+
+  def validate_dangerous_permissions: () -> nil
+
+  def validate_own_role_edition: () -> nil
+
+  def overrides?: (UserRole) -> void
+
+  def self.that_can: (*Symbol) -> Array[untyped]
+
+  def self.nobody: () -> void
+
+  def bypass_block?: (UserRole) -> void
+end

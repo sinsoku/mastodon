@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::RedownloadHeaderWorker::LetDefinitions
+  def worker: () -> RedownloadHeaderWorker
+end

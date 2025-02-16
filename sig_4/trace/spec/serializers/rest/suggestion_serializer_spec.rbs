@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::RESTSuggestionSerializer::LetDefinitions
+  def serialization: () -> Hash[untyped, untyped]
+
+  def record: () -> AccountSuggestions::Suggestion
+
+  def account: () -> Account
+end

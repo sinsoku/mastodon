@@ -1,0 +1,13 @@
+class DeliveryFailureTracker
+  def self.without_unavailable: (Array[untyped]) -> void
+
+  def self.available?: (String) -> void
+
+  def initialize: (String) -> void
+
+  def available?: () -> void
+
+  def track_success!: () -> void
+
+  def exhausted_deliveries_key: () -> void
+end

@@ -1,0 +1,6 @@
+class LanguageValidator
+  def validate_each: (FollowRequest, Symbol, nil) -> void
+                   | (Follow, Symbol, nil) -> void
+
+  def valid_locale_value?: () -> void
+end

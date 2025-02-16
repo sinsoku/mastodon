@@ -1,0 +1,4 @@
+class RedownloadHeaderWorker
+  def perform: (Integer) -> nil
+             | (Integer) -> bool
+end

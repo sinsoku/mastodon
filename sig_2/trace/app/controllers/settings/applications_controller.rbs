@@ -1,0 +1,23 @@
+class Settings::ApplicationsController
+  def new: () -> Doorkeeper::Application
+
+  def prepare_scopes: () -> String
+
+  def create: () -> ActiveSupport::SafeBuffer
+            | () -> String
+
+  def application_params: () -> void
+
+  def index: () -> ActiveRecord::AssociationRelation
+
+  def set_application: () -> Doorkeeper::Application
+
+  def show: () -> nil
+
+  def regenerate: () -> String
+
+  def destroy: () -> String
+
+  def update: () -> String
+            | () -> ActiveSupport::SafeBuffer
+end

@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::ActivityPubDistributionWorker::LetDefinitions
+  def follower: () -> Account
+
+  def status: () -> Status
+
+  def subject: () -> ActivityPub::DistributionWorker
+end
+
+module RSpec::ExampleGroups::ActivityPubDistributionWorker::Perform::WithDirectStatus::LetDefinitions
+  def mentioned_account: () -> Account
+end

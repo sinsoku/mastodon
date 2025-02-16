@@ -1,0 +1,10 @@
+module Auth::CaptchaConcern
+  def extend_csp_for_captcha!: () -> ActionDispatch::ContentSecurityPolicy
+                             | () -> nil
+
+  def captcha_required?: () -> void
+end
+
+module Auth::ConfirmationsController::HelperMethods
+  def render_captcha: (*untyped, **untyped) -> void
+end

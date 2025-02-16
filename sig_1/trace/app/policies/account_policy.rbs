@@ -1,0 +1,5 @@
+class AccountPolicy
+  def index?: () -> bool
+
+  def suspend?: () -> bool
+end

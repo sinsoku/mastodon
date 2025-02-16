@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::StatusFilter::Filtered::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusFilter::Filtered::WithoutAnAccount::LetDefinitions
+  def filter: () -> StatusFilter
+end
+
+module RSpec::ExampleGroups::StatusFilter::Filtered::WithRealAccount::LetDefinitions
+  def filter: () -> StatusFilter
+
+  def account: () -> Account
+end

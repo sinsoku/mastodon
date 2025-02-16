@@ -1,0 +1,55 @@
+class ActivityPub::NoteSerializer
+  def id: () -> String
+
+  def type: () -> String
+
+  def summary: () -> nil
+
+  def in_reply_to: () -> nil
+
+  def published: () -> String
+
+  def url: () -> String
+
+  def attributed_to: () -> String
+
+  def to: () -> Array[untyped]
+
+  def cc: () -> Array[untyped]
+
+  def sensitive: () -> bool
+
+  def atom_uri: () -> String
+
+  def in_reply_to_atom_uri: () -> nil
+
+  def conversation: () -> String
+
+  def content: () -> ActiveSupport::SafeBuffer
+
+  def language?: () -> bool
+
+  def edited?: (*untyped, **untyped) -> bool
+
+  def poll_and_expires?: () -> nil
+
+  def poll_and_expired?: () -> nil
+
+  def poll_and_voters_count?: () -> nil
+
+  def virtual_attachments: () -> Array[untyped]
+
+  def virtual_tags: () -> Array[untyped]
+
+  def local?: () -> bool
+
+  def replies: () -> ActivityPub::CollectionPresenter
+
+  def likes: () -> ActivityPub::CollectionPresenter
+
+  def shares: () -> ActivityPub::CollectionPresenter
+
+  def poll_and_not_multiple?: () -> nil
+
+  def poll_and_multiple?: () -> nil
+end

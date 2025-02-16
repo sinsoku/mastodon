@@ -1,0 +1,46 @@
+module RSpec::ExampleGroups::FetchResourceService::Call::LetDefinitions
+  def subject: () -> nil
+             | () -> Array[untyped]
+
+  def url: () -> String
+end
+
+module RSpec::ExampleGroups::FetchResourceService::Call::WithBlankUrl::LetDefinitions
+  def url: () -> String
+end
+
+module RSpec::ExampleGroups::FetchResourceService::Call::WhenRequestSucceeds::LetDefinitions
+  def body: () -> String
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def content_type: () -> String
+
+  def json: () -> String
+end
+
+module RSpec::ExampleGroups::FetchResourceService::Call::WhenRequestSucceeds::WhenContentTypeIsApplicationAtomXml::LetDefinitions
+  def content_type: () -> String
+end
+
+module RSpec::ExampleGroups::FetchResourceService::Call::WhenRequestSucceeds::WhenContentTypeIsLdJsonWithProfile::LetDefinitions
+  def body: () -> String
+
+  def content_type: () -> String
+end
+
+module RSpec::ExampleGroups::FetchResourceService::Call::WhenRequestSucceeds::WhenContentTypeIsTextHtml::LetDefinitions
+  def body: () -> String
+
+  def content_type: () -> String
+end
+
+module RSpec::ExampleGroups::FetchResourceService::Call::WhenRequestSucceeds::WhenContentTypeIsActivityJson::LetDefinitions
+  def body: () -> String
+
+  def content_type: () -> String
+end
+
+module RSpec::ExampleGroups::FetchResourceService::Call::WhenRequestSucceeds::WhenLinkHeaderIsPresent::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+end

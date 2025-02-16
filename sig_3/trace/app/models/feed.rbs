@@ -1,0 +1,9 @@
+class Feed
+  def initialize: (Symbol, Integer) -> void
+
+  def get: (Integer, ?nil, ?nil, ?nil) -> ActiveRecord::Relation
+
+  def from_redis: (Integer, nil, nil, nil) -> void
+
+  def key: () -> void
+end

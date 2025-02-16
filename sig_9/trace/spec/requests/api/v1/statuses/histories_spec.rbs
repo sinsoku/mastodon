@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::APIV1StatusesHistories::WithAnOauthToken::GETApiV1StatusesStatusIdHistory::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::APIV1StatusesHistories::LetDefinitions
+  def user: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end

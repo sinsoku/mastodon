@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::APIV1AdminTrendsTags::LetDefinitions
+  def tag: () -> Tag
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def role: () -> UserRole
+
+  def scopes: () -> String
+
+  def account: () -> Account
+end

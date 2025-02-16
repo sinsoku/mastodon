@@ -1,0 +1,27 @@
+module RSpec::ExampleGroups::AccountStatusesCleanupService::LetDefinitions
+  def unrelated_status: () -> Status
+
+  def account_policy: () -> AccountStatusesCleanupPolicy
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AccountStatusesCleanupService::Call::WhenTheAccountHasPostedSeveralOldStatuses::LetDefinitions
+  def very_old_status: () -> Status
+
+  def old_status: () -> Status
+
+  def another_old_status: () -> Status
+
+  def recent_status: () -> Status
+end
+
+class RSpec::ExampleGroups::AccountStatusesCleanupService::Call::WhenTheAccountHasPostedSeveralOldStatuses::WhenThereAreMoreUnDeletableOldTootsThanTheEarlySearchCutoff
+  def oldest_deletable_record_id: () -> void
+end
+
+module RSpec::ExampleGroups::AccountStatusesCleanupService::Call::WhenTheAccountHasPostedSeveralOldStatuses::WhenASelfFavedTootIsUnfaved::LetDefinitions
+  def self_faved: () -> Status
+
+  def favourite: () -> Favourite
+end

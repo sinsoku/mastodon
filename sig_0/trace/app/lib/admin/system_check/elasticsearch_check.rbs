@@ -1,0 +1,37 @@
+class Admin::SystemCheck::ElasticsearchCheck
+  def message: () -> void
+
+  def running_version: () -> nil
+                     | () -> String
+
+  def compatible_version?: () -> bool
+
+  def running_version_ok?: () -> void
+
+  def gem_version_running: () -> Gem::Version
+
+  def gem_version_required: () -> void
+
+  def required_version: () -> void
+
+  def compatible_wire_version_ok?: () -> void
+
+  def compatible_wire_version: () -> nil
+                             | () -> String
+
+  def skip?: () -> void
+
+  def pass?: () -> void
+
+  def gem_version_compatible_wire: () -> Gem::Version
+
+  def cluster_health: () -> Hash[untyped, untyped]
+
+  def indexes_match?: () -> void
+
+  def mismatched_indexes: () -> Array[untyped]
+
+  def preset_matches?: () -> void
+
+  def es_preset: () -> void
+end

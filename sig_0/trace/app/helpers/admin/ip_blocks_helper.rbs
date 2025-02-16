@@ -1,0 +1,3 @@
+module Admin::IpBlocksHelper
+  def ip_blocks_severity_label: (String) -> ActiveSupport::SafeBuffer
+end

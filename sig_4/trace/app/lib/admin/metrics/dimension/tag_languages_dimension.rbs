@@ -1,0 +1,17 @@
+class Admin::Metrics::Dimension::TagLanguagesDimension
+  def key: () -> String
+
+  def params: () -> ActionController::Parameters
+
+  def perform_query: () -> void
+
+  def sql_array: () -> void
+
+  def sql_query_string: () -> void
+
+  def tag_id: () -> void
+
+  def earliest_status_id: () -> void
+
+  def latest_status_id: () -> void
+end

@@ -1,0 +1,7 @@
+class RemoveFromFollowersService
+  def call: (Account, Account) -> void
+
+  def create_notification: (Follow) -> void
+
+  def build_json: (Follow) -> void
+end

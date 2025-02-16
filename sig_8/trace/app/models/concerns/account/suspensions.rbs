@@ -1,0 +1,6 @@
+module Account::Suspensions
+  def suspended?: () -> void
+                | () -> bool
+
+  def suspended_permanently?: () -> bool
+end

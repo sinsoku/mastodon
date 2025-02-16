@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::FiltersStatusesController::GETIndex::LetDefinitions
+  def filter: () -> CustomFilter
+end

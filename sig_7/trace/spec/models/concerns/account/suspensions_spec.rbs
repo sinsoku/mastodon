@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::AccountSuspensions::Suspended::LetDefinitions
+  def suspended_account: () -> Account
+end
+
+module RSpec::ExampleGroups::AccountSuspensions::LetDefinitions
+  def subject: () -> Account
+end
+
+module RSpec::ExampleGroups::AccountSuspensions::Suspend::WhenTheAccountIsOfALocalUser::LetDefinitions
+  def local_user_account: () -> Account
+
+  def subject: () -> Account
+end

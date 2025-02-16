@@ -1,0 +1,5 @@
+class ListAccount
+  def list_owner_account_is_account?: () -> bool
+
+  def validate_relationship: () -> nil
+end

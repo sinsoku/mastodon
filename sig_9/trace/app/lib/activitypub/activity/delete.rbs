@@ -1,0 +1,9 @@
+class ActivityPub::Activity::Delete
+  def perform: () -> void
+
+  def delete_note: () -> void
+
+  def forwarder: () -> ActivityPub::Forwarder
+
+  def delete_now!: () -> void
+end

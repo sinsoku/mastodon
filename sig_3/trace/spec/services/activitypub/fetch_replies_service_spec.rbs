@@ -1,0 +1,25 @@
+module RSpec::ExampleGroups::ActivityPubFetchRepliesService::LetDefinitions
+  def subject: () -> ActivityPub::FetchRepliesService
+
+  def status: () -> Status
+
+  def actor: () -> Account
+
+  def collection_uri: () -> String
+
+  def items: () -> Array[untyped]
+
+  def payload: () -> ActiveSupport::HashWithIndifferentAccess
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchRepliesService::Call::WhenThePayloadIsAPaginatedCollectionWithInlinedReplies::LetDefinitions
+  def payload: () -> ActiveSupport::HashWithIndifferentAccess
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchRepliesService::Call::WhenThePayloadIsAnOrderedCollectionWithInlinedReplies::LetDefinitions
+  def payload: () -> ActiveSupport::HashWithIndifferentAccess
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchRepliesService::Call::WhenThePayloadIsACollectionWithInlinedReplies::WhenThereIsASingleReplyWithTheArrayCompactedAway::LetDefinitions
+  def items: () -> String
+end

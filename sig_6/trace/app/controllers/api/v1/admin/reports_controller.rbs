@@ -1,0 +1,41 @@
+class Api::V1::Admin::ReportsController
+  def set_report: () -> Report
+
+  def assign_to_self: () -> String
+                    | () -> nil
+
+  def resolve: () -> String
+             | () -> nil
+
+  def show: () -> String
+          | () -> nil
+
+  def set_reports: () -> Array[untyped]
+
+  def filtered_reports: () -> ActiveRecord::Relation
+
+  def filter_params: () -> void
+
+  def index: () -> String
+           | () -> nil
+
+  def next_path: () -> void
+
+  def records_continue?: () -> void
+
+  def prev_path: () -> void
+
+  def pagination_collection: () -> Array[untyped]
+
+  def pagination_params: (Hash[untyped, untyped]) -> void
+
+  def reopen: () -> String
+            | () -> nil
+
+  def unassign: () -> String
+              | () -> nil
+
+  def update: () -> String
+
+  def report_params: () -> void
+end

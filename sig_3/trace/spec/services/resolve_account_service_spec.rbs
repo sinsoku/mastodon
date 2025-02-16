@@ -1,0 +1,29 @@
+module RSpec::ExampleGroups::ResolveAccountService::WithAnAlreadyKnownActorChangingAcctURI::LetDefinitions
+  def duplicate: () -> Account
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::ResolveAccountService::LetDefinitions
+  def subject: () -> ResolveAccountService
+end
+
+module RSpec::ExampleGroups::ResolveAccountService::WithAnAlreadyKnownAcctURIChangingActivityPubId::LetDefinitions
+  def old_account: () -> Account
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::ResolveAccountService::WhenUsingSkipWebfinger::WhenAccountIsKnown::LetDefinitions
+  def remote_account: () -> Account
+end
+
+class RSpec::ExampleGroups::ResolveAccountService::WhenUsingSkipWebfinger
+  def webfinger_discovery_request: () -> void
+end
+
+module RSpec::ExampleGroups::ResolveAccountService::WithWebfingerResponseSubjectMissingAHostValue::LetDefinitions
+  def url: () -> String
+
+  def body: () -> String
+end

@@ -1,0 +1,12 @@
+module RSpec::ExampleGroups::SignatureParser::Parse::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+             | () -> nil
+end
+
+module RSpec::ExampleGroups::SignatureParser::Parse::WithSignatureHeadersConformingToDraftCavageHttpSignatures12::LetDefinitions
+  def header: () -> String
+end
+
+module RSpec::ExampleGroups::SignatureParser::Parse::WithAMalformedSignatureHeader::LetDefinitions
+  def header: () -> String
+end

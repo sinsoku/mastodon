@@ -1,0 +1,5 @@
+class Api::V1::Statuses::BaseController
+  def set_status: () -> Status
+                | () -> nil
+                | () -> String
+end

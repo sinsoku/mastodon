@@ -1,0 +1,3 @@
+class Status
+  def self.to_a_paginated_by_id: (Integer, ?Hash[untyped, untyped]) -> Array[untyped]
+end

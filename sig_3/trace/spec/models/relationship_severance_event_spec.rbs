@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::RelationshipSeveranceEvent::LetDefinitions
+  def remote_account: () -> Account
+
+  def local_account: () -> Account
+
+  def event: () -> RelationshipSeveranceEvent
+end

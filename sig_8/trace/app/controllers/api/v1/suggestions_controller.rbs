@@ -1,0 +1,7 @@
+class Api::V1::SuggestionsController
+  def set_suggestions: () -> AccountSuggestions
+
+  def index: () -> String
+
+  def destroy: () -> String
+end

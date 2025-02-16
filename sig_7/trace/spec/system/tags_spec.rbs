@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::Tags::ViewingATag::LetDefinitions
+  def tag: () -> Tag
+end

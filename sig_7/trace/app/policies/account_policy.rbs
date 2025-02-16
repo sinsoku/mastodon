@@ -1,0 +1,29 @@
+class AccountPolicy
+  def show?: () -> bool
+
+  def sensitive?: () -> bool
+
+  def silence?: () -> bool
+
+  def suspend?: () -> bool
+
+  def index?: () -> bool
+
+  def unsensitive?: () -> bool
+
+  def destroy?: () -> bool
+
+  def unsuspend?: () -> bool
+
+  def unsilence?: () -> bool
+
+  def memorialize?: () -> bool
+
+  def remove_avatar?: () -> bool
+
+  def warn?: () -> bool
+
+  def unblock_email?: () -> bool
+
+  def redownload?: () -> bool
+end

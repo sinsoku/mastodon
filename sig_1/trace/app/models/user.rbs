@@ -1,0 +1,99 @@
+class User
+  def sanitize_role: () -> nil
+
+  def role: () -> UserRole
+
+  def password_required?: () -> bool
+
+  def external?: () -> void
+               | () -> bool
+
+  def invite_text_required?: () -> bool
+
+  def confirmed?: () -> bool
+
+  def validate_email_dns?: () -> bool
+
+  def self.skip_mx_check?: () -> bool
+
+  def validate_role_elevation: () -> nil
+
+  def set_approved: () -> bool
+
+  def sign_up_from_ip_requires_approval?: () -> void
+                                        | () -> bool
+
+  def sign_up_email_requires_approval?: () -> void
+                                      | () -> bool
+
+  def open_registrations?: () -> void
+
+  def send_pending_devise_notifications: () -> Array[untyped]
+
+  def pending_devise_notifications: () -> Array[untyped]
+
+  def trigger_webhooks: () -> String
+
+  def active_for_authentication?: () -> bool
+
+  def activate_session: (ActionDispatch::Request) -> String
+
+  def functional?: () -> void
+                 | () -> bool
+
+  def functional_or_moved?: () -> void
+
+  def web_push_subscription: (SessionActivation) -> void
+
+  def can?: (*untyped, **untyped) -> void
+          | (*untyped, **untyped) -> bool
+
+  def pending?: () -> bool
+
+  def disable_two_factor!: () -> void
+
+  def webauthn_enabled?: () -> void
+                       | () -> bool
+
+  def to_log_human_identifier: () -> void
+
+  def to_log_route_param: () -> void
+
+  def otp_enabled?: () -> void
+
+  def valid_invitation?: () -> void
+
+  def send_devise_notification: (Symbol, *String | Hash[untyped, untyped], **nil) -> void
+
+  def render_and_send_devise_message: (Symbol, *untyped, **untyped) -> void
+
+  def confirm: () -> void
+
+  def wrap_email_confirmation: () -> void
+
+  def grant_approval_on_confirmation?: () -> void
+
+  def prepare_new_user!: () -> void
+
+  def two_factor_enabled?: () -> void
+
+  def update_sign_in!: (?new_sign_in: bool) -> void
+
+  def prepare_returning_user!: () -> void
+
+  def needs_feed_update?: () -> void
+
+  def external_or_valid_password?: (String) -> void
+
+  def unconfirmed?: () -> bool
+
+  def approve!: () -> void
+
+  def invited?: () -> void
+
+  def unconfirmed_or_pending?: () -> bool
+
+  def disable!: () -> void
+
+  def signed_in_recently?: () -> void
+end

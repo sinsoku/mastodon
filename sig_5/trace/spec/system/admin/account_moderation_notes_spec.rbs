@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::AdminAccountModerationNotes::LetDefinitions
+  def current_user: () -> User
+
+  def target_account: () -> Account
+end
+
+class RSpec::ExampleGroups::AdminAccountModerationNotes::ManagingAccountModerationNote
+  def submit_form: () -> void
+
+  def delete_note: () -> void
+end

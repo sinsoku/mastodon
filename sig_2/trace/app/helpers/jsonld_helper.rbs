@@ -1,0 +1,10 @@
+module JsonLdHelper
+  def value_or_id: (String) -> void
+
+  def uri_from_bearcap: (String) -> String
+
+  def response_successful?: (HTTP::Response) -> void
+
+  def canonicalize: (Hash[untyped, untyped]) -> void
+                  | (ActiveSupport::HashWithIndifferentAccess) -> void
+end

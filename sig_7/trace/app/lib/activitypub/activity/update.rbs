@@ -1,0 +1,7 @@
+class ActivityPub::Activity::Update
+  def perform: () -> void
+
+  def update_status: () -> void
+
+  def update_account: () -> void
+end

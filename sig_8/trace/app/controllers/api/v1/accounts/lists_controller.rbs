@@ -1,0 +1,5 @@
+class Api::V1::Accounts::ListsController
+  def set_account: () -> Account
+
+  def index: () -> String
+end

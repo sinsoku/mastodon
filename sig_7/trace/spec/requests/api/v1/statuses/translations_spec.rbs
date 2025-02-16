@@ -1,0 +1,21 @@
+module RSpec::ExampleGroups::APIV1StatusesTranslations::WithAnApplicationToken::POSTApiV1StatusesStatusIdTranslate::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::APIV1StatusesTranslations::LetDefinitions
+  def user: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def scopes: () -> String
+
+  def token: () -> Doorkeeper::AccessToken
+end
+
+module RSpec::ExampleGroups::APIV1StatusesTranslations::WithAnApplicationToken::LetDefinitions
+  def token: () -> Doorkeeper::AccessToken
+end
+
+module RSpec::ExampleGroups::APIV1StatusesTranslations::WithAnOauthToken::POSTApiV1StatusesStatusIdTranslate::LetDefinitions
+  def status: () -> Status
+end

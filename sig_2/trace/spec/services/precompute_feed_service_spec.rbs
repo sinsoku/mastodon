@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::PrecomputeFeedService::LetDefinitions
+  def subject: () -> PrecomputeFeedService
+end

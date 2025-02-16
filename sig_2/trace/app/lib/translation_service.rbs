@@ -1,0 +1,5 @@
+class TranslationService
+  def self.configured?: () -> void
+
+  def self.configuration: () -> ActiveSupport::OrderedOptions
+end

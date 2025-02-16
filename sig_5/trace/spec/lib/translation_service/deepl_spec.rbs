@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::TranslationServiceDeepL::LetDefinitions
+  def service: () -> TranslationService::DeepL
+
+  def plan: () -> String
+end
+
+module RSpec::ExampleGroups::TranslationServiceDeepL::ThePaidAndFreePlanApiHostnames::WithTheFreePlan::LetDefinitions
+  def plan: () -> String
+end

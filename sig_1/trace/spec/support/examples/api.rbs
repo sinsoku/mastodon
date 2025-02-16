@@ -1,0 +1,119 @@
+module RSpec::ExampleGroups::CanonicalEmailBlocks::GETApiV1AdminCanonicalEmailBlocks::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::GETApiV1AdminCanonicalEmailBlocks::BehavesLikeForbiddenForWrongRole_2::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::GETApiV1AdminCanonicalEmailBlocks::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::GETApiV1AdminCanonicalEmailBlocksId::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::GETApiV1AdminCanonicalEmailBlocksId::BehavesLikeForbiddenForWrongRole_2::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::GETApiV1AdminCanonicalEmailBlocksId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::POSTApiV1AdminCanonicalEmailBlocksTest::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::POSTApiV1AdminCanonicalEmailBlocksTest::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::POSTApiV1AdminCanonicalEmailBlocksTest::BehavesLikeForbiddenForWrongRole_2::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::DELETEApiV1AdminCanonicalEmailBlocksId::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::DELETEApiV1AdminCanonicalEmailBlocksId::BehavesLikeForbiddenForWrongRole_2::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::DELETEApiV1AdminCanonicalEmailBlocksId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::POSTApiV1AdminCanonicalEmailBlocks::BehavesLikeForbiddenForWrongRole_2::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::POSTApiV1AdminCanonicalEmailBlocks::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::CanonicalEmailBlocks::POSTApiV1AdminCanonicalEmailBlocks::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::EmailDomainBlocks::POSTApiV1AdminEmailDomainBlocks::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::EmailDomainBlocks::POSTApiV1AdminEmailDomainBlocks::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::EmailDomainBlocks::POSTApiV1AdminEmailDomainBlocks::BehavesLikeForbiddenForWrongRole_2::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::EmailDomainBlocks::GETApiV1AdminEmailDomainBlocks::BehavesLikeForbiddenForWrongRole_2::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::EmailDomainBlocks::GETApiV1AdminEmailDomainBlocks::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::EmailDomainBlocks::GETApiV1AdminEmailDomainBlocks::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::EmailDomainBlocks::GETApiV1AdminEmailDomainBlocksId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::EmailDomainBlocks::GETApiV1AdminEmailDomainBlocksId::BehavesLikeForbiddenForWrongRole_2::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::EmailDomainBlocks::GETApiV1AdminEmailDomainBlocksId::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::EmailDomainBlocks::DELETEApiV1AdminEmailDomainBlocks::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::EmailDomainBlocks::DELETEApiV1AdminEmailDomainBlocks::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::EmailDomainBlocks::DELETEApiV1AdminEmailDomainBlocks::BehavesLikeForbiddenForWrongRole_2::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::APIV2AdminAccounts::GETIndex::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::APIV2AdminAccounts::GETIndex::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::Home::GETApiV1TimelinesHome::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end

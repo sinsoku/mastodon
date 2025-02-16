@@ -1,0 +1,19 @@
+class ActivityPub::InboxesController
+  def account_required?: () -> bool
+
+  def skip_unknown_actor_activity: () -> nil
+
+  def unknown_affected_account?: () -> void
+
+  def body: () -> void
+
+  def create: () -> bool
+
+  def upgrade_account: () -> void
+
+  def process_collection_synchronization: () -> void
+
+  def process_payload: () -> void
+
+  def skip_temporary_suspension_response?: () -> bool
+end

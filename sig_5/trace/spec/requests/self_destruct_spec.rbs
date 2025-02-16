@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::SelfDestructMode::WhenRequestingASuspendedAccount::LetDefinitions
+  def suspended: () -> Account
+end
+
+module RSpec::ExampleGroups::SelfDestructMode::WhenAccessingStillEnabledEndpointsWhenLoggedIn::LetDefinitions
+  def user: () -> User
+end

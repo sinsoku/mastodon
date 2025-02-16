@@ -1,0 +1,5 @@
+class REST::ScheduledStatusSerializer
+  def id: () -> String
+
+  def params: () -> Hash[untyped, untyped]
+end

@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::DeleteMuteWorker::LetDefinitions
+  def service: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def worker: () -> DeleteMuteWorker
+end
+
+module RSpec::ExampleGroups::DeleteMuteWorker::Perform::WithAnExpiredMute::LetDefinitions
+  def mute: () -> Mute
+end
+
+module RSpec::ExampleGroups::DeleteMuteWorker::Perform::WithAnUnexpiredMute::LetDefinitions
+  def mute: () -> Mute
+end

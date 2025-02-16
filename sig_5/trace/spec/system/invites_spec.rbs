@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::Invites::LetDefinitions
+  def user: () -> User
+end
+
+class RSpec::ExampleGroups::Invites
+  def delete_invite: (Invite) -> void
+
+  def copyable_field: () -> Capybara::Node::Element
+
+  def fill_invite_form: () -> void
+
+  def submit_form: () -> void
+end

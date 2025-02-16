@@ -1,0 +1,19 @@
+class UserPolicy
+  def disable_2fa?: () -> bool
+
+  def approve?: () -> bool
+
+  def reject?: () -> bool
+
+  def enable?: () -> bool
+
+  def change_role?: () -> bool
+
+  def confirm?: () -> bool
+
+  def disable?: () -> bool
+
+  def reset_password?: () -> bool
+
+  def change_email?: () -> bool
+end

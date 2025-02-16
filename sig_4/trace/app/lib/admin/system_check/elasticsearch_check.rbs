@@ -1,0 +1,3 @@
+class Admin::SystemCheck::ElasticsearchCheck
+  def skip?: () -> void
+end

@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::DashboardPolicy::LetDefinitions
+  def subject: () -> Class
+
+  def account: () -> Account
+
+  def admin: () -> Account
+end

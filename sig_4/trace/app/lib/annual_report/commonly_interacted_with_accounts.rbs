@@ -1,0 +1,5 @@
+class AnnualReport::CommonlyInteractedWithAccounts
+  def generate: () -> void
+
+  def commonly_interacted_with_accounts: () -> Hash[untyped, untyped]
+end

@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::ClearDomainMediaService::LetDefinitions
+  def bad_account: () -> Account
+
+  def bad_status_plain: () -> Status
+
+  def bad_status_with_attachment: () -> Status
+
+  def bad_attachment: () -> MediaAttachment
+
+  def subject: () -> ClearDomainMediaService
+end

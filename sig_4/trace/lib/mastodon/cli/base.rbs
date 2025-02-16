@@ -1,0 +1,25 @@
+class Mastodon::CLI::Emoji
+  def self.exit_on_failure?: () -> void
+end
+
+class Mastodon::CLI::Base
+  def reset_connection_pools!: () -> void
+
+  def dry_run_mode_suffix: () -> String
+
+  def dry_run?: () -> void
+
+  def fail_with_message: (String) -> void
+end
+
+class Mastodon::CLI::Media
+  def self.exit_on_failure?: () -> void
+end
+
+class Mastodon::CLI::CanonicalEmailBlocks
+  def self.exit_on_failure?: () -> void
+end
+
+class Mastodon::CLI::Feeds
+  def self.exit_on_failure?: () -> void
+end

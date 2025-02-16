@@ -1,0 +1,7 @@
+class ActivityPub::RejectFollowSerializer
+  def id: () -> String
+
+  def type: () -> String
+
+  def actor: () -> String
+end

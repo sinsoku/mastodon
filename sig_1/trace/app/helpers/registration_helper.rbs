@@ -1,0 +1,4 @@
+module RegistrationHelper
+  def omniauth_only?: () -> void
+                    | () -> bool
+end

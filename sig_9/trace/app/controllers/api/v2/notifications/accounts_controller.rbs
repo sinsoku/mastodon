@@ -1,0 +1,15 @@
+class Api::V2::Notifications::AccountsController
+  def set_notifications!: () -> ActiveRecord::AssociationRelation
+
+  def index: () -> String
+
+  def load_accounts: () -> Array[untyped]
+
+  def next_path: () -> void
+
+  def records_continue?: () -> void
+
+  def prev_path: () -> void
+
+  def pagination_collection: () -> ActiveRecord::AssociationRelation
+end

@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::AdminReportsController::LetDefinitions
+  def user: () -> User
+end
+
+class RSpec::ExampleGroups::AdminReportsController
+  def last_action_log: () -> Admin::ActionLog
+end
+
+module RSpec::ExampleGroups::AdminReportsController::GETShow::AccountModerationNotes::LetDefinitions
+  def report: () -> Report
+end

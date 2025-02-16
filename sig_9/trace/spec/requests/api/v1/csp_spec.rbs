@@ -1,0 +1,16 @@
+class RSpec::ExampleGroups::APINamespaceMinimalContentSecurityPolicy
+  def stub_tests_controller: () -> void
+
+  def api_tests_controller: () -> void
+
+  def minimal_csp_headers: () -> void
+end
+
+class Api::V1::TestsController
+  def user_signed_in?: () -> void
+                     | () -> bool
+
+  def current_user: () -> nil
+
+  def index: () -> bool
+end

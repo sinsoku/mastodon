@@ -1,0 +1,79 @@
+class LinkDetailsExtractor
+  def initialize: (String, String, nil) -> void
+
+  def title: () -> String
+
+  def html_entities: () -> HTMLEntities
+
+  def structured_data: () -> LinkDetailsExtractor::StructuredData
+                     | () -> nil
+
+  def document: () -> Nokogiri::HTML5::Document
+
+  def detect_encoding_and_parse_document: () -> Nokogiri::HTML5::Document
+
+  def detect_encoding: () -> void
+
+  def detector: () -> CharlockHolmes::EncodingDetector
+
+  def header_encoding: () -> void
+
+  def description: () -> String
+
+  def published_at: () -> String
+
+  def author_name: () -> String
+
+  def provider_name: () -> String
+
+  def language: () -> String
+
+  def canonical_url: () -> String
+
+  def link_tag: (String) -> void
+
+  def head: () -> Nokogiri::XML::Element
+
+  def opengraph_tag: (String) -> void
+
+  def valid_url_or_nil: (String, ?same_origin_only: bool) -> void
+
+  def image: () -> String
+
+  def image_alt: () -> String
+
+  def meta_tag: (String) -> void
+
+  def icon: () -> String
+end
+
+class LinkDetailsExtractor::StructuredData
+  def initialize: (String) -> void
+
+  def valid?: () -> void
+
+  def json: () -> nil
+          | () -> Hash[untyped, untyped]
+
+  def root_array: (Hash[untyped, untyped]) -> Array[untyped]
+                | (Array[untyped]) -> Array[untyped]
+                | (nil) -> Array[untyped]
+
+  def headline: () -> void
+
+  def description: () -> void
+
+  def date_published: () -> void
+
+  def author_name: () -> void
+
+  def author: () -> Hash[untyped, untyped]
+
+  def first_of_value: (Hash[untyped, untyped]) -> void
+
+  def publisher_name: () -> void
+
+  def publisher: () -> Hash[untyped, untyped]
+
+  def language: () -> void
+end

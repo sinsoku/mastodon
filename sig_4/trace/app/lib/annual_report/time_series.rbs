@@ -1,0 +1,9 @@
+class AnnualReport::TimeSeries
+  def generate: () -> void
+
+  def statuses_per_month: () -> Hash[untyped, untyped]
+
+  def following_per_month: () -> Hash[untyped, untyped]
+
+  def followers_per_month: () -> Hash[untyped, untyped]
+end

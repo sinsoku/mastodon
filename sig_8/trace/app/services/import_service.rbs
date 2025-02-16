@@ -1,0 +1,15 @@
+class ImportService
+  def call: (Import) -> void
+
+  def import_follows!: () -> void
+
+  def parse_import_data!: (Array[untyped]) -> void
+
+  def import_data: () -> void
+
+  def import_relationships!: (String, String, ActiveRecord::Associations::CollectionProxy, Integer, ?Hash[untyped, untyped]) -> void
+
+  def import_bookmarks!: () -> void
+
+  def import_mutes!: () -> void
+end

@@ -1,0 +1,7 @@
+class Scheduler::AutoCloseRegistrationsScheduler
+  def perform: () -> void
+
+  def active_moderators?: () -> void
+
+  def switch_to_approval_mode!: () -> void
+end

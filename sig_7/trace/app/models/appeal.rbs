@@ -1,0 +1,11 @@
+class Appeal
+  def approved?: () -> void
+               | () -> bool
+
+  def rejected?: () -> void
+               | () -> bool
+
+  def validate_time_frame: () -> nil
+
+  def pending?: () -> void
+end

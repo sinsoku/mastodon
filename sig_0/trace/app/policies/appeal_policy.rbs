@@ -1,0 +1,5 @@
+class AppealPolicy
+  def index?: () -> bool
+
+  def approve?: () -> bool
+end

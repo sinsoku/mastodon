@@ -1,0 +1,7 @@
+class Api::V1::Instances::ExtendedDescriptionsController
+  def current_user: () -> nil
+
+  def set_extended_description: () -> ExtendedDescription
+
+  def show: () -> String
+end

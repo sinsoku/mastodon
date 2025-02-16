@@ -1,0 +1,10 @@
+class NoteLengthValidator
+  def validate_each: (Account, Symbol, String) -> void
+                   | (Account, Symbol, nil) -> void
+
+  def too_long?: (String) -> void
+               | (nil) -> void
+
+  def countable_text: (String) -> String
+                    | (nil) -> String
+end

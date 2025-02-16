@@ -1,0 +1,7 @@
+class Api::V1::Accounts::RelationshipsController
+  def index: () -> String
+
+  def account_ids: () -> void
+
+  def relationships: () -> void
+end

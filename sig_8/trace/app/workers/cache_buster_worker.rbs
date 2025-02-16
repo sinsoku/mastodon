@@ -1,0 +1,5 @@
+class CacheBusterWorker
+  def perform: (String) -> void
+
+  def cache_buster: () -> RSpec::Mocks::InstanceVerifyingDouble
+end

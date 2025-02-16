@@ -1,0 +1,26 @@
+class FeedManager
+  def clean_feeds!: (Symbol, Array[untyped]) -> void
+
+  def key: (Symbol, Integer, ?String) -> String
+         | (Symbol, Integer, ?nil) -> String
+
+  def unpush_from_home: (Account, Status, ?update: bool) -> void
+
+  def remove_from_feed: (Symbol, Integer, Status, ?aggregate_reblogs: bool) -> void
+
+  def push_to_home: (Account, Status, ?update: nil) -> void
+
+  def add_to_feed: (Symbol, Integer, Status, ?aggregate_reblogs: bool) -> void
+
+  def trim: (Symbol, Integer) -> void
+
+  def push_update_required?: (String) -> void
+
+  def filter: (Symbol, Status, Account) -> void
+
+  def build_crutches: (Integer, Array[untyped]) -> void
+
+  def crutches_active_mentions: (Array[untyped]) -> void
+
+  def filter_from_home: (Status, Integer, Hash[untyped, untyped], ?Symbol) -> void
+end

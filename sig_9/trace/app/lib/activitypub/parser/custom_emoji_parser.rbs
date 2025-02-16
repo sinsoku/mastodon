@@ -1,0 +1,9 @@
+class ActivityPub::Parser::CustomEmojiParser
+  def initialize: (ActiveSupport::HashWithIndifferentAccess) -> void
+
+  def shortcode: () -> String
+
+  def image_remote_url: () -> String
+
+  def uri: () -> void
+end

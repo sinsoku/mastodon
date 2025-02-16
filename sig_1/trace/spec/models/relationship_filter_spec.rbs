@@ -1,0 +1,29 @@
+module RSpec::ExampleGroups::RelationshipFilter::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::RelationshipFilter::Results::LetDefinitions
+  def account_of_7_months: () -> Account
+
+  def account_of_1_day: () -> Account
+
+  def account_of_3_days: () -> Account
+
+  def silent_account: () -> Account
+end
+
+module RSpec::ExampleGroups::RelationshipFilter::Results::WhenOrderingByLastActivity::WhenNotFiltering::LetDefinitions
+  def subject: () -> ActiveRecord::AssociationRelation
+end
+
+module RSpec::ExampleGroups::RelationshipFilter::Results::WhenOrderingByLastActivity::WhenFilteringForDormantAccounts::LetDefinitions
+  def subject: () -> ActiveRecord::AssociationRelation
+end
+
+module RSpec::ExampleGroups::RelationshipFilter::Results::WhenOrderingByAccountCreation::WhenNotFiltering::LetDefinitions
+  def subject: () -> ActiveRecord::AssociationRelation
+end
+
+module RSpec::ExampleGroups::RelationshipFilter::Results::WhenOrderingByAccountCreation::WhenFilteringForDormantAccounts::LetDefinitions
+  def subject: () -> ActiveRecord::AssociationRelation
+end

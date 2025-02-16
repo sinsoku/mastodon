@@ -1,0 +1,3 @@
+module ActiveRecord::Batches
+  def pluck_each: (*Symbol) -> void
+end

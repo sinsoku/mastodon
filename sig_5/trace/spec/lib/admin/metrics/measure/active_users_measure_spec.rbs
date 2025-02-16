@@ -1,0 +1,13 @@
+class RSpec::ExampleGroups::AdminMetricsMeasureActiveUsersMeasure::Data::WithActivityTrackingRecords
+  def record_login_activity: () -> void
+end
+
+module RSpec::ExampleGroups::AdminMetricsMeasureActiveUsersMeasure::LetDefinitions
+  def subject: () -> Admin::Metrics::Measure::ActiveUsersMeasure
+
+  def start_at: () -> ActiveSupport::TimeWithZone
+
+  def end_at: () -> Time
+
+  def params: () -> ActionController::Parameters
+end

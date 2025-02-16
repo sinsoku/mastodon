@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::ActivityPubRemoveSerializer::SerializerFor::LetDefinitions
+  def subject: () -> Class
+end
+
+module RSpec::ExampleGroups::ActivityPubRemoveSerializer::SerializerFor::WithAFeaturedTagModel::LetDefinitions
+  def model: () -> FeaturedTag
+end
+
+module RSpec::ExampleGroups::ActivityPubRemoveSerializer::SerializerFor::WithAnArray::LetDefinitions
+  def model: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubRemoveSerializer::SerializerFor::WithAStatusModel::LetDefinitions
+  def model: () -> Status
+end

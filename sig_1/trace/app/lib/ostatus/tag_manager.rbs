@@ -1,0 +1,11 @@
+class OStatus::TagManager
+  def uri_for: (Status) -> void
+             | (Account) -> void
+
+  def unique_tag: (ActiveSupport::TimeWithZone, Integer, String) -> void
+                | (Time, Integer, String) -> void
+
+  def local_id?: (String) -> void
+
+  def unique_tag_to_local_id: (String, String) -> void
+end

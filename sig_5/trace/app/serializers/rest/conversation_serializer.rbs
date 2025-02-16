@@ -1,0 +1,3 @@
+class REST::ConversationSerializer
+  def id: () -> String
+end

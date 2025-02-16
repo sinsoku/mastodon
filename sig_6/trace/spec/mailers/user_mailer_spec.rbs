@@ -1,0 +1,109 @@
+module RSpec::ExampleGroups::UserMailer::TwoFactorDisabled::LetDefinitions
+  def mail: () -> ActionMailer::MessageDelivery
+end
+
+module RSpec::ExampleGroups::UserMailer::LetDefinitions
+  def receiver: () -> User
+end
+
+module RSpec::ExampleGroups::UserMailer::SuspiciousSignIn::LetDefinitions
+  def mail: () -> ActionMailer::MessageDelivery
+
+  def ip: () -> String
+
+  def agent: () -> String
+
+  def timestamp: () -> Time
+end
+
+module RSpec::ExampleGroups::UserMailer::WebauthnEnabled::LetDefinitions
+  def mail: () -> ActionMailer::MessageDelivery
+end
+
+module RSpec::ExampleGroups::UserMailer::WebauthnDisabled::LetDefinitions
+  def mail: () -> ActionMailer::MessageDelivery
+end
+
+module RSpec::ExampleGroups::UserMailer::ResetPasswordInstructions::LetDefinitions
+  def mail: () -> ActionMailer::MessageDelivery
+end
+
+module RSpec::ExampleGroups::UserMailer::TwoFactorRecoveryCodesChanged::LetDefinitions
+  def mail: () -> ActionMailer::MessageDelivery
+end
+
+module RSpec::ExampleGroups::UserMailer::WebauthnCredentialAdded::LetDefinitions
+  def mail: () -> ActionMailer::MessageDelivery
+
+  def credential: () -> WebauthnCredential
+end
+
+module RSpec::ExampleGroups::UserMailer::WebauthnCredentialDeleted::LetDefinitions
+  def mail: () -> ActionMailer::MessageDelivery
+
+  def credential: () -> WebauthnCredential
+end
+
+module RSpec::ExampleGroups::UserMailer::BackupReady::LetDefinitions
+  def mail: () -> ActionMailer::MessageDelivery
+
+  def backup: () -> Backup
+end
+
+module RSpec::ExampleGroups::UserMailer::PasswordChange::LetDefinitions
+  def mail: () -> ActionMailer::MessageDelivery
+end
+
+module RSpec::ExampleGroups::UserMailer::TermsOfServiceChanged::LetDefinitions
+  def mail: () -> ActionMailer::MessageDelivery
+
+  def terms: () -> TermsOfService
+end
+
+module RSpec::ExampleGroups::UserMailer::Warning::LetDefinitions
+  def mail: () -> ActionMailer::MessageDelivery
+
+  def strike: () -> AccountWarning
+end
+
+module RSpec::ExampleGroups::UserMailer::TwoFactorEnabled::LetDefinitions
+  def mail: () -> ActionMailer::MessageDelivery
+end
+
+module RSpec::ExampleGroups::UserMailer::ConfirmationInstructions::LetDefinitions
+  def mail: () -> ActionMailer::MessageDelivery
+end
+
+module RSpec::ExampleGroups::UserMailer::AppealApproved::LetDefinitions
+  def mail: () -> ActionMailer::MessageDelivery
+
+  def appeal: () -> Appeal
+end
+
+module RSpec::ExampleGroups::UserMailer::EmailChanged::LetDefinitions
+  def mail: () -> ActionMailer::MessageDelivery
+end
+
+module RSpec::ExampleGroups::UserMailer::AppealRejected::LetDefinitions
+  def mail: () -> ActionMailer::MessageDelivery
+
+  def appeal: () -> Appeal
+end
+
+module RSpec::ExampleGroups::UserMailer::Failed2fa::LetDefinitions
+  def mail: () -> ActionMailer::MessageDelivery
+
+  def ip: () -> String
+
+  def agent: () -> String
+
+  def timestamp: () -> Time
+end
+
+module RSpec::ExampleGroups::UserMailer::Welcome::LetDefinitions
+  def mail: () -> ActionMailer::MessageDelivery
+end
+
+module RSpec::ExampleGroups::UserMailer::ReconfirmationInstructions::LetDefinitions
+  def mail: () -> ActionMailer::MessageDelivery
+end

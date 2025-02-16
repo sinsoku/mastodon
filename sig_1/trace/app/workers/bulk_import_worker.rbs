@@ -1,0 +1,3 @@
+class BulkImportWorker
+  def perform: (Integer) -> void
+end

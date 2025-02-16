@@ -1,0 +1,43 @@
+class Admin::AccountAction
+  def initialize: (?Hash[untyped, untyped]) -> void
+
+  def with_report?: () -> void
+
+  def report: () -> Report
+            | () -> nil
+
+  def self.types_for_account: (Account) -> void
+
+  def save!: () -> void
+
+  def process_action!: () -> void
+
+  def handle_disable!: () -> void
+
+  def process_strike!: () -> void
+
+  def text_for_warning: () -> void
+
+  def warning_preset: () -> nil
+
+  def status_ids: () -> void
+
+  def process_reports!: () -> void
+
+  def reports: () -> ActiveRecord::Relation
+
+  def process_notification!: () -> void
+
+  def warnable?: () -> void
+
+  def process_queue!: () -> void
+
+  def handle_silence!: () -> void
+
+  def self.i18n_scope: () -> void
+                     | () -> Symbol
+
+  def handle_suspend!: () -> void
+
+  def queue_suspension_worker!: () -> void
+end

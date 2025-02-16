@@ -1,0 +1,25 @@
+module RSpec::ExampleGroups::ActivityPubActivityMove::LetDefinitions
+  def follower: () -> Account
+
+  def old_account: () -> Account
+
+  def new_account: () -> Account
+
+  def also_known_as: () -> Array[untyped]
+
+  def json: () -> ActiveSupport::HashWithIndifferentAccess
+
+  def returned_account: () -> Account
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityMove::Perform::WhenTheNewAccountCanTBeResolved::LetDefinitions
+  def returned_account: () -> nil
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityMove::Perform::LetDefinitions
+  def subject: () -> ActivityPub::Activity::Move
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityMove::Perform::WhenTheNewAccountDoesNotReferencesTheOldAccount::LetDefinitions
+  def also_known_as: () -> Array[untyped]
+end

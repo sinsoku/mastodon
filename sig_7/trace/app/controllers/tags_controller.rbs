@@ -1,0 +1,7 @@
+class TagsController
+  def set_local: () -> nil
+
+  def set_tag: () -> Tag
+
+  def show: () -> nil
+end

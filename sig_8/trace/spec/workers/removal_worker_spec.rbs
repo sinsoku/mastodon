@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::RemovalWorker::LetDefinitions
+  def service: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def worker: () -> RemovalWorker
+end
+
+module RSpec::ExampleGroups::RemovalWorker::Perform::LetDefinitions
+  def status: () -> Status
+end

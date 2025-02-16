@@ -1,0 +1,16 @@
+class AppSignUpService
+  def call: (Doorkeeper::Application, String, ActionController::Parameters) -> Doorkeeper::AccessToken
+          | (Doorkeeper::Application, String, ActionController::Parameters) -> nil
+
+  def invite: () -> void
+
+  def create_user!: () -> void
+
+  def user_params: () -> ActionController::Parameters
+
+  def account_params: () -> void
+
+  def invite_request_params: () -> void
+
+  def create_access_token!: () -> void
+end

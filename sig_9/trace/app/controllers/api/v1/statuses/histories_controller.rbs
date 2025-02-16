@@ -1,0 +1,5 @@
+class Api::V1::Statuses::HistoriesController
+  def show: () -> String
+
+  def status_edits: () -> void
+end

@@ -1,0 +1,3 @@
+class PollPolicy
+  def vote?: () -> bool
+end

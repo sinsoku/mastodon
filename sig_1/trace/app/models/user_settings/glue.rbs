@@ -1,0 +1,9 @@
+module UserSettings::Glue
+  def to_model: () -> void
+
+  def persisted?: () -> void
+
+  def has_attribute?: (Symbol) -> void
+
+  def type_for_attribute: (String) -> void
+end

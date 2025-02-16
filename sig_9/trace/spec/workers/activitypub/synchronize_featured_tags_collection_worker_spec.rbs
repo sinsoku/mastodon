@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::ActivityPubSynchronizeFeaturedTagsCollectionWorker::LetDefinitions
+  def service: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def worker: () -> ActivityPub::SynchronizeFeaturedTagsCollectionWorker
+end
+
+module RSpec::ExampleGroups::ActivityPubSynchronizeFeaturedTagsCollectionWorker::Perform::LetDefinitions
+  def account: () -> Account
+
+  def url: () -> String
+end

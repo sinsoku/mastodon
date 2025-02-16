@@ -1,0 +1,9 @@
+module SignatureVerification
+  def signed_request_account: () -> void
+
+  def signed_request_actor: () -> void
+
+  def signed_request?: () -> void
+
+  def fail_with!: (String, **nil) -> void
+end

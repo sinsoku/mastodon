@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::OauthUserinfoEndpoint::GETOauthUserinfo::LetDefinitions
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::OauthUserinfoEndpoint::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def scopes: () -> String
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::OauthUserinfoEndpoint::POSTOauthUserinfo::LetDefinitions
+  def subject: () -> Integer
+end

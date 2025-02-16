@@ -1,0 +1,5 @@
+class Importer::TagsIndexImporter
+  def import!: () -> void
+
+  def index: () -> Class
+end

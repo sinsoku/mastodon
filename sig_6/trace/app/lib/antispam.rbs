@@ -1,0 +1,5 @@
+class Antispam
+  def local_preflight_check!: (Status) -> void
+
+  def spammy_texts: () -> Array[untyped]
+end

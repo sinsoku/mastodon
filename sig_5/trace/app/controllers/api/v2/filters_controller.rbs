@@ -1,0 +1,20 @@
+class Api::V2::FiltersController
+  def set_filter: () -> CustomFilter
+                | () -> nil
+
+  def destroy: () -> String
+
+  def update: () -> nil
+            | () -> String
+
+  def resource_params: () -> void
+
+  def show: () -> String
+
+  def set_filters: () -> ActiveRecord::AssociationRelation
+
+  def index: () -> String
+
+  def create: () -> String
+            | () -> nil
+end

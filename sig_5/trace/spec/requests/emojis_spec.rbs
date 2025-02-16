@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::Emojis::GETEmojisId::LetDefinitions
+  def emoji: () -> CustomEmoji
+end

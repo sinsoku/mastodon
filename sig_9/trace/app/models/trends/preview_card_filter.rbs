@@ -1,0 +1,11 @@
+class Trends::PreviewCardFilter
+  def initialize: (ActionController::Parameters) -> void
+
+  def results: () -> void
+
+  def initial_scope: () -> ActiveRecord::Relation
+
+  def scope_for: (String, String) -> void
+
+  def trending_scope: (String) -> void
+end

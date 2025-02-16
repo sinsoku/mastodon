@@ -1,0 +1,9 @@
+class Form::Redirect
+  def acct=: (String) -> String
+
+  def valid_with_challenge?: (User) -> void
+
+  def set_target_account: () -> void
+
+  def validate_target_account: () -> nil
+end

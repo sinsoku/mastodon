@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::AdminTrendsLinksController::LetDefinitions
+  def user: () -> User
+end

@@ -1,0 +1,19 @@
+class Paperclip::ColorExtractor
+  def make: () -> void
+
+  def palettes_from_imagemagick: () -> void
+
+  def palette_from_im_histogram: (String, Integer) -> Array[untyped]
+
+  def w3c_contrast: (ColorDiff::Color::RGB, ColorDiff::Color::RGB) -> Float
+
+  def lighten_or_darken: (ColorDiff::Color::RGB, Integer) -> void
+
+  def rgb_to_hsl: (Integer, Integer, Integer) -> Array[untyped]
+
+  def hsl_to_rgb: (Integer, Integer, Integer) -> void
+
+  def hue_to_rgb: (Float, Float, Float) -> Float
+
+  def rgb_to_hex: (ColorDiff::Color::RGB) -> void
+end

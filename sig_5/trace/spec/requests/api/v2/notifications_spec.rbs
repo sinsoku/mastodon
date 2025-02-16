@@ -1,0 +1,99 @@
+module RSpec::ExampleGroups::Notifications::LetDefinitions
+  def user: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV2Notifications::LetDefinitions
+  def bob: () -> User
+
+  def tom: () -> User
+
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV2Notifications::WhenPassingAnInvalidValueForExpandAccounts::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV2Notifications::WithExcludeTypesParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::Notifications::GETApiV2Notifications
+  def body_json_types: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV2Notifications::WithGroupedTypesParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV2Notifications::WithSinceIdParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+
+  def notifications: () -> ActiveRecord::AssociationRelation
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV2Notifications::WithTypesParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV2Notifications::WithLimitParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+
+  def notifications: () -> ActiveRecord::AssociationRelation
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV2Notifications::WhenRequestingStrippedDownAccounts::LetDefinitions
+  def recent_account: () -> Account
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Notifications::POSTApiV2NotificationsIdDismiss::LetDefinitions
+  def notification: () -> Notification
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::Notifications::POSTApiV2NotificationsIdDismiss::WhenNotificationBelongsToSomeoneElse::LetDefinitions
+  def notification: () -> Notification
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV2NotificationsId::LetDefinitions
+  def subject: () -> Integer
+
+  def notification: () -> Notification
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV2NotificationsId::WhenNotificationBelongsToSomeoneElse::LetDefinitions
+  def notification: () -> Notification
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV2NotificationsUnreadCount::LetDefinitions
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV2NotificationsUnreadCount::WithGroupedTypesParameter::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV2NotificationsUnreadCount::WithAUserProvidedLimit::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV2NotificationsUnreadCount::WithExcludeTypesParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Notifications::POSTApiV2NotificationsClear::LetDefinitions
+  def subject: () -> Integer
+end

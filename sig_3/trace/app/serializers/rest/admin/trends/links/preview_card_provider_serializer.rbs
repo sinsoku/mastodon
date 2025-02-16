@@ -1,0 +1,3 @@
+class REST::Admin::Trends::Links::PreviewCardProviderSerializer
+  def requires_review: () -> bool
+end

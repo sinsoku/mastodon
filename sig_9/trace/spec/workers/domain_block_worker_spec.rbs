@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::DomainBlockWorker::LetDefinitions
+  def subject: () -> DomainBlockWorker
+end
+
+module RSpec::ExampleGroups::DomainBlockWorker::Perform::LetDefinitions
+  def domain_block: () -> DomainBlock
+end

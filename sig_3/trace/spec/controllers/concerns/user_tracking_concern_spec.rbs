@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::UserTrackingConcern::WhenSignedIn::LetDefinitions
+  def user: () -> User
+end
+
+class AnonymousController
+  def show: () -> String
+end
+
+class RSpec::ExampleGroups::UserTrackingConcern::WhenSignedIn
+  def expect_updated_sign_in_at: (User) -> void
+end

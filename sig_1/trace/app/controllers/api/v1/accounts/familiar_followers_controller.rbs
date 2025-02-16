@@ -1,0 +1,9 @@
+class Api::V1::Accounts::FamiliarFollowersController
+  def set_accounts: () -> ActiveRecord::Relation
+
+  def account_ids: () -> void
+
+  def index: () -> String
+
+  def familiar_followers: () -> FamiliarFollowersPresenter
+end

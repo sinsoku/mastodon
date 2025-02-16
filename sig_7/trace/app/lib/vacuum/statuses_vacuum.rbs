@@ -1,0 +1,11 @@
+class Vacuum::StatusesVacuum
+  def initialize: (ActiveSupport::Duration) -> void
+
+  def perform: () -> void
+
+  def vacuum_statuses!: () -> void
+
+  def statuses_scope: () -> ActiveRecord::Relation
+
+  def retention_period_as_id: () -> void
+end

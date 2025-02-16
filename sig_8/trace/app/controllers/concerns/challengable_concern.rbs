@@ -1,0 +1,7 @@
+module ChallengableConcern
+  def require_challenge!: () -> nil
+
+  def skip_challenge?: () -> void
+
+  def challenge_passed_recently?: () -> void
+end

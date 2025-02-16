@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::AccountWarningPreset::Alphabetical::LetDefinitions
+  def first: () -> AccountWarningPreset
+
+  def second: () -> AccountWarningPreset
+
+  def third: () -> AccountWarningPreset
+end

@@ -1,0 +1,5 @@
+module Account::StatusesSearch
+  def enqueue_update_public_statuses_index: () -> nil
+
+  def enqueue_add_to_public_statuses_index: () -> void
+end

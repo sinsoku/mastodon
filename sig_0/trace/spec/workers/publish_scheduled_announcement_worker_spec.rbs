@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::PublishScheduledAnnouncementWorker::LetDefinitions
+  def remote_account: () -> Account
+
+  def remote_status: () -> Status
+
+  def local_status: () -> Status
+
+  def subject: () -> PublishScheduledAnnouncementWorker
+
+  def scheduled_announcement: () -> Announcement
+end

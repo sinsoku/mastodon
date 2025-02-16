@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::Backups::GETBackupsDownload::LetDefinitions
+  def user: () -> User
+
+  def backup: () -> Backup
+end
+
+class RSpec::ExampleGroups::Backups::GETBackupsDownload
+  def backup_dump_url: () -> void
+end

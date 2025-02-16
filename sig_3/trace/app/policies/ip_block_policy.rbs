@@ -1,0 +1,11 @@
+class IpBlockPolicy
+  def index?: () -> bool
+
+  def show?: () -> bool
+
+  def create?: () -> bool
+
+  def update?: () -> bool
+
+  def destroy?: () -> bool
+end

@@ -1,0 +1,54 @@
+class ApplicationController
+  def current_session: () -> SessionActivation
+                     | () -> nil
+
+  def check_self_destruct!: () -> nil
+
+  def require_functional!: () -> nil
+
+  def set_cache_control_defaults: () -> Hash[untyped, untyped]
+
+  def current_account: () -> Account
+                     | () -> nil
+
+  def single_user_mode?: () -> bool
+
+  def current_theme: () -> String
+
+  def skip_csrf_meta_tags?: () -> bool
+
+  def not_found: () -> void
+
+  def gone: () -> void
+
+  def respond_with_error: (Integer) -> void
+
+  def store_referrer: () -> nil
+                    | () -> String
+
+  def use_seamless_external_login?: () -> bool
+
+  def after_sign_out_path_for: (Symbol) -> void
+
+  def truthy_param?: (Symbol) -> void
+
+  def forbidden: () -> ActiveSupport::SafeBuffer
+end
+
+module ApplicationController::HelperMethods
+  def current_account: (*untyped, **untyped) -> Account
+                     | (*untyped, **untyped) -> nil
+
+  def current_session: (*untyped, **untyped) -> void
+                     | (*untyped, **untyped) -> SessionActivation
+
+  def single_user_mode?: (*untyped, **untyped) -> void
+
+  def current_theme: (*untyped, **untyped) -> String
+
+  def skip_csrf_meta_tags?: (*untyped, **untyped) -> void
+
+  def limited_federation_mode?: (*untyped, **untyped) -> void
+
+  def use_seamless_external_login?: (*untyped, **untyped) -> void
+end

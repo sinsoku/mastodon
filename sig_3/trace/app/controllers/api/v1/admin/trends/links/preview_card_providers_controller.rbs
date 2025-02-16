@@ -1,0 +1,17 @@
+class Api::V1::Admin::Trends::Links::PreviewCardProvidersController
+  def reject: () -> String
+            | () -> nil
+
+  def set_providers: () -> Array[untyped]
+
+  def index: () -> String
+
+  def next_path: () -> void
+
+  def records_continue?: () -> void
+
+  def prev_path: () -> void
+
+  def approve: () -> String
+             | () -> nil
+end

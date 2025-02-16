@@ -1,0 +1,35 @@
+module RSpec::ExampleGroups::StatusThreadingConcern::Ancestors::LetDefinitions
+  def alice: () -> Account
+
+  def bob: () -> Account
+
+  def jeff: () -> Account
+
+  def status: () -> Status
+
+  def reply_to_status: () -> Status
+
+  def reply_to_first_reply: () -> Status
+
+  def reply_to_second_reply: () -> Status
+
+  def viewer: () -> Account
+end
+
+module RSpec::ExampleGroups::StatusThreadingConcern::Descendants::LetDefinitions
+  def alice: () -> Account
+
+  def bob: () -> Account
+
+  def jeff: () -> Account
+
+  def status: () -> Status
+
+  def reply_to_status_from_alice: () -> Status
+
+  def reply_to_status_from_bob: () -> Status
+
+  def reply_to_alice_reply_from_jeff: () -> Status
+
+  def viewer: () -> Account
+end

@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::AnnouncementPolicy::LetDefinitions
+  def policy: () -> Class
+
+  def admin: () -> Account
+
+  def john: () -> Account
+end

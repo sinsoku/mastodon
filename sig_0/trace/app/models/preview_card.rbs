@@ -1,0 +1,9 @@
+class PreviewCard
+  def extract_dimensions: () -> Integer
+
+  def local?: () -> bool
+
+  def authors: () -> Array[untyped]
+
+  def serialized_authors: () -> void
+end

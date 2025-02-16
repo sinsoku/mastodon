@@ -1,0 +1,4 @@
+module Admin::Trends::StatusesHelper
+  def one_line_preview: (Status) -> ActiveSupport::SafeBuffer
+                      | (Status) -> String
+end

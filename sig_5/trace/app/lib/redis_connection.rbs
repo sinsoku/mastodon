@@ -1,0 +1,11 @@
+class RedisConnection
+  def self.with: (*untyped, **untyped) -> void
+
+  def self.pool: () -> ConnectionPool
+
+  def initialize: () -> void
+
+  def connection: () -> void
+
+  def raw_connection: () -> void
+end

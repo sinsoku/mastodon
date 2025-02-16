@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::SettingsTwoFactorAuthenticationMethodsController::WhenSignedIn::LetDefinitions
+  def user: () -> User
+end

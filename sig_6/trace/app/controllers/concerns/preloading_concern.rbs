@@ -1,0 +1,3 @@
+module PreloadingConcern
+  def preload_collection: (Array[untyped], Class) -> void
+end

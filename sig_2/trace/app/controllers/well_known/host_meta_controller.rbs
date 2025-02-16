@@ -1,0 +1,3 @@
+class WellKnown::HostMetaController
+  def show: () -> String
+end

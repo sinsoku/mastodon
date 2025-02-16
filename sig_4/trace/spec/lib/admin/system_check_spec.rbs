@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::AdminSystemCheck::Perform::LetDefinitions
+  def result: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::AdminSystemCheck::LetDefinitions
+  def user: () -> User
+end

@@ -1,0 +1,14 @@
+class DomainBlock
+  def self.suspend?: (String) -> bool
+
+  def self.rule_for: (String) -> nil
+                   | (nil) -> nil
+                   | (String) -> DomainBlock
+
+  def self.reject_media?: (nil) -> void
+                        | (String) -> bool
+
+  def to_log_human_identifier: () -> void
+
+  def stricter_than?: (DomainBlock) -> bool
+end

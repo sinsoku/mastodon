@@ -1,0 +1,17 @@
+class FetchResourceService
+  def call: (String) -> void
+
+  def process: (String, ?terminal: bool) -> void
+
+  def perform_request: () -> void
+
+  def process_response: (HTTP::Response, ?bool) -> void
+
+  def expected_type?: (Hash[untyped, untyped]) -> void
+
+  def process_html: (HTTP::Response) -> void
+
+  def parse_link_header: (HTTP::Response) -> void
+
+  def process_link_headers: (LinkHeader) -> void
+end

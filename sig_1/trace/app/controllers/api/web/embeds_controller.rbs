@@ -1,0 +1,7 @@
+class Api::Web::EmbedsController
+  def set_status: () -> nil
+                | () -> Status
+                | () -> String
+
+  def show: () -> String
+end

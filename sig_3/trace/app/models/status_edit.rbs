@@ -1,0 +1,3 @@
+class StatusEdit
+  def ordered_media_attachments: () -> Array[untyped]
+end

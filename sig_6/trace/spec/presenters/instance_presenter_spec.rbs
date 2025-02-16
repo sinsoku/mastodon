@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::InstancePresenter::LetDefinitions
+  def instance_presenter: () -> InstancePresenter
+end

@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::Rule::Scopes::Ordered::LetDefinitions
+  def first_rule: () -> Rule
+
+  def last_rule: () -> Rule
+end

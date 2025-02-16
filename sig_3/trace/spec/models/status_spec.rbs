@@ -1,0 +1,123 @@
+module RSpec::ExampleGroups::Status::Callbacks::StrippingContentWhenRequired::WithARemoteAccount::LetDefinitions
+  def subject: () -> Status
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::Status::Callbacks::StrippingContentWhenRequired::WithALocalAccount::WithPopulatedFields::LetDefinitions
+  def subject: () -> Status
+end
+
+module RSpec::ExampleGroups::Status::Callbacks::StrippingContentWhenRequired::WithALocalAccount::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::Status::Callbacks::StrippingContentWhenRequired::WithALocalAccount::WithEmptyFields::LetDefinitions
+  def subject: () -> Status
+end
+
+module RSpec::ExampleGroups::Status::FavouritesMap::LetDefinitions
+  def status: () -> Status
+
+  def account: () -> Account
+
+  def subject: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Status::LetDefinitions
+  def bob: () -> Account
+
+  def subject: () -> Status
+
+  def alice: () -> Account
+
+  def other: () -> Status
+end
+
+module RSpec::ExampleGroups::Status::TaggedWith::LetDefinitions
+  def status_with_tag_cats: () -> Status
+
+  def tag_cats: () -> Tag
+
+  def status_with_tag_dogs: () -> Status
+
+  def tag_dogs: () -> Tag
+
+  def status_tagged_with_zebras: () -> Status
+
+  def tag_zebras: () -> Tag
+
+  def status_without_tags: () -> Status
+
+  def status_with_all_tags: () -> Status
+end
+
+module RSpec::ExampleGroups::Status::TaggedWithNone::LetDefinitions
+  def status_with_tag_cats: () -> Status
+
+  def tag_cats: () -> Tag
+
+  def status_with_tag_dogs: () -> Status
+
+  def tag_dogs: () -> Tag
+
+  def status_tagged_with_zebras: () -> Status
+
+  def tag_zebras: () -> Tag
+
+  def status_without_tags: () -> Status
+
+  def status_with_all_tags: () -> Status
+end
+
+module RSpec::ExampleGroups::Status::OrderedMediaAttachments::LetDefinitions
+  def status: () -> Status
+
+  def second_attachment: () -> MediaAttachment
+
+  def last_attachment: () -> MediaAttachment
+
+  def extra_attachment: () -> MediaAttachment
+
+  def first_attachment: () -> MediaAttachment
+end
+
+module RSpec::ExampleGroups::Status::ReblogsMap::LetDefinitions
+  def account: () -> Account
+
+  def status: () -> Status
+
+  def subject: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Status::Validations::WithARemoteAccount::LetDefinitions
+  def subject: () -> Status
+
+  def remote_account: () -> Account
+end
+
+module RSpec::ExampleGroups::Status::TaggedWithAll::LetDefinitions
+  def status_with_tag_cats: () -> Status
+
+  def tag_cats: () -> Tag
+
+  def status_with_tag_dogs: () -> Status
+
+  def tag_dogs: () -> Tag
+
+  def status_tagged_with_zebras: () -> Status
+
+  def tag_zebras: () -> Tag
+
+  def status_without_tags: () -> Status
+
+  def status_with_all_tags: () -> Status
+end
+
+module RSpec::ExampleGroups::Status::MutesMap::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+
+  def status: () -> Status
+
+  def account: () -> Account
+end

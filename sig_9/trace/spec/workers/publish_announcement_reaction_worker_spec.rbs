@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::PublishAnnouncementReactionWorker::LetDefinitions
+  def worker: () -> PublishAnnouncementReactionWorker
+end
+
+module RSpec::ExampleGroups::PublishAnnouncementReactionWorker::Perform::LetDefinitions
+  def announcement: () -> Announcement
+
+  def name: () -> String
+end

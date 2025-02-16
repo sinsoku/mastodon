@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::APIWebPushSubscriptions::DELETEApiWebPushSubscriptionsId::LetDefinitions
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::APIWebPushSubscriptions::DELETEApiWebPushSubscriptionsId::WhenTheTokenIsInvalid::LetDefinitions
+  def token: () -> String
+end
+
+module RSpec::ExampleGroups::APIWebPushSubscriptions::DELETEApiWebPushSubscriptionsId::WhenTheSubscriptionDoesNotExist::LetDefinitions
+  def token: () -> String
+
+  def web_push_subscription: () -> Web::PushSubscription
+end
+
+module RSpec::ExampleGroups::APIWebPushSubscriptions::DELETEApiWebPushSubscriptionsId::WhenTheSubscriptionExists::LetDefinitions
+  def web_push_subscription: () -> Web::PushSubscription
+
+  def token: () -> String
+end

@@ -1,0 +1,9 @@
+class Api::V1::AppsController
+  def create: () -> String
+
+  def application_options: () -> void
+
+  def app_params: () -> ActionController::Parameters
+
+  def app_scopes_or_default: () -> void
+end

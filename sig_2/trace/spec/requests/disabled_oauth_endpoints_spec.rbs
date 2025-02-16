@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::DisabledOAuthRoutes::PATCHOauthApplicationsId::LetDefinitions
+  def application: () -> Doorkeeper::Application
+end
+
+module RSpec::ExampleGroups::DisabledOAuthRoutes::PUTOauthApplicationsId::LetDefinitions
+  def application: () -> Doorkeeper::Application
+end
+
+module RSpec::ExampleGroups::DisabledOAuthRoutes::GETOauthApplicationsIdEdit::LetDefinitions
+  def application: () -> Doorkeeper::Application
+end
+
+module RSpec::ExampleGroups::DisabledOAuthRoutes::GETOauthApplicationsId::LetDefinitions
+  def application: () -> Doorkeeper::Application
+end
+
+module RSpec::ExampleGroups::DisabledOAuthRoutes::DELETEOauthApplicationsId::LetDefinitions
+  def application: () -> Doorkeeper::Application
+end

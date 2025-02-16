@@ -1,0 +1,5 @@
+class NotificationGroup
+  def type: (*untyped, **untyped) -> Symbol
+
+  def target_status: (*untyped, **untyped) -> nil
+end

@@ -1,0 +1,77 @@
+module RSpec::ExampleGroups::Notification::PaginateGroupsByMinId::LetDefinitions
+  def notifications: () -> Array[untyped]
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::Notification::TargetStatus::LetDefinitions
+  def notification: () -> Notification
+
+  def reblog: () -> Status
+
+  def status: () -> Status
+
+  def mention: () -> Mention
+
+  def favourite: () -> Favourite
+end
+
+module RSpec::ExampleGroups::Notification::TargetStatus::WhenActivityIsReblog::LetDefinitions
+  def activity: () -> Status
+end
+
+module RSpec::ExampleGroups::Notification::TargetStatus::WhenActivityIsMention::LetDefinitions
+  def activity: () -> Mention
+end
+
+module RSpec::ExampleGroups::Notification::TargetStatus::WhenActivityIsFavourite::LetDefinitions
+  def activity: () -> Favourite
+end
+
+module RSpec::ExampleGroups::Notification::PreloadCacheCollectionTargetStatuses::LetDefinitions
+  def subject: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Notification::PreloadCacheCollectionTargetStatuses::WhenNotificationsAreEmpty::LetDefinitions
+  def notifications: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Notification::PreloadCacheCollectionTargetStatuses::WhenNotificationsArePresent::LetDefinitions
+  def notifications: () -> Array[untyped]
+
+  def mention: () -> Mention
+
+  def status: () -> Status
+
+  def reblog: () -> Status
+
+  def follow: () -> Follow
+
+  def follow_request: () -> FollowRequest
+
+  def favourite: () -> Favourite
+
+  def poll: () -> Poll
+end
+
+class RSpec::ExampleGroups::Notification::PreloadCacheCollectionTargetStatuses::WhenNotificationsArePresent::WithAPreloadedTargetStatusAndACachedStatus
+  def mention_attributes: () -> void
+
+  def status_attributes: () -> void
+
+  def reblog_attributes: () -> void
+
+  def follow_attributes: () -> void
+
+  def follow_request_attributes: () -> void
+
+  def favourite_attributes: () -> void
+
+  def poll_attributes: () -> void
+end
+
+module RSpec::ExampleGroups::Notification::PaginateGroupsByMaxId::LetDefinitions
+  def notifications: () -> Array[untyped]
+
+  def account: () -> Account
+end

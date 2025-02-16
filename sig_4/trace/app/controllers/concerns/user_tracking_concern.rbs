@@ -1,0 +1,5 @@
+module UserTrackingConcern
+  def update_user_sign_in: () -> nil
+
+  def user_needs_sign_in_update?: () -> void
+end

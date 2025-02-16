@@ -1,0 +1,3 @@
+class Scheduler::PgheroScheduler
+  def perform: () -> void
+end

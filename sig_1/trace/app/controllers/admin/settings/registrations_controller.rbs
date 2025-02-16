@@ -1,0 +1,3 @@
+class Admin::Settings::RegistrationsController
+  def after_update_redirect_path: () -> void
+end

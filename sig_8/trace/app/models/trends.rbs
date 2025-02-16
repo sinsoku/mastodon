@@ -1,0 +1,5 @@
+module Trends
+  def self.links: () -> Trends::Links
+
+  def self.statuses: () -> Trends::Statuses
+end

@@ -1,0 +1,6 @@
+class CreateFeaturedTagService
+  def call: (Account, String, ?force: bool) -> FeaturedTag
+          | (Account, String, ?force: bool) -> nil
+
+  def build_json: (FeaturedTag) -> void
+end

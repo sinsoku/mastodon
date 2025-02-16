@@ -1,0 +1,39 @@
+module RSpec::ExampleGroups::ActivityPubActivityUpdate::LetDefinitions
+  def sender: () -> Account
+
+  def subject: () -> ActivityPub::Activity::Update
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityUpdate::Perform::WithAQuestionObject::LetDefinitions
+  def at_time: () -> Time
+
+  def status: () -> Status
+
+  def json: () -> ActiveSupport::HashWithIndifferentAccess
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityUpdate::Perform::WithAnActorObject::LetDefinitions
+  def actor_json: () -> Hash[untyped, untyped]
+
+  def json: () -> ActiveSupport::HashWithIndifferentAccess
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityUpdate::Perform::WithANoteObject::LetDefinitions
+  def status: () -> Status
+
+  def json: () -> ActiveSupport::HashWithIndifferentAccess
+
+  def updated: () -> nil
+
+  def favourites: () -> Integer
+
+  def reblogs: () -> Integer
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityUpdate::Perform::WithANoteObject::WithAnExplicitUpdate::LetDefinitions
+  def updated: () -> String
+
+  def favourites: () -> Integer
+
+  def reblogs: () -> Integer
+end

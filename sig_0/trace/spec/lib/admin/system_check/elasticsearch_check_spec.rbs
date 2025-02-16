@@ -1,0 +1,9 @@
+class RSpec::ExampleGroups::AdminSystemCheckElasticsearchCheck
+  def stub_elasticsearch_error: () -> void
+end
+
+module RSpec::ExampleGroups::AdminSystemCheckElasticsearchCheck::LetDefinitions
+  def check: () -> Admin::SystemCheck::ElasticsearchCheck
+
+  def user: () -> User
+end

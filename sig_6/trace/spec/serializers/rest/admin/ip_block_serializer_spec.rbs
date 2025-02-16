@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::RESTAdminIpBlockSerializer::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::RESTAdminIpBlockSerializer::WhenTimestampsArePopulated::LetDefinitions
+  def record: () -> IpBlock
+end

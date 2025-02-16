@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::StatusPolicy::LetDefinitions
+  def status: () -> Status
+
+  def alice: () -> Account
+
+  def subject: () -> Class
+
+  def bob: () -> Account
+end

@@ -1,0 +1,15 @@
+class REST::NotificationSerializer
+  def id: () -> String
+
+  def group_key: () -> String
+
+  def filtered?: (*untyped, **untyped) -> bool
+
+  def status_type?: () -> bool
+
+  def report_type?: () -> bool
+
+  def relationship_severance_event?: () -> bool
+
+  def moderation_warning_event?: () -> bool
+end

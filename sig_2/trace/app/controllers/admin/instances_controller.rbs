@@ -1,0 +1,24 @@
+class Admin::InstancesController
+  def set_instances: () -> ActiveRecord::Relation
+
+  def filtered_instances: () -> ActiveRecord::Relation
+
+  def filter_params: () -> void
+
+  def index: () -> Array[untyped]
+
+  def preload_delivery_failures!: () -> void
+
+  def set_instance: () -> Instance
+
+  def show: () -> ActiveRecord::Relation
+
+  def stop_delivery: () -> String
+
+  def restart_delivery: () -> String
+
+  def destroy: () -> nil
+             | () -> String
+
+  def clear_delivery_errors: () -> String
+end

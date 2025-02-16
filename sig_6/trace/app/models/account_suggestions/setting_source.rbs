@@ -1,0 +1,7 @@
+class AccountSuggestions::SettingSource
+  def get: (Account, ?limit: Integer) -> void
+
+  def setting_enabled?: () -> void
+
+  def setting: () -> String
+end

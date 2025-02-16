@@ -1,0 +1,5 @@
+module ReactComponentHelper
+  def react_admin_component: (Symbol, ?Hash[untyped, untyped]) -> void
+
+  def div_tag_with_data: (Hash[untyped, untyped]) -> void
+end

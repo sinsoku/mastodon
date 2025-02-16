@@ -1,0 +1,3 @@
+module FiltersHelper
+  def filter_action_label: (Symbol) -> ActiveSupport::SafeBuffer
+end

@@ -1,0 +1,7 @@
+class Scheduler::UserCleanupScheduler
+  def perform: () -> void
+
+  def clean_unconfirmed_accounts!: () -> void
+
+  def clean_discarded_statuses!: () -> void
+end

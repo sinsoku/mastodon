@@ -1,0 +1,18 @@
+class Admin::CustomEmojisController
+  def index: () -> Form::CustomEmojiBatch
+
+  def filtered_custom_emojis: () -> ActiveRecord::Relation
+
+  def filter_params: () -> void
+
+  def new: () -> CustomEmoji
+
+  def create: () -> ActiveSupport::SafeBuffer
+            | () -> String
+
+  def resource_params: () -> void
+
+  def batch: () -> String
+
+  def form_custom_emoji_batch_params: () -> nil
+end

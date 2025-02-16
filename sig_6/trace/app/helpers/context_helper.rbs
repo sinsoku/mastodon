@@ -1,0 +1,3 @@
+module ContextHelper
+  def serialized_context: (Hash[untyped, untyped], Hash[untyped, untyped]) -> void
+end

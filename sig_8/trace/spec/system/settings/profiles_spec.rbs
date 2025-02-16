@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::SettingsProfilePage::LetDefinitions
+  def user: () -> User
+
+  def account: () -> Account
+end
+
+class RSpec::ExampleGroups::SettingsProfilePage
+  def display_name_field: () -> void
+
+  def avatar_field: () -> void
+end

@@ -1,0 +1,49 @@
+module RSpec::ExampleGroups::ApplicationController::NotFound::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+class AnonymousController
+  def route_not_found: () -> String
+
+  def route_gone: () -> String
+
+  def success: () -> bool
+
+  def route_unprocessable_entity: () -> String
+
+  def invalid_authenticity_token: () -> nil
+
+  def route_forbidden: () -> String
+
+  def record_not_found: () -> nil
+
+  def routing_error: () -> nil
+end
+
+module RSpec::ExampleGroups::ApplicationController::WithAForgery::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::ApplicationController::Gone::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::ApplicationController::UnprocessableEntity::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::ApplicationController::WithActionControllerInvalidAuthenticityToken::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::ApplicationController::Forbidden::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::ApplicationController::WithActiveRecordRecordNotFound::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::ApplicationController::WithActionControllerRoutingError::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end

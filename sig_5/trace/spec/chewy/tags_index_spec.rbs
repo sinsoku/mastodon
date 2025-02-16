@@ -1,0 +1,3 @@
+class RSpec::ExampleGroups::TagsIndex
+  def raw_response: () -> void
+end

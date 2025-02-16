@@ -1,0 +1,4 @@
+class AuthorizeFollowService
+  def call: (Account, Account, **nil) -> void
+          | (Account, Account, **bool | String) -> void
+end

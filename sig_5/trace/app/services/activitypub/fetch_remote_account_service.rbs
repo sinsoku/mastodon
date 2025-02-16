@@ -1,0 +1,4 @@
+class ActivityPub::FetchRemoteAccountService
+  def call: (String, ?prefetched_body: nil, ?break_on_redirect: bool, ?only_key: bool, ?suppress_errors: bool, ?request_id: String) -> nil
+          | (String, ?prefetched_body: nil, ?break_on_redirect: bool, ?only_key: bool, ?suppress_errors: bool, ?request_id: String) -> Account
+end

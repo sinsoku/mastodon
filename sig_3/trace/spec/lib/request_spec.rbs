@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::Request::LetDefinitions
+  def subject: () -> Request
+end

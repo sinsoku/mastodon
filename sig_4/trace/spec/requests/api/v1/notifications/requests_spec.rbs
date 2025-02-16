@@ -1,0 +1,51 @@
+module RSpec::ExampleGroups::Requests::LetDefinitions
+  def user: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Requests::GETApiV1NotificationsRequests::LetDefinitions
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Requests::GETApiV1NotificationsRequestsMerged::LetDefinitions
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::Requests::POSTApiV1NotificationsRequestsIdAccept::LetDefinitions
+  def subject: () -> Integer
+
+  def notification_request: () -> NotificationRequest
+end
+
+module RSpec::ExampleGroups::Requests::POSTApiV1NotificationsRequestsIdAccept::WhenNotificationRequestBelongsToSomeoneElse::LetDefinitions
+  def notification_request: () -> NotificationRequest
+end
+
+module RSpec::ExampleGroups::Requests::POSTApiV1NotificationsRequestsAccept::LetDefinitions
+  def notification_request: () -> NotificationRequest
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::Requests::POSTApiV1NotificationsRequestsDismiss::LetDefinitions
+  def notification_request: () -> NotificationRequest
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::Requests::POSTApiV1NotificationsRequestsIdDismiss::LetDefinitions
+  def notification_request: () -> NotificationRequest
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::Requests::POSTApiV1NotificationsRequestsIdDismiss::WhenNotificationRequestBelongsToSomeoneElse::LetDefinitions
+  def notification_request: () -> NotificationRequest
+end

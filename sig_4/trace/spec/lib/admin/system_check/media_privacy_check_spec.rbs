@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::AdminSystemCheckMediaPrivacyCheck::LetDefinitions
+  def check: () -> Admin::SystemCheck::MediaPrivacyCheck
+
+  def user: () -> User
+end

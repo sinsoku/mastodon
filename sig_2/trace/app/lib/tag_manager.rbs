@@ -1,0 +1,12 @@
+class TagManager
+  def normalize_domain: (String) -> void
+                      | (String) -> String
+                      | (String) -> nil
+
+  def local_domain?: (nil) -> void
+                   | (String) -> void
+
+  def local_url?: (String) -> void
+
+  def web_domain?: (String) -> void
+end

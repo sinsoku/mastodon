@@ -1,0 +1,11 @@
+class ActivityPub::LinkedDataSignature
+  def initialize: (Hash[untyped, untyped]) -> void
+                | (ActiveSupport::HashWithIndifferentAccess) -> void
+
+  def sign!: (Account, ?sign_with: nil) -> void
+
+  def hash: (Hash[untyped, untyped]) -> String
+          | (ActiveSupport::HashWithIndifferentAccess) -> String
+
+  def verify_actor!: () -> void
+end

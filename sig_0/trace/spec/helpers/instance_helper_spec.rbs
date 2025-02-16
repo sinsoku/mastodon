@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::InstanceHelper::Favicon::WhenAnIconExists::LetDefinitions
+  def favicon: () -> SiteUpload
+
+  def app_icon: () -> SiteUpload
+end

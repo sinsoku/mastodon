@@ -1,0 +1,3 @@
+class Admin::Settings::BrandingController
+  def after_update_redirect_path: () -> void
+end

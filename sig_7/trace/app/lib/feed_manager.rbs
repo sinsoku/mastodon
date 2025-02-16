@@ -1,0 +1,14 @@
+class FeedManager
+  def clean_feeds!: (Symbol, Array[untyped]) -> void
+
+  def key: (Symbol, Integer, ?String) -> String
+         | (Symbol, Integer, ?nil) -> String
+
+  def merge_into_home: (Account, Account) -> void
+
+  def build_crutches: (Integer, Array[untyped]) -> Hash[untyped, untyped]
+
+  def crutches_active_mentions: (Array[untyped]) -> void
+
+  def trim: (Symbol, Integer) -> void
+end

@@ -1,0 +1,12 @@
+class Admin::AppealFilter
+  def initialize: (Hash[untyped, untyped]) -> void
+                | (ActionController::Parameters) -> void
+
+  def results: () -> void
+             | () -> ActiveRecord::Relation
+
+  def scope_for: (Symbol, String) -> void
+               | (String, String) -> void
+
+  def status_scope: (String) -> void
+end

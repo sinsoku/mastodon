@@ -1,0 +1,3 @@
+class EntityCache
+  def to_key: (Symbol, *String?) -> void
+end

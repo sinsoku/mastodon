@@ -1,0 +1,18 @@
+class ActivityPub::FetchRemoteKeyService
+  def call: (String, ?suppress_errors: bool) -> void
+
+  def expected_type?: () -> void
+
+  def actor_type?: () -> void
+
+  def find_actor: (String, Hash[untyped, untyped], bool) -> void
+
+  def public_key?: () -> void
+
+  def owner_uri: () -> void
+               | () -> String
+
+  def expected_owner_type?: () -> void
+
+  def confirmed_owner?: () -> void
+end

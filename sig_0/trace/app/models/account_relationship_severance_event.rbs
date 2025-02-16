@@ -1,0 +1,3 @@
+class AccountRelationshipSeveranceEvent
+  def set_relationships_count!: () -> Integer
+end

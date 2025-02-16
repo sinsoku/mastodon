@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::ActivityPubParserStatusParser::LetDefinitions
+  def subject: () -> ActivityPub::Parser::StatusParser
+
+  def json: () -> ActiveSupport::HashWithIndifferentAccess
+
+  def sender: () -> Account
+
+  def object_json: () -> Hash[untyped, untyped]
+
+  def follower: () -> Account
+end

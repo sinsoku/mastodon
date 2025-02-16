@@ -1,0 +1,87 @@
+module RSpec::ExampleGroups::Notifications::GETApiV2Notifications::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Notifications::POSTApiV2NotificationsIdDismiss::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV2NotificationsId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Notifications::GETApiV2NotificationsUnreadCount::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Notifications::POSTApiV2NotificationsClear::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::APIV1AnnualReports::GETApiV1AnnualReports::WithWrongScope::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Tags::POSTApiV1TagsIdFollow::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Tags::POSTUnfollow::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Public::GETApiV1TimelinesPublic::WhenTheInstanceAllowsPublicPreview::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Public::GETApiV1TimelinesPublic::WhenTheInstanceDoesNotAllowPublicPreview::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Filters::DELETEApiV2FiltersId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Filters::PUTApiV2FiltersId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Filters::GETApiV2FiltersId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Filters::GETApiV2Filters::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Filters::POSTApiV2Filters::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Tags_2::GETApiV1AdminTagsId::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::Tags_2::GETApiV1AdminTagsId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Tags_2::PUTApiV1AdminTagsId::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::Tags_2::PUTApiV1AdminTagsId::BehavesLikeForbiddenForWrongScope_2::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Tags_2::PUTApiV1AdminTagsId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Tags_2::GETApiV1AdminTags::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::Tags_2::GETApiV1AdminTags::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end

@@ -1,0 +1,21 @@
+class ActivityPub::RepliesController
+  def set_status: () -> String
+                | () -> Status
+
+  def pundit_user: () -> void
+
+  def set_replies: () -> ActiveRecord::AssociationRelation
+                 | () -> ActiveRecord::Relation
+
+  def only_other_accounts?: () -> void
+
+  def index: () -> String
+
+  def replies_collection_presenter: () -> void
+
+  def page_params: () -> void
+
+  def next_page: () -> void
+
+  def page_requested?: () -> void
+end

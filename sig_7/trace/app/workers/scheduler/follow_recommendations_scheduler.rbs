@@ -1,0 +1,3 @@
+class Scheduler::FollowRecommendationsScheduler
+  def perform: () -> void
+end

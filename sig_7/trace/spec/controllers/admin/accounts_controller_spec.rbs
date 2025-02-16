@@ -1,0 +1,233 @@
+module RSpec::ExampleGroups::AdminAccountsController::POSTMemorialize::LetDefinitions
+  def current_user: () -> User
+
+  def subject: () -> ActionDispatch::TestResponse
+
+  def account: () -> Account
+
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTMemorialize::WhenUserIsNotAdmin::LetDefinitions
+  def current_role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTMemorialize::WhenUserIsNotAdmin::WhenTargetUserIsAdmin::LetDefinitions
+  def target_role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTMemorialize::WhenUserIsNotAdmin::WhenTargetUserIsNotAdmin::LetDefinitions
+  def target_role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTMemorialize::WhenUserIsAdmin::LetDefinitions
+  def current_role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTMemorialize::WhenUserIsAdmin::WhenTargetUserIsAdmin::LetDefinitions
+  def target_role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTMemorialize::WhenUserIsAdmin::WhenTargetUserIsNotAdmin::LetDefinitions
+  def target_role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTApprove::LetDefinitions
+  def current_user: () -> User
+
+  def account: () -> Account
+
+  def user: () -> User
+
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTApprove::WhenUserIsNotAdmin::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTApprove::WhenUserIsAdmin::LetDefinitions
+  def role: () -> UserRole
+end
+
+class RSpec::ExampleGroups::AdminAccountsController
+  def latest_admin_action_log: () -> void
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTUnsilence::LetDefinitions
+  def current_user: () -> User
+
+  def subject: () -> ActionDispatch::TestResponse
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTUnsilence::WhenUserIsNotAdmin::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTUnsilence::WhenUserIsAdmin::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTUnsensitive::LetDefinitions
+  def current_user: () -> User
+
+  def subject: () -> ActionDispatch::TestResponse
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTUnsensitive::WhenUserIsAdmin::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTUnsensitive::WhenUserIsNotAdmin::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTReject::LetDefinitions
+  def current_user: () -> User
+
+  def account: () -> Account
+
+  def user: () -> User
+
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTReject::WhenUserIsAdmin::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTReject::WhenUserIsNotAdmin::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::GETIndex::LetDefinitions
+  def current_user: () -> User
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::AdminAccountsController::GETIndex
+  def accounts_table_rows: () -> Nokogiri::XML::NodeSet
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTRemoveAvatar::LetDefinitions
+  def current_user: () -> User
+
+  def subject: () -> ActionDispatch::TestResponse
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTRemoveAvatar::WhenUserIsNotAdmin::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTRemoveAvatar::WhenUserIsAdmin::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::GETShow::LetDefinitions
+  def current_user: () -> User
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::GETShow::AccountModerationNotes::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::GETShow::WithALocalDeletedAccount::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::GETShow::WithARemoteAccount::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::GETShow::WithALocalAccount::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTEnable::LetDefinitions
+  def current_user: () -> User
+
+  def subject: () -> ActionDispatch::TestResponse
+
+  def account: () -> Account
+
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTEnable::WhenUserIsAdmin::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTEnable::WhenUserIsNotAdmin::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTDestroy::LetDefinitions
+  def current_user: () -> User
+
+  def account: () -> Account
+
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTDestroy::WhenUserIsNotAdmin::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTDestroy::WhenUserIsAdmin::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTRedownload::LetDefinitions
+  def current_user: () -> User
+
+  def subject: () -> ActionDispatch::TestResponse
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTRedownload::WhenUserIsNotAdmin::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTRedownload::WhenUserIsAdmin::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTUnblockEmail::LetDefinitions
+  def current_user: () -> User
+
+  def account: () -> Account
+
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTUnblockEmail::WhenUserIsNotAdmin::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTUnblockEmail::WhenUserIsAdmin::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTUnsuspend::LetDefinitions
+  def current_user: () -> User
+
+  def account: () -> Account
+
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTUnsuspend::WhenUserIsNotAdmin::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AdminAccountsController::POSTUnsuspend::WhenUserIsAdmin::LetDefinitions
+  def role: () -> UserRole
+end

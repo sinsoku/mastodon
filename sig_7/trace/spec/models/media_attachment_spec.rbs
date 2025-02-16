@@ -1,0 +1,119 @@
+module RSpec::ExampleGroups::MediaAttachment::Heic::LetDefinitions
+  def media: () -> MediaAttachment
+end
+
+module RSpec::ExampleGroups::MediaAttachment::MonochromeJpg::LetDefinitions
+  def media: () -> MediaAttachment
+end
+
+module RSpec::ExampleGroups::MediaAttachment::StaticGif::AttachmentGif::LetDefinitions
+  def media: () -> MediaAttachment
+end
+
+class RSpec::ExampleGroups::MediaAttachment
+  def media_metadata: () -> void
+end
+
+module RSpec::ExampleGroups::MediaAttachment::StaticGif::MiniStaticGif::LetDefinitions
+  def media: () -> MediaAttachment
+end
+
+module RSpec::ExampleGroups::MediaAttachment::Local::LetDefinitions
+  def subject: () -> bool
+
+  def media_attachment: () -> MediaAttachment
+end
+
+module RSpec::ExampleGroups::MediaAttachment::Local::WhenRemoteUrlIsPresent::LetDefinitions
+  def remote_url: () -> String
+end
+
+module RSpec::ExampleGroups::MediaAttachment::Local::WhenRemoteUrlIsBlank::LetDefinitions
+  def remote_url: () -> String
+end
+
+module RSpec::ExampleGroups::MediaAttachment::Webp::LetDefinitions
+  def media: () -> MediaAttachment
+end
+
+module RSpec::ExampleGroups::MediaAttachment::Jpeg::LetDefinitions
+  def media: () -> MediaAttachment
+end
+
+module RSpec::ExampleGroups::MediaAttachment::CacheDeletionHooks::LetDefinitions
+  def media: () -> MediaAttachment
+end
+
+module RSpec::ExampleGroups::MediaAttachment::Png::LetDefinitions
+  def media: () -> MediaAttachment
+end
+
+module RSpec::ExampleGroups::MediaAttachment::ToParam::LetDefinitions
+  def media_attachment: () -> MediaAttachment
+end
+
+module RSpec::ExampleGroups::MediaAttachment::ToParam::WhenMediaAttachmentHasAShortcode::LetDefinitions
+  def shortcode: () -> String
+
+  def id: () -> Integer
+end
+
+module RSpec::ExampleGroups::MediaAttachment::ToParam::WhenMediaAttachmentDoesNotHaveAShortcode::LetDefinitions
+  def shortcode: () -> nil
+
+  def id: () -> Integer
+end
+
+module RSpec::ExampleGroups::MediaAttachment::Mp3WithLargeCoverArt::LetDefinitions
+  def media: () -> MediaAttachment
+
+  def expected_media_duration: () -> Float
+end
+
+module RSpec::ExampleGroups::MediaAttachment::Base64EncodedImage::LetDefinitions
+  def media: () -> MediaAttachment
+
+  def base64_attachment: () -> String
+end
+
+module RSpec::ExampleGroups::MediaAttachment::NeedsRedownload::LetDefinitions
+  def subject: () -> bool
+
+  def media_attachment: () -> MediaAttachment
+end
+
+module RSpec::ExampleGroups::MediaAttachment::NeedsRedownload::WhenFileIsPresent::WhenRemoteUrlIsPresent::LetDefinitions
+  def remote_url: () -> String
+end
+
+module RSpec::ExampleGroups::MediaAttachment::NeedsRedownload::WhenFileIsPresent::LetDefinitions
+  def file: () -> File
+end
+
+module RSpec::ExampleGroups::MediaAttachment::NeedsRedownload::WhenFileIsPresent::WhenRemoteUrlIsBlank::LetDefinitions
+  def remote_url: () -> String
+end
+
+module RSpec::ExampleGroups::MediaAttachment::NeedsRedownload::WhenFileIsBlank::WhenRemoteUrlIsPresent::LetDefinitions
+  def remote_url: () -> String
+end
+
+module RSpec::ExampleGroups::MediaAttachment::NeedsRedownload::WhenFileIsBlank::LetDefinitions
+  def file: () -> nil
+end
+
+module RSpec::ExampleGroups::MediaAttachment::OggWithCoverArt::LetDefinitions
+  def media: () -> MediaAttachment
+
+  def expected_media_duration: () -> Float
+
+  def expected_background_color: () -> String
+end
+
+module RSpec::ExampleGroups::MediaAttachment::Avif::LetDefinitions
+  def media: () -> MediaAttachment
+end
+
+module RSpec::ExampleGroups::MediaAttachment::AnimatedGif::LetDefinitions
+  def media: () -> MediaAttachment
+end

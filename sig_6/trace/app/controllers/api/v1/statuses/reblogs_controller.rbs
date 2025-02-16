@@ -1,0 +1,10 @@
+class Api::V1::Statuses::ReblogsController
+  def destroy: () -> String
+
+  def set_reblog: () -> Status
+                | () -> String
+
+  def create: () -> String
+
+  def reblog_params: () -> void
+end

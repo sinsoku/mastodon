@@ -1,0 +1,7 @@
+class Instance
+  def to_param: () -> void
+
+  def failing?: () -> void
+
+  def unavailable?: () -> void
+end

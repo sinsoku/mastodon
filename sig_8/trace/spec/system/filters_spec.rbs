@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::Filters::LetDefinitions
+  def user: () -> User
+
+  def filter_title: () -> String
+end
+
+class RSpec::ExampleGroups::Filters
+  def navigate_to_filters: () -> void
+
+  def fill_in_filter_form: () -> void
+
+  def filter_title_field: () -> void
+end
+
+module RSpec::ExampleGroups::Filters::EditingAnExistingFilter::LetDefinitions
+  def custom_filter: () -> CustomFilter
+
+  def new_title: () -> String
+end

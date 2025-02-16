@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::AnnualReportTypeDistribution::Generate::LetDefinitions
+  def subject: () -> AnnualReport::TypeDistribution
+end
+
+module RSpec::ExampleGroups::AnnualReportTypeDistribution::Generate::WithAnInactiveAccount::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AnnualReportTypeDistribution::Generate::WithAnActiveAccount::LetDefinitions
+  def account: () -> Account
+end

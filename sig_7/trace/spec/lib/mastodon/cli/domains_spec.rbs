@@ -1,0 +1,53 @@
+module RSpec::ExampleGroups::MastodonCLIDomains::LetDefinitions
+  def subject: () -> nil
+             | () -> StringIO
+             | () -> bool
+
+  def cli: () -> Mastodon::CLI::Domains
+
+  def arguments: () -> Array[untyped]
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIDomains::Purge::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLIDomains::Purge::WithAccountsFromTheDomain::LetDefinitions
+  def account: () -> Account
+
+  def domain: () -> String
+
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIDomains::Purge::WithInvalidLimitedFederationModeArgument::LetDefinitions
+  def arguments: () -> Array[untyped]
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIDomains::Crawl::WithAccountsFromTheDomain::LetDefinitions
+  def domain: () -> String
+end
+
+module RSpec::ExampleGroups::MastodonCLIDomains::Crawl::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLIDomains::Crawl::WithAccountsFromTheDomain::WithFormatOfDomains::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::MastodonCLIDomains::Crawl::WithAccountsFromTheDomain::WithFormatOfJson
+  def json_summary: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIDomains::Crawl::WithAccountsFromTheDomain::WithFormatOfJson::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIDomains::Crawl::WithAccountsFromTheDomain::WithFormatOfSummary::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end

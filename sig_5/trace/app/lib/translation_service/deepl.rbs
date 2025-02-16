@@ -1,0 +1,19 @@
+class TranslationService::DeepL
+  def initialize: (String, String) -> void
+
+  def languages: () -> void
+               | () -> Hash[untyped, untyped]
+
+  def fetch_languages: (String) -> void
+
+  def request: (Symbol, String, **untyped) -> void
+
+  def base_url: () -> String
+
+  def normalize_language: (String) -> void
+
+  def translate: (Array[untyped], nil, String) -> Array[untyped]
+               | (Array[untyped], String, String) -> Array[untyped]
+
+  def transform_response: (String) -> void
+end

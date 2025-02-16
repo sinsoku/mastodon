@@ -1,0 +1,12 @@
+module Account::Suspensions
+  def suspended_permanently?: () -> bool
+
+  def suspended?: () -> void
+                | () -> bool
+
+  def suspend!: (?date: Time, ?origin: Symbol, ?block_email: bool) -> void
+
+  def suspended_locally?: () -> bool
+
+  def unsuspend!: () -> void
+end

@@ -1,0 +1,30 @@
+module RSpec::ExampleGroups::ActivityPubFetchRemoteActorService::LetDefinitions
+  def actor: () -> Hash[untyped, untyped]
+
+  def subject: () -> ActivityPub::FetchRemoteActorService
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchRemoteActorService::Call::WhenTheAccountDoesNotHaveAInbox::LetDefinitions
+  def webfinger: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchRemoteActorService::Call::LetDefinitions
+  def account: () -> nil
+             | () -> Account
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchRemoteActorService::Call::WhenURIAndWebFingerShareTheSameHost::LetDefinitions
+  def webfinger: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchRemoteActorService::Call::WhenWebFingerReturnsADifferentURIAfterARedirection::LetDefinitions
+  def webfinger: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchRemoteActorService::Call::WhenWebFingerPresentsDifferentDomainThanURI::LetDefinitions
+  def webfinger: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchRemoteActorService::Call::WhenWebFingerReturnsADifferentURI::LetDefinitions
+  def webfinger: () -> Hash[untyped, untyped]
+end

@@ -1,0 +1,56 @@
+class ActivityPub::TagManager
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+module RoutingHelper
+  def full_asset_url: (String, **untyped) -> void
+
+  def use_storage?: () -> void
+
+  def asset_host: () -> void
+
+  def frontend_asset_path: (String, **untyped) -> void
+
+  def frontend_asset_url: (String, **untyped) -> String
+end
+
+class REST::AccountSerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class ActivityPub::ImageSerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class OauthMetadataPresenter
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class MediaProxyController
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class REST::MediaAttachmentSerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class REST::TagSerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class NodeInfo::DiscoverySerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class WebfingerSerializer
+  def default_url_options: () -> void
+                         | () -> Hash[untyped, untyped]
+end
+
+class REST::CustomEmojiSerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class REST::V1::InstanceSerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end

@@ -1,0 +1,5 @@
+class BackupsController
+  def set_backup: () -> Backup
+
+  def download: () -> String
+end

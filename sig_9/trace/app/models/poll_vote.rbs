@@ -1,0 +1,8 @@
+class PollVote
+  def poll_expired?: (*untyped, **untyped) -> void
+
+  def poll_multiple?: (*untyped, **untyped) -> void
+                    | (*untyped, **untyped) -> bool
+
+  def increment_counter_cache: () -> bool
+end

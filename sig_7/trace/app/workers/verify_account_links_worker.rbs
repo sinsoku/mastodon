@@ -1,0 +1,3 @@
+class VerifyAccountLinksWorker
+  def perform: (nil) -> void
+end

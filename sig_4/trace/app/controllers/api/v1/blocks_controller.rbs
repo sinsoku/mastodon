@@ -1,0 +1,15 @@
+class Api::V1::BlocksController
+  def index: () -> String
+
+  def load_accounts: () -> Array[untyped]
+
+  def paginated_blocks: () -> ActiveRecord::Relation
+
+  def next_path: () -> void
+
+  def records_continue?: () -> void
+
+  def prev_path: () -> void
+
+  def pagination_collection: () -> ActiveRecord::Relation
+end

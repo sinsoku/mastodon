@@ -1,0 +1,83 @@
+module RSpec::ExampleGroups::Lists::POSTApiV1Lists::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Lists::GETApiV1ListsId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Lists::GETApiV1Lists::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Lists::DELETEApiV1ListsId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Lists::PUTApiV1ListsId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::FollowRequests::POSTApiV1FollowRequestsAccountIdReject::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::FollowRequests::GETApiV1FollowRequests::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::FollowRequests::POSTApiV1FollowRequestsAccountIdAuthorize::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::APIV1AdminTrendsLinksPreviewCardProviders::POSTApiV1AdminTrendsLinksPublishersIdReject::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::APIV1AdminTrendsLinksPreviewCardProviders::POSTApiV1AdminTrendsLinksPublishersIdReject::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::APIV1AdminTrendsLinksPreviewCardProviders::POSTApiV1AdminTrendsLinksPublishersIdApprove::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::APIV1AdminTrendsLinksPreviewCardProviders::POSTApiV1AdminTrendsLinksPublishersIdApprove::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::ApiV1Statuses::WithAnOauthToken::POSTApiV1Statuses::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Statuses::WithAnOauthToken::GETApiV1StatusesId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Statuses::WithAnOauthToken::DELETEApiV1StatusesId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ApiV1Statuses::WithAnOauthToken::PUTApiV1StatusesId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::DomainBlocksPreviewsAPI::GETApiV1DomainBlocksPreview::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::APIV1AdminTrendsTags::POSTApiV1AdminTrendsTagsIdApprove::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::APIV1AdminTrendsTags::POSTApiV1AdminTrendsTagsIdApprove::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::APIV1AdminTrendsTags::POSTApiV1AdminTrendsTagsIdReject::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::APIV1AdminTrendsTags::POSTApiV1AdminTrendsTagsIdReject::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end

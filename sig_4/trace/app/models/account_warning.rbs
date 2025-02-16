@@ -1,0 +1,8 @@
+class AccountWarning
+  def to_log_human_identifier: () -> void
+
+  def overruled?: () -> void
+                | () -> bool
+
+  def statuses: () -> ActiveRecord::Relation
+end

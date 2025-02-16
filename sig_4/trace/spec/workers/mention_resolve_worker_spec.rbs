@@ -1,0 +1,18 @@
+module RSpec::ExampleGroups::MentionResolveWorker::Perform::WithAValidUser::LetDefinitions
+  def service_double: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def status: () -> Status
+
+  def status_id: () -> Integer
+end
+
+module RSpec::ExampleGroups::MentionResolveWorker::LetDefinitions
+  def uri: () -> String
+
+  def status_id: () -> Integer
+end
+
+module RSpec::ExampleGroups::MentionResolveWorker::Perform::LetDefinitions
+  def subject: () -> ActiveRecord::Result
+             | () -> nil
+end

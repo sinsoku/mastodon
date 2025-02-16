@@ -1,0 +1,11 @@
+class MoveWorker
+  def perform: (Integer, Integer) -> void
+
+  def queue_follow_unfollows!: () -> void
+
+  def copy_account_notes!: () -> void
+
+  def carry_blocks_over!: () -> void
+
+  def carry_mutes_over!: () -> void
+end

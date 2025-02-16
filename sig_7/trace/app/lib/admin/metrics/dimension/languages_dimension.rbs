@@ -1,0 +1,9 @@
+class Admin::Metrics::Dimension::LanguagesDimension
+  def key: () -> String
+
+  def perform_query: () -> void
+
+  def sql_array: () -> void
+
+  def sql_query_string: () -> void
+end

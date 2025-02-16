@@ -1,0 +1,3 @@
+module Chewy::IndexExtensions
+  def index_preset: (?Hash[untyped, untyped]) -> void
+end

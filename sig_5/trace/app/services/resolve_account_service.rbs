@@ -1,0 +1,8 @@
+class ResolveAccountService
+  def call: (String, ?Hash[untyped, untyped]) -> Account
+          | (String, ?Hash[untyped, untyped]) -> nil
+
+  def process_options!: (String, Hash[untyped, untyped]) -> void
+
+  def webfinger_update_due?: () -> bool
+end

@@ -1,0 +1,58 @@
+class UserMailer
+  def set_instance: () -> String
+
+  def failed_2fa: (User, String, String, Time) -> Mail::Message
+
+  def locale: (?use_current_locale: bool) -> void
+
+  def suspicious_sign_in: (User, String, String, Time) -> Mail::Message
+
+  def two_factor_disabled: (User, *untyped, **untyped) -> Mail::Message
+                         | (User, *untyped, **untyped) -> nil
+
+  def default_devise_subject: () -> void
+
+  def webauthn_enabled: (User, *untyped, **untyped) -> Mail::Message
+                      | (User, *untyped, **untyped) -> nil
+
+  def webauthn_disabled: (User, *untyped, **untyped) -> Mail::Message
+                       | (User, *untyped, **untyped) -> nil
+
+  def reset_password_instructions: (User, String, *untyped, **untyped) -> Mail::Message
+                                 | (User, String, *untyped, **untyped) -> nil
+
+  def two_factor_recovery_codes_changed: (User, *untyped, **untyped) -> Mail::Message
+                                       | (User, *untyped, **untyped) -> nil
+
+  def webauthn_credential_added: (User, WebauthnCredential) -> Mail::Message
+                               | (User, WebauthnCredential) -> nil
+
+  def webauthn_credential_deleted: (User, WebauthnCredential) -> Mail::Message
+                                 | (User, WebauthnCredential) -> nil
+
+  def backup_ready: (User, Backup) -> Mail::Message
+                  | (User, Backup) -> nil
+
+  def password_change: (User, *untyped, **untyped) -> Mail::Message
+                     | (User, *untyped, **untyped) -> nil
+
+  def terms_of_service_changed: (User, TermsOfService) -> Mail::Message
+
+  def warning: (User, AccountWarning) -> Mail::Message
+
+  def two_factor_enabled: (User, *untyped, **untyped) -> Mail::Message
+                        | (User, *untyped, **untyped) -> nil
+
+  def confirmation_instructions: (User, String, *untyped, **untyped) -> Mail::Message
+                               | (User, String, *untyped, **untyped) -> nil
+
+  def appeal_approved: (User, Appeal) -> Mail::Message
+
+  def email_changed: (User, *untyped, **untyped) -> Mail::Message
+                   | (User, *untyped, **untyped) -> nil
+
+  def appeal_rejected: (User, Appeal) -> Mail::Message
+
+  def welcome: (User) -> Mail::Message
+             | (User) -> nil
+end

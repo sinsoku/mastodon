@@ -1,0 +1,9 @@
+class ActivityPub::CollectionSerializer
+  def type: () -> String
+
+  def page?: () -> void
+
+  def ordered?: () -> void
+
+  def total_items: () -> Integer
+end

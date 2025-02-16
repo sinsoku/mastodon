@@ -1,0 +1,5 @@
+module Account::Avatar
+  def avatar_original_url: () -> void
+
+  def avatar_static_url: () -> void
+end

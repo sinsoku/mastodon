@@ -1,0 +1,7 @@
+module HomeHelper
+  def default_props: () -> Hash[untyped, untyped]
+
+  def account_link_to: (Account, ?String, ?path: nil) -> ActiveSupport::SafeBuffer
+
+  def sign_up_message: () -> void
+end

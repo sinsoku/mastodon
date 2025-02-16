@@ -1,0 +1,120 @@
+module RSpec::ExampleGroups::SearchQueryTransformer::WithDateOperators::WithAfter::BehavesLikeDateOperator::LetDefinitions
+  def statement_operations: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::LetDefinitions
+  def subject: () -> SearchQueryTransformer::Query
+             | () -> nil
+
+  def parser: () -> Hash[untyped, untyped]
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithDateOperators::WithAfter::BehavesLikeDateOperator::WithAfter12345678::LetDefinitions
+  def query: () -> String
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithDateOperators::WithAfter::BehavesLikeDateOperator::WithAfter20220101::LetDefinitions
+  def query: () -> String
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithDateOperators::WithAfter::BehavesLikeDateOperator::WithAfter12345678_2::LetDefinitions
+  def query: () -> String
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithDateOperators::WithAfter::BehavesLikeDateOperator::WithAfter20241031T234720Z::LetDefinitions
+  def query: () -> String
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithDateOperators::WithAfter::BehavesLikeDateOperator::WithAfter20220101_2::LetDefinitions
+  def query: () -> String
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithDateOperators::WithAfter::BehavesLikeDateOperator::WithAfterAbc::LetDefinitions
+  def query: () -> String
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithDateOperators::WithBefore::BehavesLikeDateOperator::LetDefinitions
+  def statement_operations: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithDateOperators::WithBefore::BehavesLikeDateOperator::WithBefore12345678_2::LetDefinitions
+  def query: () -> String
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithDateOperators::WithBefore::BehavesLikeDateOperator::WithBeforeAbc::LetDefinitions
+  def query: () -> String
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithDateOperators::WithBefore::BehavesLikeDateOperator::WithBefore20241031T234720Z::LetDefinitions
+  def query: () -> String
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithDateOperators::WithBefore::BehavesLikeDateOperator::WithBefore20220101::LetDefinitions
+  def query: () -> String
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithDateOperators::WithBefore::BehavesLikeDateOperator::WithBefore20220101_2::LetDefinitions
+  def query: () -> String
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithDateOperators::WithBefore::BehavesLikeDateOperator::WithBefore12345678::LetDefinitions
+  def query: () -> String
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithDateOperators::WithDuring::BehavesLikeDateOperator::LetDefinitions
+  def statement_operations: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithDateOperators::WithDuring::BehavesLikeDateOperator::WithDuring12345678_2::LetDefinitions
+  def query: () -> String
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithDateOperators::WithDuring::BehavesLikeDateOperator::WithDuringAbc::LetDefinitions
+  def query: () -> String
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithDateOperators::WithDuring::BehavesLikeDateOperator::WithDuring20220101::LetDefinitions
+  def query: () -> String
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithDateOperators::WithDuring::BehavesLikeDateOperator::WithDuring12345678::LetDefinitions
+  def query: () -> String
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithDateOperators::WithDuring::BehavesLikeDateOperator::WithDuring20241031T234720Z::LetDefinitions
+  def query: () -> String
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithDateOperators::WithDuring::BehavesLikeDateOperator::WithDuring20220101_2::LetDefinitions
+  def query: () -> String
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithHelloWorld_3::LetDefinitions
+  def query: () -> String
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithHelloWorld_2::LetDefinitions
+  def query: () -> String
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithHelloIsReply::LetDefinitions
+  def query: () -> String
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithFooBar::LetDefinitions
+  def query: () -> String
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithFooBar_2::LetDefinitions
+  def query: () -> String
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithIsFooBar::LetDefinitions
+  def query: () -> String
+end
+
+module RSpec::ExampleGroups::SearchQueryTransformer::WithHelloWorld::LetDefinitions
+  def query: () -> String
+end

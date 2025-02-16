@@ -1,0 +1,8 @@
+class RSS::Element
+  def create_element: (String, ?nil) -> Ox::Element
+                    | (String, ?String) -> Ox::Element
+
+  def append_element: (String, ?String) -> void
+
+  def to_element: () -> void
+end

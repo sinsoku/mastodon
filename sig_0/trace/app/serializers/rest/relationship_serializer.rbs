@@ -1,0 +1,32 @@
+class REST::RelationshipSerializer
+  def id: () -> String
+
+  def following: () -> bool
+
+  def showing_reblogs: () -> bool
+
+  def notifying: () -> bool
+
+  def languages: () -> nil
+               | () -> Array[untyped]
+
+  def followed_by: () -> bool
+
+  def blocking: () -> bool
+
+  def blocked_by: () -> bool
+
+  def muting: () -> bool
+
+  def muting_notifications: () -> bool
+
+  def requested: () -> bool
+
+  def requested_by: () -> bool
+
+  def domain_blocking: () -> bool
+
+  def endorsed: () -> bool
+
+  def note: () -> String
+end

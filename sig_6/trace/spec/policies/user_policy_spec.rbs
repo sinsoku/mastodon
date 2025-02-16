@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::UserPolicy::LetDefinitions
+  def subject: () -> Class
+
+  def john: () -> Account
+
+  def admin: () -> Account
+end
+
+module RSpec::ExampleGroups::UserPolicy::ChangeRole::WhenAdmin::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::UserPolicy::ChangeRole::WhenAdmin::WhenRoleOfAdminDoesNotOverrideUserRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::UserPolicy::ChangeRole::WhenAdmin::WhenRoleOfAdminOverridesUserRole::LetDefinitions
+  def role: () -> UserRole
+end

@@ -1,0 +1,53 @@
+module RSpec::ExampleGroups::StatusPin::Callbacks::InvalidatingStatusViaPolicy::WithALocalAccountThatOwnsTheStatusAndDoesNotHaveAPolicy::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::StatusPin::Callbacks::InvalidatingStatusViaPolicy::LetDefinitions
+  def subject: () -> StatusPin
+end
+
+module RSpec::ExampleGroups::StatusPin::Callbacks::InvalidatingStatusViaPolicy::WithARemoteAccount::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::StatusPin::Callbacks::InvalidatingStatusViaPolicy::WithALocalAccountThatOwnsTheStatusAndHasAPolicy::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::StatusPin::Validations::WithAnAccountPinningStatuses::LetDefinitions
+  def subject: () -> StatusPin
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::StatusPin::Validations::WithAnAccountPinningStatuses::WithASelfOwnedStatus::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusPin::Validations::WithAnAccountPinningStatuses::WithADirectStatus::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusPin::Validations::WithAnAccountPinningStatuses::WithAStatusFromSomeoneElse::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusPin::Validations::WithAnAccountPinningStatuses::WithAPrivateStatus::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusPin::Validations::WithAnAccountPinningStatuses::WithAReblogStatus::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusPin::Validations::WithAValidatorPinLimit::WithARemoteAccountAtTheLimit::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::StatusPin::Validations::LetDefinitions
+  def subject: () -> StatusPin
+end
+
+module RSpec::ExampleGroups::StatusPin::Validations::WithAValidatorPinLimit::WithALocalAccountAtTheLimit::LetDefinitions
+  def account: () -> Account
+end

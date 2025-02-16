@@ -1,0 +1,3 @@
+module Trends
+  def self.tags: () -> Trends::Tags
+end

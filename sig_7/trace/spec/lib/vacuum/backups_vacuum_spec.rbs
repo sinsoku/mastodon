@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::VacuumBackupsVacuum::Perform::LetDefinitions
+  def expired_backup: () -> Backup
+
+  def current_backup: () -> Backup
+end
+
+module RSpec::ExampleGroups::VacuumBackupsVacuum::LetDefinitions
+  def retention_period: () -> ActiveSupport::Duration
+
+  def subject: () -> Vacuum::BackupsVacuum
+end

@@ -1,0 +1,3 @@
+class AccountMergingWorker
+  def perform: (Integer) -> void
+end

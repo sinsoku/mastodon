@@ -1,0 +1,103 @@
+module RSpec::ExampleGroups::ActivityPubRepliesController::LetDefinitions
+  def remote_querier: () -> nil
+
+  def status: () -> Status
+
+  def remote_account: () -> Account
+
+  def remote_reply_id: () -> String
+end
+
+module RSpec::ExampleGroups::ActivityPubRepliesController::GETIndex::WithNoSignature::BehavesLikeAllowedAccess::BehavesLikeCommonBehavior::WhenStatusIsPrivate::LetDefinitions
+  def parent_visibility: () -> Symbol
+end
+
+module RSpec::ExampleGroups::ActivityPubRepliesController::GETIndex::LetDefinitions
+  def response: () -> ActionDispatch::TestResponse
+
+  def only_other_accounts: () -> nil
+end
+
+module RSpec::ExampleGroups::ActivityPubRepliesController::GETIndex::WithNoSignature::BehavesLikeAllowedAccess::BehavesLikeCommonBehavior::WhenStatusIsDirect::LetDefinitions
+  def parent_visibility: () -> Symbol
+end
+
+module RSpec::ExampleGroups::ActivityPubRepliesController::GETIndex::WithNoSignature::BehavesLikeAllowedAccess::WhenAccountIsPermanentlySuspended::LetDefinitions
+  def parent_visibility: () -> Symbol
+end
+
+module RSpec::ExampleGroups::ActivityPubRepliesController::GETIndex::WithNoSignature::BehavesLikeAllowedAccess::WhenStatusIsPublic::LetDefinitions
+  def parent_visibility: () -> Symbol
+end
+
+class RSpec::ExampleGroups::ActivityPubRepliesController
+  def remote_replies: () -> void
+
+  def inlined_replies: () -> void
+
+  def targets_public_collection?: (ActiveSupport::HashWithIndifferentAccess) -> void
+
+  def ap_public_collection: () -> void
+
+  def parsed_uri_query_values: (String) -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubRepliesController::GETIndex::WithNoSignature::BehavesLikeAllowedAccess::WhenStatusIsPublic::WithOnlyOtherAccounts::LetDefinitions
+  def only_other_accounts: () -> String
+end
+
+module RSpec::ExampleGroups::ActivityPubRepliesController::GETIndex::WithNoSignature::BehavesLikeAllowedAccess::WhenAccountIsTemporarilySuspended::LetDefinitions
+  def parent_visibility: () -> Symbol
+end
+
+module RSpec::ExampleGroups::ActivityPubRepliesController::GETIndex::WithSignature::LetDefinitions
+  def remote_querier: () -> Account
+end
+
+module RSpec::ExampleGroups::ActivityPubRepliesController::GETIndex::WithSignature::WhenSignedRequestAccountIsBlocked::BehavesLikeDisallowedAccess::BehavesLikeCommonBehavior::WhenStatusIsPrivate::LetDefinitions
+  def parent_visibility: () -> Symbol
+end
+
+module RSpec::ExampleGroups::ActivityPubRepliesController::GETIndex::WithSignature::WhenSignedRequestAccountIsBlocked::BehavesLikeDisallowedAccess::BehavesLikeCommonBehavior::WhenStatusIsDirect::LetDefinitions
+  def parent_visibility: () -> Symbol
+end
+
+module RSpec::ExampleGroups::ActivityPubRepliesController::GETIndex::WithSignature::WhenSignedRequestAccountIsBlocked::BehavesLikeDisallowedAccess::WhenStatusIsPublic::LetDefinitions
+  def parent_visibility: () -> Symbol
+end
+
+module RSpec::ExampleGroups::ActivityPubRepliesController::GETIndex::WithSignature::BehavesLikeAllowedAccess::WhenAccountIsTemporarilySuspended::LetDefinitions
+  def parent_visibility: () -> Symbol
+end
+
+module RSpec::ExampleGroups::ActivityPubRepliesController::GETIndex::WithSignature::BehavesLikeAllowedAccess::WhenAccountIsPermanentlySuspended::LetDefinitions
+  def parent_visibility: () -> Symbol
+end
+
+module RSpec::ExampleGroups::ActivityPubRepliesController::GETIndex::WithSignature::BehavesLikeAllowedAccess::BehavesLikeCommonBehavior::WhenStatusIsPrivate::LetDefinitions
+  def parent_visibility: () -> Symbol
+end
+
+module RSpec::ExampleGroups::ActivityPubRepliesController::GETIndex::WithSignature::BehavesLikeAllowedAccess::BehavesLikeCommonBehavior::WhenStatusIsDirect::LetDefinitions
+  def parent_visibility: () -> Symbol
+end
+
+module RSpec::ExampleGroups::ActivityPubRepliesController::GETIndex::WithSignature::BehavesLikeAllowedAccess::WhenStatusIsPublic::LetDefinitions
+  def parent_visibility: () -> Symbol
+end
+
+module RSpec::ExampleGroups::ActivityPubRepliesController::GETIndex::WithSignature::BehavesLikeAllowedAccess::WhenStatusIsPublic::WithOnlyOtherAccounts::LetDefinitions
+  def only_other_accounts: () -> String
+end
+
+module RSpec::ExampleGroups::ActivityPubRepliesController::GETIndex::WithSignature::WhenSignedRequestAccountIsDomainBlocked::BehavesLikeDisallowedAccess::BehavesLikeCommonBehavior::WhenStatusIsDirect::LetDefinitions
+  def parent_visibility: () -> Symbol
+end
+
+module RSpec::ExampleGroups::ActivityPubRepliesController::GETIndex::WithSignature::WhenSignedRequestAccountIsDomainBlocked::BehavesLikeDisallowedAccess::BehavesLikeCommonBehavior::WhenStatusIsPrivate::LetDefinitions
+  def parent_visibility: () -> Symbol
+end
+
+module RSpec::ExampleGroups::ActivityPubRepliesController::GETIndex::WithSignature::WhenSignedRequestAccountIsDomainBlocked::BehavesLikeDisallowedAccess::WhenStatusIsPublic::LetDefinitions
+  def parent_visibility: () -> Symbol
+end

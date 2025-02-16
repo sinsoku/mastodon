@@ -1,0 +1,17 @@
+class Admin::RulesController
+  def set_rule: () -> Rule
+
+  def update: () -> ActiveSupport::SafeBuffer
+            | () -> String
+
+  def resource_params: () -> void
+
+  def create: () -> ActiveSupport::SafeBuffer
+            | () -> String
+
+  def index: () -> Rule
+
+  def edit: () -> Rule
+
+  def destroy: () -> String
+end

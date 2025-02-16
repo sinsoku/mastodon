@@ -1,0 +1,29 @@
+class OauthMetadataPresenter
+  def issuer: () -> String
+
+  def authorization_endpoint: () -> String
+
+  def token_endpoint: () -> String
+
+  def revocation_endpoint: () -> String
+
+  def userinfo_endpoint: () -> String
+
+  def scopes_supported: () -> Doorkeeper::OAuth::Scopes
+
+  def doorkeeper: () -> Doorkeeper::Config
+
+  def response_types_supported: () -> Array[untyped]
+
+  def response_modes_supported: () -> Array[untyped]
+
+  def grant_types_supported: () -> Array[untyped]
+
+  def token_endpoint_auth_methods_supported: () -> Array[untyped]
+
+  def code_challenge_methods_supported: () -> Array[untyped]
+
+  def service_documentation: () -> String
+
+  def app_registration_endpoint: () -> String
+end

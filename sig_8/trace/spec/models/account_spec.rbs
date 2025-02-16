@@ -1,0 +1,165 @@
+module RSpec::ExampleGroups::Account::Reblogged::WhenTheStatusIsAReblogOfAnotherStatus::LetDefinitions
+  def original_reblog: () -> Status
+end
+
+module RSpec::ExampleGroups::Account::Reblogged::LetDefinitions
+  def original_status: () -> Status
+
+  def subject: () -> Account
+end
+
+module RSpec::ExampleGroups::Account::AttributionDomainsAsText::LetDefinitions
+  def subject: () -> Account
+end
+
+module RSpec::ExampleGroups::Account::CanBeAttributedFrom::LetDefinitions
+  def subject: () -> Account
+end
+
+module RSpec::ExampleGroups::Account::PossiblyStale::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::Account::PossiblyStale::WhenLastWebfingeredAtIsBeforeTheThreshold::LetDefinitions
+  def last_webfingered_at: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::Account::PossiblyStale::WhenLastWebfingeredAtIsAfterTheThreshold::LetDefinitions
+  def last_webfingered_at: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::Account::PossiblyStale::WhenLastWebfingeredAtIsNil::LetDefinitions
+  def last_webfingered_at: () -> nil
+end
+
+module RSpec::ExampleGroups::Account::StatusesCount::LetDefinitions
+  def subject: () -> Account
+end
+
+module RSpec::ExampleGroups::Account::Refresh::LetDefinitions
+  def account: () -> Account
+
+  def acct: () -> String
+end
+
+module RSpec::ExampleGroups::Account::Refresh::WhenDomainIsPresent::LetDefinitions
+  def domain: () -> String
+end
+
+module RSpec::ExampleGroups::Account::Refresh::WhenDomainIsNil::LetDefinitions
+  def domain: () -> nil
+end
+
+module RSpec::ExampleGroups::Account::SaveWithOptionalMedia::LetDefinitions
+  def expectation: () -> Account
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::Account::WithAnAccountRecord::LetDefinitions
+  def subject: () -> Account
+
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::Account::Scopes_2::MatchesUriPrefix::LetDefinitions
+  def alice: () -> Account
+
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::Account::Scopes_2::Searchable::LetDefinitions
+  def suspended_local: () -> Account
+
+  def suspended_remote: () -> Account
+
+  def silenced_local: () -> Account
+
+  def silenced_remote: () -> Account
+
+  def unconfirmed: () -> Account
+
+  def unapproved: () -> Account
+
+  def unconfirmed_unapproved: () -> Account
+
+  def local_account: () -> Account
+
+  def remote_account: () -> Account
+end
+
+module RSpec::ExampleGroups::Account::Scopes_2::Auditable::LetDefinitions
+  def alice: () -> Account
+
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::Account::LocalDomainUserMethods::LetDefinitions
+  def subject: () -> Account
+end
+
+module RSpec::ExampleGroups::Account::Favourited::LetDefinitions
+  def original_status: () -> Status
+
+  def subject: () -> Account
+end
+
+module RSpec::ExampleGroups::Account::Favourited::WhenTheStatusIsAReblogOfAnotherStatus::LetDefinitions
+  def original_reblog: () -> Status
+end
+
+module RSpec::ExampleGroups::Account::Validations::WhenAccountIsLocal::LetDefinitions
+  def subject: () -> Account
+end
+
+class RSpec::ExampleGroups::Account::Validations
+  def account_note_over_limit: () -> void
+
+  def display_name_over_limit: () -> void
+
+  def username_over_limit: () -> void
+end
+
+module RSpec::ExampleGroups::Account::Validations::WhenAccountIsLocal::WithTheInstanceActor::LetDefinitions
+  def subject: () -> Account
+end
+
+module RSpec::ExampleGroups::Account::Validations::WhenAccountIsRemote::LetDefinitions
+  def subject: () -> Account
+end
+
+module RSpec::ExampleGroups::Account::Validations::WhenAccountIsRemote::WhenANormalizedDomainAccountExists::LetDefinitions
+  def subject: () -> Account
+end
+
+module RSpec::ExampleGroups::Account::AdvancedSearchFor::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::Account::IncrementCount::LetDefinitions
+  def subject: () -> Account
+end
+
+module RSpec::ExampleGroups::Account::Callbacks::StrippingContentWhenRequired::WithARemoteAccount::LetDefinitions
+  def subject: () -> Account
+end
+
+module RSpec::ExampleGroups::Account::Callbacks::StrippingContentWhenRequired::WithALocalAccount::LetDefinitions
+  def subject: () -> Account
+end
+
+module RSpec::ExampleGroups::Account::Callbacks::StrippingContentWhenRequired::WithALocalAccount::WithPopulatedFields::LetDefinitions
+  def note: () -> String
+
+  def display_name: () -> String
+end
+
+module RSpec::ExampleGroups::Account::Callbacks::StrippingContentWhenRequired::WithALocalAccount::WithEmptyFields::LetDefinitions
+  def note: () -> nil
+
+  def display_name: () -> nil
+end
+
+module RSpec::ExampleGroups::Account::MENTIONRE::LetDefinitions
+  def subject: () -> Regexp
+end

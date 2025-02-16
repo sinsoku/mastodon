@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::ExportPage::LetDefinitions
+  def user: () -> User
+end
+
+class RSpec::ExampleGroups::ExportPage::CreatingANewArchive
+  def request_archive: () -> void
+end
+
+class RSpec::ExampleGroups::ExportPage
+  def takeout_summary: () -> void
+end

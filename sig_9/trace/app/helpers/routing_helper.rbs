@@ -1,0 +1,76 @@
+class Admin::SystemCheck::RulesCheck
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class ActivityPub::TagManager
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+module RoutingHelper
+  def full_asset_url: (String, **untyped) -> void
+
+  def use_storage?: () -> void
+
+  def asset_host: () -> void
+
+  def frontend_asset_path: (String, **untyped) -> void
+
+  def frontend_asset_url: (String, **untyped) -> void
+                        | (String, **untyped) -> String
+end
+
+class REST::AccountSerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class TextFormatter
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class ActivityPub::RemoveSerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class ActivityPub::HashtagSerializer
+  def default_url_options: () -> void
+end
+
+class REST::InstanceSerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class REST::TagSerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class Admin::SystemCheck::SoftwareVersionCheck
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class REST::PreviewCardSerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class OauthUserinfoSerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::OauthUserinfoEndpoint
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class ActivityPub::ActorSerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class ActivityPub::ActorSerializer::EndpointsSerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class ActivityPub::AddSerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class REST::StatusSerializer::TagSerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end

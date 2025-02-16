@@ -1,0 +1,38 @@
+module RSpec::ExampleGroups::SessionActivation::Activate::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::SessionActivation::Exclusive::LetDefinitions
+  def unwanted_session_activation: () -> SessionActivation
+
+  def wanted_session_activation: () -> SessionActivation
+end
+
+module RSpec::ExampleGroups::SessionActivation::PurgeOld::LetDefinitions
+  def oldest_session_activation: () -> SessionActivation
+
+  def newest_session_activation: () -> SessionActivation
+end
+
+module RSpec::ExampleGroups::SessionActivation::Deactivate::WhenIdIsAbsent::LetDefinitions
+  def id: () -> nil
+end
+
+module RSpec::ExampleGroups::SessionActivation::Deactivate::WhenIdExists::LetDefinitions
+  def session_activation: () -> SessionActivation
+end
+
+module RSpec::ExampleGroups::SessionActivation::Active::LetDefinitions
+  def subject: () -> nil
+             | () -> bool
+end
+
+module RSpec::ExampleGroups::SessionActivation::Active::WhenIdIsAbsent::LetDefinitions
+  def id: () -> nil
+end
+
+module RSpec::ExampleGroups::SessionActivation::Active::WhenIdIsPresent::LetDefinitions
+  def session_activation: () -> SessionActivation
+
+  def id: () -> String
+end

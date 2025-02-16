@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::AdminIpBlocks::LetDefinitions
+  def current_user: () -> User
+end
+
+class RSpec::ExampleGroups::AdminIpBlocks::PerformingBatchUpdates
+  def button_for_delete: () -> void
+
+  def selection_error_text: () -> void
+end
+
+class RSpec::ExampleGroups::AdminIpBlocks::CreatingAnIPBlock
+  def submit_form: () -> void
+end

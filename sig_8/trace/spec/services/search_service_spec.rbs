@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::SearchService::LetDefinitions
+  def subject: () -> SearchService
+end
+
+class RSpec::ExampleGroups::SearchService
+  def empty_results: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::SearchService::Call::WithAnUrlQuery::LetDefinitions
+  def query: () -> String
+end

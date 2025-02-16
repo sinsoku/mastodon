@@ -1,0 +1,5 @@
+class Admin::AccountsController
+  def set_account: () -> Account
+
+  def show: () -> nil
+end

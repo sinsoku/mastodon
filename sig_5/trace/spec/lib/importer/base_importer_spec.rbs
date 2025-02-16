@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::ImporterBaseImporter::Import::LetDefinitions
+  def importer: () -> Importer::BaseImporter
+
+  def pool: () -> Concurrent::FixedThreadPool
+end

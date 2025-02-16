@@ -1,0 +1,9 @@
+class PurgeDomainService
+  def call: (String) -> void
+
+  def purge_relationship_severance_events!: () -> void
+
+  def purge_accounts!: () -> void
+
+  def purge_emojis!: () -> void
+end

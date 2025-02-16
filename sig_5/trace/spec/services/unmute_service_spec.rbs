@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::UnmuteService::Call::LetDefinitions
+  def account: () -> Account
+
+  def target_account: () -> Account
+end
+
+class RSpec::ExampleGroups::UnmuteService::Call::WhenAccountIsMutingTargetAccount
+  def remove_account_mute: () -> void
+end

@@ -1,0 +1,12 @@
+class FetchResourceService
+  def call: (String) -> nil
+          | (String) -> Array[untyped]
+
+  def process: (String, ?terminal: bool) -> void
+
+  def perform_request: () -> void
+
+  def process_response: (HTTP::Response, ?bool) -> void
+
+  def expected_type?: (Hash[untyped, untyped]) -> void
+end

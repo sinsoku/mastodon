@@ -1,0 +1,12 @@
+class Admin::ReportNotesController
+  def create: () -> ActiveSupport::SafeBuffer
+            | () -> String
+
+  def resource_params: () -> void
+
+  def after_create_redirect_path: () -> void
+
+  def set_report_note: () -> ReportNote
+
+  def destroy: () -> String
+end

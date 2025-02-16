@@ -1,0 +1,9 @@
+class InstanceActorsController
+  def account_required?: () -> bool
+
+  def set_account: () -> Account
+
+  def show: () -> String
+
+  def restrict_fields_to: () -> void
+end

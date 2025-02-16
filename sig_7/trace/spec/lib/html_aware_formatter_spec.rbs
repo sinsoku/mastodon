@@ -1,0 +1,29 @@
+module RSpec::ExampleGroups::HtmlAwareFormatter::ToS::LetDefinitions
+  def subject: () -> ActiveSupport::SafeBuffer
+end
+
+module RSpec::ExampleGroups::HtmlAwareFormatter::ToS::WhenRemote::WhenGivenTextContainingScriptTags::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::HtmlAwareFormatter::ToS::WhenRemote::LetDefinitions
+  def local: () -> bool
+end
+
+module RSpec::ExampleGroups::HtmlAwareFormatter::ToS::WhenRemote::WhenGivenTextContainingRubyTagsForEastAsianLanguages::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::HtmlAwareFormatter::ToS::WhenRemote::WhenGivenPlainText::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::HtmlAwareFormatter::ToS::WhenRemote::WhenGivenTextContainingMaliciousClasses::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::HtmlAwareFormatter::ToS::WhenLocal::LetDefinitions
+  def text: () -> String
+
+  def local: () -> bool
+end

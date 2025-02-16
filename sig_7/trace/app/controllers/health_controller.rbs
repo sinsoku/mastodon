@@ -1,0 +1,3 @@
+class HealthController
+  def show: () -> String
+end

@@ -1,0 +1,23 @@
+module RSpec::ExampleGroups::SchedulerIpCleanupScheduler::Perform::WithOldSessionData::LetDefinitions
+  def new_activation: () -> SessionActivation
+
+  def old_activation: () -> SessionActivation
+end
+
+module RSpec::ExampleGroups::SchedulerIpCleanupScheduler::LetDefinitions
+  def worker: () -> Scheduler::IpCleanupScheduler
+end
+
+module RSpec::ExampleGroups::SchedulerIpCleanupScheduler::Perform::WithIPRelatedDataPastRetentionTimes::LetDefinitions
+  def future_ip_block: () -> IpBlock
+
+  def old_ip_block: () -> IpBlock
+
+  def session_past_retention: () -> SessionActivation
+
+  def inactive_user: () -> User
+
+  def old_login_activity: () -> LoginActivity
+
+  def old_token: () -> Doorkeeper::AccessToken
+end

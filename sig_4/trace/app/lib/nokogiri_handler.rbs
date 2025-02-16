@@ -1,0 +1,3 @@
+class NokogiriHandler
+  def self.link_rel_include: (Nokogiri::XML::NodeSet, String) -> bool
+end

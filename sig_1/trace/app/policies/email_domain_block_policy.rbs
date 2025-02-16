@@ -1,0 +1,9 @@
+class EmailDomainBlockPolicy
+  def create?: () -> bool
+
+  def index?: () -> bool
+
+  def show?: () -> bool
+
+  def destroy?: () -> bool
+end

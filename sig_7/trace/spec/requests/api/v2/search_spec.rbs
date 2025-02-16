@@ -1,0 +1,63 @@
+module RSpec::ExampleGroups::SearchAPI::WithToken::GETApiV2Search::LetDefinitions
+  def bob: () -> Account
+
+  def ana: () -> Account
+
+  def tom: () -> Account
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::SearchAPI::WithToken::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::SearchAPI::WithToken::GETApiV2Search::WhenSearchingAccounts::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::SearchAPI::WithToken::GETApiV2Search::WhenSearchingAccounts::WithFollowingTrue::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::SearchAPI::WithToken::GETApiV2Search::WhenSearchingAccounts::WithNegativeOffsetValue::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::SearchAPI::WithToken::GETApiV2Search::WhenSearchingAccounts::WithNegativeLimitValue::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::SearchAPI::WithToken::GETApiV2Search::WhenSearchingAccounts::WithTruthyResolve::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::SearchAPI::WithToken::GETApiV2Search::WhenSearchingAccounts::WithValidOffsetValue::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::SearchAPI::WithoutToken::GETApiV2Search::WithAQEqualToOrLongerThan5Characters::LetDefinitions
+  def search_params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::SearchAPI::WithoutToken::GETApiV2Search::WithAQEqualToOrLongerThan5Characters::WithOffset::LetDefinitions
+  def search_params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::SearchAPI::WithoutToken::GETApiV2Search::WithAQEqualToOrLongerThan5Characters::WithTruthyResolve::LetDefinitions
+  def search_params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::SearchAPI::WithoutToken::GETApiV2Search::LetDefinitions
+  def search_params: () -> nil
+end
+
+module RSpec::ExampleGroups::SearchAPI::WithoutToken::GETApiV2Search::WithAQShorterThan5Characters::LetDefinitions
+  def search_params: () -> Hash[untyped, untyped]
+end

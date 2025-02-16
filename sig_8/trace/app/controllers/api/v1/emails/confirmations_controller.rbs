@@ -1,0 +1,12 @@
+class Api::V1::Emails::ConfirmationsController
+  def check: () -> String
+
+  def require_user_owned_by_application!: () -> nil
+                                        | () -> String
+
+  def require_user_not_confirmed!: () -> nil
+                                 | () -> String
+
+  def create: () -> nil
+            | () -> String
+end

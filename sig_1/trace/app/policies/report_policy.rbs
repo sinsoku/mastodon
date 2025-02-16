@@ -1,0 +1,7 @@
+class ReportPolicy
+  def update?: () -> bool
+
+  def index?: () -> bool
+
+  def show?: () -> bool
+end

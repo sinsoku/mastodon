@@ -1,0 +1,13 @@
+class SoftwareUpdate
+  def self.check_enabled?: () -> bool
+
+  def self.pending_to_a: () -> Array[untyped]
+
+  def pending?: () -> bool
+
+  def gem_version: () -> Gem::Version
+
+  def runtime_version: () -> void
+
+  def self.urgent_pending?: () -> void
+end

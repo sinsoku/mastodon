@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::SettingsPrivacyController::LetDefinitions
+  def user: () -> User
+
+  def account: () -> Account
+end
+
+class RSpec::ExampleGroups::SettingsPrivacyController::PUTUpdate::WhenUpdateFails
+  def failing_update_service: () -> void
+end

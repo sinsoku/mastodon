@@ -1,0 +1,7 @@
+class RSpec::ExampleGroups::AdminDashboardController::GETIndex
+  def stub_system_checks: () -> void
+end
+
+module RSpec::ExampleGroups::AdminDashboardController::GETIndex::LetDefinitions
+  def user: () -> User
+end

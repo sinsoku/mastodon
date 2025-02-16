@@ -1,0 +1,11 @@
+class ActivityPub::Activity::Flag
+  def perform: () -> void
+
+  def skip_reports?: () -> void
+
+  def object_uris: () -> Array[untyped]
+
+  def report_comment: () -> void
+
+  def report_uri: () -> void
+end

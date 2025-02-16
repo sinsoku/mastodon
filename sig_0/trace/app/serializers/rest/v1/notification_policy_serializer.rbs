@@ -1,0 +1,11 @@
+class REST::V1::NotificationPolicySerializer
+  def filter_not_following: () -> bool
+
+  def filter_not_followers: () -> bool
+
+  def filter_new_accounts: () -> bool
+
+  def filter_private_mentions: () -> bool
+
+  def summary: () -> Hash[untyped, untyped]
+end

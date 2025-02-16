@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::AnnualReportTimeSeries::Generate::WithAnActiveAccount::LetDefinitions
+  def account: () -> Account
+
+  def month_one_date: () -> DateTime
+end
+
+module RSpec::ExampleGroups::AnnualReportTimeSeries::Generate::LetDefinitions
+  def subject: () -> AnnualReport::TimeSeries
+end
+
+module RSpec::ExampleGroups::AnnualReportTimeSeries::Generate::WithAnInactiveAccount::LetDefinitions
+  def account: () -> Account
+end

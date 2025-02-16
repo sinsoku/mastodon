@@ -1,0 +1,13 @@
+class AnonymousController
+  def empty_array: () -> String
+
+  def empty_relation: () -> String
+
+  def account_statuses_favourites: () -> String
+end
+
+module RSpec::ExampleGroups::PreloadingConcern::PreloadCollection::WhenGivenACollectionOfStatuses::LetDefinitions
+  def account: () -> Account
+
+  def status: () -> Status
+end

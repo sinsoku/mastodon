@@ -1,0 +1,3 @@
+class DashboardPolicy
+  def index?: () -> bool
+end

@@ -1,0 +1,31 @@
+class Auth::SessionsController
+  def require_no_authentication: () -> nil
+
+  def find_user: () -> User
+
+  def user_params: () -> ActionController::Parameters
+
+  def find_user_from_params: () -> void
+
+  def check_suspicious!: () -> bool
+
+  def suspicious_sign_in?: (User) -> bool
+
+  def create: () -> String
+
+  def on_authentication_success: (User, Symbol) -> void
+
+  def clear_2fa_attempt_from_user: (User) -> void
+
+  def second_factor_attempts_key: (User) -> void
+
+  def clear_attempt_from_session: () -> void
+
+  def after_sign_in_path_for: (User) -> void
+
+  def home_paths: (User) -> Array[untyped]
+
+  def webauthn_options: () -> String
+
+  def register_attempt_in_session: (User) -> void
+end

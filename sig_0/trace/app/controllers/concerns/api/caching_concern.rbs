@@ -1,0 +1,3 @@
+module Api::CachingConcern
+  def cache_if_unauthenticated!: () -> void
+end

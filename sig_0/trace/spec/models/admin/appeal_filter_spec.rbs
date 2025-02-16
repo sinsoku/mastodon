@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::AdminAppealFilter::Results::LetDefinitions
+  def approved_appeal: () -> Appeal
+end

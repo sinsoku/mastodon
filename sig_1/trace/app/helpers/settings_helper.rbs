@@ -1,0 +1,5 @@
+module SettingsHelper
+  def ui_languages: () -> Array[untyped]
+
+  def session_device_icon: (SessionActivation) -> String
+end

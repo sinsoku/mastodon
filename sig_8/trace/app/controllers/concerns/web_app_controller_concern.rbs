@@ -1,0 +1,7 @@
+module WebAppControllerConcern
+  def redirect_unauthenticated_to_permalinks!: () -> nil
+
+  def set_referer_header: () -> String
+
+  def skip_csrf_meta_tags?: () -> bool
+end

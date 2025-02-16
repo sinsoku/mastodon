@@ -1,0 +1,26 @@
+class IpBlock
+  def expires_in=: (ActiveSupport::Duration) -> ActiveSupport::Duration
+end
+
+class Mute
+  def expires_in=: (nil) -> void
+
+  def expired?: () -> bool
+
+  def expires?: () -> void
+end
+
+class Invite
+  def expires_in: () -> void
+
+  def expired?: () -> bool
+
+  def expires?: () -> void
+              | () -> bool
+
+  def expire!: () -> void
+
+  def expires_in=: (String) -> void
+                 | (nil) -> void
+                 | (Integer) -> void
+end

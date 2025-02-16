@@ -1,0 +1,24 @@
+module RSpec::ExampleGroups::PostStatusService::LetDefinitions
+  def subject: () -> PostStatusService
+end
+
+class RSpec::ExampleGroups::PostStatusService
+  def create_status_with_options: (**nil) -> Status
+                                | (**String) -> Status
+                                | (**Symbol) -> Status
+                                | (**Doorkeeper::Application) -> Status
+                                | (**bool) -> Status
+                                | (**Symbol) -> nil
+end
+
+module RSpec::ExampleGroups::PostStatusService::WhenSchedulingAStatus::LetDefinitions
+  def account: () -> Account
+
+  def future: () -> Time
+
+  def previous_status: () -> Status
+end
+
+module RSpec::ExampleGroups::PostStatusService::WhenSchedulingAStatus::WhenScheduledAtIsLessThanMinOffset::LetDefinitions
+  def invalid_scheduled_time: () -> ActiveSupport::TimeWithZone
+end

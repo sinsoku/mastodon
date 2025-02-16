@@ -1,0 +1,3 @@
+class Admin::SystemCheck::BaseCheck
+  def initialize: (User) -> void
+end

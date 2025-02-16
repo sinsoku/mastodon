@@ -1,0 +1,9 @@
+class Api::V2::Notifications::PoliciesController
+  def set_policy: () -> Integer
+
+  def show: () -> String
+
+  def update: () -> String
+
+  def resource_params: () -> void
+end

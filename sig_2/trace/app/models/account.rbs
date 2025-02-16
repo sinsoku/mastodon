@@ -1,0 +1,99 @@
+class Account
+  def normalize_domain: () -> nil
+                      | () -> String
+
+  def local?: () -> void
+            | () -> bool
+
+  def prepare_contents: () -> nil
+                      | () -> String
+
+  def generate_keys: () -> nil
+                   | () -> String
+
+  def to_param: () -> void
+              | () -> String
+
+  def excluded_from_timeline_account_ids: () -> void
+
+  def moved?: () -> void
+
+  def emojis: () -> void
+            | () -> Array[untyped]
+
+  def emojifiable_text: () -> void
+
+  def fields: () -> Array[untyped]
+
+  def pretty_acct: () -> void
+                 | () -> String
+
+  def bot?: () -> bool
+
+  def group?: () -> bool
+
+  def object_type: () -> void
+                 | () -> Symbol
+
+  def instance_actor?: () -> void
+                     | () -> bool
+
+  def user_prefers_noindex?: (*untyped, **untyped) -> void
+                           | (*untyped, **untyped) -> bool
+
+  def user_role: (*untyped, **untyped) -> void
+
+  def trigger_update_webhooks: () -> String
+                             | () -> nil
+
+  def tags_as_strings=: (Array[untyped]) -> void
+
+  def acct: () -> void
+          | () -> String
+
+  def user_email: (*untyped, **untyped) -> void
+                | (*untyped, **untyped) -> String
+
+  def user_confirmed?: (*untyped, **untyped) -> void
+                     | (*untyped, **untyped) -> bool
+
+  def user_disabled?: (*untyped, **untyped) -> void
+
+  def user_approved?: (*untyped, **untyped) -> void
+
+  def user_locale: (*untyped, **untyped) -> void
+
+  def user_shows_application?: (*untyped, **untyped) -> void
+
+  def synchronization_uri_prefix: () -> String
+
+  def keypair: () -> void
+             | () -> OpenSSL::PKey::RSA
+
+  def create_canonical_email_block!: () -> void
+
+  def user_pending?: (*untyped, **untyped) -> void
+
+  def to_webfinger_s: () -> void
+
+  def local_username_and_domain: () -> String
+
+  def excluded_from_timeline_domains: () -> void
+                                    | () -> Array[untyped]
+
+  def self.inboxes: () -> Array[untyped]
+
+  def also_known_as: () -> Array[untyped]
+
+  def sign?: () -> void
+
+  def build_fields: () -> void
+
+  def ensure_keys!: () -> void
+
+  def chosen_languages: (*untyped, **untyped) -> nil
+
+  def unlocked: () -> bool
+
+  def show_collections: () -> bool
+end

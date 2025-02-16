@@ -1,0 +1,11 @@
+module SettingsHelper
+  def session_device_icon: (SessionActivation) -> String
+
+  def ui_languages: () -> Array[untyped]
+
+  def featured_tags_hint: (ActiveRecord::Relation) -> bool
+
+  def compact_account_link_to: (Account) -> void
+
+  def filterable_languages: () -> Array[untyped]
+end

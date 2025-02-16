@@ -1,0 +1,9 @@
+class RateLimiter
+  def initialize: (Account, ?Hash[untyped, untyped]) -> void
+
+  def record!: () -> void
+
+  def key: () -> void
+
+  def last_epoch_time: () -> Integer
+end

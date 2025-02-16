@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::RedownloadAvatarWorker::LetDefinitions
+  def worker: () -> RedownloadAvatarWorker
+end

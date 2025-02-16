@@ -1,0 +1,49 @@
+module RSpec::ExampleGroups::CustomEmoji::Search::LetDefinitions
+  def subject: () -> ActiveRecord::Relation
+
+  def custom_emoji: () -> CustomEmoji
+end
+
+module RSpec::ExampleGroups::CustomEmoji::Search::WhenShortcodeIsExact::LetDefinitions
+  def search_term: () -> String
+
+  def shortcode: () -> String
+end
+
+module RSpec::ExampleGroups::CustomEmoji::Search::WhenShortcodeIsPartial::LetDefinitions
+  def search_term: () -> String
+
+  def shortcode: () -> String
+end
+
+module RSpec::ExampleGroups::CustomEmoji::Local::LetDefinitions
+  def subject: () -> bool
+
+  def custom_emoji: () -> CustomEmoji
+end
+
+module RSpec::ExampleGroups::CustomEmoji::Local::WhenDomainIsNil::LetDefinitions
+  def domain: () -> nil
+end
+
+module RSpec::ExampleGroups::CustomEmoji::Local::WhenDomainIsPresent::LetDefinitions
+  def domain: () -> String
+end
+
+module RSpec::ExampleGroups::CustomEmoji::FromText::LetDefinitions
+  def emojo: () -> CustomEmoji
+
+  def subject: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::CustomEmoji::FromText::WithPlainText::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::CustomEmoji::FromText::WithHtml::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::CustomEmoji::Validations::LetDefinitions
+  def subject: () -> CustomEmoji
+end

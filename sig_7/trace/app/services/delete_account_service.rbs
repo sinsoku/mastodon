@@ -1,0 +1,53 @@
+class DeleteAccountService
+  def call: (Account, **bool) -> void
+
+  def record_severed_relationships!: () -> void
+
+  def relationship_severance_event: () -> nil
+
+  def distribute_activities!: () -> void
+
+  def skip_activitypub?: () -> void
+
+  def purge_content!: () -> void
+
+  def purge_user!: () -> void
+
+  def purge_profile!: () -> void
+
+  def keep_account_record?: () -> void
+
+  def purge_statuses!: () -> void
+
+  def reported_status_ids: () -> void
+
+  def purge_mentions!: () -> void
+
+  def purge_media_attachments!: () -> void
+
+  def purge_polls!: () -> void
+
+  def purge_generated_notifications!: () -> void
+
+  def purge_favourites!: () -> void
+
+  def purge_bookmarks!: () -> void
+
+  def purge_feeds!: () -> void
+
+  def purge_other_associations!: () -> void
+
+  def associations_for_destruction: () -> Array[untyped]
+
+  def purge_association: (String) -> void
+
+  def fulfill_deletion_request!: () -> void
+
+  def keep_user_record?: () -> void
+
+  def delete_actor!: () -> void
+
+  def delivery_inboxes: () -> void
+
+  def low_priority_delivery_inboxes: () -> void
+end

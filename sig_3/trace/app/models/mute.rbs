@@ -1,0 +1,5 @@
+class Mute
+  def invalidate_blocking_cache: () -> bool
+
+  def invalidate_follow_recommendations_cache: () -> bool
+end

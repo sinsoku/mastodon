@@ -1,0 +1,3 @@
+class WebPushKeyValidator
+  def validate: (Web::PushSubscription) -> Hash[untyped, untyped]
+end

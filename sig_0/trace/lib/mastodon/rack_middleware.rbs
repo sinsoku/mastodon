@@ -1,0 +1,9 @@
+class Mastodon::RackMiddleware
+  def call: (Hash[untyped, untyped]) -> void
+
+  def clean_up_sockets!: () -> void
+
+  def clean_up_redis_socket!: () -> void
+
+  def clean_up_statsd_socket!: () -> void
+end

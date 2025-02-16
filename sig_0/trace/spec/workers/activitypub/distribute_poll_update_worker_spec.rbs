@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::ActivityPubDistributePollUpdateWorker::LetDefinitions
+  def status: () -> Status
+
+  def account: () -> Account
+
+  def poll: () -> Poll
+
+  def follower: () -> Account
+
+  def subject: () -> ActivityPub::DistributePollUpdateWorker
+end

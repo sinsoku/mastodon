@@ -1,0 +1,10 @@
+class REST::Admin::WebhookEventSerializer
+  def event: () -> String
+
+  def virtual_object: () -> Account
+
+  def self.serializer_for: (Account, Hash[untyped, untyped]) -> Class
+                         | (Status, Hash[untyped, untyped]) -> Class
+                         | (Array[untyped], Hash[untyped, untyped]) -> Class
+                         | (Report, Hash[untyped, untyped]) -> Class
+end

@@ -1,0 +1,5 @@
+class REST::Admin::ExistingDomainBlockErrorSerializer
+  def error: () -> String
+
+  def existing_domain_block: () -> DomainBlock
+end

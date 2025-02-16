@@ -1,0 +1,3 @@
+class Admin::SystemCheck::RulesCheck
+  def skip?: () -> void
+end

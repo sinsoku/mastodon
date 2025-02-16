@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::AdminAccountDeletionWorker::Perform::LetDefinitions
+  def service: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AdminAccountDeletionWorker::LetDefinitions
+  def worker: () -> Admin::AccountDeletionWorker
+end

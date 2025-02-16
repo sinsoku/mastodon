@@ -1,0 +1,21 @@
+class AdminMailer
+  def process_params: () -> Account
+
+  def set_instance: () -> String
+
+  def new_appeal: (Appeal) -> Mail::Message
+
+  def new_critical_software_updates: () -> Mail::Message
+
+  def set_important_headers!: () -> Hash[untyped, untyped]
+
+  def auto_close_registrations: () -> Mail::Message
+
+  def new_software_updates: () -> Mail::Message
+
+  def new_trends: (Array[untyped], Array[untyped], Array[untyped]) -> Mail::Message
+
+  def new_pending_account: (User) -> Mail::Message
+
+  def new_report: (Report) -> Mail::Message
+end

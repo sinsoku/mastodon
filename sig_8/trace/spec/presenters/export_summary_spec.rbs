@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::ExportSummary::LetDefinitions
+  def target_accounts: () -> Array[untyped]
+
+  def account: () -> Account
+
+  def subject: () -> ExportSummary
+end

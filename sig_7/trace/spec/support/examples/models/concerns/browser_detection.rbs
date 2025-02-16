@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::LoginActivity::LetDefinitions
+  def subject: () -> LoginActivity
+end
+
+module RSpec::ExampleGroups::LoginActivity::Callbacks::PopulatingTheUserAgentValue::LetDefinitions
+  def subject: () -> LoginActivity
+end

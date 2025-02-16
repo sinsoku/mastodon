@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::RESTStatusSerializer::WithARemoteStatus::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::RESTStatusSerializer::LetDefinitions
+  def bob: () -> Account
+
+  def subject: () -> Hash[untyped, untyped]
+
+  def current_user: () -> User
+end
+
+module RSpec::ExampleGroups::RESTStatusSerializer::WithARemoteStatus::WhenEditedAtIsPopulated::LetDefinitions
+  def status: () -> Status
+end

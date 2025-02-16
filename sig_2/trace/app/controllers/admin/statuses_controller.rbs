@@ -1,0 +1,31 @@
+class Admin::StatusesController
+  def set_account: () -> Account
+
+  def set_statuses: () -> ActiveRecord::AssociationRelation
+
+  def filter_params: () -> void
+
+  def batch: () -> Integer
+           | () -> String
+
+  def admin_status_batch_action_params: () -> ActionController::Parameters
+                                      | () -> nil
+
+  def action_from_button: () -> void
+
+  def after_create_redirect_path: () -> void
+
+  def index: () -> Admin::StatusBatchAction
+
+  def set_status: () -> Status
+
+  def show: () -> Admin::StatusBatchAction
+
+  def batched_ordered_status_edits: () -> Enumerator
+
+  def current_params: () -> void
+end
+
+module Admin::StatusesController::HelperMethods
+  def batched_ordered_status_edits: (*untyped, **untyped) -> void
+end

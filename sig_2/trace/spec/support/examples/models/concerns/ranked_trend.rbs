@@ -1,0 +1,47 @@
+class RSpec::ExampleGroups::StatusTrend
+  def factory_name: () -> void
+end
+
+module RSpec::ExampleGroups::StatusTrend::Scopes::RankedBelow::LetDefinitions
+  def low_rank: () -> StatusTrend
+
+  def med_rank: () -> StatusTrend
+
+  def high_rank: () -> StatusTrend
+end
+
+module RSpec::ExampleGroups::StatusTrend::Scopes::ByRank::LetDefinitions
+  def lower_rank: () -> StatusTrend
+
+  def higher_rank: () -> StatusTrend
+end
+
+module RSpec::ExampleGroups::StatusTrend::RecalculateOrderedRank::LetDefinitions
+  def low_score: () -> StatusTrend
+
+  def high_score: () -> StatusTrend
+end
+
+module RSpec::ExampleGroups::PreviewCardTrend::Scopes::RankedBelow::LetDefinitions
+  def low_rank: () -> PreviewCardTrend
+
+  def med_rank: () -> PreviewCardTrend
+
+  def high_rank: () -> PreviewCardTrend
+end
+
+class RSpec::ExampleGroups::PreviewCardTrend
+  def factory_name: () -> void
+end
+
+module RSpec::ExampleGroups::PreviewCardTrend::Scopes::ByRank::LetDefinitions
+  def lower_rank: () -> PreviewCardTrend
+
+  def higher_rank: () -> PreviewCardTrend
+end
+
+module RSpec::ExampleGroups::PreviewCardTrend::RecalculateOrderedRank::LetDefinitions
+  def low_score: () -> PreviewCardTrend
+
+  def high_score: () -> PreviewCardTrend
+end

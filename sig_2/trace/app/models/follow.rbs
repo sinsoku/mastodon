@@ -1,0 +1,18 @@
+class Follow
+  def set_uri: () -> URI::HTTPS
+             | () -> nil
+
+  def increment_cache_counters: () -> nil
+                              | () -> AccountStat
+
+  def invalidate_follow_recommendations_cache: () -> bool
+
+  def invalidate_hash_cache: () -> nil
+                           | () -> bool
+
+  def remove_endorsements: () -> Integer
+
+  def decrement_cache_counters: () -> nil
+
+  def local?: () -> bool
+end

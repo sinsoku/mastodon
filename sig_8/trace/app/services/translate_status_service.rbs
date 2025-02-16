@@ -1,0 +1,25 @@
+class TranslateStatusService
+  def unwrap_emoji_shortcodes: (String) -> Nokogiri::HTML5::DocumentFragment
+
+  def call: (Status, String) -> void
+          | (Status, String) -> Translation
+
+  def source_texts: () -> Hash[untyped, untyped]
+
+  def wrap_emoji_shortcodes: (ActiveSupport::SafeBuffer) -> void
+                           | (ActiveSupport::SafeBuffer) -> ActiveSupport::SafeBuffer
+
+  def target_languages: () -> Array[untyped]
+
+  def languages: () -> Hash[untyped, untyped]
+
+  def translation_backend: () -> TranslationService
+
+  def permitted?: () -> void
+
+  def content_hash: () -> String
+
+  def build_status_translation: (Array[untyped]) -> void
+
+  def html_entities: () -> HTMLEntities
+end

@@ -1,0 +1,67 @@
+module RSpec::ExampleGroups::ActivityPubFetchRemoteStatusService::LetDefinitions
+  def sender: () -> Account
+
+  def subject: () -> ActivityPub::FetchRemoteStatusService
+
+  def existing_status: () -> nil
+
+  def note: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchRemoteStatusService::WithStatusesReferencingOtherStatuses::WhenUsingReplies::LetDefinitions
+  def object: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchRemoteStatusService::WithStatusesReferencingOtherStatuses::WhenUsingInReplyTo::LetDefinitions
+  def object: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchRemoteStatusService::Call::WithEventObjectThatContainsAHTMLSummary::LetDefinitions
+  def object: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchRemoteStatusService::Call::WithAValidCreateActivity::LetDefinitions
+  def object: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchRemoteStatusService::Call::WithWrongId::LetDefinitions
+  def object: () -> Hash[untyped, untyped]
+
+  def note: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchRemoteStatusService::Call::WhenStatusAlreadyExists::WithACreateActivity::LetDefinitions
+  def object: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchRemoteStatusService::Call::WhenStatusAlreadyExists::LetDefinitions
+  def existing_status: () -> Status
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchRemoteStatusService::Call::WhenStatusAlreadyExists::WithANoteObject::LetDefinitions
+  def object: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchRemoteStatusService::Call::WithACreateActivityWithAMismatchingId::LetDefinitions
+  def object: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchRemoteStatusService::Call::WithEventObject::LetDefinitions
+  def object: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchRemoteStatusService::Call::WithArticleObjectThatContainsAHTMLSummary::LetDefinitions
+  def object: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchRemoteStatusService::Call::WithAudioObject::LetDefinitions
+  def object: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchRemoteStatusService::Call::WithNoteObject::LetDefinitions
+  def object: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchRemoteStatusService::Call::WithVideoObject::LetDefinitions
+  def object: () -> Hash[untyped, untyped]
+end

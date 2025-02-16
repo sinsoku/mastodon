@@ -1,0 +1,8 @@
+module ApplicationExtension
+  def close_streaming_sessions: (?nil) -> nil
+
+  def confirmation_redirect_uri: () -> void
+                               | () -> String
+
+  def redirect_uris: () -> Array[untyped]
+end

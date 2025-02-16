@@ -1,0 +1,6 @@
+class InitialStatePresenter
+  def role: () -> nil
+          | () -> UserRole
+
+  def critical_updates_pending: () -> bool
+end

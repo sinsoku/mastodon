@@ -1,0 +1,7 @@
+class StatusEdit
+  def ordered_media_attachments: () -> Array[untyped]
+
+  def emojis: () -> Array[untyped]
+
+  def local?: (*untyped, **untyped) -> void
+end

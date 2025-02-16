@@ -1,0 +1,8 @@
+class Settings::TwoFactorAuthenticationMethodsController
+  def require_otp_enabled: () -> nil
+                         | () -> String
+
+  def index: () -> nil
+
+  def disable: () -> String
+end

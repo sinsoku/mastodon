@@ -1,0 +1,11 @@
+class RSS::Channel
+  def initialize: () -> void
+
+  def title: (String) -> void
+
+  def description: (String) -> void
+
+  def link: (String) -> void
+
+  def generator: (String) -> void
+end

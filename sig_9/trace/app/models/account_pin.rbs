@@ -1,0 +1,3 @@
+class AccountPin
+  def validate_follow_relationship: () -> nil
+end

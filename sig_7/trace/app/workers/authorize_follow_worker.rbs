@@ -1,0 +1,3 @@
+class AuthorizeFollowWorker
+  def perform: (Integer, Integer) -> void
+end

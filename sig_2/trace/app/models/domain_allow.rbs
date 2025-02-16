@@ -1,0 +1,8 @@
+class DomainAllow
+  def self.allowed?: (String) -> bool
+
+  def self.rule_for: (String) -> nil
+                   | (String) -> DomainAllow
+
+  def to_log_human_identifier: () -> void
+end

@@ -1,0 +1,22 @@
+class AccountConversation
+  def self.add_status: (Account, Status) -> void
+
+  def self.participants_from_status: (Account, Status) -> void
+
+  def participant_account_ids=: (Array[untyped]) -> nil
+
+  def set_last_status: () -> Integer
+
+  def push_to_streaming_api: () -> nil
+
+  def subscribed_to_timeline?: () -> bool
+
+  def streaming_channel: () -> String
+
+  def self.to_a_paginated_by_id: (Integer, ?ActionController::Parameters) -> Array[untyped]
+
+  def self.paginate_by_max_id: (Integer, ?nil, ?nil) -> ActiveRecord::Relation
+                             | (Integer, ?nil, ?String) -> ActiveRecord::Relation
+
+  def participant_accounts: () -> Array[untyped]
+end

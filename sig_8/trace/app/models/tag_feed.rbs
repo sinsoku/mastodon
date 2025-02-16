@@ -1,0 +1,15 @@
+class TagFeed
+  def initialize: (Tag, nil, ?Hash[untyped, untyped]) -> void
+                | (Tag, Account, ?Hash[untyped, untyped]) -> void
+
+  def get: (Integer, ?nil, ?nil, ?nil) -> Array[untyped]
+
+  def tagged_with_any_scope: () -> void
+
+  def tags_for: (Array[untyped]) -> void
+              | (nil) -> void
+
+  def tagged_with_all_scope: () -> void
+
+  def tagged_with_none_scope: () -> void
+end

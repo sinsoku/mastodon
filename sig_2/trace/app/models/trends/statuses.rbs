@@ -1,0 +1,17 @@
+class Trends::Statuses
+  def register: (Status, ?Time) -> void
+
+  def eligible?: (Status) -> void
+
+  def query: () -> Trends::Statuses::Query
+
+  def key_prefix: () -> void
+
+  def klass: () -> void
+end
+
+class Trends::Statuses::Query
+  def to_arel: () -> ActiveRecord::Relation
+
+  def language_order_clause: () -> Arel::Nodes::Case
+end

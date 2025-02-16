@@ -1,0 +1,33 @@
+module RSpec::ExampleGroups::Mutes::GETApiV1Mutes::LetDefinitions
+  def mutes: () -> Array[untyped]
+
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Mutes::LetDefinitions
+  def user: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Mutes::GETApiV1Mutes::WithMaxIdParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Mutes::GETApiV1Mutes::WithLimitParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Mutes::GETApiV1Mutes::WithoutAnAuthenticationHeader::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Mutes::GETApiV1Mutes::WithSinceIdParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end

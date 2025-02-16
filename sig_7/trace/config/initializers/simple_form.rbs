@@ -1,0 +1,3 @@
+module WarningHintComponent
+  def warning_hint: (?Hash[untyped, untyped]) -> nil
+end

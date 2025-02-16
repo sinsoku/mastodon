@@ -1,0 +1,8 @@
+module RSpec::ExampleGroups::ApiWebSettings::PATCHApiWebSettings::LetDefinitions
+  def user: () -> User
+end
+
+class RSpec::ExampleGroups::ApiWebSettings::PATCHApiWebSettings
+  def user_web_setting: () -> Web::Setting
+                      | () -> nil
+end

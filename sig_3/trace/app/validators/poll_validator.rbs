@@ -1,0 +1,3 @@
+class PollValidator
+  def validate: (Poll) -> nil
+end

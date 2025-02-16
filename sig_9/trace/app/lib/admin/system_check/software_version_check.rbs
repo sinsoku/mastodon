@@ -1,0 +1,9 @@
+class Admin::SystemCheck::SoftwareVersionCheck
+  def skip?: () -> void
+
+  def pass?: () -> void
+
+  def software_updates: () -> Array[untyped]
+
+  def message: () -> void
+end

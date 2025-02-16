@@ -1,0 +1,13 @@
+class InvitesController
+  def set_cache_headers: () -> Hash[untyped, untyped]
+
+  def index: () -> Invite
+
+  def invites: () -> ActiveRecord::AssociationRelation
+
+  def destroy: () -> String
+
+  def create: () -> String
+
+  def resource_params: () -> void
+end

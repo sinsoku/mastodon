@@ -1,0 +1,34 @@
+class AccountsController
+  def username_param: () -> void
+
+  def skip_temporary_suspension_response?: () -> bool
+
+  def show: () -> bool
+          | () -> Time
+          | () -> Array[untyped]
+
+  def rss_url: () -> String
+
+  def tag_requested?: () -> void
+                    | () -> bool
+
+  def path_without_format: () -> String
+
+  def filtered_statuses: () -> ActiveRecord::AssociationRelation
+
+  def default_statuses: () -> ActiveRecord::AssociationRelation
+
+  def media_requested?: () -> void
+
+  def replies_requested?: () -> void
+
+  def no_replies_scope: () -> void
+
+  def hashtag_scope: () -> void
+
+  def only_media_scope: () -> void
+end
+
+module AccountsController::HelperMethods
+  def rss_url: (*untyped, **untyped) -> void
+end

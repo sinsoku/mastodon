@@ -1,0 +1,5 @@
+class UnblockDomainService
+  def call: (DomainBlock) -> void
+
+  def process_retroactive_updates: () -> void
+end

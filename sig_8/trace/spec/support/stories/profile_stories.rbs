@@ -1,0 +1,15 @@
+module ProfileStories
+  def as_a_logged_in_user: () -> void
+
+  def as_a_registered_user: () -> void
+
+  def email: () -> void
+
+  def password: () -> void
+
+  def confirmed_at: () -> void
+
+  def finished_onboarding: () -> void
+
+  def fill_in_auth_details: (String, String) -> void
+end

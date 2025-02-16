@@ -1,0 +1,71 @@
+module RSpec::ExampleGroups::SoftwareUpdate::PendingToA::WhenTheMastodonVersionIsAnOutdatedBetaVersionAndThereIsARc::LetDefinitions
+  def mastodon_version: () -> String
+end
+
+module RSpec::ExampleGroups::SoftwareUpdate::PendingToA::WhenTheMastodonVersionIsAnOutdatedRelease::LetDefinitions
+  def mastodon_version: () -> String
+end
+
+module RSpec::ExampleGroups::SoftwareUpdate::PendingToA::WhenTheMastodonVersionIsAnOutdatedDevVersion::LetDefinitions
+  def mastodon_version: () -> String
+end
+
+module RSpec::ExampleGroups::SoftwareUpdate::PendingToA::WhenTheMastodonVersionIsMoreRecentThanAnythingLastReturnedByTheServer::LetDefinitions
+  def mastodon_version: () -> String
+end
+
+module RSpec::ExampleGroups::SoftwareUpdate::PendingToA::WhenTheMastodonVersionIsAVeryOutdatedNightly::LetDefinitions
+  def mastodon_version: () -> String
+end
+
+module RSpec::ExampleGroups::SoftwareUpdate::PendingToA::WhenTheMastodonVersionIsAnOutdatedBetaVersion::LetDefinitions
+  def mastodon_version: () -> String
+end
+
+module RSpec::ExampleGroups::SoftwareUpdate::PendingToA::WhenTheMastodonVersionIsAnOutdatedNightly::LetDefinitions
+  def mastodon_version: () -> String
+end
+
+module RSpec::ExampleGroups::SoftwareUpdate::Pending::WhenTheRuntimeVersionIsOlderThanTheUpdate::LetDefinitions
+  def mastodon_version: () -> String
+
+  def update_version: () -> String
+end
+
+module RSpec::ExampleGroups::SoftwareUpdate::Pending::LetDefinitions
+  def subject: () -> SoftwareUpdate
+end
+
+module RSpec::ExampleGroups::SoftwareUpdate::Pending::WhenTheRuntimeVersionIsSameAsTheUpdate::LetDefinitions
+  def mastodon_version: () -> String
+
+  def update_version: () -> String
+end
+
+module RSpec::ExampleGroups::SoftwareUpdate::Pending::WhenTheRuntimeVersionIsNewerThanTheUpdate::LetDefinitions
+  def mastodon_version: () -> String
+
+  def update_version: () -> String
+end
+
+module RSpec::ExampleGroups::SoftwareUpdate::Outdated::WhenTheRuntimeVersionIsOlderThanTheUpdate::LetDefinitions
+  def mastodon_version: () -> String
+
+  def update_version: () -> String
+end
+
+module RSpec::ExampleGroups::SoftwareUpdate::Outdated::LetDefinitions
+  def subject: () -> SoftwareUpdate
+end
+
+module RSpec::ExampleGroups::SoftwareUpdate::Outdated::WhenTheRuntimeVersionIsNewerThanTheUpdate::LetDefinitions
+  def mastodon_version: () -> String
+
+  def update_version: () -> String
+end
+
+module RSpec::ExampleGroups::SoftwareUpdate::Outdated::WhenTheRuntimeVersionIsSameAsTheUpdate::LetDefinitions
+  def mastodon_version: () -> String
+
+  def update_version: () -> String
+end

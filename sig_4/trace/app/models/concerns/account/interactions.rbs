@@ -1,0 +1,78 @@
+module Account::Interactions
+  def block_domain!: (String) -> void
+
+  def mute!: (Account, ?notifications: nil, ?duration: Integer) -> void
+           | (Account, ?notifications: nil, ?duration: Integer) -> Mute
+           | (Account, ?notifications: bool, ?duration: Integer) -> Mute
+
+  def block!: (Account, ?uri: nil) -> void
+            | (Account, ?uri: nil) -> Block
+
+  def follow!: (Account, ?reblogs: nil, ?notify: nil, ?languages: nil, ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> void
+             | (Account, ?reblogs: bool, ?notify: bool, ?languages: nil, ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> void
+             | (Account, ?reblogs: bool, ?notify: bool, ?languages: Array[untyped], ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> void
+             | (Account, ?reblogs: bool, ?notify: nil, ?languages: nil, ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> Follow
+             | (Account, ?reblogs: nil, ?notify: nil, ?languages: nil, ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> Follow
+             | (Account, ?reblogs: nil, ?notify: nil, ?languages: Array[untyped], ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> Follow
+             | (Account, ?reblogs: bool, ?notify: bool, ?languages: nil, ?uri: String, ?rate_limit: bool, ?bypass_limit: bool) -> Follow
+             | (Account, ?reblogs: bool, ?notify: bool, ?languages: nil, ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> Follow
+
+  def domain_blocking?: (nil) -> void
+                      | (String) -> void
+
+  def blocking?: (Account) -> bool
+
+  def muting_notifications?: (Account) -> bool
+
+  def muting_conversation?: (Conversation) -> void
+
+  def following?: (Account) -> bool
+
+  def followers_for_local_distribution: () -> ActiveRecord::AssociationRelation
+
+  def lists_for_local_distribution: () -> ActiveRecord::AssociationRelation
+
+  def unblock_domain!: (String) -> void
+
+  def normalized_domain: (String) -> void
+
+  def requested?: (Account) -> void
+
+  def not_following_anyone?: () -> void
+
+  def following_anyone?: () -> bool
+
+  def request_follow!: (Account, ?reblogs: nil, ?notify: nil, ?languages: nil, ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> FollowRequest
+                     | (Account, ?reblogs: bool, ?notify: nil, ?languages: nil, ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> FollowRequest
+                     | (Account, ?reblogs: bool, ?notify: bool, ?languages: nil, ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> FollowRequest
+
+  def unblock!: (Account) -> Block
+
+  def muting?: (Account) -> void
+
+  def unmute!: (Account) -> void
+
+  def muting_reblogs?: (Account) -> void
+
+  def favourited?: (Status) -> void
+
+  def reblogged?: (Status) -> void
+
+  def bookmarked?: (Status) -> void
+
+  def pinned?: (Status) -> void
+
+  def status_matches_filters: (Status) -> void
+
+  def unfollow!: (Account) -> void
+end
+
+module Account::Interactions::ClassMethods
+  def blocked_by_map: (Array[untyped], Integer) -> void
+
+  def follow_mapping: (ActiveRecord::Relation, Symbol) -> void
+
+  def endorsed_map: (Array[untyped], Integer) -> void
+
+  def account_note_map: (Array[untyped], Integer) -> void
+end

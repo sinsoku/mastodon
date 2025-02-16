@@ -1,0 +1,7 @@
+class REST::WebPushSubscriptionSerializer
+  def alerts: () -> Hash[untyped, untyped]
+
+  def server_key: () -> String
+
+  def policy: () -> String
+end

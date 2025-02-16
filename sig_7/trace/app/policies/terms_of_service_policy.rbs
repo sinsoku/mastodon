@@ -1,0 +1,11 @@
+class TermsOfServicePolicy
+  def index?: () -> bool
+
+  def create?: () -> bool
+
+  def distribute?: () -> bool
+
+  def update?: () -> bool
+
+  def destroy?: () -> bool
+end

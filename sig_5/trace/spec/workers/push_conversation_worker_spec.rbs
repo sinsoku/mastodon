@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::PushConversationWorker::LetDefinitions
+  def worker: () -> PushConversationWorker
+end
+
+module RSpec::ExampleGroups::PushConversationWorker::Perform::WithValidRecords::LetDefinitions
+  def account_conversation: () -> AccountConversation
+end
+
+class RSpec::ExampleGroups::PushConversationWorker::Perform::WithValidRecords
+  def redis_key: () -> void
+end

@@ -1,0 +1,9 @@
+class RSpec::ExampleGroups::AdminExportDomainBlocksController::GETExport
+  def domain_blocks_csv_file: () -> void
+end
+
+class RSpec::ExampleGroups::AdminExportDomainBlocksController::POSTImport
+  def mapped_batch_table_rows: () -> void
+
+  def batch_table_rows: () -> Nokogiri::XML::NodeSet
+end

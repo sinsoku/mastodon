@@ -1,0 +1,7 @@
+class Admin::ActionLogFilter
+  def initialize: (ActionController::Parameters) -> void
+
+  def results: () -> ActiveRecord::Relation
+
+  def latest_action_logs: () -> ActiveRecord::Relation
+end

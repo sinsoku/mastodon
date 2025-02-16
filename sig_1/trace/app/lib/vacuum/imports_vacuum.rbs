@@ -1,0 +1,7 @@
+class Vacuum::ImportsVacuum
+  def perform: () -> void
+
+  def clean_unconfirmed_imports!: () -> void
+
+  def clean_old_imports!: () -> void
+end

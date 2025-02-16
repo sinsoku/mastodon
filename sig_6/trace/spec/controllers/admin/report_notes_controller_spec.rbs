@@ -1,0 +1,59 @@
+module RSpec::ExampleGroups::AdminReportNotesController::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::AdminReportNotesController::POSTCreate::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+
+  def report: () -> Report
+end
+
+module RSpec::ExampleGroups::AdminReportNotesController::POSTCreate::WhenContentIsTooLong::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+
+  def action_taken: () -> nil
+
+  def account_id: () -> nil
+end
+
+module RSpec::ExampleGroups::AdminReportNotesController::POSTCreate::WhenParameterIsValid::WhenReportIsUnsolved::WhenCreateAndResolveFlagIsOn::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AdminReportNotesController::POSTCreate::WhenParameterIsValid::WhenReportIsUnsolved::LetDefinitions
+  def action_taken: () -> nil
+
+  def account_id: () -> nil
+end
+
+module RSpec::ExampleGroups::AdminReportNotesController::POSTCreate::WhenParameterIsValid::WhenReportIsUnsolved::WhenCreateAndResolveFlagIsFalse::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AdminReportNotesController::POSTCreate::WhenParameterIsValid::WhenReportIsResolved::WhenCreateAndUnresolveFlagIsFalse::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AdminReportNotesController::POSTCreate::WhenParameterIsValid::WhenReportIsResolved::LetDefinitions
+  def action_taken: () -> Time
+
+  def account_id: () -> Integer
+end
+
+module RSpec::ExampleGroups::AdminReportNotesController::POSTCreate::WhenParameterIsValid::WhenReportIsResolved::WhenCreateAndUnresolveFlagIsOn::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AdminReportNotesController::POSTCreate::WhenContentIsTooShort::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+
+  def action_taken: () -> nil
+
+  def account_id: () -> nil
+end
+
+module RSpec::ExampleGroups::AdminReportNotesController::DELETEDestroy::LetDefinitions
+  def report_note: () -> ReportNote
+
+  def subject: () -> ActionDispatch::TestResponse
+end

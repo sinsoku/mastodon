@@ -1,0 +1,11 @@
+class AnnualReport::Percentiles
+  def self.prepare: (Integer) -> void
+
+  def generate: () -> void
+
+  def total_with_fewer_statuses: () -> Integer
+
+  def statuses_created: () -> void
+
+  def total_with_any_statuses: () -> Integer
+end

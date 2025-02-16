@@ -1,0 +1,30 @@
+module Localized
+  def set_locale: () -> String
+                | () -> bool
+                | () -> Trends::PreviewCardProviderBatch
+                | () -> nil
+                | () -> ActiveSupport::SafeBuffer
+                | () -> Doorkeeper::Application
+                | () -> ActiveRecord::AssociationRelation
+                | () -> Time
+                | () -> Integer
+                | () -> Admin::StatusBatchAction
+                | () -> Array[untyped]
+                | () -> ActiveRecord::Relation
+                | () -> Form::AccountBatch
+                | () -> FeaturedTag
+                | () -> Range[untyped]
+                | () -> ActiveRecord::Associations::CollectionProxy
+                | () -> User
+                | () -> AccountMigration
+
+  def requested_locale: () -> void
+
+  def available_locale_or_nil: (nil) -> nil
+                             | (String) -> Symbol
+
+  def http_accept_language: () -> nil
+                          | () -> String
+
+  def content_locale: () -> void
+end

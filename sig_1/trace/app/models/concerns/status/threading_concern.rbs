@@ -1,0 +1,3 @@
+module Status::ThreadingConcern
+  def self_replies: (Integer) -> ActiveRecord::AssociationRelation
+end

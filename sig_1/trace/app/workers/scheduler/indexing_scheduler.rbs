@@ -1,0 +1,3 @@
+class Scheduler::IndexingScheduler
+  def perform: () -> void
+end

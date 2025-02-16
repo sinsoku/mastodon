@@ -1,0 +1,3 @@
+class EmailDomainBlockPolicy
+  def create?: () -> bool
+end

@@ -1,0 +1,23 @@
+module Localized
+  def set_locale: () -> bool
+                | () -> String
+                | () -> nil
+                | () -> ActiveSupport::SafeBuffer
+                | () -> User
+                | () -> TermsOfService::Generator
+                | () -> Trends::TagBatch
+                | () -> Time
+                | () -> Form::IpBlockBatch
+                | () -> IpBlock
+                | () -> Relay
+                | () -> ActiveRecord::Relation
+                | () -> Array[untyped]
+                | () -> Symbol
+                | () -> Form::StatusFilterBatchAction
+
+  def requested_locale: () -> void
+
+  def available_locale_or_nil: (nil) -> nil
+
+  def http_accept_language: () -> nil
+end

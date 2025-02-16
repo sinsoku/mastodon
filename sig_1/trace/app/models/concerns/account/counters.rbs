@@ -1,0 +1,33 @@
+module Account::Counters
+  def save_account_stat: () -> nil
+                       | () -> bool
+
+  def increment_count!: (Symbol) -> void
+
+  def update_count!: (Symbol, Integer) -> void
+
+  def updated_account_stat: (Symbol, Integer) -> ActiveRecord::Result
+
+  def initial_values: (Symbol, Integer) -> void
+
+  def duplicate_values: (Symbol, Integer) -> Array[untyped]
+
+  def followers_count: (*untyped, **untyped) -> Integer
+
+  def account_stat: () -> AccountStat
+
+  def following_count: (*untyped, **untyped) -> Integer
+
+  def statuses_count: (*untyped, **untyped) -> Integer
+
+  def last_status_at: (*untyped, **untyped) -> nil
+                    | (*untyped, **untyped) -> ActiveSupport::TimeWithZone
+
+  def decrement_count!: (Symbol) -> void
+
+  def statuses_count=: (Integer) -> void
+
+  def followers_count=: (Integer) -> void
+
+  def following_count=: (Integer) -> void
+end

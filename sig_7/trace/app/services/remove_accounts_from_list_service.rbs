@@ -1,0 +1,9 @@
+class RemoveAccountsFromListService
+  def call: (List, ActiveRecord::Relation) -> void
+
+  def unmerge_from_list!: () -> void
+
+  def unmerge_account_ids: () -> void
+
+  def update_list!: () -> void
+end

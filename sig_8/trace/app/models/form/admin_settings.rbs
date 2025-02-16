@@ -1,0 +1,24 @@
+class Form::AdminSettings
+  def site_title: () -> String
+
+  def site_contact_username: () -> String
+
+  def site_contact_email: () -> String
+
+  def site_short_description: () -> String
+
+  def thumbnail: () -> SiteUpload
+
+  def favicon: () -> SiteUpload
+
+  def app_icon: () -> SiteUpload
+
+  def save: () -> void
+
+  def status_page_url: () -> nil
+
+  def validate_site_uploads: () -> Array[untyped]
+
+  def typecast_value: (Symbol, String) -> void
+                    | (Symbol, nil) -> void
+end

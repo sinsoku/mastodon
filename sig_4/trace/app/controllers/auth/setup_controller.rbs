@@ -1,0 +1,7 @@
+class Auth::SetupController
+  def require_unconfirmed_or_pending!: () -> nil
+
+  def set_user: () -> User
+
+  def show: () -> nil
+end

@@ -1,0 +1,17 @@
+module RSpec::ExampleGroups::SettingsSessionsController::LetDefinitions
+  def user: () -> User
+
+  def session_activation: () -> SessionActivation
+end
+
+module RSpec::ExampleGroups::SettingsSessionsController::DELETEDestroy::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::SettingsSessionsController::DELETEDestroy::WhenSessionActivationExists::LetDefinitions
+  def id: () -> Integer
+end
+
+module RSpec::ExampleGroups::SettingsSessionsController::DELETEDestroy::WhenSessionActivationDoesNotExist::LetDefinitions
+  def id: () -> Integer
+end

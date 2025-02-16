@@ -1,0 +1,15 @@
+class ActivityPub::AddSerializer
+  def type: () -> String
+
+  def actor: () -> String
+
+  def target: () -> String
+
+  def proper_object: () -> Status
+
+  def self.serializer_for: (Status, Hash[untyped, untyped]) -> Class
+end
+
+class ActivityPub::AddSerializer::UriSerializer
+  def serializable_hash: (*Hash[untyped, untyped] | Class) -> String
+end

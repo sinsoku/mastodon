@@ -1,0 +1,5 @@
+class Importer::BaseImporter
+  def initialize: (batch_size: Integer, executor: Concurrent::FixedThreadPool) -> void
+
+  def import!: () -> void
+end

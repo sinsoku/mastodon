@@ -1,0 +1,11 @@
+class CustomEmoji
+  def self.from_text: (String, ?nil) -> Array[untyped]
+
+  def local?: () -> bool
+
+  def remove_entity_cache: () -> bool
+
+  def to_log_human_identifier: () -> void
+
+  def copy!: () -> CustomEmoji
+end

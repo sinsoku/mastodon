@@ -1,0 +1,44 @@
+class ActivityPub::Parser::StatusParser
+  def initialize: (ActiveSupport::HashWithIndifferentAccess, **nil) -> void
+                | (Hash[untyped, untyped], **String | Hash[untyped, untyped]) -> void
+
+  def uri: () -> String
+
+  def edited_at: () -> void
+               | () -> DateTime
+               | () -> nil
+
+  def favourites_count: () -> nil
+                      | () -> Integer
+
+  def reblogs_count: () -> nil
+                   | () -> Integer
+
+  def text: () -> void
+
+  def spoiler_text: () -> void
+
+  def summary_language_map?: () -> void
+
+  def sensitive: () -> void
+
+  def language: () -> void
+
+  def raw_language_code: () -> nil
+
+  def content_language_map?: () -> void
+
+  def name_language_map?: () -> void
+
+  def url: () -> void
+
+  def created_at: () -> void
+
+  def reply: () -> void
+
+  def visibility: () -> void
+
+  def audience_to: () -> Array[untyped]
+
+  def audience_cc: () -> Array[untyped]
+end

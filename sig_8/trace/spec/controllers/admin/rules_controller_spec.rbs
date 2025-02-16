@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::AdminRulesController::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::AdminRulesController::PUTUpdate::LetDefinitions
+  def rule: () -> Rule
+end
+
+module RSpec::ExampleGroups::AdminRulesController::GETEdit::LetDefinitions
+  def rule: () -> Rule
+end
+
+module RSpec::ExampleGroups::AdminRulesController::DELETEDestroy::LetDefinitions
+  def rule: () -> Rule
+end

@@ -1,0 +1,35 @@
+class Webfinger
+  def initialize: (String) -> void
+
+  def perform: () -> Webfinger::Response
+             | () -> nil
+
+  def standard_url: () -> void
+
+  def body_from_webfinger: (?String, ?bool) -> void
+
+  def webfinger_request: (String) -> Request
+
+  def body_from_host_meta: () -> void
+
+  def host_meta_request: () -> Request
+
+  def host_meta_url: () -> void
+
+  def url_from_template: (String) -> void
+end
+
+class Webfinger::Response
+  def initialize: (String, String) -> void
+
+  def validate_response!: () -> void
+
+  def subject: () -> String
+
+  def self_link: () -> Hash[untyped, untyped]
+               | () -> nil
+
+  def links: () -> Hash[untyped, untyped]
+
+  def self_link_href: () -> String
+end

@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::AdminMetricsDimensionServersDimension::Data::LetDefinitions
+  def alice: () -> Account
+
+  def domain: () -> String
+
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::AdminMetricsDimensionServersDimension::LetDefinitions
+  def subject: () -> Admin::Metrics::Dimension::ServersDimension
+
+  def start_at: () -> ActiveSupport::TimeWithZone
+
+  def end_at: () -> Time
+
+  def limit: () -> Integer
+
+  def params: () -> ActionController::Parameters
+end

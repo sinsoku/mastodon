@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::AdminDomainAllows::LetDefinitions
+  def domain: () -> String
+
+  def user: () -> User
+end
+
+class RSpec::ExampleGroups::AdminDomainAllows::ManagingDomainAllows
+  def submit_form: () -> void
+
+  def delete_domain_allow: () -> void
+end

@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::AccountsPinsAPI::LetDefinitions
+  def kevin: () -> User
+
+  def user: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::AccountsPinsAPI::POSTApiV1AccountsAccountIdPin::LetDefinitions
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::AccountsPinsAPI::POSTApiV1AccountsAccountIdUnpin::LetDefinitions
+  def subject: () -> Integer
+end

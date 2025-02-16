@@ -1,0 +1,18 @@
+class SoftwareUpdateCheckService
+  def call: () -> void
+
+  def clean_outdated_updates!: () -> void
+
+  def fetch_update_notices: () -> void
+
+  def api_url: () -> String
+
+  def version: () -> String
+
+  def process_update_notices!: (Hash[untyped, untyped]) -> void
+                             | (nil) -> void
+
+  def notify_devops!: (Array[untyped]) -> void
+
+  def should_notify_user?: (User, bool, bool) -> void
+end

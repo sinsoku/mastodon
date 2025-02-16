@@ -1,0 +1,15 @@
+class ApplicationPolicy
+  def initialize: (Account, Class) -> void
+                | (Account, Poll) -> void
+                | (Account, Status) -> void
+                | (Account, User) -> void
+                | (Account, Symbol) -> void
+                | (Account, Module) -> void
+                | (nil, Status) -> void
+                | (Account, Account) -> void
+                | (Account, Appeal) -> void
+
+  def role: () -> UserRole
+
+  def current_user: () -> User
+end

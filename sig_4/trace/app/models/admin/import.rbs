@@ -1,0 +1,9 @@
+class Admin::Import
+  def validate_data: () -> nil
+
+  def csv_row_count: () -> Integer
+
+  def csv_data: () -> CSV
+
+  def csv_rows: () -> Array[untyped]
+end

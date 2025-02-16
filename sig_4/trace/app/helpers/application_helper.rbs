@@ -1,0 +1,50 @@
+module ApplicationHelper
+  def opengraph: (String, String) -> ActiveSupport::SafeBuffer
+               | (String, ActiveSupport::SafeBuffer) -> ActiveSupport::SafeBuffer
+
+  def available_sign_up_path: () -> void
+
+  def closed_registrations?: () -> void
+
+  def cdn_host?: () -> void
+
+  def cdn_host: () -> nil
+
+  def storage_host?: () -> void
+
+  def storage_host_var: () -> nil
+                      | () -> String
+
+  def html_title: () -> ActiveSupport::SafeBuffer
+
+  def title: () -> void
+
+  def body_classes: () -> void
+
+  def locale_direction: () -> String
+
+  def render_initial_state: () -> void
+
+  def check_icon: () -> ActiveSupport::SafeBuffer
+
+  def approved_registrations?: () -> void
+
+  def quote_wrap: (String, ?line_width: Integer, ?break_sequence: String) -> void
+
+  def material_symbol: (String, ?Hash[untyped, untyped]) -> void
+                     | (String, ?Hash[untyped, untyped]) -> ActiveSupport::SafeBuffer
+
+  def open_registrations?: () -> void
+
+  def storage_host: () -> void
+
+  def prerender_custom_emojis: (ActiveSupport::SafeBuffer, Array[untyped], ?Hash[untyped, untyped]) -> void
+                             | (ActiveSupport::SafeBuffer, Array[untyped], ?Hash[untyped, untyped]) -> ActiveSupport::SafeBuffer
+
+  def can?: (Symbol, User) -> void
+          | (Symbol, Symbol) -> void
+          | (Symbol, Account) -> void
+          | (Symbol, AccountWarning) -> void
+
+  def copyable_input: (?Hash[untyped, untyped]) -> void
+end

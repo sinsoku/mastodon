@@ -1,0 +1,15 @@
+class RSpec::ExampleGroups::ActivityPubFollowersSynchronizationWorker
+  def stub_service: () -> void
+end
+
+module RSpec::ExampleGroups::ActivityPubFollowersSynchronizationWorker::LetDefinitions
+  def service: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def worker: () -> ActivityPub::FollowersSynchronizationWorker
+end
+
+module RSpec::ExampleGroups::ActivityPubFollowersSynchronizationWorker::Perform::LetDefinitions
+  def url: () -> String
+
+  def account: () -> Account
+end

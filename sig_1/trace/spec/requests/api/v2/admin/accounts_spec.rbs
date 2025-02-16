@@ -1,0 +1,53 @@
+module RSpec::ExampleGroups::APIV2AdminAccounts::GETIndex::LetDefinitions
+  def remote_account: () -> Account
+
+  def other_remote_account: () -> Account
+
+  def suspended_account: () -> Account
+
+  def suspended_remote: () -> Account
+
+  def disabled_account: () -> Account
+
+  def pending_account: () -> Account
+
+  def admin_account: () -> Account
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::APIV2AdminAccounts::LetDefinitions
+  def user: () -> User
+
+  def role: () -> UserRole
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::APIV2AdminAccounts::GETIndex::WhenCalledWithStatusSuspended::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::APIV2AdminAccounts::GETIndex::WhenCalledWithStatusActiveAndOriginLocalAndPermissionsStaff::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::APIV2AdminAccounts::GETIndex::WhenCalledWithStatusDisabled::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::APIV2AdminAccounts::GETIndex::WhenCalledWithStatusPending::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::APIV2AdminAccounts::GETIndex::WithLimitParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::APIV2AdminAccounts::GETIndex::WhenCalledWithByDomainValueAndOriginRemote::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end

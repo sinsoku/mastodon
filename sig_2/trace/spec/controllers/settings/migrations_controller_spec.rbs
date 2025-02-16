@@ -1,0 +1,43 @@
+module RSpec::ExampleGroups::SettingsMigrationsController::GETShow::WhenUserIsSignIn::LetDefinitions
+  def user: () -> User
+
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::SettingsMigrationsController::GETShow::WhenUserIsSignIn::WhenUserDoesNotHaveMovedToAccount::LetDefinitions
+  def moved_to_account: () -> nil
+end
+
+module RSpec::ExampleGroups::SettingsMigrationsController::GETShow::WhenUserIsSignIn::WhenUserHasAMovedToAccount::LetDefinitions
+  def moved_to_account: () -> Account
+end
+
+module RSpec::ExampleGroups::SettingsMigrationsController::GETShow::WhenUserIsNotSignIn::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::SettingsMigrationsController::POSTCreate::WhenUserIsSignedIn::LetDefinitions
+  def user: () -> User
+
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::SettingsMigrationsController::POSTCreate::WhenUserIsSignedIn::WhenTargetAccountDoesNotReferenceTheAccountBeingMovedFrom::LetDefinitions
+  def acct: () -> Account
+end
+
+module RSpec::ExampleGroups::SettingsMigrationsController::POSTCreate::WhenUserIsSignedIn::WhenMigrationAccountIsChanged::LetDefinitions
+  def acct: () -> Account
+end
+
+module RSpec::ExampleGroups::SettingsMigrationsController::POSTCreate::WhenUserIsSignedIn::WhenAcctIsTheCurrentAccount::LetDefinitions
+  def acct: () -> Account
+end
+
+module RSpec::ExampleGroups::SettingsMigrationsController::POSTCreate::WhenUserIsSignedIn::WhenARecentMigrationAlreadyExists::LetDefinitions
+  def acct: () -> Account
+end
+
+module RSpec::ExampleGroups::SettingsMigrationsController::POSTCreate::WhenUserIsNotSignIn::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end

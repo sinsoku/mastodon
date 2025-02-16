@@ -1,0 +1,3 @@
+class RSpec::ExampleGroups::AdminSettingsDiscovery
+  def trends_box: () -> void
+end

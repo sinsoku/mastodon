@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::SiteUpload::CacheKey::LetDefinitions
+  def site_upload: () -> SiteUpload
+end

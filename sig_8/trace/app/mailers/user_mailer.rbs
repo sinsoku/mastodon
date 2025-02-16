@@ -1,0 +1,7 @@
+class UserMailer
+  def set_instance: () -> String
+
+  def backup_ready: (User, Backup) -> Mail::Message
+
+  def locale: (?use_current_locale: bool) -> void
+end

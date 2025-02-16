@@ -1,0 +1,5 @@
+class REST::Admin::ReportSerializer
+  def id: () -> String
+
+  def statuses: () -> ActiveRecord::Relation
+end

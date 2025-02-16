@@ -1,0 +1,3 @@
+class Scheduler::Trends::RefreshScheduler
+  def perform: () -> void
+end

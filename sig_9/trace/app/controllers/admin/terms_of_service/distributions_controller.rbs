@@ -1,0 +1,5 @@
+class Admin::TermsOfService::DistributionsController
+  def set_terms_of_service: () -> TermsOfService
+
+  def create: () -> String
+end

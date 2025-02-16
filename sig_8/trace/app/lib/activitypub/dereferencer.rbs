@@ -1,0 +1,20 @@
+class ActivityPub::Dereferencer
+  def initialize: (String, ?permitted_origin: String, ?signature_actor: nil) -> void
+                | (String, ?permitted_origin: String, ?signature_actor: Account) -> void
+
+  def object: () -> void
+
+  def fetch_object!: () -> Hash[untyped, untyped]
+                   | () -> nil
+
+  def bear_cap?: () -> void
+
+  def fetch_with_signature!: () -> void
+
+  def perform_request: (String, ?headers: nil) -> void
+                     | (String, ?headers: Hash[untyped, untyped]) -> void
+
+  def fetch_with_token!: () -> void
+
+  def bear_cap: () -> Hash[untyped, untyped]
+end

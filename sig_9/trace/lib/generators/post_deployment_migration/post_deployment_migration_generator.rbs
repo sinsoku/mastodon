@@ -1,0 +1,5 @@
+class PostDeploymentMigrationGenerator
+  def create_post_deployment_migration: () -> String
+
+  def self.next_migration_number: (String) -> String
+end

@@ -1,0 +1,47 @@
+module RSpec::ExampleGroups::StatusRelationshipsPresenter::Initialize::LetDefinitions
+  def status_ids: () -> Array[untyped]
+
+  def statuses: () -> Array[untyped]
+
+  def current_account_id: () -> Integer
+
+  def default_map: () -> Hash[untyped, untyped]
+
+  def presenter: () -> StatusRelationshipsPresenter
+end
+
+module RSpec::ExampleGroups::StatusRelationshipsPresenter::Initialize::WhenOptionsPinsMapIsSet::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::StatusRelationshipsPresenter::Initialize::WhenOptionsAreNotSet::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::StatusRelationshipsPresenter::Initialize::WhenOptionsBookmarksMapIsSet::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::StatusRelationshipsPresenter::Initialize::WhenOptionsReblogsMapIsSet::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::StatusRelationshipsPresenter::Initialize::WhenPostIncludesFilteredIndividualStatuses::LetDefinitions
+  def statuses: () -> Array[untyped]
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::StatusRelationshipsPresenter::Initialize::WhenOptionsFavouritesMapIsSet::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::StatusRelationshipsPresenter::Initialize::WhenPostIncludesFilteredTerms::LetDefinitions
+  def statuses: () -> Array[untyped]
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::StatusRelationshipsPresenter::Initialize::WhenOptionsMutesMapIsSet::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end

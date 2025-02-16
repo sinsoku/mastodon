@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::RESTAdminReportSerializer::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::RESTAdminReportSerializer::WithTimestamps::LetDefinitions
+  def report: () -> Report
+end

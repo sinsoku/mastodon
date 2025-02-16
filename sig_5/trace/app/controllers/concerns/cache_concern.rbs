@@ -1,0 +1,14 @@
+module CacheConcern::ClassMethods
+  def vary_by: (Proc, **nil) -> void
+             | (String, **nil) -> void
+end
+
+module CacheConcern
+  def render_with_cache: (**CustomEmoji | String | Class) -> void
+                       | (**OauthMetadataPresenter | Class | String | ActiveSupport::Duration) -> void
+                       | (**Hash[untyped, untyped] | Class | ActiveSupport::Duration | String) -> void
+                       | (**InstancePresenter | Class | String) -> void
+
+  def enforce_cache_control!: () -> nil
+                            | () -> Hash[untyped, untyped]
+end

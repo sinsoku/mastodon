@@ -1,0 +1,48 @@
+class Admin::AccountsController
+  def set_account: () -> Account
+
+  def require_local_account!: () -> nil
+
+  def memorialize: () -> nil
+                 | () -> String
+
+  def approve: () -> nil
+             | () -> String
+
+  def unsilence: () -> nil
+               | () -> String
+
+  def unsensitive: () -> String
+                 | () -> nil
+
+  def reject: () -> String
+            | () -> nil
+
+  def index: () -> Form::AccountBatch
+
+  def filtered_accounts: () -> ActiveRecord::Relation
+
+  def filter_params: () -> ActionController::Parameters
+
+  def remove_avatar: () -> nil
+                   | () -> String
+
+  def show: () -> nil
+
+  def enable: () -> String
+            | () -> nil
+
+  def destroy: () -> nil
+             | () -> String
+
+  def require_remote_account!: () -> nil
+
+  def redownload: () -> nil
+                | () -> String
+
+  def unblock_email: () -> nil
+                   | () -> String
+
+  def unsuspend: () -> nil
+               | () -> String
+end

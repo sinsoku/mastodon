@@ -1,0 +1,21 @@
+class StatusPolicy
+  def initialize: (Account, Status, ?Hash[untyped, untyped]) -> void
+                | (nil, Status, ?Hash[untyped, untyped]) -> void
+
+  def show?: () -> void
+           | () -> bool
+
+  def author: () -> Account
+
+  def requires_mention?: () -> void
+
+  def private?: () -> void
+
+  def author_blocking?: () -> bool
+
+  def author_blocking_domain?: () -> bool
+
+  def owned?: () -> void
+
+  def mention_exists?: () -> void
+end

@@ -1,0 +1,5 @@
+module RankedTrend::ClassMethods
+  def locales: () -> void
+
+  def recalculate_ordered_rank: () -> void
+end

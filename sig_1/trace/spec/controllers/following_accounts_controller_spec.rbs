@@ -1,0 +1,29 @@
+module RSpec::ExampleGroups::FollowingAccountsController::GETIndex::LetDefinitions
+  def follow_of_bob: () -> Follow
+
+  def follow_of_chris: () -> Follow
+end
+
+module RSpec::ExampleGroups::FollowingAccountsController::LetDefinitions
+  def alice: () -> Account
+
+  def followee_bob: () -> Account
+
+  def followee_chris: () -> Account
+end
+
+module RSpec::ExampleGroups::FollowingAccountsController::GETIndex::WhenFormatIsJson::LetDefinitions
+  def response: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::FollowingAccountsController::GETIndex::WhenFormatIsJson::WithoutPage::LetDefinitions
+  def page: () -> nil
+end
+
+module RSpec::ExampleGroups::FollowingAccountsController::GETIndex::WhenFormatIsJson::WithPage::LetDefinitions
+  def page: () -> Integer
+end
+
+module RSpec::ExampleGroups::FollowingAccountsController::GETIndex::WhenFormatIsHtml::LetDefinitions
+  def response: () -> ActionDispatch::TestResponse
+end

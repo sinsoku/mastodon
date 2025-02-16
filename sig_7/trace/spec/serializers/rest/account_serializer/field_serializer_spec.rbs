@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::RESTAccountSerializerFieldSerializer::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+
+  def account: () -> Account
+
+  def default_datetime: () -> DateTime
+end
+
+module RSpec::ExampleGroups::RESTAccountSerializerFieldSerializer::WhenVerifiedAtIsPopulated::LetDefinitions
+  def field: () -> Account::Field
+end

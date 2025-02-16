@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::ActivityPubUpdateDistributionWorker::LetDefinitions
+  def follower: () -> Account
+
+  def account: () -> Account
+
+  def subject: () -> ActivityPub::UpdateDistributionWorker
+end

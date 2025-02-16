@@ -1,0 +1,7 @@
+class ActivityPub::PublicKeySerializer
+  def id: () -> String
+
+  def owner: () -> String
+
+  def public_key_pem: () -> String
+end

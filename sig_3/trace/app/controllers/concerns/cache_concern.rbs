@@ -1,0 +1,9 @@
+module CacheConcern
+  def enforce_cache_control!: () -> Hash[untyped, untyped]
+                            | () -> nil
+end
+
+module CacheConcern::ClassMethods
+  def vary_by: (String, **nil) -> void
+             | (Proc, **nil) -> void
+end

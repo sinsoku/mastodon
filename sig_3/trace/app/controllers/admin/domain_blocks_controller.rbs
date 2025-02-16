@@ -1,0 +1,19 @@
+class Admin::DomainBlocksController
+  def new: () -> DomainBlock
+
+  def create: () -> ActiveSupport::SafeBuffer
+            | () -> String
+
+  def resource_params: () -> void
+                     | () -> ActionController::Parameters
+
+  def requires_confirmation?: () -> void
+
+  def set_domain_block: () -> DomainBlock
+
+  def edit: () -> Symbol
+
+  def update: () -> ActiveSupport::SafeBuffer
+
+  def update_params: () -> void
+end

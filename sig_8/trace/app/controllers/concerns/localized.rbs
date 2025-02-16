@@ -1,0 +1,25 @@
+module Localized
+  def set_locale: () -> Array[untyped]
+                | () -> String
+                | () -> ActiveSupport::SafeBuffer
+                | () -> Symbol
+                | () -> Form::AdminSettings
+                | () -> bool
+                | () -> nil
+                | () -> Trends::PreviewCardProviderBatch
+                | () -> ActiveRecord::AssociationRelation
+                | () -> CustomFilterKeyword
+                | () -> UserRole
+                | () -> ActiveRecord::Relation
+                | () -> Time
+                | () -> Rule
+                | () -> AccountWarningPreset
+
+  def requested_locale: () -> void
+
+  def available_locale_or_nil: (nil) -> nil
+
+  def http_accept_language: () -> nil
+
+  def content_locale: () -> void
+end

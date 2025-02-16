@@ -1,0 +1,3 @@
+class REST::FilterKeywordSerializer
+  def id: () -> String
+end

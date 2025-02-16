@@ -1,0 +1,7 @@
+module Mastodon::CLI::ProgressHelper
+  def parallelize_with_progress: (ActiveRecord::Relation) -> Array[untyped]
+
+  def create_progress_bar: (?Integer) -> ProgressBar::Base
+
+  def progress_output_options: () -> void
+end

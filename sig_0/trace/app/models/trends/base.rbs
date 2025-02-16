@@ -1,0 +1,27 @@
+class Trends::Base
+  def self.default_options=: (nil) -> nil
+
+  def initialize: (?Hash[untyped, untyped]) -> void
+
+  def record_used_id: (Integer, ?Time) -> void
+
+  def used_key: (Time) -> void
+end
+
+class Trends::Tags
+  def self.default_options=: (Hash[untyped, untyped]) -> void
+
+  def self.default_options: () -> Hash[untyped, untyped]
+end
+
+class Trends::Links
+  def self.default_options=: (Hash[untyped, untyped]) -> void
+
+  def self.default_options: () -> Hash[untyped, untyped]
+end
+
+class Trends::Statuses
+  def self.default_options=: (Hash[untyped, untyped]) -> void
+
+  def self.default_options: () -> Hash[untyped, untyped]
+end

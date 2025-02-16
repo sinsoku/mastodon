@@ -1,0 +1,5 @@
+class REST::RoleSerializer
+  def id: () -> String
+
+  def permissions: () -> String
+end

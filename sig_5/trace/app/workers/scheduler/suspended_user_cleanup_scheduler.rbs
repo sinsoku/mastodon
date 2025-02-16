@@ -1,0 +1,5 @@
+class Scheduler::SuspendedUserCleanupScheduler
+  def perform: () -> void
+
+  def process_deletion_requests!: () -> void
+end

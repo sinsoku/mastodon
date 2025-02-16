@@ -1,0 +1,11 @@
+module WarningHintComponent
+  def warning_hint: (?Hash[untyped, untyped]) -> nil
+end
+
+module RecommendedComponent
+  def recommended: (?Hash[untyped, untyped]) -> nil
+end
+
+module AppendComponent
+  def append: (?Hash[untyped, untyped]) -> ActiveSupport::SafeBuffer
+end

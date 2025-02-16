@@ -1,0 +1,4 @@
+class CustomEmoji
+  def self.from_text: (String, ?nil) -> Array[untyped]
+                    | (String, ?String) -> Array[untyped]
+end

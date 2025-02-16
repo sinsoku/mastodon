@@ -1,0 +1,97 @@
+module RSpec::ExampleGroups::AdminRolesController::LetDefinitions
+  def current_user: () -> User
+
+  def current_role: () -> UserRole
+
+  def permissions: () -> Integer
+end
+
+module RSpec::ExampleGroups::AdminRolesController::GETEdit::WhenUserHasPermissionToManageRoles::LetDefinitions
+  def permissions: () -> Integer
+end
+
+module RSpec::ExampleGroups::AdminRolesController::GETEdit::LetDefinitions
+  def role: () -> UserRole
+
+  def role_position: () -> Integer
+end
+
+module RSpec::ExampleGroups::AdminRolesController::GETEdit::WhenUserHasPermissionToManageRoles::WhenRoleOutranksUser::LetDefinitions
+  def role_position: () -> Integer
+end
+
+module RSpec::ExampleGroups::AdminRolesController::POSTCreate::WhenUserHasPermissionToManageRoles::LetDefinitions
+  def permissions: () -> Integer
+end
+
+module RSpec::ExampleGroups::AdminRolesController::POSTCreate::WhenUserHasPermissionToManageRoles::WhenNewRoleSDoesNotElevateAboveTheUserSRole::LetDefinitions
+  def selected_position: () -> Integer
+
+  def selected_permissions_as_keys: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::AdminRolesController::POSTCreate::WhenUserHasPermissionToManageRoles::WhenNewRoleHasPermissionsTheUserDoesNotHave::LetDefinitions
+  def selected_position: () -> Integer
+
+  def selected_permissions_as_keys: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::AdminRolesController::POSTCreate::WhenUserHasPermissionToManageRoles::WhenNewRoleSPositionIsHigherThanUserSRole::LetDefinitions
+  def selected_position: () -> Integer
+
+  def selected_permissions_as_keys: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::AdminRolesController::POSTCreate::WhenUserHasPermissionToManageRoles::WhenUserHasAdministratorPermission::LetDefinitions
+  def permissions: () -> Integer
+
+  def selected_position: () -> Integer
+
+  def selected_permissions_as_keys: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::AdminRolesController::PUTUpdate::LetDefinitions
+  def role: () -> UserRole
+
+  def role_permissions: () -> Integer
+
+  def role_position: () -> Integer
+
+  def selected_position: () -> Integer
+
+  def selected_permissions_as_keys: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::AdminRolesController::PUTUpdate::WhenUserHasPermissionToManageRoles::LetDefinitions
+  def permissions: () -> Integer
+end
+
+module RSpec::ExampleGroups::AdminRolesController::PUTUpdate::WhenUserHasPermissionToManageRoles::WhenUserHasAllPermissionsOfTheRole::LetDefinitions
+  def permissions: () -> Integer
+end
+
+module RSpec::ExampleGroups::AdminRolesController::PUTUpdate::WhenUserHasPermissionToManageRoles::WhenUserHasAllPermissionsOfTheRole::WhenRoleOutranksUser::LetDefinitions
+  def role_position: () -> Integer
+end
+
+module RSpec::ExampleGroups::AdminRolesController::GETIndex::WhenUserHasPermissionToManageRoles::LetDefinitions
+  def permissions: () -> Integer
+end
+
+module RSpec::ExampleGroups::AdminRolesController::GETNew::WhenUserHasPermissionToManageRoles::LetDefinitions
+  def permissions: () -> Integer
+end
+
+module RSpec::ExampleGroups::AdminRolesController::DELETEDestroy::LetDefinitions
+  def role: () -> UserRole
+
+  def role_position: () -> Integer
+end
+
+module RSpec::ExampleGroups::AdminRolesController::DELETEDestroy::WhenUserHasPermissionToManageRoles::LetDefinitions
+  def permissions: () -> Integer
+end
+
+module RSpec::ExampleGroups::AdminRolesController::DELETEDestroy::WhenUserHasPermissionToManageRoles::WhenRoleOutranksUser::LetDefinitions
+  def role_position: () -> Integer
+end

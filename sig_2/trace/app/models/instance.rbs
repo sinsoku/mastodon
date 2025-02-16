@@ -1,0 +1,17 @@
+class Instance
+  def to_param: () -> void
+              | () -> String
+
+  def failing?: () -> void
+
+  def unavailable?: () -> void
+
+  def availability_over_days: (Integer, ?Date) -> Array[untyped]
+
+  def exhausted_deliveries_days: (*untyped, **untyped) -> Array[untyped]
+
+  def delivery_failure_tracker: () -> DeliveryFailureTracker
+                              | () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def purgeable?: () -> void
+end

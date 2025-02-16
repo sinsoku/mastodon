@@ -1,0 +1,7 @@
+class ActivityPub::UpdateDistributionWorker
+  def perform: (Integer, ?Hash[untyped, untyped]) -> void
+
+  def inboxes: () -> Array[untyped]
+
+  def payload: () -> void
+end

@@ -1,0 +1,13 @@
+class Api::V1::Admin::Trends::TagsController
+  def enabled?: () -> void
+
+  def tags_from_trends: () -> Trends::Tags::Query
+
+  def approve: () -> String
+             | () -> nil
+
+  def reject: () -> String
+            | () -> nil
+
+  def index: () -> String
+end

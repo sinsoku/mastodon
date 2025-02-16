@@ -1,0 +1,75 @@
+module RSpec::ExampleGroups::Apps::POSTApiV1Apps::LetDefinitions
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+
+  def redirect_uris: () -> Array[untyped]
+
+  def redirect_uri: () -> String
+
+  def scopes: () -> String
+
+  def website: () -> nil
+
+  def client_name: () -> String
+end
+
+module RSpec::ExampleGroups::Apps::POSTApiV1Apps::WithoutARequiredParam::LetDefinitions
+  def client_name: () -> String
+end
+
+module RSpec::ExampleGroups::Apps::POSTApiV1Apps::WithMultipleRedirectUrisAsAString::LetDefinitions
+  def redirect_uris: () -> String
+end
+
+module RSpec::ExampleGroups::Apps::POSTApiV1Apps::WithAnEmptyRedirectUrisArray::LetDefinitions
+  def redirect_uris: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Apps::POSTApiV1Apps::WithoutScopesBeingSupplied::LetDefinitions
+  def scopes: () -> nil
+end
+
+module RSpec::ExampleGroups::Apps::POSTApiV1Apps::WithTooManyRedirectUris::LetDefinitions
+  def redirect_uris: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Apps::POSTApiV1Apps::WithAWebsite::LetDefinitions
+  def website: () -> String
+end
+
+module RSpec::ExampleGroups::Apps::POSTApiV1Apps::WithJustANewlineAsTheRedirectUrisString::LetDefinitions
+  def redirect_uris: () -> String
+end
+
+module RSpec::ExampleGroups::Apps::POSTApiV1Apps::WithAnUnsupportedScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Apps::POSTApiV1Apps::WithManyDuplicateScopes::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Apps::POSTApiV1Apps::WithScopesAsAnArray::LetDefinitions
+  def scopes: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Apps::POSTApiV1Apps::WithATooLongRedirectUri::LetDefinitions
+  def redirect_uris: () -> String
+end
+
+module RSpec::ExampleGroups::Apps::POSTApiV1Apps::WithATooLongWebsite::LetDefinitions
+  def website: () -> String
+end
+
+module RSpec::ExampleGroups::Apps::POSTApiV1Apps::WithMultipleRedirectUrisAsAnArray::LetDefinitions
+  def redirect_uris: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Apps::POSTApiV1Apps::WithATooLongName::LetDefinitions
+  def client_name: () -> String
+end
+
+module RSpec::ExampleGroups::Apps::POSTApiV1Apps::WithAnEmptyRedirectUrisString::LetDefinitions
+  def redirect_uris: () -> String
+end

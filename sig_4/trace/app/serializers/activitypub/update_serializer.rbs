@@ -1,0 +1,9 @@
+class ActivityPub::UpdateSerializer
+  def id: () -> String
+
+  def type: () -> String
+
+  def actor: () -> String
+
+  def to: () -> Array[untyped]
+end

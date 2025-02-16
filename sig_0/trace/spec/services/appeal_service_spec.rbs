@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::AppealService::Call::LetDefinitions
+  def admin: () -> User
+end
+
+module RSpec::ExampleGroups::AppealService::Call::WithAnExistingStrike::LetDefinitions
+  def strike: () -> AccountWarning
+
+  def text: () -> String
+end

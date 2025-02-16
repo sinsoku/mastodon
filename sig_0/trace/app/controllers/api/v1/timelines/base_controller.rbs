@@ -1,0 +1,11 @@
+class Api::V1::Timelines::BaseController
+  def require_auth?: () -> bool
+
+  def next_path_params: () -> void
+
+  def permitted_params: () -> ActionController::Parameters
+
+  def pagination_collection: () -> Array[untyped]
+
+  def prev_path_params: () -> void
+end

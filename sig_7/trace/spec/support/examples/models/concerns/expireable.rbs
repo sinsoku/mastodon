@@ -1,0 +1,45 @@
+module RSpec::ExampleGroups::Invite::LetDefinitions
+  def subject: () -> Invite
+end
+
+module RSpec::ExampleGroups::Invite::ExpiresIn::WhenExpiresAtIsNil::LetDefinitions
+  def expires_at: () -> nil
+end
+
+module RSpec::ExampleGroups::Invite::Expired::WhenExpiresAtIsInThePast::LetDefinitions
+  def expires_at: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::Invite::Expired::WhenExpiresAtIsNil::LetDefinitions
+  def expires_at: () -> nil
+end
+
+module RSpec::ExampleGroups::Invite::Expired::Expires::WhenValueIsMissing::LetDefinitions
+  def expires_at: () -> nil
+end
+
+module RSpec::ExampleGroups::Invite::Expired::Expires::WhenValueIsPresent::LetDefinitions
+  def expires_at: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::Invite::Expired::Expire::LetDefinitions
+  def subject: () -> Invite
+end
+
+class RSpec::ExampleGroups::Invite
+  def factory_name: () -> void
+end
+
+module RSpec::ExampleGroups::Invite::Expired::WhenExpiresAtIsInTheFuture::LetDefinitions
+  def expires_at: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::Invite::ExpiresIn_2::LetDefinitions
+  def record: () -> Invite
+end
+
+module RSpec::ExampleGroups::Invite::Scopes::LetDefinitions
+  def expired_record: () -> Invite
+
+  def un_expired_record: () -> Invite
+end

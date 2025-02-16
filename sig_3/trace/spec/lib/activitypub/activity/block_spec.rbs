@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::ActivityPubActivityBlock::LetDefinitions
+  def subject: () -> ActivityPub::Activity::Block
+
+  def json: () -> ActiveSupport::HashWithIndifferentAccess
+
+  def sender: () -> Account
+
+  def recipient: () -> Account
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityBlock::Perform::WhenAMatchingUndoHasBeenReceivedFirst::LetDefinitions
+  def undo_json: () -> ActiveSupport::HashWithIndifferentAccess
+end

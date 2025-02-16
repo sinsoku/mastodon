@@ -1,0 +1,36 @@
+class StatusReachFinder
+  def initialize: (Status, ?Hash[untyped, untyped]) -> void
+
+  def inboxes: () -> void
+             | () -> Array[untyped]
+
+  def reached_account_inboxes: () -> Array[untyped]
+
+  def reached_account_ids: () -> void
+
+  def replied_to_account_id: () -> void
+
+  def distributable?: () -> void
+
+  def reblog_of_account_id: () -> void
+
+  def mentioned_account_ids: () -> void
+
+  def reblogs_account_ids: () -> void
+
+  def favourites_account_ids: () -> void
+
+  def replies_account_ids: () -> void
+
+  def inboxes_without_suspended_for: (ActiveRecord::Relation) -> void
+                                   | (ActiveRecord::Associations::CollectionProxy) -> void
+
+  def unsafe?: () -> void
+
+  def followers_inboxes: () -> void
+
+  def followers_scope: () -> ActiveRecord::Associations::CollectionProxy
+                     | () -> ActiveRecord::Relation
+
+  def relay_inboxes: () -> void
+end

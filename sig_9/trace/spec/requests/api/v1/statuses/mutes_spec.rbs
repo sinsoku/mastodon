@@ -1,0 +1,17 @@
+module RSpec::ExampleGroups::APIV1StatusesMutes::WithAnOauthToken::POSTApiV1StatusesStatusIdMute::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::APIV1StatusesMutes::LetDefinitions
+  def user: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::APIV1StatusesMutes::WithAnOauthToken::POSTApiV1StatusesStatusIdUnmute::LetDefinitions
+  def status: () -> Status
+end

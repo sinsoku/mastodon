@@ -1,0 +1,16 @@
+class Auth::ConfirmationsController
+  def signed_in_confirmed_user?: () -> bool
+
+  def new: () -> nil
+
+  def set_confirmation_user!: () -> nil
+                            | () -> User
+
+  def redirect_confirmed_user: () -> String
+
+  def require_captcha_if_needed!: () -> nil
+
+  def show: () -> String
+
+  def after_confirmation_path_for: (Symbol, User) -> void
+end

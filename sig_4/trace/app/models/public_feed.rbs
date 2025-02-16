@@ -1,0 +1,32 @@
+class PublicFeed
+  def initialize: (nil, ?Hash[untyped, untyped]) -> void
+                | (Account, ?Hash[untyped, untyped]) -> void
+
+  def get: (Integer, ?nil, ?nil, ?nil) -> Array[untyped]
+
+  def public_scope: () -> ActiveRecord::Relation
+
+  def with_replies?: () -> void
+
+  def without_replies_scope: () -> void
+
+  def with_reblogs?: () -> void
+
+  def without_reblogs_scope: () -> void
+
+  def local_only?: () -> void
+
+  def remote_only?: () -> void
+
+  def account?: () -> void
+
+  def media_only?: () -> void
+
+  def local_only_scope: () -> void
+
+  def account_filters_scope: () -> void
+
+  def language_scope: () -> void
+
+  def remote_only_scope: () -> void
+end

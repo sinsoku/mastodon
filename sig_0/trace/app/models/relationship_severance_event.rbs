@@ -1,0 +1,9 @@
+class RelationshipSeveranceEvent
+  def import_from_active_follows!: (ActiveRecord::AssociationRelation) -> void
+
+  def import_from_follows!: (ActiveRecord::AssociationRelation, bool) -> void
+
+  def import_from_passive_follows!: (ActiveRecord::AssociationRelation) -> void
+
+  def affected_local_accounts: () -> ActiveRecord::Relation
+end

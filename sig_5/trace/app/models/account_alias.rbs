@@ -1,0 +1,11 @@
+class AccountAlias
+  def set_uri: () -> String
+             | () -> nil
+
+  def validate_target_account: () -> nil
+                             | () -> ActiveModel::Error
+
+  def add_to_account: () -> bool
+
+  def remove_from_account: () -> bool
+end

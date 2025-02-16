@@ -1,0 +1,23 @@
+class Admin::StatusBatchAction
+  def send_email_notification=: (bool) -> bool
+
+  def save!: () -> void
+
+  def process_action!: () -> void
+
+  def handle_delete!: () -> void
+
+  def statuses: () -> ActiveRecord::Relation
+
+  def with_report?: () -> void
+
+  def report: () -> Report
+
+  def target_account: () -> Account
+
+  def process_notification!: () -> void
+
+  def warnable?: () -> void
+
+  def handle_mark_as_sensitive!: () -> void
+end

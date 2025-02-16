@@ -1,0 +1,110 @@
+class RSpec::ExampleGroups::AccountStatusesFilter
+  def status!: (Symbol) -> void
+
+  def status_with_parent!: (Symbol) -> void
+
+  def status_with_reblog!: (Symbol) -> void
+                         | (String) -> void
+
+  def status_with_tag!: (Symbol, Tag) -> void
+
+  def status_with_mention!: (Symbol, ?nil) -> void
+                          | (Symbol, ?Account) -> void
+
+  def status_with_media_attachment!: (Symbol) -> void
+end
+
+module RSpec::ExampleGroups::AccountStatusesFilter::LetDefinitions
+  def account: () -> Account
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AccountStatusesFilter::Results::LetDefinitions
+  def tag: () -> Tag
+
+  def subject: () -> ActiveRecord::AssociationRelation
+             | () -> ActiveRecord::Relation
+end
+
+module RSpec::ExampleGroups::AccountStatusesFilter::Results::WhenAccessedByAFollower::LetDefinitions
+  def current_account: () -> Account
+end
+
+class RSpec::ExampleGroups::AccountStatusesFilter::Results
+  def results_unique_visibilities: () -> void
+
+  def results_in_reply_to_ids: () -> void
+
+  def results_reblog_of_ids: () -> void
+
+  def results_ids: () -> void
+end
+
+class RSpec::ExampleGroups::AccountStatusesFilter::Results::WhenAccessedByAFollower::BehavesLikeFilterParams
+  def results_for: (Hash[untyped, untyped]) -> void
+end
+
+module RSpec::ExampleGroups::AccountStatusesFilter::Results::WhenAccessedByAFollower::WhenThereIsADirectStatusMentioningTheNonFollower::LetDefinitions
+  def direct_status: () -> Status
+end
+
+module RSpec::ExampleGroups::AccountStatusesFilter::Results::WhenAccessedByANonFollower::LetDefinitions
+  def current_account: () -> Account
+end
+
+module RSpec::ExampleGroups::AccountStatusesFilter::Results::WhenAccessedByANonFollower::WhenBlockingARebloggedAccount::LetDefinitions
+  def reblog: () -> Status
+end
+
+module RSpec::ExampleGroups::AccountStatusesFilter::Results::WhenAccessedByANonFollower::WhenBlockingARebloggedDomain::LetDefinitions
+  def reblog: () -> Status
+
+  def reblogging_status: () -> Status
+
+  def other_account: () -> Account
+end
+
+class RSpec::ExampleGroups::AccountStatusesFilter::Results::WhenAccessedByANonFollower::BehavesLikeFilterParams
+  def results_for: (Hash[untyped, untyped]) -> void
+end
+
+module RSpec::ExampleGroups::AccountStatusesFilter::Results::WhenAccessedByANonFollower::WhenBlockedByARebloggedAccount::LetDefinitions
+  def reblog: () -> Status
+end
+
+module RSpec::ExampleGroups::AccountStatusesFilter::Results::WhenAccessedByANonFollower::WhenBlockingAnUnrelatedDomain::LetDefinitions
+  def reblog: () -> Status
+
+  def reblogging_status: () -> Status
+
+  def other_account: () -> Account
+end
+
+module RSpec::ExampleGroups::AccountStatusesFilter::Results::WhenAccessedByANonFollower::WhenMutingARebloggedAccount::LetDefinitions
+  def reblog: () -> Status
+end
+
+module RSpec::ExampleGroups::AccountStatusesFilter::Results::WhenAccessedByANonFollower::WhenThereIsAPrivateStatusMentioningTheNonFollower::LetDefinitions
+  def private_status: () -> Status
+end
+
+module RSpec::ExampleGroups::AccountStatusesFilter::Results::WhenAccessedAnonymously::LetDefinitions
+  def current_account: () -> nil
+end
+
+class RSpec::ExampleGroups::AccountStatusesFilter::Results::WhenAccessedAnonymously::BehavesLikeFilterParams
+  def results_for: (Hash[untyped, untyped]) -> void
+end
+
+module RSpec::ExampleGroups::AccountStatusesFilter::Results::WhenAccessedBySelf::LetDefinitions
+  def current_account: () -> Account
+end
+
+class RSpec::ExampleGroups::AccountStatusesFilter::Results::WhenAccessedBySelf::BehavesLikeFilterParams
+  def results_for: (Hash[untyped, untyped]) -> void
+end
+
+module RSpec::ExampleGroups::AccountStatusesFilter::Results::WhenAccessedWithABlockedAccount::LetDefinitions
+  def current_account: () -> Account
+end

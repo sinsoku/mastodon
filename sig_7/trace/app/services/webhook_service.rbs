@@ -1,0 +1,7 @@
+class WebhookService
+  def call: (String, Account) -> void
+
+  def serialize_event: () -> String
+
+  def webhooks_for_event: () -> Array[untyped]
+end

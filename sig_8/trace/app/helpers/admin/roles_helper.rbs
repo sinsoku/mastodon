@@ -1,0 +1,7 @@
+module Admin::RolesHelper
+  def disable_permissions?: (Array[untyped]) -> Array[untyped]
+
+  def role_flag_value: (Symbol) -> Integer
+
+  def privilege_label: (Symbol) -> ActiveSupport::SafeBuffer
+end

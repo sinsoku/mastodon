@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::RESTAdminWebhookEventSerializer::SerializerFor::LetDefinitions
+  def subject: () -> Class
+end
+
+module RSpec::ExampleGroups::RESTAdminWebhookEventSerializer::SerializerFor::WithAnAccountModel::LetDefinitions
+  def model: () -> Account
+end
+
+module RSpec::ExampleGroups::RESTAdminWebhookEventSerializer::SerializerFor::WithAStatusModel::LetDefinitions
+  def model: () -> Status
+end
+
+module RSpec::ExampleGroups::RESTAdminWebhookEventSerializer::SerializerFor::WithAnArray::LetDefinitions
+  def model: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::RESTAdminWebhookEventSerializer::SerializerFor::WithAReportModel::LetDefinitions
+  def model: () -> Report
+end

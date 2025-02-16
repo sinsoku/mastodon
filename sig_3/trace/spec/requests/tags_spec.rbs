@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::Tags::GETTagsId::WhenTagExists::LetDefinitions
+  def tag: () -> Tag
+end
+
+class RSpec::ExampleGroups::Tags::GETTagsId::WhenTagExists::WithHTMLFormat
+  def rss_links: () -> Nokogiri::XML::NodeSet
+
+  def alternate_links: () -> Nokogiri::XML::NodeSet
+
+  def activity_json_links: () -> Nokogiri::XML::NodeSet
+end

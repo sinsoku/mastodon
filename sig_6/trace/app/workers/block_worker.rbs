@@ -1,0 +1,3 @@
+class BlockWorker
+  def perform: (Integer, Integer) -> void
+end

@@ -1,0 +1,15 @@
+class SessionActivation
+  def self.active?: (nil) -> nil
+
+  def self.activate: (**untyped) -> SessionActivation
+
+  def assign_access_token: () -> Doorkeeper::AccessToken
+
+  def access_token_attributes: () -> void
+
+  def self.purge_old: () -> void
+
+  def self.deactivate: (nil) -> void
+
+  def token: (*untyped, **untyped) -> void
+end

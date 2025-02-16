@@ -1,0 +1,6 @@
+class Object
+  def serialized_record_json: (Rule, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+                            | (InstancePresenter, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+                            | (PreviewCard, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+                            | (GeneratedAnnualReport, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+end

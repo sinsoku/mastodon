@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::RESTFeaturedTagSerializer::LetDefinitions
+  def featured_tag: () -> FeaturedTag
+
+  def subject: () -> Hash[untyped, untyped]
+end

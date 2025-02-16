@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::RESTAccountSerializer::LetDefinitions
+  def account: () -> Account
+
+  def user: () -> User
+
+  def role: () -> UserRole
+
+  def subject: () -> Hash[untyped, untyped]
+
+  def default_datetime: () -> DateTime
+end
+
+module RSpec::ExampleGroups::RESTAccountSerializer::WhenTheAccountHasANonHighlightedRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::RESTAccountSerializer::WhenTheAccountHasAHighlightedRole::LetDefinitions
+  def role: () -> UserRole
+end

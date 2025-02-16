@@ -1,0 +1,71 @@
+module RSpec::ExampleGroups::TranslateStatusService::LetDefinitions
+  def service: () -> TranslateStatusService
+
+  def status: () -> Status
+
+  def text: () -> String
+
+  def spoiler_text: () -> String
+
+  def poll: () -> nil
+
+  def media_attachments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::TranslateStatusService::Call::StatusHasMediaAttachment::LetDefinitions
+  def media_attachments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::TranslateStatusService::Call::StatusHasSpoilerText::LetDefinitions
+  def spoiler_text: () -> String
+end
+
+module RSpec::ExampleGroups::TranslateStatusService::Call::StatusHasSpoilerTextWithCustomEmoji::LetDefinitions
+  def spoiler_text: () -> String
+end
+
+module RSpec::ExampleGroups::TranslateStatusService::Call::StatusHasContentWithCustomEmoji::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TranslateStatusService::Call::StatusHasSpoilerTextWithUnmatchedCustomEmoji::LetDefinitions
+  def spoiler_text: () -> String
+end
+
+module RSpec::ExampleGroups::TranslateStatusService::Call::StatusHasPoll::LetDefinitions
+  def poll: () -> Poll
+end
+
+module RSpec::ExampleGroups::TranslateStatusService::WrapEmojiShortcodes::StringContainsCustomEmoji::LetDefinitions
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::TranslateStatusService::SourceTexts::StatusContentContainsCustomEmoji::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::TranslateStatusService::SourceTexts::StatusHasMediaAttachments::LetDefinitions
+  def text: () -> String
+
+  def media_attachments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::TranslateStatusService::SourceTexts::StatusHasPollWithCustomEmoji::LetDefinitions
+  def poll: () -> Poll
+end
+
+module RSpec::ExampleGroups::TranslateStatusService::SourceTexts::StatusHasPoll::LetDefinitions
+  def poll: () -> Poll
+end
+
+module RSpec::ExampleGroups::TranslateStatusService::SourceTexts::StatusHasPoll::WithSourceTextsFromTheService::LetDefinitions
+  def source_texts: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::TranslateStatusService::SourceTexts::StatusHasSpoilerText::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::TranslateStatusService::SourceTexts::StatusContentContainsTags::LetDefinitions
+  def status: () -> Status
+end

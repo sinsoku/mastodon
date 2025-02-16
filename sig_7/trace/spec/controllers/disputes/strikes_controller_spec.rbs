@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::DisputesStrikesController::Show::LetDefinitions
+  def current_user: () -> User
+
+  def strike: () -> AccountWarning
+end
+
+module RSpec::ExampleGroups::DisputesStrikesController::Show::WhenMeantForADifferentUser::LetDefinitions
+  def strike: () -> AccountWarning
+end

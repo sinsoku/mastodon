@@ -1,0 +1,10 @@
+class Api::V1::Statuses::PinsController
+  def destroy: () -> String
+
+  def distribute_remove_activity!: () -> void
+
+  def create: () -> String
+            | () -> nil
+
+  def distribute_add_activity!: () -> void
+end

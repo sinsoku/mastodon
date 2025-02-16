@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::AccountPin::Validations::TheFollowRelationship::LetDefinitions
+  def subject: () -> AccountPin
+
+  def account: () -> Account
+
+  def target_account: () -> Account
+end
+
+class RSpec::ExampleGroups::AccountPin::Validations::TheFollowRelationship::WhenAccountIsNotFollowingTargetAccount
+  def not_following_message: () -> void
+end

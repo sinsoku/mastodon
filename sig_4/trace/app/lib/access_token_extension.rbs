@@ -1,0 +1,7 @@
+module AccessTokenExtension
+  def push_to_streaming_api: () -> nil
+                           | () -> Integer
+
+  def update_last_used: (ActionDispatch::Request, ?Class) -> void
+                      | (ActionController::TestRequest, ?Class) -> void
+end

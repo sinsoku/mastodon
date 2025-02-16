@@ -1,0 +1,43 @@
+module RSpec::ExampleGroups::PlainTextFormatter::ToS::LetDefinitions
+  def subject: () -> String
+end
+
+module RSpec::ExampleGroups::PlainTextFormatter::ToS::WhenStatusIsLocal::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::PlainTextFormatter::ToS::WhenStatusIsRemote::WhenTextContainsInlineHTMLTags::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::PlainTextFormatter::ToS::WhenStatusIsRemote::LetDefinitions
+  def remote_account: () -> Account
+end
+
+module RSpec::ExampleGroups::PlainTextFormatter::ToS::WhenStatusIsRemote::WhenTextContainsAnHTMLCommentTags::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::PlainTextFormatter::ToS::WhenStatusIsRemote::WhenTextContainsHTMLRubyTags::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::PlainTextFormatter::ToS::WhenStatusIsRemote::WhenTextContainsPTags::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::PlainTextFormatter::ToS::WhenStatusIsRemote::WhenTextContainsHTMLEntity::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::PlainTextFormatter::ToS::WhenStatusIsRemote::WhenTextContainsASingleBrTag::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::PlainTextFormatter::ToS::WhenStatusIsRemote::WhenTextContainsScriptTag::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::PlainTextFormatter::ToS::WhenStatusIsRemote::WhenTextContainsConsecutiveBrTag::LetDefinitions
+  def status: () -> Status
+end

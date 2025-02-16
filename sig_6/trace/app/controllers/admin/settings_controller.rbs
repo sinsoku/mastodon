@@ -1,0 +1,5 @@
+class Admin::SettingsController
+  def update: () -> String
+
+  def settings_params: () -> void
+end

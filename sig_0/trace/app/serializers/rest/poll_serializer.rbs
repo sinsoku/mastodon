@@ -1,0 +1,11 @@
+class REST::PollSerializer
+  def id: () -> String
+
+  def expired: () -> bool
+
+  def current_user?: () -> bool
+
+  def voted: () -> bool
+
+  def own_votes: () -> Array[untyped]
+end

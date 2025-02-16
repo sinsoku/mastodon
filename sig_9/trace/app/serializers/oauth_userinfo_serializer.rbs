@@ -1,0 +1,13 @@
+class OauthUserinfoSerializer
+  def iss: () -> String
+
+  def sub: () -> String
+
+  def name: () -> String
+
+  def preferred_username: () -> String
+
+  def profile: () -> String
+
+  def picture: () -> String
+end

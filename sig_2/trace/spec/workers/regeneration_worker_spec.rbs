@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::RegenerationWorker::LetDefinitions
+  def subject: () -> RegenerationWorker
+end
+
+module RSpec::ExampleGroups::RegenerationWorker::Perform::LetDefinitions
+  def account: () -> Account
+end

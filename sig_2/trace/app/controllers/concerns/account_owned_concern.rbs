@@ -1,0 +1,21 @@
+module AccountOwnedConcern
+  def account_required?: () -> bool
+
+  def set_account: () -> Account
+
+  def username_param: () -> void
+
+  def check_account_approval: () -> nil
+
+  def check_account_suspension: () -> nil
+                              | () -> String
+                              | () -> ActiveSupport::SafeBuffer
+
+  def check_account_confirmation: () -> nil
+
+  def permanent_unavailability_response: () -> void
+
+  def skip_temporary_suspension_response?: () -> bool
+
+  def temporary_suspension_response: () -> void
+end

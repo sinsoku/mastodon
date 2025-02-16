@@ -1,0 +1,19 @@
+class RSS::Channel
+  def initialize: () -> void
+
+  def title: (String) -> void
+
+  def description: (String) -> void
+
+  def link: (String) -> void
+
+  def image: (String, String, String) -> void
+
+  def last_build_date: (ActiveSupport::TimeWithZone) -> void
+
+  def icon: (String) -> void
+
+  def generator: (String) -> void
+
+  def item: () -> void
+end

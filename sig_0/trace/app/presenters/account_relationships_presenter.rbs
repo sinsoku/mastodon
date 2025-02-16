@@ -1,0 +1,12 @@
+class AccountRelationshipsPresenter
+  def initialize: (Array[untyped], Integer, **nil) -> void
+                | (Array[untyped], Integer, **Hash[untyped, untyped]) -> void
+
+  def cached: () -> Hash[untyped, untyped]
+
+  def relationship_cache_key: (Integer) -> void
+
+  def domain_blocking_map: () -> Hash[untyped, untyped]
+
+  def cache_uncached!: () -> void
+end

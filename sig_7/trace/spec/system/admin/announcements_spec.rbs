@@ -1,0 +1,13 @@
+class RSpec::ExampleGroups::AdminAnnouncements
+  def admin_user: () -> void
+
+  def text_label: () -> void
+
+  def delete_announcement: (Announcement) -> void
+
+  def publish_announcement: (Announcement) -> void
+
+  def unpublish_announcement: (Announcement) -> void
+
+  def submit_form: () -> void
+end

@@ -1,0 +1,8 @@
+class Api::V1::StatusesController
+  def set_status: () -> Status
+                | () -> String
+
+  def show: () -> String
+
+  def context: () -> String
+end

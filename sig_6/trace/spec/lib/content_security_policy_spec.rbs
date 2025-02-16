@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::ContentSecurityPolicy::LetDefinitions
+  def subject: () -> ContentSecurityPolicy
+end

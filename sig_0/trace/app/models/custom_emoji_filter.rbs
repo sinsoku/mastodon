@@ -1,0 +1,8 @@
+class CustomEmojiFilter
+  def initialize: (Hash[untyped, untyped]) -> void
+
+  def results: () -> void
+
+  def scope_for: (Symbol, bool) -> void
+               | (Symbol, String) -> void
+end

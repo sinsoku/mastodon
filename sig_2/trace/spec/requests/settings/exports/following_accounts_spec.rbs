@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::SettingsExportsFollowingAccounts::GETSettingsExportsFollows::WithASignedInUserWhoIsFollowingAccounts::LetDefinitions
+  def user: () -> User
+end

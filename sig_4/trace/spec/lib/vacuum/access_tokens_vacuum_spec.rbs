@@ -1,0 +1,17 @@
+module RSpec::ExampleGroups::VacuumAccessTokensVacuum::Perform::LetDefinitions
+  def revoked_access_token: () -> Doorkeeper::AccessToken
+
+  def expired_access_token: () -> Doorkeeper::AccessToken
+
+  def active_access_token: () -> Doorkeeper::AccessToken
+
+  def revoked_access_grant: () -> Doorkeeper::AccessGrant
+
+  def expired_access_grant: () -> Doorkeeper::AccessGrant
+
+  def active_access_grant: () -> Doorkeeper::AccessGrant
+end
+
+module RSpec::ExampleGroups::VacuumAccessTokensVacuum::LetDefinitions
+  def subject: () -> Vacuum::AccessTokensVacuum
+end

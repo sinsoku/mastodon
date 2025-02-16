@@ -1,0 +1,17 @@
+class NodeInfo::Serializer
+  def version: () -> String
+
+  def software: () -> Hash[untyped, untyped]
+
+  def protocols: () -> Array[untyped]
+
+  def services: () -> Hash[untyped, untyped]
+
+  def usage: () -> Hash[untyped, untyped]
+
+  def instance_presenter: () -> InstancePresenter
+
+  def open_registrations: () -> bool
+
+  def metadata: () -> Hash[untyped, untyped]
+end

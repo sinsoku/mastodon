@@ -1,0 +1,16 @@
+class Api::V1::Trends::TagsController
+  def set_tags: () -> Trends::Tags::Query
+
+  def enabled?: () -> bool
+
+  def offset_param: () -> void
+                  | () -> Integer
+
+  def next_path: () -> void
+
+  def records_continue?: () -> void
+
+  def prev_path: () -> void
+
+  def tags_from_trends: () -> Trends::Tags::Query
+end

@@ -1,0 +1,63 @@
+module Account::Interactions
+  def followers_for_local_distribution: () -> ActiveRecord::AssociationRelation
+
+  def lists_for_local_distribution: () -> ActiveRecord::AssociationRelation
+
+  def blocking?: (Account) -> void
+               | (Account) -> bool
+
+  def domain_blocking?: (nil) -> void
+
+  def muting_notifications?: (Account) -> bool
+
+  def muting_conversation?: (Conversation) -> void
+
+  def following?: (Account) -> bool
+
+  def requested?: (Account) -> void
+
+  def not_following_anyone?: () -> void
+
+  def following_anyone?: () -> bool
+
+  def follow!: (Account, ?reblogs: nil, ?notify: nil, ?languages: nil, ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> Follow
+             | (Account, ?reblogs: bool, ?notify: bool, ?languages: nil, ?uri: String, ?rate_limit: bool, ?bypass_limit: bool) -> Follow
+
+  def block!: (Account, ?uri: nil) -> void
+
+  def muting?: (Account) -> void
+
+  def unmute!: (Account) -> void
+
+  def mute!: (Account, ?notifications: nil, ?duration: Integer) -> void
+
+  def favourited?: (Status) -> void
+
+  def reblogged?: (Status) -> void
+
+  def bookmarked?: (Status) -> void
+
+  def status_matches_filters: (Status) -> void
+end
+
+module Account::Interactions::ClassMethods
+  def following_map: (Array[untyped], Integer) -> void
+
+  def followed_by_map: (Array[untyped], Integer) -> void
+
+  def follow_mapping: (ActiveRecord::Relation, Symbol) -> void
+
+  def blocking_map: (Array[untyped], Integer) -> void
+
+  def blocked_by_map: (Array[untyped], Integer) -> void
+
+  def muting_map: (Array[untyped], Integer) -> void
+
+  def requested_map: (Array[untyped], Integer) -> void
+
+  def requested_by_map: (Array[untyped], Integer) -> void
+
+  def endorsed_map: (Array[untyped], Integer) -> void
+
+  def account_note_map: (Array[untyped], Integer) -> void
+end

@@ -1,0 +1,141 @@
+module RSpec::ExampleGroups::MoveWorker::LetDefinitions
+  def account_note: () -> AccountNote
+
+  def local_user: () -> User
+
+  def comment: () -> String
+
+  def local_follower: () -> Account
+
+  def blocking_account: () -> Account
+
+  def muting_account: () -> Account
+
+  def list: () -> List
+
+  def block_service: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def subject: () -> MoveWorker
+
+  def source_account: () -> Account
+
+  def target_account: () -> Account
+end
+
+module RSpec::ExampleGroups::MoveWorker::Perform::WhenBothTargetAndSourceAccountsAreLocal::LetDefinitions
+  def source_account: () -> Account
+
+  def target_account: () -> Account
+end
+
+class RSpec::ExampleGroups::MoveWorker::Perform::WhenBothTargetAndSourceAccountsAreLocal
+  def note_account_comment: () -> void
+
+  def mute_account_comment: () -> void
+
+  def relevant_account_note: () -> AccountNote
+end
+
+class RSpec::ExampleGroups::MoveWorker::Perform::WhenBothTargetAndSourceAccountsAreLocal::WhenALocalUserAlreadyFollowsBothSourceAndTarget
+  def note_account_comment: () -> void
+
+  def mute_account_comment: () -> void
+
+  def relevant_account_note: () -> AccountNote
+end
+
+module RSpec::ExampleGroups::MoveWorker::Perform::WhenBothTargetAndSourceAccountsAreLocal::WhenALocalUserAlreadyFollowsBothSourceAndTarget::WhenUserNotesAreTooLong::LetDefinitions
+  def comment: () -> String
+end
+
+module RSpec::ExampleGroups::MoveWorker::Perform::WhenBothTargetAndSourceAccountsAreLocal::WhenUserNotesAreTooLong::LetDefinitions
+  def comment: () -> String
+end
+
+class RSpec::ExampleGroups::MoveWorker::Perform::WhenBothTargetAndSourceAccountsAreLocal::WhenALocalFollowerAlreadyHasAPendingRequestToTheTarget
+  def note_account_comment: () -> void
+
+  def mute_account_comment: () -> void
+
+  def relevant_account_note: () -> AccountNote
+end
+
+module RSpec::ExampleGroups::MoveWorker::Perform::WhenBothTargetAndSourceAccountsAreLocal::WhenALocalFollowerAlreadyHasAPendingRequestToTheTarget::WhenUserNotesAreTooLong::LetDefinitions
+  def comment: () -> String
+end
+
+class RSpec::ExampleGroups::MoveWorker::Perform::WhenBothAccountsAreDistant
+  def note_account_comment: () -> void
+
+  def mute_account_comment: () -> void
+
+  def relevant_account_note: () -> AccountNote
+end
+
+class RSpec::ExampleGroups::MoveWorker::Perform::WhenBothAccountsAreDistant::WhenALocalUserAlreadyFollowsBothSourceAndTarget
+  def note_account_comment: () -> void
+
+  def mute_account_comment: () -> void
+
+  def relevant_account_note: () -> AccountNote
+end
+
+module RSpec::ExampleGroups::MoveWorker::Perform::WhenBothAccountsAreDistant::WhenALocalUserAlreadyFollowsBothSourceAndTarget::WhenUserNotesAreTooLong::LetDefinitions
+  def comment: () -> String
+end
+
+module RSpec::ExampleGroups::MoveWorker::Perform::WhenBothAccountsAreDistant::WhenUserNotesAreTooLong::LetDefinitions
+  def comment: () -> String
+end
+
+class RSpec::ExampleGroups::MoveWorker::Perform::WhenBothAccountsAreDistant::WhenALocalFollowerAlreadyHasAPendingRequestToTheTarget
+  def note_account_comment: () -> void
+
+  def mute_account_comment: () -> void
+
+  def relevant_account_note: () -> AccountNote
+end
+
+module RSpec::ExampleGroups::MoveWorker::Perform::WhenBothAccountsAreDistant::WhenALocalFollowerAlreadyHasAPendingRequestToTheTarget::WhenUserNotesAreTooLong::LetDefinitions
+  def comment: () -> String
+end
+
+module RSpec::ExampleGroups::MoveWorker::Perform::WhenTargetAccountIsLocal::LetDefinitions
+  def target_account: () -> Account
+end
+
+class RSpec::ExampleGroups::MoveWorker::Perform::WhenTargetAccountIsLocal
+  def note_account_comment: () -> void
+
+  def mute_account_comment: () -> void
+
+  def relevant_account_note: () -> AccountNote
+end
+
+class RSpec::ExampleGroups::MoveWorker::Perform::WhenTargetAccountIsLocal::WhenALocalUserAlreadyFollowsBothSourceAndTarget
+  def note_account_comment: () -> void
+
+  def mute_account_comment: () -> void
+
+  def relevant_account_note: () -> AccountNote
+end
+
+module RSpec::ExampleGroups::MoveWorker::Perform::WhenTargetAccountIsLocal::WhenALocalUserAlreadyFollowsBothSourceAndTarget::WhenUserNotesAreTooLong::LetDefinitions
+  def comment: () -> String
+end
+
+module RSpec::ExampleGroups::MoveWorker::Perform::WhenTargetAccountIsLocal::WhenUserNotesAreTooLong::LetDefinitions
+  def comment: () -> String
+end
+
+class RSpec::ExampleGroups::MoveWorker::Perform::WhenTargetAccountIsLocal::WhenALocalFollowerAlreadyHasAPendingRequestToTheTarget
+  def note_account_comment: () -> void
+
+  def mute_account_comment: () -> void
+
+  def relevant_account_note: () -> AccountNote
+end
+
+module RSpec::ExampleGroups::MoveWorker::Perform::WhenTargetAccountIsLocal::WhenALocalFollowerAlreadyHasAPendingRequestToTheTarget::WhenUserNotesAreTooLong::LetDefinitions
+  def comment: () -> String
+end

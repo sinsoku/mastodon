@@ -1,0 +1,35 @@
+module RSpec::ExampleGroups::SettingsApplicationsPage::LetDefinitions
+  def application: () -> Doorkeeper::Application
+
+  def user: () -> User
+end
+
+class RSpec::ExampleGroups::SettingsApplicationsPage::CreatingANewApplication
+  def submit_form: () -> void
+
+  def fill_in_form: () -> void
+end
+
+class RSpec::ExampleGroups::SettingsApplicationsPage
+  def form_app_name_label: () -> void
+end
+
+class RSpec::ExampleGroups::SettingsApplicationsPage::RegeneratingAnAppToken
+  def regenerate_token: () -> void
+end
+
+module RSpec::ExampleGroups::SettingsApplicationsPage::DestroyingAnApplication::LetDefinitions
+  def access_token: () -> Doorkeeper::AccessToken
+
+  def redis_pipeline_stub: () -> RSpec::Mocks::InstanceVerifyingDouble
+end
+
+class RSpec::ExampleGroups::SettingsApplicationsPage::DestroyingAnApplication
+  def stub_redis_pipeline: () -> void
+
+  def destroy_application: () -> void
+end
+
+class RSpec::ExampleGroups::SettingsApplicationsPage::UpdatingAnApplication
+  def submit_form: () -> void
+end

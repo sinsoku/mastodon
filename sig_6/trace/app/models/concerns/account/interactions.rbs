@@ -1,0 +1,51 @@
+module Account::Interactions
+  def followers_for_local_distribution: () -> ActiveRecord::AssociationRelation
+
+  def lists_for_local_distribution: () -> ActiveRecord::AssociationRelation
+
+  def reblogged?: (Status) -> void
+
+  def follow!: (Account, ?reblogs: nil, ?notify: nil, ?languages: nil, ?uri: String, ?rate_limit: bool, ?bypass_limit: bool) -> void
+             | (Account, ?reblogs: nil, ?notify: nil, ?languages: nil, ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> void
+             | (Account, ?reblogs: bool, ?notify: bool, ?languages: nil, ?uri: String, ?rate_limit: bool, ?bypass_limit: bool) -> Follow
+             | (Account, ?reblogs: nil, ?notify: nil, ?languages: nil, ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> Follow
+             | (Account, ?reblogs: nil, ?notify: nil, ?languages: Array[untyped], ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> Follow
+             | (Account, ?reblogs: bool, ?notify: nil, ?languages: nil, ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> Follow
+
+  def following?: (Account) -> void
+                | (Account) -> bool
+
+  def requested?: (Account) -> void
+                | (Account) -> bool
+
+  def block!: (Account, ?uri: String) -> void
+            | (Account, ?uri: nil) -> void
+            | (Account, ?uri: nil) -> Block
+
+  def blocking?: (Account) -> void
+               | (Account) -> bool
+
+  def unblock!: (Account) -> Block
+
+  def unfollow!: (Account) -> void
+
+  def favourited?: (Status) -> void
+
+  def block_domain!: (String) -> void
+
+  def domain_blocking?: (String) -> void
+
+  def unblock_domain!: (String) -> void
+
+  def normalized_domain: (String) -> void
+
+  def mute!: (Account, ?notifications: nil, ?duration: Integer) -> void
+
+  def muting_conversation?: (Conversation) -> void
+
+  def bookmarked?: (Status) -> void
+
+  def status_matches_filters: (Status) -> void
+
+  def pinned?: (Status) -> void
+end

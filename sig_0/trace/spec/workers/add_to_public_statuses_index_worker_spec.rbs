@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::AddToPublicStatusesIndexWorker::Perform::LetDefinitions
+  def account: () -> Account
+
+  def account_id: () -> Integer
+end
+
+module RSpec::ExampleGroups::AddToPublicStatusesIndexWorker::Perform::WhenAccountIsNotIndexable::LetDefinitions
+  def indexable: () -> bool
+end
+
+module RSpec::ExampleGroups::AddToPublicStatusesIndexWorker::Perform::WhenAccountDoesNotExist::LetDefinitions
+  def account: () -> nil
+
+  def account_id: () -> Integer
+end
+
+module RSpec::ExampleGroups::AddToPublicStatusesIndexWorker::Perform::WhenAccountIsIndexable::LetDefinitions
+  def indexable: () -> bool
+end

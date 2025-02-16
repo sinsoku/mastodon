@@ -1,0 +1,19 @@
+class Account::Field
+  def initialize: (Account, Hash[untyped, untyped]) -> void
+                | (RSpec::Mocks::InstanceVerifyingDouble, Hash[untyped, untyped]) -> void
+
+  def sanitize: (String) -> void
+
+  def character_limit: () -> void
+
+  def verified?: () -> void
+
+  def verifiable?: () -> void
+
+  def value_for_verification: () -> String
+                            | () -> nil
+
+  def extract_url_from_html: () -> void
+
+  def mark_verified!: () -> void
+end

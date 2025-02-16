@@ -1,0 +1,17 @@
+class Admin::WarningPresetsController
+  def set_warning_preset: () -> AccountWarningPreset
+
+  def update: () -> ActiveSupport::SafeBuffer
+            | () -> String
+
+  def warning_preset_params: () -> void
+
+  def index: () -> AccountWarningPreset
+
+  def destroy: () -> String
+
+  def create: () -> ActiveSupport::SafeBuffer
+            | () -> String
+
+  def edit: () -> AccountWarningPreset
+end

@@ -1,0 +1,33 @@
+class FeedManager
+  def unmerge_from_home: (Account, Account) -> void
+
+  def key: (Symbol, Integer, ?nil) -> String
+         | (Symbol, Integer, ?String) -> String
+
+  def push_to_home: (Account, Status, ?update: bool) -> void
+
+  def add_to_feed: (Symbol, Integer, Status, ?aggregate_reblogs: bool) -> void
+
+  def trim: (Symbol, Integer) -> void
+
+  def push_update_required?: (String) -> void
+
+  def clear_from_home: (Account, Account) -> void
+
+  def unpush_from_home: (Account, Status, ?update: bool) -> void
+
+  def remove_from_feed: (Symbol, Integer, Status, ?aggregate_reblogs: bool) -> void
+
+  def clear_from_lists: (Account, Account) -> void
+
+  def populate_home: (Account) -> void
+
+  def filter?: (Symbol, Status, Account) -> void
+
+  def filter: (Symbol, Status, Account) -> nil
+            | (Symbol, Status, Account) -> Symbol
+
+  def filter_from_mentions?: (Status, Integer) -> void
+
+  def blocks_or_mutes?: (Integer, Array[untyped], Symbol) -> void
+end

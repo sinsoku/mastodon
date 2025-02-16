@@ -1,0 +1,5 @@
+class AnonymousController
+  def index: () -> String
+
+  def export_data: () -> void
+end

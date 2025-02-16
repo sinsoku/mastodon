@@ -1,0 +1,16 @@
+module Admin::FilterHelper
+  def filter_link_to: (String, Hash[untyped, untyped], ?Hash[untyped, untyped]) -> ActiveSupport::SafeBuffer
+                    | (ActiveSupport::SafeBuffer, Hash[untyped, untyped], ?Hash[untyped, untyped]) -> ActiveSupport::SafeBuffer
+
+  def filtered_url_for: (Hash[untyped, untyped]) -> String
+                      | (ActionController::Parameters) -> String
+
+  def filter_params: (Hash[untyped, untyped]) -> void
+                   | (ActionController::Parameters) -> void
+
+  def controller_request_params: () -> ActionController::Parameters
+
+  def filter_link_class: (String) -> void
+
+  def table_link_to: (String, String, String, **Symbol) -> void
+end

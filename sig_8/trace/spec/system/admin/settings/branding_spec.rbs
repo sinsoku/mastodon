@@ -1,0 +1,7 @@
+class RSpec::ExampleGroups::AdminSettingsBranding
+  def short_description_field: () -> void
+
+  def site_contact_email_field: () -> void
+
+  def site_contact_username_field: () -> void
+end

@@ -1,0 +1,23 @@
+class Trends::Tags
+  def register: (Status, ?Time) -> void
+
+  def add: (Tag, Integer, ?Time) -> void
+         | (Tag, Integer, ?DateTime) -> void
+
+  def key_prefix: () -> String
+
+  def query: () -> void
+           | () -> Trends::Tags::Query
+
+  def klass: () -> void
+
+  def refresh: (?DateTime) -> void
+
+  def calculate_scores: (Array[untyped], DateTime) -> void
+end
+
+class Trends::Tags::Query
+  def to_arel: () -> ActiveRecord::Relation
+
+  def language_order_clause: () -> Arel::Nodes::Case
+end

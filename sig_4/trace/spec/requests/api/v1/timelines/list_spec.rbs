@@ -1,0 +1,21 @@
+module RSpec::ExampleGroups::APIV1TimelinesList::LetDefinitions
+  def user: () -> User
+
+  def list: () -> List
+
+  def headers: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::APIV1TimelinesList::WithAUserContext::LetDefinitions
+  def token: () -> Doorkeeper::AccessToken
+end
+
+module RSpec::ExampleGroups::APIV1TimelinesList::WithoutAUserContext::LetDefinitions
+  def token: () -> Doorkeeper::AccessToken
+end
+
+module RSpec::ExampleGroups::APIV1TimelinesList::WithTheWrongUserContext::LetDefinitions
+  def token: () -> Doorkeeper::AccessToken
+
+  def other_user: () -> User
+end

@@ -1,0 +1,67 @@
+module Account::Interactions
+  def requested?: (Account) -> bool
+
+  def following?: (Account) -> bool
+
+  def follow!: (Account, ?reblogs: nil, ?notify: nil, ?languages: nil, ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> void
+             | (Account, ?reblogs: bool, ?notify: nil, ?languages: nil, ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> void
+             | (Account, ?reblogs: String, ?notify: bool, ?languages: nil, ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> void
+             | (Account, ?reblogs: String, ?notify: bool, ?languages: nil, ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> Follow
+             | (Account, ?reblogs: bool, ?notify: nil, ?languages: nil, ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> Follow
+             | (Account, ?reblogs: bool, ?notify: bool, ?languages: nil, ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> Follow
+             | (Account, ?reblogs: nil, ?notify: nil, ?languages: nil, ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> Follow
+
+  def blocking?: (Account) -> void
+               | (Account) -> bool
+
+  def block!: (Account, ?uri: nil) -> Block
+
+  def mute!: (Account, ?notifications: nil, ?duration: Integer) -> void
+           | (Account, ?notifications: bool, ?duration: Integer) -> void
+           | (Account, ?notifications: String, ?duration: Integer) -> Mute
+           | (Account, ?notifications: bool, ?duration: Integer) -> Mute
+
+  def domain_blocking?: (String) -> void
+                      | (nil) -> void
+
+  def not_following_anyone?: () -> void
+
+  def following_anyone?: () -> bool
+
+  def request_follow!: (Account, ?reblogs: bool, ?notify: bool, ?languages: nil, ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> FollowRequest
+                     | (Account, ?reblogs: String, ?notify: bool, ?languages: nil, ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> FollowRequest
+
+  def relations_map: (Array[untyped], ?nil, **bool) -> Hash[untyped, untyped]
+
+  def muting_notifications?: (Account) -> bool
+
+  def reblogged?: (Status) -> void
+
+  def unfollow!: (Account) -> Follow
+
+  def block_domain!: (String) -> void
+
+  def favourited?: (Status) -> void
+
+  def pinned?: (Status) -> bool
+
+  def followers_for_local_distribution: () -> ActiveRecord::AssociationRelation
+
+  def lists_for_local_distribution: () -> ActiveRecord::AssociationRelation
+end
+
+module Account::Interactions::ClassMethods
+  def blocked_by_map: (Array[untyped], Integer) -> void
+
+  def follow_mapping: (ActiveRecord::Relation, Symbol) -> void
+
+  def following_map: (Array[untyped], Integer) -> void
+
+  def requested_map: (Array[untyped], Integer) -> void
+
+  def requested_by_map: (Array[untyped], Integer) -> void
+
+  def followed_by_map: (Array[untyped], Integer) -> void
+
+  def blocking_map: (Array[untyped], Integer) -> void
+end

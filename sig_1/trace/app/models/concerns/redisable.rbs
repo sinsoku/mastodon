@@ -1,0 +1,5 @@
+module Redisable
+  def redis: () -> Redis::Namespace
+
+  def with_redis: () -> void
+end

@@ -1,0 +1,21 @@
+class UserSettings::Setting
+  def key: () -> void
+
+  def value_for: (String, nil) -> void
+               | (String, bool) -> void
+               | (Symbol, bool) -> void
+
+  def default_value: () -> void
+
+  def initialize: (Symbol, ?Hash[untyped, untyped]) -> void
+
+  def to_a: () -> void
+
+  def type: () -> void
+          | () -> ActiveModel::Type::String
+          | () -> ActiveModel::Type::Boolean
+
+  def type_cast: (Integer) -> void
+               | (String) -> void
+               | (bool) -> bool
+end

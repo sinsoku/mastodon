@@ -1,0 +1,5 @@
+class FetchRemoteStatusService
+  def call: (String, ?prefetched_body: nil, ?request_id: String) -> void
+          | (String, ?prefetched_body: nil, ?request_id: String) -> nil
+          | (String, ?prefetched_body: nil, ?request_id: String) -> Status
+end

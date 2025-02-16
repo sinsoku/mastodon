@@ -1,0 +1,77 @@
+module RSpec::ExampleGroups::ApiWebEmbed::LetDefinitions
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::ApiWebEmbed::WhenAccessedAnonymously::WhenTheRequestedStatusDoesNotExist::LetDefinitions
+  def id: () -> Integer
+end
+
+module RSpec::ExampleGroups::ApiWebEmbed::WhenAccessedAnonymously::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ApiWebEmbed::WhenAccessedAnonymously::WhenTheRequestedStatusIsRemote::LetDefinitions
+  def id: () -> Integer
+
+  def status: () -> Status
+
+  def remote_account: () -> Account
+end
+
+module RSpec::ExampleGroups::ApiWebEmbed::WhenAccessedAnonymously::WhenTheRequestedStatusIsLocal::LetDefinitions
+  def id: () -> Integer
+end
+
+module RSpec::ExampleGroups::ApiWebEmbed::WhenAccessedAnonymously::WhenTheRequestedStatusIsLocal::WhenTheRequestedStatusIsPublic::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::ApiWebEmbed::WhenAccessedAnonymously::WhenTheRequestedStatusIsLocal::WhenTheRequestedStatusIsPrivate::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::ApiWebEmbed::WithAnAPIToken::WhenTheRequestedStatusIsRemote::LetDefinitions
+  def service_instance: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def id: () -> Integer
+
+  def status: () -> Status
+
+  def remote_account: () -> Account
+end
+
+module RSpec::ExampleGroups::ApiWebEmbed::WithAnAPIToken::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::ApiWebEmbed::WithAnAPIToken::WhenTheRequestedStatusIsRemote::WhenSuccessfullyFetchingOEmbed::LetDefinitions
+  def call_result: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ApiWebEmbed::WithAnAPIToken::WhenTheRequestedStatusIsRemote::WhenSanitizingTheFragmentFails::LetDefinitions
+  def call_result: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ApiWebEmbed::WithAnAPIToken::WhenTheRequestedStatusIsRemote::WhenFailingToFetchOEmbed::LetDefinitions
+  def call_result: () -> nil
+end
+
+module RSpec::ExampleGroups::ApiWebEmbed::WithAnAPIToken::WhenTheRequestedStatusIsLocal::WhenTheRequestedStatusIsPrivate::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::ApiWebEmbed::WithAnAPIToken::WhenTheRequestedStatusIsLocal::LetDefinitions
+  def id: () -> Integer
+end
+
+module RSpec::ExampleGroups::ApiWebEmbed::WithAnAPIToken::WhenTheRequestedStatusIsLocal::WhenTheRequestedStatusIsPublic::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::ApiWebEmbed::WithAnAPIToken::WhenTheRequestedStatusDoesNotExist::LetDefinitions
+  def id: () -> Integer
+end

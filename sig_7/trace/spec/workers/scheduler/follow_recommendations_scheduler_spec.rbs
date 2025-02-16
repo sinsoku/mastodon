@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::SchedulerFollowRecommendationsScheduler::LetDefinitions
+  def target_accounts: () -> Array[untyped]
+
+  def follower_accounts: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::SchedulerFollowRecommendationsScheduler::Perform::LetDefinitions
+  def scheduled_run: () -> PG::Result
+end

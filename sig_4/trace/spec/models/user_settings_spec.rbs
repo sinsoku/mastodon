@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::UserSettings::LetDefinitions
+  def subject: () -> UserSettings
+
+  def json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::UserSettings::Nested::WhenSettingIsSet::LetDefinitions
+  def json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::UserSettings::AsJson::LetDefinitions
+  def json: () -> Hash[untyped, untyped]
+end

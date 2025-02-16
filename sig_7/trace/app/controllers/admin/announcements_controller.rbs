@@ -1,0 +1,25 @@
+class Admin::AnnouncementsController
+  def set_announcements: () -> ActiveRecord::Relation
+
+  def filter_params: () -> void
+
+  def index: () -> ActiveRecord::Promise::Complete
+
+  def set_announcement: () -> Announcement
+
+  def edit: () -> Symbol
+
+  def update: () -> String
+
+  def resource_params: () -> void
+
+  def destroy: () -> String
+
+  def publish: () -> String
+
+  def unpublish: () -> String
+
+  def new: () -> Announcement
+
+  def create: () -> String
+end

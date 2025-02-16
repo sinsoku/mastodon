@@ -1,0 +1,5 @@
+class ApplicationMailer
+  def locale_for_account: (Account) -> void
+
+  def set_autoreply_headers!: () -> Hash[untyped, untyped]
+end

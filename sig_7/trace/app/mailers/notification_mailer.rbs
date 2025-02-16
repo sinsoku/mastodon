@@ -1,0 +1,11 @@
+class NotificationMailer
+  def process_params: () -> String
+
+  def set_account: () -> Account
+
+  def follow_request: () -> Mail::Message
+
+  def set_list_headers!: () -> Hash[untyped, untyped]
+
+  def verify_functional_user: () -> nil
+end

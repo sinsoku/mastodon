@@ -1,0 +1,65 @@
+class User
+  def sanitize_role: () -> nil
+
+  def role: () -> UserRole
+
+  def password_required?: () -> bool
+
+  def external?: () -> void
+               | () -> bool
+
+  def invite_text_required?: () -> bool
+
+  def confirmed?: () -> bool
+
+  def validate_email_dns?: () -> bool
+
+  def self.skip_mx_check?: () -> bool
+
+  def validate_role_elevation: () -> nil
+
+  def set_approved: () -> bool
+
+  def sign_up_from_ip_requires_approval?: () -> void
+
+  def sign_up_email_requires_approval?: () -> void
+
+  def open_registrations?: () -> void
+
+  def send_pending_devise_notifications: () -> Array[untyped]
+
+  def pending_devise_notifications: () -> Array[untyped]
+
+  def trigger_webhooks: () -> String
+
+  def activate_session: (ActionDispatch::Request) -> void
+                      | (ActionDispatch::Request) -> String
+
+  def active_for_authentication?: () -> bool
+
+  def functional?: () -> void
+                 | () -> bool
+
+  def functional_or_moved?: () -> void
+
+  def pending?: () -> bool
+
+  def web_push_subscription: (SessionActivation) -> void
+
+  def can?: (*untyped, **untyped) -> void
+          | (*untyped, **untyped) -> bool
+
+  def invited?: () -> void
+
+  def self.those_who_can: (*Symbol) -> ActiveRecord::Relation
+
+  def otp_enabled?: () -> void
+
+  def webauthn_enabled?: () -> void
+
+  def disable_two_factor!: () -> void
+
+  def signed_in_recently?: () -> void
+
+  def invite_code=: (String) -> String
+end

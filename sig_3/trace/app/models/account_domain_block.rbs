@@ -1,0 +1,5 @@
+class AccountDomainBlock
+  def invalidate_domain_blocking_cache: () -> bool
+
+  def invalidate_follow_recommendations_cache: () -> bool
+end

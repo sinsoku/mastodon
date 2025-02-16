@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::SettingsHelper::SessionDeviceIcon::WithADesktopDevice::LetDefinitions
+  def session: () -> SessionActivation
+end
+
+module RSpec::ExampleGroups::SettingsHelper::SessionDeviceIcon::WithATabletDevice::LetDefinitions
+  def session: () -> SessionActivation
+end
+
+module RSpec::ExampleGroups::SettingsHelper::SessionDeviceIcon::WithAMobileDevice::LetDefinitions
+  def session: () -> SessionActivation
+end

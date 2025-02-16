@@ -1,0 +1,53 @@
+module RSpec::ExampleGroups::NotificationMailer::LetDefinitions
+  def receiver: () -> User
+
+  def sender: () -> Account
+
+  def own_status: () -> Status
+
+  def foreign_status: () -> Status
+end
+
+module RSpec::ExampleGroups::NotificationMailer::FollowRequest::LetDefinitions
+  def mail: () -> ActionMailer::Parameterized::MessageDelivery
+
+  def notification: () -> Notification
+
+  def follow_request: () -> FollowRequest
+end
+
+class RSpec::ExampleGroups::NotificationMailer
+  def prepared_mailer_for: (Account) -> ActionMailer::Parameterized::Mailer
+end
+
+module RSpec::ExampleGroups::NotificationMailer::Reblog::LetDefinitions
+  def mail: () -> ActionMailer::Parameterized::MessageDelivery
+
+  def notification: () -> Notification
+
+  def reblog: () -> Status
+end
+
+module RSpec::ExampleGroups::NotificationMailer::Favourite::LetDefinitions
+  def mail: () -> ActionMailer::Parameterized::MessageDelivery
+
+  def notification: () -> Notification
+
+  def favourite: () -> Favourite
+end
+
+module RSpec::ExampleGroups::NotificationMailer::Mention::LetDefinitions
+  def mail: () -> ActionMailer::Parameterized::MessageDelivery
+
+  def notification: () -> Notification
+
+  def mention: () -> Mention
+end
+
+module RSpec::ExampleGroups::NotificationMailer::Follow::LetDefinitions
+  def mail: () -> ActionMailer::Parameterized::MessageDelivery
+
+  def notification: () -> Notification
+
+  def follow: () -> Follow
+end

@@ -1,0 +1,4 @@
+class PollValidator
+  def validate: (Poll) -> nil
+              | (RSpec::Mocks::InstanceVerifyingDouble) -> nil
+end

@@ -1,0 +1,75 @@
+module RSpec::ExampleGroups::ResolveURLService::LetDefinitions
+  def subject: () -> ResolveURLService
+end
+
+module RSpec::ExampleGroups::ResolveURLService::Call::WhenSearchingForALocalPrivateStatus::LetDefinitions
+  def status: () -> Status
+
+  def poster: () -> Account
+
+  def account: () -> Account
+
+  def url: () -> String
+
+  def uri: () -> String
+end
+
+module RSpec::ExampleGroups::ResolveURLService::Call::WhenSearchingForARemotePrivateStatus::LetDefinitions
+  def status: () -> Status
+
+  def poster: () -> Account
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::ResolveURLService::Call::WhenSearchingForARemotePrivateStatus::WhenTheAccountDoesNotFollowThePoster::WhenTheStatusUsesMastodonStyleURLs::LetDefinitions
+  def url: () -> String
+
+  def uri: () -> String
+end
+
+module RSpec::ExampleGroups::ResolveURLService::Call::WhenSearchingForARemotePrivateStatus::WhenTheAccountDoesNotFollowThePoster::WhenTheStatusUsesPleromaStyleURLs::LetDefinitions
+  def url: () -> nil
+
+  def uri: () -> String
+end
+
+module RSpec::ExampleGroups::ResolveURLService::Call::WhenSearchingForARemotePrivateStatus::WhenTheAccountFollowsThePoster::WhenTheStatusUsesPleromaStyleURLs::LetDefinitions
+  def url: () -> nil
+
+  def uri: () -> String
+end
+
+module RSpec::ExampleGroups::ResolveURLService::Call::WhenSearchingForARemotePrivateStatus::WhenTheAccountFollowsThePoster::WhenTheStatusUsesMastodonStyleURLs::LetDefinitions
+  def url: () -> String
+
+  def uri: () -> String
+end
+
+module RSpec::ExampleGroups::ResolveURLService::Call::WhenSearchingForALocalLinkOfARemotePrivateStatus::LetDefinitions
+  def status: () -> Status
+
+  def url: () -> String
+
+  def uri: () -> String
+
+  def poster: () -> Account
+
+  def account: () -> Account
+
+  def search_url: () -> String
+end
+
+module RSpec::ExampleGroups::ResolveURLService::Call::WhenSearchingForALinkThatRedirectsToALocalPublicStatus::LetDefinitions
+  def status: () -> Status
+
+  def poster: () -> Account
+
+  def url: () -> String
+
+  def status_url: () -> String
+
+  def uri: () -> String
+
+  def account: () -> Account
+end

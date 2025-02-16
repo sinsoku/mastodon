@@ -1,0 +1,15 @@
+class UserEmailValidator
+  def validate: (User) -> nil
+
+  def blocked_email_provider?: (String, IPAddr) -> void
+                             | (String, nil) -> void
+
+  def disallowed_through_email_domain_block?: (String, IPAddr) -> void
+                                            | (String, nil) -> void
+
+  def disallowed_through_configuration?: (String) -> void
+
+  def not_allowed_through_configuration?: (String) -> void
+
+  def blocked_canonical_email?: (String) -> void
+end

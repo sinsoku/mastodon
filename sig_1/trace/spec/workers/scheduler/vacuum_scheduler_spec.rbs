@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::SchedulerVacuumScheduler::LetDefinitions
+  def worker: () -> Scheduler::VacuumScheduler
+end

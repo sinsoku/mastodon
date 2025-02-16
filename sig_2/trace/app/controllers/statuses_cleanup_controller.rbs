@@ -1,0 +1,9 @@
+class StatusesCleanupController
+  def require_functional!: () -> nil
+
+  def set_policy: () -> AccountStatusesCleanupPolicy
+
+  def set_cache_headers: () -> Hash[untyped, untyped]
+
+  def show: () -> nil
+end

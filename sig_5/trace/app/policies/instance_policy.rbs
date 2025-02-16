@@ -1,0 +1,7 @@
+class InstancePolicy
+  def index?: () -> bool
+
+  def show?: () -> bool
+
+  def destroy?: () -> bool
+end

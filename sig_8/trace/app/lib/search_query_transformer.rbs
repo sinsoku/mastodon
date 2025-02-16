@@ -1,0 +1,33 @@
+class SearchQueryTransformer::PrefixClause
+  def initialize: (String, nil, String, ?Hash[untyped, untyped]) -> void
+
+  def date_from_term: (String) -> void
+end
+
+class SearchQueryTransformer::Query
+  def initialize: (Array[untyped], ?Hash[untyped, untyped]) -> void
+
+  def flags_from_clauses!: () -> void
+
+  def clauses_by_operator: () -> Hash[untyped, untyped]
+
+  def must_clauses: () -> Array[untyped]
+
+  def must_not_clauses: () -> Array[untyped]
+
+  def filter_clauses: () -> Array[untyped]
+end
+
+class SearchQueryTransformer::PhraseClause
+  def initialize: (nil, String) -> void
+end
+
+class SearchQueryTransformer::Operator
+  def self.symbol: (nil) -> Symbol
+                 | (String) -> Symbol
+end
+
+class SearchQueryTransformer::TermClause
+  def initialize: (nil, String) -> void
+                | (String, String) -> void
+end

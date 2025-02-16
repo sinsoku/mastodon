@@ -1,0 +1,15 @@
+class ActivityPub::Parser::StatusParser
+  def initialize: (ActiveSupport::HashWithIndifferentAccess, **nil) -> void
+
+  def text: () -> String
+
+  def uri: () -> String
+
+  def reply: () -> bool
+
+  def language: () -> Symbol
+
+  def raw_language_code: () -> String
+
+  def content_language_map?: () -> void
+end

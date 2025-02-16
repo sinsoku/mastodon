@@ -1,0 +1,3 @@
+class ListFeed
+  def initialize: (List) -> void
+end

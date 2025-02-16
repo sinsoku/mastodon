@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::MastodonCLICanonicalEmailBlocks::LetDefinitions
+  def subject: () -> StringIO
+
+  def cli: () -> Mastodon::CLI::CanonicalEmailBlocks
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLICanonicalEmailBlocks::Find::LetDefinitions
+  def action: () -> Symbol
+
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLICanonicalEmailBlocks::Remove::LetDefinitions
+  def action: () -> Symbol
+
+  def arguments: () -> Array[untyped]
+end

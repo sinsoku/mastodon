@@ -1,0 +1,11 @@
+module Devise
+  def self.pam_authentication: () -> void
+
+  def self.ldap_authentication: () -> void
+end
+
+class Devise::Strategies::SessionActivationRememberable
+  def valid?: () -> void
+
+  def session_cookie: () -> nil
+end

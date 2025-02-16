@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::UnpublishAnnouncementWorker::LetDefinitions
+  def worker: () -> UnpublishAnnouncementWorker
+end

@@ -1,0 +1,9 @@
+class Admin::AccountActionsController
+  def set_account: () -> Account
+
+  def create: () -> String
+
+  def resource_params: () -> void
+
+  def new: () -> ActiveRecord::Relation
+end

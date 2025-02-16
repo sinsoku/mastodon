@@ -1,0 +1,5 @@
+class HomeFeed
+  def initialize: (Account) -> void
+
+  def regenerating?: () -> void
+end

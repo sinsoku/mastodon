@@ -1,0 +1,5 @@
+class Settings::ProfilesController
+  def set_account: () -> Account
+
+  def show: () -> Array[untyped]
+end

@@ -1,0 +1,15 @@
+class TagsController
+  def set_local: () -> nil
+
+  def set_tag: () -> nil
+             | () -> Tag
+
+  def show: () -> Time
+          | () -> String
+
+  def collection_presenter: () -> void
+
+  def set_statuses: () -> Array[untyped]
+
+  def limit_param: () -> void
+end

@@ -1,0 +1,5 @@
+class PlainTextFormatter
+  def initialize: (String, bool) -> void
+
+  def to_s: () -> void
+end

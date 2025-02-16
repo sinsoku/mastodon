@@ -1,0 +1,7 @@
+class Admin::RelationshipsController
+  def set_account: () -> Account
+
+  def index: () -> Form::AccountBatch
+
+  def filter_params: () -> void
+end

@@ -1,0 +1,6 @@
+module Status::SafeReblogInsert::ClassMethods
+  def _insert_record: (ActiveRecord::ConnectionAdapters::PostgreSQLAdapter, Hash[untyped, untyped], Array[untyped]) -> Array[untyped]
+                    | (ActiveRecord::ConnectionAdapters::PostgreSQLAdapter, Hash[untyped, untyped], Array[untyped]) -> nil
+
+  def _compile_reblog_insert: (Hash[untyped, untyped]) -> Arel::InsertManager
+end

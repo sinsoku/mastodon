@@ -1,0 +1,3 @@
+class ActivityPub::FollowersSynchronizationWorker
+  def perform: (Integer, String) -> bool
+end

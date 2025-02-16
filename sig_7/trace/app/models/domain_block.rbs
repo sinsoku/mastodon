@@ -1,0 +1,17 @@
+class DomainBlock
+  def self.rule_for: (nil) -> nil
+                   | (String) -> nil
+                   | (String) -> DomainBlock
+
+  def self.suspend?: (String) -> bool
+
+  def self.reject_media?: (String) -> bool
+
+  def public_domain: () -> void
+
+  def domain_digest: () -> void
+
+  def to_log_human_identifier: () -> void
+
+  def stricter_than?: (DomainBlock) -> bool
+end

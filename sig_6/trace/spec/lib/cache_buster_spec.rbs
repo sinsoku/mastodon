@@ -1,0 +1,27 @@
+module RSpec::ExampleGroups::CacheBuster::Bust::WhenSpecifyingAPURGEMethod::LetDefinitions
+  def http_method: () -> String
+end
+
+module RSpec::ExampleGroups::CacheBuster::LetDefinitions
+  def purge_url: () -> String
+
+  def subject: () -> CacheBuster
+
+  def secret_header: () -> nil
+
+  def secret: () -> nil
+
+  def http_method: () -> nil
+end
+
+module RSpec::ExampleGroups::CacheBuster::Bust::WhenSpecifyingAPURGEMethod::WhenSpecifyingASecretHeader::LetDefinitions
+  def secret_header: () -> String
+
+  def secret: () -> String
+end
+
+module RSpec::ExampleGroups::CacheBuster::Bust::WhenSpecifyingASecretHeader::LetDefinitions
+  def secret_header: () -> String
+
+  def secret: () -> String
+end

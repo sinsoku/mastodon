@@ -1,0 +1,86 @@
+class Account
+  def normalize_domain: () -> nil
+                      | () -> String
+
+  def local?: () -> void
+            | () -> bool
+
+  def prepare_contents: () -> nil
+
+  def generate_keys: () -> nil
+
+  def ensure_keys!: () -> void
+
+  def keypair: () -> void
+             | () -> OpenSSL::PKey::RSA
+
+  def object_type: () -> void
+
+  def instance_actor?: () -> void
+                     | () -> bool
+
+  def user_email: (*untyped, **untyped) -> void
+                | (*untyped, **untyped) -> String
+
+  def user_confirmed?: (*untyped, **untyped) -> void
+                     | (*untyped, **untyped) -> bool
+
+  def user_disabled?: (*untyped, **untyped) -> void
+
+  def user_approved?: (*untyped, **untyped) -> void
+
+  def user_locale: (*untyped, **untyped) -> void
+
+  def pretty_acct: () -> void
+
+  def bot?: () -> bool
+
+  def group?: () -> bool
+
+  def to_param: () -> void
+
+  def user_prefers_noindex?: (*untyped, **untyped) -> void
+
+  def moved?: () -> void
+
+  def emojis: () -> void
+
+  def emojifiable_text: () -> void
+
+  def fields: () -> Array[untyped]
+
+  def user_role: (*untyped, **untyped) -> void
+
+  def user_shows_application?: (*untyped, **untyped) -> void
+
+  def synchronization_uri_prefix: () -> String
+
+  def acct: () -> void
+          | () -> String
+
+  def also_known_as: () -> Array[untyped]
+
+  def self.inboxes: () -> Array[untyped]
+
+  def excluded_from_timeline_domains: () -> void
+                                    | () -> Array[untyped]
+
+  def excluded_from_timeline_account_ids: () -> void
+
+  def user_pending?: (*untyped, **untyped) -> void
+
+  def to_log_human_identifier: () -> void
+
+  def create_canonical_email_block!: () -> void
+
+  def trigger_update_webhooks: () -> String
+                             | () -> nil
+
+  def local_username_and_domain: () -> String
+
+  def save_with_optional_media!: () -> void
+
+  def previous_strikes_count: () -> void
+
+  def self.from_text: (String) -> Array[untyped]
+end

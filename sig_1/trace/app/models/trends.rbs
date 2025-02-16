@@ -1,0 +1,7 @@
+module Trends
+  def self.statuses: () -> Trends::Statuses
+
+  def self.available_locales: () -> Array[untyped]
+
+  def self.tags: () -> Trends::Tags
+end

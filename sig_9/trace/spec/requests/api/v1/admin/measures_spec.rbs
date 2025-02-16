@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::AdminMeasures::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::AdminMeasures::GETApiV1AdminMeasures::WithCorrectScope::LetDefinitions
+  def scopes: () -> String
+end

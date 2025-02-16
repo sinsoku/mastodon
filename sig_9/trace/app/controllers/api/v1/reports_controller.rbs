@@ -1,0 +1,8 @@
+class Api::V1::ReportsController
+  def create: () -> String
+            | () -> nil
+
+  def reported_account: () -> void
+
+  def report_params: () -> ActionController::Parameters
+end

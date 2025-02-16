@@ -1,0 +1,27 @@
+class ManifestSerializer
+  def id: () -> String
+
+  def name: () -> String
+
+  def short_name: () -> String
+
+  def icons: () -> Array[untyped]
+
+  def theme_color: () -> String
+
+  def background_color: () -> String
+
+  def display: () -> String
+
+  def start_url: () -> String
+
+  def scope: () -> String
+
+  def share_target: () -> Hash[untyped, untyped]
+
+  def shortcuts: () -> Array[untyped]
+
+  def prefer_related_applications: () -> bool
+
+  def related_applications: () -> Array[untyped]
+end

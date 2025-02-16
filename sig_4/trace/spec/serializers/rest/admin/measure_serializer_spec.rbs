@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::RESTAdminMeasureSerializer::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+
+  def record: () -> Admin::Metrics::Measure::ActiveUsersMeasure
+
+  def start_at: () -> ActiveSupport::TimeWithZone
+
+  def end_at: () -> Time
+
+  def params: () -> ActionController::Parameters
+end

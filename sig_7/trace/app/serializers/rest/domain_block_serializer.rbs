@@ -1,0 +1,7 @@
+class REST::DomainBlockSerializer
+  def domain: () -> String
+
+  def digest: () -> String
+
+  def comment: () -> nil
+end

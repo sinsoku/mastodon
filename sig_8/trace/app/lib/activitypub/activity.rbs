@@ -1,0 +1,16 @@
+class ActivityPub::Activity
+  def initialize: (ActiveSupport::HashWithIndifferentAccess, Account, **nil) -> void
+
+  def status_from_object: () -> Status
+                        | () -> nil
+
+  def object_uri: () -> void
+                | () -> String
+
+  def status_from_uri: (String) -> Status
+                     | (String) -> nil
+
+  def unsupported_object_type?: () -> void
+
+  def fetch_remote_original_status: () -> void
+end

@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::HashtagNormalizer::LetDefinitions
+  def subject: () -> HashtagNormalizer
+end

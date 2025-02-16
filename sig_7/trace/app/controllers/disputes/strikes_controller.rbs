@@ -1,0 +1,6 @@
+class Disputes::StrikesController
+  def set_strike: () -> AccountWarning
+
+  def show: () -> nil
+          | () -> Appeal
+end

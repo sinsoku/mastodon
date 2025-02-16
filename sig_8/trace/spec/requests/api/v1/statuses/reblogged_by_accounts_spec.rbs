@@ -1,0 +1,33 @@
+module RSpec::ExampleGroups::APIV1StatusesRebloggedByAccounts::WithoutAnOauthToken::WithAPrivateStatus::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::APIV1StatusesRebloggedByAccounts::LetDefinitions
+  def user: () -> User
+
+  def alice: () -> Account
+
+  def bob: () -> Account
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::APIV1StatusesRebloggedByAccounts::WithoutAnOauthToken::LetDefinitions
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::APIV1StatusesRebloggedByAccounts::WithoutAnOauthToken::WithAPublicStatus::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::APIV1StatusesRebloggedByAccounts::WithAnOauthToken::GETApiV1StatusesStatusIdRebloggedBy::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::APIV1StatusesRebloggedByAccounts::WithAnOauthToken::LetDefinitions
+  def subject: () -> Integer
+end

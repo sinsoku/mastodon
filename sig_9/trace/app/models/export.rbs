@@ -1,0 +1,5 @@
+class Export
+  def initialize: (Account) -> void
+
+  def to_bookmarks_csv: () -> void
+end

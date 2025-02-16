@@ -1,0 +1,15 @@
+class Api::V1::NotificationsController
+  def index: () -> String
+
+  def load_notifications: () -> Array[untyped]
+
+  def browserable_account_notifications: () -> ActiveRecord::AssociationRelation
+
+  def browserable_params: () -> ActionController::Parameters
+
+  def target_statuses_from_notifications: () -> void
+
+  def next_path: () -> void
+
+  def prev_path: () -> void
+end

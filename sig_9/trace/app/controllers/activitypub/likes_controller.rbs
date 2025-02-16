@@ -1,0 +1,9 @@
+class ActivityPub::LikesController
+  def set_status: () -> Status
+
+  def pundit_user: () -> void
+
+  def index: () -> String
+
+  def likes_collection_presenter: () -> void
+end

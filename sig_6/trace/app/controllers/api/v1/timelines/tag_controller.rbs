@@ -1,0 +1,19 @@
+class Api::V1::Timelines::TagController
+  def require_auth?: () -> bool
+
+  def load_tag: () -> Tag
+
+  def show: () -> String
+
+  def load_statuses: () -> Array[untyped]
+
+  def preloaded_tagged_statuses: () -> void
+
+  def tag_timeline_statuses: () -> void
+
+  def tag_feed: () -> TagFeed
+
+  def next_path: () -> void
+
+  def prev_path: () -> void
+end

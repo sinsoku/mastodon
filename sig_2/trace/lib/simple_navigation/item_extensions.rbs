@@ -1,0 +1,4 @@
+module SimpleNavigation::ItemExtensions
+  def url: () -> void
+         | () -> String
+end

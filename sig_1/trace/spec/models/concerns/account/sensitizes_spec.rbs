@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::AccountSensitizes::Scopes::Sensitized::LetDefinitions
+  def sensitized_account: () -> Account
+end

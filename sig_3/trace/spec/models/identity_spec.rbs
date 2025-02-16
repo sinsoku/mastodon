@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::Identity::FindForOmniauth::LetDefinitions
+  def auth: () -> Identity
+end

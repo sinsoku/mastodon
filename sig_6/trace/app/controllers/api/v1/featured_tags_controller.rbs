@@ -1,0 +1,13 @@
+class Api::V1::FeaturedTagsController
+  def set_featured_tag: () -> FeaturedTag
+                      | () -> nil
+
+  def destroy: () -> String
+
+  def create: () -> String
+            | () -> nil
+
+  def set_featured_tags: () -> ActiveRecord::AssociationRelation
+
+  def index: () -> String
+end

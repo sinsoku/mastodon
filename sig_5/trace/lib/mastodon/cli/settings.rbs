@@ -1,0 +1,7 @@
+class Mastodon::CLI::Registrations
+  def close: () -> StringIO
+
+  def open: () -> StringIO
+
+  def approved: () -> StringIO
+end

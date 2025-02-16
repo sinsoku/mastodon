@@ -1,0 +1,6 @@
+class Object
+  def serialized_record_json: (Appeal, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+                            | (Report, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+                            | (Favourite, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+                            | (Account::Field, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+end

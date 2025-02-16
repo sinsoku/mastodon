@@ -1,0 +1,10 @@
+class Api::V1::Admin::AccountsController
+  def set_accounts: () -> Array[untyped]
+
+  def index: () -> String
+           | () -> nil
+
+  def records_continue?: () -> void
+
+  def pagination_collection: () -> Array[untyped]
+end

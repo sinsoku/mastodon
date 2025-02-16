@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::ActivityPubAcceptFollowSerializer::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubAcceptFollowSerializer::SerializingAnObject::LetDefinitions
+  def record: () -> FollowRequest
+end

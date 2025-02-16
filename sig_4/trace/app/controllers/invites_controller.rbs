@@ -1,0 +1,7 @@
+class InvitesController
+  def set_cache_headers: () -> Hash[untyped, untyped]
+
+  def create: () -> nil
+
+  def index: () -> nil
+end

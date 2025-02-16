@@ -1,0 +1,37 @@
+class Report
+  def set_uri: () -> URI::HTTPS
+             | () -> nil
+
+  def local?: (*untyped, **untyped) -> bool
+
+  def trigger_create_webhooks: () -> String
+
+  def media_attachments_count: () -> void
+
+  def statuses: () -> ActiveRecord::Relation
+
+  def to_log_human_identifier: () -> void
+
+  def history: () -> void
+
+  def unresolve!: () -> void
+
+  def trigger_update_webhooks: () -> String
+
+  def action_taken?: () -> void
+                   | () -> bool
+
+  def unresolved?: () -> void
+
+  def unassign!: () -> void
+
+  def unresolved_siblings?: () -> bool
+
+  def assign_to_self!: (Account) -> void
+
+  def validate_rule_ids: () -> ActiveModel::Error
+
+  def rules: () -> ActiveRecord::Relation
+
+  def resolve!: (Account) -> void
+end

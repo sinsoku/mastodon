@@ -1,0 +1,21 @@
+module RSpec::ExampleGroups::AdminMetricsMeasureTagAccountsMeasure::LetDefinitions
+  def tag: () -> Tag
+
+  def subject: () -> Admin::Metrics::Measure::TagAccountsMeasure
+
+  def start_at: () -> ActiveSupport::TimeWithZone
+
+  def end_at: () -> Time
+
+  def params: () -> ActionController::Parameters
+end
+
+module RSpec::ExampleGroups::AdminMetricsMeasureTagAccountsMeasure::Data::WithTaggedAccounts::LetDefinitions
+  def alice: () -> Account
+
+  def bob: () -> Account
+end
+
+class RSpec::ExampleGroups::AdminMetricsMeasureTagAccountsMeasure::Data::WithTaggedAccounts
+  def add_tag_history: (Account) -> void
+end

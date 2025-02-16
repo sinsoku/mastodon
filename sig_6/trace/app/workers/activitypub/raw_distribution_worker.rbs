@@ -1,0 +1,5 @@
+class ActivityPub::RawDistributionWorker
+  def perform: (String, Integer, ?Array[untyped]) -> void
+
+  def distribute!: () -> void
+end

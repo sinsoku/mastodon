@@ -1,0 +1,27 @@
+module RSpec::ExampleGroups::StatusEmbed::GETUsersAccountUsernameStatusesIdEmbed::LetDefinitions
+  def subject: () -> Integer
+
+  def account: () -> Account
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusEmbed::GETUsersAccountUsernameStatusesIdEmbed::WhenStatusIsPrivate::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusEmbed::GETUsersAccountUsernameStatusesIdEmbed::WhenStatusIsAReblog::LetDefinitions
+  def status: () -> Status
+
+  def original_status: () -> Status
+
+  def original_account: () -> Account
+end
+
+module RSpec::ExampleGroups::StatusEmbed::GETUsersAccountUsernameStatusesIdEmbed::WhenAccountIsSuspended::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::StatusEmbed::GETUsersAccountUsernameStatusesIdEmbed::WhenStatusIsDirect::LetDefinitions
+  def status: () -> Status
+end

@@ -1,0 +1,15 @@
+class UserMailer
+  def set_instance: () -> String
+
+  def password_change: (User, *untyped, **untyped) -> Mail::Message
+
+  def locale: (?use_current_locale: bool) -> void
+
+  def default_devise_subject: () -> void
+
+  def reset_password_instructions: (User, String, *untyped, **untyped) -> Mail::Message
+
+  def appeal_approved: (User, Appeal) -> Mail::Message
+
+  def warning: (User, AccountWarning) -> Mail::Message
+end

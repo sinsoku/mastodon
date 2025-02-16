@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::AccountModerationNotePolicy::LetDefinitions
+  def subject: () -> Class
+
+  def admin: () -> Account
+
+  def john: () -> Account
+end
+
+module RSpec::ExampleGroups::AccountModerationNotePolicy::Destroy::LetDefinitions
+  def account_moderation_note: () -> AccountModerationNote
+end
+
+module RSpec::ExampleGroups::AccountModerationNotePolicy::Destroy::WhenNeitherAdminNorOwner::LetDefinitions
+  def kevin: () -> Account
+end

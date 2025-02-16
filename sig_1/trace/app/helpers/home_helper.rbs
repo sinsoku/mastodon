@@ -1,0 +1,5 @@
+module HomeHelper
+  def default_props: () -> Hash[untyped, untyped]
+
+  def account_link_to: (Account, ?String, ?path: String) -> void
+end

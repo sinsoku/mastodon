@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::AdminMetricsMeasureInstanceReportsMeasure::LetDefinitions
+  def domain: () -> String
+
+  def subject: () -> Admin::Metrics::Measure::InstanceReportsMeasure
+
+  def start_at: () -> ActiveSupport::TimeWithZone
+
+  def end_at: () -> Time
+
+  def params: () -> ActionController::Parameters
+end
+
+module RSpec::ExampleGroups::AdminMetricsMeasureInstanceReportsMeasure::Total::WithIncludeSubdomains::LetDefinitions
+  def params: () -> ActionController::Parameters
+end

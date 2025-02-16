@@ -1,0 +1,20 @@
+module LanguagesHelper
+  def valid_locale_cascade: (*Symbol?) -> void
+                          | (*(String | Symbol)?) -> void
+
+  def valid_locale_or_nil: (nil) -> nil
+                         | (Symbol) -> Symbol
+                         | (String) -> String
+
+  def valid_locale?: (Symbol) -> void
+                   | (nil) -> void
+                   | (String) -> void
+
+  def self.sorted_locale_keys: (Array[untyped]) -> void
+
+  def self.locale_name_for_sorting: (Symbol) -> void
+
+  def native_locale_name: (Symbol) -> String
+
+  def standard_locale_name: (String) -> String
+end

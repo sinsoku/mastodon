@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::RESTAdminEmailDomainBlockSerializer::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+
+  def record: () -> EmailDomainBlock
+end

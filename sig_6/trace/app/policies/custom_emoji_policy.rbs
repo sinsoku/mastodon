@@ -1,0 +1,15 @@
+class CustomEmojiPolicy
+  def index?: () -> bool
+
+  def create?: () -> bool
+
+  def destroy?: () -> bool
+
+  def copy?: () -> bool
+
+  def enable?: () -> bool
+
+  def disable?: () -> bool
+
+  def update?: () -> bool
+end

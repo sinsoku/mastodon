@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::WebhookPolicy::LetDefinitions
+  def policy: () -> Class
+
+  def admin: () -> Account
+
+  def john: () -> Account
+end
+
+module RSpec::ExampleGroups::WebhookPolicy::ShowUpdateEnableDisableRotateSecretAndDestroy::LetDefinitions
+  def webhook: () -> Webhook
+end

@@ -1,0 +1,17 @@
+module Localized
+  def set_locale: () -> String
+                | () -> bool
+                | () -> ActiveSupport::SafeBuffer
+                | () -> nil
+                | () -> Array[untyped]
+                | () -> Time
+                | () -> Symbol
+                | () -> DomainBlock
+                | () -> Form::AdminSettings
+
+  def requested_locale: () -> void
+
+  def available_locale_or_nil: (nil) -> nil
+
+  def http_accept_language: () -> nil
+end

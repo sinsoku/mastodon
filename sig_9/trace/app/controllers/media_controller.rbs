@@ -1,0 +1,9 @@
+class MediaController
+  def set_media_attachment: () -> MediaAttachment
+                          | () -> nil
+
+  def verify_permitted_status!: () -> Status
+                              | () -> ActiveSupport::SafeBuffer
+
+  def show: () -> String
+end

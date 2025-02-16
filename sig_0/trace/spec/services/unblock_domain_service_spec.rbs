@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::UnblockDomainService::Call::LetDefinitions
+  def independently_suspended: () -> Account
+
+  def independently_silenced: () -> Account
+
+  def domain_block: () -> DomainBlock
+
+  def silenced: () -> Account
+
+  def suspended: () -> Account
+end
+
+module RSpec::ExampleGroups::UnblockDomainService::LetDefinitions
+  def subject: () -> UnblockDomainService
+end
+
+class RSpec::ExampleGroups::UnblockDomainService
+  def expect_deleted_domain_block: () -> void
+end

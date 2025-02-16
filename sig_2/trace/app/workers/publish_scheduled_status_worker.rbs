@@ -1,0 +1,5 @@
+class PublishScheduledStatusWorker
+  def perform: (Integer) -> void
+
+  def options_with_objects: (ActiveSupport::HashWithIndifferentAccess) -> void
+end

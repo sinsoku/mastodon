@@ -1,0 +1,12 @@
+class Notification
+  def set_from_account: () -> Integer
+                      | () -> nil
+
+  def type: () -> void
+          | () -> Symbol
+
+  def target_status: () -> nil
+                   | () -> Status
+
+  def remove_from_notification_request: () -> nil
+end

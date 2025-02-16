@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::AdminMetricsDimensionSoftwareVersionsDimension::LetDefinitions
+  def subject: () -> Admin::Metrics::Dimension::SoftwareVersionsDimension
+
+  def start_at: () -> ActiveSupport::TimeWithZone
+
+  def end_at: () -> Time
+
+  def limit: () -> Integer
+
+  def params: () -> ActionController::Parameters
+end

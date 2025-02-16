@@ -1,0 +1,5 @@
+class ReportNotePolicy
+  def destroy?: () -> bool
+
+  def owner?: () -> void
+end

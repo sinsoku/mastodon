@@ -1,0 +1,23 @@
+module RSpec::ExampleGroups::AdminMetricsMeasureInstanceMediaAttachmentsMeasure::LetDefinitions
+  def remote_account: () -> Account
+
+  def domain: () -> String
+
+  def remote_account_on_subdomain: () -> Account
+
+  def subject: () -> Admin::Metrics::Measure::InstanceMediaAttachmentsMeasure
+
+  def start_at: () -> ActiveSupport::TimeWithZone
+
+  def end_at: () -> Time
+
+  def params: () -> ActionController::Parameters
+end
+
+class RSpec::ExampleGroups::AdminMetricsMeasureInstanceMediaAttachmentsMeasure::Data
+  def expected_domain_only_total: () -> Integer
+end
+
+module RSpec::ExampleGroups::AdminMetricsMeasureInstanceMediaAttachmentsMeasure::Total::WithIncludeSubdomains::LetDefinitions
+  def params: () -> ActionController::Parameters
+end

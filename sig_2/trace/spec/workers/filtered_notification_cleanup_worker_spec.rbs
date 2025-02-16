@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::FilteredNotificationCleanupWorker::Perform::LetDefinitions
+  def recipient: () -> Account
+
+  def sender: () -> Account
+
+  def bystander: () -> Account
+end

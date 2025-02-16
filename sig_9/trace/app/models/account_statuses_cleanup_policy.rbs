@@ -1,0 +1,5 @@
+class AccountStatusesCleanupPolicy
+  def validate_local_account: () -> nil
+
+  def update_last_inspected: () -> nil
+end

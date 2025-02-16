@@ -1,0 +1,14 @@
+class Admin::IpBlocksController
+  def index: () -> Form::IpBlockBatch
+
+  def batch: () -> String
+
+  def form_ip_block_batch_params: () -> nil
+
+  def new: () -> IpBlock
+
+  def create: () -> ActiveSupport::SafeBuffer
+            | () -> String
+
+  def resource_params: () -> void
+end

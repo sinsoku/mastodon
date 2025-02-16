@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::APIOEmbed::GETApiOembed::WhenStatusIsPublic::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::APIOEmbed::GETApiOembed::WhenStatusIsNotPublic::LetDefinitions
+  def status: () -> Status
+end

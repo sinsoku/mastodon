@@ -1,0 +1,37 @@
+class UserRole
+  def self.everyone: () -> void
+                   | () -> UserRole
+
+  def everyone?: () -> void
+               | () -> bool
+
+  def computed_permissions: () -> Integer
+
+  def can?: (*Symbol) -> bool
+
+  def in_permissions?: (Symbol) -> void
+
+  def nobody?: () -> void
+
+  def self.that_can: (*Symbol) -> Array[untyped]
+
+  def set_position: () -> nil
+
+  def validate_permissions_elevation: () -> nil
+                                    | () -> ActiveModel::Error
+
+  def validate_position_elevation: () -> nil
+                                 | () -> ActiveModel::Error
+
+  def validate_dangerous_permissions: () -> nil
+
+  def validate_own_role_edition: () -> nil
+
+  def overrides?: (UserRole) -> void
+
+  def permissions_as_keys: () -> Array[untyped]
+
+  def permissions_as_keys=: (Array[untyped]) -> Integer
+
+  def to_log_human_identifier: () -> void
+end

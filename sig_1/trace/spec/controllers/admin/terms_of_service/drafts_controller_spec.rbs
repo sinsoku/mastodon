@@ -1,0 +1,21 @@
+module RSpec::ExampleGroups::AdminTermsOfServiceDraftsController::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::AdminTermsOfServiceDraftsController::PUTUpdate::LetDefinitions
+  def terms: () -> TermsOfService
+
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::AdminTermsOfServiceDraftsController::PUTUpdate::WithPublishingParams::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AdminTermsOfServiceDraftsController::PUTUpdate::WithNonPublishingParams::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AdminTermsOfServiceDraftsController::PUTUpdate::WithInvalidParams::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end

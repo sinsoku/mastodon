@@ -1,0 +1,3 @@
+class Export
+  def initialize: (Account) -> void
+end

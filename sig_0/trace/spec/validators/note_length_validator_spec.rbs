@@ -1,0 +1,11 @@
+class RSpec::ExampleGroups::NoteLengthValidator::Validate
+  def activemodel_errors: () -> void
+
+  def starting_string: () -> void
+
+  def example_link: () -> void
+end
+
+module RSpec::ExampleGroups::NoteLengthValidator::LetDefinitions
+  def subject: () -> NoteLengthValidator
+end

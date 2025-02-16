@@ -1,0 +1,16 @@
+class Scheduler::AccountsStatusesCleanupScheduler
+  def compute_budget: () -> void
+                    | () -> Integer
+
+  def perform: () -> void
+
+  def under_load?: () -> void
+
+  def queue_under_load?: (Symbol, Integer) -> void
+
+  def last_processed_id: () -> void
+
+  def cleanup_policies: (Integer, Array[untyped], bool, bool) -> ActiveRecord::Relation
+
+  def save_last_processed_id: (Integer) -> void
+end

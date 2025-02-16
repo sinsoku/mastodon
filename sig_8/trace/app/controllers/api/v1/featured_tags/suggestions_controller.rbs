@@ -1,0 +1,5 @@
+class Api::V1::FeaturedTags::SuggestionsController
+  def set_recently_used_tags: () -> ActiveRecord::Relation
+
+  def index: () -> String
+end

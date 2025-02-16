@@ -1,0 +1,21 @@
+module RSpec::ExampleGroups::ChallengableConcern::WithAPasswordUser::LetDefinitions
+  def user: () -> User
+
+  def password: () -> String
+end
+
+class AnonymousController
+  def bar: () -> String
+
+  def foo: () -> String
+end
+
+module RSpec::ExampleGroups::ChallengableConcern::WithANoPasswordUser::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::ChallengableConcern::WithRecentChallengeInSession::LetDefinitions
+  def user: () -> User
+
+  def password: () -> String
+end

@@ -1,0 +1,5 @@
+class TagSearchService
+  def call: (String, ?Hash[untyped, untyped]) -> ActiveRecord::Relation
+
+  def from_database: () -> ActiveRecord::Relation
+end

@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::Favourite::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::Favourite::WhenStatusIsAReblog::LetDefinitions
+  def status: () -> Status
+
+  def reblog: () -> Status
+end
+
+module RSpec::ExampleGroups::Favourite::WhenStatusIsNotAReblog::LetDefinitions
+  def status: () -> Status
+end

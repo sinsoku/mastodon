@@ -1,0 +1,11 @@
+class Vacuum::PreviewCardsVacuum
+  def initialize: (ActiveSupport::Duration) -> void
+
+  def perform: () -> void
+
+  def retention_period?: () -> void
+
+  def vacuum_cached_images!: () -> void
+
+  def preview_cards_past_retention_period: () -> ActiveRecord::Relation
+end

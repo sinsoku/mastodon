@@ -1,0 +1,9 @@
+class ActivityPub::FollowersSynchronizationsController
+  def set_items: () -> Array[untyped]
+
+  def uri_prefix: () -> void
+
+  def show: () -> String
+
+  def collection_presenter: () -> void
+end

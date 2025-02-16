@@ -1,0 +1,5 @@
+class GeneratedAnnualReport
+  def viewed?: () -> void
+
+  def view!: () -> void
+end

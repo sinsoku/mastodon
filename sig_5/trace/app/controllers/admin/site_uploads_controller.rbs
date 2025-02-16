@@ -1,0 +1,5 @@
+class Admin::SiteUploadsController
+  def set_site_upload: () -> SiteUpload
+
+  def destroy: () -> String
+end

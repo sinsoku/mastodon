@@ -1,0 +1,10 @@
+class Oauth::AuthorizationsController
+  def store_current_location: () -> String
+
+  def set_cache_headers: () -> Hash[untyped, untyped]
+
+  def render_success: () -> void
+
+  def truthy_param?: (String) -> nil
+                   | (String) -> bool
+end

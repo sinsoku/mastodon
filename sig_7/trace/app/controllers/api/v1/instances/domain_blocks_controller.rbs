@@ -1,0 +1,20 @@
+class Api::V1::Instances::DomainBlocksController
+  def require_enabled_api!: () -> bool
+                          | () -> nil
+
+  def api_enabled?: () -> void
+
+  def show_domain_blocks_for_all?: () -> void
+
+  def show_domain_blocks_to_user?: () -> void
+
+  def set_domain_blocks: () -> ActiveRecord::Relation
+
+  def index: () -> String
+
+  def show_rationale_in_response?: () -> void
+
+  def always_show_rationale?: () -> void
+
+  def show_rationale_for_user?: () -> void
+end

@@ -1,0 +1,9 @@
+class ActivityPub::DistributionWorker
+  def inboxes: () -> Array[untyped]
+
+  def payload: () -> void
+
+  def options: () -> void
+
+  def perform: (Integer) -> void
+end

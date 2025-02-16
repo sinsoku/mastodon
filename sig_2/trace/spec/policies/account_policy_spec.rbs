@@ -1,0 +1,17 @@
+module RSpec::ExampleGroups::AccountPolicy::LetDefinitions
+  def subject: () -> Class
+
+  def john: () -> Account
+
+  def admin: () -> Account
+
+  def alice: () -> Account
+end
+
+module RSpec::ExampleGroups::AccountPolicy::SuspendAndSilence::LetDefinitions
+  def staff: () -> Account
+end
+
+module RSpec::ExampleGroups::AccountPolicy::Memorialize::LetDefinitions
+  def other_admin: () -> Account
+end

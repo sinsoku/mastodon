@@ -1,0 +1,9 @@
+class Web::PushSubscription
+  def pushable?: (Notification) -> void
+
+  def policy_allows_notification?: (Notification) -> void
+
+  def alert_enabled_for_notification_type?: (Notification) -> void
+
+  def truthy?: (bool) -> void
+end

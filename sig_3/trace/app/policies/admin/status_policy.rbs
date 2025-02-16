@@ -1,0 +1,16 @@
+class Admin::StatusPolicy
+  def initialize: (Account, Status, ?Hash[untyped, untyped]) -> void
+                | (Account, Class, ?Hash[untyped, untyped]) -> void
+
+  def destroy?: () -> bool
+
+  def update?: () -> bool
+
+  def index?: () -> bool
+
+  def review?: () -> bool
+
+  def show?: () -> bool
+
+  def viewable_through_normal_policy?: () -> void
+end

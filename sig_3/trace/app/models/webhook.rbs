@@ -1,0 +1,13 @@
+class Webhook
+  def generate_secret: () -> nil
+
+  def invalid_events?: () -> bool
+
+  def validate_permissions: () -> nil
+
+  def validate_template: () -> nil
+
+  def required_permissions: () -> Array[untyped]
+
+  def self.permission_for_event: (String) -> void
+end

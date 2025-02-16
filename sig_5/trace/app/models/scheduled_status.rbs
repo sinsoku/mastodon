@@ -1,0 +1,8 @@
+class ScheduledStatus
+  def validate_future_date: () -> nil
+                          | () -> ActiveModel::Error
+
+  def validate_total_limit: () -> nil
+
+  def validate_daily_limit: () -> nil
+end

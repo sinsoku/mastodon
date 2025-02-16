@@ -1,0 +1,8 @@
+module Authorization
+  def authorize_with: (Account, Status, Symbol) -> void
+                    | (Account, Poll, Symbol) -> void
+
+  def authorize: (*untyped) -> void
+
+  def pundit_user: () -> void
+end

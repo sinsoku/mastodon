@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::AdminSystemCheckSidekiqProcessCheck::LetDefinitions
+  def user: () -> User
+
+  def check: () -> Admin::SystemCheck::SidekiqProcessCheck
+end

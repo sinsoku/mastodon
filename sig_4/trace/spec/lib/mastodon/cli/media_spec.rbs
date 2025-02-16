@@ -1,0 +1,106 @@
+module RSpec::ExampleGroups::MastodonCLIMedia::Refresh::WithAccountOption::WhenTheAccountExists::LetDefinitions
+  def media_attachment: () -> MediaAttachment
+
+  def account: () -> Account
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIMedia::LetDefinitions
+  def subject: () -> StringIO
+             | () -> nil
+
+  def cli: () -> Mastodon::CLI::Media
+
+  def arguments: () -> Array[untyped]
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIMedia::Refresh::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLIMedia::Refresh::WithAccountOption::WhenTheAccountDoesNotExist::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIMedia::Refresh::WithStatusOption::LetDefinitions
+  def media_attachment: () -> MediaAttachment
+
+  def status: () -> Status
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIMedia::Refresh::WithDaysOption::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIMedia::Refresh::WithDomainOption::LetDefinitions
+  def media_attachment: () -> MediaAttachment
+
+  def account: () -> Account
+
+  def domain: () -> String
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIMedia::Lookup::WithAValidMediaUrl::LetDefinitions
+  def status: () -> Status
+
+  def url: () -> String
+
+  def media_attachment: () -> MediaAttachment
+end
+
+module RSpec::ExampleGroups::MastodonCLIMedia::Lookup::LetDefinitions
+  def action: () -> Symbol
+
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIMedia::Lookup::WithValidUrlNotConnectedToARecord::LetDefinitions
+  def url: () -> String
+end
+
+module RSpec::ExampleGroups::MastodonCLIMedia::Usage::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLIMedia::RemoveOrphans::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLIMedia::RemoveOrphans::WhenInFilesystemMode::LetDefinitions
+  def media_attachment: () -> MediaAttachment
+end
+
+module RSpec::ExampleGroups::MastodonCLIMedia::Remove::WithARelevantMediaAttachment::LetDefinitions
+  def media_attachment: () -> MediaAttachment
+end
+
+module RSpec::ExampleGroups::MastodonCLIMedia::Remove::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLIMedia::Remove::WithPruneProfilesAndRemoveHeaders::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIMedia::Remove::WithIncludeFollowsButNotIncludingPruneProfilesAndRemoveHeaders::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIMedia::Remove::WithARelevantAccount::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::MastodonCLIMedia::Remove::WithARelevantAccount::WithPruneProfiles::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIMedia::Remove::WithARelevantAccount::WithRemoveHeaders::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end

@@ -1,0 +1,19 @@
+class Admin::StatusBatchAction
+  def save!: () -> void
+
+  def process_action!: () -> void
+
+  def handle_report!: () -> void
+
+  def with_report?: () -> void
+
+  def report: () -> nil
+
+  def report_params: () -> void
+
+  def target_account: () -> void
+
+  def statuses: () -> ActiveRecord::Relation
+
+  def allowed_status_ids: () -> void
+end

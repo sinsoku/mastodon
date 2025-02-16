@@ -1,0 +1,41 @@
+module RSpec::ExampleGroups::SuspendAccountService::SuspendingALocalAccount::LetDefinitions
+  def local_follower: () -> Account
+
+  def list: () -> List
+
+  def account: () -> Account
+
+  def remote_follower: () -> Account
+
+  def remote_reporter: () -> Account
+
+  def subject: () -> nil
+end
+
+class RSpec::ExampleGroups::SuspendAccountService::SuspendingALocalAccount
+  def change_file_mode: () -> RSpec::Matchers::BuiltIn::Change
+
+  def not_change_suspended_flag: () -> void
+
+  def match_update_actor_request: (WebMock::RequestSignature, Account) -> void
+end
+
+module RSpec::ExampleGroups::SuspendAccountService::SuspendingARemoteAccount::LetDefinitions
+  def local_follower: () -> Account
+
+  def list: () -> List
+
+  def account: () -> Account
+
+  def local_followee: () -> Account
+
+  def subject: () -> nil
+end
+
+class RSpec::ExampleGroups::SuspendAccountService::SuspendingARemoteAccount
+  def match_reject_follow_request: (WebMock::RequestSignature, Account, Account) -> void
+
+  def change_file_mode: () -> RSpec::Matchers::BuiltIn::Change
+
+  def not_change_suspended_flag: () -> void
+end

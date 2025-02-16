@@ -1,0 +1,17 @@
+module RSpec::ExampleGroups::RoutesUnderAccounts::WithRemoteUsername::LetDefinitions
+  def username: () -> String
+end
+
+module RSpec::ExampleGroups::RoutesUnderAccounts::WithLocalUsername::LetDefinitions
+  def username: () -> String
+end
+
+module RSpec::ExampleGroups::RoutesUnderAccounts::WithLocalUsernameEncodedAt::LetDefinitions
+  def username: () -> String
+end
+
+module RSpec::ExampleGroups::RoutesUnderAccounts::WithRemoteUsernameEncodedAt::LetDefinitions
+  def username: () -> String
+
+  def username_decoded: () -> String
+end

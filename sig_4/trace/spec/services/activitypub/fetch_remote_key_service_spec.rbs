@@ -1,0 +1,30 @@
+module RSpec::ExampleGroups::ActivityPubFetchRemoteKeyService::LetDefinitions
+  def actor: () -> Hash[untyped, untyped]
+
+  def actor_public_key: () -> Hash[untyped, untyped]
+
+  def key_json: () -> Hash[untyped, untyped]
+
+  def public_key_id: () -> String
+
+  def public_key_pem: () -> String
+
+  def webfinger: () -> Hash[untyped, untyped]
+
+  def subject: () -> ActivityPub::FetchRemoteKeyService
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchRemoteKeyService::Call::LetDefinitions
+  def account: () -> Account
+             | () -> nil
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchRemoteKeyService::Call::WhenTheKeyIsASeparateDocument::LetDefinitions
+  def public_key_id: () -> String
+end
+
+module RSpec::ExampleGroups::ActivityPubFetchRemoteKeyService::Call::WhenTheKeyAndOwnerDoNotMatch::LetDefinitions
+  def actor_public_key: () -> String
+
+  def public_key_id: () -> String
+end

@@ -1,0 +1,3 @@
+class RSpec::ExampleGroups::RemoteInteractionHelper
+  def expected_csp_headers: () -> void
+end

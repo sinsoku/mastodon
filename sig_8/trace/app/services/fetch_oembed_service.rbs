@@ -1,0 +1,18 @@
+class FetchOEmbedService
+  def call: (String, ?Hash[untyped, untyped]) -> nil
+          | (String, ?Hash[untyped, untyped]) -> ActiveSupport::HashWithIndifferentAccess
+
+  def discover_endpoint!: () -> void
+
+  def html: () -> String
+
+  def fetch!: () -> void
+
+  def cache_endpoint!: () -> void
+
+  def parse_for_format: (String) -> void
+
+  def validate: (ActiveSupport::HashWithIndifferentAccess) -> void
+
+  def parse_cached_endpoint!: () -> void
+end

@@ -1,0 +1,3 @@
+class REST::ListSerializer
+  def id: () -> String
+end

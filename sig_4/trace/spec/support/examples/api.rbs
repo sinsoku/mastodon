@@ -1,0 +1,35 @@
+module RSpec::ExampleGroups::FollowedTags::GETApiV1FollowedTags::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Pins::POSTApiV1StatusesStatusIdPin::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Blocks::GETApiV1Blocks::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Requests::GETApiV1NotificationsRequests::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Requests::GETApiV1NotificationsRequestsMerged::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Requests::POSTApiV1NotificationsRequestsIdAccept::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Requests::POSTApiV1NotificationsRequestsAccept::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Requests::POSTApiV1NotificationsRequestsDismiss::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Requests::POSTApiV1NotificationsRequestsIdDismiss::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end

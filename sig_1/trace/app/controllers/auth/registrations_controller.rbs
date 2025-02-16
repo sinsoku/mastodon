@@ -1,0 +1,11 @@
+class Auth::RegistrationsController
+  def set_sessions: () -> ActiveRecord::AssociationRelation
+
+  def set_strikes: () -> ActiveRecord::AssociationRelation
+
+  def set_cache_headers: () -> Hash[untyped, untyped]
+
+  def edit: () -> ActiveSupport::SafeBuffer
+
+  def determine_layout: () -> String
+end

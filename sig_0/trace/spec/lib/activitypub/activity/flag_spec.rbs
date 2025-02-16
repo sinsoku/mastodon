@@ -1,0 +1,53 @@
+module RSpec::ExampleGroups::ActivityPubActivityFlag::PerformWithADefinedUri::LetDefinitions
+  def subject: () -> ActivityPub::Activity::Flag
+
+  def flag_id: () -> String
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityFlag::LetDefinitions
+  def json: () -> ActiveSupport::HashWithIndifferentAccess
+
+  def sender: () -> Account
+
+  def flagged: () -> Account
+
+  def status: () -> Status
+
+  def flag_id: () -> nil
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityFlag::Perform::WhenTheReportedStatusIsPrivateAndTheAuthorHasAFollowerOnTheRemoteInstance::LetDefinitions
+  def follower: () -> Account
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityFlag::Perform::LetDefinitions
+  def subject: () -> ActivityPub::Activity::Flag
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityFlag::Perform::WhenTheReportedStatusIsPrivateAndTheAuthorMentionsSomeoneElseOnTheLocalInstance::LetDefinitions
+  def status: () -> Status
+
+  def mentioned: () -> Account
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityFlag::Perform::WhenTheReportedStatusIsPrivateAndShouldNotBeVisibleToTheRemoteServer::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityFlag::Perform::WhenAnAccountIsPassedButNoStatus::LetDefinitions
+  def json: () -> ActiveSupport::HashWithIndifferentAccess
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityFlag::Perform::WhenTheReportedStatusIsPrivateAndTheAuthorMentionsSomeoneElseOnTheRemoteInstance::LetDefinitions
+  def status: () -> Status
+
+  def mentioned: () -> Account
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityFlag::Perform::WhenTheReportCommentIsExcessivelyLong::LetDefinitions
+  def subject: () -> ActivityPub::Activity::Flag
+
+  def long_comment: () -> String
+end

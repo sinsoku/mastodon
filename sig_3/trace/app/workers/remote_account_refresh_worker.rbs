@@ -1,0 +1,5 @@
+class RemoteAccountRefreshWorker
+  def perform: (Account) -> nil
+             | (Integer) -> nil
+             | (Integer) -> bool
+end

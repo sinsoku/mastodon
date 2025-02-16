@@ -1,0 +1,23 @@
+module RSpec::ExampleGroups::AdminDisputesAppealsController::GETIndex::LetDefinitions
+  def current_user: () -> User
+end
+
+module RSpec::ExampleGroups::AdminDisputesAppealsController::LetDefinitions
+  def target_account: () -> Account
+
+  def appeal: () -> Appeal
+
+  def strike: () -> AccountWarning
+end
+
+module RSpec::ExampleGroups::AdminDisputesAppealsController::POSTApprove::LetDefinitions
+  def current_user: () -> User
+
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::AdminDisputesAppealsController::POSTReject::LetDefinitions
+  def current_user: () -> User
+
+  def subject: () -> ActionDispatch::TestResponse
+end

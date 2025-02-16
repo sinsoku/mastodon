@@ -1,0 +1,11 @@
+module MediaComponentHelper
+  def render_audio_component: (Status, **untyped) -> void
+
+  def render_media_gallery_component: (Status, **untyped) -> void
+
+  def sensitive_viewer?: (Status, Account) -> void
+
+  def serialize_media_attachment: (MediaAttachment) -> ActiveModelSerializers::SerializableResource
+
+  def render_video_component: (Status, **untyped) -> void
+end

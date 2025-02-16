@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::AdminAccountActionsController::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::AdminAccountActionsController::POSTCreate::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AdminAccountActionsController::GETNew::LetDefinitions
+  def account: () -> Account
+end

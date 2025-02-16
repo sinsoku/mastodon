@@ -1,0 +1,71 @@
+module Account::Interactions
+  def blocking?: (Account) -> void
+               | (Account) -> bool
+
+  def block!: (Account, ?uri: nil) -> void
+
+  def follow!: (Account, ?reblogs: nil, ?notify: nil, ?languages: nil, ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> void
+             | (Account, ?reblogs: bool, ?notify: nil, ?languages: nil, ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> void
+
+  def following?: (Account) -> void
+
+  def domain_blocking?: (String) -> void
+
+  def block_domain!: (String) -> void
+
+  def reblogged?: (Status) -> void
+
+  def muting_notifications?: (Account) -> void
+
+  def mute!: (Account, ?notifications: bool, ?duration: Integer) -> void
+           | (Account, ?notifications: nil, ?duration: Integer) -> void
+
+  def remote_followers_hash: (String) -> void
+
+  def unfollow!: (Account) -> void
+
+  def unblock_domain!: (String) -> void
+
+  def normalized_domain: (String) -> void
+
+  def requested?: (Account) -> void
+
+  def followed_by?: (Account) -> void
+
+  def unblock!: (Account) -> void
+              | (Account) -> Block
+
+  def muting_reblogs?: (Account) -> void
+
+  def pinned?: (Status) -> void
+
+  def lists_for_local_distribution: () -> ActiveRecord::AssociationRelation
+
+  def muting?: (Account) -> void
+
+  def mute_conversation!: (Conversation) -> void
+
+  def local_followers_hash: () -> void
+
+  def unmute!: (Account) -> void
+
+  def unmute_conversation!: (Conversation) -> void
+
+  def favourited?: (Status) -> void
+
+  def muting_conversation?: (Conversation) -> void
+
+  def followers_for_local_distribution: () -> ActiveRecord::AssociationRelation
+end
+
+module Account::Interactions::ClassMethods
+  def following_map: (Array[untyped], Integer) -> void
+
+  def muting_map: (Array[untyped], Integer) -> void
+
+  def blocking_map: (Array[untyped], Integer) -> void
+
+  def follow_mapping: (ActiveRecord::Relation, Symbol) -> void
+
+  def followed_by_map: (Array[untyped], Integer) -> void
+end

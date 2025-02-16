@@ -1,0 +1,3 @@
+class ContentSecurityPolicy
+  def sso_host: () -> nil
+end

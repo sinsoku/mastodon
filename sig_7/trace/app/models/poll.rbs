@@ -1,0 +1,13 @@
+class Poll
+  def local?: (*untyped, **untyped) -> bool
+
+  def prepare_votes_count: () -> Integer
+                         | () -> nil
+
+  def prepare_cached_tallies: () -> nil
+                            | () -> Array[untyped]
+
+  def reset_parent_cache: () -> bool
+
+  def prepare_options: () -> Array[untyped]
+end

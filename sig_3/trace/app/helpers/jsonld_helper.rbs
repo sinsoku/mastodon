@@ -1,0 +1,57 @@
+module JsonLdHelper
+  def value_or_id: (String) -> void
+                 | (ActiveSupport::HashWithIndifferentAccess) -> void
+                 | (String) -> String
+                 | (ActiveSupport::HashWithIndifferentAccess) -> String
+                 | (nil) -> nil
+                 | (Hash[untyped, untyped]) -> String
+
+  def uri_from_bearcap: (String) -> String
+
+  def response_successful?: (HTTP::Response) -> void
+
+  def as_array: (String) -> Array[untyped]
+              | (nil) -> Array[untyped]
+              | (ActiveSupport::HashWithIndifferentAccess) -> Array[untyped]
+              | (Array[untyped]) -> Array[untyped]
+
+  def equals_or_includes_any?: (String, Array[untyped]) -> void
+                             | (Array[untyped], Array[untyped]) -> void
+
+  def equals_or_includes?: (String, String) -> void
+                         | (Array[untyped], String) -> void
+
+  def first_of_value: (String) -> void
+                    | (Hash[untyped, untyped]) -> Hash[untyped, untyped]
+                    | (String) -> String
+                    | (nil) -> nil
+
+  def non_matching_uri_hosts?: (String, String) -> void
+
+  def unsupported_uri_scheme?: (String) -> void
+
+  def fetch_resource: (String, bool, ?Account, ?request_options: Hash[untyped, untyped]) -> void
+                    | (String, bool, ?nil, ?request_options: Hash[untyped, untyped]) -> void
+                    | (String, bool, ?nil, ?request_options: Hash[untyped, untyped]) -> Hash[untyped, untyped]
+                    | (String, bool, ?nil, ?request_options: Hash[untyped, untyped]) -> nil
+
+  def fetch_resource_without_id_validation: (String, ?Account, ?bool, ?request_options: Hash[untyped, untyped]) -> Hash[untyped, untyped]
+                                          | (String, ?nil, ?bool, ?request_options: Hash[untyped, untyped]) -> Hash[untyped, untyped]
+                                          | (String, ?nil, ?bool, ?request_options: Hash[untyped, untyped]) -> nil
+
+  def build_request: (String, ?Account, ?options: Hash[untyped, untyped]) -> Request
+
+  def valid_activitypub_content_type?: (HTTP::Response) -> void
+
+  def body_to_json: (String, ?compare_id: nil) -> void
+
+  def supported_context?: (Hash[untyped, untyped]) -> bool
+                        | (nil) -> bool
+
+  def url_to_href: (String, ?String) -> String
+
+  def response_error_unsalvageable?: (HTTP::Response) -> void
+
+  def canonicalize: (Hash[untyped, untyped]) -> void
+                  | (ActiveSupport::HashWithIndifferentAccess) -> void
+end

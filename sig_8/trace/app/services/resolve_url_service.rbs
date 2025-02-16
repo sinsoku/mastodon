@@ -1,0 +1,28 @@
+class ResolveURLService
+  def call: (String, ?on_behalf_of: nil) -> void
+          | (String, ?on_behalf_of: Account) -> void
+
+  def local_url?: () -> void
+
+  def fetched_resource: () -> nil
+                      | () -> Array[untyped]
+
+  def fetch_resource_service: () -> RSpec::Mocks::InstanceVerifyingDouble
+                            | () -> FetchResourceService
+
+  def process_url_from_db: () -> void
+
+  def process_local_url: () -> void
+
+  def check_local_status: (Status) -> void
+
+  def process_url: () -> void
+
+  def type: () -> void
+
+  def json_data: () -> Hash[untyped, untyped]
+
+  def body: () -> void
+
+  def resource_url: () -> void
+end

@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::DeliveryPolicy::LetDefinitions
+  def policy: () -> Class
+
+  def john: () -> Account
+
+  def admin: () -> Account
+end

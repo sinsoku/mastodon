@@ -1,0 +1,3 @@
+class DismissNotificationRequestService
+  def call: (NotificationRequest) -> void
+end

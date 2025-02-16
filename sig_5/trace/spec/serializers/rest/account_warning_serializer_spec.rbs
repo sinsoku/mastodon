@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::RESTAccountWarningSerializer::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+
+  def record: () -> AccountWarning
+end

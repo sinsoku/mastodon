@@ -1,0 +1,4 @@
+class StatusPinValidator
+  def validate: (StatusPin) -> nil
+              | (StatusPin) -> ActiveModel::Error
+end

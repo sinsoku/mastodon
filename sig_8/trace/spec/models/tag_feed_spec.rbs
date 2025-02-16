@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::TagFeed::Get::LetDefinitions
+  def status_tagged_with_cats: () -> Status
+
+  def tag_cats: () -> Tag
+
+  def status_tagged_with_dogs: () -> Status
+
+  def tag_dogs: () -> Tag
+
+  def both: () -> Status
+
+  def account: () -> Account
+end

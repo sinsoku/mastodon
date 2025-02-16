@@ -1,0 +1,14 @@
+class ActivityPub::Activity::Reject
+  def perform: () -> void
+
+  def relay_follow?: () -> void
+
+  def relay: () -> Relay
+           | () -> nil
+
+  def reject_follow_for_relay: () -> void
+
+  def reject_embedded_follow: () -> void
+
+  def target_uri: () -> void
+end

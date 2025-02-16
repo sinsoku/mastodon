@@ -1,0 +1,20 @@
+class Api::V1::Instances::ActivityController
+  def require_enabled_api!: () -> bool
+                          | () -> nil
+
+  def show: () -> bool
+
+  def activity: () -> Array[untyped]
+
+  def activity_weeks: () -> Range[untyped]
+
+  def week_edge_days: (Integer) -> void
+
+  def activity_json: (ActiveSupport::TimeWithZone, ActiveSupport::TimeWithZone) -> void
+
+  def statuses_tracker: () -> ActivityTracker
+
+  def logins_tracker: () -> ActivityTracker
+
+  def registrations_tracker: () -> ActivityTracker
+end

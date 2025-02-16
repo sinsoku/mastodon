@@ -1,0 +1,15 @@
+class RSpec::ExampleGroups::RemoveFeaturedTagWorker::Perform::WithRealRecords
+  def stub_service: () -> void
+end
+
+module RSpec::ExampleGroups::RemoveFeaturedTagWorker::LetDefinitions
+  def service: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def worker: () -> RemoveFeaturedTagWorker
+end
+
+module RSpec::ExampleGroups::RemoveFeaturedTagWorker::Perform::WithRealRecords::LetDefinitions
+  def account: () -> Account
+
+  def featured_tag: () -> FeaturedTag
+end

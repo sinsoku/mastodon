@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::CanonicalEmailBlock::Email::LetDefinitions
+  def target_hash: () -> String
+end

@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::RemoveFeaturedTagService::Call::WithAFeaturedTag::WhenCalledByANonLocalAccount::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::RemoveFeaturedTagService::Call::WithAFeaturedTag::LetDefinitions
+  def featured_tag: () -> FeaturedTag
+end
+
+module RSpec::ExampleGroups::RemoveFeaturedTagService::Call::WithAFeaturedTag::WhenCalledByALocalAccount::LetDefinitions
+  def account: () -> Account
+end

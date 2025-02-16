@@ -1,0 +1,3 @@
+class NotificationRequest
+  def prepare_notifications_count: () -> Integer
+end

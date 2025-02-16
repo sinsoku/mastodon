@@ -1,0 +1,28 @@
+module RSpec::ExampleGroups::MastodonCLIMain::LetDefinitions
+  def subject: () -> nil
+             | () -> StringIO
+
+  def cli: () -> Mastodon::CLI::Main
+
+  def arguments: () -> Array[untyped]
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIMain::SelfDestruct::LetDefinitions
+  def action: () -> Symbol
+end
+
+class RSpec::ExampleGroups::MastodonCLIMain::SelfDestruct::WithSelfDestructModeDisabled
+  def answer_hostname_correctly: () -> void
+
+  def decline_proceed: () -> void
+
+  def accept_proceed: () -> void
+
+  def answer_hostname_incorrectly: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIMain::Version::LetDefinitions
+  def action: () -> Symbol
+end

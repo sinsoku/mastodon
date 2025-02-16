@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::Mute::Validations::LetDefinitions
+  def subject: () -> Mute
+end

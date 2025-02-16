@@ -1,0 +1,3 @@
+class TermsOfServicePolicy
+  def distribute?: () -> bool
+end

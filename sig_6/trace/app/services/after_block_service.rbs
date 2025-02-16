@@ -1,0 +1,13 @@
+class AfterBlockService
+  def call: (Account, Account) -> void
+
+  def clear_home_feed!: () -> void
+
+  def clear_list_feeds!: () -> void
+
+  def clear_notification_requests!: () -> void
+
+  def clear_notifications!: () -> void
+
+  def clear_conversations!: () -> void
+end

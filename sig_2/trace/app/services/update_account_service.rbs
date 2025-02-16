@@ -1,0 +1,9 @@
+class UpdateAccountService
+  def call: (Account, ActionController::Parameters, ?raise_error: bool) -> void
+
+  def authorize_all_follow_requests: (Account) -> void
+
+  def check_links: (Account) -> void
+
+  def process_hashtags: (Account) -> void
+end

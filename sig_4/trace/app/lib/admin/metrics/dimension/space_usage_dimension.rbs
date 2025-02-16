@@ -1,0 +1,15 @@
+class Admin::Metrics::Dimension::SpaceUsageDimension
+  def key: () -> String
+
+  def perform_query: () -> void
+
+  def postgresql_size: () -> void
+
+  def redis_size: () -> void
+
+  def redis_info: () -> Hash[untyped, untyped]
+
+  def media_size: () -> void
+
+  def search_size: () -> void
+end

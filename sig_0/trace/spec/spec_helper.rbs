@@ -1,0 +1,7 @@
+class Object
+  def expect_push_bulk_to_match: (Class, Array[untyped]) -> void
+
+  def serialized_record_json: (Poll, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+                            | (Admin::Metrics::Retention::Cohort, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+                            | (Account, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+end

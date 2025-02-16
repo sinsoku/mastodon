@@ -1,0 +1,5 @@
+class Api::V1::Statuses::TranslationsController
+  def set_translation: () -> Translation
+
+  def create: () -> String
+end

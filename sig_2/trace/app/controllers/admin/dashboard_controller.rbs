@@ -1,0 +1,4 @@
+class Admin::DashboardController
+  def index: () -> Range[untyped]
+           | () -> nil
+end

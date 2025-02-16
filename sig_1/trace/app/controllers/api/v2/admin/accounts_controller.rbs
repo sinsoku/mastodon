@@ -1,0 +1,13 @@
+class Api::V2::Admin::AccountsController
+  def filtered_accounts: () -> ActiveRecord::Relation
+
+  def translated_filter_params: () -> void
+
+  def filter_params: () -> ActionController::Parameters
+
+  def next_path: () -> void
+
+  def prev_path: () -> void
+
+  def pagination_params: (Hash[untyped, untyped]) -> void
+end

@@ -1,0 +1,3 @@
+module Redis::NamespaceExtensions
+  def exists?: (*untyped, **untyped) -> void
+end

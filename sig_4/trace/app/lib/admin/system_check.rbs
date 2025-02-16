@@ -1,0 +1,3 @@
+class Admin::SystemCheck
+  def self.perform: (User) -> void
+end

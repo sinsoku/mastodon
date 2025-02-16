@@ -1,0 +1,13 @@
+class Admin::Metrics::Measure::TagUsesMeasure
+  def key: () -> String
+
+  def params: () -> ActionController::Parameters
+
+  def perform_total_query: () -> void
+
+  def tag: () -> Tag
+
+  def perform_previous_total_query: () -> void
+
+  def perform_data_query: () -> void
+end

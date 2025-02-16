@@ -1,0 +1,43 @@
+module RSpec::ExampleGroups::Remotable::LetDefinitions
+  def foo_class: () -> Class
+
+  def foo: () -> untyped
+
+  def url: () -> String
+
+  def code: () -> Integer
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def file: () -> String
+
+  def attribute_name: () -> Symbol
+
+  def hoge: () -> Symbol
+end
+
+module RSpec::ExampleGroups::Remotable::HogeRemoteUrl::WithSchemeThatIsNeitherHttpNorHttps::LetDefinitions
+  def url: () -> String
+end
+
+module RSpec::ExampleGroups::Remotable::HogeRemoteUrl::WithAValidURL::WhenTheResponseIsSuccessful::LetDefinitions
+  def code: () -> Integer
+end
+
+module RSpec::ExampleGroups::Remotable::HogeRemoteUrl::WithAValidURL::WhenTheResponseIsSuccessful::WhenContainsContentDispositionHeader::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def file: () -> String
+end
+
+module RSpec::ExampleGroups::Remotable::HogeRemoteUrl::WithAValidURL::WhenTheResponseIsNotSuccessful::LetDefinitions
+  def code: () -> Integer
+end
+
+module RSpec::ExampleGroups::Remotable::HogeRemoteUrl::WithAValidURL::WhenAnErrorIsRaisedDuringTheRequest::LetDefinitions
+  def error_class: () -> Class
+end
+
+module RSpec::ExampleGroups::Remotable::HogeRemoteUrl::WithRelativeURL::LetDefinitions
+  def url: () -> String
+end

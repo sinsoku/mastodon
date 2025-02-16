@@ -1,0 +1,5 @@
+class ActivityPub::MigratedFollowDeliveryWorker
+  def perform: (String, Integer, String, Integer, ?Hash[untyped, untyped]) -> void
+
+  def unfollow_old_account!: (Integer) -> void
+end

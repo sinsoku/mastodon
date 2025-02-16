@@ -1,0 +1,23 @@
+class RSpec::ExampleGroups::MoveService
+  def change_source_moved_value: () -> RSpec::Matchers::BuiltIn::ChangeFromValue
+
+  def source_account_uri: () -> void
+
+  def process_local_updates: () -> RSpec::Sidekiq::Matchers::EnqueueSidekiqJob
+
+  def distribute_updates: () -> RSpec::Sidekiq::Matchers::EnqueueSidekiqJob
+
+  def distribute_move: () -> void
+end
+
+module RSpec::ExampleGroups::MoveService::WithAValidMigrationRecord::LetDefinitions
+  def source_account: () -> Account
+
+  def target_account: () -> Account
+
+  def migration: () -> AccountMigration
+end
+
+module RSpec::ExampleGroups::MoveService::LetDefinitions
+  def subject: () -> String
+end

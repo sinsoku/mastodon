@@ -1,0 +1,43 @@
+module RSpec::ExampleGroups::FormAccountBatch::LetDefinitions
+  def account_batch: () -> Form::AccountBatch
+end
+
+module RSpec::ExampleGroups::FormAccountBatch::Save::WhenActionIsSuspend::LetDefinitions
+  def action: () -> String
+
+  def target_account: () -> Account
+
+  def target_account2: () -> Account
+end
+
+module RSpec::ExampleGroups::FormAccountBatch::Save::LetDefinitions
+  def account: () -> Account
+
+  def account_ids: () -> Array[untyped]
+
+  def subject: () -> nil
+
+  def query: () -> ActiveRecord::Relation
+end
+
+module RSpec::ExampleGroups::FormAccountBatch::Save::WhenActionIsSuspend::WhenAccountsArePassedAsAQuery::LetDefinitions
+  def query: () -> ActiveRecord::Relation
+
+  def select_all_matching: () -> String
+end
+
+class RSpec::ExampleGroups::FormAccountBatch::Save::WhenActionIsSuspend
+  def change_account_suspensions: () -> RSpec::Matchers::BuiltIn::ChangeFromValue
+
+  def change_open_reports_for_accounts: () -> void
+
+  def relevant_account_unresolved_reports: () -> void
+
+  def relevant_account_suspension_statuses: () -> void
+end
+
+module RSpec::ExampleGroups::FormAccountBatch::Save::WhenActionIsSuspend::WhenAccountsArePassedAsAccountIds::LetDefinitions
+  def account_ids: () -> Array[untyped]
+
+  def select_all_matching: () -> String
+end

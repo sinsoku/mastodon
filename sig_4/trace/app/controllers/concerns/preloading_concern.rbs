@@ -1,0 +1,5 @@
+module PreloadingConcern
+  def preload_collection: (ActiveRecord::AssociationRelation, Class) -> Array[untyped]
+                        | (ActiveRecord::Relation, Class) -> Array[untyped]
+                        | (Array[untyped], Class) -> Array[untyped]
+end

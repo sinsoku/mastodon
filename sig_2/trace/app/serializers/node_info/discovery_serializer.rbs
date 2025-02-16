@@ -1,0 +1,3 @@
+class NodeInfo::DiscoverySerializer
+  def links: () -> Array[untyped]
+end

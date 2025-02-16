@@ -1,0 +1,4 @@
+class StatusPinValidator
+  def validate: (StatusPin) -> nil
+              | (RSpec::Mocks::InstanceVerifyingDouble) -> nil
+end

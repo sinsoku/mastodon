@@ -1,0 +1,10 @@
+class Admin::Reports::ActionsController
+  def set_report: () -> Report
+
+  def create: () -> String
+
+  def action_from_button: () -> void
+                        | () -> String
+
+  def preview: () -> String
+end

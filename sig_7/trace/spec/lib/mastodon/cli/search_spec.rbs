@@ -1,0 +1,38 @@
+module RSpec::ExampleGroups::MastodonCLISearch::LetDefinitions
+  def subject: () -> nil
+             | () -> StringIO
+
+  def cli: () -> Mastodon::CLI::Search
+
+  def arguments: () -> Array[untyped]
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLISearch::Deploy::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLISearch::Deploy::WithBatchSizeOutOfRange::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLISearch::Deploy::WithConcurrencyOutOfRange::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::MastodonCLISearch::Deploy
+  def stub_search_indexes: () -> void
+
+  def importer_double_for: (Class) -> RSpec::Mocks::InstanceVerifyingDouble
+end
+
+module RSpec::ExampleGroups::MastodonCLISearch::Deploy::WithoutOptions::LetDefinitions
+  def indexed_count: () -> Integer
+
+  def deleted_count: () -> Integer
+end
+
+module RSpec::ExampleGroups::MastodonCLISearch::Deploy::WhenServerCommunicationRaisesAnError::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end

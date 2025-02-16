@@ -1,0 +1,41 @@
+module RSpec::ExampleGroups::GETApiV1AccountsRelationships::LetDefinitions
+  def user: () -> User
+
+  def simon: () -> Account
+
+  def lewis: () -> Account
+
+  def subject: () -> Integer
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::GETApiV1AccountsRelationships::WhenProvidedOnlyOneID::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::GETApiV1AccountsRelationships::WhenProvidedMultipleIDs::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::GETApiV1AccountsRelationships::WhenProvidedMultipleIDs::WhenThereIsReturnedJSONData::WithWithSuspendedParameter::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::GETApiV1AccountsRelationships::WhenProvidedMultipleIDs::WhenThereIsReturnedJSONData
+  def simon_item: () -> void
+
+  def lewis_item: () -> void
+
+  def bob_item: () -> void
+end
+
+module RSpec::ExampleGroups::GETApiV1AccountsRelationships::WhenProvidedMultipleIDs::WhenThereIsReturnedJSONData::WhenThereAreDuplicateIDsInTheParams::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end

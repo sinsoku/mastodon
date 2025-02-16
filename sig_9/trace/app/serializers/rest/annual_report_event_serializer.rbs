@@ -1,0 +1,3 @@
+class REST::AnnualReportEventSerializer
+  def year: () -> String
+end

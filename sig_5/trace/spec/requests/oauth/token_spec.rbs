@@ -1,0 +1,47 @@
+module RSpec::ExampleGroups::ObtainingOAuthTokens::POSTOauthToken::LetDefinitions
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+
+  def application: () -> Doorkeeper::Application
+end
+
+module RSpec::ExampleGroups::ObtainingOAuthTokens::POSTOauthToken::WithGrantTypeAuthorizationCode::LetDefinitions
+  def grant_type: () -> String
+
+  def code: () -> String
+end
+
+module RSpec::ExampleGroups::ObtainingOAuthTokens::POSTOauthToken::WithGrantTypeAuthorizationCode::WithNoScopesSpecified::LetDefinitions
+  def scope: () -> nil
+end
+
+module RSpec::ExampleGroups::ObtainingOAuthTokens::POSTOauthToken::WithGrantTypeAuthorizationCode::WithScopesSpecified::WhenTheScopeDoesNotBelongToTheApplication::LetDefinitions
+  def scope: () -> String
+end
+
+module RSpec::ExampleGroups::ObtainingOAuthTokens::POSTOauthToken::WithGrantTypeAuthorizationCode::WithScopesSpecified::WhenTheScopeWasNotRequestedForTheCode::LetDefinitions
+  def scope: () -> String
+end
+
+module RSpec::ExampleGroups::ObtainingOAuthTokens::POSTOauthToken::WithGrantTypeAuthorizationCode::WithScopesSpecified::WhenTheScopesWereRequestedForThisCode::LetDefinitions
+  def scope: () -> String
+end
+
+module RSpec::ExampleGroups::ObtainingOAuthTokens::POSTOauthToken::WithGrantTypeClientCredentials::LetDefinitions
+  def grant_type: () -> String
+
+  def code: () -> nil
+end
+
+module RSpec::ExampleGroups::ObtainingOAuthTokens::POSTOauthToken::WithGrantTypeClientCredentials::WithNoScopesSpecified::LetDefinitions
+  def scope: () -> nil
+end
+
+module RSpec::ExampleGroups::ObtainingOAuthTokens::POSTOauthToken::WithGrantTypeClientCredentials::WithScopesSpecified::WhenSomeScopesDoNotBelongToTheApplication::LetDefinitions
+  def scope: () -> String
+end
+
+module RSpec::ExampleGroups::ObtainingOAuthTokens::POSTOauthToken::WithGrantTypeClientCredentials::WithScopesSpecified::WhenTheScopesBelongToTheApplication::LetDefinitions
+  def scope: () -> String
+end

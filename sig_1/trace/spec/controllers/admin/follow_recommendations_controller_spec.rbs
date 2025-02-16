@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::AdminFollowRecommendationsController::LetDefinitions
+  def user: () -> User
+end

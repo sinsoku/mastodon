@@ -1,0 +1,3 @@
+class ResponseWithLimit
+  def initialize: (HTTP::Response, Integer) -> void
+end

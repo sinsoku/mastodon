@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::AdminSystemCheckSoftwareVersionCheck::LetDefinitions
+  def check: () -> Admin::SystemCheck::SoftwareVersionCheck
+
+  def user: () -> User
+end

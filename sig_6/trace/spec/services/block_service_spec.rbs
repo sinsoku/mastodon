@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::BlockService::LetDefinitions
+  def sender: () -> Account
+
+  def subject: () -> BlockService
+end
+
+module RSpec::ExampleGroups::BlockService::Local::LetDefinitions
+  def bob: () -> Account
+end
+
+module RSpec::ExampleGroups::BlockService::RemoteActivityPub::LetDefinitions
+  def bob: () -> Account
+end

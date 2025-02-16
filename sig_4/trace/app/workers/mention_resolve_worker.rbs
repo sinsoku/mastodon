@@ -1,0 +1,5 @@
+class MentionResolveWorker
+  def perform: (Integer, String, ?Hash[untyped, untyped]) -> void
+
+  def account_from_uri: (String) -> nil
+end

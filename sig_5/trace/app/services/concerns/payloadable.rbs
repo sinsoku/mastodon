@@ -1,0 +1,3 @@
+module Payloadable
+  def serialize_payload: (Favourite, Class, ?Hash[untyped, untyped]) -> void
+end

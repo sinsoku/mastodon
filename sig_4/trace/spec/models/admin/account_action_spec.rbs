@@ -1,0 +1,55 @@
+module RSpec::ExampleGroups::AdminAccountAction::LetDefinitions
+  def account_action: () -> Admin::AccountAction
+end
+
+module RSpec::ExampleGroups::AdminAccountAction::WithReport::LetDefinitions
+  def subject: () -> bool
+end
+
+module RSpec::ExampleGroups::AdminAccountAction::Report::LetDefinitions
+  def subject: () -> nil
+             | () -> Report
+end
+
+module RSpec::ExampleGroups::AdminAccountAction::TypesForAccount::LetDefinitions
+  def subject: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::AdminAccountAction::TypesForAccount::WhenAccountLocal::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AdminAccountAction::TypesForAccount::WithAccountLocal::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AdminAccountAction::Save::LetDefinitions
+  def type: () -> String
+
+  def account: () -> Account
+
+  def target_account: () -> Account
+
+  def subject: () -> nil
+             | () -> String
+end
+
+module RSpec::ExampleGroups::AdminAccountAction::Save::WhenTypeIsDisable::LetDefinitions
+  def type: () -> String
+end
+
+module RSpec::ExampleGroups::AdminAccountAction::Save::WhenTypeIsSilence::LetDefinitions
+  def type: () -> String
+end
+
+module RSpec::ExampleGroups::AdminAccountAction::Save::WhenTypeIsInvalid::LetDefinitions
+  def type: () -> String
+end
+
+module RSpec::ExampleGroups::AdminAccountAction::Save::WhenTypeIsNotGiven::LetDefinitions
+  def type: () -> String
+end
+
+module RSpec::ExampleGroups::AdminAccountAction::Save::WhenTypeIsSuspend::LetDefinitions
+  def type: () -> String
+end

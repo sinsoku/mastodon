@@ -1,0 +1,37 @@
+module RSpec::ExampleGroups::Account::LetDefinitions
+  def subject: () -> Account
+
+  def reviewed_at: () -> nil
+
+  def requested_review_at: () -> nil
+end
+
+module RSpec::ExampleGroups::Account::RequiresReviewNotification::WhenReviewedAtIsNotNull::LetDefinitions
+  def reviewed_at: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::Account::RequiresReviewNotification::WhenRequestedReviewedAtIsNotNull::LetDefinitions
+  def requested_review_at: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::Account::Scopes::LetDefinitions
+  def reviewed_record: () -> Account
+
+  def un_reviewed_record: () -> Account
+end
+
+class RSpec::ExampleGroups::Account::Scopes
+  def factory_name: () -> void
+end
+
+module RSpec::ExampleGroups::Account::RequestedReview::WhenRequestedReviewedAtIsNotNull::LetDefinitions
+  def requested_review_at: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::Account::Reviewed::WhenReviewedAtIsNotNull::LetDefinitions
+  def reviewed_at: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::Account::RequiresReview::WhenReviewedAtIsNotNull::LetDefinitions
+  def reviewed_at: () -> ActiveSupport::TimeWithZone
+end

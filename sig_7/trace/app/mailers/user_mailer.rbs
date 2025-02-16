@@ -1,0 +1,9 @@
+class UserMailer
+  def set_instance: () -> String
+
+  def warning: (User, AccountWarning) -> Mail::Message
+
+  def locale: (?use_current_locale: bool) -> void
+
+  def terms_of_service_changed: (User, TermsOfService) -> Mail::Message
+end

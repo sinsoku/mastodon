@@ -1,0 +1,9 @@
+class DomainAllowPolicy
+  def destroy?: () -> bool
+
+  def create?: () -> bool
+
+  def show?: () -> bool
+
+  def index?: () -> bool
+end

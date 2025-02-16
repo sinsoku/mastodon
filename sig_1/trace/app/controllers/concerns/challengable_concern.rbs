@@ -1,0 +1,15 @@
+module ChallengableConcern
+  def require_challenge!: () -> String
+                        | () -> Time
+                        | () -> nil
+
+  def skip_challenge?: () -> void
+
+  def challenge_passed_recently?: () -> void
+
+  def render_challenge: () -> void
+
+  def challenge_passed?: () -> void
+
+  def challenge_params: () -> ActionController::Parameters
+end

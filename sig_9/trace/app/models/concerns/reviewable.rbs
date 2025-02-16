@@ -1,0 +1,3 @@
+module Reviewable
+  def reviewed?: () -> void
+end

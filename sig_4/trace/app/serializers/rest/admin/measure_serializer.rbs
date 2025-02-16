@@ -1,0 +1,5 @@
+class REST::Admin::MeasureSerializer
+  def total: () -> String
+
+  def previous_total: () -> String
+end

@@ -1,0 +1,35 @@
+module RSpec::ExampleGroups::HomeHelper::AccountLinkTo::WithAMissingAccount::LetDefinitions
+  def account: () -> nil
+end
+
+class RSpec::ExampleGroups::HomeHelper::AccountLinkTo::WithAValidAccount
+  def controller_helpers: () -> void
+end
+
+module RSpec::ExampleGroups::HomeHelper::AccountLinkTo::WithAValidAccount::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::HomeHelper::ObscuredCounter::WithAValueOfZero::LetDefinitions
+  def count: () -> Integer
+end
+
+module RSpec::ExampleGroups::HomeHelper::ObscuredCounter::WithAValueOfLessThanZero::LetDefinitions
+  def count: () -> Integer
+end
+
+module RSpec::ExampleGroups::HomeHelper::ObscuredCounter::WithAValueOfOne::LetDefinitions
+  def count: () -> Integer
+end
+
+module RSpec::ExampleGroups::HomeHelper::ObscuredCounter::WithAValueOfMoreThanOne::LetDefinitions
+  def count: () -> Integer
+end
+
+module RSpec::ExampleGroups::HomeHelper::CustomFieldClasses::WithAVerifiedField::LetDefinitions
+  def field: () -> RSpec::Mocks::InstanceVerifyingDouble
+end
+
+module RSpec::ExampleGroups::HomeHelper::CustomFieldClasses::WithANonVerifiedField::LetDefinitions
+  def field: () -> RSpec::Mocks::InstanceVerifyingDouble
+end

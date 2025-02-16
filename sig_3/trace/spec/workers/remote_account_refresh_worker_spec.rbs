@@ -1,0 +1,13 @@
+class RSpec::ExampleGroups::RemoteAccountRefreshWorker::Perform
+  def stub_service: () -> void
+end
+
+module RSpec::ExampleGroups::RemoteAccountRefreshWorker::LetDefinitions
+  def service: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def worker: () -> RemoteAccountRefreshWorker
+end
+
+module RSpec::ExampleGroups::RemoteAccountRefreshWorker::Perform::LetDefinitions
+  def account: () -> Account
+end

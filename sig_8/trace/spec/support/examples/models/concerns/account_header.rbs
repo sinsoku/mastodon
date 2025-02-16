@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::Account::Base64EncodedFiles_2::LetDefinitions
+  def account: () -> Account
+
+  def base64_attachment: () -> String
+end

@@ -1,0 +1,5 @@
+class AccountSuggestions
+  def initialize: (Account) -> void
+
+  def get: (Integer, ?Integer) -> Array[untyped]
+end

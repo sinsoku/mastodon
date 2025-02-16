@@ -1,0 +1,10 @@
+class Object
+  def attachment_fixture: (String) -> void
+                        | (String) -> File
+
+  def request_fixture: (String) -> void
+end
+
+module Devise::Test::ControllerHelpers
+  def sign_in: (User, ?nil, ?scope: Symbol) -> void
+end

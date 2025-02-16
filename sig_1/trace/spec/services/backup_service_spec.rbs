@@ -1,0 +1,35 @@
+module RSpec::ExampleGroups::BackupService::LetDefinitions
+  def user: () -> User
+
+  def attachment: () -> MediaAttachment
+
+  def status: () -> Status
+
+  def private_status: () -> Status
+
+  def favourite: () -> Favourite
+
+  def bookmark: () -> Bookmark
+
+  def backup: () -> Backup
+
+  def service_call: () -> bool
+end
+
+class RSpec::ExampleGroups::BackupService
+  def process_backup: () -> void
+
+  def expect_outbox_export: () -> void
+
+  def export_json_raw: (Symbol) -> String
+
+  def read_zip_file: (Backup, String) -> void
+
+  def include_create_item: (Status) -> void
+
+  def expect_likes_export: () -> void
+
+  def export_json: (Symbol) -> Hash[untyped, untyped]
+
+  def expect_bookmarks_export: () -> void
+end

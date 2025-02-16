@@ -1,0 +1,34 @@
+class ContentSecurityPolicy
+  def sso_host: () -> nil
+
+  def base_host: () -> void
+
+  def assets_host: () -> void
+
+  def url_from_configured_asset_host: () -> void
+
+  def url_from_base_host: () -> void
+
+  def host_to_url: (String) -> void
+                 | (nil) -> void
+
+  def uri_from_configuration_and_string: (String) -> void
+
+  def host_protocol: () -> String
+
+  def media_hosts: () -> void
+
+  def cdn_host_value: () -> void
+
+  def s3_alias_host: () -> void
+
+  def s3_cloudfront_host: () -> void
+
+  def azure_alias_host: () -> void
+
+  def s3_hostname_host: () -> void
+
+  def paperclip_root_url: () -> void
+
+  def swift_object_url: () -> void
+end

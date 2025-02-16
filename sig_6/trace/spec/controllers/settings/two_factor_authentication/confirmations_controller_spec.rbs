@@ -1,0 +1,59 @@
+module RSpec::ExampleGroups::SettingsTwoFactorAuthenticationConfirmationsController::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::SettingsTwoFactorAuthenticationConfirmationsController::WhenSignedIn::GETNew::WhenANewOtpSecretHasBeenSetInTheSession::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+class RSpec::ExampleGroups::SettingsTwoFactorAuthenticationConfirmationsController::WhenSignedIn::GETNew::WhenANewOtpSecretHasBeenSetInTheSession
+  def qr_code_markup: () -> void
+end
+
+module RSpec::ExampleGroups::SettingsTwoFactorAuthenticationConfirmationsController::WhenSignedIn::POSTCreate::WhenCreationSucceeds::LetDefinitions
+  def otp_backup_codes: () -> Array[untyped]
+end
+
+class RSpec::ExampleGroups::SettingsTwoFactorAuthenticationConfirmationsController::WhenSignedIn::POSTCreate
+  def prepare_user_otp_generation: () -> void
+
+  def prepare_user_otp_consumption_response: (bool) -> void
+
+  def post_create_with_options: () -> void
+end
+
+module RSpec::ExampleGroups::SettingsTwoFactorAuthenticationConfirmationsController::WhenSignedIn::POSTCreate::WhenCreationFails::LetDefinitions
+  def subject: () -> bool
+end
+
+class RSpec::ExampleGroups::SettingsTwoFactorAuthenticationConfirmationsController::WhenSignedIn::POSTCreate::WhenCreationFails
+  def qr_code_markup: () -> void
+end
+
+module RSpec::ExampleGroups::SettingsTwoFactorAuthenticationConfirmationsController::WhenSignedIn_2::POSTCreate::WhenCreationSucceeds::LetDefinitions
+  def otp_backup_codes: () -> Array[untyped]
+end
+
+class RSpec::ExampleGroups::SettingsTwoFactorAuthenticationConfirmationsController::WhenSignedIn_2::POSTCreate
+  def prepare_user_otp_generation: () -> void
+
+  def prepare_user_otp_consumption_response: (bool) -> void
+
+  def post_create_with_options: () -> void
+end
+
+module RSpec::ExampleGroups::SettingsTwoFactorAuthenticationConfirmationsController::WhenSignedIn_2::POSTCreate::WhenCreationFails::LetDefinitions
+  def subject: () -> bool
+end
+
+class RSpec::ExampleGroups::SettingsTwoFactorAuthenticationConfirmationsController::WhenSignedIn_2::POSTCreate::WhenCreationFails
+  def qr_code_markup: () -> void
+end
+
+module RSpec::ExampleGroups::SettingsTwoFactorAuthenticationConfirmationsController::WhenSignedIn_2::GETNew::WhenANewOtpSecretHasBeenSetInTheSession::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+class RSpec::ExampleGroups::SettingsTwoFactorAuthenticationConfirmationsController::WhenSignedIn_2::GETNew::WhenANewOtpSecretHasBeenSetInTheSession
+  def qr_code_markup: () -> void
+end

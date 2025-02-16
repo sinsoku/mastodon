@@ -1,0 +1,10 @@
+class AnnualReportsPresenter
+  def initialize: (ActiveRecord::Relation) -> void
+
+  def statuses: () -> void
+              | () -> ActiveRecord::Relation
+
+  def self.model_name: () -> ActiveModel::Name
+
+  def accounts: () -> ActiveRecord::Relation
+end

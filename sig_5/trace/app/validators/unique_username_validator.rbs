@@ -1,0 +1,5 @@
+class UniqueUsernameValidator
+  def validate: (Account) -> nil
+              | (RSpec::Mocks::InstanceVerifyingDouble) -> nil
+              | (Account) -> ActiveModel::Error
+end

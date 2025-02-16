@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::RemoveFromFollowersService::RemoteActivityPub::LetDefinitions
+  def sender: () -> Account
+end
+
+module RSpec::ExampleGroups::RemoveFromFollowersService::LetDefinitions
+  def bob: () -> Account
+
+  def subject: () -> RemoveFromFollowersService
+end
+
+module RSpec::ExampleGroups::RemoveFromFollowersService::Local::LetDefinitions
+  def sender: () -> Account
+end

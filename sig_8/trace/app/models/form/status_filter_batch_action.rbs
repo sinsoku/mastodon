@@ -1,0 +1,5 @@
+class Form::StatusFilterBatchAction
+  def save!: () -> void
+
+  def process_action!: () -> void
+end

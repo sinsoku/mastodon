@@ -1,0 +1,11 @@
+class ActivityPub::EmojiSerializer
+  def id: () -> String
+
+  def type: () -> String
+
+  def name: () -> String
+
+  def updated: () -> String
+
+  def icon: () -> Paperclip::Attachment
+end

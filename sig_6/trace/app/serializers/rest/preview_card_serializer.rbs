@@ -1,0 +1,7 @@
+class REST::PreviewCardSerializer
+  def url: () -> String
+
+  def html: () -> String
+
+  def image: () -> String
+end

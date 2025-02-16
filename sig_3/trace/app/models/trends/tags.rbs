@@ -1,0 +1,18 @@
+class Trends::Tags
+  def register: (Status, ?Time) -> void
+
+  def add: (Tag, Integer, ?Time) -> void
+
+  def key_prefix: () -> String
+
+  def query: () -> void
+           | () -> Trends::Tags::Query
+
+  def klass: () -> void
+end
+
+class Trends::Tags::Query
+  def to_arel: () -> ActiveRecord::Relation
+
+  def language_order_clause: () -> Arel::Nodes::Case
+end

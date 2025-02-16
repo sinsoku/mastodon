@@ -1,0 +1,49 @@
+module RSpec::ExampleGroups::UnsuspendAccountService::UnsuspendingALocalAccount::LetDefinitions
+  def local_follower: () -> Account
+
+  def list: () -> List
+
+  def account: () -> Account
+
+  def remote_follower: () -> Account
+
+  def remote_reporter: () -> Account
+
+  def subject: () -> Array[untyped]
+end
+
+class RSpec::ExampleGroups::UnsuspendAccountService::UnsuspendingALocalAccount
+  def expect_feeds_merged: () -> void
+
+  def expect_updates_sent: () -> void
+
+  def match_update_actor_request: (WebMock::RequestSignature, Account) -> void
+end
+
+module RSpec::ExampleGroups::UnsuspendAccountService::UnsuspendingARemoteAccount::LetDefinitions
+  def local_follower: () -> Account
+
+  def list: () -> List
+
+  def account: () -> Account
+
+  def resolve_account_service: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def subject: () -> nil
+end
+
+class RSpec::ExampleGroups::UnsuspendAccountService::UnsuspendingARemoteAccount::WhenTheAccountIsRemotelySuspended
+  def change_suspended_to_true: () -> void
+
+  def expect_feeds_not_merged: () -> void
+end
+
+class RSpec::ExampleGroups::UnsuspendAccountService::UnsuspendingARemoteAccount::WhenTheAccountIsRemotelyDeleted
+  def expect_feeds_not_merged: () -> void
+end
+
+class RSpec::ExampleGroups::UnsuspendAccountService::UnsuspendingARemoteAccount::WhenTheAccountIsNotRemotelySuspended
+  def change_suspended_flag: () -> void
+
+  def expect_feeds_merged: () -> void
+end

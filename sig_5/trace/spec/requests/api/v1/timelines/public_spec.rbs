@@ -1,0 +1,69 @@
+module RSpec::ExampleGroups::Public::GETApiV1TimelinesPublic::LetDefinitions
+  def local_status: () -> Status
+
+  def remote_status: () -> Status
+
+  def media_status: () -> Status
+
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Public::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Public::GETApiV1TimelinesPublic::WhenTheInstanceAllowsPublicPreview::WithRemoteParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+
+  def expected_statuses: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Public::GETApiV1TimelinesPublic::WhenTheInstanceAllowsPublicPreview::LetDefinitions
+  def expected_statuses: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Public::GETApiV1TimelinesPublic::WhenTheInstanceAllowsPublicPreview::WithAnAnonymousUser::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Public::GETApiV1TimelinesPublic::WhenTheInstanceAllowsPublicPreview::WithLocalAndRemoteParams::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+
+  def expected_statuses: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Public::GETApiV1TimelinesPublic::WhenTheInstanceAllowsPublicPreview::WithLocalParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+
+  def expected_statuses: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Public::GETApiV1TimelinesPublic::WhenTheInstanceAllowsPublicPreview::WithLimitParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Public::GETApiV1TimelinesPublic::WhenTheInstanceAllowsPublicPreview::WithOnlyMediaParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+
+  def expected_statuses: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Public::GETApiV1TimelinesPublic::WhenTheInstanceDoesNotAllowPublicPreview::WithAnApplicationAccessTokenNotBoundToAUser::LetDefinitions
+  def token: () -> Doorkeeper::AccessToken
+end
+
+module RSpec::ExampleGroups::Public::GETApiV1TimelinesPublic::WhenTheInstanceDoesNotAllowPublicPreview::WithAnAuthenticatedUser::LetDefinitions
+  def expected_statuses: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Public::GETApiV1TimelinesPublic::WhenTheInstanceDoesNotAllowPublicPreview::WithoutAnAuthenticationToken::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+end

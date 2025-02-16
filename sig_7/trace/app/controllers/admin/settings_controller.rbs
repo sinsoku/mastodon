@@ -1,0 +1,7 @@
+class Admin::SettingsController
+  def show: () -> Form::AdminSettings
+
+  def update: () -> String
+
+  def settings_params: () -> void
+end

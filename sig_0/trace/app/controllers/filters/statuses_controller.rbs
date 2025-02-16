@@ -1,0 +1,10 @@
+class Filters::StatusesController
+  def set_filter: () -> CustomFilter
+                | () -> nil
+
+  def set_status_filters: () -> ActiveRecord::AssociationRelation
+
+  def set_cache_headers: () -> Hash[untyped, untyped]
+
+  def index: () -> Form::StatusFilterBatchAction
+end

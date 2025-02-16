@@ -1,0 +1,20 @@
+module RSpec::ExampleGroups::JsonLdHelper::UriFromBearcap::LetDefinitions
+  def subject: () -> String
+             | () -> nil
+end
+
+module RSpec::ExampleGroups::JsonLdHelper::UriFromBearcap::WhenANonBearString::LetDefinitions
+  def string: () -> String
+end
+
+module RSpec::ExampleGroups::JsonLdHelper::UriFromBearcap::WhenABearStringDoesNotHaveAUParam::LetDefinitions
+  def string: () -> String
+end
+
+module RSpec::ExampleGroups::JsonLdHelper::UriFromBearcap::WhenABearStringHasAUParam::LetDefinitions
+  def string: () -> String
+end
+
+module RSpec::ExampleGroups::JsonLdHelper::WithCompactionAndForwarding::LetDefinitions
+  def json: () -> Hash[untyped, untyped]
+end

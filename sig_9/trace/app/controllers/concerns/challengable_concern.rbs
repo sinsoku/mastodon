@@ -1,0 +1,10 @@
+module ChallengableConcern
+  def require_challenge!: () -> ActiveSupport::SafeBuffer
+                        | () -> nil
+
+  def skip_challenge?: () -> void
+
+  def challenge_passed_recently?: () -> void
+
+  def render_challenge: () -> void
+end

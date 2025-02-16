@@ -1,0 +1,12 @@
+module StatusesHelper
+  def status_text_summary: (Status) -> String
+                         | (Status) -> nil
+
+  def media_summary: (Status) -> String
+
+  def visibility_icon: (Status) -> String
+
+  def nothing_here: (?String) -> void
+
+  def prefers_autoplay?: () -> void
+end

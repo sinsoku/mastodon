@@ -1,0 +1,23 @@
+module RSpec::ExampleGroups::AdminWebhooks::ManagingWebhooks::ViewingWebhooks::LetDefinitions
+  def webhook: () -> Webhook
+end
+
+module RSpec::ExampleGroups::AdminWebhooks::ManagingWebhooks::DestroyAWebhook::LetDefinitions
+  def webhook: () -> Webhook
+end
+
+class RSpec::ExampleGroups::AdminWebhooks::ManagingWebhooks::CreatingANewWebhook
+  def submit_form: () -> void
+end
+
+module RSpec::ExampleGroups::AdminWebhooks::ManagingWebhooks::ToggleStateOfWebhook::LetDefinitions
+  def webhook: () -> Webhook
+end
+
+module RSpec::ExampleGroups::AdminWebhooks::ManagingWebhooks::EditingAnExistingWebhook::LetDefinitions
+  def webhook: () -> Webhook
+end
+
+class RSpec::ExampleGroups::AdminWebhooks::ManagingWebhooks::EditingAnExistingWebhook
+  def submit_form: () -> void
+end

@@ -1,0 +1,3 @@
+class Admin::TermsOfService::HistoriesController
+  def show: () -> ActiveRecord::Relation
+end

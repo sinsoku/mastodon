@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::PollVote::ObjectType::LetDefinitions
+  def poll_vote: () -> PollVote
+end

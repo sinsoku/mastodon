@@ -1,0 +1,10 @@
+class StatusStat
+  def reblogs_count: () -> void
+
+  def clamp_untrusted_counts: () -> nil
+                            | () -> Integer
+
+  def favourites_count: () -> void
+
+  def replies_count: () -> void
+end

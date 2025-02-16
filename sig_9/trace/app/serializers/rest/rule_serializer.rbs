@@ -1,0 +1,3 @@
+class REST::RuleSerializer
+  def id: () -> String
+end

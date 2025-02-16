@@ -1,0 +1,16 @@
+class URLValidator
+  def validate_each: (Web::PushSubscription, Symbol, String) -> void
+                   | (Webhook, Symbol, String) -> void
+                   | (Webhook, Symbol, nil) -> void
+                   | (Doorkeeper::Application, Symbol, String) -> void
+                   | (Relay, Symbol, String) -> void
+
+  def compliant_url?: () -> void
+
+  def parsed_url: () -> Addressable::URI
+                | () -> nil
+
+  def valid_url_scheme?: () -> void
+
+  def valid_url_host?: () -> void
+end

@@ -1,0 +1,9 @@
+class ScopeTransformer::Scope
+  def initialize: (Hash[untyped, untyped]) -> void
+
+  def key: () -> void
+
+  def merge!: (ScopeTransformer::Scope) -> void
+
+  def access: () -> void
+end

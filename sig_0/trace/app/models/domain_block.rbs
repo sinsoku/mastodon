@@ -1,0 +1,8 @@
+class DomainBlock
+  def self.reject_reports?: (String) -> void
+
+  def self.rule_for: (String) -> nil
+                   | (String) -> DomainBlock
+
+  def self.suspend?: (String) -> bool
+end

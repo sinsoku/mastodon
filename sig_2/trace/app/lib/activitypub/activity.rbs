@@ -1,0 +1,7 @@
+class ActivityPub::Activity
+  def initialize: (ActiveSupport::HashWithIndifferentAccess, Account, **nil) -> void
+
+  def object_uri: () -> void
+
+  def status_from_uri: (String) -> Status
+end

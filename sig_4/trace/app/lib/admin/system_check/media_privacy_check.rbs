@@ -1,0 +1,15 @@
+class Admin::SystemCheck::MediaPrivacyCheck
+  def pass?: () -> void
+
+  def check_media_uploads!: () -> void
+
+  def check_media_listing_inaccessible!: () -> void
+
+  def media_attachment: () -> MediaAttachment
+
+  def create_test_attachment!: () -> void
+
+  def skip?: () -> void
+
+  def message: () -> void
+end

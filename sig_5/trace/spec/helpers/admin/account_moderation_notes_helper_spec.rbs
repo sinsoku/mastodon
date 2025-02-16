@@ -1,0 +1,29 @@
+module RSpec::ExampleGroups::AdminAccountModerationNotesHelper::AdminAccountInlineLinkTo::LetDefinitions
+  def subject: () -> nil
+             | () -> ActiveSupport::SafeBuffer
+end
+
+module RSpec::ExampleGroups::AdminAccountModerationNotesHelper::AdminAccountInlineLinkTo::WhenAccountIsNil::LetDefinitions
+  def account: () -> nil
+end
+
+class RSpec::ExampleGroups::AdminAccountModerationNotesHelper
+  def parsed_html: () -> Nokogiri::XML::Document
+end
+
+module RSpec::ExampleGroups::AdminAccountModerationNotesHelper::AdminAccountInlineLinkTo::WithAccount::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AdminAccountModerationNotesHelper::AdminAccountLinkTo::LetDefinitions
+  def subject: () -> nil
+             | () -> ActiveSupport::SafeBuffer
+end
+
+module RSpec::ExampleGroups::AdminAccountModerationNotesHelper::AdminAccountLinkTo::WhenAccountIsNil::LetDefinitions
+  def account: () -> nil
+end
+
+module RSpec::ExampleGroups::AdminAccountModerationNotesHelper::AdminAccountLinkTo::WithAccount::LetDefinitions
+  def account: () -> Account
+end

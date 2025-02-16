@@ -1,0 +1,3 @@
+class RSpec::ExampleGroups::AdminExportDomainAllowsController
+  def domain_allows_csv_file: () -> void
+end

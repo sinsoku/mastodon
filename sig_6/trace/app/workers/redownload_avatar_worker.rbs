@@ -1,0 +1,5 @@
+class RedownloadAvatarWorker
+  def perform: (Integer) -> void
+             | (Integer) -> nil
+             | (Integer) -> bool
+end

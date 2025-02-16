@@ -1,0 +1,3 @@
+module DatabaseViewRecord::ClassMethods
+  def refresh: () -> void
+end

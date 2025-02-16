@@ -1,0 +1,3 @@
+class REST::TranslationSerializer
+  def poll: () -> nil
+end

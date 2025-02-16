@@ -1,0 +1,7 @@
+class ReblogService
+  def call: (Account, Status, ?Hash[untyped, untyped]) -> void
+
+  def create_notification: (Status) -> void
+
+  def increment_statistics: () -> void
+end

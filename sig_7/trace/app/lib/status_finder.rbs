@@ -1,0 +1,9 @@
+class StatusFinder
+  def initialize: (String) -> void
+
+  def status: () -> void
+
+  def verify_action!: () -> void
+
+  def recognized_params: () -> Hash[untyped, untyped]
+end

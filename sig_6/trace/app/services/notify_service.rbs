@@ -1,0 +1,17 @@
+class NotifyService
+  def call: (Account, String, Status) -> void
+
+  def drop?: () -> void
+end
+
+class NotifyService::BaseCondition
+  def initialize: (Notification) -> void
+end
+
+class NotifyService::DropCondition
+  def drop?: () -> void
+
+  def from_self?: () -> void
+
+  def message?: () -> void
+end

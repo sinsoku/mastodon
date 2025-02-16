@@ -1,0 +1,27 @@
+module RSpec::ExampleGroups::ActivityPubSynchronizeFollowersService::LetDefinitions
+  def collection_uri: () -> String
+
+  def items: () -> Array[untyped]
+
+  def alice: () -> Account
+
+  def eve: () -> Account
+
+  def mallory: () -> Account
+
+  def actor: () -> Account
+
+  def bob: () -> Account
+
+  def subject: () -> ActivityPub::SynchronizeFollowersService
+
+  def payload: () -> ActiveSupport::HashWithIndifferentAccess
+end
+
+module RSpec::ExampleGroups::ActivityPubSynchronizeFollowersService::Call::WhenTheEndpointIsAnOrderedCollectionOfActorURIs::LetDefinitions
+  def payload: () -> ActiveSupport::HashWithIndifferentAccess
+end
+
+module RSpec::ExampleGroups::ActivityPubSynchronizeFollowersService::Call::WhenTheEndpointIsAPaginatedCollectionOfActorURIs::LetDefinitions
+  def payload: () -> ActiveSupport::HashWithIndifferentAccess
+end

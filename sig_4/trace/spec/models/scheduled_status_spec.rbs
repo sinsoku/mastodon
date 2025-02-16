@@ -1,0 +1,17 @@
+module RSpec::ExampleGroups::ScheduledStatus::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::ScheduledStatus::Validations::WhenAccountHasReachedTotalLimit::LetDefinitions
+  def subject: () -> ScheduledStatus
+end
+
+module RSpec::ExampleGroups::ScheduledStatus::Validations::WhenAccountHasReachedDailyLimit::LetDefinitions
+  def base_time: () -> ActiveSupport::TimeWithZone
+
+  def subject: () -> ScheduledStatus
+end
+
+module RSpec::ExampleGroups::ScheduledStatus::Validations::WhenScheduledAtIsLessThanMinimumOffset::LetDefinitions
+  def subject: () -> ScheduledStatus
+end

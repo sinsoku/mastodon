@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::FastIpMap::Include::LetDefinitions
+  def subject: () -> FastIpMap
+end

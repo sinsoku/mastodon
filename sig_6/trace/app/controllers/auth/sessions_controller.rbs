@@ -1,0 +1,43 @@
+class Auth::SessionsController
+  def require_no_authentication: () -> nil
+
+  def destroy: () -> nil
+             | () -> String
+
+  def respond_to_on_destroy: () -> void
+
+  def continue_after?: () -> void
+
+  def find_user: () -> User
+               | () -> nil
+
+  def user_params: () -> ActionController::Parameters
+
+  def find_user_from_params: () -> void
+
+  def register_attempt_in_session: (User) -> void
+
+  def check_second_factor_rate_limits: (User) -> void
+
+  def second_factor_attempts_key: (User) -> void
+
+  def on_authentication_success: (User, Symbol) -> void
+
+  def clear_2fa_attempt_from_user: (User) -> void
+
+  def clear_attempt_from_session: () -> void
+
+  def check_suspicious!: () -> nil
+                       | () -> bool
+
+  def create: () -> String
+            | () -> nil
+
+  def after_sign_in_path_for: (User) -> void
+
+  def home_paths: (User) -> Array[untyped]
+
+  def on_authentication_failure: (User, Symbol, Symbol) -> void
+
+  def suspicious_sign_in?: (User) -> bool
+end

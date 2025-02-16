@@ -1,0 +1,16 @@
+class Relay
+  def enable!: () -> void
+
+  def follow_activity: (URI::HTTPS) -> void
+
+  def some_local_account: () -> void
+                        | () -> Account
+
+  def to_log_human_identifier: () -> void
+
+  def ensure_disabled: () -> nil
+
+  def disable!: () -> void
+
+  def unfollow_activity: (URI::HTTPS) -> void
+end

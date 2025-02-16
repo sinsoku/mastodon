@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::Mention::Validations::LetDefinitions
+  def subject: () -> Mention
+end

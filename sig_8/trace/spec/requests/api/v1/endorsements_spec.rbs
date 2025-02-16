@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::Endorsements::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::Endorsements::GETApiV1Endorsements::WithCorrectScope::WithEndorsedAccounts::LetDefinitions
+  def account_pin: () -> AccountPin
+end
+
+module RSpec::ExampleGroups::Endorsements::GETApiV1Endorsements::WithCorrectScope::LetDefinitions
+  def scopes: () -> String
+end

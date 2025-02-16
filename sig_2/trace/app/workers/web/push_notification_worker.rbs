@@ -1,0 +1,13 @@
+class Web::PushNotificationWorker
+  def perform: (Integer, Integer) -> void
+
+  def web_push_request: () -> WebPushRequest
+
+  def push_notification_json: () -> void
+
+  def serialized_notification: () -> ActiveModelSerializers::SerializableResource
+
+  def request_pool: () -> RequestPool
+
+  def subscription_url: () -> void
+end

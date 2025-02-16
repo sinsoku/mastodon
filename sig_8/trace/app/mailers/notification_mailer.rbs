@@ -1,0 +1,28 @@
+class NotificationMailer
+  def process_params: () -> String
+
+  def set_account: () -> Account
+
+  def follow: () -> Mail::Message
+
+  def set_list_headers!: () -> Hash[untyped, untyped]
+
+  def verify_functional_user: () -> nil
+
+  def follow_request: () -> Mail::Message
+
+  def set_status: () -> Status
+                | () -> nil
+
+  def reblog: () -> Mail::Message
+            | () -> nil
+
+  def thread_by_conversation!: () -> Hash[untyped, untyped]
+                             | () -> nil
+
+  def favourite: () -> Mail::Message
+               | () -> nil
+
+  def mention: () -> Mail::Message
+             | () -> nil
+end

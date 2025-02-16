@@ -1,0 +1,10 @@
+module Trends
+  def self.tags: () -> Trends::Tags
+
+  def self.register!: (Status) -> void
+
+  def self.links: () -> void
+
+  def self.statuses: () -> void
+                   | () -> Trends::Statuses
+end

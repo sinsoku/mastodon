@@ -1,0 +1,19 @@
+class DeliveryFailureTracker
+  def self.available?: (String) -> void
+
+  def initialize: (String) -> void
+
+  def available?: () -> void
+
+  def track_success!: () -> void
+
+  def exhausted_deliveries_key: () -> void
+
+  def self.warning_domains_map: (?Array[untyped]) -> Hash[untyped, untyped]
+
+  def self.exhausted_deliveries_key_by: (String) -> void
+
+  def exhausted_deliveries_days: () -> Array[untyped]
+
+  def self.without_unavailable: (Array[untyped]) -> void
+end

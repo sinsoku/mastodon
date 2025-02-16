@@ -1,0 +1,8 @@
+class Api::V1::Accounts::NotesController
+  def set_account: () -> Account
+
+  def create: () -> String
+            | () -> nil
+
+  def relationships_presenter: () -> void
+end

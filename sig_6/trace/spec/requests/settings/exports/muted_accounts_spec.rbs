@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::SettingsExportsMutedAccounts::GETSettingsExportsMutes::WithASignedInUserWhoHasMutedAccounts::LetDefinitions
+  def user: () -> User
+end

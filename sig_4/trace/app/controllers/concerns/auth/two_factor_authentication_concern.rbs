@@ -1,0 +1,4 @@
+module Auth::TwoFactorAuthenticationConcern
+  def two_factor_enabled?: () -> bool
+                         | () -> nil
+end

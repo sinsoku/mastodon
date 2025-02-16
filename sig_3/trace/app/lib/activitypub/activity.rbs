@@ -1,0 +1,44 @@
+class ActivityPub::Activity
+  def initialize: (ActiveSupport::HashWithIndifferentAccess, Account, **nil) -> void
+                | (Hash[untyped, untyped], Account, **nil) -> void
+                | (Hash[untyped, untyped], Account, **String) -> void
+                | (ActiveSupport::HashWithIndifferentAccess, Account, **Account) -> void
+
+  def object_uri: () -> void
+                | () -> String
+
+  def delete_arrived_first?: (String) -> void
+
+  def followed_by_local_accounts?: () -> void
+
+  def requested_through_relay?: () -> nil
+                              | () -> bool
+
+  def status_from_uri: (String) -> nil
+                     | (String) -> Status
+
+  def reject_payload!: () -> void
+
+  def status_from_object: () -> Status
+
+  def unsupported_object_type?: () -> void
+
+  def supported_object_type?: () -> void
+
+  def self.factory: (Hash[untyped, untyped], Account, **untyped) -> ActivityPub::Activity::Create
+
+  def self.klass: () -> Class
+
+  def dereference_object!: () -> void
+
+  def fetch?: () -> void
+
+  def converted_object_type?: () -> void
+
+  def account_from_uri: (String) -> void
+                      | (String) -> Account
+
+  def fetch_remote_original_status: () -> void
+
+  def delete_later!: (String) -> void
+end

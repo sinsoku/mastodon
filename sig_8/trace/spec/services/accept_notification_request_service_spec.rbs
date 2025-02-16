@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::AcceptNotificationRequestService::LetDefinitions
+  def notification_request: () -> NotificationRequest
+
+  def subject: () -> AcceptNotificationRequestService
+end

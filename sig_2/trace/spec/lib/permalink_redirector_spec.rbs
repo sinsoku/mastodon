@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::PermalinkRedirector::LetDefinitions
+  def remote_account: () -> Account
+end

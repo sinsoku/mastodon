@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::List::Validations::LetDefinitions
+  def subject: () -> List
+end
+
+module RSpec::ExampleGroups::List::Validations::WhenAccountHasHitMaxListLimit::LetDefinitions
+  def account: () -> Account
+end

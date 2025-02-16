@@ -1,0 +1,13 @@
+class AccountSearchService
+  def call: (String, ?nil, ?Hash[untyped, untyped]) -> void
+
+  def search_service_results: () -> Array[untyped]
+
+  def exact_match: () -> void
+
+  def username_complete?: () -> void
+
+  def search_results: () -> void
+
+  def limit_for_non_exact_results: () -> Integer
+end

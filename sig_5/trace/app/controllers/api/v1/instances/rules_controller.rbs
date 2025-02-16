@@ -1,0 +1,7 @@
+class Api::V1::Instances::RulesController
+  def current_user: () -> nil
+
+  def set_rules: () -> ActiveRecord::Relation
+
+  def index: () -> String
+end

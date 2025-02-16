@@ -1,0 +1,5 @@
+class Settings::BaseController
+  def set_cache_headers: () -> Hash[untyped, untyped]
+
+  def require_not_suspended!: () -> nil
+end

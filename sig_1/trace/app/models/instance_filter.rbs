@@ -1,0 +1,7 @@
+class InstanceFilter
+  def initialize: (Hash[untyped, untyped]) -> void
+
+  def results: () -> void
+
+  def scope_for: (Symbol, String) -> void
+end

@@ -1,0 +1,7 @@
+class Admin::ActionLogsController
+  def set_action_logs: () -> ActiveRecord::Relation
+
+  def filter_params: () -> void
+
+  def index: () -> ActiveRecord::Relation
+end

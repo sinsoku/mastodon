@@ -1,0 +1,3 @@
+class Api::V1::Profile::AvatarsController
+  def destroy: () -> String
+end

@@ -1,0 +1,12 @@
+class Mastodon::CLI::Search
+  def deploy: () -> nil
+            | () -> StringIO
+
+  def verify_deploy_options!: () -> void
+
+  def verify_deploy_concurrency!: () -> void
+
+  def verify_deploy_batch_size!: () -> void
+
+  def progress_output_options: () -> void
+end

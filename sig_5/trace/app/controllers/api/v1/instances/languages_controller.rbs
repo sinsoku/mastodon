@@ -1,0 +1,5 @@
+class Api::V1::Instances::LanguagesController
+  def set_languages: () -> Array[untyped]
+
+  def show: () -> String
+end

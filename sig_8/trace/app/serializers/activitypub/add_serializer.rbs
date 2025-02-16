@@ -1,0 +1,5 @@
+class ActivityPub::AddSerializer
+  def self.serializer_for: (Status, Hash[untyped, untyped]) -> void
+                         | (Array[untyped], Hash[untyped, untyped]) -> void
+                         | (FeaturedTag, Hash[untyped, untyped]) -> void
+end

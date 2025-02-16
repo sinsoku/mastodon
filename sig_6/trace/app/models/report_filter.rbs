@@ -1,0 +1,11 @@
+class ReportFilter
+  def initialize: (ActionController::Parameters) -> void
+
+  def results: () -> void
+
+  def relevant_params: () -> ActionController::Parameters
+
+  def origin_is_remote_and_domain_present?: () -> void
+
+  def scope_for: (String, String) -> void
+end

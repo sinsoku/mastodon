@@ -1,0 +1,5 @@
+class Trends::Statuses
+  def register: (Status, ?Time) -> void
+
+  def eligible?: (Status) -> void
+end

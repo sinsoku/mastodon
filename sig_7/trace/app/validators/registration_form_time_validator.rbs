@@ -1,0 +1,3 @@
+class RegistrationFormTimeValidator
+  def validate: (User) -> nil
+end

@@ -1,0 +1,3 @@
+class AccountSuggestions::SimilarProfilesSource
+  def get: (Account, ?limit: Integer) -> void
+end

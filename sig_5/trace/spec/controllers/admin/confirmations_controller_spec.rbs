@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::AdminConfirmationsController::POSTResend::LetDefinitions
+  def user: () -> User
+
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::AdminConfirmationsController::POSTResend::WhenEmailIsNotConfirmed::LetDefinitions
+  def confirmed_at: () -> nil
+end
+
+module RSpec::ExampleGroups::AdminConfirmationsController::POSTResend::WhenEmailIsConfirmed::LetDefinitions
+  def confirmed_at: () -> ActiveSupport::TimeWithZone
+end

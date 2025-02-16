@@ -1,0 +1,30 @@
+class Api::V1::Notifications::RequestsController
+  def index: () -> String
+
+  def load_requests: () -> Array[untyped]
+
+  def relationships: () -> StatusRelationshipsPresenter
+
+  def next_path: () -> void
+
+  def records_continue?: () -> void
+
+  def prev_path: () -> void
+
+  def pagination_since_id: () -> void
+
+  def merged?: () -> String
+
+  def set_request: () -> NotificationRequest
+                 | () -> nil
+
+  def accept: () -> String
+
+  def set_requests: () -> ActiveRecord::Relation
+
+  def accept_bulk: () -> String
+
+  def dismiss_bulk: () -> String
+
+  def dismiss: () -> String
+end

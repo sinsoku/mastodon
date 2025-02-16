@@ -1,0 +1,7 @@
+class ActivityPub::MoveDistributionWorker
+  def perform: (Integer) -> void
+
+  def inboxes: () -> void
+
+  def signed_payload: () -> void
+end

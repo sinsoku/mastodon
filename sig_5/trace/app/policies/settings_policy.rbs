@@ -1,0 +1,7 @@
+class SettingsPolicy
+  def destroy?: () -> bool
+
+  def show?: () -> bool
+
+  def update?: () -> bool
+end

@@ -1,0 +1,11 @@
+module Webpacker::HelperExtensions
+  def javascript_pack_tag: (String, **String) -> void
+                         | (String, **bool | String) -> void
+                         | (String, **String) -> ActiveSupport::SafeBuffer
+                         | (String, **bool | String) -> ActiveSupport::SafeBuffer
+
+  def stylesheet_pack_tag: (String, **String) -> void
+                         | (String, **String) -> ActiveSupport::SafeBuffer
+
+  def preload_pack_asset: (String, **nil) -> void
+end

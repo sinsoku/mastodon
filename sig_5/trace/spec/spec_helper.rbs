@@ -1,0 +1,7 @@
+class Object
+  def serialized_record_json: (EmailDomainBlock, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+                            | (Account, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+                            | (AccountWarning, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+                            | (CustomEmoji, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+                            | (AccountRelationshipSeveranceEvent, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+end

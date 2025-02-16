@@ -1,0 +1,7 @@
+class Trends::TagFilter
+  def initialize: (ActionController::Parameters) -> void
+
+  def results: () -> void
+
+  def initial_scope: () -> ActiveRecord::Relation
+end

@@ -1,0 +1,11 @@
+class Settings::VerificationsController
+  def set_account: () -> Account
+
+  def set_verified_links: () -> Array[untyped]
+
+  def show: () -> nil
+
+  def update: () -> String
+
+  def account_params: () -> void
+end

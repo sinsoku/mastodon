@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::SchedulerTrendsRefreshScheduler::LetDefinitions
+  def worker: () -> Scheduler::Trends::RefreshScheduler
+end

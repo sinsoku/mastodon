@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::GenerateAnnualReportWorker::LetDefinitions
+  def worker: () -> GenerateAnnualReportWorker
+
+  def account: () -> Account
+end
+
+class RSpec::ExampleGroups::GenerateAnnualReportWorker::Perform
+  def account_reports: () -> void
+end

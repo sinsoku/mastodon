@@ -1,0 +1,28 @@
+class Auth::ConfirmationsController
+  def set_confirmation_user!: () -> User
+
+  def signed_in_confirmed_user?: () -> bool
+
+  def captcha_user_bypass?: () -> bool
+
+  def require_captcha_if_needed!: () -> ActiveSupport::SafeBuffer
+                                | () -> nil
+
+  def confirm_captcha: () -> String
+
+  def show: () -> void
+          | () -> ActiveSupport::SafeBuffer
+
+  def after_confirmation_path_for: (Symbol, User) -> void
+
+  def redirect_to_app?: () -> void
+                      | () -> bool
+
+  def redirect_confirmed_user: () -> String
+
+  def new: () -> nil
+end
+
+module Auth::ConfirmationsController::HelperMethods
+  def redirect_to_app?: (*untyped, **untyped) -> void
+end

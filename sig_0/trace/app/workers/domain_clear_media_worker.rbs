@@ -1,0 +1,3 @@
+class DomainClearMediaWorker
+  def perform: (Integer) -> void
+end

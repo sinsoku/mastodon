@@ -1,0 +1,17 @@
+class ActivityPub::DeleteSerializer
+  def id: () -> String
+
+  def type: () -> String
+
+  def actor: () -> String
+
+  def to: () -> Array[untyped]
+end
+
+class ActivityPub::DeleteSerializer::TombstoneSerializer
+  def id: () -> String
+
+  def type: () -> String
+
+  def atom_uri: () -> String
+end

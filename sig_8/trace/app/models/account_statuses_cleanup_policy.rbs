@@ -1,0 +1,47 @@
+class AccountStatusesCleanupPolicy
+  def validate_local_account: () -> nil
+                            | () -> ActiveModel::Error
+
+  def update_last_inspected: () -> nil
+                           | () -> Integer
+
+  def record_last_inspected: (Integer) -> void
+
+  def last_inspected: () -> void
+                    | () -> nil
+                    | () -> Integer
+
+  def invalidate_last_inspected: (Status, Symbol) -> void
+
+  def statuses_to_delete: (?Integer, ?nil, ?nil) -> void
+                        | (?Integer, ?Integer, ?Integer) -> ActiveRecord::Relation
+                        | (?Integer, ?Integer, ?nil) -> ActiveRecord::Relation
+                        | (?Integer, ?nil, ?nil) -> ActiveRecord::Relation
+
+  def account_statuses: () -> ActiveRecord::Relation
+
+  def old_enough_scope: (?nil) -> void
+                      | (?Integer) -> void
+
+  def without_popular_scope: () -> void
+
+  def without_direct_scope: () -> void
+
+  def without_pinned_scope: () -> void
+
+  def self_status_reference_exists: (Class) -> void
+
+  def without_self_fav_scope: () -> void
+
+  def without_self_bookmark_scope: () -> void
+
+  def without_poll_scope: () -> void
+
+  def without_media_scope: () -> void
+
+  def status_media_reference_exists: () -> void
+
+  def compute_cutoff_id: () -> void
+                       | () -> Integer
+                       | () -> nil
+end

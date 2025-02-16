@@ -1,0 +1,27 @@
+class Api::V1::FollowRequestsController
+  def reject: () -> String
+
+  def account: () -> void
+
+  def relationships: (**untyped) -> void
+
+  def index: () -> String
+
+  def load_accounts: () -> Array[untyped]
+
+  def default_accounts: () -> ActiveRecord::Relation
+
+  def paginated_follow_requests: () -> void
+
+  def next_path: () -> void
+
+  def records_continue?: () -> void
+
+  def prev_path: () -> void
+
+  def pagination_since_id: () -> void
+
+  def pagination_max_id: () -> void
+
+  def authorize: () -> String
+end

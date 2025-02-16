@@ -1,0 +1,35 @@
+class Mastodon::RedisConfiguration
+  def base: () -> void
+
+  def setup_config: (?prefix: nil, ?defaults: Hash[untyped, untyped]) -> Hash[untyped, untyped]
+                  | (?prefix: String, ?defaults: Hash[untyped, untyped]) -> Hash[untyped, untyped]
+
+  def setup_sentinels: (String, ?default_user: nil, ?default_password: String) -> Hash[untyped, untyped]
+                     | (String, ?default_user: nil, ?default_password: nil) -> Hash[untyped, untyped]
+
+  def parse_sentinels: (String, ?default_port: Integer) -> Array[untyped]
+                     | (nil, ?default_port: Integer) -> nil
+                     | (String, ?default_port: String) -> Array[untyped]
+
+  def construct_uri: (String, nil, Integer, nil, String) -> String
+                   | (String, Integer, Integer, nil, nil) -> String
+                   | (String, nil, Integer, nil, nil) -> String
+                   | (String, String, String, nil, String) -> String
+                   | (nil, nil, nil, nil, nil) -> nil
+
+  def driver: () -> void
+
+  def base_namespace: () -> void
+
+  def namespace: () -> void
+               | () -> nil
+               | () -> String
+
+  def sidekiq: () -> void
+
+  def sidekiq_namespace: () -> void
+
+  def cache: () -> void
+
+  def cache_namespace: () -> void
+end

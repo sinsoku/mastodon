@@ -1,0 +1,27 @@
+class Poll
+  def local?: (*untyped, **untyped) -> bool
+
+  def prepare_options: () -> Array[untyped]
+
+  def prepare_votes_count: () -> nil
+                         | () -> Integer
+
+  def prepare_cached_tallies: () -> Array[untyped]
+                            | () -> nil
+
+  def loaded_options: () -> Array[untyped]
+
+  def show_totals_now?: () -> void
+
+  def reset_parent_cache: () -> bool
+
+  def voted?: (Account) -> void
+
+  def own_votes: (Account) -> void
+
+  def emojis: () -> Array[untyped]
+end
+
+class Poll::Option
+  def initialize: (Poll, String, String, Integer) -> void
+end

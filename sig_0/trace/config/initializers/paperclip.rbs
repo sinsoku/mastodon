@@ -1,0 +1,11 @@
+module Paperclip::Interpolations
+  def prefix_path: (Paperclip::Attachment, Symbol) -> String
+
+  def filename: (Paperclip::Attachment, Symbol) -> String
+              | (Paperclip::Attachment, Integer) -> String
+              | (Paperclip::Attachment, String) -> String
+
+  def prefix_url: (Paperclip::Attachment, Symbol) -> String
+                | (Paperclip::Attachment, Integer) -> String
+                | (Paperclip::Attachment, String) -> String
+end

@@ -1,0 +1,19 @@
+class PreviewCard
+  def extract_dimensions: () -> Integer
+                        | () -> nil
+
+  def local?: () -> bool
+
+  def history: () -> Trends::History
+
+  def requires_review?: () -> void
+                      | () -> bool
+
+  def authors: () -> Array[untyped]
+
+  def serialized_authors: () -> void
+
+  def provider: () -> nil
+
+  def domain: () -> void
+end

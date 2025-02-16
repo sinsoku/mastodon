@@ -1,0 +1,18 @@
+class Api::V2::Filters::StatusesController
+  def set_status_filters: () -> ActiveRecord::Associations::CollectionProxy
+                        | () -> nil
+
+  def index: () -> String
+
+  def set_status_filter: () -> CustomFilterStatus
+                       | () -> nil
+
+  def show: () -> String
+
+  def create: () -> String
+            | () -> nil
+
+  def resource_params: () -> void
+
+  def destroy: () -> String
+end

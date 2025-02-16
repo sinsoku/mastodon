@@ -1,0 +1,7 @@
+class AccountRelationshipSeveranceEvent
+  def type: (*untyped, **untyped) -> String
+
+  def purged: (*untyped, **untyped) -> bool
+
+  def target_name: (*untyped, **untyped) -> String
+end

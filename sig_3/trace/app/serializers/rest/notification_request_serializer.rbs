@@ -1,0 +1,5 @@
+class REST::NotificationRequestSerializer
+  def id: () -> String
+
+  def notifications_count: () -> String
+end

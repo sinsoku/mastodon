@@ -1,0 +1,8 @@
+module Admin::DashboardHelper
+  def relevant_account_timestamp: (Account) -> void
+
+  def relevant_account_ip: (Account, nil) -> String
+                         | (Account, nil) -> ActiveSupport::SafeBuffer
+
+  def date_range: (Range[untyped]) -> void
+end

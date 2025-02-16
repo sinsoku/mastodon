@@ -1,0 +1,7 @@
+class FollowRecommendationPolicy
+  def show?: () -> bool
+
+  def suppress?: () -> bool
+
+  def unsuppress?: () -> bool
+end

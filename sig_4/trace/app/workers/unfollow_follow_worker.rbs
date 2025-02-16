@@ -1,0 +1,3 @@
+class UnfollowFollowWorker
+  def perform: (Integer, Integer, Integer, ?bool) -> void
+end

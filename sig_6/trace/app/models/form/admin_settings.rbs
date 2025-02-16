@@ -1,0 +1,10 @@
+class Form::AdminSettings
+  def save: () -> void
+
+  def status_page_url: () -> nil
+
+  def validate_site_uploads: () -> Array[untyped]
+
+  def typecast_value: (Symbol, nil) -> void
+                    | (Symbol, bool) -> void
+end

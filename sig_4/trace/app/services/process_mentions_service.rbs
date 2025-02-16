@@ -1,0 +1,9 @@
+class ProcessMentionsService
+  def call: (Status, ?save_records: bool) -> void
+
+  def scan_text!: () -> void
+
+  def mention_undeliverable?: (Account) -> void
+
+  def assign_mentions!: () -> void
+end

@@ -1,0 +1,24 @@
+module Localized
+  def set_locale: () -> bool
+                | () -> String
+                | () -> nil
+                | () -> Time
+                | () -> DomainBlock
+                | () -> ActiveSupport::SafeBuffer
+                | () -> Array[untyped]
+                | () -> Symbol
+                | () -> Form::DeleteConfirmation
+                | () -> Form::Import
+                | () -> ActiveRecord::Relation
+                | () -> User
+                | () -> Form::Redirect
+                | () -> ActiveRecord::Associations::CollectionProxy
+
+  def requested_locale: () -> void
+
+  def available_locale_or_nil: (nil) -> nil
+
+  def http_accept_language: () -> nil
+
+  def content_locale: () -> void
+end

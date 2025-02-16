@@ -1,0 +1,5 @@
+class Api::V1::Instances::PrivacyPoliciesController
+  def set_privacy_policy: () -> PrivacyPolicy
+
+  def show: () -> String
+end

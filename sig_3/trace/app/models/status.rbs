@@ -1,0 +1,128 @@
+class Status
+  def local?: () -> bool
+
+  def prepare_contents: () -> nil
+                      | () -> String
+
+  def set_reblog: () -> nil
+
+  def reblog?: () -> void
+             | () -> bool
+
+  def set_visibility: () -> nil
+
+  def set_conversation: () -> Conversation
+                      | () -> nil
+                      | () -> Integer
+
+  def reply?: () -> void
+            | () -> bool
+
+  def set_local: () -> bool
+
+  def with_media?: () -> void
+
+  def ordered_media_attachments: () -> Array[untyped]
+
+  def set_poll_id: () -> nil
+                 | () -> bool
+
+  def trigger_create_webhooks: () -> String
+                             | () -> nil
+
+  def increment_counter_caches: () -> nil
+                              | () -> bool
+
+  def store_uri: () -> bool
+               | () -> nil
+
+  def object_type: () -> void
+
+  def update_statistics: () -> bool
+                       | () -> nil
+
+  def distributable?: () -> void
+                    | () -> bool
+
+  def increment_count!: (Symbol) -> void
+
+  def untrusted_reblogs_count: () -> nil
+                             | () -> Integer
+
+  def reblogs_count: () -> Integer
+
+  def status_stat: () -> StatusStat
+
+  def update_status_stat!: (Hash[untyped, untyped]) -> void
+
+  def proper: () -> Status
+
+  def within_realtime_window?: () -> void
+
+  def non_sensitive_with_media?: () -> void
+
+  def replies_count: () -> Integer
+
+  def untrusted_favourites_count: () -> void
+                                | () -> nil
+                                | () -> Integer
+
+  def favourites_count: () -> void
+                      | () -> Integer
+
+  def emojis: () -> Array[untyped]
+
+  def preview_card: () -> nil
+
+  def trigger_update_webhooks: () -> String
+                             | () -> nil
+
+  def reset_preview_card!: () -> void
+
+  def carried_over_reply_to_account_id: () -> void
+
+  def account_domain: (*untyped, **untyped) -> nil
+                    | (*untyped, **untyped) -> String
+
+  def unlink_from_conversations!: () -> nil
+
+  def discard_with_reblogs: () -> void
+
+  def self.reblogs_map: (Array[untyped], Integer) -> Hash[untyped, untyped]
+                      | (Array[untyped], Account) -> Hash[untyped, untyped]
+
+  def self.favourites_map: (Array[untyped], Integer) -> Hash[untyped, untyped]
+                         | (Array[untyped], Account) -> Hash[untyped, untyped]
+
+  def self.bookmarks_map: (Array[untyped], Integer) -> Hash[untyped, untyped]
+
+  def self.mutes_map: (Array[untyped], Integer) -> Hash[untyped, untyped]
+                    | (Array[untyped], Account) -> Hash[untyped, untyped]
+
+  def self.pins_map: (Array[untyped], Integer) -> Hash[untyped, untyped]
+
+  def hidden?: () -> void
+
+  def in_reply_to_local_account?: () -> void
+
+  def reported?: () -> void
+
+  def decrement_counter_caches: () -> nil
+                              | () -> bool
+
+  def decrement_count!: (Symbol) -> void
+
+  def target: () -> void
+
+  def content: () -> void
+
+  def verb: () -> void
+
+  def to_log_human_identifier: () -> void
+
+  def to_log_permalink: () -> void
+
+  def with_poll?: () -> void
+
+  def with_preview_card?: () -> void
+end

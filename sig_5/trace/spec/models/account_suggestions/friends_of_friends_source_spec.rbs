@@ -1,0 +1,29 @@
+module RSpec::ExampleGroups::AccountSuggestionsFriendsOfFriendsSource::Get::LetDefinitions
+  def bob: () -> Account
+
+  def alice: () -> Account
+
+  def eve: () -> Account
+
+  def mallory: () -> Account
+
+  def eugen: () -> Account
+
+  def neil: () -> Account
+
+  def john: () -> Account
+
+  def jerk: () -> Account
+
+  def larry: () -> Account
+
+  def morty: () -> Account
+
+  def subject: () -> AccountSuggestions::FriendsOfFriendsSource
+end
+
+class RSpec::ExampleGroups::AccountSuggestionsFriendsOfFriendsSource::Get::WithDeterministicOrder
+  def expected_results: () -> void
+
+  def source_query_values: () -> void
+end

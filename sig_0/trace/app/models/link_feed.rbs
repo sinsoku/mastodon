@@ -1,0 +1,10 @@
+class LinkFeed
+  def initialize: (PreviewCard, Account, ?Hash[untyped, untyped]) -> void
+                | (PreviewCard, nil, ?Hash[untyped, untyped]) -> void
+
+  def get: (Integer, ?nil, ?nil, ?nil) -> void
+
+  def discoverable: () -> void
+
+  def attached_to_preview_card: () -> void
+end

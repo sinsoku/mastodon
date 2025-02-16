@@ -1,0 +1,5 @@
+class Export
+  def initialize: (Account) -> void
+
+  def to_blocked_domains_csv: () -> void
+end

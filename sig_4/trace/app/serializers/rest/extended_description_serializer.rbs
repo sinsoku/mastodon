@@ -1,0 +1,5 @@
+class REST::ExtendedDescriptionSerializer
+  def updated_at: () -> nil
+
+  def content: () -> String
+end

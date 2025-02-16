@@ -1,0 +1,121 @@
+module RSpec::ExampleGroups::FetchLinkCardService::LetDefinitions
+  def html: () -> String
+
+  def oembed_cache: () -> nil
+
+  def subject: () -> FetchLinkCardService
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithARemoteStatus::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithALocalStatus::WithAJapanesePathURL::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithALocalStatus::WithARedirectURLWithFaultyEncoding::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithALocalStatus::WithAPageThatHasNoTitle::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithALocalStatus::WithARedirectURL::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithALocalStatus::WithAURLOfAPageInKOI8REncoding::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithALocalStatus::WithURLOfARegularHTMLPage::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithALocalStatus::WithMultipleURLs::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithALocalStatus::WithAURLOfAPlainTextPage::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithALocalStatus::WithAnIDNURL::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithALocalStatus::WithAURLOfAPageInShiftJISEncoding::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithALocalStatus::WithAURLWhereTheContentTypeHeaderUsesUtf8InsteadOfUtf8::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithALocalStatus::WithANonIsolatedURL::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithALocalStatus::WithAURLOfAPageInShiftJISEncodingLabeledAsUTF8::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithALocalStatus::WithURLOfAPageWithNoTitle::LetDefinitions
+  def html: () -> String
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithALocalStatus::WithA404URL::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithALocalStatus::WithAURLOfAPageInISO88591EncodingThatCharlockHolmesCannotDetect::WhenEncodingInHttpHeaderIsIncorrect::WhenEncodingProblemsAppearInTitleTag::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithALocalStatus::WithAURLOfAPageInISO88591EncodingThatCharlockHolmesCannotDetect::WhenEncodingInHttpHeaderIsIncorrect::WhenEncodingProblemsAppearInUnrelatedTags::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithALocalStatus::WithAURLOfAPageInISO88591EncodingThatCharlockHolmesCannotDetect::WhenEncodingInHttpHeaderIsCorrect::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithALocalStatus::WithAURLOfAPageInWindows1251Encoding::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithALocalStatus::WithAURLOfAPageWithOEmbedSupport::LetDefinitions
+  def html: () -> String
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithALocalStatus::WithAURLOfAPageWithOEmbedSupport::WhenOEmbedEndpointCachePopulated::LetDefinitions
+  def oembed_cache: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithALocalStatus::WithAURLOfAPageWithOEmbedSupport::WhenOEmbedEndpointCachePopulatedButPageReturns404::LetDefinitions
+  def oembed_cache: () -> Hash[untyped, untyped]
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithALocalStatus::WithAURLOfAPageThatIncludesACanonicalURLTooLongForPostgreSQLUniqueIndexes::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithALocalStatus::WithACaretSuffixedURL::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithALocalStatus::WithAHyphenSuffixedURL::LetDefinitions
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::FetchLinkCardService::WithALocalStatus::WithABrokenRedirectURL::LetDefinitions
+  def status: () -> Status
+end

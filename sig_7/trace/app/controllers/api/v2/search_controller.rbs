@@ -1,0 +1,21 @@
+class Api::V2::SearchController
+  def validate_search_params!: () -> String
+                             | () -> nil
+
+  def pagination_requested?: () -> bool
+
+  def remote_resolve_requested?: () -> nil
+                               | () -> bool
+
+  def index: () -> String
+
+  def search_results: () -> void
+
+  def combined_search_params: () -> void
+
+  def search_params: () -> ActionController::Parameters
+
+  def query_pagination_error: () -> String
+
+  def remote_resolve_error: () -> String
+end

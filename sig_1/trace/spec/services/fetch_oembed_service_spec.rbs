@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::FetchOEmbedService::LetDefinitions
+  def subject: () -> FetchOEmbedService
+end

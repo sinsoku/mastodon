@@ -1,0 +1,3 @@
+class REST::SuggestionSerializer
+  def source: () -> nil
+end

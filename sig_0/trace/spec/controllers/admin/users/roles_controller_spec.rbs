@@ -1,0 +1,37 @@
+module RSpec::ExampleGroups::AdminUsersRolesController::LetDefinitions
+  def current_user: () -> User
+
+  def current_role: () -> UserRole
+
+  def user: () -> User
+
+  def previous_role: () -> nil
+end
+
+module RSpec::ExampleGroups::AdminUsersRolesController::PUTUpdate::LetDefinitions
+  def selected_role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AdminUsersRolesController::PUTUpdate::WithManageRolesPermissions::LetDefinitions
+  def permissions: () -> Integer
+
+  def position: () -> Integer
+end
+
+module RSpec::ExampleGroups::AdminUsersRolesController::PUTUpdate::WhenTargetUserIsHigherRankedThanCurrentUser::LetDefinitions
+  def previous_role: () -> UserRole
+
+  def permissions: () -> Integer
+
+  def position: () -> Integer
+end
+
+module RSpec::ExampleGroups::AdminUsersRolesController::PUTUpdate::WhenSelectedRoleHasHigherPositionThanCurrentUserSRole::LetDefinitions
+  def permissions: () -> Integer
+
+  def position: () -> Integer
+end
+
+module RSpec::ExampleGroups::AdminUsersRolesController::GETShow::WhenTargetUserIsHigherRankedThanCurrentUser::LetDefinitions
+  def previous_role: () -> UserRole
+end

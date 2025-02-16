@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::PushUpdateWorker::LetDefinitions
+  def worker: () -> PushUpdateWorker
+end
+
+module RSpec::ExampleGroups::PushUpdateWorker::Perform::WithValidRecords::LetDefinitions
+  def account: () -> Account
+
+  def status: () -> Status
+end
+
+class RSpec::ExampleGroups::PushUpdateWorker::Perform::WithValidRecords
+  def redis_key: () -> void
+end

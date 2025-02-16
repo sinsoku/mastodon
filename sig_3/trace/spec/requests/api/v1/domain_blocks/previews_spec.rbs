@@ -1,0 +1,17 @@
+module RSpec::ExampleGroups::DomainBlocksPreviewsAPI::LetDefinitions
+  def account: () -> Account
+
+  def user: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::DomainBlocksPreviewsAPI::GETApiV1DomainBlocksPreview::LetDefinitions
+  def domain: () -> String
+
+  def subject: () -> Integer
+end

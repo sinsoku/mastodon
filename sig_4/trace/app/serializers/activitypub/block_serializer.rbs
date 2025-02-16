@@ -1,0 +1,9 @@
+class ActivityPub::BlockSerializer
+  def id: () -> String
+
+  def type: () -> String
+
+  def actor: () -> String
+
+  def virtual_object: () -> String
+end

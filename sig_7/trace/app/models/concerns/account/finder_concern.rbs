@@ -1,0 +1,13 @@
+module Account::FinderConcern::ClassMethods
+  def find_local: (String) -> void
+                | (String) -> nil
+                | (String) -> Account
+
+  def find_remote: (String, nil) -> void
+                 | (String, String) -> Account
+                 | (String, nil) -> nil
+                 | (String, nil) -> Account
+                 | (String, String) -> nil
+
+  def representative: () -> Account
+end

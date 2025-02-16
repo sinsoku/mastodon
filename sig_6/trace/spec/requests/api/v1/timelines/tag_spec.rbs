@@ -1,0 +1,71 @@
+module RSpec::ExampleGroups::Tag::GETApiV1TimelinesTagHashtag::LetDefinitions
+  def private_status: () -> Status
+
+  def account: () -> Account
+
+  def life_status: () -> Status
+
+  def war_status: () -> Status
+
+  def love_status: () -> Status
+
+  def subject: () -> Integer
+
+  def hashtag: () -> String
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Tag::LetDefinitions
+  def user: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Tag::GETApiV1TimelinesTagHashtag::WhenTheInstanceDoesNotAllowPublicPreview::WhenTheUserIsAuthenticated::LetDefinitions
+  def expected_statuses: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Tag::GETApiV1TimelinesTagHashtag::WhenTheInstanceDoesNotAllowPublicPreview::WithoutAnAuthenticationToken::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Tag::GETApiV1TimelinesTagHashtag::WhenTheInstanceAllowsPublicPreview::WhenTheUserIsNotAuthenticated::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def expected_statuses: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Tag::GETApiV1TimelinesTagHashtag::WithNoneParam::LetDefinitions
+  def hashtag: () -> String
+
+  def params: () -> Hash[untyped, untyped]
+
+  def expected_statuses: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Tag::GETApiV1TimelinesTagHashtag::WhenGivenOnlyOneHashtag::LetDefinitions
+  def expected_statuses: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Tag::GETApiV1TimelinesTagHashtag::WithLimitParam::LetDefinitions
+  def hashtag: () -> String
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Tag::GETApiV1TimelinesTagHashtag::WithAnyParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+
+  def expected_statuses: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Tag::GETApiV1TimelinesTagHashtag::WithAllParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+
+  def expected_statuses: () -> Array[untyped]
+end

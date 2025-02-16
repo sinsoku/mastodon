@@ -1,0 +1,13 @@
+module InstanceHelper
+  def instance_presenter: () -> InstancePresenter
+
+  def site_hostname: () -> String
+
+  def favicon_path: (?Integer) -> void
+
+  def app_icon_path: (?Integer) -> void
+
+  def use_mask_icon?: () -> void
+
+  def site_title: () -> String
+end

@@ -1,0 +1,9 @@
+class Mastodon::CLI::Emoji
+  def export: (String) -> StringIO
+
+  def purge: () -> StringIO
+
+  def import: (Pathname) -> StringIO
+
+  def color: (Integer, Integer, Integer) -> void
+end

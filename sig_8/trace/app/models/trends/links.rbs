@@ -1,0 +1,21 @@
+class Trends::Links
+  def register: (Status, ?Time) -> void
+
+  def add: (PreviewCard, Integer, ?Time) -> void
+
+  def key_prefix: () -> String
+
+  def refresh: (?Time) -> void
+
+  def calculate_scores: (Array[untyped], Time) -> void
+
+  def query: () -> Trends::Links::Query
+
+  def klass: () -> void
+end
+
+class Trends::Links::Query
+  def to_arel: () -> ActiveRecord::Relation
+
+  def language_order_clause: () -> Arel::Nodes::Case
+end

@@ -1,0 +1,3 @@
+module RSpec::ExampleGroups::AdminSystemCheckMessage::LetDefinitions
+  def check: () -> Admin::SystemCheck::Message
+end

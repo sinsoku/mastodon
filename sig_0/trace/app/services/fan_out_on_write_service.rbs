@@ -1,0 +1,39 @@
+class FanOutOnWriteService
+  def call: (Status, ?Hash[untyped, untyped]) -> void
+
+  def check_race_condition!: () -> void
+
+  def warm_payload_cache!: () -> void
+
+  def rendered_status: () -> void
+
+  def fan_out_to_local_recipients!: () -> void
+
+  def deliver_to_self!: () -> void
+
+  def update?: () -> void
+
+  def notify_mentioned_accounts!: () -> void
+
+  def deliver_to_all_followers!: () -> void
+
+  def deliver_to_lists!: () -> void
+
+  def broadcastable?: () -> void
+
+  def fan_out_to_public_recipients!: () -> void
+
+  def deliver_to_hashtag_followers!: () -> void
+
+  def fan_out_to_public_streams!: () -> void
+
+  def broadcast_to_hashtag_streams!: () -> void
+
+  def broadcast_to_public_streams!: () -> void
+
+  def anonymous_payload: () -> void
+
+  def deliver_to_mentioned_followers!: () -> void
+
+  def deliver_to_conversation!: () -> void
+end

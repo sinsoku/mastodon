@@ -1,0 +1,5 @@
+class REST::Admin::TagSerializer
+  def id: () -> String
+
+  def requires_review: () -> bool
+end

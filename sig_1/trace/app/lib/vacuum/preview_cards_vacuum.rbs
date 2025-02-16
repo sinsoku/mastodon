@@ -1,0 +1,7 @@
+class Vacuum::PreviewCardsVacuum
+  def initialize: (nil) -> void
+
+  def perform: () -> void
+
+  def retention_period?: () -> void
+end

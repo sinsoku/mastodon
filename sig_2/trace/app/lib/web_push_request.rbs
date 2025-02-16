@@ -1,0 +1,27 @@
+class WebPushRequest
+  def initialize: (Web::PushSubscription) -> void
+
+  def encrypt: (String) -> Hash[untyped, untyped]
+
+  def key_p256dh: (*untyped, **untyped) -> void
+
+  def key_auth: (*untyped, **untyped) -> void
+
+  def audience: () -> void
+
+  def endpoint: (*untyped, **untyped) -> void
+
+  def crypto_key_header: () -> String
+
+  def vapid_key: () -> Webpush::VapidKey
+
+  def authorization_header: () -> void
+
+  def encoded_json_web_token: () -> void
+
+  def web_token_payload: () -> void
+
+  def payload_subject: () -> void
+
+  def contact_email: () -> void
+end

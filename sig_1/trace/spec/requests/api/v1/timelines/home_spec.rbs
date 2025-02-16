@@ -1,0 +1,41 @@
+module RSpec::ExampleGroups::Home::GETApiV1TimelinesHome::LetDefinitions
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Home::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Home::GETApiV1TimelinesHome::WhenTheTimelineIsAvailable::LetDefinitions
+  def bob: () -> Account
+
+  def tim: () -> Account
+
+  def ana: () -> Account
+
+  def home_statuses: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Home::GETApiV1TimelinesHome::WhenTheTimelineIsAvailable::WithLimitParam::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Home::GETApiV1TimelinesHome::WithoutAUserContext::LetDefinitions
+  def token: () -> Doorkeeper::AccessToken
+end
+
+module RSpec::ExampleGroups::Home::GETApiV1TimelinesHome::WhenTheTimelineIsRegenerating::LetDefinitions
+  def timeline: () -> RSpec::Mocks::InstanceVerifyingDouble
+end
+
+module RSpec::ExampleGroups::Home::GETApiV1TimelinesHome::WithoutAnAuthorizationHeader::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+end

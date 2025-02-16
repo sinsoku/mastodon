@@ -1,0 +1,31 @@
+module Mastodon::Version
+  def self.repository: () -> void
+                     | () -> String
+
+  def self.source_url: () -> void
+
+  def self.source_tag: () -> void
+
+  def self.source_base_url: () -> void
+
+  def self.to_s: () -> void
+               | () -> String
+
+  def self.to_a: () -> Array[untyped]
+
+  def self.major: () -> void
+
+  def self.minor: () -> void
+
+  def self.patch: () -> void
+
+  def self.prerelease: () -> String
+
+  def self.default_prerelease: () -> void
+
+  def self.build_metadata: () -> nil
+
+  def self.user_agent: () -> void
+
+  def self.api_versions: () -> void
+end

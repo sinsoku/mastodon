@@ -1,0 +1,71 @@
+module RSpec::ExampleGroups::Lists::POSTApiV1Lists::LetDefinitions
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Lists::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Lists::POSTApiV1Lists::WhenATitleIsNotGiven::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Lists::POSTApiV1Lists::WhenTheGivenRepliesPolicyIsInvalid::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Lists::GETApiV1ListsId::LetDefinitions
+  def subject: () -> Integer
+
+  def list: () -> List
+end
+
+module RSpec::ExampleGroups::Lists::GETApiV1ListsId::WhenTheListBelongsToADifferentUser::LetDefinitions
+  def list: () -> List
+end
+
+module RSpec::ExampleGroups::Lists::GETApiV1Lists::LetDefinitions
+  def lists: () -> Array[untyped]
+
+  def subject: () -> Integer
+
+  def expected_response: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Lists::DELETEApiV1ListsId::LetDefinitions
+  def subject: () -> Integer
+
+  def list: () -> List
+end
+
+module RSpec::ExampleGroups::Lists::DELETEApiV1ListsId::WhenTheListBelongsToAnotherUser::LetDefinitions
+  def list: () -> List
+end
+
+class RSpec::ExampleGroups::Lists::PUTApiV1ListsId
+  def change_list_title: () -> RSpec::Matchers::BuiltIn::ChangeFromValue
+
+  def change_list_replies_policy: () -> RSpec::Matchers::BuiltIn::ChangeFromValue
+
+  def change_list_exclusive: () -> void
+end
+
+module RSpec::ExampleGroups::Lists::PUTApiV1ListsId::LetDefinitions
+  def list: () -> List
+
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Lists::PUTApiV1ListsId::WhenTheListBelongsToAnotherUser::LetDefinitions
+  def list: () -> List
+end

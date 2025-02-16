@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::RESTPreviewCardSerializer::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::RESTPreviewCardSerializer::WhenPreviewCardHasAuthorData::LetDefinitions
+  def preview_card: () -> PreviewCard
+end
+
+module RSpec::ExampleGroups::RESTPreviewCardSerializer::WhenPreviewCardDoesNotHaveAuthorData::LetDefinitions
+  def preview_card: () -> PreviewCard
+end

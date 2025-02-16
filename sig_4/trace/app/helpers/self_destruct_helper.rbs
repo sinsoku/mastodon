@@ -1,0 +1,5 @@
+module SelfDestructHelper
+  def self_destruct?: () -> void
+
+  def self.self_destruct?: () -> void
+end

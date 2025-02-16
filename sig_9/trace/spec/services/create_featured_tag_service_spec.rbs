@@ -1,0 +1,11 @@
+module RSpec::ExampleGroups::CreateFeaturedTagService::Call::WithARemoteAccount::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::CreateFeaturedTagService::Call::LetDefinitions
+  def tag: () -> String
+end
+
+module RSpec::ExampleGroups::CreateFeaturedTagService::Call::WithALocalAccount::LetDefinitions
+  def account: () -> Account
+end

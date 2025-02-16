@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::AnnualReportMostRebloggedAccounts::Generate::LetDefinitions
+  def subject: () -> AnnualReport::MostRebloggedAccounts
+end
+
+module RSpec::ExampleGroups::AnnualReportMostRebloggedAccounts::Generate::WithAnInactiveAccount::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AnnualReportMostRebloggedAccounts::Generate::WithAnActiveAccount::LetDefinitions
+  def account: () -> Account
+
+  def other_account: () -> Account
+
+  def most_other_account: () -> Account
+end

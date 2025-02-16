@@ -1,0 +1,3 @@
+class PrecomputeFeedService
+  def call: (Account) -> void
+end

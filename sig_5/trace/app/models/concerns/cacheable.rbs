@@ -1,0 +1,7 @@
+module Cacheable::ClassMethods
+  def cache_associated: (*Symbol | Hash[untyped, untyped]) -> void
+
+  def preload_cacheable_associations: (Array[untyped]) -> void
+
+  def with_includes: () -> ActiveRecord::Relation
+end

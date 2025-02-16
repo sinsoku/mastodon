@@ -1,0 +1,107 @@
+module RSpec::ExampleGroups::Reports::POSTAssignToSelf::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Reports::POSTAssignToSelf::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::Reports::POSTResolve::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Reports::POSTResolve::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::Reports::GETApiV1AdminReportsId::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::Reports::GETApiV1AdminReportsId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Reports::GETApiV1AdminReports::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Reports::GETApiV1AdminReports::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::Reports::POSTReopen::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::Reports::POSTReopen::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Reports::POSTUnassign::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Reports::POSTUnassign::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::Bookmarks::GETApiV1Bookmarks::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::DomainBlocks::GETApiV1DomainBlocks::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::DomainBlocks::POSTApiV1DomainBlocks::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::DomainBlocks::DELETEApiV1DomainBlocks::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::FeaturedTags::DELETEApiV1FeaturedTags::WithWrongScope::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::FeaturedTags::POSTApiV1FeaturedTags::WithWrongScope::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::FeaturedTags::GETApiV1FeaturedTags::WithWrongScope::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Links::POSTApiV1AdminTrendsLinksIdReject::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::Links::POSTApiV1AdminTrendsLinksIdReject::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Links::POSTApiV1AdminTrendsLinksIdApprove::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Links::POSTApiV1AdminTrendsLinksIdApprove::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::Preferences::GETApiV1Preferences::WithWrongScope::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Tag::GETApiV1TimelinesTagHashtag::WhenTheInstanceDoesNotAllowPublicPreview::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Tag::GETApiV1TimelinesTagHashtag::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ScheduledStatuses::GETApiV1ScheduledStatuses::WithWrongScope::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end

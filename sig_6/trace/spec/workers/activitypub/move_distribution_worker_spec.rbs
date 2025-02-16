@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::ActivityPubMoveDistributionWorker::LetDefinitions
+  def follower: () -> Account
+
+  def migration: () -> AccountMigration
+
+  def blocker: () -> Account
+
+  def subject: () -> ActivityPub::MoveDistributionWorker
+end
+
+class RSpec::ExampleGroups::ActivityPubMoveDistributionWorker::Perform
+  def expected_migration_deliveries: () -> void
+end

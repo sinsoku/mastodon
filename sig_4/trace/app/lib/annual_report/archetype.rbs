@@ -1,0 +1,11 @@
+class AnnualReport::Archetype
+  def generate: () -> void
+
+  def archetype: () -> void
+
+  def standalone_count: () -> Integer
+
+  def replies_count: () -> void
+
+  def reblogs_count: () -> void
+end

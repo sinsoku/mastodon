@@ -1,0 +1,10 @@
+class Api::V1::TagsController
+  def set_or_create_tag: () -> String
+                       | () -> Tag
+
+  def follow: () -> String
+
+  def show: () -> String
+
+  def unfollow: () -> String
+end

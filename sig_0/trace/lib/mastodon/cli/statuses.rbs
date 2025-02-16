@@ -1,0 +1,14 @@
+class Mastodon::CLI::Statuses
+  def remove: () -> nil
+            | () -> PG::Result
+
+  def remove_statuses: () -> void
+
+  def vacuum_and_analyze_statuses: () -> void
+
+  def remove_orphans_media_attachments: () -> void
+
+  def remove_orphans_conversations: () -> void
+
+  def vacuum_and_analyze_conversations: () -> void
+end

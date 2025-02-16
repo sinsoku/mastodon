@@ -1,0 +1,19 @@
+class Export
+  def initialize: (Account) -> void
+
+  def to_following_accounts_csv: () -> void
+
+  def acct: (Account) -> void
+
+  def to_blocked_domains_csv: () -> void
+
+  def to_lists_csv: () -> void
+
+  def to_blocked_accounts_csv: () -> void
+
+  def to_csv: (ActiveRecord::AssociationRelation) -> void
+
+  def to_muted_accounts_csv: () -> void
+
+  def to_bookmarks_csv: () -> void
+end

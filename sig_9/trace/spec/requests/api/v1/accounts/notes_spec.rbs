@@ -1,0 +1,23 @@
+module RSpec::ExampleGroups::AccountsNotesAPI::POSTApiV1AccountsAccountIdNote::LetDefinitions
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::AccountsNotesAPI::LetDefinitions
+  def account: () -> Account
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::AccountsNotesAPI::POSTApiV1AccountsAccountIdNote::WhenAccountNoteHasReasonableLength::LetDefinitions
+  def comment: () -> String
+end
+
+module RSpec::ExampleGroups::AccountsNotesAPI::POSTApiV1AccountsAccountIdNote::WhenAccountNoteExceedsAllowedLength::LetDefinitions
+  def comment: () -> String
+end

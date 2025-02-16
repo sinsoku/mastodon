@@ -1,0 +1,6 @@
+module Status::SnapshotConcern
+  def build_snapshot: (?account_id: nil, ?at_time: ActiveSupport::TimeWithZone, ?rate_limit: bool) -> StatusEdit
+                    | (?account_id: Integer, ?at_time: nil, ?rate_limit: bool) -> StatusEdit
+
+  def snapshot!: (**untyped) -> void
+end

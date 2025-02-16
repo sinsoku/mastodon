@@ -1,0 +1,7 @@
+module Mastodon::Snowflake
+  def self.id_at: (ActiveSupport::TimeWithZone, ?with_random: bool) -> Integer
+end
+
+class Mastodon::Snowflake::Callbacks
+  def self.around_create: (Status) -> Integer
+end

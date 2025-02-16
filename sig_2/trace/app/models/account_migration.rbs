@@ -1,0 +1,17 @@
+class AccountMigration
+  def self.cooldown_duration_ago: () -> ActiveSupport::TimeWithZone
+
+  def save_with_challenge: (User) -> void
+
+  def set_target_account: () -> Account
+
+  def set_followers_count: () -> Integer
+
+  def validate_migration_cooldown: () -> nil
+                                 | () -> ActiveModel::Error
+
+  def validate_target_account: () -> nil
+                             | () -> ActiveModel::Error
+
+  def cooldown_at: () -> ActiveSupport::TimeWithZone
+end

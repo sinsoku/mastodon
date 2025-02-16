@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::RESTAdminDomainAllowSerializer::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+
+  def record: () -> DomainAllow
+end

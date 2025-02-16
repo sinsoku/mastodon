@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::RESTAnnualReportEventSerializer::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::RESTAnnualReportEventSerializer::SerializingAnObject::LetDefinitions
+  def record: () -> GeneratedAnnualReport
+end

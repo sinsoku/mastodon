@@ -1,0 +1,5 @@
+module PreloadingConcern
+  def preload_collection: (Array[untyped], Class) -> Array[untyped]
+
+  def preload_collection_paginated_by_id: (ActiveRecord::AssociationRelation, Class, Integer, ActionController::Parameters) -> void
+end

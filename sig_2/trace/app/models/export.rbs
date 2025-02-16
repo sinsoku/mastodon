@@ -1,0 +1,7 @@
+class Export
+  def initialize: (Account) -> void
+
+  def to_following_accounts_csv: () -> void
+
+  def acct: (Account) -> void
+end

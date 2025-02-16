@@ -1,0 +1,11 @@
+class URLValidator
+  def validate_each: (PreviewCard, Symbol, String) -> void
+
+  def compliant_url?: () -> void
+
+  def parsed_url: () -> Addressable::URI
+
+  def valid_url_scheme?: () -> void
+
+  def valid_url_host?: () -> void
+end

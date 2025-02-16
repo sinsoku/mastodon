@@ -1,0 +1,25 @@
+module RSpec::ExampleGroups::AppSignUpService::LetDefinitions
+  def subject: () -> AppSignUpService
+
+  def app: () -> Doorkeeper::Application
+
+  def remote_ip: () -> IPAddr
+
+  def good_params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AppSignUpService::Call::WhenRegistrationsAreClosed::WhenUsingAValidInvite::LetDefinitions
+  def invite: () -> Invite
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AppSignUpService::Call::WhenRegistrationsAreClosed::WhenUsingAnInvalidInvite::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+
+  def invite: () -> Invite
+end
+
+module RSpec::ExampleGroups::AppSignUpService::Call::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end

@@ -1,0 +1,7 @@
+class Api::V1::MediaController
+  def media_attachment_params: () -> void
+
+  def processing_error: () -> void
+
+  def file_type_error: () -> void
+end

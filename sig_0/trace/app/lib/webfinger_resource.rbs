@@ -1,0 +1,28 @@
+class WebfingerResource
+  def initialize: (String) -> void
+
+  def username: () -> String
+              | () -> nil
+
+  def instance_actor_regexp: () -> Regexp
+
+  def username_from_acct: () -> void
+
+  def domain_matches_local?: () -> void
+
+  def local_domain: () -> void
+
+  def split_acct: () -> Array[untyped]
+
+  def resource_without_acct_string: () -> String
+
+  def local_username: () -> void
+
+  def username_from_url: () -> void
+
+  def account_show_page?: () -> void
+
+  def path_params: () -> Hash[untyped, untyped]
+
+  def instance_actor_page?: () -> void
+end

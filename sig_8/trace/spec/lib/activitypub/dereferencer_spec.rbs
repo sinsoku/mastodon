@@ -1,0 +1,34 @@
+module RSpec::ExampleGroups::ActivityPubDereferencer::Object::LetDefinitions
+  def object: () -> Hash[untyped, untyped]
+
+  def subject: () -> Hash[untyped, untyped]
+             | () -> nil
+
+  def permitted_origin: () -> String
+
+  def signature_actor: () -> nil
+end
+
+module RSpec::ExampleGroups::ActivityPubDereferencer::Object::WithAURI::LetDefinitions
+  def uri: () -> String
+end
+
+module RSpec::ExampleGroups::ActivityPubDereferencer::Object::WithAURI::WithSignatureAccount::LetDefinitions
+  def signature_actor: () -> Account
+end
+
+module RSpec::ExampleGroups::ActivityPubDereferencer::Object::WithAURI::WithDifferentOrigin::LetDefinitions
+  def uri: () -> String
+end
+
+module RSpec::ExampleGroups::ActivityPubDereferencer::Object::WithABearcap::LetDefinitions
+  def uri: () -> String
+end
+
+module RSpec::ExampleGroups::ActivityPubDereferencer::Object::WithABearcap::WithDifferentOrigin::LetDefinitions
+  def uri: () -> String
+end
+
+module RSpec::ExampleGroups::ActivityPubDereferencer::Object::WithABearcap::WithSignatureAccount::LetDefinitions
+  def signature_actor: () -> Account
+end

@@ -1,0 +1,13 @@
+class Mastodon::CLI::IpBlocks
+  def add: (*String) -> StringIO
+         | (*nil) -> nil
+
+  def valid_ip_address?: (String) -> void
+
+  def color: (Integer, Integer) -> void
+
+  def export: () -> nil
+
+  def remove: (*String) -> StringIO
+            | (*nil) -> nil
+end

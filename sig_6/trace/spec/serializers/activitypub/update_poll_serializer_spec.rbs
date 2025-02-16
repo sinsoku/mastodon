@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::ActivityPubUpdatePollSerializer::LetDefinitions
+  def status: () -> Status
+
+  def account: () -> Account
+
+  def poll: () -> Poll
+
+  def subject: () -> Hash[untyped, untyped]
+end

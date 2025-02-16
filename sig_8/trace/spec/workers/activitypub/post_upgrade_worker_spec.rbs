@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::ActivityPubPostUpgradeWorker::Perform::LetDefinitions
+  def domain: () -> String
+end
+
+module RSpec::ExampleGroups::ActivityPubPostUpgradeWorker::LetDefinitions
+  def worker: () -> ActivityPub::PostUpgradeWorker
+end

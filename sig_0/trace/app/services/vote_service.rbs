@@ -1,0 +1,13 @@
+class VoteService
+  def call: (Account, Poll, Array[untyped]) -> void
+
+  def increment_voters_count!: () -> void
+
+  def distribute_poll!: () -> void
+
+  def deliver_votes!: () -> void
+
+  def build_json: (PollVote) -> void
+
+  def queue_final_poll_check!: () -> void
+end

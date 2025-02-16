@@ -1,0 +1,9 @@
+module DomainHelpers
+  def configure_mx: (domain: String, exchange: String, ?ip_v4_addr: String, ?ip_v6_addr: String) -> void
+
+  def double_mx: (String) -> void
+
+  def double_resource_v4: (String) -> void
+
+  def double_resource_v6: (String) -> void
+end

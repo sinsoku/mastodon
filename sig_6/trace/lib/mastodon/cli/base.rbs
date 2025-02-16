@@ -1,0 +1,7 @@
+class Mastodon::CLI::Base
+  def fail_with_message: (String) -> void
+end
+
+class Mastodon::CLI::Main
+  def self.exit_on_failure?: () -> void
+end

@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::ImportWorker::LetDefinitions
+  def service: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def worker: () -> ImportWorker
+end
+
+module RSpec::ExampleGroups::ImportWorker::Perform::LetDefinitions
+  def import: () -> Import
+end

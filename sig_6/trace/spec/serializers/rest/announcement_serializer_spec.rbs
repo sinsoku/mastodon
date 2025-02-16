@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::RESTAnnouncementSerializer::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+
+  def announcement: () -> Announcement
+
+  def current_user: () -> User
+end

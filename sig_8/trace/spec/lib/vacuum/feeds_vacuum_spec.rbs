@@ -1,0 +1,14 @@
+module RSpec::ExampleGroups::VacuumFeedsVacuum::Perform::LetDefinitions
+  def active_user: () -> User
+
+  def inactive_user: () -> User
+end
+
+class RSpec::ExampleGroups::VacuumFeedsVacuum
+  def feed_key_for: (User, ?nil) -> void
+                  | (User, ?String) -> void
+end
+
+module RSpec::ExampleGroups::VacuumFeedsVacuum::LetDefinitions
+  def subject: () -> Vacuum::FeedsVacuum
+end

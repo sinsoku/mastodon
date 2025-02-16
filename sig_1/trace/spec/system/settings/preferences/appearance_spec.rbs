@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::SettingsPreferencesAppearancePage::LetDefinitions
+  def user: () -> User
+end
+
+class RSpec::ExampleGroups::SettingsPreferencesAppearancePage
+  def theme_selection_field: () -> void
+
+  def confirm_reblog_field: () -> void
+
+  def confirm_delete_field: () -> void
+
+  def save_changes: () -> void
+end

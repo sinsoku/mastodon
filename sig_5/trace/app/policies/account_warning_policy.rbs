@@ -1,0 +1,7 @@
+class AccountWarningPolicy
+  def appeal?: () -> bool
+
+  def target?: () -> void
+
+  def show?: () -> bool
+end

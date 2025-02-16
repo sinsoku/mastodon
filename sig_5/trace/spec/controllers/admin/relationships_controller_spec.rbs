@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::AdminRelationshipsController::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::AdminRelationshipsController::GETIndex::LetDefinitions
+  def account: () -> Account
+end

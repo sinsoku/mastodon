@@ -1,0 +1,37 @@
+module RSpec::ExampleGroups::PreviewCardProvider::LetDefinitions
+  def subject: () -> PreviewCardProvider
+
+  def reviewed_at: () -> nil
+
+  def requested_review_at: () -> nil
+end
+
+module RSpec::ExampleGroups::PreviewCardProvider::RequestedReview::WhenRequestedReviewedAtIsNotNull::LetDefinitions
+  def requested_review_at: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::PreviewCardProvider::Reviewed::WhenReviewedAtIsNotNull::LetDefinitions
+  def reviewed_at: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::PreviewCardProvider::RequiresReview::WhenReviewedAtIsNotNull::LetDefinitions
+  def reviewed_at: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::PreviewCardProvider::Scopes::LetDefinitions
+  def reviewed_record: () -> PreviewCardProvider
+
+  def un_reviewed_record: () -> PreviewCardProvider
+end
+
+class RSpec::ExampleGroups::PreviewCardProvider::Scopes
+  def factory_name: () -> void
+end
+
+module RSpec::ExampleGroups::PreviewCardProvider::RequiresReviewNotification::WhenRequestedReviewedAtIsNotNull::LetDefinitions
+  def requested_review_at: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::PreviewCardProvider::RequiresReviewNotification::WhenReviewedAtIsNotNull::LetDefinitions
+  def reviewed_at: () -> ActiveSupport::TimeWithZone
+end

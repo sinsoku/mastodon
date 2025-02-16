@@ -1,0 +1,5 @@
+class FamiliarFollowersPresenter
+  def initialize: (Array[untyped], Integer) -> void
+
+  def accounts: () -> Array[untyped]
+end

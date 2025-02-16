@@ -1,0 +1,3 @@
+class WellKnown::OauthMetadataController
+  def show: () -> bool
+end

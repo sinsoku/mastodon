@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::AccountControllerConcern::WhenAccountIsNotSuspended::LetDefinitions
+  def account: () -> Account
+end
+
+class AnonymousController
+  def success: () -> String
+end

@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::SettingsExportsLists::GETSettingsExportsLists::WithASignedInUserWhoHasLists::LetDefinitions
+  def list: () -> List
+
+  def account: () -> Account
+
+  def user: () -> User
+end

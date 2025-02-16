@@ -1,0 +1,12 @@
+class UserSettings::Setting
+  def key: () -> void
+
+  def value_for: (String, nil) -> void
+
+  def default_value: () -> void
+                   | () -> String
+                   | () -> bool
+                   | () -> nil
+
+  def initialize: (Symbol, ?Hash[untyped, untyped]) -> void
+end

@@ -1,0 +1,5 @@
+class UserSettings::Namespace
+  def initialize: (Symbol) -> void
+
+  def setting: (Symbol, ?Hash[untyped, untyped]) -> void
+end

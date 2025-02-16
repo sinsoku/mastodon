@@ -1,0 +1,8 @@
+class Api::V2::MediaController
+  def create: () -> String
+            | () -> nil
+
+  def media_and_delay_params: () -> void
+
+  def status_from_media_processing: () -> void
+end

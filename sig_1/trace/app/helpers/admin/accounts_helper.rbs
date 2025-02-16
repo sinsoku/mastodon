@@ -1,0 +1,5 @@
+module Admin::AccountsHelper
+  def admin_accounts_moderation_options: () -> Array[untyped]
+
+  def pending_user_count_label: () -> ActiveSupport::SafeBuffer
+end

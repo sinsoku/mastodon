@@ -1,0 +1,5 @@
+module Status::SearchConcern
+  def searchable_text: () -> void
+
+  def searchable_properties: () -> void
+end

@@ -1,0 +1,11 @@
+class Vacuum::FeedsVacuum
+  def perform: () -> void
+
+  def vacuum_inactive_home_feeds!: () -> void
+
+  def inactive_users: () -> ActiveRecord::Relation
+
+  def vacuum_inactive_list_feeds!: () -> void
+
+  def inactive_users_lists: () -> ActiveRecord::Relation
+end

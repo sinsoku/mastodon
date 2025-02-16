@@ -1,0 +1,271 @@
+module RSpec::ExampleGroups::AccountInteractions::Reblogged::LetDefinitions
+  def subject: () -> bool
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::AccountInteractions::LetDefinitions
+  def account: () -> Account
+
+  def target_account: () -> Account
+
+  def target_account_ids: () -> Array[untyped]
+
+  def target_account_id: () -> Integer
+
+  def account_id: () -> Integer
+end
+
+module RSpec::ExampleGroups::AccountInteractions::Reblogged::WithReblogged::LetDefinitions
+  def reblogs: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::AccountInteractions::Reblogged::WhenNotReblogged::LetDefinitions
+  def reblogs: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::AccountInteractions::FollowingMap::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AccountInteractions::MutingNotifications::WhenMutingNotificationsOfTargetAccount::LetDefinitions
+  def hide: () -> bool
+end
+
+module RSpec::ExampleGroups::AccountInteractions::MutingNotifications::LetDefinitions
+  def subject: () -> bool
+end
+
+module RSpec::ExampleGroups::AccountInteractions::MutingNotifications::WhenNotMutingNotificationsOfTargetAccount::LetDefinitions
+  def hide: () -> bool
+end
+
+module RSpec::ExampleGroups::AccountInteractions::MutingAnAccount::LetDefinitions
+  def me: () -> Account
+
+  def you: () -> Account
+end
+
+module RSpec::ExampleGroups::AccountInteractions::RemoteFollowersHash::LetDefinitions
+  def remote_alice: () -> Account
+
+  def me: () -> Account
+
+  def remote_bob: () -> Account
+
+  def remote_instance_actor: () -> Account
+
+  def remote_eve: () -> Account
+end
+
+module RSpec::ExampleGroups::AccountInteractions::UnblockIdnaDomain::LetDefinitions
+  def idna_domain: () -> String
+
+  def subject: () -> AccountDomainBlock
+             | () -> nil
+
+  def punycode_domain: () -> String
+end
+
+module RSpec::ExampleGroups::AccountInteractions::Following::LetDefinitions
+  def subject: () -> bool
+end
+
+module RSpec::ExampleGroups::AccountInteractions::Requested::LetDefinitions
+  def subject: () -> bool
+end
+
+module RSpec::ExampleGroups::AccountInteractions::Mute::WhenMuteAlreadyExists::LetDefinitions
+  def mute: () -> Mute
+end
+
+module RSpec::ExampleGroups::AccountInteractions::Mute::WhenMuteAlreadyExists::WhenMuteHideNotificationsIsFalse::LetDefinitions
+  def hide_notifications: () -> bool
+end
+
+module RSpec::ExampleGroups::AccountInteractions::Mute::LetDefinitions
+  def subject: () -> Mute
+end
+
+module RSpec::ExampleGroups::AccountInteractions::Mute::WhenMuteAlreadyExists::WhenMuteHideNotificationsIsFalse::WhenArgNotificationsIsFalse::LetDefinitions
+  def arg_notifications: () -> bool
+end
+
+module RSpec::ExampleGroups::AccountInteractions::Mute::WhenMuteAlreadyExists::WhenMuteHideNotificationsIsFalse::WhenArgNotificationsIsTrue::LetDefinitions
+  def arg_notifications: () -> bool
+end
+
+module RSpec::ExampleGroups::AccountInteractions::Mute::WhenMuteAlreadyExists::WhenMuteHideNotificationsIsFalse::WhenArgNotificationsIsNil::LetDefinitions
+  def arg_notifications: () -> nil
+end
+
+module RSpec::ExampleGroups::AccountInteractions::Mute::WhenMuteAlreadyExists::WhenMuteHideNotificationsIsTrue::LetDefinitions
+  def hide_notifications: () -> bool
+end
+
+module RSpec::ExampleGroups::AccountInteractions::Mute::WhenMuteAlreadyExists::WhenMuteHideNotificationsIsTrue::WhenArgNotificationsIsNil::LetDefinitions
+  def arg_notifications: () -> nil
+end
+
+module RSpec::ExampleGroups::AccountInteractions::Mute::WhenMuteAlreadyExists::WhenMuteHideNotificationsIsTrue::WhenArgNotificationsIsFalse::LetDefinitions
+  def arg_notifications: () -> bool
+end
+
+module RSpec::ExampleGroups::AccountInteractions::Mute::WhenMuteAlreadyExists::WhenMuteHideNotificationsIsTrue::WhenArgNotificationsIsTrue::LetDefinitions
+  def arg_notifications: () -> bool
+end
+
+module RSpec::ExampleGroups::AccountInteractions::Mute::WhenMuteDoesNotExistYet::WhenArgNotificationsIsNil::LetDefinitions
+  def arg_notifications: () -> nil
+end
+
+module RSpec::ExampleGroups::AccountInteractions::Mute::WhenMuteDoesNotExistYet::WhenArgNotificationsIsTrue::LetDefinitions
+  def arg_notifications: () -> bool
+end
+
+module RSpec::ExampleGroups::AccountInteractions::Mute::WhenMuteDoesNotExistYet::WhenArgNotificationsIsFalse::LetDefinitions
+  def arg_notifications: () -> bool
+end
+
+module RSpec::ExampleGroups::AccountInteractions::FollowedBy::LetDefinitions
+  def subject: () -> bool
+end
+
+module RSpec::ExampleGroups::AccountInteractions::Unblock::LetDefinitions
+  def subject: () -> Block
+             | () -> nil
+end
+
+module RSpec::ExampleGroups::AccountInteractions::IgnoringReblogsFromAnAccount::LetDefinitions
+  def me: () -> Account
+
+  def you: () -> Account
+end
+
+module RSpec::ExampleGroups::AccountInteractions::Pinned::LetDefinitions
+  def status: () -> Status
+
+  def subject: () -> bool
+end
+
+module RSpec::ExampleGroups::AccountInteractions::MutingMap::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AccountInteractions::MutingMap::WhenAccountWithMute::WhenNotMuteHideNotifications::LetDefinitions
+  def hide: () -> bool
+end
+
+module RSpec::ExampleGroups::AccountInteractions::MutingMap::WhenAccountWithMute::WhenMuteHideNotifications::LetDefinitions
+  def hide: () -> bool
+end
+
+module RSpec::ExampleGroups::AccountInteractions::BlockDomain::LetDefinitions
+  def subject: () -> AccountDomainBlock
+
+  def domain: () -> String
+end
+
+module RSpec::ExampleGroups::AccountInteractions::ListsForLocalDistribution::LetDefinitions
+  def inactive_follower_user: () -> User
+
+  def follower_user: () -> User
+
+  def follow_request_user: () -> User
+
+  def inactive_follower_list: () -> List
+
+  def follower_list: () -> List
+
+  def follow_request_list: () -> List
+
+  def self_list: () -> List
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AccountInteractions::Muting::LetDefinitions
+  def subject: () -> bool
+end
+
+module RSpec::ExampleGroups::AccountInteractions::BlockingMap::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AccountInteractions::Unfollow::LetDefinitions
+  def subject: () -> Follow
+             | () -> nil
+end
+
+module RSpec::ExampleGroups::AccountInteractions::MuteConversation::LetDefinitions
+  def subject: () -> ConversationMute
+
+  def conversation: () -> Conversation
+end
+
+module RSpec::ExampleGroups::AccountInteractions::LocalFollowersHash::LetDefinitions
+  def me: () -> Account
+
+  def remote_alice: () -> Account
+end
+
+module RSpec::ExampleGroups::AccountInteractions::BlockIdnaDomain::LetDefinitions
+  def subject: () -> Array[untyped]
+
+  def idna_domain: () -> String
+
+  def punycode_domain: () -> String
+end
+
+module RSpec::ExampleGroups::AccountInteractions::UnblockDomain::LetDefinitions
+  def domain: () -> String
+
+  def subject: () -> AccountDomainBlock
+             | () -> nil
+end
+
+module RSpec::ExampleGroups::AccountInteractions::Blocking::LetDefinitions
+  def subject: () -> bool
+end
+
+module RSpec::ExampleGroups::AccountInteractions::Unmute::LetDefinitions
+  def subject: () -> Mute
+             | () -> nil
+end
+
+module RSpec::ExampleGroups::AccountInteractions::UnmuteConversation::LetDefinitions
+  def subject: () -> nil
+             | () -> ConversationMute
+
+  def conversation: () -> Conversation
+end
+
+module RSpec::ExampleGroups::AccountInteractions::FollowedByMap::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AccountInteractions::Favourited::LetDefinitions
+  def subject: () -> bool
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::AccountInteractions::Favourited::WhenFavorited::LetDefinitions
+  def favourites: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::AccountInteractions::Favourited::WhenNotFavorited::LetDefinitions
+  def favourites: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::AccountInteractions::MutingConversation::LetDefinitions
+  def subject: () -> bool
+
+  def conversation: () -> Conversation
+end
+
+module RSpec::ExampleGroups::AccountInteractions::DomainBlocking::LetDefinitions
+  def domain: () -> String
+
+  def subject: () -> bool
+end

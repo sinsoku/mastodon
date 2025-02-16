@@ -1,0 +1,21 @@
+class WellKnown::WebfingerController
+  def set_account: () -> Account
+                 | () -> nil
+
+  def username_from_resource: () -> String
+                            | () -> nil
+
+  def resource_param: () -> String
+                    | () -> nil
+
+  def check_account_suspension: () -> nil
+                              | () -> bool
+
+  def show: () -> String
+
+  def gone: () -> void
+
+  def not_found: () -> bool
+
+  def bad_request: () -> bool
+end

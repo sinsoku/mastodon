@@ -1,0 +1,5 @@
+class NotificationRequest
+  def prepare_notifications_count: () -> Integer
+
+  def self.preload_cache_collection: (Array[untyped]) -> void
+end

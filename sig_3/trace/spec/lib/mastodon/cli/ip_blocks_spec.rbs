@@ -1,0 +1,172 @@
+module RSpec::ExampleGroups::MastodonCLIIpBlocks::Add::LetDefinitions
+  def ip_list: () -> Array[untyped]
+
+  def action: () -> Symbol
+
+  def arguments: () -> Array[untyped]
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIIpBlocks::LetDefinitions
+  def subject: () -> StringIO
+             | () -> nil
+
+  def cli: () -> Mastodon::CLI::IpBlocks
+
+  def arguments: () -> Array[untyped]
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIIpBlocks::Add::WithCommentOption::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::MastodonCLIIpBlocks::Add::WithCommentOption
+  def blocked_ip_addresses: () -> void
+
+  def expected_ip_addresses: () -> void
+
+  def blocked_ips_severity: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIIpBlocks::Add::WhenASpecifiedIPAddressIsAlreadyBlocked::LetDefinitions
+  def blocked_ip: () -> IpBlock
+
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIIpBlocks::Add::WhenASpecifiedIPAddressIsAlreadyBlocked::WithForceOption::LetDefinitions
+  def blocked_ip: () -> IpBlock
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::MastodonCLIIpBlocks::Add::WhenASpecifiedIPAddressIsAlreadyBlocked::WithForceOption
+  def blocked_ip_addresses: () -> void
+
+  def expected_ip_addresses: () -> void
+
+  def blocked_ips_severity: () -> void
+end
+
+class RSpec::ExampleGroups::MastodonCLIIpBlocks::Add::WithValidIPAddresses
+  def blocked_ip_addresses: () -> void
+
+  def expected_ip_addresses: () -> void
+
+  def blocked_ips_severity: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIIpBlocks::Add::WhenASpecifiedIPAddressIsInvalid::LetDefinitions
+  def ip_list: () -> Array[untyped]
+
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIIpBlocks::Add::WhenASpecifiedIPAddressFailsToBeBlocked::LetDefinitions
+  def ip_block: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def ip_address: () -> String
+
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIIpBlocks::Add::WithSignUpBlockSeverity::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::MastodonCLIIpBlocks::Add::WithSignUpBlockSeverity
+  def blocked_ip_addresses: () -> void
+
+  def expected_ip_addresses: () -> void
+
+  def blocked_ips_severity: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIIpBlocks::Add::WithDurationOption::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::MastodonCLIIpBlocks::Add::WithDurationOption
+  def blocked_ip_addresses: () -> void
+
+  def expected_ip_addresses: () -> void
+
+  def blocked_ips_severity: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIIpBlocks::Add::WhenNoIPAddressIsProvided::LetDefinitions
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIIpBlocks::Add::WithSignUpRequiresApprovalSeverity::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::MastodonCLIIpBlocks::Add::WithSignUpRequiresApprovalSeverity
+  def blocked_ip_addresses: () -> void
+
+  def expected_ip_addresses: () -> void
+
+  def blocked_ips_severity: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIIpBlocks::Export::LetDefinitions
+  def first_ip_range_block: () -> IpBlock
+
+  def second_ip_range_block: () -> IpBlock
+
+  def action: () -> Symbol
+
+  def third_ip_range_block: () -> IpBlock
+end
+
+module RSpec::ExampleGroups::MastodonCLIIpBlocks::Export::WhenFormatOptionIsSetToNginx::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIIpBlocks::Export::WhenFormatOptionIsSetToPlain::LetDefinitions
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIIpBlocks::Remove::WhenASpecifiedIPAddressIsInvalid::LetDefinitions
+  def invalid_ip: () -> String
+
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIIpBlocks::Remove::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLIIpBlocks::Remove::WhenRemovingExactMatches::LetDefinitions
+  def ip_list: () -> Array[untyped]
+
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIIpBlocks::Remove::WithForceOption::LetDefinitions
+  def first_ip_range_block: () -> IpBlock
+
+  def second_ip_range_block: () -> IpBlock
+
+  def third_ip_range_block: () -> IpBlock
+
+  def arguments: () -> Array[untyped]
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::MastodonCLIIpBlocks::Remove::WithForceOption
+  def covered_ranges: () -> void
+
+  def other_ranges: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIIpBlocks::Remove::WhenASpecifiedIPAddressIsNotBlocked::LetDefinitions
+  def unblocked_ip: () -> String
+
+  def arguments: () -> Array[untyped]
+end

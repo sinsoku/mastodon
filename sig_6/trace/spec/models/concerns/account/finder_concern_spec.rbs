@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::AccountFinderConcern::RemoteFinders::LetDefinitions
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::AccountFinderConcern::LocalFinders::LetDefinitions
+  def account: () -> Account
+end

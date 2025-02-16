@@ -1,0 +1,5 @@
+class WellKnown::NodeInfoController
+  def index: () -> bool
+
+  def show: () -> bool
+end

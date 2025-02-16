@@ -1,0 +1,3 @@
+class Admin::SuspensionWorker
+  def perform: (Integer) -> void
+end

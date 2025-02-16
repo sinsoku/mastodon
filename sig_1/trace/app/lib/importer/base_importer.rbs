@@ -1,0 +1,9 @@
+class Importer::BaseImporter
+  def initialize: (batch_size: Integer, executor: Concurrent::FixedThreadPool) -> void
+
+  def in_work_unit: (*untyped, **untyped) -> void
+
+  def wait!: () -> void
+
+  def build_bulk_body: (ActiveRecord::Relation) -> void
+end

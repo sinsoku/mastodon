@@ -1,0 +1,23 @@
+class RSpec::ExampleGroups::MediaComponentHelper
+  def controller_helpers: () -> void
+
+  def parsed_html: () -> Nokogiri::XML::Document
+end
+
+module RSpec::ExampleGroups::MediaComponentHelper::RenderAudioComponent::LetDefinitions
+  def result: () -> ActiveSupport::SafeBuffer
+
+  def media: () -> MediaAttachment
+end
+
+module RSpec::ExampleGroups::MediaComponentHelper::RenderMediaGalleryComponent::LetDefinitions
+  def result: () -> ActiveSupport::SafeBuffer
+
+  def media: () -> MediaAttachment
+end
+
+module RSpec::ExampleGroups::MediaComponentHelper::RenderVideoComponent::LetDefinitions
+  def result: () -> ActiveSupport::SafeBuffer
+
+  def media: () -> MediaAttachment
+end

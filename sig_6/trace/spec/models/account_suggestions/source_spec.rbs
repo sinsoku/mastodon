@@ -1,0 +1,35 @@
+class RSpec::ExampleGroups::AccountSuggestionsSource
+  def fake_source_class: () -> void
+end
+
+module RSpec::ExampleGroups::AccountSuggestionsSource::BaseAccountScope::WithFollowsAndFollowRequests::LetDefinitions
+  def account_domain_blocked_account: () -> Account
+
+  def account: () -> Account
+
+  def blocked_account: () -> Account
+
+  def eligible_account: () -> Account
+
+  def follow_recommendation_muted_account: () -> Account
+
+  def follow_requested_account: () -> Account
+
+  def following_account: () -> Account
+
+  def moved_account: () -> Account
+
+  def silenced_account: () -> Account
+
+  def undiscoverable_account: () -> Account
+
+  def memorial_account: () -> Account
+end
+
+module RSpec::ExampleGroups::AccountSuggestionsSource::BaseAccountScope::LetDefinitions
+  def subject: () -> FakeSource
+end
+
+class FakeSource
+  def get: (Account, ?limit: Integer) -> ActiveRecord::Relation
+end

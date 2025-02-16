@@ -1,0 +1,63 @@
+class Request
+  def self.http_client: () -> HTTP::Client
+
+  def initialize: (Symbol, String, **String | HTTP::Client) -> void
+                | (Symbol, String, **nil) -> void
+                | (Symbol, String, **String | bool) -> void
+
+  def use_proxy?: () -> void
+
+  def proxy_url: () -> Hash[untyped, untyped]
+
+  def hidden_service?: () -> void
+
+  def block_hidden_service?: () -> void
+
+  def set_common_headers!: () -> void
+
+  def request_target: () -> void
+
+  def set_digest!: () -> void
+
+  def on_behalf_of: (Account, ?sign_with: nil) -> void
+
+  def add_headers: (Hash[untyped, untyped]) -> void
+                 | (Hash[untyped, untyped]) -> Request
+
+  def perform: () -> void
+
+  def http_client: () -> HTTP::Client
+
+  def headers: () -> void
+             | () -> Hash[untyped, untyped]
+
+  def signature: () -> void
+
+  def signed_string: () -> void
+
+  def signed_headers: () -> Hash[untyped, untyped]
+
+  def key_id: () -> String
+end
+
+module Request::ClientLimit
+  def body_with_limit: (?Integer) -> void
+                     | (?Integer) -> String
+                     | (?Integer) -> nil
+
+  def require_limit_not_exceeded!: (Integer) -> void
+
+  def truncated_body: (?Integer) -> String
+end
+
+class PerOperationWithDeadline
+  def initialize: (*Hash[untyped, untyped]) -> void
+
+  def connect: (Class, String, Integer, ?bool) -> void
+end
+
+class Request::Socket
+  def self.open: (String, *Integer) -> nil
+
+  def self.check_private_address: (String, String) -> void
+end

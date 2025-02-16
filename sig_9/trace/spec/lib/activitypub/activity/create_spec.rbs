@@ -1,0 +1,119 @@
+module RSpec::ExampleGroups::ActivityPubActivityCreate::LetDefinitions
+  def sender: () -> Account
+
+  def json: () -> ActiveSupport::HashWithIndifferentAccess
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityCreate::Perform::WhenTheSenderHasNoRelevanceToLocalActivity::LetDefinitions
+  def subject: () -> ActivityPub::Activity::Create
+
+  def object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityCreate::Perform::WhenObjectURIUsesBearcaps::LetDefinitions
+  def object_json: () -> Hash[untyped, untyped]
+
+  def token: () -> String
+
+  def subject: () -> ActivityPub::Activity::Create
+
+  def json: () -> ActiveSupport::HashWithIndifferentAccess
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityCreate::Perform::WhenFetching::LetDefinitions
+  def subject: () -> ActivityPub::Activity::Create
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityCreate::Perform::WhenFetching::WhenPrivateWithInlinedCollectionInAudience::LetDefinitions
+  def object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityCreate::Perform::WhenFetching::WhenObjectHasUpdateDateEqualToCreationDate::LetDefinitions
+  def object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityCreate::Perform::WhenFetching::WithAStandalone::LetDefinitions
+  def object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityCreate::Perform::WhenFetching::WithMediaAttachmentsMissingUrl::LetDefinitions
+  def object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityCreate::Perform::WhenFetching::WhenPublicWithPublic::LetDefinitions
+  def object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityCreate::Perform::WhenFetching::WithMediaAttachments::LetDefinitions
+  def object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityCreate::Perform::WhenFetching::WithHashtagsInvalidName::LetDefinitions
+  def object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityCreate::Perform::WhenFetching::WithMentionsMissingHref::LetDefinitions
+  def object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityCreate::Perform::WhenFetching::WithCounts::LetDefinitions
+  def object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityCreate::Perform::WhenFetching::WhenPrivate::LetDefinitions
+  def object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityCreate::Perform::WhenFetching::WhenObjectPublicationDateIsBelowISO8601Range::LetDefinitions
+  def object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityCreate::Perform::WhenFetching::WithEmojisServedWithInvalidContentType::LetDefinitions
+  def object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityCreate::Perform::WhenFetching::WhenUnlistedWithExplicitPublicAddress::LetDefinitions
+  def object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityCreate::Perform::WhenFetching::WithEmojis::LetDefinitions
+  def object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityCreate::Perform::WhenFetching::WhenObjectHasBeenEdited::LetDefinitions
+  def object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityCreate::Perform::WhenFetching::WhenLimited::LetDefinitions
+  def object_json: () -> Hash[untyped, untyped]
+
+  def recipient: () -> Account
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityCreate::Perform::WhenFetching::WhenDirect::LetDefinitions
+  def object_json: () -> Hash[untyped, untyped]
+
+  def recipient: () -> Account
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityCreate::Perform::WhenFetching::WithMentions::LetDefinitions
+  def object_json: () -> Hash[untyped, untyped]
+
+  def recipient: () -> Account
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityCreate::Perform::WhenFetching::WhenAVoteToAnExpiredLocalPoll::LetDefinitions
+  def local_status: () -> Status
+
+  def poll: () -> Poll
+
+  def object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityCreate::Perform::WhenFetching::WithMediaAttachmentsWithLongDescription::LetDefinitions
+  def object_json: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::ActivityPubActivityCreate::Perform::WhenFetching::WithFeaturedHashtags::LetDefinitions
+  def object_json: () -> Hash[untyped, untyped]
+end

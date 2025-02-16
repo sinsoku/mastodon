@@ -1,0 +1,3 @@
+class REST::DedupNotificationGroupSerializer
+  def return_partial_accounts?: () -> bool
+end

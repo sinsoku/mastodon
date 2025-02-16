@@ -1,0 +1,18 @@
+class PreviewCard
+  def save_with_optional_image!: () -> void
+
+  def extract_dimensions: () -> nil
+                        | () -> Integer
+
+  def appropriate_for_trends?: () -> void
+
+  def local?: () -> bool
+
+  def history: () -> Trends::History
+
+  def trendable?: () -> void
+
+  def authors: () -> Array[untyped]
+
+  def serialized_authors: () -> void
+end

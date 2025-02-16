@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::ScheduledStatuses::GETApiV1ScheduledStatuses::WithCorrectScope::WithScheduledStatuses::LetDefinitions
+  def scheduled_status: () -> ScheduledStatus
+end
+
+module RSpec::ExampleGroups::ScheduledStatuses::LetDefinitions
+  def user: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+end
+
+module RSpec::ExampleGroups::ScheduledStatuses::GETApiV1ScheduledStatuses::WithCorrectScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::ScheduledStatuses::GETApiV1ScheduledStatuses::WithAnApplicationToken::LetDefinitions
+  def token: () -> Doorkeeper::AccessToken
+end

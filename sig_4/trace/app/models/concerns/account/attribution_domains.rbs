@@ -1,0 +1,5 @@
+module Account::AttributionDomains
+  def attribution_domains_as_text: () -> String
+
+  def attribution_domains_as_text=: (String) -> Array[untyped]
+end

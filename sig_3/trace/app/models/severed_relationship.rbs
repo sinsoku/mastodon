@@ -1,0 +1,5 @@
+class SeveredRelationship
+  def account: () -> void
+
+  def target_account: () -> void
+end

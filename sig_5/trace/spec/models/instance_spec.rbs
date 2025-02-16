@@ -1,0 +1,29 @@
+module RSpec::ExampleGroups::Instance::Scopes::WithDomainFollows::LetDefinitions
+  def example_domain: () -> String
+
+  def other_domain: () -> String
+
+  def none_domain: () -> String
+end
+
+module RSpec::ExampleGroups::Instance::Scopes::MatchesDomain::LetDefinitions
+  def host_domain: () -> String
+
+  def host_under_domain: () -> String
+
+  def other_domain: () -> String
+end
+
+module RSpec::ExampleGroups::Instance::Scopes::ByDomainAndSubdomains::LetDefinitions
+  def exact_match_domain: () -> String
+
+  def subdomain_domain: () -> String
+
+  def partial_domain: () -> String
+end
+
+module RSpec::ExampleGroups::Instance::Scopes::Searchable::LetDefinitions
+  def expected_domain: () -> String
+
+  def blocked_domain: () -> String
+end

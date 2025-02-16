@@ -1,0 +1,23 @@
+class ActivityPub::VoteSerializer
+  def id: () -> String
+
+  def type: () -> String
+
+  def actor: () -> String
+
+  def to: () -> String
+end
+
+class ActivityPub::VoteSerializer::NoteSerializer
+  def id: () -> String
+
+  def type: () -> String
+
+  def name: () -> String
+
+  def attributed_to: () -> String
+
+  def in_reply_to: () -> String
+
+  def to: () -> String
+end

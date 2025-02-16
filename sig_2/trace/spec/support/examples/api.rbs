@@ -1,0 +1,71 @@
+module RSpec::ExampleGroups::CredentialsAPI::GETApiV1AccountsVerifyCredentials::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::CredentialsAPI::PATCHApiV1AccountsUpdateCredentials::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Policies::GETApiV2NotificationsPolicy::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Policies::PUTApiV2NotificationsPolicy::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Favourites::POSTApiV1StatusesStatusIdFavourite::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Favourites::POSTApiV1StatusesStatusIdUnfavourite::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::DomainAllows::DELETEApiV1AdminDomainAllowsId::BehavesLikeForbiddenForWrongRole_2::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::DomainAllows::DELETEApiV1AdminDomainAllowsId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::DomainAllows::DELETEApiV1AdminDomainAllowsId::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::DomainAllows::POSTApiV1AdminDomainAllows::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::DomainAllows::POSTApiV1AdminDomainAllows::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::DomainAllows::POSTApiV1AdminDomainAllows::BehavesLikeForbiddenForWrongRole_2::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::DomainAllows::GETApiV1AdminDomainAllowsId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::DomainAllows::GETApiV1AdminDomainAllowsId::BehavesLikeForbiddenForWrongRole_2::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::DomainAllows::GETApiV1AdminDomainAllowsId::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::DomainAllows::GETApiV1AdminDomainAllows::BehavesLikeForbiddenForWrongRole_2::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::DomainAllows::GETApiV1AdminDomainAllows::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::DomainAllows::GETApiV1AdminDomainAllows::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end

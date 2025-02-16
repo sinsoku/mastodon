@@ -1,0 +1,36 @@
+class Admin::Metrics::Measure::BaseMeasure
+  def initialize: (ActiveSupport::TimeWithZone, Time, Array[untyped]) -> void
+                | (ActiveSupport::TimeWithZone, Time, ActionController::Parameters) -> void
+
+  def read_attribute_for_serialization: (Symbol) -> void
+
+  def unit: () -> nil
+
+  def total: () -> Integer
+
+  def load: () -> ActiveSupport::HashWithIndifferentAccess
+
+  def cache_key: () -> void
+
+  def canonicalized_params: () -> void
+
+  def params: () -> Hash[untyped, untyped]
+
+  def perform_queries: () -> void
+
+  def time_period: () -> Range[untyped]
+
+  def previous_time_period: () -> Range[untyped]
+
+  def length_of_period: () -> void
+
+  def total_in_time_range?: () -> void
+
+  def previous_total: () -> Integer
+
+  def data: () -> Array[untyped]
+end
+
+class Admin::Metrics::Measure::ActiveUsersMeasure
+  def self.model_name: () -> String
+end

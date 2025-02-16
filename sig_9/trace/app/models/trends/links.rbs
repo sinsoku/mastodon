@@ -1,0 +1,3 @@
+class Trends::Links
+  def register: (Status, ?Time) -> void
+end

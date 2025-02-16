@@ -1,0 +1,3 @@
+class Mastodon::CLI::PreviewCards
+  def remove: () -> StringIO
+end

@@ -1,0 +1,48 @@
+module ApplicationHelper
+  def locale_direction: () -> void
+                      | () -> String
+
+  def material_symbol: (String, ?Hash[untyped, untyped]) -> void
+                     | (String, ?Hash[untyped, untyped]) -> ActiveSupport::SafeBuffer
+
+  def render_initial_state: () -> void
+
+  def cdn_host?: () -> void
+
+  def cdn_host: () -> nil
+
+  def storage_host?: () -> void
+
+  def storage_host_var: () -> nil
+
+  def html_title: () -> ActiveSupport::SafeBuffer
+
+  def title: () -> void
+
+  def body_classes: () -> void
+
+  def can?: (Symbol, Announcement) -> void
+          | (Symbol, User) -> void
+          | (Symbol, Symbol) -> void
+          | (Symbol, Account) -> void
+          | (Symbol, AccountModerationNote) -> bool
+          | (Symbol, Account) -> bool
+          | (Symbol, User) -> bool
+          | (Symbol, Symbol) -> bool
+          | (Symbol, AccountWarning) -> bool
+
+  def opengraph: (String, String) -> ActiveSupport::SafeBuffer
+               | (String, ActiveSupport::SafeBuffer) -> ActiveSupport::SafeBuffer
+
+  def prerender_custom_emojis: (ActiveSupport::SafeBuffer, Array[untyped], ?Hash[untyped, untyped]) -> void
+
+  def friendly_number_to_human: (Integer, **nil) -> void
+
+  def available_sign_up_path: () -> void
+
+  def closed_registrations?: () -> void
+
+  def grouped_scopes: (Doorkeeper::OAuth::Scopes) -> Array[untyped]
+
+  def mascot_url: () -> void
+end

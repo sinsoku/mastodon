@@ -1,0 +1,7 @@
+module Admin::ActionLogsHelper
+  def sorted_action_log_types: () -> Array[untyped]
+
+  def log_target: (Admin::ActionLog) -> ActiveSupport::SafeBuffer
+                | (Admin::ActionLog) -> String
+                | (Admin::ActionLog) -> nil
+end

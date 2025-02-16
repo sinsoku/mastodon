@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::DomainClearMediaWorker::LetDefinitions
+  def subject: () -> DomainClearMediaWorker
+end
+
+module RSpec::ExampleGroups::DomainClearMediaWorker::Perform::LetDefinitions
+  def domain_block: () -> DomainBlock
+end

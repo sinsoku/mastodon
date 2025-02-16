@@ -1,0 +1,73 @@
+module Account::Interactions
+  def blocking?: (Account) -> void
+               | (Account) -> bool
+
+  def block!: (Account, ?uri: nil) -> void
+
+  def domain_blocking?: (nil) -> void
+                      | (String) -> void
+
+  def following?: (Account) -> void
+                | (Account) -> bool
+
+  def requested?: (Account) -> void
+
+  def not_following_anyone?: () -> void
+
+  def following_anyone?: () -> bool
+
+  def follow!: (Account, ?reblogs: nil, ?notify: nil, ?languages: nil, ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> Follow
+             | (Account, ?reblogs: bool, ?notify: nil, ?languages: nil, ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> Follow
+
+  def request_follow!: (Account, ?reblogs: nil, ?notify: nil, ?languages: nil, ?uri: nil, ?rate_limit: bool, ?bypass_limit: bool) -> void
+
+  def bookmarked?: (Status) -> void
+
+  def pinned?: (Status) -> void
+
+  def muting?: (Account) -> void
+
+  def mute!: (Account, ?notifications: nil, ?duration: Integer) -> Mute
+           | (Account, ?notifications: bool, ?duration: Integer) -> Mute
+
+  def muting_notifications?: (Account) -> void
+                           | (Account) -> bool
+
+  def block_domain!: (String) -> void
+
+  def relations_map: (Array[untyped], ?Array[untyped], **nil) -> void
+
+  def muting_conversation?: (Conversation) -> void
+
+  def favourited?: (Status) -> void
+
+  def reblogged?: (Status) -> void
+
+  def status_matches_filters: (Status) -> void
+
+  def mute_conversation!: (Conversation) -> void
+end
+
+module Account::Interactions::ClassMethods
+  def blocked_by_map: (Array[untyped], Integer) -> void
+
+  def follow_mapping: (ActiveRecord::Relation, Symbol) -> void
+
+  def following_map: (Array[untyped], Integer) -> void
+
+  def blocking_map: (Array[untyped], Integer) -> void
+
+  def muting_map: (Array[untyped], Integer) -> void
+
+  def domain_blocking_map_by_domain: (Array[untyped], Integer) -> void
+
+  def followed_by_map: (Array[untyped], Integer) -> void
+
+  def requested_map: (Array[untyped], Integer) -> void
+
+  def requested_by_map: (Array[untyped], Integer) -> void
+
+  def endorsed_map: (Array[untyped], Integer) -> void
+
+  def account_note_map: (Array[untyped], Integer) -> void
+end

@@ -1,0 +1,5 @@
+module AuthorizedFetchHelper
+  def authorized_fetch_mode?: () -> bool
+
+  def authorized_fetch_overridden?: () -> bool
+end

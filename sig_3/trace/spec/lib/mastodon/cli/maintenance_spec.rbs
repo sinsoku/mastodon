@@ -1,0 +1,214 @@
+module RSpec::ExampleGroups::MastodonCLIMaintenance::LetDefinitions
+  def subject: () -> nil
+             | () -> StringIO
+
+  def cli: () -> Mastodon::CLI::Maintenance
+
+  def arguments: () -> Array[untyped]
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::LetDefinitions
+  def action: () -> Symbol
+end
+
+class RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet
+  def agree_to_backup_warning: () -> void
+end
+
+class RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateAnnouncementReactions
+  def prepare_duplicate_data: () -> void
+
+  def duplicate_announcement_reactions: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateAnnouncementReactions::LetDefinitions
+  def account: () -> Account
+
+  def announcement: () -> Announcement
+
+  def name: () -> String
+end
+
+class RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateTags
+  def prepare_duplicate_data: () -> void
+
+  def duplicate_tags: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateTags::LetDefinitions
+  def name: () -> String
+end
+
+class RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateCustomEmojiCategories
+  def prepare_duplicate_data: () -> void
+
+  def duplicate_custom_emoji_categories: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateCustomEmojiCategories::LetDefinitions
+  def duplicate_name: () -> String
+end
+
+class RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateEmailDomainBlocks
+  def prepare_duplicate_data: () -> void
+
+  def duplicate_email_domain_blocks: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateEmailDomainBlocks::LetDefinitions
+  def domain: () -> String
+end
+
+class RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateAccounts
+  def prepare_duplicate_data: () -> void
+
+  def choose_local_account_to_keep: () -> void
+
+  def duplicate_remote_accounts: () -> void
+
+  def duplicate_local_accounts: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateAccounts::LetDefinitions
+  def duplicate_account_username: () -> String
+
+  def duplicate_account_domain: () -> String
+end
+
+class RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateConversations
+  def prepare_duplicate_data: () -> void
+
+  def duplicate_conversations: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateConversations::LetDefinitions
+  def uri: () -> String
+end
+
+class RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateDomainAllows
+  def prepare_duplicate_data: () -> void
+
+  def duplicate_domain_allows: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateDomainAllows::LetDefinitions
+  def domain: () -> String
+end
+
+class RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateAccountDomainBlocks
+  def prepare_duplicate_data: () -> void
+
+  def duplicate_account_domain_blocks: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateAccountDomainBlocks::LetDefinitions
+  def account: () -> Account
+
+  def duplicate_domain: () -> String
+end
+
+class RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicatePreviewCards
+  def prepare_duplicate_data: () -> void
+
+  def duplicate_preview_cards: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicatePreviewCards::LetDefinitions
+  def url: () -> String
+end
+
+class RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateStatuses
+  def prepare_duplicate_data: () -> void
+
+  def duplicate_statuses: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateStatuses::LetDefinitions
+  def account: () -> Account
+
+  def uri: () -> String
+end
+
+class RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateMediaAttachments
+  def prepare_duplicate_data: () -> void
+
+  def duplicate_media_attachments: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateMediaAttachments::LetDefinitions
+  def shortcode: () -> String
+end
+
+class RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateWebauthnCredentials
+  def prepare_duplicate_data: () -> void
+
+  def duplicate_webauthn_credentials: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateWebauthnCredentials::LetDefinitions
+  def external_id: () -> String
+end
+
+class RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateUsersOnResetPasswordToken
+  def prepare_duplicate_data: () -> void
+
+  def duplicate_users: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateUsersOnResetPasswordToken::LetDefinitions
+  def duplicate_reset_password_token: () -> String
+end
+
+class RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateDomainBlocks
+  def prepare_duplicate_data: () -> void
+
+  def duplicate_domain_blocks: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateDomainBlocks::LetDefinitions
+  def domain: () -> String
+end
+
+class RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateWebhooks
+  def prepare_duplicate_data: () -> void
+
+  def duplicate_webhooks: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateWebhooks::LetDefinitions
+  def url: () -> String
+end
+
+class RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateUsersOnEmail
+  def prepare_duplicate_data: () -> void
+
+  def duplicate_users: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateUsersOnEmail::LetDefinitions
+  def duplicate_email: () -> String
+end
+
+class RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateCustomEmojis
+  def prepare_duplicate_data: () -> void
+
+  def duplicate_custom_emojis: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateCustomEmojis::LetDefinitions
+  def duplicate_shortcode: () -> String
+
+  def duplicate_domain: () -> String
+end
+
+class RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateUsersOnConfirmationToken
+  def prepare_duplicate_data: () -> void
+
+  def duplicate_users: () -> void
+end
+
+module RSpec::ExampleGroups::MastodonCLIMaintenance::FixDuplicates::WhenRequirementsAreMet::WithDuplicateUsersOnConfirmationToken::LetDefinitions
+  def duplicate_confirmation_token: () -> String
+end

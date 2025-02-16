@@ -1,0 +1,83 @@
+module RSpec::ExampleGroups::Report::History::LetDefinitions
+  def matched_type_account_warning: () -> Admin::ActionLog
+
+  def account_warning: () -> AccountWarning
+
+  def report: () -> Report
+
+  def target_account: () -> Account
+
+  def status: () -> Status
+
+  def matched_type_account: () -> Admin::ActionLog
+
+  def matched_type_report: () -> Admin::ActionLog
+
+  def matched_type_status: () -> Admin::ActionLog
+
+  def unmatched_type_account_warning: () -> Admin::ActionLog
+
+  def unmatched_type_account: () -> Admin::ActionLog
+
+  def unmatched_type_report: () -> Admin::ActionLog
+
+  def unmatched_type_status: () -> Admin::ActionLog
+
+  def action_logs: () -> ActiveRecord::Relation
+end
+
+module RSpec::ExampleGroups::Report::Unresolve::LetDefinitions
+  def report: () -> Report
+
+  def acting_account: () -> Account
+end
+
+module RSpec::ExampleGroups::Report::Unresolved::LetDefinitions
+  def subject: () -> bool
+
+  def report: () -> Report
+end
+
+module RSpec::ExampleGroups::Report::Unresolved::WhenActionIsTaken::LetDefinitions
+  def action_taken: () -> Time
+end
+
+module RSpec::ExampleGroups::Report::Unresolved::WhenActionNotIsTaken::LetDefinitions
+  def action_taken: () -> nil
+end
+
+module RSpec::ExampleGroups::Report::Unassign::LetDefinitions
+  def report: () -> Report
+
+  def account: () -> Account
+
+  def subject: () -> nil
+end
+
+module RSpec::ExampleGroups::Report::UnresolvedSiblings::LetDefinitions
+  def subject: () -> Report
+end
+
+module RSpec::ExampleGroups::Report::AssignToSelf::LetDefinitions
+  def report: () -> Report
+
+  def original_account: () -> Account
+
+  def current_account: () -> Account
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::Report::Validations::LetDefinitions
+  def remote_account: () -> Account
+end
+
+class RSpec::ExampleGroups::Report::Validations
+  def comment_over_limit: () -> void
+end
+
+module RSpec::ExampleGroups::Report::Resolve::LetDefinitions
+  def report: () -> Report
+
+  def acting_account: () -> Account
+end

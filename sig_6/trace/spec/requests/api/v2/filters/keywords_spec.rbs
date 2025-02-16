@@ -1,0 +1,59 @@
+module RSpec::ExampleGroups::APIV2FiltersKeywords::GETApiV2FiltersFilterIdKeywords::LetDefinitions
+  def keyword: () -> CustomFilterKeyword
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::APIV2FiltersKeywords::LetDefinitions
+  def filter: () -> CustomFilter
+
+  def user: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def other_filter: () -> CustomFilter
+
+  def other_user: () -> User
+end
+
+module RSpec::ExampleGroups::APIV2FiltersKeywords::PUTApiV2FiltersKeywordsId::LetDefinitions
+  def keyword: () -> CustomFilterKeyword
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::APIV2FiltersKeywords::PUTApiV2FiltersKeywordsId::WhenTryingToUpdateAnotherUserSFilterKeyword::LetDefinitions
+  def keyword: () -> CustomFilterKeyword
+end
+
+module RSpec::ExampleGroups::APIV2FiltersKeywords::GETApiV2FiltersKeywordsId::LetDefinitions
+  def keyword: () -> CustomFilterKeyword
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::APIV2FiltersKeywords::GETApiV2FiltersKeywordsId::WhenTryingToAccessAnotherUserSFilterKeyword::LetDefinitions
+  def keyword: () -> CustomFilterKeyword
+end
+
+module RSpec::ExampleGroups::APIV2FiltersKeywords::DELETEApiV2FiltersKeywordsId::LetDefinitions
+  def keyword: () -> CustomFilterKeyword
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::APIV2FiltersKeywords::DELETEApiV2FiltersKeywordsId::WhenTryingToUpdateAnotherUserSFilterKeyword::LetDefinitions
+  def keyword: () -> CustomFilterKeyword
+end
+
+module RSpec::ExampleGroups::APIV2FiltersKeywords::POSTApiV2FiltersFilterIdKeywords::LetDefinitions
+  def filter_id: () -> Integer
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::APIV2FiltersKeywords::POSTApiV2FiltersFilterIdKeywords::WhenTryingToAddToAnotherAnotherSUserFilters::LetDefinitions
+  def filter_id: () -> Integer
+end

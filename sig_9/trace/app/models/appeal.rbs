@@ -1,0 +1,10 @@
+class Appeal
+  def validate_time_frame: () -> nil
+                         | () -> ActiveModel::Error
+
+  def rejected?: () -> bool
+
+  def pending?: () -> bool
+
+  def approved?: () -> bool
+end

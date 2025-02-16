@@ -1,0 +1,21 @@
+module RSpec::ExampleGroups::AdminAccounts::LetDefinitions
+  def current_user: () -> User
+end
+
+module RSpec::ExampleGroups::AdminAccounts::PerformingBatchUpdates::LetDefinitions
+  def unapproved_user_account: () -> Account
+
+  def approved_user_account: () -> Account
+end
+
+class RSpec::ExampleGroups::AdminAccounts::PerformingBatchUpdates
+  def batch_checkbox_for: (Account) -> Capybara::Node::Element
+
+  def button_for_approve: () -> void
+
+  def button_for_reject: () -> void
+
+  def button_for_suspend: () -> void
+
+  def selection_error_text: () -> void
+end

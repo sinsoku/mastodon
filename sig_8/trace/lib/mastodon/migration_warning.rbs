@@ -1,0 +1,14 @@
+module Mastodon::MigrationWarning
+  def migration_duration_warning: (?nil) -> void
+                                | (?String) -> void
+
+  def announce_warning: (nil) -> void
+                      | (String) -> void
+
+  def prepare_message: (nil) -> void
+                     | (String) -> void
+
+  def announce_message: (String) -> void
+
+  def announce_countdown: () -> void
+end

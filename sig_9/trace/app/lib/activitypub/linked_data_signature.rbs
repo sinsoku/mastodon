@@ -1,0 +1,8 @@
+class ActivityPub::LinkedDataSignature
+  def initialize: (Hash[untyped, untyped]) -> void
+
+  def sign!: (Account, ?sign_with: nil) -> void
+
+  def hash: (Hash[untyped, untyped]) -> String
+          | (ActiveSupport::HashWithIndifferentAccess) -> String
+end

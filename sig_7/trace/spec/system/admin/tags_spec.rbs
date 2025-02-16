@@ -1,0 +1,9 @@
+module RSpec::ExampleGroups::AdminTags::TagInteraction::LetDefinitions
+  def tag: () -> Tag
+end
+
+class RSpec::ExampleGroups::AdminTags::TagInteraction
+  def display_name_field: () -> void
+
+  def match_error_text: () -> void
+end

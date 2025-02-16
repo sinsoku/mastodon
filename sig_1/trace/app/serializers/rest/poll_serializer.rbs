@@ -1,0 +1,7 @@
+class REST::PollSerializer
+  def id: () -> String
+
+  def expired: () -> bool
+
+  def current_user?: () -> bool
+end

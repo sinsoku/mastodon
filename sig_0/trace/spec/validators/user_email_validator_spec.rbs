@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::UserEmailValidator::Validate::LetDefinitions
+  def user: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def errors: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def subject: () -> nil
+end
+
+module RSpec::ExampleGroups::UserEmailValidator::Validate::WhenEMailProviderIsNotBlocked::LetDefinitions
+  def blocked_email: () -> bool
+end
+
+module RSpec::ExampleGroups::UserEmailValidator::Validate::WhenEMailProviderIsNotBlocked::WhenCanonicalEMailIsBlocked::LetDefinitions
+  def other_user: () -> User
+end
+
+module RSpec::ExampleGroups::UserEmailValidator::Validate::WhenEMailProviderIsBlocked::LetDefinitions
+  def blocked_email: () -> bool
+end

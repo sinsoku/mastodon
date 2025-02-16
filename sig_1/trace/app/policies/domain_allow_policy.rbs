@@ -1,0 +1,5 @@
+class DomainAllowPolicy
+  def create?: () -> bool
+
+  def destroy?: () -> bool
+end

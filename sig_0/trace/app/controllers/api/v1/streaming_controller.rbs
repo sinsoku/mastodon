@@ -1,0 +1,7 @@
+class Api::V1::StreamingController
+  def index: () -> String
+
+  def same_host?: () -> void
+
+  def streaming_api_url: () -> void
+end

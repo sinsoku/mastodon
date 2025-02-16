@@ -1,0 +1,235 @@
+module RSpec::ExampleGroups::AccountActions::POSTApiV1AdminAccountsIdAction::WithTypeOfSensitive::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::AccountActions::POSTApiV1AdminAccountsIdAction::WithTypeOfSensitive::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AccountActions::POSTApiV1AdminAccountsIdAction::WithTypeOfSilence::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AccountActions::POSTApiV1AdminAccountsIdAction::WithTypeOfSilence::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::AccountActions::POSTApiV1AdminAccountsIdAction::WithTypeOfDisable::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AccountActions::POSTApiV1AdminAccountsIdAction::WithTypeOfDisable::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::AccountActions::POSTApiV1AdminAccountsIdAction::WithTypeOfSuspend::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::AccountActions::POSTApiV1AdminAccountsIdAction::WithTypeOfSuspend::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::IPBlocks::GETApiV1AdminIpBlocks::BehavesLikeForbiddenForWrongRole_2::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::IPBlocks::GETApiV1AdminIpBlocks::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::IPBlocks::GETApiV1AdminIpBlocks::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::IPBlocks::POSTApiV1AdminIpBlocks::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::IPBlocks::POSTApiV1AdminIpBlocks::BehavesLikeForbiddenForWrongRole_2::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::IPBlocks::POSTApiV1AdminIpBlocks::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::IPBlocks::GETApiV1AdminIpBlocksId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::IPBlocks::GETApiV1AdminIpBlocksId::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::IPBlocks::GETApiV1AdminIpBlocksId::BehavesLikeForbiddenForWrongRole_2::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::Accounts::GETApiV1AdminAccounts::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::Accounts::GETApiV1AdminAccounts::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Accounts::POSTApiV1AdminAccountsIdApprove::WhenTheAccountIsPending::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::Accounts::POSTApiV1AdminAccountsIdApprove::WhenTheAccountIsPending::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Accounts::POSTApiV1AdminAccountsIdUnsensitive::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::Accounts::POSTApiV1AdminAccountsIdUnsensitive::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Accounts::GETApiV1AdminAccountsId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Accounts::GETApiV1AdminAccountsId::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::Accounts::POSTApiV1AdminAccountsIdReject::WhenTheAccountIsPending::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::Accounts::POSTApiV1AdminAccountsIdReject::WhenTheAccountIsPending::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Accounts::DELETEApiV1AdminAccountsId::WhenAccountIsSuspended::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::Accounts::DELETEApiV1AdminAccountsId::WhenAccountIsSuspended::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Accounts::POSTApiV1AdminAccountsIdUnsuspend::WhenTheAccountIsSuspended::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Accounts::POSTApiV1AdminAccountsIdUnsuspend::WhenTheAccountIsSuspended::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::Accounts::POSTApiV1AdminAccountsIdUnsilence::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Accounts::POSTApiV1AdminAccountsIdUnsilence::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::Accounts::POSTApiV1AdminAccountsIdEnable::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Accounts::POSTApiV1AdminAccountsIdEnable::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::Sources::GETApiV1StatusesStatusIdSource::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Mutes::GETApiV1Mutes::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::DeletingProfileImages::DELETEApiV1Profile::WhenDeletingAHeader::WithWrongScope::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::DeletingProfileImages::DELETEApiV1Profile::WhenDeletingAnAvatar::WithWrongScope::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Media::POSTApiV1Media::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Media::PUTApiV1MediaId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Media::GETApiV1MediaId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Accounts_2::GETApiV1ListsIdAccounts::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Accounts_2::POSTApiV1ListsIdAccounts::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::DomainBlocks::POSTApiV1AdminDomainBlocks::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::DomainBlocks::POSTApiV1AdminDomainBlocks::BehavesLikeForbiddenForWrongRole_2::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::DomainBlocks::POSTApiV1AdminDomainBlocks::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::DomainBlocks::DELETEApiV1AdminDomainBlocksId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::DomainBlocks::DELETEApiV1AdminDomainBlocksId::BehavesLikeForbiddenForWrongRole_2::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::DomainBlocks::DELETEApiV1AdminDomainBlocksId::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::DomainBlocks::GETApiV1AdminDomainBlocksId::BehavesLikeForbiddenForWrongRole_2::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::DomainBlocks::GETApiV1AdminDomainBlocksId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::DomainBlocks::GETApiV1AdminDomainBlocksId::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::DomainBlocks::PUTApiV1AdminDomainBlocksId::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::DomainBlocks::PUTApiV1AdminDomainBlocksId::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::DomainBlocks::PUTApiV1AdminDomainBlocksId::BehavesLikeForbiddenForWrongRole_2::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::DomainBlocks::GETApiV1AdminDomainBlocks::BehavesLikeForbiddenForWrongScope::LetDefinitions
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::DomainBlocks::GETApiV1AdminDomainBlocks::BehavesLikeForbiddenForWrongRole_2::LetDefinitions
+  def role: () -> UserRole
+end
+
+module RSpec::ExampleGroups::DomainBlocks::GETApiV1AdminDomainBlocks::BehavesLikeForbiddenForWrongRole::LetDefinitions
+  def role: () -> UserRole
+end

@@ -1,0 +1,5 @@
+class FastIpMap
+  def initialize: (Array[untyped]) -> void
+
+  def include?: (String) -> void
+end

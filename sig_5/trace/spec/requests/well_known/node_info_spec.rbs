@@ -1,0 +1,3 @@
+class RSpec::ExampleGroups::TheWellKnownNodeInfoEndpoints::TheNodeinfo20Endpoint
+  def non_matching_hash: () -> void
+end

@@ -1,0 +1,4 @@
+class Admin::SystemCheck::Message
+  def initialize: (Symbol, ?nil, ?String, ?bool) -> void
+                | (Symbol, ?Symbol, ?Symbol, ?Symbol) -> void
+end

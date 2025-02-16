@@ -1,0 +1,63 @@
+module RSpec::ExampleGroups::LinkDetailsExtractor::LetDefinitions
+  def subject: () -> LinkDetailsExtractor
+
+  def original_url: () -> String
+end
+
+module RSpec::ExampleGroups::LinkDetailsExtractor::WhenStructuredDataIsPresent::WithTheFirstTagIsInvalidJSON::LetDefinitions
+  def html: () -> String
+end
+
+module RSpec::ExampleGroups::LinkDetailsExtractor::WhenStructuredDataIsPresent::LetDefinitions
+  def ld_json: () -> String
+end
+
+module RSpec::ExampleGroups::LinkDetailsExtractor::WhenStructuredDataIsPresent::WithPrecedingBlockOfUnsupportedLDJSON::LetDefinitions
+  def html: () -> String
+end
+
+module RSpec::ExampleGroups::LinkDetailsExtractor::WhenStructuredDataIsPresent::WithAuthorNamesAsArray::LetDefinitions
+  def html: () -> String
+
+  def ld_json: () -> String
+end
+
+module RSpec::ExampleGroups::LinkDetailsExtractor::WhenStructuredDataIsPresent::WithTheFirstTagIsNull::LetDefinitions
+  def html: () -> String
+end
+
+module RSpec::ExampleGroups::LinkDetailsExtractor::WhenStructuredDataIsPresent::WhenIsWrappedInCDATATags::LetDefinitions
+  def html: () -> String
+end
+
+module RSpec::ExampleGroups::LinkDetailsExtractor::WhenStructuredDataIsPresent::WithUnsupportedInSameBlockLDJSON::LetDefinitions
+  def html: () -> String
+end
+
+module RSpec::ExampleGroups::LinkDetailsExtractor::WhenOpenGraphProtocolDataIsPresent::LetDefinitions
+  def html: () -> String
+end
+
+module RSpec::ExampleGroups::LinkDetailsExtractor::CanonicalUrl::LetDefinitions
+  def html: () -> String
+end
+
+module RSpec::ExampleGroups::LinkDetailsExtractor::CanonicalUrl::WhenCanonicalURLPointsToAnotherHost::LetDefinitions
+  def url: () -> String
+end
+
+module RSpec::ExampleGroups::LinkDetailsExtractor::CanonicalUrl::WhenCanonicalURLPointsToTheSameHost::LetDefinitions
+  def url: () -> String
+end
+
+module RSpec::ExampleGroups::LinkDetailsExtractor::CanonicalUrl::WhenCanonicalURLIsSetToUndefined::LetDefinitions
+  def url: () -> String
+end
+
+module RSpec::ExampleGroups::LinkDetailsExtractor::CanonicalUrl::WhenCanonicalURLIsSetToNull::LetDefinitions
+  def url: () -> String
+end
+
+module RSpec::ExampleGroups::LinkDetailsExtractor::WhenOnlyBasicMetadataIsPresent::LetDefinitions
+  def html: () -> String
+end

@@ -1,0 +1,7 @@
+class RSS::MediaContent
+  def initialize: (String, String, Integer) -> void
+
+  def medium: (String) -> void
+
+  def rating: (String) -> void
+end

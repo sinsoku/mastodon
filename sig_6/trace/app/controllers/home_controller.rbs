@@ -1,0 +1,4 @@
+class HomeController
+  def index: () -> nil
+           | () -> Time
+end

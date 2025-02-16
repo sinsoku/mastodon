@@ -1,0 +1,3 @@
+class LocalNotificationWorker
+  def perform: (Integer, ?Integer, ?String, ?String) -> void
+end

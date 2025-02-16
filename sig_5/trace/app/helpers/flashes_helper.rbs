@@ -1,0 +1,3 @@
+module FlashesHelper
+  def user_facing_flashes: () -> Hash[untyped, untyped]
+end

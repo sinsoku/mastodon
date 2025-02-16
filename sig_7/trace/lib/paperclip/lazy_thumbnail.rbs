@@ -1,0 +1,11 @@
+class Paperclip::LazyThumbnail
+  def make: () -> void
+
+  def needs_convert?: () -> void
+
+  def needs_different_geometry?: () -> void
+
+  def needs_different_format?: () -> void
+
+  def needs_metadata_stripping?: () -> void
+end

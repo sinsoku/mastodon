@@ -1,0 +1,35 @@
+module RSpec::ExampleGroups::Follow::Callbacks::SettingAURI::WhenURIIsBlank::LetDefinitions
+  def subject: () -> Follow
+end
+
+module RSpec::ExampleGroups::Follow::Callbacks::SettingAURI::WhenURIExists::LetDefinitions
+  def subject: () -> Follow
+end
+
+module RSpec::ExampleGroups::Follow::Callbacks::MaintainingCounters::LetDefinitions
+  def account: () -> Account
+
+  def target_account: () -> Account
+
+  def subject: () -> Follow
+end
+
+module RSpec::ExampleGroups::Follow::RevokeRequest::LetDefinitions
+  def follow: () -> Follow
+
+  def account: () -> Account
+
+  def target_account: () -> Account
+end
+
+module RSpec::ExampleGroups::Follow::Validations::LetDefinitions
+  def account: () -> Account
+
+  def subject: () -> Follow
+end
+
+module RSpec::ExampleGroups::Follow::Recent::LetDefinitions
+  def follow_earlier: () -> Follow
+
+  def follow_later: () -> Follow
+end

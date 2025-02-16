@@ -1,0 +1,6 @@
+class StatusStat
+  def favourites_count: () -> void
+
+  def clamp_untrusted_counts: () -> nil
+                            | () -> Integer
+end

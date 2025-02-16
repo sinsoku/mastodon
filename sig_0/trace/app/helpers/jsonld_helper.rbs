@@ -1,0 +1,15 @@
+module JsonLdHelper
+  def canonicalize: (Hash[untyped, untyped]) -> void
+                  | (ActiveSupport::HashWithIndifferentAccess) -> void
+
+  def value_or_id: (String) -> void
+                 | (ActiveSupport::HashWithIndifferentAccess) -> void
+                 | (String) -> String
+                 | (ActiveSupport::HashWithIndifferentAccess) -> String
+
+  def uri_from_bearcap: (String) -> String
+
+  def non_matching_uri_hosts?: (String, String) -> void
+
+  def unsupported_uri_scheme?: (String) -> void
+end

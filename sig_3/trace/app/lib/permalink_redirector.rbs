@@ -1,0 +1,32 @@
+class PermalinkRedirector
+  def initialize: (String) -> void
+
+  def redirect_path: () -> nil
+                   | () -> String
+
+  def object: () -> void
+            | () -> Status
+            | () -> Account
+            | () -> nil
+
+  def at_username_status_request?: () -> void
+
+  def at_username_request?: () -> void
+
+  def first_segment: () -> String
+
+  def path_segments: () -> Array[untyped]
+
+  def statuses_status_request?: () -> void
+
+  def statuses_request?: () -> void
+
+  def accounts_request?: () -> void
+
+  def record_integer_id_request?: () -> void
+
+  def second_segment: () -> String
+                    | () -> nil
+
+  def redirect_confirmation_path: () -> void
+end

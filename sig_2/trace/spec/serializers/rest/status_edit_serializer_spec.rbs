@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::RESTStatusEditSerializer::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+
+  def status_edit: () -> StatusEdit
+end

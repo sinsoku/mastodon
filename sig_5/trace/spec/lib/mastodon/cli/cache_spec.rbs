@@ -1,0 +1,34 @@
+module RSpec::ExampleGroups::MastodonCLICache::LetDefinitions
+  def subject: () -> StringIO
+             | () -> nil
+
+  def cli: () -> Mastodon::CLI::Cache
+
+  def arguments: () -> Array[untyped]
+
+  def options: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLICache::Clear::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLICache::Recount::WithTheAccountsArgument::LetDefinitions
+  def account_stat: () -> AccountStat
+
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLICache::Recount::LetDefinitions
+  def action: () -> Symbol
+end
+
+module RSpec::ExampleGroups::MastodonCLICache::Recount::WithAnUnknownType::LetDefinitions
+  def arguments: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::MastodonCLICache::Recount::WithTheStatusesArgument::LetDefinitions
+  def status_stat: () -> StatusStat
+
+  def arguments: () -> Array[untyped]
+end

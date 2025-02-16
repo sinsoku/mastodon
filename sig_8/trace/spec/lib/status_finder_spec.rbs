@@ -1,0 +1,23 @@
+module RSpec::ExampleGroups::StatusFinder::Status::WithAStatusUrl::LetDefinitions
+  def url: () -> String
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusFinder::Status::LetDefinitions
+  def subject: () -> StatusFinder
+end
+
+module RSpec::ExampleGroups::StatusFinder::Status::WithAPlausibleUrl::LetDefinitions
+  def url: () -> String
+end
+
+module RSpec::ExampleGroups::StatusFinder::Status::WithARemoteUrlEvenIfIdExistsOnLocal::LetDefinitions
+  def url: () -> String
+
+  def status: () -> Status
+end
+
+module RSpec::ExampleGroups::StatusFinder::Status::WithAnUnrecognizedUrl::LetDefinitions
+  def url: () -> String
+end

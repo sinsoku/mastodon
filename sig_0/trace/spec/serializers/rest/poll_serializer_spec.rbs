@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::RESTPollSerializer::LetDefinitions
+  def subject: () -> Hash[untyped, untyped]
+
+  def poll: () -> Poll
+
+  def current_user: () -> User
+end

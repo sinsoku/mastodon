@@ -1,0 +1,7 @@
+module Account::AttributionDomains
+  def attribution_domains_as_text=: (String) -> void
+
+  def attribution_domains_as_text: () -> String
+
+  def can_be_attributed_from?: (String) -> void
+end

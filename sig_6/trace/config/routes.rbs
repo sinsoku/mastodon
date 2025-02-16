@@ -1,0 +1,3 @@
+class Object
+  def redirect_with_vary: (String) -> void
+end

@@ -1,0 +1,3 @@
+class RSpec::ExampleGroups::AdminSettingsContentRetention
+  def media_cache_retention_period_field: () -> void
+end

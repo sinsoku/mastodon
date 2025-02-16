@@ -1,0 +1,8 @@
+class REST::ApplicationSerializer
+  def id: () -> String
+
+  def website: () -> nil
+             | () -> String
+
+  def vapid_key: () -> String
+end

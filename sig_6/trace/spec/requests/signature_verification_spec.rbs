@@ -1,0 +1,63 @@
+class RSpec::ExampleGroups::SignatureVerificationConcern
+  def stub_tests_controller: () -> void
+
+  def activitypub_tests_controller: () -> void
+
+  def digest_value: (String) -> void
+
+  def build_signature_string: (OpenSSL::PKey::RSA, String, String, Hash[untyped, untyped]) -> void
+end
+
+class ActivityPub::TestsController
+  def success: () -> String
+end
+
+module RSpec::ExampleGroups::SignatureVerificationConcern::WithAnHTTPSignatureFromAKnownAccount::LetDefinitions
+  def actor: () -> Account
+end
+
+module RSpec::ExampleGroups::SignatureVerificationConcern::LetDefinitions
+  def actor_keypair: () -> OpenSSL::PKey::RSA
+end
+
+module RSpec::ExampleGroups::SignatureVerificationConcern::WithAnHTTPSignatureFromAKnownAccount::WithAValidSignatureOnAPOSTRequest::LetDefinitions
+  def digest_header: () -> String
+
+  def signature_header: () -> String
+end
+
+module RSpec::ExampleGroups::SignatureVerificationConcern::WithAnHTTPSignatureFromAKnownAccount::WithMismatchingQueryString::LetDefinitions
+  def signature_header: () -> String
+end
+
+module RSpec::ExampleGroups::SignatureVerificationConcern::WithAnHTTPSignatureFromAKnownAccount::WithAnUnparsableDate::LetDefinitions
+  def signature_header: () -> String
+end
+
+module RSpec::ExampleGroups::SignatureVerificationConcern::WithAnHTTPSignatureFromAKnownAccount::WithATamperedBodyOnAPOSTRequest::LetDefinitions
+  def digest_header: () -> String
+
+  def signature_header: () -> String
+end
+
+module RSpec::ExampleGroups::SignatureVerificationConcern::WithAnHTTPSignatureFromAKnownAccount::WithAValidSignatureOnAGETRequestThatHasAQueryString::LetDefinitions
+  def signature_header: () -> String
+end
+
+module RSpec::ExampleGroups::SignatureVerificationConcern::WithAnHTTPSignatureFromAKnownAccount::WhenTheDigestOfAPOSTRequestIsNotSigned::LetDefinitions
+  def digest_header: () -> String
+
+  def signature_header: () -> String
+end
+
+module RSpec::ExampleGroups::SignatureVerificationConcern::WithAnHTTPSignatureFromAKnownAccount::WithAValidSignatureOnAGETRequest::LetDefinitions
+  def signature_header: () -> String
+end
+
+module RSpec::ExampleGroups::SignatureVerificationConcern::WithAnHTTPSignatureFromAKnownAccount::WithARequestOlderThanADay::LetDefinitions
+  def signature_header: () -> String
+end
+
+module RSpec::ExampleGroups::SignatureVerificationConcern::WithAnHTTPSignatureFromAKnownAccount::WhenTheQueryStringIsMissingFromTheSignatureVerificationCompatibilityQuirk::LetDefinitions
+  def signature_header: () -> String
+end

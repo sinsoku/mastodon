@@ -1,0 +1,31 @@
+module RSpec::ExampleGroups::Export::LetDefinitions
+  def target_accounts: () -> Array[untyped]
+
+  def account: () -> Account
+
+  def subject: () -> Export
+end
+
+module RSpec::ExampleGroups::Export::ToFollowingAccountsCsv::LetDefinitions
+  def export: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Export::ToBlockedDomainsCsv::LetDefinitions
+  def export: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Export::ToListsCsv::LetDefinitions
+  def export: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Export::ToBlockedAccountsCsv::LetDefinitions
+  def export: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Export::ToMutedAccountsCsv::LetDefinitions
+  def export: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::Export::ToBookmarksCsv::LetDefinitions
+  def export: () -> Array[untyped]
+end

@@ -1,0 +1,19 @@
+module RSpec::ExampleGroups::SchedulerAutoCloseRegistrationsScheduler::Perform::WhenRegistrationsAreClosed::WhenAModeratorHasLoggedInRecently::LetDefinitions
+  def moderator_activity_date: () -> Time
+end
+
+module RSpec::ExampleGroups::SchedulerAutoCloseRegistrationsScheduler::LetDefinitions
+  def subject: () -> Scheduler::AutoCloseRegistrationsScheduler
+end
+
+module RSpec::ExampleGroups::SchedulerAutoCloseRegistrationsScheduler::Perform::WhenRegistrationsAreClosed::WhenAModeratorHasNotRecentlySignedIn::LetDefinitions
+  def moderator_activity_date: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::SchedulerAutoCloseRegistrationsScheduler::Perform::WhenRegistrationsAreOpen::WhenAModeratorHasNotRecentlySignedIn::LetDefinitions
+  def moderator_activity_date: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::SchedulerAutoCloseRegistrationsScheduler::Perform::WhenRegistrationsAreOpen::WhenAModeratorHasLoggedInRecently::LetDefinitions
+  def moderator_activity_date: () -> Time
+end

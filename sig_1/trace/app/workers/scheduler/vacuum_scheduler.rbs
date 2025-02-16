@@ -1,0 +1,21 @@
+class Scheduler::VacuumScheduler
+  def perform: () -> void
+
+  def vacuum_operations: () -> Array[untyped]
+
+  def statuses_vacuum: () -> void
+
+  def content_retention_policy: () -> ContentRetentionPolicy
+
+  def media_attachments_vacuum: () -> void
+
+  def preview_cards_vacuum: () -> void
+
+  def backups_vacuum: () -> void
+
+  def access_tokens_vacuum: () -> void
+
+  def feeds_vacuum: () -> void
+
+  def imports_vacuum: () -> void
+end

@@ -1,0 +1,3 @@
+class RSpec::ExampleGroups::AccountsIndex
+  def raw_response: () -> void
+end

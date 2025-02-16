@@ -1,0 +1,23 @@
+class RSpec::ExampleGroups::ApproveAppealService::Call
+  def mark_overruled: () -> RSpec::Matchers::BuiltIn::ChangeFromValue
+
+  def record_approver: () -> void
+end
+
+module RSpec::ExampleGroups::ApproveAppealService::Call::LetDefinitions
+  def appeal: () -> Appeal
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::ApproveAppealService::Call::WithAnAppealAboutThenDeletedPostsMarkedAsSensitiveByModerators::LetDefinitions
+  def target_account: () -> Account
+
+  def deleted_media: () -> MediaAttachment
+
+  def appeal: () -> Appeal
+
+  def strike: () -> AccountWarning
+
+  def kept_media: () -> MediaAttachment
+end

@@ -1,0 +1,29 @@
+class PostStatusService
+  def call: (Account, ?Hash[untyped, untyped]) -> Status
+
+  def idempotency_given?: () -> void
+
+  def validate_media!: () -> void
+
+  def preprocess_attributes!: () -> void
+
+  def scheduled_in_the_past?: () -> void
+
+  def scheduled?: () -> void
+
+  def process_status!: () -> void
+
+  def status_attributes: () -> void
+
+  def poll_attributes: () -> void
+
+  def process_mentions_service: () -> ProcessMentionsService
+
+  def safeguard_mentions!: (Status) -> void
+
+  def postprocess_status!: () -> void
+
+  def process_hashtags_service: () -> ProcessHashtagsService
+
+  def bump_potential_friendship!: () -> void
+end

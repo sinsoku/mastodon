@@ -1,0 +1,6 @@
+class MediaProxyController
+  def show: () -> nil
+          | () -> String
+
+  def version: () -> void
+end

@@ -1,0 +1,5 @@
+class PublishScheduledAnnouncementWorker
+  def perform: (Integer) -> void
+
+  def refresh_status_ids!: () -> void
+end

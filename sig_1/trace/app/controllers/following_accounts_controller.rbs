@@ -1,0 +1,18 @@
+class FollowingAccountsController
+  def index: () -> String
+
+  def page_requested?: () -> void
+
+  def collection_presenter: () -> void
+
+  def page_url: (Integer) -> void
+              | (nil) -> void
+
+  def restrict_fields_to: () -> void
+
+  def follows: () -> ActiveRecord::Relation
+
+  def next_page_url: () -> void
+
+  def prev_page_url: () -> void
+end

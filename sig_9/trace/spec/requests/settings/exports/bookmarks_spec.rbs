@@ -1,0 +1,7 @@
+module RSpec::ExampleGroups::SettingsExportsBookmarks::GETSettingsExportsBookmarks::WithASignedInUserWhoHasBookmarks::LetDefinitions
+  def user: () -> User
+
+  def status: () -> Status
+
+  def account: () -> Account
+end

@@ -1,0 +1,17 @@
+module RSpec::ExampleGroups::AdminMetricsDimensionSourcesDimension::Data::LetDefinitions
+  def alice: () -> User
+
+  def app: () -> Doorkeeper::Application
+end
+
+module RSpec::ExampleGroups::AdminMetricsDimensionSourcesDimension::LetDefinitions
+  def subject: () -> Admin::Metrics::Dimension::SourcesDimension
+
+  def start_at: () -> ActiveSupport::TimeWithZone
+
+  def end_at: () -> Time
+
+  def limit: () -> Integer
+
+  def params: () -> ActionController::Parameters
+end

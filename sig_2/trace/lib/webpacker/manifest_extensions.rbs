@@ -1,0 +1,3 @@
+module Webpacker::ManifestExtensions
+  def lookup: (String, ?Hash[untyped, untyped]) -> void
+end

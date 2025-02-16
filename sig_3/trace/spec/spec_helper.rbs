@@ -1,0 +1,9 @@
+class Object
+  def serialized_record_json: (NotificationRequest, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+                            | (Status, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+                            | (Report, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+                            | (UserIp, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+                            | (ExtendedDescription, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+                            | (PollVote, Class, ?adapter: nil, ?options: Hash[untyped, untyped]) -> void
+                            | (FollowRequest, Class, ?adapter: Class, ?options: Hash[untyped, untyped]) -> void
+end

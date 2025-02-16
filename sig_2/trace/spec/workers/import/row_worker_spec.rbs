@@ -1,0 +1,37 @@
+module RSpec::ExampleGroups::ImportRowWorker::Perform::WhenThisIsTheLastRowToProcess::WithACleanFailure::LetDefinitions
+  def service_double: () -> RSpec::Mocks::InstanceVerifyingDouble
+end
+
+module RSpec::ExampleGroups::ImportRowWorker::Perform::WhenThisIsTheLastRowToProcess::LetDefinitions
+  def import: () -> BulkImport
+end
+
+module RSpec::ExampleGroups::ImportRowWorker::LetDefinitions
+  def subject: () -> Import::RowWorker
+
+  def row: () -> BulkImportRow
+end
+
+module RSpec::ExampleGroups::ImportRowWorker::Perform::WhenThisIsTheLastRowToProcess::WithACleanSuccess::LetDefinitions
+  def service_double: () -> RSpec::Mocks::InstanceVerifyingDouble
+end
+
+module RSpec::ExampleGroups::ImportRowWorker::Perform::WhenThisIsTheLastRowToProcess::BehavesLikeUncleanFailure::LetDefinitions
+  def service_double: () -> RSpec::Mocks::InstanceVerifyingDouble
+end
+
+module RSpec::ExampleGroups::ImportRowWorker::Perform::WhenThereAreMultipleRowsToProcess::WithAnUncleanFailure::LetDefinitions
+  def service_double: () -> RSpec::Mocks::InstanceVerifyingDouble
+end
+
+module RSpec::ExampleGroups::ImportRowWorker::Perform::WhenThereAreMultipleRowsToProcess::LetDefinitions
+  def import: () -> BulkImport
+end
+
+module RSpec::ExampleGroups::ImportRowWorker::Perform::WhenThereAreMultipleRowsToProcess::WithACleanFailure::LetDefinitions
+  def service_double: () -> RSpec::Mocks::InstanceVerifyingDouble
+end
+
+module RSpec::ExampleGroups::ImportRowWorker::Perform::WhenThereAreMultipleRowsToProcess::WithACleanSuccess::LetDefinitions
+  def service_double: () -> RSpec::Mocks::InstanceVerifyingDouble
+end

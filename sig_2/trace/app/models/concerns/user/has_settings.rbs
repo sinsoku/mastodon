@@ -1,0 +1,51 @@
+module User::HasSettings
+  def prefers_noindex?: () -> bool
+
+  def setting_default_privacy: () -> void
+                             | () -> String
+
+  def setting_default_sensitive: () -> void
+
+  def setting_default_language: () -> void
+
+  def settings_attributes=: (Hash[untyped, untyped]) -> Hash[untyped, untyped]
+                          | (ActiveSupport::HashWithIndifferentAccess) -> ActiveSupport::HashWithIndifferentAccess
+                          | (ActionController::Parameters) -> ActionController::Parameters
+
+  def setting_boost_modal: () -> void
+
+  def setting_delete_modal: () -> void
+
+  def setting_auto_play_gif: () -> void
+
+  def setting_display_media: () -> void
+
+  def setting_expand_spoilers: () -> void
+
+  def setting_reduce_motion: () -> void
+
+  def setting_disable_swiping: () -> void
+
+  def setting_disable_hover_cards: () -> void
+
+  def setting_advanced_layout: () -> void
+
+  def setting_use_blurhash: () -> void
+
+  def setting_use_pending_items: () -> void
+
+  def setting_trends: () -> void
+
+  def preferred_posting_language: () -> void
+
+  def setting_theme: () -> void
+
+  def setting_system_font_ui: () -> void
+
+  def setting_system_scrollbars_ui: () -> void
+
+  def shows_application?: () -> bool
+
+  def aggregates_reblogs?: () -> void
+                         | () -> bool
+end

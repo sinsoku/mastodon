@@ -1,0 +1,11 @@
+class MediaController
+  def set_media_attachment: () -> MediaAttachment
+
+  def verify_permitted_status!: () -> Status
+
+  def check_playable: () -> nil
+
+  def allow_iframing: () -> String
+
+  def player: () -> nil
+end

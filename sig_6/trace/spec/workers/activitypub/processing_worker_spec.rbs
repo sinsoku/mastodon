@@ -1,0 +1,5 @@
+module RSpec::ExampleGroups::ActivityPubProcessingWorker::LetDefinitions
+  def subject: () -> ActivityPub::ProcessingWorker
+
+  def account: () -> Account
+end

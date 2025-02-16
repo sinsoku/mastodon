@@ -1,0 +1,25 @@
+class TextFormatter
+  def initialize: (String, ?Hash[untyped, untyped]) -> void
+
+  def to_s: () -> void
+
+  def rewrite: () -> String
+
+  def entities: () -> Array[untyped]
+
+  def multiline?: () -> void
+
+  def link_to_mention: (Hash[untyped, untyped]) -> void
+
+  def local_domain?: (*untyped, **untyped) -> void
+
+  def tag_manager: () -> TagManager
+
+  def preloaded_accounts?: () -> void
+
+  def preloaded_accounts: () -> Array[untyped]
+
+  def link_to_hashtag: (Hash[untyped, untyped]) -> void
+
+  def with_domains?: () -> void
+end

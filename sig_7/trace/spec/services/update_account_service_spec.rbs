@@ -1,0 +1,13 @@
+module RSpec::ExampleGroups::UpdateAccountService::SwitchingFormLockedToUnlockedAccounts::LetDefinitions
+  def bob: () -> Account
+
+  def account: () -> Account
+
+  def eve: () -> Account
+
+  def alice: () -> Account
+end
+
+module RSpec::ExampleGroups::UpdateAccountService::LetDefinitions
+  def subject: () -> UpdateAccountService
+end

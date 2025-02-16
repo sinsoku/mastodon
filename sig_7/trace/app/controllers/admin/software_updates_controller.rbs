@@ -1,0 +1,5 @@
+class Admin::SoftwareUpdatesController
+  def check_enabled!: () -> nil
+
+  def index: () -> Array[untyped]
+end

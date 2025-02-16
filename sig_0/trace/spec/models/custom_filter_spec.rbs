@@ -1,0 +1,18 @@
+module RSpec::ExampleGroups::CustomFilter::ExpiresIn_3::LetDefinitions
+  def subject: () -> nil
+             | () -> ActiveSupport::Duration
+
+  def custom_filter: () -> CustomFilter
+end
+
+module RSpec::ExampleGroups::CustomFilter::ExpiresIn_3::WhenExpiresIsBeyondTheEndOfTheRange::LetDefinitions
+  def expires_at: () -> ActiveSupport::TimeWithZone
+end
+
+module RSpec::ExampleGroups::CustomFilter::ExpiresIn_3::WhenExpiresAtIsNil::LetDefinitions
+  def expires_at: () -> nil
+end
+
+module RSpec::ExampleGroups::CustomFilter::ExpiresIn_3::WhenExpiresIsBeforeTheStartOfTheRange::LetDefinitions
+  def expires_at: () -> ActiveSupport::TimeWithZone
+end

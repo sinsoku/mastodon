@@ -1,0 +1,3 @@
+class REST::NotificationPolicySerializer
+  def summary: () -> Hash[untyped, untyped]
+end

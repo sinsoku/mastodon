@@ -1,0 +1,3 @@
+class Redirect::AccountsController
+  def set_resource: () -> nil
+end

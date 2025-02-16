@@ -1,0 +1,5 @@
+class RemoveFeaturedTagService
+  def call: (Account, FeaturedTag) -> void
+
+  def build_json: (FeaturedTag) -> void
+end

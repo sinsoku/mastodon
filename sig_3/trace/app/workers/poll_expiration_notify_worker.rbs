@@ -1,0 +1,3 @@
+class PollExpirationNotifyWorker
+  def self.remove_from_scheduled: (Integer) -> void
+end

@@ -1,0 +1,14 @@
+class Settings::TwoFactorAuthentication::ConfirmationsController
+  def ensure_otp_secret: () -> String
+                       | () -> nil
+
+  def new: () -> RQRCode::QRCode
+
+  def prepare_two_factor_form: () -> void
+
+  def create: () -> ActiveSupport::SafeBuffer
+            | () -> nil
+
+  def confirmation_params: () -> ActionController::Parameters
+                         | () -> nil
+end

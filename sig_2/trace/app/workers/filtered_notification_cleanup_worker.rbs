@@ -1,0 +1,3 @@
+class FilteredNotificationCleanupWorker
+  def perform: (Integer, Integer) -> void
+end

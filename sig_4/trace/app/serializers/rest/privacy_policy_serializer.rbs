@@ -1,0 +1,7 @@
+class REST::PrivacyPolicySerializer
+  def updated_at: () -> String
+
+  def content: () -> String
+
+  def markdown: () -> Redcarpet::Markdown
+end

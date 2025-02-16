@@ -1,0 +1,15 @@
+class AccountSuggestions::SettingSource
+  def get: (Account, ?limit: Integer) -> void
+
+  def setting_enabled?: () -> void
+
+  def setting: () -> String
+
+  def setting_to_where_condition: () -> void
+
+  def usernames_and_domains: () -> Array[untyped]
+
+  def setting_to_usernames_and_domains: () -> Array[untyped]
+
+  def key: () -> void
+end

@@ -1,0 +1,17 @@
+class Web::PushSubscription
+  def pushable?: (Notification) -> void
+
+  def policy_allows_notification?: (Notification) -> void
+
+  def alert_enabled_for_notification_type?: (Notification) -> void
+
+  def truthy?: (bool) -> void
+
+  def locale: (*untyped, **untyped) -> nil
+
+  def associated_user: () -> User
+
+  def associated_access_token: () -> void
+
+  def find_or_create_access_token: () -> Doorkeeper::AccessToken
+end

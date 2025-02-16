@@ -1,0 +1,5 @@
+class EmojisController
+  def set_emoji: () -> CustomEmoji
+
+  def show: () -> bool
+end

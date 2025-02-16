@@ -1,0 +1,171 @@
+module RSpec::ExampleGroups::AdminReportsActionsController::LetDefinitions
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::LetDefinitions
+  def target_account: () -> Account
+
+  def statuses: () -> Array[untyped]
+
+  def report: () -> Report
+
+  def common_params: () -> Hash[untyped, untyped]
+
+  def text: () -> String
+end
+
+module RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::WithModerationActionAsAnExtraField::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::WithModerationActionAsAnExtraField::BehavesLikeAllActionTypes::WhenTheActionIsSuspend::LetDefinitions
+  def action: () -> String
+end
+
+class RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::WithModerationActionAsAnExtraField::BehavesLikeAllActionTypes::WhenTheActionIsSuspend::BehavesLikeCommonBehavior
+  def mark_report_action_taken: () -> RSpec::Matchers::BuiltIn::ChangeFromValue
+
+  def create_target_account_strike: () -> void
+end
+
+module RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::WithModerationActionAsAnExtraField::BehavesLikeAllActionTypes::WhenTheActionIsSuspend::BehavesLikeCommonBehavior::WhenTextIsUnset::LetDefinitions
+  def common_params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::WithModerationActionAsAnExtraField::BehavesLikeAllActionTypes::WhenTheActionIsSilence::LetDefinitions
+  def action: () -> String
+end
+
+class RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::WithModerationActionAsAnExtraField::BehavesLikeAllActionTypes::WhenTheActionIsSilence::BehavesLikeCommonBehavior
+  def mark_report_action_taken: () -> RSpec::Matchers::BuiltIn::ChangeFromValue
+
+  def create_target_account_strike: () -> void
+end
+
+module RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::WithModerationActionAsAnExtraField::BehavesLikeAllActionTypes::WhenTheActionIsSilence::BehavesLikeCommonBehavior::WhenTextIsUnset::LetDefinitions
+  def common_params: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::WithModerationActionAsAnExtraField::BehavesLikeAllActionTypes::WhenTheActionIsDelete::BehavesLikeCommonBehavior
+  def mark_report_action_taken: () -> RSpec::Matchers::BuiltIn::ChangeFromValue
+
+  def create_target_account_strike: () -> void
+end
+
+module RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::WithModerationActionAsAnExtraField::BehavesLikeAllActionTypes::WhenTheActionIsDelete::LetDefinitions
+  def action: () -> String
+end
+
+module RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::WithModerationActionAsAnExtraField::BehavesLikeAllActionTypes::WhenTheActionIsDelete::BehavesLikeCommonBehavior::WhenTextIsUnset::LetDefinitions
+  def common_params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::WithModerationActionAsAnExtraField::BehavesLikeAllActionTypes::WhenTheActionIsMarkAsSensitive::LetDefinitions
+  def statuses: () -> Array[untyped]
+
+  def media_attached_status: () -> Status
+
+  def media_attached_deleted_status: () -> Status
+
+  def last_media_attached_status: () -> Status
+
+  def action: () -> String
+end
+
+class RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::WithModerationActionAsAnExtraField::BehavesLikeAllActionTypes::WhenTheActionIsMarkAsSensitive::BehavesLikeCommonBehavior
+  def mark_report_action_taken: () -> RSpec::Matchers::BuiltIn::ChangeFromValue
+
+  def create_target_account_strike: () -> void
+end
+
+module RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::WithModerationActionAsAnExtraField::BehavesLikeAllActionTypes::WhenTheActionIsMarkAsSensitive::BehavesLikeCommonBehavior::WhenTextIsUnset::LetDefinitions
+  def common_params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::WithActionAsSubmitButton::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+end
+
+module RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::WithActionAsSubmitButton::BehavesLikeAllActionTypes::WhenTheActionIsSuspend::LetDefinitions
+  def action: () -> String
+end
+
+class RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::WithActionAsSubmitButton::BehavesLikeAllActionTypes::WhenTheActionIsSuspend::BehavesLikeCommonBehavior
+  def mark_report_action_taken: () -> RSpec::Matchers::BuiltIn::ChangeFromValue
+
+  def create_target_account_strike: () -> void
+end
+
+module RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::WithActionAsSubmitButton::BehavesLikeAllActionTypes::WhenTheActionIsSuspend::BehavesLikeCommonBehavior::WhenTextIsUnset::LetDefinitions
+  def common_params: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::WithActionAsSubmitButton::BehavesLikeAllActionTypes::WhenTheActionIsDelete::BehavesLikeCommonBehavior
+  def mark_report_action_taken: () -> RSpec::Matchers::BuiltIn::ChangeFromValue
+
+  def create_target_account_strike: () -> void
+end
+
+module RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::WithActionAsSubmitButton::BehavesLikeAllActionTypes::WhenTheActionIsDelete::LetDefinitions
+  def action: () -> String
+end
+
+module RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::WithActionAsSubmitButton::BehavesLikeAllActionTypes::WhenTheActionIsDelete::BehavesLikeCommonBehavior::WhenTextIsUnset::LetDefinitions
+  def common_params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::WithActionAsSubmitButton::BehavesLikeAllActionTypes::WhenTheActionIsMarkAsSensitive::LetDefinitions
+  def statuses: () -> Array[untyped]
+
+  def media_attached_status: () -> Status
+
+  def media_attached_deleted_status: () -> Status
+
+  def last_media_attached_status: () -> Status
+
+  def action: () -> String
+end
+
+class RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::WithActionAsSubmitButton::BehavesLikeAllActionTypes::WhenTheActionIsMarkAsSensitive::BehavesLikeCommonBehavior
+  def mark_report_action_taken: () -> RSpec::Matchers::BuiltIn::ChangeFromValue
+
+  def create_target_account_strike: () -> void
+end
+
+module RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::WithActionAsSubmitButton::BehavesLikeAllActionTypes::WhenTheActionIsMarkAsSensitive::BehavesLikeCommonBehavior::WhenTextIsUnset::LetDefinitions
+  def common_params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::WithActionAsSubmitButton::BehavesLikeAllActionTypes::WhenTheActionIsSilence::LetDefinitions
+  def action: () -> String
+end
+
+class RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::WithActionAsSubmitButton::BehavesLikeAllActionTypes::WhenTheActionIsSilence::BehavesLikeCommonBehavior
+  def mark_report_action_taken: () -> RSpec::Matchers::BuiltIn::ChangeFromValue
+
+  def create_target_account_strike: () -> void
+end
+
+module RSpec::ExampleGroups::AdminReportsActionsController::POSTCreate::WithActionAsSubmitButton::BehavesLikeAllActionTypes::WhenTheActionIsSilence::BehavesLikeCommonBehavior::WhenTextIsUnset::LetDefinitions
+  def common_params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::AdminReportsActionsController::POSTPreview::LetDefinitions
+  def report: () -> Report
+end
+
+module RSpec::ExampleGroups::AdminReportsActionsController::POSTPreview::WhenTheActionIsSuspend::LetDefinitions
+  def action: () -> String
+end
+
+module RSpec::ExampleGroups::AdminReportsActionsController::POSTPreview::WhenTheActionIsDelete::LetDefinitions
+  def action: () -> String
+end
+
+module RSpec::ExampleGroups::AdminReportsActionsController::POSTPreview::WhenTheActionIsMarkAsSensitive::LetDefinitions
+  def action: () -> String
+end
+
+module RSpec::ExampleGroups::AdminReportsActionsController::POSTPreview::WhenTheActionIsSilence::LetDefinitions
+  def action: () -> String
+end

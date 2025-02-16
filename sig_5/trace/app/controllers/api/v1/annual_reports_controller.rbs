@@ -1,0 +1,7 @@
+class Api::V1::AnnualReportsController
+  def set_annual_report: () -> GeneratedAnnualReport
+
+  def read: () -> String
+
+  def index: () -> String
+end

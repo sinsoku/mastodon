@@ -1,0 +1,11 @@
+class CustomEmojiPolicy
+  def update?: () -> bool
+
+  def enable?: () -> bool
+
+  def disable?: () -> bool
+
+  def copy?: () -> bool
+
+  def destroy?: () -> bool
+end

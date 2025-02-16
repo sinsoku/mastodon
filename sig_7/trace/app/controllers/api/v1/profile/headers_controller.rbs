@@ -1,0 +1,3 @@
+class Api::V1::Profile::HeadersController
+  def destroy: () -> String
+end

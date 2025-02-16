@@ -1,0 +1,13 @@
+class NotificationPolicy
+  def summarize!: () -> void
+
+  def pending_notification_requests: () -> Array[untyped]
+
+  def filter_not_following=: (bool) -> Symbol
+
+  def filter_not_followers=: (bool) -> Symbol
+
+  def filter_new_accounts=: (bool) -> Symbol
+
+  def filter_private_mentions=: (bool) -> Symbol
+end

@@ -1,0 +1,27 @@
+module RSpec::ExampleGroups::AdminStatusesController::LetDefinitions
+  def status: () -> Status
+
+  def account: () -> Account
+
+  def last_media_attached_status: () -> Status
+
+  def sensitive: () -> bool
+
+  def media_attached_status: () -> Status
+
+  def user: () -> User
+end
+
+module RSpec::ExampleGroups::AdminStatusesController::POSTBatch::LetDefinitions
+  def subject: () -> ActionDispatch::TestResponse
+
+  def status_ids: () -> Array[untyped]
+end
+
+module RSpec::ExampleGroups::AdminStatusesController::POSTBatch::WhenTheModeratorIsBlockedByTheAuthor::BehavesLikeWhenActionIsReport::LetDefinitions
+  def action: () -> String
+end
+
+module RSpec::ExampleGroups::AdminStatusesController::POSTBatch::BehavesLikeWhenActionIsReport::LetDefinitions
+  def action: () -> String
+end

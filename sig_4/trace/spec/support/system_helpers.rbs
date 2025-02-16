@@ -1,0 +1,9 @@
+module SystemHelpers
+  def admin_user: () -> void
+
+  def form_label: (String) -> void
+
+  def submit_button: () -> void
+
+  def success_message: () -> void
+end

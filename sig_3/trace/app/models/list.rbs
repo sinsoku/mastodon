@@ -1,0 +1,5 @@
+class List
+  def validate_account_lists_limit: () -> nil
+
+  def clean_feed_manager: () -> nil
+end

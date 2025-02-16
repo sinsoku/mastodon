@@ -1,0 +1,61 @@
+module RSpec::ExampleGroups::FeedManager::Filter::LetDefinitions
+  def jeff: () -> Account
+
+  def alice: () -> Account
+
+  def bob: () -> Account
+
+  def list: () -> List
+end
+
+module RSpec::ExampleGroups::FeedManager::LetDefinitions
+  def subject: () -> FeedManager
+end
+
+module RSpec::ExampleGroups::FeedManager::ClearFromHome::LetDefinitions
+  def status_from_followed_account_first: () -> Status
+
+  def followed_account: () -> Account
+
+  def status_from_followed_account_mentions_target_account: () -> Status
+
+  def target_account: () -> Account
+
+  def status_from_followed_account_reblogs_status_mentions_target_account: () -> Status
+
+  def status_mentions_target_account: () -> Status
+
+  def status_from_followed_account_reblogs_status_from_target_account: () -> Status
+
+  def status_from_target_account: () -> Status
+
+  def status_from_followed_account_next: () -> Status
+
+  def account: () -> Account
+end
+
+module RSpec::ExampleGroups::FeedManager::UnmergeTagFromHome::LetDefinitions
+  def tag: () -> Tag
+
+  def receiver: () -> Account
+end
+
+module RSpec::ExampleGroups::FeedManager::UnpushFromHome::LetDefinitions
+  def receiver: () -> Account
+end
+
+module RSpec::ExampleGroups::FeedManager::Key::LetDefinitions
+  def subject: () -> String
+end
+
+module RSpec::ExampleGroups::FeedManager::PushToList::LetDefinitions
+  def list_owner: () -> Account
+
+  def alice: () -> Account
+
+  def bob: () -> Account
+
+  def eve: () -> Account
+
+  def list: () -> List
+end

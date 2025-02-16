@@ -1,0 +1,7 @@
+class RSpec::ExampleGroups::APIV1Streaming::WithStreamingApiOnDifferentHost::GETApiV1Streaming
+  def redirect_to_uri: () -> void
+
+  def request_uri: () -> URI::HTTPS
+
+  def streaming_host: () -> void
+end

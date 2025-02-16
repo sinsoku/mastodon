@@ -1,0 +1,15 @@
+module RSpec::ExampleGroups::APIV1Announcements::LetDefinitions
+  def announcement: () -> Announcement
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def user: () -> User
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::APIV1Announcements::POSTApiV1AnnouncementsIdDismiss::WithToken::LetDefinitions
+  def scopes: () -> String
+end

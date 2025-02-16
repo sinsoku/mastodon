@@ -1,0 +1,43 @@
+module RSpec::ExampleGroups::StatusPinValidator::Validate::LetDefinitions
+  def pin: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def account: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def status_pins: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def count: () -> Integer
+
+  def local: () -> bool
+
+  def errors: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def status: () -> RSpec::Mocks::InstanceVerifyingDouble
+
+  def reblog: () -> bool
+
+  def visibility: () -> String
+
+  def status_account_id: () -> Integer
+
+  def pin_account_id: () -> Integer
+end
+
+module RSpec::ExampleGroups::StatusPinValidator::Validate::WhenPinAccountIdPinStatusAccountId::LetDefinitions
+  def status_account_id: () -> Integer
+
+  def pin_account_id: () -> Integer
+end
+
+module RSpec::ExampleGroups::StatusPinValidator::Validate::WhenPinAccountIsLocalAndHasTooManyPins::LetDefinitions
+  def count: () -> Integer
+
+  def local: () -> bool
+end
+
+module RSpec::ExampleGroups::StatusPinValidator::Validate::WhenPinStatusReblog::LetDefinitions
+  def reblog: () -> bool
+end
+
+module RSpec::ExampleGroups::StatusPinValidator::Validate::WhenPinStatusDirectVisibility::LetDefinitions
+  def visibility: () -> String
+end

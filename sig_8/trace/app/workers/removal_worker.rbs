@@ -1,0 +1,4 @@
+class RemovalWorker
+  def perform: (Integer, ?Hash[untyped, untyped]) -> void
+             | (Integer, ?Hash[untyped, untyped]) -> bool
+end

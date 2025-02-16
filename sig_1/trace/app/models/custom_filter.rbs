@@ -1,0 +1,5 @@
+class CustomFilter
+  def self.cached_filters_for: (Integer) -> Array[untyped]
+
+  def self.apply_cached_filters: (Array[untyped], Status) -> Array[untyped]
+end

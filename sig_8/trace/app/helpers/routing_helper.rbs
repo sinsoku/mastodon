@@ -1,0 +1,47 @@
+class ActivityPub::TagManager
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+module RoutingHelper
+  def full_asset_url: (String, **untyped) -> void
+
+  def use_storage?: () -> void
+
+  def asset_host: () -> void
+
+  def frontend_asset_path: (String, **untyped) -> void
+
+  def frontend_asset_url: (String, **untyped) -> String
+end
+
+class REST::AccountSerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class EmojiFormatter
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class TextFormatter
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class CacheBusterWorker
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class REST::TagSerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class REST::PreviewCardSerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end
+
+class RSpec::ExampleGroups::StatusFinder
+  def default_url_options: () -> void
+end
+
+class REST::InstanceSerializer
+  def default_url_options: () -> Hash[untyped, untyped]
+end

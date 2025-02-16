@@ -1,0 +1,103 @@
+module RSpec::ExampleGroups::Filters::DELETEApiV2FiltersId::LetDefinitions
+  def subject: () -> Integer
+
+  def filter: () -> CustomFilter
+end
+
+module RSpec::ExampleGroups::Filters::LetDefinitions
+  def user: () -> User
+
+  def headers: () -> Hash[untyped, untyped]
+
+  def token: () -> Doorkeeper::AccessToken
+
+  def scopes: () -> String
+end
+
+module RSpec::ExampleGroups::Filters::DELETEApiV2FiltersId::BehavesLikeUnauthorizedForInvalidToken::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Filters::DELETEApiV2FiltersId::WhenTheFilterBelongsToSomeoneElse::LetDefinitions
+  def filter: () -> CustomFilter
+end
+
+module RSpec::ExampleGroups::Filters::PUTApiV2FiltersId::LetDefinitions
+  def filter: () -> CustomFilter
+
+  def keyword: () -> CustomFilterKeyword
+
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Filters::PUTApiV2FiltersId::WhenUpdatingFilterParameters::WithInvalidParams::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Filters::PUTApiV2FiltersId::WhenUpdatingFilterParameters::WithValidParams::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Filters::PUTApiV2FiltersId::WhenUpdatingKeywordsInBulk::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Filters::PUTApiV2FiltersId::WhenTheFilterBelongsToSomeoneElse::LetDefinitions
+  def filter: () -> CustomFilter
+end
+
+module RSpec::ExampleGroups::Filters::PUTApiV2FiltersId::BehavesLikeUnauthorizedForInvalidToken::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Filters::GETApiV2FiltersId::LetDefinitions
+  def subject: () -> Integer
+
+  def filter: () -> CustomFilter
+end
+
+module RSpec::ExampleGroups::Filters::GETApiV2FiltersId::WhenTheFilterBelongsToSomeoneElse::LetDefinitions
+  def filter: () -> CustomFilter
+end
+
+module RSpec::ExampleGroups::Filters::GETApiV2FiltersId::BehavesLikeUnauthorizedForInvalidToken::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Filters::GETApiV2Filters::LetDefinitions
+  def filters: () -> Array[untyped]
+
+  def subject: () -> Integer
+end
+
+module RSpec::ExampleGroups::Filters::GETApiV2Filters::BehavesLikeUnauthorizedForInvalidToken::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Filters::POSTApiV2Filters::LetDefinitions
+  def subject: () -> Integer
+
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Filters::POSTApiV2Filters::WithValidParams::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Filters::POSTApiV2Filters::WhenTheGivenContextValueIsInvalid::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Filters::POSTApiV2Filters::WhenTheRequiredTitleParamIsMissing::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Filters::POSTApiV2Filters::WhenTheRequiredContextParamIsMissing::LetDefinitions
+  def params: () -> Hash[untyped, untyped]
+end
+
+module RSpec::ExampleGroups::Filters::POSTApiV2Filters::BehavesLikeUnauthorizedForInvalidToken::LetDefinitions
+  def headers: () -> Hash[untyped, untyped]
+end

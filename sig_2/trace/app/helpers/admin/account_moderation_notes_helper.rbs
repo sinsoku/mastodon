@@ -1,0 +1,9 @@
+module Admin::AccountModerationNotesHelper
+  def admin_account_link_to: (Account, ?path: nil) -> ActiveSupport::SafeBuffer
+
+  def labeled_account_avatar: (Account) -> void
+
+  def account_inline_text: (Account) -> void
+
+  def suspended_account?: (Account) -> void
+end
