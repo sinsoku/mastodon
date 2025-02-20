@@ -31,10 +31,12 @@ class SeveredRelationship < ApplicationRecord
   scope :active, -> { where(direction: :active) }
   scope :passive, -> { where(direction: :passive) }
 
+  # @rbs () -> void
   def account
     active? ? local_account : remote_account
   end
 
+  # @rbs () -> void
   def target_account
     active? ? remote_account : local_account
   end

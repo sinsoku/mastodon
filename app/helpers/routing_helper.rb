@@ -14,24 +14,29 @@ module RoutingHelper
     end
   end
 
+  # @rbs (String, **untyped) -> (void | String)
   def full_asset_url(source, **)
     source = ActionController::Base.helpers.asset_url(source, **) unless use_storage?
 
     URI.join(asset_host, source).to_s
   end
 
+  # @rbs () -> void
   def asset_host
     Rails.configuration.action_controller.asset_host || root_url
   end
 
+  # @rbs (String, **untyped) -> void
   def frontend_asset_path(source, **)
     asset_pack_path("media/#{source}", **)
   end
 
+  # @rbs (String, **untyped) -> (String | void)
   def frontend_asset_url(source, **)
     full_asset_url(frontend_asset_path(source, **))
   end
 
+  # @rbs () -> void
   def use_storage?
     Rails.configuration.x.use_s3 || Rails.configuration.x.use_swift
   end

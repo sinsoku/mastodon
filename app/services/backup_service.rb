@@ -8,6 +8,7 @@ class BackupService < BaseService
 
   attr_reader :account, :backup
 
+  # @rbs (Backup) -> void
   def call(backup)
     @backup  = backup
     @account = backup.user.account
@@ -17,6 +18,7 @@ class BackupService < BaseService
 
   private
 
+  # @rbs (Tempfile) -> void
   def build_outbox_json!(file)
     skeleton = serialize(collection_presenter, ActivityPub::CollectionSerializer)
     skeleton[:@context] = full_context
@@ -50,6 +52,7 @@ class BackupService < BaseService
     file.write(append)
   end
 
+  # @rbs () -> void
   def build_archive!
     tmp_file = Tempfile.new(%w(archive .zip))
 
@@ -71,6 +74,7 @@ class BackupService < BaseService
     tmp_file.unlink
   end
 
+  # @rbs (Zip::File) -> void
   def dump_media_attachments!(zipfile)
     MediaAttachment.attached.where(account: account).find_in_batches do |media_attachments|
       media_attachments.each do |m|
@@ -86,12 +90,14 @@ class BackupService < BaseService
     end
   end
 
+  # @rbs (Zip::File) -> void
   def dump_outbox!(zipfile)
     zipfile.get_output_stream('outbox.json') do |io|
       build_outbox_json!(io)
     end
   end
 
+  # @rbs (Zip::File) -> void
   def dump_actor!(zipfile)
     actor = serialize(account, ActivityPub::ActorSerializer)
 
@@ -111,6 +117,7 @@ class BackupService < BaseService
     end
   end
 
+  # @rbs (Zip::File) -> void
   def dump_likes!(zipfile)
     skeleton = serialize(ActivityPub::CollectionPresenter.new(id: 'likes.json', type: :ordered, size: 0, items: []), ActivityPub::CollectionSerializer)
     skeleton.delete(:totalItems)
@@ -138,6 +145,7 @@ class BackupService < BaseService
     end
   end
 
+  # @rbs (Zip::File) -> void
   def dump_bookmarks!(zipfile)
     skeleton = serialize(ActivityPub::CollectionPresenter.new(id: 'bookmarks.json', type: :ordered, size: 0, items: []), ActivityPub::CollectionSerializer)
     skeleton.delete(:totalItems)
@@ -164,6 +172,7 @@ class BackupService < BaseService
     end
   end
 
+  # @rbs () -> void
   def collection_presenter
     ActivityPub::CollectionPresenter.new(
       id: 'outbox.json',
@@ -173,6 +182,7 @@ class BackupService < BaseService
     )
   end
 
+  # @rbs (ActivityPub::CollectionPresenter | Account, Class) -> Hash[untyped, untyped]
   def serialize(object, serializer)
     ActiveModelSerializers::SerializableResource.new(
       object,
@@ -183,6 +193,7 @@ class BackupService < BaseService
 
   CHUNK_SIZE = 1.megabyte
 
+  # @rbs (Zip::File, Paperclip::Attachment, String) -> void
   def download_to_zip(zipfile, attachment, filename)
     adapter = Paperclip.io_adapters.for(attachment)
 

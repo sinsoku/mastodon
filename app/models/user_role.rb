@@ -107,48 +107,59 @@ class UserRole < ApplicationRecord
 
   has_many :users, inverse_of: :role, foreign_key: 'role_id', dependent: :nullify
 
+  # @rbs () -> void
   def self.nobody
     @nobody ||= UserRole.new(permissions: Flags::NONE, position: NOBODY_POSITION)
   end
 
+  # @rbs () -> (void | UserRole)
   def self.everyone
     UserRole.find(EVERYONE_ROLE_ID)
   rescue ActiveRecord::RecordNotFound
     UserRole.create!(id: EVERYONE_ROLE_ID, permissions: Flags::DEFAULT)
   end
 
+  # @rbs (*Symbol) -> Array[untyped]
   def self.that_can(*any_of_privileges)
     all.select { |role| role.can?(*any_of_privileges) }
   end
 
+  # @rbs () -> (void | bool)
   def everyone?
     id == EVERYONE_ROLE_ID
   end
 
+  # @rbs () -> void
   def nobody?
     id.nil?
   end
 
+  # @rbs () -> (void | Array[untyped])
   def permissions_as_keys
     FLAGS.keys.select { |privilege| permissions & FLAGS[privilege] == FLAGS[privilege] }.map(&:to_s)
   end
 
+  # @rbs (Array[untyped]) -> (void | Integer)
   def permissions_as_keys=(value)
     self.permissions = value.filter_map(&:presence).reduce(Flags::NONE) { |bitmask, privilege| FLAGS.key?(privilege.to_sym) ? (bitmask | FLAGS[privilege.to_sym]) : bitmask }
   end
 
+  # @rbs (*Symbol) -> (void | bool)
   def can?(*any_of_privileges)
     any_of_privileges.any? { |privilege| in_permissions?(privilege) }
   end
 
+  # @rbs (UserRole?) -> void
   def overrides?(other_role)
     other_role.nil? || position > other_role.position
   end
 
+  # @rbs (UserRole) -> void
   def bypass_block?(role)
     overrides?(role) && highlighted? && can?(*Flags::CATEGORIES[:moderation])
   end
 
+  # @rbs () -> Integer
   def computed_permissions
     # If called on the everyone role, no further computation needed
     return permissions if everyone?
@@ -168,22 +179,26 @@ class UserRole < ApplicationRecord
     end
   end
 
+  # @rbs () -> void
   def to_log_human_identifier
     name
   end
 
   private
 
+  # @rbs (Symbol) -> void
   def in_permissions?(privilege)
     raise ArgumentError, "Unknown privilege: #{privilege}" unless FLAGS.key?(privilege)
 
     computed_permissions & FLAGS[privilege] == FLAGS[privilege]
   end
 
+  # @rbs () -> Integer?
   def set_position
     self.position = NOBODY_POSITION if everyone?
   end
 
+  # @rbs () -> ActiveModel::Error?
   def validate_own_role_edition
     return unless defined?(@current_account) && @current_account.user_role.id == id
 
@@ -191,14 +206,17 @@ class UserRole < ApplicationRecord
     errors.add(:position, :own_role) if position_changed?
   end
 
+  # @rbs () -> ActiveModel::Error?
   def validate_permissions_elevation
     errors.add(:permissions_as_keys, :elevated) if defined?(@current_account) && @current_account.user_role.computed_permissions & permissions != permissions
   end
 
+  # @rbs () -> ActiveModel::Error?
   def validate_position_elevation
     errors.add(:position, :elevated) if defined?(@current_account) && @current_account.user_role.position < position
   end
 
+  # @rbs () -> nil
   def validate_dangerous_permissions
     errors.add(:permissions_as_keys, :dangerous) if everyone? && Flags::DEFAULT & permissions != permissions
   end

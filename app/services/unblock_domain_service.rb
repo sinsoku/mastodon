@@ -3,12 +3,14 @@
 class UnblockDomainService < BaseService
   attr_accessor :domain_block
 
+  # @rbs (DomainBlock) -> void
   def call(domain_block)
     @domain_block = domain_block
     process_retroactive_updates
     domain_block.destroy
   end
 
+  # @rbs () -> void
   def process_retroactive_updates
     scope = Account.by_domain_and_subdomains(domain_block.domain)
 

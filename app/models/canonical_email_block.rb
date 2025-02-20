@@ -21,14 +21,17 @@ class CanonicalEmailBlock < ApplicationRecord
 
   scope :matching_email, ->(email) { where(canonical_email_hash: email_to_canonical_email_hash(email)) }
 
+  # @rbs () -> void
   def to_log_human_identifier
     canonical_email_hash
   end
 
+  # @rbs (String) -> String
   def email=(email)
     self.canonical_email_hash = email_to_canonical_email_hash(email)
   end
 
+  # @rbs (String) -> void
   def self.block?(email)
     matching_email(email).exists?
   end

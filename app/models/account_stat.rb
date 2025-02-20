@@ -25,14 +25,17 @@ class AccountStat < ApplicationRecord
 
   update_index('accounts', :account)
 
+  # @rbs () -> Integer
   def following_count
     [attributes['following_count'], 0].max
   end
 
+  # @rbs () -> Integer
   def followers_count
     [attributes['followers_count'], 0].max
   end
 
+  # @rbs () -> Integer
   def statuses_count
     [attributes['statuses_count'], 0].max
   end

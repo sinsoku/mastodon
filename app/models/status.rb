@@ -178,38 +178,47 @@ class Status < ApplicationRecord
 
   REAL_TIME_WINDOW = 6.hours
 
+  # @rbs () -> (void | String)
   def cache_key
     "v3:#{super}"
   end
 
+  # @rbs () -> void
   def to_log_human_identifier
     account.acct
   end
 
+  # @rbs () -> void
   def to_log_permalink
     ActivityPub::TagManager.instance.uri_for(self)
   end
 
+  # @rbs () -> (void | bool)
   def reply?
     !in_reply_to_id.nil? || attributes['reply']
   end
 
+  # @rbs () -> bool
   def local?
     attributes['local'] || uri.nil?
   end
 
+  # @rbs () -> void
   def in_reply_to_local_account?
     reply? && thread&.account&.local?
   end
 
+  # @rbs () -> (void | bool)
   def reblog?
     !reblog_of_id.nil?
   end
 
+  # @rbs () -> void
   def within_realtime_window?
     created_at >= REAL_TIME_WINDOW.ago
   end
 
+  # @rbs () -> void
   def verb
     if destroyed?
       :delete
@@ -218,60 +227,74 @@ class Status < ApplicationRecord
     end
   end
 
+  # @rbs () -> void
   def object_type
     reply? ? :comment : :note
   end
 
+  # @rbs () -> (Status | void)
   def proper
     reblog? ? reblog : self
   end
 
+  # @rbs () -> (void | String)
   def content
     proper.text
   end
 
+  # @rbs () -> void
   def target
     reblog
   end
 
+  # @rbs () -> (PreviewCard | void)?
   def preview_card
     preview_cards_status&.preview_card&.tap { |x| x.original_url = preview_cards_status.url }
   end
 
+  # @rbs () -> void
   def reset_preview_card!
     PreviewCardsStatus.where(status_id: id).delete_all
   end
 
+  # @rbs () -> void
   def hidden?
     !distributable?
   end
 
+  # @rbs () -> (void | bool)
   def distributable?
     public_visibility? || unlisted_visibility?
   end
 
   alias sign? distributable?
 
+  # @rbs () -> (void | bool)
   def with_media?
     ordered_media_attachments.any?
   end
 
+  # @rbs () -> void
   def with_preview_card?
     preview_cards_status.present?
   end
 
+  # @rbs () -> void
   def with_poll?
     preloadable_poll.present?
   end
 
+  # @rbs () -> void
   def non_sensitive_with_media?
     !sensitive? && with_media?
   end
 
+  # @rbs () -> void
   def reported?
     @reported ||= account.targeted_reports.unresolved.exists?(['? = ANY(status_ids)', id]) || account.strikes.exists?(['? = ANY(status_ids)', id.to_s])
   end
 
+  # @rbs () -> (void | Array[untyped])
   def emojis
     return @emojis if defined?(@emojis)
 
@@ -281,6 +304,7 @@ class Status < ApplicationRecord
     @emojis = CustomEmoji.from_text(fields.join(' '), account.domain)
   end
 
+  # @rbs () -> Array[untyped]
   def ordered_media_attachments
     if ordered_media_attachment_ids.nil?
       # NOTE: sort Ruby-side to avoid hitting the database when the status is
@@ -292,28 +316,34 @@ class Status < ApplicationRecord
     end.take(MEDIA_ATTACHMENTS_LIMIT)
   end
 
+  # @rbs () -> Integer
   def replies_count
     status_stat&.replies_count || 0
   end
 
+  # @rbs () -> (void | Integer)
   def reblogs_count
     status_stat&.reblogs_count || 0
   end
 
+  # @rbs () -> (void | Integer)
   def favourites_count
     status_stat&.favourites_count || 0
   end
 
   # Reblogs count received from an external instance
+  # @rbs () -> (void | Integer)?
   def untrusted_reblogs_count
     status_stat&.untrusted_reblogs_count unless local?
   end
 
   # Favourites count received from an external instance
+  # @rbs () -> (void | Integer)?
   def untrusted_favourites_count
     status_stat&.untrusted_favourites_count unless local?
   end
 
+  # @rbs (Symbol) -> void
   def increment_count!(key)
     if key == :favourites_count && !untrusted_favourites_count.nil?
       update_status_stat!(favourites_count: favourites_count + 1, untrusted_favourites_count: untrusted_favourites_count + 1)
@@ -324,6 +354,7 @@ class Status < ApplicationRecord
     end
   end
 
+  # @rbs (Symbol) -> void
   def decrement_count!(key)
     if key == :favourites_count && !untrusted_favourites_count.nil?
       update_status_stat!(favourites_count: [favourites_count - 1, 0].max, untrusted_favourites_count: [untrusted_favourites_count - 1, 0].max)
@@ -334,6 +365,7 @@ class Status < ApplicationRecord
     end
   end
 
+  # @rbs () -> void
   def trendable?
     if attributes['trendable'].nil?
       account.trendable?
@@ -342,6 +374,7 @@ class Status < ApplicationRecord
     end
   end
 
+  # @rbs () -> void
   def requires_review?
     attributes['trendable'].nil? && account.requires_review?
   end
@@ -351,30 +384,37 @@ class Status < ApplicationRecord
   end
 
   class << self
+    # @rbs () -> Array[untyped]
     def selectable_visibilities
       visibilities.keys - %w(direct limited)
     end
 
+    # @rbs (Array[untyped], Integer | Account) -> Hash[untyped, untyped]
     def favourites_map(status_ids, account_id)
       Favourite.select(:status_id).where(status_id: status_ids).where(account_id: account_id).each_with_object({}) { |f, h| h[f.status_id] = true }
     end
 
+    # @rbs (Array[untyped], Integer) -> Hash[untyped, untyped]
     def bookmarks_map(status_ids, account_id)
       Bookmark.select(:status_id).where(status_id: status_ids).where(account_id: account_id).map { |f| [f.status_id, true] }.to_h
     end
 
+    # @rbs (Array[untyped], Integer | Account) -> Hash[untyped, untyped]
     def reblogs_map(status_ids, account_id)
       unscoped.select(:reblog_of_id).where(reblog_of_id: status_ids).where(account_id: account_id).each_with_object({}) { |s, h| h[s.reblog_of_id] = true }
     end
 
+    # @rbs (Array[untyped], Integer | Account) -> Hash[untyped, untyped]
     def mutes_map(conversation_ids, account_id)
       ConversationMute.select(:conversation_id).where(conversation_id: conversation_ids).where(account_id: account_id).each_with_object({}) { |m, h| h[m.conversation_id] = true }
     end
 
+    # @rbs (Array[untyped], Integer) -> Hash[untyped, untyped]
     def pins_map(status_ids, account_id)
       StatusPin.select(:status_id).where(status_id: status_ids).where(account_id: account_id).each_with_object({}) { |p, h| h[p.status_id] = true }
     end
 
+    # @rbs (String) -> Array[untyped]
     def from_text(text)
       return [] if text.blank?
 
@@ -390,16 +430,19 @@ class Status < ApplicationRecord
     end
   end
 
+  # @rbs () -> StatusStat
   def status_stat
     super || build_status_stat
   end
 
+  # @rbs () -> void
   def discard_with_reblogs
     discard_time = Time.current
     Status.unscoped.where(reblog_of_id: id, deleted_at: [nil, deleted_at]).in_batches.update_all(deleted_at: discard_time) unless reblog?
     update_attribute(:deleted_at, discard_time)
   end
 
+  # @rbs () -> Array[untyped]?
   def unlink_from_conversations!
     return unless direct_visibility?
 
@@ -413,34 +456,41 @@ class Status < ApplicationRecord
 
   private
 
+  # @rbs (Hash[untyped, untyped]) -> void
   def update_status_stat!(attrs)
     return if marked_for_destruction? || destroyed?
 
     status_stat.update(attrs)
   end
 
+  # @rbs () -> bool?
   def store_uri
     update_column(:uri, ActivityPub::TagManager.instance.uri_for(self)) if uri.nil?
   end
 
+  # @rbs () -> String?
   def prepare_contents
     text&.strip!
     spoiler_text&.strip!
   end
 
+  # @rbs () -> Status?
   def set_reblog
     self.reblog = reblog.reblog if reblog? && reblog.reblog?
   end
 
+  # @rbs () -> bool?
   def set_poll_id
     update_column(:poll_id, poll.id) if association(:poll).loaded? && poll.present?
   end
 
+  # @rbs () -> nil
   def set_visibility
     self.visibility = reblog.visibility if reblog? && visibility.nil?
     self.visibility = (account.locked? ? :private : :public) if visibility.nil?
   end
 
+  # @rbs () -> (Conversation | Integer)?
   def set_conversation
     self.thread = thread.reblog if thread&.reblog?
 
@@ -454,6 +504,7 @@ class Status < ApplicationRecord
     end
   end
 
+  # @rbs () -> void
   def carried_over_reply_to_account_id
     if thread.account_id == account_id && thread.reply?
       thread.in_reply_to_account_id
@@ -462,16 +513,19 @@ class Status < ApplicationRecord
     end
   end
 
+  # @rbs () -> bool
   def set_local
     self.local = account.local?
   end
 
+  # @rbs () -> bool?
   def update_statistics
     return unless distributable?
 
     ActivityTracker.increment('activity:statuses:local')
   end
 
+  # @rbs () -> bool?
   def increment_counter_caches
     return if direct_visibility?
 
@@ -480,6 +534,7 @@ class Status < ApplicationRecord
     thread&.increment_count!(:replies_count) if in_reply_to_id.present? && distributable?
   end
 
+  # @rbs () -> bool?
   def decrement_counter_caches
     return if direct_visibility? || new_record?
 
@@ -488,10 +543,12 @@ class Status < ApplicationRecord
     thread&.decrement_count!(:replies_count) if in_reply_to_id.present? && distributable?
   end
 
+  # @rbs () -> String?
   def trigger_create_webhooks
     TriggerWebhookWorker.perform_async('status.created', 'Status', id) if local?
   end
 
+  # @rbs () -> String?
   def trigger_update_webhooks
     TriggerWebhookWorker.perform_async('status.updated', 'Status', id) if local?
   end

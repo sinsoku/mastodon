@@ -7,6 +7,7 @@ class RemoteAccountRefreshWorker
 
   sidekiq_options queue: 'pull', retry: 3
 
+  # @rbs (Account | Integer) -> bool?
   def perform(id)
     account = Account.find_by(id: id)
     return if account.nil? || account.local?

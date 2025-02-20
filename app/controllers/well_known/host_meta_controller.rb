@@ -4,6 +4,7 @@ module WellKnown
   class HostMetaController < ActionController::Base # rubocop:disable Rails/ApplicationController
     include RoutingHelper
 
+    # @rbs () -> String
     def show
       @webfinger_template = "#{webfinger_url}?resource={uri}"
       expires_in 3.days, public: true

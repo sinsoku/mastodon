@@ -33,36 +33,43 @@ class EmailDomainBlock < ApplicationRecord
   # Used for adding multiple blocks at once
   attr_accessor :other_domains
 
+  # @rbs () -> void
   def to_log_human_identifier
     domain
   end
 
+  # @rbs () -> Trends::History
   def history
     @history ||= Trends::History.new('email_domain_blocks', id)
   end
 
   class Matcher
+    # @rbs (Array[untyped] | String, ?attempt_ip: nil | IPAddr | String) -> void
     def initialize(domain_or_domains, attempt_ip: nil)
       @uris       = extract_uris(domain_or_domains)
       @attempt_ip = attempt_ip
     end
 
+    # @rbs (*untyped, **untyped) -> void
     def match?(...)
       blocking?(...) || invalid_uri?
     end
 
     private
 
+    # @rbs () -> void
     def invalid_uri?
       @uris.any?(&:nil?)
     end
 
+    # @rbs (?allow_with_approval: bool) -> void
     def blocking?(allow_with_approval: false)
       blocks = EmailDomainBlock.where(domain: domains_with_variants, allow_with_approval: allow_with_approval).by_domain_length
       blocks.each { |block| block.history.add(@attempt_ip) } if @attempt_ip.present?
       blocks.any?
     end
 
+    # @rbs () -> void
     def domains_with_variants
       @uris.flat_map do |uri|
         next if uri.nil?
@@ -73,6 +80,7 @@ class EmailDomainBlock < ApplicationRecord
       end
     end
 
+    # @rbs (Array[untyped] | String) -> Array[untyped]
     def extract_uris(domain_or_domains)
       Array(domain_or_domains).map do |str|
         domain = if str.include?('@')
@@ -88,10 +96,12 @@ class EmailDomainBlock < ApplicationRecord
     end
   end
 
+  # @rbs (String | Array[untyped], ?attempt_ip: nil | IPAddr | String) -> void
   def self.block?(domain_or_domains, attempt_ip: nil)
     Matcher.new(domain_or_domains, attempt_ip: attempt_ip).match?
   end
 
+  # @rbs (Array[untyped], ?attempt_ip: nil | IPAddr) -> void
   def self.requires_approval?(domain_or_domains, attempt_ip: nil)
     Matcher.new(domain_or_domains, attempt_ip: attempt_ip).match?(allow_with_approval: true)
   end

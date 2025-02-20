@@ -5,6 +5,7 @@ class DistributionWorker
   include Redisable
   include Lockable
 
+  # @rbs (Integer, ?Hash[untyped, untyped]) -> void
   def perform(status_id, options = {})
     with_redis_lock("distribute:#{status_id}") do
       FanOutOnWriteService.new.call(Status.find(status_id), **options.symbolize_keys)

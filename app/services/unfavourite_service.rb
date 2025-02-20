@@ -3,6 +3,7 @@
 class UnfavouriteService < BaseService
   include Payloadable
 
+  # @rbs (Account, Status) -> void
   def call(account, status)
     favourite = Favourite.find_by!(account: account, status: status)
     favourite.destroy!
@@ -12,11 +13,13 @@ class UnfavouriteService < BaseService
 
   private
 
+  # @rbs (Favourite) -> void
   def create_notification(favourite)
     status = favourite.status
     ActivityPub::DeliveryWorker.perform_async(build_json(favourite), favourite.account_id, status.account.inbox_url)
   end
 
+  # @rbs (Favourite) -> void
   def build_json(favourite)
     Oj.dump(serialize_payload(favourite, ActivityPub::UndoLikeSerializer))
   end

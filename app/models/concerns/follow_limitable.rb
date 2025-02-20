@@ -7,10 +7,12 @@ module FollowLimitable
     validates_with FollowLimitValidator, on: :create, unless: :bypass_follow_limit?
   end
 
+  # @rbs (bool) -> bool
   def bypass_follow_limit=(value)
     @bypass_follow_limit = value
   end
 
+  # @rbs () -> bool?
   def bypass_follow_limit?
     @bypass_follow_limit
   end

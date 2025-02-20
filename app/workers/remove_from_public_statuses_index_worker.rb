@@ -3,6 +3,7 @@
 class RemoveFromPublicStatusesIndexWorker
   include Sidekiq::Worker
 
+  # @rbs (Integer) -> void
   def perform(account_id)
     account = Account.find(account_id)
 

@@ -4,6 +4,7 @@ class FollowLimitValidator < ActiveModel::Validator
   LIMIT = ENV.fetch('MAX_FOLLOWS_THRESHOLD', 7_500).to_i
   RATIO = ENV.fetch('MAX_FOLLOWS_RATIO', 1.1).to_f
 
+  # @rbs (Follow | FollowRequest) -> ActiveModel::Error?
   def validate(follow)
     return if follow.account.nil? || !follow.account.local?
 
@@ -11,6 +12,7 @@ class FollowLimitValidator < ActiveModel::Validator
   end
 
   class << self
+    # @rbs (Account) -> (void | Integer)
     def limit_for_account(account)
       if account.following_count < LIMIT
         LIMIT
@@ -22,6 +24,7 @@ class FollowLimitValidator < ActiveModel::Validator
 
   private
 
+  # @rbs (Account) -> void
   def limit_reached?(account)
     account.following_count >= self.class.limit_for_account(account)
   end

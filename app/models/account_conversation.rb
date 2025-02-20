@@ -26,17 +26,20 @@ class AccountConversation < ApplicationRecord
   belongs_to :conversation
   belongs_to :last_status, class_name: 'Status'
 
+  # @rbs (Array[untyped]) -> nil
   def participant_account_ids=(arr)
     self[:participant_account_ids] = arr.sort
     @participant_accounts = nil
   end
 
+  # @rbs () -> (Array[untyped] | void)
   def participant_accounts
     @participant_accounts ||= Account.where(id: participant_account_ids).to_a
     @participant_accounts.presence || [account]
   end
 
   class << self
+    # @rbs (Integer, ?ActionController::Parameters) -> Array[untyped]
     def to_a_paginated_by_id(limit, options = {})
       array = begin
         if options[:min_id]
@@ -64,6 +67,7 @@ class AccountConversation < ApplicationRecord
       query
     end
 
+    # @rbs (Integer, ?nil, ?String?) -> ActiveRecord::Relation
     def paginate_by_max_id(limit, max_id = nil, since_id = nil)
       query = order(arel_table[:last_status_id].desc).limit(limit)
       query = query.where(arel_table[:last_status_id].lt(max_id)) if max_id.present?
@@ -71,6 +75,7 @@ class AccountConversation < ApplicationRecord
       query
     end
 
+    # @rbs (Account, Status) -> (void | AccountConversation)
     def add_status(recipient, status)
       conversation = find_or_initialize_by(account: recipient, conversation_id: status.conversation_id, participant_account_ids: participants_from_status(recipient, status))
 
@@ -84,6 +89,7 @@ class AccountConversation < ApplicationRecord
       retry
     end
 
+    # @rbs (Account, Status) -> void
     def remove_status(recipient, status)
       conversation = find_by(account: recipient, conversation_id: status.conversation_id, participant_account_ids: participants_from_status(recipient, status))
 
@@ -104,6 +110,7 @@ class AccountConversation < ApplicationRecord
 
     private
 
+    # @rbs (Account, Status) -> void
     def participants_from_status(recipient, status)
       ((status.active_mentions.pluck(:account_id) + [status.account_id]).uniq - [recipient.id]).sort
     end
@@ -111,21 +118,25 @@ class AccountConversation < ApplicationRecord
 
   private
 
+  # @rbs () -> Integer
   def set_last_status
     self.status_ids     = status_ids.sort
     self.last_status_id = status_ids.last
   end
 
+  # @rbs () -> nil
   def push_to_streaming_api
     return if destroyed? || !subscribed_to_timeline?
 
     PushConversationWorker.perform_async(id)
   end
 
+  # @rbs () -> bool
   def subscribed_to_timeline?
     redis.exists?("subscribed:#{streaming_channel}")
   end
 
+  # @rbs () -> String
   def streaming_channel
     "timeline:direct:#{account_id}"
   end

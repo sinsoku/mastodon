@@ -3,11 +3,13 @@
 class Feed
   include Redisable
 
+  # @rbs (Symbol, Integer) -> void
   def initialize(type, id)
     @type = type
     @id   = id
   end
 
+  # @rbs (Integer, ?nil, ?nil, ?nil) -> (void | ActiveRecord::Relation)
   def get(limit, max_id = nil, since_id = nil, min_id = nil)
     limit    = limit.to_i
     max_id   = max_id.to_i if max_id.present?
@@ -19,6 +21,7 @@ class Feed
 
   protected
 
+  # @rbs (Integer, nil, nil, nil) -> void
   def from_redis(limit, max_id, since_id, min_id)
     max_id = '+inf' if max_id.blank?
     if min_id.blank?
@@ -31,6 +34,7 @@ class Feed
     Status.where(id: unhydrated)
   end
 
+  # @rbs () -> void
   def key
     FeedManager.instance.key(@type, @id)
   end

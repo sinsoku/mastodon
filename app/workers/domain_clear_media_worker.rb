@@ -5,6 +5,7 @@ class DomainClearMediaWorker
 
   sidekiq_options queue: 'pull'
 
+  # @rbs (Integer | String) -> (void | bool)?
   def perform(domain_block_id)
     domain_block = DomainBlock.find_by(id: domain_block_id)
     return true if domain_block.nil?

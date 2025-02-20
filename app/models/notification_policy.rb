@@ -37,30 +37,36 @@ class NotificationPolicy < ApplicationRecord
   enum :for_private_mentions, { accept: 0, filter: 1, drop: 2 }, suffix: :private_mentions
   enum :for_limited_accounts, { accept: 0, filter: 1, drop: 2 }, suffix: :limited_accounts
 
+  # @rbs () -> void
   def summarize!
     @pending_requests_count = pending_notification_requests.first
     @pending_notifications_count = pending_notification_requests.last
   end
 
   # Compat helpers with V1
+  # @rbs (String | bool) -> Symbol
   def filter_not_following=(value)
     self.for_not_following = value ? :filter : :accept
   end
 
+  # @rbs (bool) -> Symbol
   def filter_not_followers=(value)
     self.for_not_followers = value ? :filter : :accept
   end
 
+  # @rbs (bool) -> Symbol
   def filter_new_accounts=(value)
     self.for_new_accounts = value ? :filter : :accept
   end
 
+  # @rbs (bool) -> Symbol
   def filter_private_mentions=(value)
     self.for_private_mentions = value ? :filter : :accept
   end
 
   private
 
+  # @rbs () -> Array[untyped]
   def pending_notification_requests
     @pending_notification_requests ||= notification_requests.without_suspended.limit(MAX_MEANINGFUL_COUNT).pick(Arel.sql('count(*), coalesce(sum(notifications_count), 0)::bigint'))
   end

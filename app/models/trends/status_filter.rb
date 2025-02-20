@@ -10,6 +10,7 @@ class Trends::StatusFilter
 
   attr_reader :params
 
+  # @rbs (Status, Account?, ?Hash[untyped, untyped]) -> void
   def initialize(params)
     @params = params
   end

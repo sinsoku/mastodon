@@ -7,6 +7,7 @@
 # we do want to allow at least `localhost`.
 
 class EmailAddressValidator < ActiveModel::EachValidator
+  # @rbs (User, Symbol, String) -> void
   def validate_each(record, attribute, value)
     value = value.strip
 

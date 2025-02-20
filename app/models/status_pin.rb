@@ -23,10 +23,12 @@ class StatusPin < ApplicationRecord
 
   private
 
+  # @rbs () -> String?
   def invalidate_cleanup_info
     account.statuses_cleanup_policy&.invalidate_last_inspected(status, :unpin)
   end
 
+  # @rbs () -> bool
   def account_matches_status_account?
     status&.account_id == account_id
   end

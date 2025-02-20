@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ApproveAppealService < BaseService
+  # @rbs (Appeal, Account) -> void
   def call(appeal, current_account)
     @appeal          = appeal
     @strike          = appeal.strike
@@ -17,10 +18,12 @@ class ApproveAppealService < BaseService
 
   private
 
+  # @rbs () -> Account
   def target_account
     @strike.target_account
   end
 
+  # @rbs () -> void
   def undo_strike_action!
     case @strike.action
     when 'disable'
@@ -38,6 +41,7 @@ class ApproveAppealService < BaseService
     end
   end
 
+  # @rbs () -> void
   def mark_strike_as_appealed!
     @appeal.approve!(@current_account)
     @strike.touch(:overruled_at)
@@ -51,6 +55,7 @@ class ApproveAppealService < BaseService
     # Cannot be undone
   end
 
+  # @rbs () -> void
   def undo_mark_statuses_as_sensitive!
     representative_account = Account.representative
     @strike.statuses.kept.includes(:media_attachments).reorder(nil).find_each do |status|
@@ -66,10 +71,12 @@ class ApproveAppealService < BaseService
     target_account.unsilence!
   end
 
+  # @rbs () -> void
   def undo_suspend!
     target_account.unsuspend!
   end
 
+  # @rbs () -> void
   def queue_workers!
     case @strike.action
     when 'suspend'
@@ -77,6 +84,7 @@ class ApproveAppealService < BaseService
     end
   end
 
+  # @rbs () -> void
   def notify_target_account!
     UserMailer.appeal_approved(target_account.user, @appeal).deliver_later
   end

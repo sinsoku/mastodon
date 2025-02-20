@@ -13,6 +13,7 @@ class EmojiFormatter
   # @option options [Boolean] :animate
   # @option options [String] :style
   # @option options [String] :raw_shortcode
+  # @rbs (ActiveSupport::SafeBuffer | String, Array[untyped], ?Hash[untyped, untyped]) -> void
   def initialize(html, custom_emojis, options = {})
     raise ArgumentError unless html.html_safe?
 
@@ -21,6 +22,7 @@ class EmojiFormatter
     @options = options
   end
 
+  # @rbs () -> void
   def to_s
     return html if custom_emojis.empty? || html.blank?
 
@@ -62,10 +64,12 @@ class EmojiFormatter
 
   private
 
+  # @rbs () -> Hash[untyped, untyped]
   def emoji_map
     @emoji_map ||= custom_emojis.each_with_object({}) { |e, h| h[e.shortcode] = [full_asset_url(e.image.url), full_asset_url(e.image.url(:static))] }
   end
 
+  # @rbs (String, Array[untyped]) -> void
   def tag_for_emoji(shortcode, emoji)
     return content_tag(:span, ":#{shortcode}:", translate: 'no') if raw_shortcode?
 
@@ -77,26 +81,32 @@ class EmojiFormatter
     )
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def image_attributes
     { rel: 'emoji', draggable: false, width: 16, height: 16, class: image_class_names, style: image_style }
   end
 
+  # @rbs (String, String) -> void
   def image_data_attributes(original_url, static_url)
     { original: original_url, static: static_url } unless animate?
   end
 
+  # @rbs () -> void
   def image_class_names
     animate? ? 'emojione' : 'emojione custom-emoji'
   end
 
+  # @rbs () -> void
   def image_style
     @options[:style]
   end
 
+  # @rbs () -> void
   def animate?
     @options[:animate] || @options.key?(:style)
   end
 
+  # @rbs () -> void
   def raw_shortcode?
     @options[:raw_shortcode]
   end

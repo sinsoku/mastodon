@@ -12,10 +12,12 @@ class AccountSuggestions
 
   BATCH_SIZE = 40
 
+  # @rbs (Account) -> void
   def initialize(account)
     @account = account
   end
 
+  # @rbs (Integer, ?Integer) -> (void | Array[untyped])
   def get(limit, offset = 0)
     with_read_replica do
       account_ids_with_sources = Rails.cache.fetch("follow_recommendations/#{@account.id}", expires_in: 15.minutes) do
@@ -42,6 +44,7 @@ class AccountSuggestions
     end
   end
 
+  # @rbs (String) -> void
   def remove(target_account_id)
     FollowRecommendationMute.create(account_id: @account.id, target_account_id: target_account_id)
   end

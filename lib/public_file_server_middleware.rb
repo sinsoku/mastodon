@@ -11,6 +11,7 @@ class PublicFileServerMiddleware
     @file_handler = ActionDispatch::FileHandler.new(Rails.application.paths['public'].first)
   end
 
+  # @rbs (Hash[untyped, untyped]) -> void
   def call(env)
     file = @file_handler.attempt(env)
 

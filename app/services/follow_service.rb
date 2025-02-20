@@ -15,6 +15,7 @@ class FollowService < BaseService
   # @option [Boolean] :bypass_locked
   # @option [Boolean] :bypass_limit Allow following past the total follow number
   # @option [Boolean] :with_rate_limit
+  # @rbs (Account, Account, ?Hash[untyped, untyped]) -> (Follow | FollowRequest | void)
   def call(source_account, target_account, options = {})
     @source_account = source_account
     @target_account = target_account
@@ -45,26 +46,32 @@ class FollowService < BaseService
 
   private
 
+  # @rbs () -> void
   def mark_home_feed_as_partial!
     redis.set("account:#{@source_account.id}:regeneration", true, nx: true, ex: 1.day.seconds)
   end
 
+  # @rbs () -> void
   def following_not_possible?
     @target_account.nil? || @target_account.id == @source_account.id || @target_account.unavailable?
   end
 
+  # @rbs () -> void
   def following_not_allowed?
     domain_not_allowed?(@target_account.domain) || @target_account.blocking?(@source_account) || @source_account.blocking?(@target_account) || @target_account.moved? || (!@target_account.local? && @target_account.ostatus?) || @source_account.domain_blocking?(@target_account.domain)
   end
 
+  # @rbs () -> (void | Follow)
   def change_follow_options!
     @source_account.follow!(@target_account, **follow_options)
   end
 
+  # @rbs () -> (void | FollowRequest)
   def change_follow_request_options!
     @source_account.request_follow!(@target_account, **follow_options)
   end
 
+  # @rbs () -> void
   def request_follow!
     follow_request = @source_account.request_follow!(@target_account, **follow_options.merge(rate_limit: @options[:with_rate_limit], bypass_limit: @options[:bypass_limit]))
 
@@ -77,6 +84,7 @@ class FollowService < BaseService
     follow_request
   end
 
+  # @rbs () -> (void | Follow)
   def direct_follow!
     follow = @source_account.follow!(@target_account, **follow_options.merge(rate_limit: @options[:with_rate_limit], bypass_limit: @options[:bypass_limit]))
 
@@ -89,10 +97,12 @@ class FollowService < BaseService
     follow
   end
 
+  # @rbs (FollowRequest) -> void
   def build_json(follow_request)
     Oj.dump(serialize_payload(follow_request, ActivityPub::FollowSerializer))
   end
 
+  # @rbs () -> (void | Hash[untyped, untyped])
   def follow_options
     @options.slice(:reblogs, :notify, :languages)
   end

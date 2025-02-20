@@ -44,12 +44,14 @@ class StatusEdit < ApplicationRecord
   delegate :local?, :application, :edited?, :edited_at,
            :discarded?, :visibility, :language, to: :status
 
+  # @rbs () -> (void | Array[untyped])
   def emojis
     return @emojis if defined?(@emojis)
 
     @emojis = CustomEmoji.from_text([spoiler_text, text].join(' '), status.account.domain)
   end
 
+  # @rbs () -> Array[untyped]
   def ordered_media_attachments
     return @ordered_media_attachments if defined?(@ordered_media_attachments)
 
@@ -67,6 +69,7 @@ class StatusEdit < ApplicationRecord
     self
   end
 
+  # @rbs () -> bool
   def reblog?
     false
   end

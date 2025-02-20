@@ -8,6 +8,7 @@ module Admin
       authorize @user, :change_role?
     end
 
+    # @rbs () -> (ActiveSupport::SafeBuffer | String)?
     def update
       authorize @user, :change_role?
 
@@ -27,6 +28,7 @@ module Admin
       @user = User.find(params[:user_id])
     end
 
+    # @rbs () -> void
     def resource_params
       params.require(:user).permit(:role_id)
     end

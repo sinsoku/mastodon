@@ -22,20 +22,24 @@ class StatusStat < ApplicationRecord
 
   MAX_UNTRUSTED_COUNT = 100_000_000
 
+  # @rbs () -> void
   def replies_count
     [attributes['replies_count'], 0].max
   end
 
+  # @rbs () -> void
   def reblogs_count
     [attributes['reblogs_count'], 0].max
   end
 
+  # @rbs () -> void
   def favourites_count
     [attributes['favourites_count'], 0].max
   end
 
   private
 
+  # @rbs () -> Integer?
   def clamp_untrusted_counts
     self.untrusted_favourites_count = untrusted_favourites_count.to_i.clamp(0, MAX_UNTRUSTED_COUNT) if untrusted_favourites_count.present?
     self.untrusted_reblogs_count = untrusted_reblogs_count.to_i.clamp(0, MAX_UNTRUSTED_COUNT) if untrusted_reblogs_count.present?

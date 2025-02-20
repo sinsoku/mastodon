@@ -4,6 +4,7 @@ class PushUpdateWorker
   include Sidekiq::Worker
   include Redisable
 
+  # @rbs (Integer?, Integer?, ?nil, ?Hash[untyped, untyped]) -> void
   def perform(account_id, status_id, timeline_id = nil, options = {})
     @status      = Status.find(status_id)
     @account_id  = account_id
@@ -18,10 +19,12 @@ class PushUpdateWorker
 
   private
 
+  # @rbs () -> void
   def render_payload!
     @payload = StatusCacheHydrator.new(@status).hydrate(@account_id)
   end
 
+  # @rbs () -> void
   def message
     Oj.dump(
       event: update? ? :'status.update' : :update,
@@ -29,10 +32,12 @@ class PushUpdateWorker
     )
   end
 
+  # @rbs () -> void
   def publish!
     redis.publish(@timeline_id, message)
   end
 
+  # @rbs () -> void
   def update?
     @options[:update]
   end

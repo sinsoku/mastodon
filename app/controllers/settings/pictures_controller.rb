@@ -5,6 +5,7 @@ module Settings
     before_action :set_account
     before_action :set_picture
 
+    # @rbs () -> (String | ActiveSupport::SafeBuffer)
     def destroy
       if valid_picture?
         if UpdateAccountService.new.call(@account, { @picture => nil, "#{@picture}_remote_url" => '' })
@@ -20,14 +21,17 @@ module Settings
 
     private
 
+    # @rbs () -> Account
     def set_account
       @account = current_account
     end
 
+    # @rbs () -> String
     def set_picture
       @picture = params[:id]
     end
 
+    # @rbs () -> void
     def valid_picture?
       %w(avatar header).include?(@picture)
     end

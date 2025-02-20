@@ -3,6 +3,7 @@
 class TriggerWebhookWorker
   include Sidekiq::Worker
 
+  # @rbs (String, String, Integer) -> void
   def perform(event, class_name, id)
     object = class_name.constantize.find(id)
     WebhookService.new.call(event, object)

@@ -71,14 +71,17 @@ class Report < ApplicationRecord
   after_create_commit :trigger_create_webhooks
   after_update_commit :trigger_update_webhooks
 
+  # @rbs () -> void
   def object_type
     :flag
   end
 
+  # @rbs () -> ActiveRecord::Relation
   def statuses
     Status.with_discarded.where(id: status_ids)
   end
 
+  # @rbs () -> void
   def media_attachments_count
     statuses_to_query = []
     count = 0
@@ -95,44 +98,54 @@ class Report < ApplicationRecord
     count
   end
 
+  # @rbs () -> ActiveRecord::Relation
   def rules
     Rule.with_discarded.where(id: rule_ids)
   end
 
+  # @rbs (Account) -> void
   def assign_to_self!(current_account)
     update!(assigned_account_id: current_account.id)
   end
 
+  # @rbs () -> void
   def unassign!
     update!(assigned_account_id: nil)
   end
 
+  # @rbs (Account) -> void
   def resolve!(acting_account)
     update!(action_taken_at: Time.now.utc, action_taken_by_account_id: acting_account.id)
   end
 
+  # @rbs () -> void
   def unresolve!
     update!(action_taken_at: nil, action_taken_by_account_id: nil)
   end
 
+  # @rbs () -> (void | bool)
   def action_taken?
     action_taken_at.present?
   end
 
   alias action_taken action_taken?
 
+  # @rbs () -> void
   def unresolved?
     !action_taken?
   end
 
+  # @rbs () -> (void | bool)
   def unresolved_siblings?
     Report.where.not(id: id).where(target_account_id: target_account_id).unresolved.exists?
   end
 
+  # @rbs () -> void
   def to_log_human_identifier
     id
   end
 
+  # @rbs () -> (ActiveRecord::Relation | void)
   def history
     subquery = [
       Admin::ActionLog.where(
@@ -161,18 +174,22 @@ class Report < ApplicationRecord
 
   private
 
+  # @rbs () -> URI::HTTPS?
   def set_uri
     self.uri = ActivityPub::TagManager.instance.generate_uri_for(self) if uri.nil? && account.local?
   end
 
+  # @rbs () -> ActiveModel::Error?
   def validate_rule_ids
     errors.add(:rule_ids, I18n.t('reports.errors.invalid_rules')) unless rules.size == rule_ids&.size
   end
 
+  # @rbs () -> String
   def trigger_create_webhooks
     TriggerWebhookWorker.perform_async('report.created', 'Report', id)
   end
 
+  # @rbs () -> String
   def trigger_update_webhooks
     TriggerWebhookWorker.perform_async('report.updated', 'Report', id)
   end

@@ -10,6 +10,7 @@ module WellKnown
     rescue_from ActiveRecord::RecordNotFound, with: :not_found
     rescue_from ActionController::ParameterMissing, WebfingerResource::InvalidRequest, with: :bad_request
 
+    # @rbs () -> String
     def show
       expires_in 3.days, public: true
       render json: @account, serializer: WebfingerSerializer, content_type: 'application/jrd+json'
@@ -17,6 +18,7 @@ module WellKnown
 
     private
 
+    # @rbs () -> Account?
     def set_account
       username = username_from_resource
 
@@ -29,6 +31,7 @@ module WellKnown
       end
     end
 
+    # @rbs () -> String?
     def username_from_resource
       resource_user    = resource_param
       username, domain = resource_user.split('@')
@@ -37,24 +40,29 @@ module WellKnown
       WebfingerResource.new(resource_user).username
     end
 
+    # @rbs () -> String?
     def resource_param
       params.require(:resource)
     end
 
+    # @rbs () -> bool?
     def check_account_suspension
       gone if @account.permanently_unavailable?
     end
 
+    # @rbs () -> void
     def gone
       expires_in(3.minutes, public: true)
       head 410
     end
 
+    # @rbs () -> bool
     def bad_request
       expires_in(3.minutes, public: true)
       head 400
     end
 
+    # @rbs () -> bool
     def not_found
       expires_in(3.minutes, public: true)
       head 404

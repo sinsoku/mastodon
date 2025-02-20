@@ -10,22 +10,27 @@ class OauthMetadataPresenter < ActiveModelSerializers::Model
              :code_challenge_methods_supported,
              :service_documentation, :app_registration_endpoint
 
+  # @rbs () -> String
   def issuer
     root_url
   end
 
+  # @rbs () -> String
   def service_documentation
     'https://docs.joinmastodon.org/'
   end
 
+  # @rbs () -> String
   def authorization_endpoint
     oauth_authorization_url
   end
 
+  # @rbs () -> String
   def token_endpoint
     oauth_token_url
   end
 
+  # @rbs () -> String
   def userinfo_endpoint
     oauth_userinfo_url
   end
@@ -34,42 +39,51 @@ class OauthMetadataPresenter < ActiveModelSerializers::Model
   # for OAuth 2.0 Dynamic Client Registration defined in RFC 7591 we use a
   # non-standard property for now to indicate the mastodon specific registration
   # endpoint. See: https://datatracker.ietf.org/doc/html/rfc7591
+  # @rbs () -> String
   def app_registration_endpoint
     api_v1_apps_url
   end
 
+  # @rbs () -> String
   def revocation_endpoint
     oauth_revoke_url
   end
 
+  # @rbs () -> Doorkeeper::OAuth::Scopes
   def scopes_supported
     doorkeeper.scopes
   end
 
+  # @rbs () -> Array[untyped]
   def response_types_supported
     doorkeeper.authorization_response_types
   end
 
+  # @rbs () -> Array[untyped]
   def response_modes_supported
     doorkeeper.authorization_response_flows.flat_map(&:response_mode_matches).uniq
   end
 
+  # @rbs () -> Array[untyped]
   def grant_types_supported
     grant_types_supported = doorkeeper.grant_flows.dup
     grant_types_supported << 'refresh_token' if doorkeeper.refresh_token_enabled?
     grant_types_supported
   end
 
+  # @rbs () -> Array[untyped]
   def token_endpoint_auth_methods_supported
     %w(client_secret_basic client_secret_post)
   end
 
+  # @rbs () -> Array[untyped]
   def code_challenge_methods_supported
     doorkeeper.pkce_code_challenge_methods_supported
   end
 
   private
 
+  # @rbs () -> Doorkeeper::Config
   def doorkeeper
     @doorkeeper ||= Doorkeeper.configuration
   end

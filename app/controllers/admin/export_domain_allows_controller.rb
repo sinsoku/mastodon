@@ -8,15 +8,18 @@ module Admin
 
     before_action :set_dummy_import!, only: [:new]
 
+    # @rbs () -> Symbol
     def new
       authorize :domain_allow, :create?
     end
 
+    # @rbs () -> String
     def export
       authorize :instance, :index?
       send_export_file
     end
 
+    # @rbs () -> String
     def import
       authorize :domain_allow, :create?
       begin
@@ -39,14 +42,17 @@ module Admin
 
     private
 
+    # @rbs () -> void
     def export_filename
       'domain_allows.csv'
     end
 
+    # @rbs () -> void
     def export_headers
       %w(#domain)
     end
 
+    # @rbs () -> void
     def export_data
       CSV.generate(headers: export_headers, write_headers: true) do |content|
         DomainAllow.allowed_domains.each do |instance|

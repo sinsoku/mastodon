@@ -20,14 +20,17 @@ class TermsOfService < ApplicationRecord
   validates :text, presence: true
   validates :changelog, presence: true, if: -> { published? }
 
+  # @rbs () -> (void | bool)
   def published?
     published_at.present?
   end
 
+  # @rbs () -> bool
   def notification_sent?
     notification_sent_at.present?
   end
 
+  # @rbs () -> (void | ActiveRecord::Relation)
   def scope_for_notification
     User.confirmed.joins(:account).merge(Account.without_suspended).where(created_at: (..published_at))
   end

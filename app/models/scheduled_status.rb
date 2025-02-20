@@ -26,14 +26,17 @@ class ScheduledStatus < ApplicationRecord
 
   private
 
+  # @rbs () -> ActiveModel::Error?
   def validate_future_date
     errors.add(:scheduled_at, I18n.t('scheduled_statuses.too_soon')) if scheduled_at.present? && scheduled_at <= Time.now.utc + MINIMUM_OFFSET
   end
 
+  # @rbs () -> ActiveModel::Error?
   def validate_total_limit
     errors.add(:base, I18n.t('scheduled_statuses.over_total_limit', limit: TOTAL_LIMIT)) if account.scheduled_statuses.count >= TOTAL_LIMIT
   end
 
+  # @rbs () -> ActiveModel::Error?
   def validate_daily_limit
     errors.add(:base, I18n.t('scheduled_statuses.over_daily_limit', limit: DAILY_LIMIT)) if account.scheduled_statuses.where('scheduled_at::date = ?::date', scheduled_at).count >= DAILY_LIMIT
   end

@@ -25,12 +25,14 @@ class PollVote < ApplicationRecord
   delegate :local?, to: :account
   delegate :multiple?, :expired?, to: :poll, prefix: true
 
+  # @rbs () -> void
   def object_type
     :vote
   end
 
   private
 
+  # @rbs () -> bool
   def increment_counter_cache
     poll.cached_tallies[choice] = (poll.cached_tallies[choice] || 0) + 1
     poll.save

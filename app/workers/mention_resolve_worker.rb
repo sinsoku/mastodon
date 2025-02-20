@@ -7,6 +7,7 @@ class MentionResolveWorker
 
   sidekiq_options queue: 'pull', retry: 7
 
+  # @rbs (Integer, String, ?Hash[untyped, untyped]) -> void
   def perform(status_id, uri, options = {})
     status = Status.find_by(id: status_id)
     return if status.nil?
@@ -31,6 +32,7 @@ class MentionResolveWorker
 
   private
 
+  # @rbs (String) -> nil
   def account_from_uri(uri)
     ActivityPub::TagManager.instance.uri_to_resource(uri, Account)
   end

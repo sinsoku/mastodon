@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class LinesValidator < ActiveModel::EachValidator
+  # @rbs (untyped | Account, Symbol, String?) -> void
   def validate_each(record, attribute, value)
     return if value.blank?
 

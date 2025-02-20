@@ -2,12 +2,14 @@
 
 module Admin
   class SettingsController < BaseController
+    # @rbs () -> Form::AdminSettings
     def show
       authorize :settings, :show?
 
       @admin_settings = Form::AdminSettings.new
     end
 
+    # @rbs () -> String
     def update
       authorize :settings, :update?
 
@@ -27,6 +29,7 @@ module Admin
       raise NotImplementedError
     end
 
+    # @rbs () -> void
     def settings_params
       params.require(:form_admin_settings).permit(*Form::AdminSettings::KEYS)
     end

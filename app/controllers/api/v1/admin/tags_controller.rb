@@ -25,6 +25,7 @@ class Api::V1::Admin::TagsController < Api::BaseController
     render json: @tags, each_serializer: REST::Admin::TagSerializer
   end
 
+  # @rbs () -> (Time | String)?
   def show
     authorize @tag, :show?
     render json: @tag, serializer: REST::Admin::TagSerializer
@@ -38,6 +39,7 @@ class Api::V1::Admin::TagsController < Api::BaseController
 
   private
 
+  # @rbs () -> Tag?
   def set_tag
     @tag = Tag.find(params[:id])
   end

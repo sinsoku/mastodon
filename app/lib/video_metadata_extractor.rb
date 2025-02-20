@@ -4,6 +4,7 @@ class VideoMetadataExtractor
   attr_reader :duration, :bitrate, :video_codec, :audio_codec,
               :colorspace, :width, :height, :frame_rate, :r_frame_rate
 
+  # @rbs (String) -> void
   def initialize(path)
     @path     = path
     @metadata = Oj.load(ffmpeg_command_output, mode: :strict, symbol_keys: true)
@@ -15,17 +16,20 @@ class VideoMetadataExtractor
     raise Paperclip::Errors::CommandNotFoundError, 'Could not run the `ffprobe` command. Please install ffmpeg.'
   end
 
+  # @rbs () -> void
   def valid?
     !@invalid
   end
 
   private
 
+  # @rbs () -> void
   def ffmpeg_command_output
     command = Terrapin::CommandLine.new(Rails.configuration.x.ffprobe_binary, '-i :path -print_format :format -show_format -show_streams -show_error -loglevel :loglevel')
     command.run(path: @path, format: 'json', loglevel: 'fatal')
   end
 
+  # @rbs () -> void
   def parse_metadata
     if @metadata.key?(:format)
       @duration = @metadata[:format][:duration].to_f
@@ -59,6 +63,7 @@ class VideoMetadataExtractor
     @invalid = true if @metadata.key?(:error)
   end
 
+  # @rbs (String) -> Rational?
   def parse_framerate(raw)
     Rational(raw)
   rescue ZeroDivisionError

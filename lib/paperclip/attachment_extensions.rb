@@ -2,12 +2,14 @@
 
 module Paperclip
   module AttachmentExtensions
+    # @rbs () -> (void | Hash[untyped, untyped])?
     def meta
       instance_read(:meta)
     end
 
     # monkey-patch to avoid unlinking too avoid unlinking source file too early
     # see https://github.com/kreeti/kt-paperclip/issues/64
+    # @rbs (Symbol, Paperclip::Style) -> void
     def post_process_style(name, style) # :nodoc:
       raise "Style #{name} has no processors defined." if style.processors.blank?
 
@@ -39,6 +41,7 @@ module Paperclip
     # Sidekiq. Since we process the original file to reduce disk
     # usage, and we still want to generate thumbnails straight
     # away, it's the only style we need to exclude
+    # @rbs (Symbol, Array[untyped]) -> void
     def process_style?(style_name, style_args)
       if style_name == :original && instance.respond_to?(:delay_processing_for_attachment?) && instance.delay_processing_for_attachment?(name)
         false
@@ -47,10 +50,12 @@ module Paperclip
       end
     end
 
+    # @rbs () -> Integer
     def storage_schema_version
       instance_read(:storage_schema_version) || 0
     end
 
+    # @rbs () -> void
     def assign_attributes
       super
       instance_write(:storage_schema_version, 1)
@@ -69,6 +74,7 @@ module Paperclip
       formats.include?(other_extension.delete('.')) && File.basename(other_filename, other_extension) == File.basename(original_filename, File.extname(original_filename))
     end
 
+    # @rbs (?Symbol) -> void
     def default_url(style_name = default_style)
       @url_generator.for_as_default(style_name)
     end
@@ -80,6 +86,7 @@ module Paperclip
     # calls to object storage, to stop hitting APIs that are slow
     # to respond or don't respond at all and as such minimize the
     # impact of object storage outages on application throughput
+    # @rbs () -> bool
     def save
       # Don't go through Stoplight if we don't have anything object-storage-oriented to do
       return super if @queued_for_delete.empty? && @queued_for_write.empty? && !dirty?

@@ -8,10 +8,12 @@ class AnnouncementFilter
 
   attr_reader :params
 
+  # @rbs (ActionController::Parameters) -> void
   def initialize(params)
     @params = params
   end
 
+  # @rbs () -> ActiveRecord::Relation
   def results
     scope = Announcement.unscoped
 

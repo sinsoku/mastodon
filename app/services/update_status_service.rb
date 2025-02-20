@@ -16,6 +16,7 @@ class UpdateStatusService < BaseService
   # @option options [String] :spoiler_text
   # @option options [Boolean] :sensitive
   # @option options [String] :language
+  # @rbs (Status, Integer, ?Hash[untyped, untyped]) -> void
   def call(status, account_id, options = {})
     @status                    = status
     @options                   = options
@@ -46,6 +47,7 @@ class UpdateStatusService < BaseService
 
   private
 
+  # @rbs () -> void
   def update_media_attachments!
     previous_media_attachments = @status.ordered_media_attachments.to_a
     next_media_attachments     = validate_media!
@@ -66,6 +68,7 @@ class UpdateStatusService < BaseService
     @status.media_attachments.reload
   end
 
+  # @rbs () -> Array[untyped]
   def validate_media!
     return [] if @options[:media_ids].blank? || !@options[:media_ids].is_a?(Enumerable)
 
@@ -82,6 +85,7 @@ class UpdateStatusService < BaseService
     media_attachments
   end
 
+  # @rbs () -> void
   def update_poll!
     previous_poll        = @status.preloadable_poll
     @previous_expires_at = previous_poll&.expires_at
@@ -110,6 +114,7 @@ class UpdateStatusService < BaseService
     @poll_changed = true if @previous_expires_at != @status.preloadable_poll&.expires_at
   end
 
+  # @rbs () -> void
   def update_immediate_attributes!
     @status.text         = @options[:text].presence || @options.delete(:spoiler_text) || '' if @options.key?(:text)
     @status.spoiler_text = @options[:spoiler_text] || '' if @options.key?(:spoiler_text)
@@ -123,6 +128,7 @@ class UpdateStatusService < BaseService
     @status.save!
   end
 
+  # @rbs () -> void
   def reset_preview_card!
     return unless @status.text_previously_changed?
 
@@ -130,16 +136,19 @@ class UpdateStatusService < BaseService
     LinkCrawlWorker.perform_async(@status.id)
   end
 
+  # @rbs () -> void
   def update_metadata!
     ProcessHashtagsService.new.call(@status)
     ProcessMentionsService.new.call(@status)
   end
 
+  # @rbs () -> void
   def broadcast_updates!
     DistributionWorker.perform_async(@status.id, { 'update' => true })
     ActivityPub::StatusUpdateDistributionWorker.perform_async(@status.id)
   end
 
+  # @rbs () -> void
   def queue_poll_notifications!
     poll = @status.preloadable_poll
 
@@ -152,6 +161,7 @@ class UpdateStatusService < BaseService
     PollExpirationNotifyWorker.perform_at(poll.expires_at + 5.minutes, poll.id)
   end
 
+  # @rbs () -> void
   def create_previous_edit!
     # We only need to create a previous edit when no previous edits exist, e.g.
     # when the status has never been edited. For other cases, we always create
@@ -162,10 +172,12 @@ class UpdateStatusService < BaseService
     @status.snapshot!(at_time: @status.created_at, rate_limit: false)
   end
 
+  # @rbs () -> void
   def create_edit!
     @status.snapshot!(account_id: @account_id)
   end
 
+  # @rbs () -> void
   def significant_changes?
     @status.changed? || @poll_changed || @media_attachments_changed
   end

@@ -5,12 +5,14 @@ module Settings
     class BlockedDomainsController < BaseController
       include Settings::ExportControllerConcern
 
+      # @rbs () -> String
       def index
         send_export_file
       end
 
       private
 
+      # @rbs () -> void
       def export_data
         @export.to_blocked_domains_csv
       end

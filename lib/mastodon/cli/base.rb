@@ -18,6 +18,7 @@ module Mastodon
 
       private
 
+      # @rbs (String) -> void
       def fail_with_message(message)
         raise Thor::Error, message
       end
@@ -26,14 +27,17 @@ module Mastodon
         @pastel ||= Pastel.new
       end
 
+      # @rbs () -> void
       def dry_run?
         options[:dry_run]
       end
 
+      # @rbs () -> String
       def dry_run_mode_suffix
         dry_run? ? ' (DRY RUN)' : ''
       end
 
+      # @rbs () -> void
       def reset_connection_pools!
         ActiveRecord::Base.establish_connection(
           ActiveRecord::Base.configurations.configs_for(env_name: Rails.env).first.configuration_hash

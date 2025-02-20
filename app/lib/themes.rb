@@ -11,10 +11,12 @@ class Themes
     light: '#ffffff',
   }.freeze
 
+  # @rbs () -> void
   def initialize
     @conf = YAML.load_file(Rails.root.join('config', 'themes.yml'))
   end
 
+  # @rbs () -> Array[untyped]
   def names
     ['system'] + @conf.keys
   end

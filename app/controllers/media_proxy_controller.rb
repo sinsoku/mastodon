@@ -15,6 +15,7 @@ class MediaProxyController < ApplicationController
   rescue_from Mastodon::NotPermittedError, with: :not_found
   rescue_from(*Mastodon::HTTP_CONNECTION_ERRORS, with: :internal_server_error)
 
+  # @rbs () -> String?
   def show
     with_redis_lock("media_download:#{params[:id]}") do
       @media_attachment = MediaAttachment.remote.attached.find(params[:id])
@@ -33,6 +34,7 @@ class MediaProxyController < ApplicationController
     @media_attachment.save!
   end
 
+  # @rbs () -> void
   def version
     if request.path.end_with?('/small')
       :small

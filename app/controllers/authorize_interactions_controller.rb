@@ -6,6 +6,7 @@ class AuthorizeInteractionsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_resource
 
+  # @rbs () -> (String | ActiveSupport::SafeBuffer)
   def show
     if @resource.is_a?(Account)
       redirect_to web_url("@#{@resource.pretty_acct}")
@@ -18,6 +19,7 @@ class AuthorizeInteractionsController < ApplicationController
 
   private
 
+  # @rbs () -> nil
   def set_resource
     @resource = located_resource
     authorize(@resource, :show?) if @resource.is_a?(Status)
@@ -25,6 +27,7 @@ class AuthorizeInteractionsController < ApplicationController
     not_found
   end
 
+  # @rbs () -> Account?
   def located_resource
     if uri_param_is_url?
       ResolveURLService.new.call(uri_param)
@@ -33,18 +36,22 @@ class AuthorizeInteractionsController < ApplicationController
     end
   end
 
+  # @rbs () -> void
   def account_from_remote_follow
     ResolveAccountService.new.call(uri_param)
   end
 
+  # @rbs () -> void
   def uri_param_is_url?
     parsed_uri.path && %w(http https).include?(parsed_uri.scheme)
   end
 
+  # @rbs () -> Addressable::URI
   def parsed_uri
     Addressable::URI.parse(uri_param).normalize
   end
 
+  # @rbs () -> void
   def uri_param
     params[:uri] || params.fetch(:acct, '').delete_prefix('acct:')
   end

@@ -9,6 +9,7 @@ class BackupsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_backup
 
+  # @rbs () -> String
   def download
     case Paperclip::Attachment.default_options[:storage]
     when :s3, :azure
@@ -26,6 +27,7 @@ class BackupsController < ApplicationController
 
   private
 
+  # @rbs () -> Backup
   def set_backup
     @backup = current_user.backups.find(params[:id])
   end

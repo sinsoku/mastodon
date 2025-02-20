@@ -3,6 +3,7 @@
 class BlockService < BaseService
   include Payloadable
 
+  # @rbs (Account, Account) -> void
   def call(account, target_account)
     return if account.id == target_account.id
 
@@ -21,10 +22,12 @@ class BlockService < BaseService
 
   private
 
+  # @rbs (Block) -> void
   def create_notification(block)
     ActivityPub::DeliveryWorker.perform_async(build_json(block), block.account_id, block.target_account.inbox_url)
   end
 
+  # @rbs (Block) -> void
   def build_json(block)
     Oj.dump(serialize_payload(block, ActivityPub::BlockSerializer))
   end

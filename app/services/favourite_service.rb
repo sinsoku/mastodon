@@ -8,6 +8,7 @@ class FavouriteService < BaseService
   # @param [Account] account
   # @param [Status] status
   # @return [Favourite]
+  # @rbs (Account, Status) -> void
   def call(account, status)
     authorize_with account, status, :favourite?
 
@@ -27,6 +28,7 @@ class FavouriteService < BaseService
 
   private
 
+  # @rbs (Favourite) -> void
   def create_notification(favourite)
     status = favourite.status
 
@@ -37,10 +39,12 @@ class FavouriteService < BaseService
     end
   end
 
+  # @rbs () -> void
   def increment_statistics
     ActivityTracker.increment('activity:interactions')
   end
 
+  # @rbs (Favourite) -> void
   def build_json(favourite)
     Oj.dump(serialize_payload(favourite, ActivityPub::LikeSerializer))
   end

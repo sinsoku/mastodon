@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class MoveService < BaseService
+  # @rbs (AccountMigration) -> void
   def call(migration)
     @migration      = migration
     @source_account = migration.account
@@ -14,18 +15,22 @@ class MoveService < BaseService
 
   private
 
+  # @rbs () -> void
   def update_redirect!
     @source_account.update!(moved_to_account: @target_account)
   end
 
+  # @rbs () -> void
   def process_local_relationships!
     MoveWorker.perform_async(@source_account.id, @target_account.id)
   end
 
+  # @rbs () -> void
   def distribute_update!
     ActivityPub::UpdateDistributionWorker.perform_async(@source_account.id)
   end
 
+  # @rbs () -> void
   def distribute_move!
     ActivityPub::MoveDistributionWorker.perform_async(@migration.id)
   end

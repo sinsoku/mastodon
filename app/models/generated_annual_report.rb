@@ -19,10 +19,12 @@ class GeneratedAnnualReport < ApplicationRecord
 
   scope :pending, -> { where(viewed_at: nil) }
 
+  # @rbs () -> void
   def viewed?
     viewed_at.present?
   end
 
+  # @rbs () -> void
   def view!
     update!(viewed_at: Time.now.utc)
   end

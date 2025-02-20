@@ -32,6 +32,7 @@ class RemoteInteractionHelperController < ApplicationController
     p.connect_src :https
   end
 
+  # @rbs () -> ActiveSupport::SafeBuffer
   def index
     expires_in(5.minutes, public: true, stale_while_revalidate: 30.seconds, stale_if_error: 1.day)
 

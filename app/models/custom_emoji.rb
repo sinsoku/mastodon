@@ -58,25 +58,30 @@ class CustomEmoji < ApplicationRecord
 
   after_commit :remove_entity_cache
 
+  # @rbs () -> bool
   def local?
     domain.nil?
   end
 
+  # @rbs () -> void
   def object_type
     :emoji
   end
 
+  # @rbs () -> CustomEmoji
   def copy!
     copy = self.class.find_or_initialize_by(domain: nil, shortcode: shortcode)
     copy.image = image
     copy.tap(&:save!)
   end
 
+  # @rbs () -> void
   def to_log_human_identifier
     shortcode
   end
 
   class << self
+    # @rbs (String, ?String?) -> Array[untyped]
     def from_text(text, domain = nil)
       return [] if text.blank?
 
@@ -87,6 +92,7 @@ class CustomEmoji < ApplicationRecord
       EntityCache.instance.emoji(shortcodes, domain)
     end
 
+    # @rbs (String) -> void
     def search(shortcode)
       where(arel_table[:shortcode].matches("%#{sanitize_sql_like(shortcode)}%"))
     end
@@ -94,6 +100,7 @@ class CustomEmoji < ApplicationRecord
 
   private
 
+  # @rbs () -> bool
   def remove_entity_cache
     Rails.cache.delete(EntityCache.instance.to_key(:emoji, shortcode, domain))
   end

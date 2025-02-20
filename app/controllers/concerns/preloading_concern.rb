@@ -3,6 +3,7 @@
 module PreloadingConcern
   extend ActiveSupport::Concern
 
+  # @rbs (ActiveRecord::Associations::CollectionProxy | Array[untyped] | ActiveRecord::Relation | Trends::Statuses::Query | ActiveRecord::AssociationRelation, Class) -> (void | Array[untyped])
   def preload_collection(scope, klass)
     return scope unless klass.respond_to?(:preload_cacheable_associations)
 
@@ -11,6 +12,7 @@ module PreloadingConcern
     end
   end
 
+  # @rbs (ActiveRecord::AssociationRelation, Class, Integer, ActionController::Parameters) -> void
   def preload_collection_paginated_by_id(scope, klass, limit, options)
     preload_collection scope.to_a_paginated_by_id(limit, options), klass
   end

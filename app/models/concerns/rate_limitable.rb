@@ -3,14 +3,17 @@
 module RateLimitable
   extend ActiveSupport::Concern
 
+  # @rbs (bool?) -> bool?
   def rate_limit=(value)
     @rate_limit = value
   end
 
+  # @rbs () -> void
   def rate_limit?
     @rate_limit
   end
 
+  # @rbs (Account, ?Hash[untyped, untyped]) -> RateLimiter
   def rate_limiter(by, options = {})
     return @rate_limiter if defined?(@rate_limiter)
 

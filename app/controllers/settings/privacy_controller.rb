@@ -3,6 +3,7 @@
 class Settings::PrivacyController < Settings::BaseController
   before_action :set_account
 
+  # @rbs () -> Time?
   def show; end
 
   def update

@@ -11,6 +11,7 @@ class ReblogService < BaseService
   # @option [String]  :visibility
   # @option [Boolean] :with_rate_limit
   # @return [Status]
+  # @rbs (Account, Status, ?Hash[untyped, untyped] | ActionController::Parameters) -> (void | Status)
   def call(account, reblogged_status, options = {})
     reblogged_status = reblogged_status.reblog if reblogged_status.reblog?
 
@@ -40,12 +41,14 @@ class ReblogService < BaseService
 
   private
 
+  # @rbs (Status) -> void
   def create_notification(reblog)
     reblogged_status = reblog.reblog
 
     LocalNotificationWorker.perform_async(reblogged_status.account_id, reblog.id, reblog.class.name, 'reblog') if reblogged_status.account.local?
   end
 
+  # @rbs () -> void
   def increment_statistics
     ActivityTracker.increment('activity:interactions')
   end

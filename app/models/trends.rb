@@ -5,26 +5,32 @@ module Trends
     'trends_'
   end
 
+  # @rbs () -> (void | Trends::Links)
   def self.links
     @links ||= Trends::Links.new
   end
 
+  # @rbs () -> (Trends::Tags | void)
   def self.tags
     @tags ||= Trends::Tags.new
   end
 
+  # @rbs () -> (void | Trends::Statuses)
   def self.statuses
     @statuses ||= Trends::Statuses.new
   end
 
+  # @rbs (Status) -> void
   def self.register!(status)
     [links, tags, statuses].each { |trend_type| trend_type.register(status) }
   end
 
+  # @rbs () -> void
   def self.refresh!
     [links, tags, statuses].each(&:refresh)
   end
 
+  # @rbs () -> void
   def self.request_review!
     return if skip_review? || !enabled?
 
@@ -39,14 +45,17 @@ module Trends
     end
   end
 
+  # @rbs () -> bool
   def self.enabled?
     Setting.trends
   end
 
+  # @rbs () -> void
   def self.skip_review?
     Setting.trendable_by_default
   end
 
+  # @rbs () -> Array[untyped]
   def self.available_locales
     @available_locales ||= I18n.available_locales.map { |locale| locale.to_s.split(/[_-]/).first }.uniq
   end

@@ -14,12 +14,14 @@ require 'resolv'
 class PerOperationWithDeadline < HTTP::Timeout::PerOperation
   READ_DEADLINE = 30
 
+  # @rbs (*Hash[untyped, untyped]) -> void
   def initialize(*args)
     super
 
     @read_deadline = options.fetch(:read_deadline, READ_DEADLINE)
   end
 
+  # @rbs (Class, String, Integer, ?bool) -> void
   def connect(socket_class, host, port, nodelay = false)
     @socket = socket_class.open(host, port)
     @socket.setsockopt(Socket::IPPROTO_TCP, Socket::TCP_NODELAY, 1) if nodelay
@@ -70,6 +72,7 @@ class Request
 
   include RoutingHelper
 
+  # @rbs (Symbol, String | Addressable::URI, **nil | bool | String | bool | String | HTTP::Client | String | bool | Hash[untyped, untyped] | HTTP::Client) -> void
   def initialize(verb, url, **options)
     raise ArgumentError if url.blank?
 
@@ -89,6 +92,7 @@ class Request
     set_digest! if options.key?(:body)
   end
 
+  # @rbs (Account, ?sign_with: nil) -> void
   def on_behalf_of(actor, sign_with: nil)
     raise ArgumentError, 'actor must not be nil' if actor.nil?
 
@@ -98,11 +102,13 @@ class Request
     self
   end
 
+  # @rbs (Hash[untyped, untyped]) -> (void | Request)
   def add_headers(new_headers)
     @headers.merge!(new_headers)
     self
   end
 
+  # @rbs () -> (void | String | bool | Array[untyped] | Hash[untyped, untyped] | Integer)?
   def perform
     begin
       response = http_client.request(@verb, @url.to_s, @options.merge(headers: headers))
@@ -124,11 +130,13 @@ class Request
     end
   end
 
+  # @rbs () -> (void | Hash[untyped, untyped])
   def headers
     (@actor ? @headers.merge('Signature' => signature) : @headers).without(REQUEST_TARGET)
   end
 
   class << self
+    # @rbs (String) -> void
     def valid_url?(url)
       begin
         parsed_url = Addressable::URI.parse(url)
@@ -139,6 +147,7 @@ class Request
       %w(http https).include?(parsed_url.scheme) && parsed_url.host.present?
     end
 
+    # @rbs () -> HTTP::Client
     def http_client
       HTTP.use(:auto_inflate).follow(max_hops: 3)
     end
@@ -146,6 +155,7 @@ class Request
 
   private
 
+  # @rbs () -> void
   def set_common_headers!
     @headers[REQUEST_TARGET]    = request_target
     @headers['User-Agent']      = Mastodon::Version.user_agent
@@ -154,10 +164,12 @@ class Request
     @headers['Accept-Encoding'] = 'gzip' if @verb != :head
   end
 
+  # @rbs () -> void
   def set_digest!
     @headers['Digest'] = "SHA-256=#{Digest::SHA256.base64digest(@options[:body])}"
   end
 
+  # @rbs () -> void
   def request_target
     if @url.query.nil? || !@full_path
       "#{@verb} #{@url.path}"
@@ -166,6 +178,7 @@ class Request
     end
   end
 
+  # @rbs () -> void
   def signature
     algorithm = 'rsa-sha256'
     signature = Base64.strict_encode64(@keypair.sign(OpenSSL::Digest.new('SHA256'), signed_string))
@@ -173,26 +186,32 @@ class Request
     "keyId=\"#{key_id}\",algorithm=\"#{algorithm}\",headers=\"#{signed_headers.keys.join(' ').downcase}\",signature=\"#{signature}\""
   end
 
+  # @rbs () -> void
   def signed_string
     signed_headers.map { |key, value| "#{key.downcase}: #{value}" }.join("\n")
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def signed_headers
     @headers.without('User-Agent', 'Accept-Encoding')
   end
 
+  # @rbs () -> String
   def key_id
     ActivityPub::TagManager.instance.key_uri_for(@actor)
   end
 
+  # @rbs () -> HTTP::Client
   def http_client
     @http_client ||= Request.http_client
   end
 
+  # @rbs () -> void
   def use_proxy?
     proxy_url.present?
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def proxy_url
     if hidden_service? && Rails.configuration.x.http_client_hidden_proxy.present?
       Rails.configuration.x.http_client_hidden_proxy
@@ -201,15 +220,18 @@ class Request
     end
   end
 
+  # @rbs () -> void
   def block_hidden_service?
     !Rails.configuration.x.access_to_hidden_service && hidden_service?
   end
 
+  # @rbs () -> void
   def hidden_service?
     /\.(onion|i2p)$/.match?(@url.host)
   end
 
   module ClientLimit
+    # @rbs (?Integer) -> String
     def truncated_body(limit = 1.megabyte)
       if charset.nil?
         encoding = Encoding::BINARY
@@ -233,6 +255,7 @@ class Request
       contents
     end
 
+    # @rbs (?Integer) -> (void | String)?
     def body_with_limit(limit = 1.megabyte)
       require_limit_not_exceeded!(limit)
 
@@ -242,6 +265,7 @@ class Request
       contents
     end
 
+    # @rbs (Integer) -> void
     def require_limit_not_exceeded!(limit)
       raise Mastodon::LengthValidationError, "Content-Length #{content_length} exceeds limit of #{limit}" if content_length.present? && content_length > limit
     end
@@ -257,6 +281,7 @@ class Request
 
   class Socket < TCPSocket
     class << self
+      # @rbs (String, *Integer) -> nil
       def open(host, *args)
         outer_e = nil
         port    = args.first
@@ -331,6 +356,7 @@ class Request
 
       alias new open
 
+      # @rbs (String, String) -> void
       def check_private_address(address, host)
         addr = IPAddr.new(address.to_s)
 

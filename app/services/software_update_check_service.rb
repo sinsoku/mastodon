@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class SoftwareUpdateCheckService < BaseService
+  # @rbs () -> void
   def call
     clean_outdated_updates!
     return unless SoftwareUpdate.check_enabled?
@@ -10,6 +11,7 @@ class SoftwareUpdateCheckService < BaseService
 
   private
 
+  # @rbs () -> void
   def clean_outdated_updates!
     SoftwareUpdate.find_each do |software_update|
       software_update.delete if software_update.outdated?
@@ -18,6 +20,7 @@ class SoftwareUpdateCheckService < BaseService
     end
   end
 
+  # @rbs () -> void
   def fetch_update_notices
     Request.new(:get, "#{api_url}?version=#{version}").add_headers('Accept' => 'application/json', 'User-Agent' => 'Mastodon update checker').perform do |res|
       return Oj.load(res.body_with_limit, mode: :strict) if res.code == 200
@@ -26,14 +29,17 @@ class SoftwareUpdateCheckService < BaseService
     nil
   end
 
+  # @rbs () -> String
   def api_url
     Rails.configuration.x.mastodon.software_update_url
   end
 
+  # @rbs () -> String
   def version
     @version ||= Mastodon::Version.to_s.split('+')[0]
   end
 
+  # @rbs (Hash[untyped, untyped]?) -> void
   def process_update_notices!(update_notices)
     return if update_notices.blank? || update_notices['updatesAvailable'].nil?
 
@@ -54,6 +60,7 @@ class SoftwareUpdateCheckService < BaseService
     notify_devops!(new_updates)
   end
 
+  # @rbs (User, bool, bool) -> void
   def should_notify_user?(user, urgent_version, patch_version)
     case user.settings['notification_emails.software_updates']
     when 'none'
@@ -67,6 +74,7 @@ class SoftwareUpdateCheckService < BaseService
     end
   end
 
+  # @rbs (Array[untyped]) -> void
   def notify_devops!(new_updates)
     has_new_urgent_version = new_updates.any?(&:urgent?)
     has_new_patch_version  = new_updates.any?(&:patch_type?)

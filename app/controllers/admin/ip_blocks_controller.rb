@@ -2,6 +2,7 @@
 
 module Admin
   class IpBlocksController < BaseController
+    # @rbs () -> Form::IpBlockBatch
     def index
       authorize :ip_block, :index?
 
@@ -9,12 +10,14 @@ module Admin
       @form      = Form::IpBlockBatch.new
     end
 
+    # @rbs () -> IpBlock
     def new
       authorize :ip_block, :create?
 
       @ip_block = IpBlock.new(ip: '', severity: :no_access, expires_in: 1.year)
     end
 
+    # @rbs () -> (ActiveSupport::SafeBuffer | String)
     def create
       authorize :ip_block, :create?
 
@@ -28,6 +31,7 @@ module Admin
       end
     end
 
+    # @rbs () -> String
     def batch
       authorize :ip_block, :index?
 
@@ -43,6 +47,7 @@ module Admin
 
     private
 
+    # @rbs () -> void
     def resource_params
       params.require(:ip_block).permit(:ip, :severity, :comment, :expires_in)
     end
@@ -51,6 +56,7 @@ module Admin
       'delete' if params[:delete]
     end
 
+    # @rbs () -> nil
     def form_ip_block_batch_params
       params.require(:form_ip_block_batch).permit(ip_block_ids: [])
     end

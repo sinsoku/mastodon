@@ -5,10 +5,12 @@ class WebfingerSerializer < ActiveModel::Serializer
 
   attributes :subject, :aliases, :links
 
+  # @rbs () -> String
   def subject
     object.to_webfinger_s
   end
 
+  # @rbs () -> Array[untyped]
   def aliases
     if object.instance_actor?
       [instance_actor_url]
@@ -17,6 +19,7 @@ class WebfingerSerializer < ActiveModel::Serializer
     end
   end
 
+  # @rbs () -> Array[untyped]
   def links
     [
       { rel: 'http://webfinger.net/rel/profile-page', type: 'text/html', href: profile_page_href },
@@ -29,6 +32,7 @@ class WebfingerSerializer < ActiveModel::Serializer
 
   private
 
+  # @rbs () -> void
   def show_avatar?
     media_present = object.avatar.present? && object.avatar.content_type.present?
 
@@ -38,10 +42,12 @@ class WebfingerSerializer < ActiveModel::Serializer
     media_present && allowed_by_config
   end
 
+  # @rbs () -> void
   def profile_page_href
     object.instance_actor? ? about_more_url(instance_actor: true) : short_account_url(object)
   end
 
+  # @rbs () -> void
   def self_href
     object.instance_actor? ? instance_actor_url : account_url(object)
   end

@@ -14,14 +14,17 @@ module Admin
 
     private
 
+    # @rbs () -> Hash[untyped, untyped]
     def set_cache_headers
       response.cache_control.replace(private: true, no_store: true)
     end
 
+    # @rbs () -> String
     def set_referrer_policy_header
       response.headers['Referrer-Policy'] = 'same-origin'
     end
 
+    # @rbs () -> User?
     def set_user
       @user = Account.find(params[:account_id]).user || raise(ActiveRecord::RecordNotFound)
     end

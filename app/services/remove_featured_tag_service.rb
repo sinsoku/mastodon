@@ -3,6 +3,7 @@
 class RemoveFeaturedTagService < BaseService
   include Payloadable
 
+  # @rbs (Account, FeaturedTag) -> void
   def call(account, featured_tag)
     @account = account
 
@@ -12,6 +13,7 @@ class RemoveFeaturedTagService < BaseService
 
   private
 
+  # @rbs (FeaturedTag) -> void
   def build_json(featured_tag)
     Oj.dump(serialize_payload(featured_tag, ActivityPub::RemoveSerializer, signer: @account))
   end

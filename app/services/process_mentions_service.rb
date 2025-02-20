@@ -7,6 +7,7 @@ class ProcessMentionsService < BaseService
   # and create local mention pointers
   # @param [Status] status
   # @param [Boolean] save_records Whether to save records in database
+  # @rbs (Status, ?save_records: bool) -> void
   def call(status, save_records: true)
     @status = status
     @save_records = save_records
@@ -24,6 +25,7 @@ class ProcessMentionsService < BaseService
 
   private
 
+  # @rbs () -> void
   def scan_text!
     @status.text = @status.text.gsub(Account::MENTION_RE) do |match|
       username, domain = Regexp.last_match(1).split('@')
@@ -67,6 +69,7 @@ class ProcessMentionsService < BaseService
     @status.save! if @save_records
   end
 
+  # @rbs () -> void
   def assign_mentions!
     # Make sure we never mention blocked accounts
     unless @current_mentions.empty?
@@ -91,6 +94,7 @@ class ProcessMentionsService < BaseService
     Mention.where(id: removed_mentions.map(&:id), silent: false).update_all(silent: true) unless removed_mentions.empty?
   end
 
+  # @rbs (Account) -> void
   def mention_undeliverable?(mentioned_account)
     mentioned_account.nil? || (!mentioned_account.local? && !mentioned_account.activitypub?)
   end

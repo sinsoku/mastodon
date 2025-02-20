@@ -4,6 +4,7 @@ module Admin
   class FollowRecommendationsController < BaseController
     before_action :set_language
 
+    # @rbs () -> ActiveRecord::Relation
     def show
       authorize :follow_recommendation, :show?
 
@@ -24,14 +25,17 @@ module Admin
 
     private
 
+    # @rbs () -> String
     def set_language
       @language = follow_recommendation_filter.language
     end
 
+    # @rbs () -> ActiveRecord::Relation
     def filtered_follow_recommendations
       follow_recommendation_filter.results
     end
 
+    # @rbs () -> FollowRecommendationFilter
     def follow_recommendation_filter
       @follow_recommendation_filter ||= FollowRecommendationFilter.new(filter_params)
     end
@@ -40,6 +44,7 @@ module Admin
       params.require(:form_account_batch).permit(:action, account_ids: [])
     end
 
+    # @rbs () -> void
     def filter_params
       params.slice(*FollowRecommendationFilter::KEYS).permit(*FollowRecommendationFilter::KEYS)
     end

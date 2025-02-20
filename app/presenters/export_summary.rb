@@ -14,49 +14,60 @@ class ExportSummary
     prefix: true
   )
 
+  # @rbs (Account) -> void
   def initialize(account)
     @account = account
     @counts = populate_counts
   end
 
+  # @rbs () -> void
   def total_blocks
     counts[:blocks].value
   end
 
+  # @rbs () -> void
   def total_bookmarks
     counts[:bookmarks].value
   end
 
+  # @rbs () -> void
   def total_domain_blocks
     counts[:domain_blocks].value
   end
 
+  # @rbs () -> void
   def total_followers
     account.followers_count
   end
 
+  # @rbs () -> void
   def total_follows
     account.following_count
   end
 
+  # @rbs () -> void
   def total_lists
     counts[:owned_lists].value
   end
 
+  # @rbs () -> void
   def total_mutes
     counts[:muting].value
   end
 
+  # @rbs () -> void
   def total_statuses
     account.statuses_count
   end
 
+  # @rbs () -> void
   def total_storage
     counts[:storage].value
   end
 
   private
 
+  # @rbs () -> Hash[untyped, untyped]
   def populate_counts
     {
       blocks: account_blocking.async_count,

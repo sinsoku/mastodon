@@ -45,28 +45,34 @@ class Poll < ApplicationRecord
 
   after_commit :reset_parent_cache, on: :update
 
+  # @rbs () -> (void | Array[untyped])
   def loaded_options
     options.map.with_index { |title, key| Option.new(self, key.to_s, title, show_totals_now? ? (cached_tallies[key] || 0) : nil) }
   end
 
+  # @rbs () -> void
   def possibly_stale?
     remote? && last_fetched_before_expiration? && time_passed_since_last_fetch?
   end
 
+  # @rbs (Account) -> void
   def voted?(account)
     account.id == account_id || votes.exists?(account: account)
   end
 
+  # @rbs (Account) -> void
   def own_votes(account)
     votes.where(account: account).pluck(:choice)
   end
 
   delegate :local?, to: :account
 
+  # @rbs () -> void
   def remote?
     !local?
   end
 
+  # @rbs () -> Array[untyped]
   def emojis
     @emojis ||= CustomEmoji.from_text(options.join(' '), account.domain)
   end
@@ -74,6 +80,7 @@ class Poll < ApplicationRecord
   class Option < ActiveModelSerializers::Model
     attributes :id, :title, :votes_count, :poll
 
+    # @rbs (Poll, String, String, Integer) -> void
     def initialize(poll, id, title, votes_count)
       super(
         poll: poll,
@@ -84,6 +91,7 @@ class Poll < ApplicationRecord
     end
   end
 
+  # @rbs () -> void
   def reset_votes!
     self.cached_tallies = options.map { 0 }
     self.votes_count = 0
@@ -93,18 +101,22 @@ class Poll < ApplicationRecord
 
   private
 
+  # @rbs () -> Array[untyped]?
   def prepare_cached_tallies
     self.cached_tallies = options.map { 0 } if cached_tallies.empty?
   end
 
+  # @rbs () -> Integer?
   def prepare_votes_count
     self.votes_count = cached_tallies.sum unless cached_tallies.empty?
   end
 
+  # @rbs () -> Array[untyped]
   def prepare_options
     self.options = options.map(&:strip).compact_blank
   end
 
+  # @rbs () -> bool
   def reset_parent_cache
     return if status_id.nil?
 
@@ -119,6 +131,7 @@ class Poll < ApplicationRecord
     last_fetched_at.nil? || last_fetched_at < 1.minute.ago
   end
 
+  # @rbs () -> void
   def show_totals_now?
     expired? || !hide_totals?
   end

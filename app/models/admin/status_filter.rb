@@ -10,6 +10,7 @@ class Admin::StatusFilter
 
   attr_reader :params
 
+  # @rbs (Status, Account?, ?Hash[untyped, untyped]) -> void
   def initialize(account, params)
     @account = account
     @params  = params

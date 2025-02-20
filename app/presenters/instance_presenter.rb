@@ -7,10 +7,12 @@ class InstancePresenter < ActiveModelSerializers::Model
   class ContactPresenter < ActiveModelSerializers::Model
     attributes :email, :account
 
+    # @rbs () -> (void | String)
     def email
       Setting.site_contact_email
     end
 
+    # @rbs () -> void?
     def account
       username, domain = Setting.site_contact_username.strip.gsub(/\A@/, '').split('@', 2)
       domain = nil if TagManager.instance.local_domain?(domain)
@@ -18,76 +20,94 @@ class InstancePresenter < ActiveModelSerializers::Model
     end
   end
 
+  # @rbs () -> InstancePresenter::ContactPresenter
   def contact
     ContactPresenter.new
   end
 
+  # @rbs () -> (String | void)
   def description
     Setting.site_short_description
   end
 
+  # @rbs () -> void
   def extended_description
     Setting.site_extended_description
   end
 
+  # @rbs () -> void
   def status_page_url
     Setting.status_page_url
   end
 
+  # @rbs () -> (void | String)
   def domain
     Rails.configuration.x.local_domain
   end
 
+  # @rbs () -> (void | String)
   def title
     Setting.site_title
   end
 
+  # @rbs () -> Array[untyped]
   def languages
     [I18n.default_locale]
   end
 
+  # @rbs () -> ActiveRecord::Relation
   def rules
     Rule.ordered
   end
 
+  # @rbs () -> void
   def user_count
     Rails.cache.fetch('user_count') { User.confirmed.joins(:account).merge(Account.without_suspended).count }
   end
 
+  # @rbs (?Integer) -> void
   def active_user_count(num_weeks = 4)
     Rails.cache.fetch("active_user_count/#{num_weeks}") { ActivityTracker.new('activity:logins', :unique).sum(num_weeks.weeks.ago) }
   end
 
+  # @rbs () -> void
   def status_count
     Rails.cache.fetch('local_status_count') { Account.local.joins(:account_stat).sum('account_stats.statuses_count') }.to_i
   end
 
+  # @rbs () -> void
   def domain_count
     Rails.cache.fetch('distinct_domain_count') { Instance.count }
   end
 
+  # @rbs () -> (void | String)
   def version
     Mastodon::Version.to_s
   end
 
+  # @rbs () -> (void | String)
   def source_url
     Mastodon::Version.source_url
   end
 
+  # @rbs () -> SiteUpload?
   def thumbnail
     @thumbnail ||= Rails.cache.fetch('site_uploads/thumbnail') { SiteUpload.find_by(var: 'thumbnail') }
   end
 
+  # @rbs () -> SiteUpload?
   def mascot
     @mascot ||= Rails.cache.fetch('site_uploads/mascot') { SiteUpload.find_by(var: 'mascot') }
   end
 
+  # @rbs () -> SiteUpload?
   def favicon
     return @favicon if defined?(@favicon)
 
     @favicon ||= Rails.cache.fetch('site_uploads/favicon') { SiteUpload.find_by(var: 'favicon') }
   end
 
+  # @rbs () -> SiteUpload?
   def app_icon
     return @app_icon if defined?(@app_icon)
 

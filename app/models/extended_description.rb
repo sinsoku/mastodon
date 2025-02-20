@@ -3,6 +3,7 @@
 class ExtendedDescription < ActiveModelSerializers::Model
   attributes :updated_at, :text
 
+  # @rbs () -> ExtendedDescription
   def self.current
     custom = Setting.find_by(var: 'site_extended_description')
 

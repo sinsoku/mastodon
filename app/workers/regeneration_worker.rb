@@ -6,6 +6,7 @@ class RegenerationWorker
 
   sidekiq_options lock: :until_executed
 
+  # @rbs (Integer | String, ?Symbol) -> (bool | void)?
   def perform(account_id, _ = :home)
     with_primary do
       @account = Account.find(account_id)

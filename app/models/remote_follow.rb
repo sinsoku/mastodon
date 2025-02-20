@@ -8,10 +8,12 @@ class RemoteFollow
 
   validates :acct, presence: true, domain: { acct: true }
 
+  # @rbs (?Hash[untyped, untyped]) -> void
   def initialize(attrs = {})
     @acct = normalize_acct(attrs[:acct])
   end
 
+  # @rbs () -> void
   def valid?
     return false unless super
 
@@ -20,6 +22,7 @@ class RemoteFollow
     errors.empty?
   end
 
+  # @rbs (Account) -> void
   def subscribe_address_for(account)
     addressable_template.expand(uri: ActivityPub::TagManager.instance.uri_for(account)).to_s
   end
@@ -30,6 +33,7 @@ class RemoteFollow
 
   private
 
+  # @rbs (String?) -> String?
   def normalize_acct(value)
     return if value.blank?
 
@@ -46,6 +50,7 @@ class RemoteFollow
     value
   end
 
+  # @rbs () -> void
   def fetch_template!
     return missing_resource_error if acct.blank?
 
@@ -60,10 +65,12 @@ class RemoteFollow
     end
   end
 
+  # @rbs () -> String
   def redirect_uri_template
     acct_resource&.link('http://ostatus.org/schema/1.0/subscribe', 'template')
   end
 
+  # @rbs () -> Webfinger::Response
   def acct_resource
     @acct_resource ||= Webfinger.new("acct:#{acct}").perform
   rescue Webfinger::Error, *Mastodon::HTTP_CONNECTION_ERRORS

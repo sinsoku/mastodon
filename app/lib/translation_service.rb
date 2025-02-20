@@ -23,10 +23,12 @@ class TranslationService
     end
   end
 
+  # @rbs () -> void
   def self.configured?
     configuration.deepl[:api_key].present? || configuration.libre_translate[:endpoint].present?
   end
 
+  # @rbs () -> ActiveSupport::OrderedOptions
   def self.configuration
     Rails.configuration.x.translation
   end

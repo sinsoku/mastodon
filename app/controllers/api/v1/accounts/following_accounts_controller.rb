@@ -5,6 +5,7 @@ class Api::V1::Accounts::FollowingAccountsController < Api::BaseController
   before_action :set_account
   after_action :insert_pagination_headers
 
+  # @rbs () -> String
   def index
     cache_if_unauthenticated!
     @accounts = load_accounts

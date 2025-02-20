@@ -138,6 +138,7 @@ class AccountSearchService < BaseService
     end
   end
 
+  # @rbs (String, ?Account?, ?Hash[untyped, untyped]) -> (Array[untyped] | void)
   def call(query, account = nil, options = {})
     MastodonOTELTracer.in_span('AccountSearchService#call') do |span|
       @query   = query&.strip&.gsub(/\A@/, '')
@@ -160,12 +161,14 @@ class AccountSearchService < BaseService
 
   private
 
+  # @rbs () -> Array[untyped]
   def search_service_results
     return [] if query.blank? || limit < 1
 
     [exact_match] + search_results
   end
 
+  # @rbs () -> (void | Account)?
   def exact_match
     return unless offset.zero? && username_complete?
 
@@ -184,6 +187,7 @@ class AccountSearchService < BaseService
     @exact_match = match
   end
 
+  # @rbs () -> void
   def search_results
     return [] if limit_for_non_exact_results.zero?
 
@@ -194,6 +198,7 @@ class AccountSearchService < BaseService
     end
   end
 
+  # @rbs () -> Array[untyped]
   def from_database
     if account
       advanced_search_results
@@ -202,10 +207,12 @@ class AccountSearchService < BaseService
     end
   end
 
+  # @rbs () -> void
   def advanced_search_results
     Account.advanced_search_for(terms_for_query, account, limit: limit_for_non_exact_results, following: options[:following], offset: offset)
   end
 
+  # @rbs () -> void
   def simple_search_results
     Account.search_for(terms_for_query, limit: limit_for_non_exact_results, offset: offset)
   end
@@ -228,6 +235,7 @@ class AccountSearchService < BaseService
     nil
   end
 
+  # @rbs () -> Integer
   def limit_for_non_exact_results
     return 0 if @account.nil? && query.size < MIN_QUERY_LENGTH
 
@@ -238,6 +246,7 @@ class AccountSearchService < BaseService
     end
   end
 
+  # @rbs () -> void
   def terms_for_query
     if domain_is_local?
       query_username
@@ -246,30 +255,37 @@ class AccountSearchService < BaseService
     end
   end
 
+  # @rbs () -> Array[untyped]
   def split_query_string
     @split_query_string ||= query.split('@')
   end
 
+  # @rbs () -> void
   def query_username
     @query_username ||= split_query_string.first || ''
   end
 
+  # @rbs () -> void
   def query_domain
     @query_domain ||= query_without_split? ? nil : split_query_string.last
   end
 
+  # @rbs () -> void
   def query_without_split?
     split_query_string.size == 1
   end
 
+  # @rbs () -> void
   def domain_is_local?
     @domain_is_local ||= TagManager.instance.local_domain?(query_domain)
   end
 
+  # @rbs () -> void
   def exact_match?
     exact_match.present?
   end
 
+  # @rbs () -> void
   def username_complete?
     query.include?('@') && "@#{query}".match?(MENTION_ONLY_RE)
   end

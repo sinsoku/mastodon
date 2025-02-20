@@ -5,12 +5,14 @@ module Settings
     class BookmarksController < BaseController
       include Settings::ExportControllerConcern
 
+      # @rbs () -> String
       def index
         send_export_file
       end
 
       private
 
+      # @rbs () -> void
       def export_data
         @export.to_bookmarks_csv
       end

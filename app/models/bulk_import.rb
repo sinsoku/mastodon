@@ -48,6 +48,7 @@ class BulkImport < ApplicationRecord
   scope :archival_completed, -> { where(created_at: ..ARCHIVE_PERIOD.ago) }
   scope :confirmation_missed, -> { state_unconfirmed.where(created_at: ..CONFIRM_PERIOD.ago) }
 
+  # @rbs (Integer, ?imported: bool) -> void
   def self.progress!(bulk_import_id, imported: false)
     # Use `increment_counter` so that the incrementation is done atomically in the database
     BulkImport.increment_counter(:processed_items, bulk_import_id)

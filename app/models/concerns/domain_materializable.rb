@@ -9,6 +9,7 @@ module DomainMaterializable
     after_create_commit :refresh_instances_view
   end
 
+  # @rbs () -> bool?
   def refresh_instances_view
     return if domain.nil? || Instance.exists?(domain: domain)
 
@@ -16,6 +17,7 @@ module DomainMaterializable
     count_unique_subdomains!
   end
 
+  # @rbs () -> void
   def count_unique_subdomains!
     second_and_top_level_domain = PublicSuffix.domain(domain, ignore_private: true)
     with_redis do |redis|

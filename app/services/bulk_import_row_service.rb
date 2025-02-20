@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class BulkImportRowService
+  # @rbs (BulkImportRow) -> (void | bool)
   def call(row)
     @account = row.bulk_import.account
     @data    = row.data
@@ -46,11 +47,13 @@ class BulkImportRowService
     false
   end
 
+  # @rbs (String) -> String?
   def domain(uri)
     domain = uri.is_a?(Account) ? uri.domain : uri.split('@')[1]
     TagManager.instance.local_domain?(domain) ? nil : TagManager.instance.normalize_domain(domain)
   end
 
+  # @rbs (String?) -> (Stoplight::Builder | Stoplight::Light)
   def stoplight_wrapper(domain)
     if domain.present?
       Stoplight("source:#{domain}")

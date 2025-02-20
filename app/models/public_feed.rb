@@ -8,6 +8,7 @@ class PublicFeed
   # @option [Boolean] :local
   # @option [Boolean] :remote
   # @option [Boolean] :only_media
+  # @rbs (Account?, ?Hash[untyped, untyped]) -> void
   def initialize(account, options = {})
     @account = account
     @options = options
@@ -18,6 +19,7 @@ class PublicFeed
   # @param [Integer] since_id
   # @param [Integer] min_id
   # @return [Array<Status>]
+  # @rbs (Integer, ?nil, ?nil, ?nil) -> (Array[untyped] | void)
   def get(limit, max_id = nil, since_id = nil, min_id = nil)
     scope = public_scope
 
@@ -36,58 +38,72 @@ class PublicFeed
 
   attr_reader :account, :options
 
+  # @rbs () -> void
   def with_reblogs?
     options[:with_reblogs]
   end
 
+  # @rbs () -> void
   def with_replies?
     options[:with_replies]
   end
 
+  # @rbs () -> void
   def local_only?
     options[:local] && !options[:remote]
   end
 
+  # @rbs () -> void
   def remote_only?
     options[:remote] && !options[:local]
   end
 
+  # @rbs () -> void
   def account?
     account.present?
   end
 
+  # @rbs () -> void
   def media_only?
     options[:only_media]
   end
 
+  # @rbs () -> ActiveRecord::Relation
   def public_scope
     Status.public_visibility.joins(:account).merge(Account.without_suspended.without_silenced)
   end
 
+  # @rbs () -> void
   def local_only_scope
     Status.local
   end
 
+  # @rbs () -> void
   def remote_only_scope
     Status.remote
   end
 
+  # @rbs () -> void
   def without_replies_scope
     Status.without_replies
   end
 
+  # @rbs () -> void
   def without_reblogs_scope
     Status.without_reblogs
   end
 
+  # @rbs () -> void
   def media_only_scope
     Status.joins(:media_attachments).group(:id)
   end
 
+  # @rbs () -> void
   def language_scope
     Status.where(language: account.chosen_languages)
   end
 
+  # @rbs () -> void
   def account_filters_scope
     Status.not_excluded_by_account(account).tap do |scope|
       scope.merge!(Status.not_domain_blocked_by_account(account)) unless local_only?

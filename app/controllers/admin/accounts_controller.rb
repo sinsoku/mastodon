@@ -6,6 +6,7 @@ module Admin
     before_action :require_remote_account!, only: [:redownload]
     before_action :require_local_account!, only: [:enable, :memorialize, :approve, :reject]
 
+    # @rbs () -> Form::AccountBatch
     def index
       authorize :account, :index?
 
@@ -13,6 +14,7 @@ module Admin
       @form     = Form::AccountBatch.new
     end
 
+    # @rbs () -> String?
     def batch
       authorize :account, :index?
 
@@ -28,6 +30,7 @@ module Admin
       redirect_to admin_accounts_path(filter_params)
     end
 
+    # @rbs () -> nil
     def show
       authorize @account, :show?
 
@@ -38,6 +41,7 @@ module Admin
       @domain_block            = DomainBlock.rule_for(@account.domain)
     end
 
+    # @rbs () -> String?
     def memorialize
       authorize @account, :memorialize?
       @account.memorialize!
@@ -45,6 +49,7 @@ module Admin
       redirect_to admin_account_path(@account.id), notice: I18n.t('admin.accounts.memorialized_msg', username: @account.acct)
     end
 
+    # @rbs () -> String?
     def enable
       authorize @account.user, :enable?
       @account.user.enable!
@@ -52,6 +57,7 @@ module Admin
       redirect_to admin_account_path(@account.id), notice: I18n.t('admin.accounts.enabled_msg', username: @account.acct)
     end
 
+    # @rbs () -> String?
     def approve
       authorize @account.user, :approve?
       @account.user.approve!
@@ -59,6 +65,7 @@ module Admin
       redirect_to admin_accounts_path(status: 'pending'), notice: I18n.t('admin.accounts.approved_msg', username: @account.acct)
     end
 
+    # @rbs () -> String?
     def reject
       authorize @account.user, :reject?
       DeleteAccountService.new.call(@account, reserve_email: false, reserve_username: false)
@@ -66,12 +73,14 @@ module Admin
       redirect_to admin_accounts_path(status: 'pending'), notice: I18n.t('admin.accounts.rejected_msg', username: @account.acct)
     end
 
+    # @rbs () -> String?
     def destroy
       authorize @account, :destroy?
       Admin::AccountDeletionWorker.perform_async(@account.id)
       redirect_to admin_account_path(@account.id), notice: I18n.t('admin.accounts.destroyed_msg', username: @account.acct)
     end
 
+    # @rbs () -> String?
     def unsensitive
       authorize @account, :unsensitive?
       @account.unsensitize!
@@ -79,6 +88,7 @@ module Admin
       redirect_to admin_account_path(@account.id)
     end
 
+    # @rbs () -> String?
     def unsilence
       authorize @account, :unsilence?
       @account.unsilence!
@@ -86,6 +96,7 @@ module Admin
       redirect_to admin_account_path(@account.id), notice: I18n.t('admin.accounts.unsilenced_msg', username: @account.acct)
     end
 
+    # @rbs () -> String?
     def unsuspend
       authorize @account, :unsuspend?
       @account.unsuspend!
@@ -94,6 +105,7 @@ module Admin
       redirect_to admin_account_path(@account.id), notice: I18n.t('admin.accounts.unsuspended_msg', username: @account.acct)
     end
 
+    # @rbs () -> String?
     def redownload
       authorize @account, :redownload?
 
@@ -103,6 +115,7 @@ module Admin
       redirect_to admin_account_path(@account.id), notice: I18n.t('admin.accounts.redownloaded_msg', username: @account.acct)
     end
 
+    # @rbs () -> String?
     def remove_avatar
       authorize @account, :remove_avatar?
 
@@ -125,6 +138,7 @@ module Admin
       redirect_to admin_account_path(@account.id), notice: I18n.t('admin.accounts.removed_header_msg', username: @account.acct)
     end
 
+    # @rbs () -> String?
     def unblock_email
       authorize @account, :unblock_email?
 
@@ -137,30 +151,37 @@ module Admin
 
     private
 
+    # @rbs () -> Account
     def set_account
       @account = Account.find(params[:id])
     end
 
+    # @rbs () -> nil
     def require_remote_account!
       redirect_to admin_account_path(@account.id) if @account.local?
     end
 
+    # @rbs () -> nil
     def require_local_account!
       redirect_to admin_account_path(@account.id) unless @account.local? && @account.user.present?
     end
 
+    # @rbs () -> ActiveRecord::Relation
     def filtered_accounts
       AccountFilter.new(filter_params.with_defaults(order: 'recent')).results
     end
 
+    # @rbs () -> ActionController::Parameters
     def filter_params
       params.slice(:page, *AccountFilter::KEYS).permit(:page, *AccountFilter::KEYS)
     end
 
+    # @rbs () -> void
     def form_account_batch_params
       params.require(:form_account_batch).permit(:action, account_ids: [])
     end
 
+    # @rbs () -> void
     def action_from_button
       if params[:suspend]
         'suspend'

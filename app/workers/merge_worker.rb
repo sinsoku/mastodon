@@ -5,6 +5,7 @@ class MergeWorker
   include Redisable
   include DatabaseHelper
 
+  # @rbs (Integer, Integer, ?String) -> void
   def perform(from_account_id, into_id, type = 'home')
     with_primary do
       @from_account = Account.find(from_account_id)
@@ -22,6 +23,7 @@ class MergeWorker
 
   private
 
+  # @rbs (Integer) -> void
   def merge_into_home!(into_account_id)
     with_primary do
       @into_account = Account.find(into_account_id)
@@ -34,6 +36,7 @@ class MergeWorker
     redis.del("account:#{into_account_id}:regeneration")
   end
 
+  # @rbs (Integer) -> void
   def merge_into_list!(into_list_id)
     with_primary do
       @into_list = List.find(into_list_id)

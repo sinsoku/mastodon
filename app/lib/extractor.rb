@@ -7,6 +7,7 @@ module Extractor
 
   module_function
 
+  # @rbs (String, ?Hash[untyped, untyped]) -> Array[untyped]
   def extract_entities_with_indices(text, options = {}, &block)
     entities = extract_urls_with_indices(text, options) +
                extract_hashtags_with_indices(text, check_url_overlap: false) +
@@ -20,6 +21,7 @@ module Extractor
     entities
   end
 
+  # @rbs (String) -> (void | Array[untyped])
   def extract_mentions_or_lists_with_indices(text)
     return [] unless text && Twitter::TwitterText::Regex[:at_signs].match?(text)
 
@@ -53,6 +55,7 @@ module Extractor
     possible_entries
   end
 
+  # @rbs (String?, ?Hash[untyped, untyped]) -> Array[untyped]
   def extract_hashtags_with_indices(text, _options = {})
     return [] unless text&.index('#')
 
@@ -86,6 +89,7 @@ module Extractor
     possible_entries
   end
 
+  # @rbs (String) -> void
   def extract_extra_uris_with_indices(text)
     return [] unless text&.index(':')
 

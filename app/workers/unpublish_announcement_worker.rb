@@ -4,6 +4,7 @@ class UnpublishAnnouncementWorker
   include Sidekiq::Worker
   include Redisable
 
+  # @rbs (nil) -> void
   def perform(announcement_id)
     payload = Oj.dump(event: :'announcement.delete', payload: announcement_id.to_s)
 

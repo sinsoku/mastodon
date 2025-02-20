@@ -15,6 +15,7 @@ class Conversation < ApplicationRecord
 
   has_many :statuses, dependent: nil
 
+  # @rbs () -> void
   def local?
     uri.nil?
   end

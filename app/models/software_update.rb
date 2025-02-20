@@ -18,29 +18,35 @@ class SoftwareUpdate < ApplicationRecord
 
   enum :type, { patch: 0, minor: 1, major: 2 }, suffix: :type
 
+  # @rbs () -> (Gem::Version | void)
   def gem_version
     Gem::Version.new(version)
   end
 
+  # @rbs () -> (void | bool)
   def outdated?
     runtime_version >= gem_version
   end
 
+  # @rbs () -> bool
   def pending?
     gem_version > runtime_version
   end
 
   class << self
+    # @rbs () -> (void | bool)
     def check_enabled?
       Rails.configuration.x.mastodon.software_update_url.present?
     end
 
+    # @rbs () -> Array[untyped]
     def pending_to_a
       return [] unless check_enabled?
 
       all.to_a.filter(&:pending?)
     end
 
+    # @rbs () -> void
     def urgent_pending?
       pending_to_a.any?(&:urgent?)
     end
@@ -48,6 +54,7 @@ class SoftwareUpdate < ApplicationRecord
 
   private
 
+  # @rbs () -> (void | Gem::Version)
   def runtime_version
     Mastodon::Version.gem_version
   end

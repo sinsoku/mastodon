@@ -23,11 +23,13 @@ class AccountDomainBlock < ApplicationRecord
 
   private
 
+  # @rbs () -> bool
   def invalidate_domain_blocking_cache
     Rails.cache.delete("exclude_domains_for:#{account_id}")
     Rails.cache.delete(['exclude_domains', account_id, domain])
   end
 
+  # @rbs () -> bool
   def invalidate_follow_recommendations_cache
     Rails.cache.delete("follow_recommendations/#{account_id}")
   end

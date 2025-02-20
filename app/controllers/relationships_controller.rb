@@ -10,10 +10,12 @@ class RelationshipsController < ApplicationController
 
   helper_method :following_relationship?, :followed_by_relationship?, :mutual_relationship?
 
+  # @rbs () -> Form::AccountBatch
   def show
     @form = Form::AccountBatch.new
   end
 
+  # @rbs () -> nil
   def update
     @form = Form::AccountBatch.new(form_account_batch_params.merge(current_account: current_account, action: action_from_button))
     @form.save
@@ -27,34 +29,42 @@ class RelationshipsController < ApplicationController
 
   private
 
+  # @rbs () -> ActiveRecord::AssociationRelation
   def set_accounts
     @accounts = RelationshipFilter.new(current_account, filter_params).results.page(params[:page]).per(40)
   end
 
+  # @rbs () -> AccountRelationshipsPresenter
   def set_relationships
     @relationships = AccountRelationshipsPresenter.new(@accounts, current_user.account_id)
   end
 
+  # @rbs () -> ActionController::Parameters?
   def form_account_batch_params
     params.require(:form_account_batch).permit(:action, account_ids: [])
   end
 
+  # @rbs () -> bool
   def following_relationship?
     params[:relationship].blank? || params[:relationship] == 'following'
   end
 
+  # @rbs () -> bool
   def mutual_relationship?
     params[:relationship] == 'mutual'
   end
 
+  # @rbs () -> bool
   def followed_by_relationship?
     params[:relationship] == 'followed_by'
   end
 
+  # @rbs () -> void
   def filter_params
     params.slice(:page, *RelationshipFilter::KEYS).permit(:page, *RelationshipFilter::KEYS)
   end
 
+  # @rbs () -> void
   def action_from_button
     if params[:follow]
       'follow'
@@ -67,6 +77,7 @@ class RelationshipsController < ApplicationController
     end
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def set_cache_headers
     response.cache_control.replace(private: true, no_store: true)
   end

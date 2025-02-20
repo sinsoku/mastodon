@@ -3,6 +3,7 @@
 class AuthorizeFollowWorker
   include Sidekiq::Worker
 
+  # @rbs (Integer, Integer) -> void
   def perform(source_account_id, target_account_id)
     source_account = Account.find(source_account_id)
     target_account = Account.find(target_account_id)

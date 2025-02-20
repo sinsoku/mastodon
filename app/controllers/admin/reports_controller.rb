@@ -4,11 +4,13 @@ module Admin
   class ReportsController < BaseController
     before_action :set_report, except: [:index]
 
+    # @rbs () -> ActiveRecord::Relation
     def index
       authorize :report, :index?
       @reports = filtered_reports.page(params[:page])
     end
 
+    # @rbs () -> ActiveRecord::Relation
     def show
       authorize @report, :show?
 
@@ -19,6 +21,7 @@ module Admin
       @statuses     = @report.statuses.with_includes
     end
 
+    # @rbs () -> String
     def assign_to_self
       authorize @report, :update?
       @report.update!(assigned_account_id: current_account.id)
@@ -26,6 +29,7 @@ module Admin
       redirect_to admin_report_path(@report)
     end
 
+    # @rbs () -> String
     def unassign
       authorize @report, :update?
       @report.update!(assigned_account_id: nil)
@@ -33,6 +37,7 @@ module Admin
       redirect_to admin_report_path(@report)
     end
 
+    # @rbs () -> String
     def reopen
       authorize @report, :update?
       @report.unresolve!
@@ -40,6 +45,7 @@ module Admin
       redirect_to admin_report_path(@report)
     end
 
+    # @rbs () -> String
     def resolve
       authorize @report, :update?
       @report.resolve!(current_account)
@@ -49,14 +55,17 @@ module Admin
 
     private
 
+    # @rbs () -> ActiveRecord::Relation
     def filtered_reports
       ReportFilter.new(filter_params).results.order(id: :desc).includes(:account, :target_account)
     end
 
+    # @rbs () -> void
     def filter_params
       params.slice(*ReportFilter::KEYS).permit(*ReportFilter::KEYS)
     end
 
+    # @rbs () -> Report
     def set_report
       @report = Report.find(params[:id])
     end

@@ -7,6 +7,7 @@ module Paperclip
     # This is the H.264 "High" value taken from https://www.dr-lex.be/info-stuff/videocalc.html
     BITS_PER_PIXEL = 0.11
 
+    # @rbs (Paperclip::UploadedFileAdapter | Paperclip::FileAdapter, ?Hash[untyped, untyped], ?Paperclip::Attachment) -> void
     def initialize(file, options = {}, attachment = nil)
       super
 
@@ -19,6 +20,7 @@ module Paperclip
       @vfr_threshold       = options[:vfr_frame_rate_threshold]
     end
 
+    # @rbs () -> void
     def make
       metadata = VideoMetadataExtractor.new(@file.path)
 
@@ -74,6 +76,7 @@ module Paperclip
 
     private
 
+    # @rbs (Paperclip::Tempfile) -> Array[untyped]
     def prepare_command(destination)
       command_arguments  = ['-nostdin']
       interpolations     = {}
@@ -102,6 +105,7 @@ module Paperclip
       [command_arguments, interpolations]
     end
 
+    # @rbs (VideoMetadataExtractor) -> void
     def update_options_from_metadata(metadata)
       return unless eligible_to_passthrough?(metadata)
 
@@ -110,14 +114,17 @@ module Paperclip
       @convert_options = @passthrough_options[:options][:convert_options].dup
     end
 
+    # @rbs (VideoMetadataExtractor) -> void
     def high_vfr?(metadata)
       @vfr_threshold && metadata.r_frame_rate && metadata.r_frame_rate > @vfr_threshold
     end
 
+    # @rbs (VideoMetadataExtractor) -> void
     def eligible_to_passthrough?(metadata)
       @passthrough_options && @passthrough_options[:video_codecs].include?(metadata.video_codec) && @passthrough_options[:audio_codecs].include?(metadata.audio_codec) && @passthrough_options[:colorspaces].include?(metadata.colorspace)
     end
 
+    # @rbs (VideoMetadataExtractor) -> void
     def update_attachment_type(metadata)
       @attachment.instance.type = MediaAttachment.types[:gifv] unless metadata.audio_codec
     end

@@ -6,6 +6,7 @@ class PollValidator < ActiveModel::Validator
   MAX_EXPIRATION   = 1.month.freeze
   MIN_EXPIRATION   = 5.minutes.freeze
 
+  # @rbs (Poll | RSpec::Mocks::InstanceVerifyingDouble) -> nil
   def validate(poll)
     current_time = Time.now.utc
 

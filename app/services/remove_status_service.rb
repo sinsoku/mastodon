@@ -13,6 +13,7 @@ class RemoveStatusService < BaseService
   # @option  [Boolean] :preserve
   # @option  [Boolean] :original_removed
   # @option  [Boolean] :skip_streaming
+  # @rbs (Status, **nil | bool) -> void
   def call(status, **options)
     @payload  = Oj.dump(event: :delete, payload: status.id.to_s)
     @status   = status
@@ -56,22 +57,26 @@ class RemoveStatusService < BaseService
   # The following FeedManager calls all do not result in redis publishes for
   # streaming, as the `:update` option is false
 
+  # @rbs () -> void
   def remove_from_self
     FeedManager.instance.unpush_from_home(@account, @status)
   end
 
+  # @rbs () -> void
   def remove_from_followers
     @account.followers_for_local_distribution.includes(:user).reorder(nil).find_each do |follower|
       FeedManager.instance.unpush_from_home(follower, @status)
     end
   end
 
+  # @rbs () -> void
   def remove_from_lists
     @account.lists_for_local_distribution.select(:id, :account_id).includes(account: :user).reorder(nil).find_each do |list|
       FeedManager.instance.unpush_from_list(list, @status)
     end
   end
 
+  # @rbs () -> void
   def remove_from_mentions
     # For limited visibility statuses, the mentions that determine
     # who receives them in their home feed are a subset of followers
@@ -86,6 +91,7 @@ class RemoveStatusService < BaseService
     end
   end
 
+  # @rbs () -> void
   def remove_from_remote_reach
     # Followers, relays, people who got mentioned in the status,
     # or who reblogged it from someone else might not follow
@@ -99,10 +105,12 @@ class RemoveStatusService < BaseService
     end
   end
 
+  # @rbs () -> void
   def signed_activity_json
     @signed_activity_json ||= Oj.dump(serialize_payload(@status, @status.reblog? ? ActivityPub::UndoAnnounceSerializer : ActivityPub::DeleteSerializer, signer: @account, always_sign: true))
   end
 
+  # @rbs () -> void
   def remove_reblogs
     # We delete reblogs of the status before the original status,
     # because once original status is gone, reblogs will disappear
@@ -113,6 +121,7 @@ class RemoveStatusService < BaseService
     end
   end
 
+  # @rbs () -> void
   def remove_from_hashtags
     @account.featured_tags.where(tag_id: @status.tags.map(&:id)).find_each do |featured_tag|
       featured_tag.decrement(@status)
@@ -128,6 +137,7 @@ class RemoveStatusService < BaseService
     end
   end
 
+  # @rbs () -> void
   def remove_from_public
     return unless @status.public_visibility?
 
@@ -137,6 +147,7 @@ class RemoveStatusService < BaseService
     redis.publish(@status.local? ? 'timeline:public:local' : 'timeline:public:remote', @payload)
   end
 
+  # @rbs () -> void
   def remove_from_media
     return unless @status.public_visibility?
 
@@ -146,16 +157,19 @@ class RemoveStatusService < BaseService
     redis.publish(@status.local? ? 'timeline:public:local:media' : 'timeline:public:remote:media', @payload)
   end
 
+  # @rbs () -> void
   def remove_media
     return if @options[:redraft] || !permanently?
 
     @status.media_attachments.destroy_all
   end
 
+  # @rbs () -> (void | bool)
   def permanently?
     @options[:immediate] || !(@options[:preserve] || @status.reported?)
   end
 
+  # @rbs () -> void
   def skip_streaming?
     !!@options[:skip_streaming]
   end

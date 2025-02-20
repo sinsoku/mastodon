@@ -10,10 +10,12 @@ module Settings
       before_action :require_challenge!
       before_action :ensure_otp_secret
 
+      # @rbs () -> RQRCode::QRCode
       def new
         prepare_two_factor_form
       end
 
+      # @rbs () -> ActiveSupport::SafeBuffer?
       def create
         if current_user.validate_and_consume_otp!(confirmation_params[:otp_attempt], otp_secret: session[:new_otp_secret])
           flash.now[:notice] = I18n.t('two_factor_authentication.enabled_success')
@@ -37,10 +39,12 @@ module Settings
 
       private
 
+      # @rbs () -> ActionController::Parameters?
       def confirmation_params
         params.require(:form_two_factor_confirmation).permit(:otp_attempt)
       end
 
+      # @rbs () -> void
       def prepare_two_factor_form
         @confirmation = Form::TwoFactorConfirmation.new
         @new_otp_secret = session[:new_otp_secret]
@@ -50,6 +54,7 @@ module Settings
         @qrcode = RQRCode::QRCode.new(@provision_url)
       end
 
+      # @rbs () -> String?
       def ensure_otp_secret
         redirect_to settings_otp_authentication_path if session[:new_otp_secret].blank?
       end

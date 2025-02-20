@@ -6,6 +6,7 @@ class AddToPublicStatusesIndexWorker
 
   sidekiq_options queue: 'pull'
 
+  # @rbs (Integer) -> void
   def perform(account_id)
     with_primary do
       @account = Account.find(account_id)

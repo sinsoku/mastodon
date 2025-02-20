@@ -8,12 +8,14 @@ module StatusesHelper
     direct: 'alternate_email',
   }.freeze
 
+  # @rbs (?String) -> (void | ActiveSupport::SafeBuffer)
   def nothing_here(extra_classes = '')
     tag.div(class: ['nothing-here', extra_classes]) do
       t('accounts.nothing_here')
     end
   end
 
+  # @rbs (Status) -> (void | String)
   def media_summary(status)
     attachments = { image: 0, video: 0, audio: 0 }
 
@@ -34,18 +36,21 @@ module StatusesHelper
     I18n.t('statuses.attached.description', attached: text)
   end
 
+  # @rbs (Status) -> (void | String)?
   def status_text_summary(status)
     return if status.spoiler_text.blank?
 
     I18n.t('statuses.content_warning', warning: status.spoiler_text)
   end
 
+  # @rbs (Status) -> void
   def poll_summary(status)
     return unless status.preloadable_poll
 
     status.preloadable_poll.options.map { |o| "[ ] #{o}" }.join("\n")
   end
 
+  # @rbs (Status) -> String
   def status_description(status)
     components = [[media_summary(status), status_text_summary(status)].compact_blank.join(' · ')]
 
@@ -57,10 +62,12 @@ module StatusesHelper
     components.compact_blank.join("\n\n")
   end
 
+  # @rbs (Status) -> (void | String)
   def visibility_icon(status)
     VISIBLITY_ICONS[status.visibility.to_sym]
   end
 
+  # @rbs () -> void
   def prefers_autoplay?
     ActiveModel::Type::Boolean.new.cast(params[:autoplay]) || current_user&.setting_auto_play_gif
   end

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class WebhookService < BaseService
+  # @rbs (String, Account | Status | Report) -> void
   def call(event, object)
     @event  = Webhooks::EventPresenter.new(event, object)
     @body   = serialize_event
@@ -12,10 +13,12 @@ class WebhookService < BaseService
 
   private
 
+  # @rbs () -> Array[untyped]
   def webhooks_for_event
     Webhook.enabled.where('? = ANY(events)', @event.type).pluck(:id)
   end
 
+  # @rbs () -> String
   def serialize_event
     Oj.dump(ActiveModelSerializers::SerializableResource.new(@event, serializer: REST::Admin::WebhookEventSerializer, scope: nil, scope_name: :current_user).as_json)
   end

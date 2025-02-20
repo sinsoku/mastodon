@@ -4,6 +4,7 @@ class LinkFeed < PublicFeed
   # @param [PreviewCard] preview_card
   # @param [Account] account
   # @param [Hash] options
+  # @rbs (PreviewCard, Account?, ?Hash[untyped, untyped]) -> void
   def initialize(preview_card, account, options = {})
     @preview_card = preview_card
     super(account, options)
@@ -14,6 +15,7 @@ class LinkFeed < PublicFeed
   # @param [Integer] since_id
   # @param [Integer] min_id
   # @return [Array<Status>]
+  # @rbs (Integer, ?nil, ?nil, ?nil) -> void
   def get(limit, max_id = nil, since_id = nil, min_id = nil)
     scope = public_scope
 
@@ -27,10 +29,12 @@ class LinkFeed < PublicFeed
 
   private
 
+  # @rbs () -> void
   def attached_to_preview_card
     Status.joins(:preview_cards_status).where(preview_cards_status: { preview_card_id: @preview_card.id })
   end
 
+  # @rbs () -> void
   def discoverable
     Account.discoverable
   end

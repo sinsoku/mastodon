@@ -69,30 +69,36 @@ class Tag < ApplicationRecord
 
   update_index('tags', :self)
 
+  # @rbs () -> (String | void)
   def to_param
     name
   end
 
+  # @rbs () -> String
   def display_name
     attributes['display_name'] || name
   end
 
+  # @rbs () -> void
   def formatted_name
     "##{display_name}"
   end
 
+  # @rbs () -> bool
   def usable
     boolean_with_default('usable', true)
   end
 
   alias usable? usable
 
+  # @rbs () -> bool
   def listable
     boolean_with_default('listable', true)
   end
 
   alias listable? listable
 
+  # @rbs () -> bool
   def trendable
     boolean_with_default('trendable', Setting.trendable_by_default)
   end
@@ -103,11 +109,13 @@ class Tag < ApplicationRecord
     max_score_at && max_score_at >= Trends.tags.options[:max_score_cooldown].ago && max_score_at < 1.day.ago
   end
 
+  # @rbs () -> Trends::History
   def history
     @history ||= Trends::History.new('tags', id)
   end
 
   class << self
+    # @rbs (String | Array[untyped]) -> Array[untyped]
     def find_or_create_by_names(name_or_names)
       names = Array(name_or_names).map { |str| [normalize(str), str] }.uniq(&:first)
 
@@ -121,6 +129,7 @@ class Tag < ApplicationRecord
       end
     end
 
+    # @rbs (String, ?Integer?, ?Integer?, ?Hash[untyped, untyped]) -> (ActiveRecord::Relation | void)
     def search_for(term, limit = 5, offset = 0, options = {})
       stripped_term = term.strip
       options.reverse_merge!({ exclude_unlistable: true, exclude_unreviewed: false })
@@ -134,14 +143,17 @@ class Tag < ApplicationRecord
            .offset(offset)
     end
 
+    # @rbs (String) -> (void | Tag)
     def find_normalized(name)
       matching_name(name).first
     end
 
+    # @rbs (String) -> Tag?
     def find_normalized!(name)
       find_normalized(name) || raise(ActiveRecord::RecordNotFound)
     end
 
+    # @rbs (Array[untyped] | String) -> ActiveRecord::Relation
     def matching_name(name_or_names)
       names = Array(name_or_names).map { |name| arel_table.lower(normalize(name)) }
 
@@ -152,6 +164,7 @@ class Tag < ApplicationRecord
       end
     end
 
+    # @rbs (String) -> void
     def normalize(str)
       HashtagNormalizer.new.normalize(str)
     end
@@ -159,10 +172,12 @@ class Tag < ApplicationRecord
 
   private
 
+  # @rbs () -> ActiveModel::Error
   def validate_name_change
     errors.add(:name, I18n.t('tags.does_not_match_previous_name')) unless name_was.mb_chars.casecmp(name.mb_chars).zero?
   end
 
+  # @rbs () -> ActiveModel::Error?
   def validate_display_name_change
     unless HashtagNormalizer.new.normalize(display_name).casecmp(name.mb_chars).zero?
       errors.add(:display_name,

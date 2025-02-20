@@ -7,17 +7,20 @@ module Admin
 
     LOGS_LIMIT = 5
 
+    # @rbs () -> Array[untyped]
     def index
       authorize :instance, :index?
       preload_delivery_failures!
     end
 
+    # @rbs () -> ActiveRecord::Relation
     def show
       authorize :instance, :show?
       @time_period = (6.days.ago.to_date...Time.now.utc.to_date)
       @action_logs = Admin::ActionLogFilter.new(target_domain: @instance.domain).results.limit(LOGS_LIMIT)
     end
 
+    # @rbs () -> String?
     def destroy
       authorize :instance, :destroy?
       Admin::DomainPurgeWorker.perform_async(@instance.domain)
@@ -25,12 +28,14 @@ module Admin
       redirect_to admin_instances_path, notice: I18n.t('admin.instances.destroyed_msg', domain: @instance.domain)
     end
 
+    # @rbs () -> String
     def clear_delivery_errors
       authorize :delivery, :clear_delivery_errors?
       @instance.delivery_failure_tracker.clear_failures!
       redirect_to admin_instance_path(@instance.domain)
     end
 
+    # @rbs () -> String
     def restart_delivery
       authorize :delivery, :restart_delivery?
 
@@ -42,6 +47,7 @@ module Admin
       redirect_to admin_instance_path(@instance.domain)
     end
 
+    # @rbs () -> String
     def stop_delivery
       authorize :delivery, :stop_delivery?
       unavailable_domain = UnavailableDomain.create!(domain: @instance.domain)
@@ -51,14 +57,17 @@ module Admin
 
     private
 
+    # @rbs () -> Instance
     def set_instance
       @instance = Instance.find_or_initialize_by(domain: TagManager.instance.normalize_domain(params[:id]&.strip))
     end
 
+    # @rbs () -> ActiveRecord::Relation
     def set_instances
       @instances = filtered_instances.page(params[:page])
     end
 
+    # @rbs () -> void
     def preload_delivery_failures!
       warning_domains_map = DeliveryFailureTracker.warning_domains_map(@instances.map(&:domain))
 
@@ -67,10 +76,12 @@ module Admin
       end
     end
 
+    # @rbs () -> ActiveRecord::Relation
     def filtered_instances
       InstanceFilter.new(limited_federation_mode? ? { allowed: true } : filter_params).results
     end
 
+    # @rbs () -> void
     def filter_params
       params.slice(*InstanceFilter::KEYS).permit(*InstanceFilter::KEYS)
     end

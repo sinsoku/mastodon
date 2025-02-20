@@ -6,6 +6,7 @@ class DomainValidator < ActiveModel::EachValidator
   MAX_LABEL_LENGTH = 63
   ALLOWED_CHARACTERS_RE = /^[a-z0-9-]+$/i
 
+  # @rbs (AccountDomainBlock | DomainBlock | DomainAllow | PreviewCardProvider | untyped | EmailDomainBlock | AccountMigration | AccountAlias | Form::Redirect | Account | RemoteFollow, Symbol, String?) -> void
   def validate_each(record, attribute, value)
     return if value.blank?
 
@@ -20,6 +21,7 @@ class DomainValidator < ActiveModel::EachValidator
 
   private
 
+  # @rbs (String) -> void
   def compliant?(value)
     uri = Addressable::URI.new
     uri.host = value

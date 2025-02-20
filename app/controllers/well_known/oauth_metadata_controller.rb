@@ -8,6 +8,7 @@ module WellKnown
     # and thus re-issuing session cookies
     serialization_scope nil
 
+    # @rbs () -> bool
     def show
       # Due to this document potentially changing between Mastodon versions (as
       # new OAuth scopes are added), we don't use expires_in to cache upstream,

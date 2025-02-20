@@ -238,6 +238,7 @@ module LanguagesHelper
   }.freeze
 
   # Helper for self.sorted_locale_keys
+                       # @rbs (Symbol | String) -> void
   private_class_method def self.locale_name_for_sorting(locale)
     if (supported_locale = SUPPORTED_LOCALES[locale.to_sym])
       ASCIIFolding.new.fold(supported_locale[1]).downcase
@@ -249,10 +250,12 @@ module LanguagesHelper
   end
 
   # Sort locales by native name for dropdown menus
+  # @rbs (Array[untyped]) -> void
   def self.sorted_locale_keys(locale_keys)
     locale_keys.sort_by { |key, _| locale_name_for_sorting(key) }
   end
 
+  # @rbs ((Symbol | String)?) -> (String | void)
   def native_locale_name(locale)
     if locale.blank? || locale == 'und'
       I18n.t('generic.none')
@@ -265,6 +268,7 @@ module LanguagesHelper
     end
   end
 
+  # @rbs ((String | Symbol)?) -> (String | void)
   def standard_locale_name(locale)
     if locale.blank?
       I18n.t('generic.none')
@@ -275,6 +279,7 @@ module LanguagesHelper
     end
   end
 
+  # @rbs ((Symbol | String)?) -> (Symbol | String)?
   def valid_locale_or_nil(str)
     return if str.blank?
     return str if valid_locale?(str)
@@ -286,6 +291,7 @@ module LanguagesHelper
     code
   end
 
+  # @rbs (*Symbol? | (String | Symbol)?) -> void
   def valid_locale_cascade(*arr)
     arr.each do |str|
       locale = valid_locale_or_nil(str)
@@ -295,10 +301,12 @@ module LanguagesHelper
     nil
   end
 
+  # @rbs ((Symbol | String)?) -> (void | bool)
   def valid_locale?(locale)
     locale.present? && SUPPORTED_LOCALES.key?(locale.to_sym)
   end
 
+  # @rbs (nil) -> void
   def available_locale_or_nil(locale_name)
     locale_name.to_sym if locale_name.present? && I18n.available_locales.include?(locale_name.to_sym)
   end

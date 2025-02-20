@@ -1,14 +1,17 @@
 # frozen_string_literal: true
 
 module SettingsHelper
+  # @rbs () -> Array[untyped]
   def filterable_languages
     LanguagesHelper.sorted_locale_keys(LanguagesHelper::SUPPORTED_LOCALES.keys)
   end
 
+  # @rbs () -> Array[untyped]
   def ui_languages
     LanguagesHelper.sorted_locale_keys(I18n.available_locales)
   end
 
+  # @rbs (ActiveRecord::Relation) -> (bool | ActiveSupport::SafeBuffer)
   def featured_tags_hint(recently_used_tags)
     recently_used_tags.present? &&
       safe_join(
@@ -23,6 +26,7 @@ module SettingsHelper
       )
   end
 
+  # @rbs (SessionActivation) -> String
   def session_device_icon(session)
     device = session.detection.device
 
@@ -35,6 +39,7 @@ module SettingsHelper
     end
   end
 
+  # @rbs (Account) -> void
   def compact_account_link_to(account)
     return if account.nil?
 
@@ -45,10 +50,12 @@ module SettingsHelper
 
   private
 
+  # @rbs (ActiveRecord::Relation) -> void
   def links_for_featured_tags(tags)
     tags.map { |tag| post_link_to_featured_tag(tag) }
   end
 
+  # @rbs (Tag) -> void
   def post_link_to_featured_tag(tag)
     link_to(
       "##{tag.display_name}",

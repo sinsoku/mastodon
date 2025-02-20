@@ -11,10 +11,12 @@ class ApplicationMailer < ActionMailer::Base
 
   protected
 
+  # @rbs (Account) -> void
   def locale_for_account(account, &block)
     I18n.with_locale(account.user_locale || I18n.default_locale, &block)
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def set_autoreply_headers!
     headers(
       'Auto-Submitted' => 'auto-generated',

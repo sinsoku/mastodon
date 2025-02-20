@@ -3,6 +3,7 @@
 require_relative 'connection_pool/shared_connection_pool'
 
 class RequestPool
+  # @rbs () -> void
   def self.current
     @current ||= RequestPool.new
   end
@@ -10,11 +11,13 @@ class RequestPool
   class Reaper
     attr_reader :pool, :frequency
 
+    # @rbs (RequestPool, Integer | Float) -> void
     def initialize(pool, frequency)
       @pool      = pool
       @frequency = frequency
     end
 
+    # @rbs () -> void
     def run
       return unless frequency&.positive?
 
@@ -35,6 +38,7 @@ class RequestPool
   class Connection
     attr_reader :site, :last_used_at, :created_at, :in_use, :dead, :fresh
 
+    # @rbs (String) -> void
     def initialize(site)
       @site         = site
       @http_client  = http_client
@@ -44,6 +48,7 @@ class RequestPool
       @fresh        = true
     end
 
+    # @rbs () -> void
     def use
       @last_used_at = current_time
       @in_use       = true
@@ -78,31 +83,37 @@ class RequestPool
       @in_use = false
     end
 
+    # @rbs () -> Float
     def seconds_idle
       current_time - (@last_used_at || @created_at)
     end
 
+    # @rbs () -> void
     def close
       @http_client.close
     end
 
     private
 
+    # @rbs () -> HTTP::Client
     def http_client
       Request.http_client.persistent(@site, timeout: MAX_IDLE_TIME)
     end
 
+    # @rbs () -> Float
     def current_time
       Process.clock_gettime(Process::CLOCK_MONOTONIC)
     end
   end
 
+  # @rbs () -> void
   def initialize
     @pool   = ConnectionPool::SharedConnectionPool.new(size: MAX_POOL_SIZE, timeout: WAIT_TIMEOUT) { |site| Connection.new(site) }
     @reaper = Reaper.new(self, REAPER_FREQUENCY)
     @reaper.run
   end
 
+  # @rbs (String) -> void
   def with(site, &block)
     @pool.with(site) do |connection|
       ActiveSupport::Notifications.instrument('with.request_pool', miss: connection.fresh, host: connection.site) do

@@ -22,6 +22,7 @@ class CustomFilterStatus < ApplicationRecord
 
   private
 
+  # @rbs () -> nil
   def validate_status_access
     errors.add(:status_id, :invalid) unless StatusPolicy.new(custom_filter.account, status).show?
   end

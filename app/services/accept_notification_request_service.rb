@@ -3,6 +3,7 @@
 class AcceptNotificationRequestService < BaseService
   include Redisable
 
+  # @rbs (NotificationRequest) -> void
   def call(request)
     NotificationPermission.create!(account: request.account, from_account: request.from_account)
     increment_worker_count!(request)
@@ -12,6 +13,7 @@ class AcceptNotificationRequestService < BaseService
 
   private
 
+  # @rbs (NotificationRequest) -> void
   def increment_worker_count!(request)
     with_redis do |redis|
       redis.incr("notification_unfilter_jobs:#{request.account_id}")

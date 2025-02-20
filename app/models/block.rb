@@ -21,6 +21,7 @@ class Block < ApplicationRecord
 
   validates :account_id, uniqueness: { scope: :target_account_id }
 
+  # @rbs () -> bool
   def local?
     false # Force uri_for to use uri attribute
   end
@@ -31,15 +32,18 @@ class Block < ApplicationRecord
 
   private
 
+  # @rbs () -> bool
   def invalidate_blocking_cache
     Rails.cache.delete("exclude_account_ids_for:#{account_id}")
     Rails.cache.delete("exclude_account_ids_for:#{target_account_id}")
   end
 
+  # @rbs () -> bool
   def invalidate_follow_recommendations_cache
     Rails.cache.delete("follow_recommendations/#{account_id}")
   end
 
+  # @rbs () -> URI::HTTPS?
   def set_uri
     self.uri = ActivityPub::TagManager.instance.generate_uri_for(self) if uri.nil?
   end

@@ -5,6 +5,7 @@ class StatusLengthValidator < ActiveModel::Validator
   URL_PLACEHOLDER_CHARS = 23
   URL_PLACEHOLDER = 'x' * 23
 
+  # @rbs (Status | RSpec::Mocks::InstanceVerifyingDouble) -> nil
   def validate(status)
     return unless status.local? && !status.reblog?
 
@@ -13,18 +14,22 @@ class StatusLengthValidator < ActiveModel::Validator
 
   private
 
+  # @rbs (Status | RSpec::Mocks::InstanceVerifyingDouble) -> void
   def too_long?(status)
     countable_length(combined_text(status)) > MAX_CHARS
   end
 
+  # @rbs (String) -> Integer
   def countable_length(str)
     str.mb_chars.grapheme_length
   end
 
+  # @rbs (Status | RSpec::Mocks::InstanceVerifyingDouble) -> void
   def combined_text(status)
     [status.spoiler_text, countable_text(status.text)].join
   end
 
+  # @rbs (String?) -> void
   def countable_text(str)
     return '' if str.blank?
 
@@ -43,6 +48,7 @@ class StatusLengthValidator < ActiveModel::Validator
     end
   end
 
+  # @rbs (String, Array[untyped]) -> void
   def rewrite_entities(str, entities)
     entities.sort_by! { |entity| entity[:indices].first }
     result = +''

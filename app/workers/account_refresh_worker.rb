@@ -5,6 +5,7 @@ class AccountRefreshWorker
 
   sidekiq_options queue: 'pull', retry: 3, dead: false, lock: :until_executed, lock_ttl: 1.day.to_i
 
+  # @rbs (Integer) -> void
   def perform(account_id)
     account = Account.find_by(id: account_id)
     return if account.nil? || account.last_webfingered_at > Account::BACKGROUND_REFRESH_INTERVAL.ago

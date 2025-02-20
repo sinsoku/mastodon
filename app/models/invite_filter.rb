@@ -8,10 +8,12 @@ class InviteFilter
 
   attr_reader :params
 
+  # @rbs (ActionController::Parameters) -> void
   def initialize(params)
     @params = params
   end
 
+  # @rbs () -> void
   def results
     scope = Invite.order(created_at: :desc)
 

@@ -5,6 +5,7 @@ module SignatureAuthentication
 
   include SignatureVerification
 
+  # @rbs () -> (void | Account)?
   def current_account
     super || signed_request_account
   end

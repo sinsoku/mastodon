@@ -41,14 +41,17 @@ class AccountWarning < ApplicationRecord
   scope :custom, -> { where.not(text: '') }
   scope :recent, -> { where(created_at: RECENT_PERIOD.ago..) }
 
+  # @rbs () -> ActiveRecord::Relation
   def statuses
     Status.with_discarded.where(id: status_ids || [])
   end
 
+  # @rbs () -> (void | bool)
   def overruled?
     overruled_at.present?
   end
 
+  # @rbs () -> void
   def to_log_human_identifier
     target_account.acct
   end

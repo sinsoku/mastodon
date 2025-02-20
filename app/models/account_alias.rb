@@ -32,6 +32,7 @@ class AccountAlias < ApplicationRecord
 
   private
 
+  # @rbs () -> String?
   def set_uri
     target_account = ResolveAccountService.new.call(acct)
     self.uri       = ActivityPub::TagManager.instance.uri_for(target_account) unless target_account.nil?
@@ -39,14 +40,17 @@ class AccountAlias < ApplicationRecord
     # Validation will take care of it
   end
 
+  # @rbs () -> bool
   def add_to_account
     account.update(also_known_as: account.also_known_as + [uri])
   end
 
+  # @rbs () -> bool
   def remove_from_account
     account.update(also_known_as: account.also_known_as.reject { |x| x == uri })
   end
 
+  # @rbs () -> ActiveModel::Error?
   def validate_target_account
     if uri.blank?
       errors.add(:acct, I18n.t('migrations.errors.not_found'))

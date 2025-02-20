@@ -6,6 +6,7 @@ class ThreadResolveWorker
 
   sidekiq_options queue: 'pull', retry: 3
 
+  # @rbs (Integer, String, ?Hash[untyped, untyped]) -> void
   def perform(child_status_id, parent_url, options = {})
     child_status = Status.find(child_status_id)
     return if child_status.in_reply_to_id.present?

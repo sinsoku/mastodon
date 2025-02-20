@@ -5,6 +5,7 @@ class FastIpMap
   MAX_IPV6_PREFIX = 128
 
   # @param [Enumerable<IPAddr>] addresses
+  # @rbs (Array[untyped]) -> void
   def initialize(addresses)
     @fast_lookup = {}
     @ranges      = []
@@ -26,6 +27,7 @@ class FastIpMap
 
   # @param [IPAddr] address
   # @return [Boolean]
+  # @rbs (String | IPAddr) -> void
   def include?(address)
     @fast_lookup[address.to_s] || @ranges.any? { |cidr| cidr.include?(address) }
   end

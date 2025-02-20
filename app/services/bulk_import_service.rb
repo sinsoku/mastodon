@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class BulkImportService < BaseService
+  # @rbs (BulkImport) -> void
   def call(import)
     @import  = import
     @account = @import.account
@@ -29,11 +30,13 @@ class BulkImportService < BaseService
 
   private
 
+  # @rbs () -> Hash[untyped, untyped]
   def extract_rows_by_acct
     local_domain_suffix = "@#{Rails.configuration.x.local_domain}"
     @import.rows.to_a.index_by { |row| row.data['acct'].delete_suffix(local_domain_suffix) }
   end
 
+  # @rbs () -> void
   def import_follows!
     rows_by_acct = extract_rows_by_acct
 
@@ -63,6 +66,7 @@ class BulkImportService < BaseService
     end
   end
 
+  # @rbs () -> void
   def import_blocks!
     rows_by_acct = extract_rows_by_acct
 
@@ -89,6 +93,7 @@ class BulkImportService < BaseService
     end
   end
 
+  # @rbs () -> void
   def import_mutes!
     rows_by_acct = extract_rows_by_acct
 
@@ -115,6 +120,7 @@ class BulkImportService < BaseService
     end
   end
 
+  # @rbs () -> void
   def import_domain_blocks!
     domains = @import.rows.map { |row| row.data['domain'] }
 
@@ -135,6 +141,7 @@ class BulkImportService < BaseService
     end
   end
 
+  # @rbs () -> void
   def import_bookmarks!
     rows_by_uri = @import.rows.index_by { |row| row.data['uri'] }
 

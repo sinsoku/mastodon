@@ -6,6 +6,7 @@ class VoteService < BaseService
   include Redisable
   include Lockable
 
+  # @rbs (Account, Poll, Array[untyped]) -> void
   def call(account, poll, choices)
     return if choices.empty?
 
@@ -42,18 +43,21 @@ class VoteService < BaseService
 
   private
 
+  # @rbs () -> void
   def distribute_poll!
     return if @poll.hide_totals?
 
     ActivityPub::DistributePollUpdateWorker.perform_in(3.minutes, @poll.status.id)
   end
 
+  # @rbs () -> void
   def queue_final_poll_check!
     return unless @poll.expires?
 
     PollExpirationNotifyWorker.perform_at(@poll.expires_at + 5.minutes, @poll.id)
   end
 
+  # @rbs () -> void
   def deliver_votes!
     @votes.each do |vote|
       ActivityPub::DeliveryWorker.perform_async(
@@ -64,10 +68,12 @@ class VoteService < BaseService
     end
   end
 
+  # @rbs (PollVote) -> void
   def build_json(vote)
     Oj.dump(serialize_payload(vote, ActivityPub::VoteSerializer))
   end
 
+  # @rbs () -> void
   def increment_voters_count!
     unless @poll.voters_count.nil?
       @poll.voters_count = @poll.voters_count + 1

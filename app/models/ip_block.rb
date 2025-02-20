@@ -31,17 +31,20 @@ class IpBlock < ApplicationRecord
 
   after_commit :reset_cache
 
+  # @rbs () -> (void | String)
   def to_log_human_identifier
     "#{ip}/#{ip.prefix}"
   end
 
   class << self
+    # @rbs (String) -> void
     def blocked?(remote_ip)
       blocked_ips_map.include?(remote_ip)
     end
 
     private
 
+    # @rbs () -> FastIpMap
     def blocked_ips_map
       Rails.cache.fetch(CACHE_KEY) { FastIpMap.new(severity_no_access.pluck(:ip)) }
     end
@@ -49,6 +52,7 @@ class IpBlock < ApplicationRecord
 
   private
 
+  # @rbs () -> bool?
   def reset_cache
     Rails.cache.delete(CACHE_KEY)
   end

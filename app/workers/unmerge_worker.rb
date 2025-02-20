@@ -6,6 +6,7 @@ class UnmergeWorker
 
   sidekiq_options queue: 'pull'
 
+  # @rbs (Integer, Integer, ?String) -> void
   def perform(from_account_id, into_id, type = 'home')
     with_primary do
       @from_account = Account.find(from_account_id)
@@ -23,6 +24,7 @@ class UnmergeWorker
 
   private
 
+  # @rbs (Integer) -> void
   def unmerge_from_home!(into_account_id)
     with_primary do
       @into_account = Account.find(into_account_id)

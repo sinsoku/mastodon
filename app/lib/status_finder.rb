@@ -3,10 +3,12 @@
 class StatusFinder
   attr_reader :url
 
+  # @rbs (String) -> void
   def initialize(url)
     @url = url
   end
 
+  # @rbs () -> (void | Status)
   def status
     verify_action!
 
@@ -22,10 +24,12 @@ class StatusFinder
 
   private
 
+  # @rbs () -> Hash[untyped, untyped]
   def recognized_params
     Rails.application.routes.recognize_path(url)
   end
 
+  # @rbs () -> void
   def verify_action!
     raise ActiveRecord::RecordNotFound unless recognized_params[:action] == 'show'
   end

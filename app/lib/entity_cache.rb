@@ -7,14 +7,17 @@ class EntityCache
 
   MAX_EXPIRATION = 7.days.freeze
 
+  # @rbs (String) -> void
   def status(url)
     Rails.cache.fetch(to_key(:status, url), expires_in: MAX_EXPIRATION) { FetchRemoteStatusService.new.call(url) }
   end
 
+  # @rbs (String, nil) -> nil
   def mention(username, domain)
     Rails.cache.fetch(to_key(:mention, username, domain), expires_in: MAX_EXPIRATION) { Account.select(:id, :username, :domain, :url).find_remote(username, domain) }
   end
 
+  # @rbs (Array[untyped], String?) -> void
   def emoji(shortcodes, domain)
     shortcodes = Array(shortcodes)
     return [] if shortcodes.empty?
@@ -34,6 +37,7 @@ class EntityCache
     shortcodes.filter_map { |shortcode| cached[to_key(:emoji, shortcode, domain)] || uncached[shortcode] }
   end
 
+  # @rbs (Symbol, *String? | String) -> void
   def to_key(type, *ids)
     "#{type}:#{ids.compact.map(&:downcase).join(':')}"
   end

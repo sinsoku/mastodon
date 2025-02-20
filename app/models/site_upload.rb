@@ -66,12 +66,14 @@ class SiteUpload < ApplicationRecord
   before_save :set_meta
   after_commit :clear_cache
 
+  # @rbs () -> void
   def cache_key
     "site_uploads/#{var}"
   end
 
   private
 
+  # @rbs () -> Hash[untyped, untyped]
   def set_meta
     tempfile = file.queued_for_write[:original]
 
@@ -81,6 +83,7 @@ class SiteUpload < ApplicationRecord
     self.meta = { width: width, height: height }
   end
 
+  # @rbs () -> bool
   def clear_cache
     Rails.cache.delete(cache_key)
   end

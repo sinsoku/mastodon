@@ -108,10 +108,12 @@ class Notification < ApplicationRecord
 
   scope :without_suspended, -> { joins(:from_account).merge(Account.without_suspended) }
 
+  # @rbs () -> (Symbol | void)
   def type
     @type ||= (super || LEGACY_TYPE_CLASS_MAP[activity_type]).to_sym
   end
 
+  # @rbs () -> Status?
   def target_status
     case type
     when :status, :update
@@ -128,6 +130,7 @@ class Notification < ApplicationRecord
   end
 
   class << self
+    # @rbs (?types: Array[untyped], ?exclude_types: Array[untyped], ?from_account_id: nil | String, ?include_filtered: nil | bool) -> ActiveRecord::AssociationRelation
     def browserable(types: [], exclude_types: [], from_account_id: nil, include_filtered: false)
       requested_types = if types.empty?
                           TYPES
@@ -144,6 +147,7 @@ class Notification < ApplicationRecord
       end
     end
 
+    # @rbs (Array[untyped]) -> void
     def preload_cache_collection_target_statuses(notifications, &_block)
       notifications.group_by(&:type).each do |type, grouped_notifications|
         associations = TARGET_STATUS_INCLUDES_BY_TYPE[type]
@@ -188,6 +192,7 @@ class Notification < ApplicationRecord
 
   private
 
+  # @rbs () -> Integer?
   def set_from_account
     return unless new_record?
 
@@ -206,6 +211,7 @@ class Notification < ApplicationRecord
     end
   end
 
+  # @rbs () -> nil
   def remove_from_notification_request
     notification_request = NotificationRequest.find_by(account_id: account_id, from_account_id: from_account_id)
     notification_request&.reconsider_existence!

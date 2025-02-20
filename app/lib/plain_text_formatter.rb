@@ -7,11 +7,13 @@ class PlainTextFormatter
 
   alias local? local
 
+  # @rbs (String, bool) -> void
   def initialize(text, local)
     @text  = text
     @local = local
   end
 
+  # @rbs () -> void
   def to_s
     if local?
       text
@@ -25,6 +27,7 @@ class PlainTextFormatter
 
   private
 
+  # @rbs () -> void
   def insert_newlines
     text.gsub(NEWLINE_TAGS_RE) { |match| "#{match}\n" }
   end

@@ -17,6 +17,7 @@ class TagsController < ApplicationController
 
   skip_before_action :require_functional!, unless: :limited_federation_mode?
 
+  # @rbs () -> (Time | String)?
   def show
     respond_to do |format|
       format.html do
@@ -36,22 +37,27 @@ class TagsController < ApplicationController
 
   private
 
+  # @rbs () -> Tag?
   def set_tag
     @tag = Tag.usable.find_normalized!(params[:id])
   end
 
+  # @rbs () -> nil
   def set_local
     @local = truthy_param?(:local)
   end
 
+  # @rbs () -> Array[untyped]
   def set_statuses
     @statuses = preload_collection(TagFeed.new(@tag, nil, local: @local).get(limit_param), Status)
   end
 
+  # @rbs () -> void
   def limit_param
     params[:limit].present? ? [params[:limit].to_i, PAGE_SIZE_MAX].min : PAGE_SIZE
   end
 
+  # @rbs () -> void
   def collection_presenter
     ActivityPub::CollectionPresenter.new(
       id: tag_url(@tag),

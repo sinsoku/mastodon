@@ -27,6 +27,7 @@ module PrivateAddressCheck
     IPAddr.new('ff00::/8'),        # Multicast
   ].freeze
 
+  # @rbs (IPAddr) -> void
   def private_address?(address)
     address.private? || address.loopback? || address.link_local? || CIDR_LIST.any? { |cidr| cidr.include?(address) }
   end

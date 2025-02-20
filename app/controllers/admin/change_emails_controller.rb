@@ -5,10 +5,12 @@ module Admin
     before_action :set_account
     before_action :require_local_account!
 
+    # @rbs () -> User
     def show
       authorize @user, :change_email?
     end
 
+    # @rbs () -> String
     def update
       authorize @user, :change_email?
 
@@ -31,15 +33,18 @@ module Admin
 
     private
 
+    # @rbs () -> User
     def set_account
       @account = Account.find(params[:account_id])
       @user = @account.user
     end
 
+    # @rbs () -> nil
     def require_local_account!
       redirect_to admin_account_path(@account.id) unless @account.local? && @account.user.present?
     end
 
+    # @rbs () -> ActionController::Parameters
     def resource_params
       params.require(:user).permit(
         :unconfirmed_email

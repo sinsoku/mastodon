@@ -27,10 +27,12 @@ module ContextHelper
     attribution_domains: { 'toot' => 'http://joinmastodon.org/ns#', 'attributionDomains' => { '@id' => 'toot:attributionDomains', '@type' => '@id' } },
   }.freeze
 
+  # @rbs () -> void
   def full_context
     serialized_context(NAMED_CONTEXT_MAP, CONTEXT_EXTENSION_MAP)
   end
 
+  # @rbs (Hash[untyped, untyped], Hash[untyped, untyped]) -> void
   def serialized_context(named_contexts_map, context_extensions_map)
     named_contexts     = named_contexts_map.keys
     context_extensions = context_extensions_map.keys

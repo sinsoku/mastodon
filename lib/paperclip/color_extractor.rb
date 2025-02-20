@@ -9,6 +9,7 @@ module Paperclip
     FREQUENCY_THRESHOLD = 0.01
     BINS = 10
 
+    # @rbs () -> void
     def make
       background_palette, foreground_palette = Rails.configuration.x.use_vips ? palettes_from_libvips : palettes_from_imagemagick
 
@@ -93,6 +94,7 @@ module Paperclip
       [background_palette, foreground_palette]
     end
 
+    # @rbs () -> void
     def palettes_from_imagemagick
       depth = 8
 
@@ -135,6 +137,7 @@ module Paperclip
       ColorDiff::Color::RGB.new(r, g, b)
     end
 
+    # @rbs (ColorDiff::Color::RGB, ColorDiff::Color::RGB) -> Float
     def w3c_contrast(color1, color2)
       luminance1 = (color1.to_xyz.y * 0.01) + 0.05
       luminance2 = (color2.to_xyz.y * 0.01) + 0.05
@@ -146,6 +149,7 @@ module Paperclip
       end
     end
 
+    # @rbs (Integer, Integer, Integer) -> Array[untyped]
     def rgb_to_hsl(r, g, b)
       r /= 255.0
       g /= 255.0
@@ -178,6 +182,7 @@ module Paperclip
       [(h * 360).round, (s * 100).round, (l * 100).round]
     end
 
+    # @rbs (Float, Float, Float) -> Float
     def hue_to_rgb(p, q, t)
       t += 1 if t.negative?
       t -= 1 if t > 1
@@ -189,6 +194,7 @@ module Paperclip
       p
     end
 
+    # @rbs (Integer, Integer, Integer) -> void
     def hsl_to_rgb(h, s, l)
       h /= 360.0
       s /= 100.0
@@ -214,6 +220,7 @@ module Paperclip
     end
     # rubocop:enable Naming/MethodParameterName
 
+    # @rbs (ColorDiff::Color::RGB, Integer) -> void
     def lighten_or_darken(color, by)
       hue, saturation, light = rgb_to_hsl(color.r, color.g, color.b)
 
@@ -226,6 +233,7 @@ module Paperclip
       ColorDiff::Color::RGB.new(*hsl_to_rgb(hue, saturation, light))
     end
 
+    # @rbs (String, Integer) -> Array[untyped]
     def palette_from_im_histogram(result, quantity)
       frequencies       = result.scan(/([0-9]+):/).flatten.map(&:to_f)
       hex_values        = result.scan(/\#([0-9A-Fa-f]{6,8})/).flatten
@@ -238,6 +246,7 @@ module Paperclip
                  .slice(0, quantity)
     end
 
+    # @rbs (ColorDiff::Color::RGB) -> void
     def rgb_to_hex(rgb)
       format('#%02x%02x%02x', rgb.r, rgb.g, rgb.b)
     end

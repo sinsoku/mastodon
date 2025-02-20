@@ -20,10 +20,12 @@ module WebAppControllerConcern
     end
   end
 
+  # @rbs () -> bool
   def skip_csrf_meta_tags?
     !(ENV['ONE_CLICK_SSO_LOGIN'] == 'true' && ENV['OMNIAUTH_ONLY'] == 'true' && Devise.omniauth_providers.length == 1) && current_user.nil?
   end
 
+  # @rbs () -> String?
   def redirect_unauthenticated_to_permalinks!
     return if user_signed_in? && current_account.moved_to_account_id.nil?
 
@@ -45,6 +47,7 @@ module WebAppControllerConcern
 
   protected
 
+  # @rbs () -> String
   def set_referer_header
     response.set_header('Referrer-Policy', Setting.allow_referrer_origin ? 'origin' : 'same-origin')
   end

@@ -4,6 +4,7 @@ module Admin
   class AccountModerationNotesController < BaseController
     before_action :set_account_moderation_note, only: [:destroy]
 
+    # @rbs () -> (ActiveSupport::SafeBuffer | String)
     def create
       authorize AccountModerationNote, :create?
 
@@ -20,6 +21,7 @@ module Admin
       end
     end
 
+    # @rbs () -> String
     def destroy
       authorize @account_moderation_note, :destroy?
       @account_moderation_note.destroy!
@@ -28,6 +30,7 @@ module Admin
 
     private
 
+    # @rbs () -> void
     def resource_params
       params.require(:account_moderation_note).permit(
         :content,
@@ -35,6 +38,7 @@ module Admin
       )
     end
 
+    # @rbs () -> AccountModerationNote
     def set_account_moderation_note
       @account_moderation_note = AccountModerationNote.find(params[:id])
     end

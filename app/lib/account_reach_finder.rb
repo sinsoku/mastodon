@@ -5,24 +5,29 @@ class AccountReachFinder
   STATUS_LIMIT = 200
   STATUS_SINCE = 2.days
 
+  # @rbs (Account) -> void
   def initialize(account)
     @account = account
   end
 
+  # @rbs () -> (void | Array[untyped])
   def inboxes
     (followers_inboxes + reporters_inboxes + recently_mentioned_inboxes + relay_inboxes).uniq
   end
 
   private
 
+  # @rbs () -> Array[untyped]
   def followers_inboxes
     @account.followers.inboxes
   end
 
+  # @rbs () -> void
   def reporters_inboxes
     Account.where(id: @account.targeted_reports.select(:account_id)).inboxes
   end
 
+  # @rbs () -> void
   def recently_mentioned_inboxes
     Account
       .joins(:mentions)
@@ -31,15 +36,18 @@ class AccountReachFinder
       .take(RECENT_LIMIT)
   end
 
+  # @rbs () -> void
   def relay_inboxes
     Relay.enabled.pluck(:inbox_url)
   end
 
+  # @rbs () -> void
   def oldest_status_id
     Mastodon::Snowflake
       .id_at(STATUS_SINCE.ago, with_random: false)
   end
 
+  # @rbs () -> void
   def recent_statuses
     @account
       .statuses

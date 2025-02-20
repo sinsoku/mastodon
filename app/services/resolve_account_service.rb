@@ -14,6 +14,7 @@ class ResolveAccountService < BaseService
   # @option options [Boolean] :skip_cache Get the latest data from origin even if cache is not due to update yet
   # @option options [Boolean] :suppress_errors When failing, return nil instead of raising an error
   # @return [Account]
+  # @rbs (String?, ?Hash[untyped, untyped]) -> (void | Account)?
   def call(uri, options = {})
     return if uri.blank?
 
@@ -59,6 +60,7 @@ class ResolveAccountService < BaseService
 
   private
 
+  # @rbs (String, Hash[untyped, untyped]) -> void
   def process_options!(uri, options)
     @options = { suppress_errors: true }.merge(options)
 
@@ -79,6 +81,7 @@ class ResolveAccountService < BaseService
     @uri = [@username, @domain].compact.join('@')
   end
 
+  # @rbs (String) -> void
   def process_webfinger!(uri)
     @webfinger = Webfinger.new("acct:#{uri}").perform
     confirmed_username, confirmed_domain = split_acct(@webfinger.subject)
@@ -98,12 +101,14 @@ class ResolveAccountService < BaseService
     @gone = true
   end
 
+  # @rbs (String) -> Array[untyped]
   def split_acct(acct)
     acct.delete_prefix('acct:').split('@').tap do |parts|
       raise Webfinger::Error, 'Webfinger response is missing user or host value' unless parts.size == 2
     end
   end
 
+  # @rbs () -> void
   def fetch_account!
     with_redis_lock("resolve:#{@username}@#{@domain}") do
       @account = ActivityPub::FetchRemoteAccountService.new.call(actor_url, suppress_errors: @options[:suppress_errors])
@@ -112,6 +117,7 @@ class ResolveAccountService < BaseService
     @account
   end
 
+  # @rbs () -> bool
   def webfinger_update_due?
     return false if @options[:check_delivery_availability] && !DeliveryFailureTracker.available?(@domain)
     return false if @options[:skip_webfinger]
@@ -119,18 +125,22 @@ class ResolveAccountService < BaseService
     @options[:skip_cache] || @account.nil? || @account.possibly_stale?
   end
 
+  # @rbs () -> void
   def actor_url
     @actor_url ||= @webfinger.self_link_href
   end
 
+  # @rbs () -> void
   def gone_from_origin?
     @gone
   end
 
+  # @rbs () -> void
   def not_yet_deleted?
     @account.present? && !@account.local?
   end
 
+  # @rbs () -> void
   def queue_deletion!
     @account.suspend!(origin: :remote)
     AccountDeletionWorker.perform_async(@account.id, { 'reserve_username' => false, 'skip_activitypub' => true })

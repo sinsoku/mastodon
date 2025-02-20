@@ -13,6 +13,7 @@ class SearchQueryTransformer < Parslet::Transform
   ).freeze
 
   class Query
+    # @rbs (Array[untyped], ?Hash[untyped, untyped]) -> void
     def initialize(clauses, options = {})
       raise ArgumentError if options[:current_account].nil?
 
@@ -34,22 +35,27 @@ class SearchQueryTransformer < Parslet::Transform
 
     private
 
+    # @rbs () -> Hash[untyped, untyped]
     def clauses_by_operator
       @clauses_by_operator ||= @clauses.compact.chunk(&:operator).to_h
     end
 
+    # @rbs () -> void
     def flags_from_clauses!
       @flags = clauses_by_operator.fetch(:flag, []).to_h { |clause| [clause.prefix, clause.term] }
     end
 
+    # @rbs () -> Array[untyped]
     def must_clauses
       clauses_by_operator.fetch(:must, [])
     end
 
+    # @rbs () -> Array[untyped]
     def must_not_clauses
       clauses_by_operator.fetch(:must_not, [])
     end
 
+    # @rbs () -> Array[untyped]
     def filter_clauses
       clauses_by_operator.fetch(:filter, [])
     end
@@ -100,6 +106,7 @@ class SearchQueryTransformer < Parslet::Transform
 
   class Operator
     class << self
+      # @rbs (String?) -> Symbol
       def symbol(str)
         case str
         when '+', nil
@@ -116,6 +123,7 @@ class SearchQueryTransformer < Parslet::Transform
   class TermClause
     attr_reader :operator, :term
 
+    # @rbs (String?, String) -> void
     def initialize(operator, term)
       @operator = Operator.symbol(operator)
       @term = term
@@ -133,6 +141,7 @@ class SearchQueryTransformer < Parslet::Transform
   class PhraseClause
     attr_reader :operator, :phrase
 
+    # @rbs (nil, String) -> void
     def initialize(operator, phrase)
       @operator = Operator.symbol(operator)
       @phrase = phrase
@@ -148,6 +157,7 @@ class SearchQueryTransformer < Parslet::Transform
 
     attr_reader :operator, :prefix, :term
 
+    # @rbs (String, nil, String, ?Hash[untyped, untyped]) -> void
     def initialize(prefix, operator, term, options = {})
       @prefix = prefix
       @negated = operator == '-'
@@ -225,6 +235,7 @@ class SearchQueryTransformer < Parslet::Transform
       term
     end
 
+    # @rbs (String) -> void
     def date_from_term(term)
       DateTime.iso8601(term) unless term.match?(EPOCH_RE) # This will raise Date::Error if the date is invalid
       term

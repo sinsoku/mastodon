@@ -33,26 +33,31 @@ class SessionActivation < ApplicationRecord
   scope :latest, -> { order(id: :desc) }
 
   class << self
+    # @rbs (String?) -> bool?
     def active?(id)
       id && exists?(session_id: id)
     end
 
+    # @rbs (**untyped) -> SessionActivation?
     def activate(**)
       activation = create!(**)
       purge_old
       activation
     end
 
+    # @rbs (String?) -> void
     def deactivate(id)
       return unless id
 
       where(session_id: id).destroy_all
     end
 
+    # @rbs () -> void
     def purge_old
       latest.offset(Rails.configuration.x.max_session_activations).destroy_all
     end
 
+    # @rbs (String) -> (void | Array[untyped])
     def exclusive(id)
       where.not(session_id: id).destroy_all
     end
@@ -60,10 +65,12 @@ class SessionActivation < ApplicationRecord
 
   private
 
+  # @rbs () -> Doorkeeper::AccessToken
   def assign_access_token
     self.access_token = Doorkeeper::AccessToken.create!(access_token_attributes)
   end
 
+  # @rbs () -> void
   def access_token_attributes
     {
       application_id: Doorkeeper::Application.find_by(superapp: true)&.id,

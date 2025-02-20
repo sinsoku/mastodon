@@ -32,6 +32,7 @@ class Antispam
     end
   end
 
+  # @rbs (Status) -> void
   def local_preflight_check!(status)
     return unless spammy_texts.any? { |spammy_text| status.text.include?(spammy_text) }
     return unless suspicious_reply_or_mention?(status)
@@ -44,6 +45,7 @@ class Antispam
 
   private
 
+  # @rbs () -> Array[untyped]
   def spammy_texts
     redis.smembers('antispam:spammy_texts')
   end

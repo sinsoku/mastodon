@@ -3,6 +3,7 @@
 class LocalNotificationWorker
   include Sidekiq::Worker
 
+  # @rbs (Integer, ?Integer, ?String, ?String) -> void
   def perform(receiver_account_id, activity_id = nil, activity_class_name = nil, type = nil)
     if activity_id.nil? && activity_class_name.nil?
       activity = Mention.find(receiver_account_id)

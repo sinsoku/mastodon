@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module MediaComponentHelper
+  # @rbs (Status, **untyped) -> void
   def render_video_component(status, **)
     video = status.ordered_media_attachments.first
 
@@ -25,6 +26,7 @@ module MediaComponentHelper
     end
   end
 
+  # @rbs (Status, **untyped) -> void
   def render_audio_component(status, **)
     audio = status.ordered_media_attachments.first
 
@@ -45,6 +47,7 @@ module MediaComponentHelper
     end
   end
 
+  # @rbs (Status, **untyped) -> void
   def render_media_gallery_component(status, **)
     component_params = {
       sensitive: sensitive_viewer?(status, current_account),
@@ -59,6 +62,7 @@ module MediaComponentHelper
 
   private
 
+  # @rbs (MediaAttachment) -> ActiveModelSerializers::SerializableResource
   def serialize_media_attachment(attachment)
     ActiveModelSerializers::SerializableResource.new(
       attachment,
@@ -66,6 +70,7 @@ module MediaComponentHelper
     )
   end
 
+  # @rbs (Status, Account) -> void
   def sensitive_viewer?(status, account)
     if !account.nil? && account.id == status.account_id
       status.sensitive

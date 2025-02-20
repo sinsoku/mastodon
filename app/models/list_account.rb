@@ -24,11 +24,13 @@ class ListAccount < ApplicationRecord
 
   private
 
+  # @rbs () -> FollowRequest?
   def set_follow
     self.follow = Follow.find_by(account_id: list.account_id, target_account_id: account.id)
     self.follow_request = FollowRequest.find_by(account_id: list.account_id, target_account_id: account.id) if follow.nil?
   end
 
+  # @rbs () -> nil
   def validate_relationship
     return if list_owner_account_is_account?
 
@@ -37,6 +39,7 @@ class ListAccount < ApplicationRecord
     errors.add(:follow_request, :invalid) if follow_request_id.present? && follow_request.target_account_id != account_id
   end
 
+  # @rbs () -> bool
   def list_owner_account_is_account?
     list.account_id == account_id
   end

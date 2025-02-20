@@ -3,6 +3,7 @@
 require 'resolv'
 
 class EmailMxValidator < ActiveModel::Validator
+  # @rbs (User | RSpec::Mocks::InstanceVerifyingDouble) -> void?
   def validate(user)
     return if user.email.blank?
 
@@ -23,6 +24,7 @@ class EmailMxValidator < ActiveModel::Validator
 
   private
 
+  # @rbs (String) -> String?
   def get_domain(value)
     _, domain = value.split('@', 2)
 
@@ -33,12 +35,14 @@ class EmailMxValidator < ActiveModel::Validator
     nil
   end
 
+  # @rbs (String) -> bool
   def on_allowlist?(domain)
     return false if Rails.configuration.x.email_domains_allowlist.blank?
 
     Rails.configuration.x.email_domains_allowlist.include?(domain)
   end
 
+  # @rbs (String) -> Array[untyped]
   def resolve_mx(domain)
     records = []
     ips     = []
@@ -58,6 +62,7 @@ class EmailMxValidator < ActiveModel::Validator
     [ips, records]
   end
 
+  # @rbs (Array[untyped], IPAddr | String) -> void
   def email_domain_blocked?(domains, attempt_ip)
     EmailDomainBlock.block?(domains, attempt_ip: attempt_ip)
   end

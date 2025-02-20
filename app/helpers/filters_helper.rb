@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module FiltersHelper
+  # @rbs (Symbol) -> ActiveSupport::SafeBuffer
   def filter_action_label(action)
     safe_join(
       [

@@ -19,16 +19,19 @@ module ApplicationExtension
     before_destroy :close_streaming_sessions, prepend: true
   end
 
+  # @rbs () -> (void | String)
   def confirmation_redirect_uri
     redirect_uri.lines.first.strip
   end
 
+  # @rbs () -> Array[untyped]
   def redirect_uris
     # Doorkeeper stores the redirect_uri value as a newline delimeted list in
     # the database:
     redirect_uri.split
   end
 
+  # @rbs (?nil) -> nil
   def close_streaming_sessions(resource_owner = nil)
     # TODO: #28793 Combine into a single topic
     payload = Oj.dump(event: :kill)

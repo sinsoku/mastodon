@@ -4,6 +4,7 @@ module Admin
   class ResetsController < BaseController
     before_action :set_user
 
+    # @rbs () -> String
     def create
       authorize @user, :reset_password?
       @user.reset_password!

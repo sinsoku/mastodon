@@ -3,18 +3,22 @@
 module JsonLdHelper
   include ContextHelper
 
+  # @rbs ((String | Array[untyped])?, String) -> void
   def equals_or_includes?(haystack, needle)
     haystack.is_a?(Array) ? haystack.include?(needle) : haystack == needle
   end
 
+  # @rbs ((String | Array[untyped])?, Array[untyped]) -> void
   def equals_or_includes_any?(haystack, needles)
     needles.any? { |needle| equals_or_includes?(haystack, needle) }
   end
 
+  # @rbs ((String | Hash[untyped, untyped] | ActiveSupport::HashWithIndifferentAccess | Array[untyped])?) -> (void | Hash[untyped, untyped] | String | ActiveSupport::HashWithIndifferentAccess)?
   def first_of_value(value)
     value.is_a?(Array) ? value.first : value
   end
 
+  # @rbs (String) -> (String | void)
   def uri_from_bearcap(str)
     if str&.start_with?('bear:')
       Addressable::URI.parse(str).query_values['u']
@@ -25,6 +29,7 @@ module JsonLdHelper
 
   # The url attribute can be a string, an array of strings, or an array of objects.
   # The objects could include a mimeType. Not-included mimeType means it's text/html.
+  # @rbs (String | Array[untyped], ?String) -> (String | void)
   def url_to_href(value, preferred_type = nil)
     single_value = if value.is_a?(Array) && !value.first.is_a?(String)
                      value.find { |link| preferred_type.nil? || ((link['mimeType'].presence || 'text/html') == preferred_type) }
@@ -41,6 +46,7 @@ module JsonLdHelper
     end
   end
 
+  # @rbs ((String | ActiveSupport::HashWithIndifferentAccess | Array[untyped])?) -> (Array[untyped] | void)
   def as_array(value)
     if value.nil?
       []
@@ -51,18 +57,22 @@ module JsonLdHelper
     end
   end
 
+  # @rbs ((String | ActiveSupport::HashWithIndifferentAccess | Hash[untyped, untyped])?) -> (void | String)?
   def value_or_id(value)
     value.is_a?(String) || value.nil? ? value : value['id']
   end
 
+  # @rbs (Hash[untyped, untyped]?) -> (bool | void)
   def supported_context?(json)
     !json.nil? && equals_or_includes?(json['@context'], ActivityPub::TagManager::CONTEXT)
   end
 
+  # @rbs (String) -> void
   def unsupported_uri_scheme?(uri)
     uri.nil? || !uri.start_with?('http://', 'https://')
   end
 
+  # @rbs (String, String) -> void
   def non_matching_uri_hosts?(base_url, comparison_url)
     return true if unsupported_uri_scheme?(comparison_url)
 
@@ -72,11 +82,13 @@ module JsonLdHelper
     !haystack.casecmp(needle).zero?
   end
 
+  # @rbs (Hash[untyped, untyped] | ActiveSupport::HashWithIndifferentAccess) -> void
   def canonicalize(json)
     graph = RDF::Graph.new << JSON::LD::API.toRdf(json, documentLoader: method(:load_jsonld_context))
     graph.dump(:normalize)
   end
 
+  # @rbs (Hash[untyped, untyped]) -> Hash[untyped, untyped]
   def compact(json)
     compacted = JSON::LD::API.compact(json.without('signature'), full_context, documentLoader: method(:load_jsonld_context))
     compacted['signature'] = json['signature']
@@ -102,6 +114,7 @@ module JsonLdHelper
   # @param original [Hash] The original JSON-LD document used as reference
   # @param compacted [Hash] The compacted JSON-LD document to be patched
   # @return [void]
+  # @rbs (Hash[untyped, untyped], Hash[untyped, untyped]) -> void
   def patch_for_forwarding!(original, compacted)
     original.without('@context', 'signature').each do |key, value|
       next if value.nil? || !compacted.key?(key)
@@ -138,6 +151,7 @@ module JsonLdHelper
   # @param original [Hash] The original JSON-LD document used as reference
   # @param compacted [Hash] The compacted JSON-LD document to be patched
   # @return [Boolean] Whether the patched document is deemed safe
+  # @rbs (Hash[untyped, untyped], Hash[untyped, untyped]) -> void
   def safe_for_forwarding?(original, compacted)
     original.without('@context', 'signature').all? do |key, value|
       compacted_value = compacted[key]
@@ -155,6 +169,7 @@ module JsonLdHelper
     end
   end
 
+  # @rbs (String, bool, ?Account?, ?request_options: Hash[untyped, untyped]) -> (void | Hash[untyped, untyped])?
   def fetch_resource(uri, id_is_known, on_behalf_of = nil, request_options: {})
     unless id_is_known
       json = fetch_resource_without_id_validation(uri, on_behalf_of)
@@ -168,6 +183,7 @@ module JsonLdHelper
     json.present? && json['id'] == uri ? json : nil
   end
 
+  # @rbs (String, ?Account?, ?bool, ?request_options: Hash[untyped, untyped]) -> (Hash[untyped, untyped] | void)?
   def fetch_resource_without_id_validation(uri, on_behalf_of = nil, raise_on_temporary_error = false, request_options: {})
     on_behalf_of ||= Account.representative
 
@@ -178,6 +194,7 @@ module JsonLdHelper
     end
   end
 
+  # @rbs (HTTP::Response) -> void
   def valid_activitypub_content_type?(response)
     return true if response.mime_type == 'application/activity+json'
 
@@ -190,6 +207,7 @@ module JsonLdHelper
     end
   end
 
+  # @rbs (String | Hash[untyped, untyped], ?compare_id: nil | String) -> (void | Hash[untyped, untyped])?
   def body_to_json(body, compare_id: nil)
     json = body.is_a?(String) ? Oj.load(body, mode: :strict) : body
 
@@ -200,14 +218,17 @@ module JsonLdHelper
     nil
   end
 
+  # @rbs (HTTP::Response) -> void
   def response_successful?(response)
     (200...300).cover?(response.code)
   end
 
+  # @rbs (HTTP::Response) -> void
   def response_error_unsalvageable?(response)
     response.code == 501 || ((400...500).cover?(response.code) && ![401, 408, 429].include?(response.code))
   end
 
+  # @rbs (String, ?Account, ?options: Hash[untyped, untyped]) -> Request
   def build_request(uri, on_behalf_of = nil, options: {})
     Request.new(:get, uri, **options).tap do |request|
       request.on_behalf_of(on_behalf_of) if on_behalf_of

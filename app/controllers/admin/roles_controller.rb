@@ -4,22 +4,26 @@ module Admin
   class RolesController < BaseController
     before_action :set_role, except: [:index, :new, :create]
 
+    # @rbs () -> ActiveRecord::Relation?
     def index
       authorize :user_role, :index?
 
       @roles = UserRole.order(position: :desc).page(params[:page])
     end
 
+    # @rbs () -> UserRole?
     def new
       authorize :user_role, :create?
 
       @role = UserRole.new
     end
 
+    # @rbs () -> UserRole?
     def edit
       authorize @role, :update?
     end
 
+    # @rbs () -> (String | ActiveSupport::SafeBuffer)
     def create
       authorize :user_role, :create?
 
@@ -34,6 +38,7 @@ module Admin
       end
     end
 
+    # @rbs () -> (ActiveSupport::SafeBuffer | String)?
     def update
       authorize @role, :update?
 
@@ -47,6 +52,7 @@ module Admin
       end
     end
 
+    # @rbs () -> String?
     def destroy
       authorize @role, :destroy?
       @role.destroy!
@@ -56,10 +62,12 @@ module Admin
 
     private
 
+    # @rbs () -> UserRole
     def set_role
       @role = UserRole.find(params[:id])
     end
 
+    # @rbs () -> void
     def resource_params
       params.require(:user_role).permit(:name, :color, :highlighted, :position, permissions_as_keys: [])
     end

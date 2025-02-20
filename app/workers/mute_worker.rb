@@ -4,6 +4,7 @@ class MuteWorker
   include Sidekiq::Worker
   include DatabaseHelper
 
+  # @rbs (Integer, Integer) -> void
   def perform(account_id, target_account_id)
     with_primary do
       @account = Account.find(account_id)

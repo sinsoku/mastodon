@@ -48,16 +48,19 @@ class ApplicationController < ActionController::Base
 
   skip_before_action :verify_authenticity_token, only: :raise_not_found
 
+  # @rbs () -> void?
   def raise_not_found
     raise ActionController::RoutingError, "No route matches #{params[:unmatched_route]}"
   end
 
   private
 
+  # @rbs () -> void
   def public_fetch_mode?
     !authorized_fetch_mode?
   end
 
+  # @rbs () -> String?
   def store_referrer
     return if request.referer.blank?
 
@@ -69,6 +72,7 @@ class ApplicationController < ActionController::Base
     store_location_for(:user, stored_url)
   end
 
+  # @rbs () -> String?
   def require_functional!
     return if current_user.functional?
 
@@ -79,10 +83,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # @rbs () -> bool
   def skip_csrf_meta_tags?
     false
   end
 
+  # @rbs (Symbol) -> void
   def after_sign_out_path_for(_resource_or_scope)
     if ENV['OMNIAUTH_ONLY'] == 'true' && ENV['OIDC_ENABLED'] == 'true'
       '/auth/auth/openid_connect/logout'
@@ -93,22 +99,27 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  # @rbs (Symbol) -> (void | bool)?
   def truthy_param?(key)
     ActiveModel::Type::Boolean.new.cast(params[key])
   end
 
+  # @rbs () -> (void | ActiveSupport::SafeBuffer | String)
   def forbidden
     respond_with_error(403)
   end
 
+  # @rbs () -> (void | ActiveSupport::SafeBuffer | String)
   def not_found
     respond_with_error(404)
   end
 
+  # @rbs () -> void
   def gone
     respond_with_error(410)
   end
 
+  # @rbs () -> (String | void)
   def unprocessable_entity
     respond_with_error(422)
   end
@@ -117,6 +128,7 @@ class ApplicationController < ActionController::Base
     respond_with_error(406)
   end
 
+  # @rbs () -> (ActiveSupport::SafeBuffer | void)
   def bad_request
     respond_with_error(400)
   end
@@ -133,10 +145,12 @@ class ApplicationController < ActionController::Base
     respond_with_error(429)
   end
 
+  # @rbs () -> (bool | void)
   def single_user_mode?
     @single_user_mode ||= Rails.configuration.x.single_user_mode && Account.without_internal.exists?
   end
 
+  # @rbs () -> bool
   def use_seamless_external_login?
     Devise.pam_authentication || Devise.ldap_authentication
   end
@@ -145,24 +159,28 @@ class ApplicationController < ActionController::Base
     ENV.fetch('SSO_ACCOUNT_SETTINGS', nil)
   end
 
+  # @rbs () -> (void | Account)?
   def current_account
     return @current_account if defined?(@current_account)
 
     @current_account = current_user&.account
   end
 
+  # @rbs () -> SessionActivation?
   def current_session
     return @current_session if defined?(@current_session)
 
     @current_session = SessionActivation.find_by(session_id: cookies.signed['_session_id']) if cookies.signed['_session_id'].present?
   end
 
+  # @rbs () -> String
   def current_theme
     return Setting.theme unless Themes.instance.names.include? current_user&.setting_theme
 
     current_user.setting_theme
   end
 
+  # @rbs (Integer) -> void
   def respond_with_error(code)
     respond_to do |format|
       format.any  { render "errors/#{code}", layout: 'error', status: code, formats: [:html] }
@@ -170,6 +188,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # @rbs () -> (ActiveSupport::SafeBuffer | String)?
   def check_self_destruct!
     return unless self_destruct?
 
@@ -179,6 +198,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def set_cache_control_defaults
     response.cache_control.replace(private: true, no_store: true)
   end

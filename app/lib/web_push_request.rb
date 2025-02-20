@@ -16,28 +16,34 @@ class WebPushRequest
     to: :web_push_subscription
   )
 
+  # @rbs (Web::PushSubscription) -> void
   def initialize(web_push_subscription)
     @web_push_subscription = web_push_subscription
   end
 
+  # @rbs () -> void
   def audience
     @audience ||= Addressable::URI.parse(endpoint).normalized_site
   end
 
+  # @rbs () -> void
   def authorization_header
     [AUTH_HEADER, encoded_json_web_token].join(' ')
   end
 
+  # @rbs () -> String
   def crypto_key_header
     [SIGNATURE_ALGORITHM, vapid_key.public_key_for_push_header].join('=')
   end
 
+  # @rbs (String) -> Hash[untyped, untyped]
   def encrypt(payload)
     Webpush::Encryption.encrypt(payload, key_p256dh, key_auth)
   end
 
   private
 
+  # @rbs () -> void
   def encoded_json_web_token
     JWT.encode(
       web_token_payload,
@@ -47,6 +53,7 @@ class WebPushRequest
     )
   end
 
+  # @rbs () -> void
   def web_token_payload
     {
       aud: audience,
@@ -55,10 +62,12 @@ class WebPushRequest
     }
   end
 
+  # @rbs () -> void
   def payload_subject
     [:mailto, contact_email].join(':')
   end
 
+  # @rbs () -> Webpush::VapidKey
   def vapid_key
     @vapid_key ||= Webpush::VapidKey.from_keys(
       Rails.configuration.x.vapid_public_key,
@@ -66,6 +75,7 @@ class WebPushRequest
     )
   end
 
+  # @rbs () -> void
   def contact_email
     @contact_email ||= ::Setting.site_contact_email
   end

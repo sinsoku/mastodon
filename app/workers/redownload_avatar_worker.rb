@@ -7,6 +7,7 @@ class RedownloadAvatarWorker
 
   sidekiq_options queue: 'pull', retry: 7
 
+  # @rbs (Integer) -> (void | bool)?
   def perform(id)
     account = Account.find(id)
 

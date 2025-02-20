@@ -5,10 +5,12 @@ class InitialStatePresenter < ActiveModelSerializers::Model
              :current_account, :admin, :owner, :text, :visibility,
              :disabled_account, :moved_to_account, :critical_updates_pending
 
+  # @rbs () -> UserRole?
   def role
     current_account&.user_role
   end
 
+  # @rbs () -> bool
   def critical_updates_pending
     role&.can?(:view_devops) && SoftwareUpdate.urgent_pending?
   end

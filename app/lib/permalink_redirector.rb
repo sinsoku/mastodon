@@ -3,11 +3,13 @@
 class PermalinkRedirector
   include RoutingHelper
 
+  # @rbs (String) -> void
   def initialize(path)
     @path = path
     @object = nil
   end
 
+  # @rbs () -> (void | Status | Account)?
   def object
     @object ||= begin
       if at_username_status_request? || statuses_status_request?
@@ -25,6 +27,7 @@ class PermalinkRedirector
     end
   end
 
+  # @rbs () -> String?
   def redirect_path
     return ActivityPub::TagManager.instance.url_for(object) if object.present?
 
@@ -37,6 +40,7 @@ class PermalinkRedirector
     @path.delete_prefix('/deck') if @path.start_with?('/deck')
   end
 
+  # @rbs () -> void
   def redirect_confirmation_path
     case object.class.name
     when 'Account'
@@ -50,38 +54,47 @@ class PermalinkRedirector
 
   private
 
+  # @rbs () -> void
   def at_username_status_request?
     at_username_request? && record_integer_id_request?
   end
 
+  # @rbs () -> void
   def statuses_status_request?
     statuses_request? && record_integer_id_request?
   end
 
+  # @rbs () -> void
   def at_username_request?
     first_segment.present? && first_segment.start_with?('@')
   end
 
+  # @rbs () -> void
   def statuses_request?
     first_segment == 'statuses'
   end
 
+  # @rbs () -> void
   def accounts_request?
     first_segment == 'accounts'
   end
 
+  # @rbs () -> void
   def record_integer_id_request?
     second_segment =~ /\d/
   end
 
+  # @rbs () -> String?
   def first_segment
     path_segments.first
   end
 
+  # @rbs () -> String?
   def second_segment
     path_segments.second
   end
 
+  # @rbs () -> Array[untyped]
   def path_segments
     @path_segments ||= @path.split('?')[0].delete_prefix('/deck').delete_prefix('/').split('/')
   end

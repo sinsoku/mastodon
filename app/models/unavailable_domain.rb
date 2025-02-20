@@ -17,12 +17,14 @@ class UnavailableDomain < ApplicationRecord
 
   after_commit :reset_cache!
 
+  # @rbs () -> void
   def to_log_human_identifier
     domain
   end
 
   private
 
+  # @rbs () -> bool
   def reset_cache!
     Rails.cache.delete('unavailable_domains')
   end

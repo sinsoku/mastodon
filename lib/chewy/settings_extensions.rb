@@ -2,6 +2,7 @@
 
 module Chewy
   module SettingsExtensions
+    # @rbs () -> void
     def enabled?
       settings[:enabled]
     end

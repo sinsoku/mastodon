@@ -4,6 +4,7 @@ module Admin
   class WarningPresetsController < BaseController
     before_action :set_warning_preset, except: [:index, :create]
 
+    # @rbs () -> AccountWarningPreset
     def index
       authorize :account_warning_preset, :index?
 
@@ -11,10 +12,12 @@ module Admin
       @warning_preset  = AccountWarningPreset.new
     end
 
+    # @rbs () -> AccountWarningPreset
     def edit
       authorize @warning_preset, :update?
     end
 
+    # @rbs () -> (ActiveSupport::SafeBuffer | String)
     def create
       authorize :account_warning_preset, :create?
 
@@ -28,6 +31,7 @@ module Admin
       end
     end
 
+    # @rbs () -> (ActiveSupport::SafeBuffer | String)
     def update
       authorize @warning_preset, :update?
 
@@ -38,6 +42,7 @@ module Admin
       end
     end
 
+    # @rbs () -> String
     def destroy
       authorize @warning_preset, :destroy?
 
@@ -47,10 +52,12 @@ module Admin
 
     private
 
+    # @rbs () -> AccountWarningPreset
     def set_warning_preset
       @warning_preset = AccountWarningPreset.find(params[:id])
     end
 
+    # @rbs () -> void
     def warning_preset_params
       params.require(:account_warning_preset).permit(:title, :text)
     end

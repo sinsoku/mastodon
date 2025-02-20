@@ -5,10 +5,12 @@ class DomainResource
 
   RESOLVE_TIMEOUT = 5
 
+  # @rbs (String) -> void
   def initialize(domain)
     @domain = domain
   end
 
+  # @rbs () -> (void | Array[untyped])
   def mx
     Resolv::DNS.open do |dns|
       dns.timeouts = RESOLVE_TIMEOUT

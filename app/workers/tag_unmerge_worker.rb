@@ -6,6 +6,7 @@ class TagUnmergeWorker
 
   sidekiq_options queue: 'pull'
 
+  # @rbs (Integer, Integer) -> void
   def perform(from_tag_id, into_account_id)
     with_primary do
       @from_tag     = Tag.find(from_tag_id)

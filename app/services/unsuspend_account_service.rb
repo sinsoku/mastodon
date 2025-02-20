@@ -5,6 +5,7 @@ class UnsuspendAccountService < BaseService
 
   # Restores a recently-unsuspended account
   # @param [Account] account Account to restore
+  # @rbs (Account) -> void
   def call(account)
     @account = account
 
@@ -20,6 +21,7 @@ class UnsuspendAccountService < BaseService
 
   private
 
+  # @rbs () -> void
   def refresh_remote_account!
     return if @account.local?
 
@@ -36,6 +38,7 @@ class UnsuspendAccountService < BaseService
     # @account would now be nil.
   end
 
+  # @rbs () -> void
   def distribute_update_actor!
     return unless @account.local?
 
@@ -46,18 +49,21 @@ class UnsuspendAccountService < BaseService
     end
   end
 
+  # @rbs () -> void
   def merge_into_home_timelines!
     @account.followers_for_local_distribution.reorder(nil).find_each do |follower|
       FeedManager.instance.merge_into_home(@account, follower)
     end
   end
 
+  # @rbs () -> void
   def merge_into_list_timelines!
     @account.lists_for_local_distribution.reorder(nil).find_each do |list|
       FeedManager.instance.merge_into_list(@account, list)
     end
   end
 
+  # @rbs () -> void
   def publish_media_attachments!
     attachment_names = MediaAttachment.attachment_definitions.keys
 
@@ -97,6 +103,7 @@ class UnsuspendAccountService < BaseService
     end
   end
 
+  # @rbs () -> void
   def signed_activity_json
     @signed_activity_json ||= Oj.dump(serialize_payload(@account, ActivityPub::UpdateSerializer, signer: @account))
   end

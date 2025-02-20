@@ -5,6 +5,7 @@ class AccountRelationshipsPresenter
               :muting, :requested, :requested_by, :domain_blocking,
               :endorsed, :account_note
 
+  # @rbs (Array[untyped] | ActiveRecord::AssociationRelation | ActiveRecord::Relation, Integer, **nil | Hash[untyped, untyped]) -> void
   def initialize(accounts, current_account_id, **options)
     @accounts = accounts.to_a
     @account_ids        = @accounts.pluck(:id)
@@ -38,6 +39,7 @@ class AccountRelationshipsPresenter
 
   private
 
+  # @rbs () -> Hash[untyped, untyped]
   def domain_blocking_map
     target_domains = @accounts.pluck(:domain).compact.uniq
     blocks_by_domain = {}
@@ -63,6 +65,7 @@ class AccountRelationshipsPresenter
     @accounts.each_with_object({}) { |account, h| h[account.id] = blocks_by_domain[account.domain] }
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def cached
     return @cached if defined?(@cached)
 
@@ -89,6 +92,7 @@ class AccountRelationshipsPresenter
     @cached
   end
 
+  # @rbs () -> void
   def cache_uncached!
     to_cache = @uncached_account_ids.to_h do |account_id|
       maps_for_account = {
@@ -113,6 +117,7 @@ class AccountRelationshipsPresenter
     ['exclude_domains', @current_account_id, domain]
   end
 
+  # @rbs (Integer) -> void
   def relationship_cache_key(account_id)
     ['relationship', @current_account_id, account_id]
   end

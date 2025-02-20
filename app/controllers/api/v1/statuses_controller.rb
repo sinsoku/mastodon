@@ -30,6 +30,7 @@ class Api::V1::StatusesController < Api::BaseController
     render json: @statuses, each_serializer: REST::StatusSerializer
   end
 
+  # @rbs () -> (bool | Time)?
   def show
     cache_if_unauthenticated!
     @status = preload_collection([@status], Status).first
@@ -122,6 +123,7 @@ class Api::V1::StatusesController < Api::BaseController
     @statuses = Status.permitted_statuses_from_ids(status_ids, current_account)
   end
 
+  # @rbs () -> (String | ActiveSupport::SafeBuffer | Status)
   def set_status
     @status = Status.find(params[:id])
     authorize @status, :show?

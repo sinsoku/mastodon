@@ -13,6 +13,7 @@ class AdminMailer < ApplicationMailer
 
   default to: -> { @me.user_email }
 
+  # @rbs (Report) -> Mail::Message
   def new_report(report)
     @report = report
 
@@ -21,6 +22,7 @@ class AdminMailer < ApplicationMailer
     end
   end
 
+  # @rbs (Appeal) -> Mail::Message
   def new_appeal(appeal)
     @appeal = appeal
 
@@ -29,6 +31,7 @@ class AdminMailer < ApplicationMailer
     end
   end
 
+  # @rbs (User) -> Mail::Message
   def new_pending_account(user)
     @account = user.account
 
@@ -37,6 +40,7 @@ class AdminMailer < ApplicationMailer
     end
   end
 
+  # @rbs (Array[untyped], Array[untyped], Array[untyped]) -> Mail::Message
   def new_trends(links, tags, statuses)
     @links                  = links
     @tags                   = tags
@@ -47,6 +51,7 @@ class AdminMailer < ApplicationMailer
     end
   end
 
+  # @rbs () -> Mail::Message
   def new_software_updates
     @software_updates = SoftwareUpdate.all.to_a.sort_by(&:gem_version)
 
@@ -55,6 +60,7 @@ class AdminMailer < ApplicationMailer
     end
   end
 
+  # @rbs () -> Mail::Message
   def new_critical_software_updates
     @software_updates = SoftwareUpdate.where(urgent: true).to_a.sort_by(&:gem_version)
 
@@ -63,6 +69,7 @@ class AdminMailer < ApplicationMailer
     end
   end
 
+  # @rbs () -> Mail::Message
   def auto_close_registrations
     locale_for_account(@me) do
       mail subject: default_i18n_subject(instance: @instance)
@@ -71,14 +78,17 @@ class AdminMailer < ApplicationMailer
 
   private
 
+  # @rbs () -> Account
   def process_params
     @me = params[:recipient]
   end
 
+  # @rbs () -> String
   def set_instance
     @instance = Rails.configuration.x.local_domain
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def set_important_headers!
     headers(
       'Importance' => 'high',

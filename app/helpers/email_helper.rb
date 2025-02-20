@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
 module EmailHelper
+  # @rbs (Class | Module) -> (Class | Module)
   def self.included(base)
     base.extend(self)
   end
 
+  # @rbs (String) -> void
   def email_to_canonical_email(str)
     username, domain = str.downcase.split('@', 2)
     username, = username.delete('.').split('+', 2)
@@ -12,6 +14,7 @@ module EmailHelper
     "#{username}@#{domain}"
   end
 
+  # @rbs (String) -> (void | String)
   def email_to_canonical_email_hash(str)
     Digest::SHA2.new(256).hexdigest(email_to_canonical_email(str))
   end

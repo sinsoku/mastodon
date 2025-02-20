@@ -5,6 +5,7 @@
 module Stoplight
   module DataStore
     module RedisExtensions
+      # @rbs (Stoplight::Light, ?transaction: Redis::Namespace) -> void
       def query_failures(light, transaction: @redis)
         window_start = Time.now.to_i - light.window_size
 

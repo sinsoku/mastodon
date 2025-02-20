@@ -2,6 +2,7 @@
 
 module Chewy
   module IndexExtensions
+    # @rbs (?Hash[untyped, untyped]) -> void
     def index_preset(base_options = {})
       case ENV['ES_PRESET'].presence
       when 'single_node_cluster', nil

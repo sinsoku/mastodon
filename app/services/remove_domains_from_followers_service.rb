@@ -3,6 +3,7 @@
 class RemoveDomainsFromFollowersService < BaseService
   include Payloadable
 
+  # @rbs (Account, Array[untyped]) -> void
   def call(source_account, target_domains)
     source_account.passive_relationships.where(account_id: Account.where(domain: target_domains)).find_each do |follow|
       follow.destroy
