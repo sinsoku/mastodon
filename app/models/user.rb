@@ -143,6 +143,7 @@ class User < ApplicationRecord
   attr_reader :invite_code
   attr_writer :external, :bypass_invite_request_check, :current_account
 
+  # @rbs (*Symbol) -> User::ActiveRecord_Relation
   def self.those_who_can(*any_of_privileges)
     matching_role_ids = UserRole.that_can(*any_of_privileges).map(&:id)
 
@@ -153,10 +154,12 @@ class User < ApplicationRecord
     end
   end
 
+  # @rbs () -> bool
   def self.skip_mx_check?
     Rails.env.local?
   end
 
+  # @rbs () -> UserRole
   def role
     if role_id.nil?
       UserRole.everyone
@@ -165,38 +168,47 @@ class User < ApplicationRecord
     end
   end
 
+  # @rbs () -> bool
   def signed_in_recently?
     current_sign_in_at.present? && current_sign_in_at >= ACTIVE_DURATION.ago
   end
 
+  # @rbs () -> bool
   def confirmed?
     confirmed_at.present?
   end
 
+  # @rbs () -> bool
   def invited?
     invite_id.present?
   end
 
+  # @rbs () -> bool
   def valid_invitation?
     invite_id.present? && invite.valid_for_use?
   end
 
+  # @rbs () -> bool
   def disable!
     update!(disabled: true)
   end
 
+  # @rbs () -> bool
   def enable!
     update!(disabled: false)
   end
 
+  # @rbs () -> String
   def to_log_human_identifier
     account.acct
   end
 
+  # @rbs () -> Integer
   def to_log_route_param
     account_id
   end
 
+  # @rbs () -> String?
   def confirm
     wrap_email_confirmation do
       super
@@ -204,6 +216,7 @@ class User < ApplicationRecord
   end
 
   # Mark current email as confirmed, bypassing Devise
+  # @rbs () -> String?
   def mark_email_as_confirmed!
     wrap_email_confirmation do
       skip_confirmation!
@@ -211,6 +224,7 @@ class User < ApplicationRecord
     end
   end
 
+  # @rbs (?new_sign_in: bool) -> String?
   def update_sign_in!(new_sign_in: false)
     old_current = current_sign_in_at
     new_current = Time.now.utc
@@ -227,30 +241,37 @@ class User < ApplicationRecord
     prepare_returning_user!
   end
 
+  # @rbs () -> bool
   def pending?
     !approved?
   end
 
+  # @rbs () -> bool
   def active_for_authentication?
     !account.memorial?
   end
 
+  # @rbs () -> bool
   def functional?
     functional_or_moved? && account.moved_to_account_id.nil?
   end
 
+  # @rbs () -> bool
   def functional_or_moved?
     confirmed? && approved? && !disabled? && !account.unavailable? && !account.memorial?
   end
 
+  # @rbs () -> bool
   def unconfirmed?
     !confirmed?
   end
 
+  # @rbs () -> bool
   def unconfirmed_or_pending?
     unconfirmed? || pending?
   end
 
+  # @rbs () -> String?
   def approve!
     return if approved?
 
@@ -262,18 +283,22 @@ class User < ApplicationRecord
     prepare_new_user! if confirmed?
   end
 
+  # @rbs () -> bool
   def otp_enabled?
     otp_required_for_login
   end
 
+  # @rbs () -> bool
   def webauthn_enabled?
     webauthn_credentials.any?
   end
 
+  # @rbs () -> bool
   def two_factor_enabled?
     otp_required_for_login? || webauthn_credentials.any?
   end
 
+  # @rbs () -> void
   def disable_two_factor!
     self.otp_required_for_login = false
     self.otp_secret = nil
@@ -284,6 +309,7 @@ class User < ApplicationRecord
     save!
   end
 
+  # @rbs (Doorkeeper::Application?) -> Doorkeeper::AccessToken?
   def token_for_app(app)
     return nil if app.nil? || app.owner != self
 
@@ -294,6 +320,7 @@ class User < ApplicationRecord
     end
   end
 
+  # @rbs (ActionDispatch::Request) -> String
   def activate_session(request)
     session_activations.activate(
       session_id: SecureRandom.hex,
@@ -302,25 +329,30 @@ class User < ApplicationRecord
     ).session_id
   end
 
+  # @rbs (String) -> Array[untyped]
   def clear_other_sessions(id)
     session_activations.exclusive(id)
   end
 
+  # @rbs (SessionActivation) -> nil
   def web_push_subscription(session)
     session.web_push_subscription.nil? ? nil : session.web_push_subscription
   end
 
+  # @rbs (String?) -> String?
   def invite_code=(code)
     self.invite  = Invite.find_by(code: code) if code.present?
     @invite_code = code
   end
 
+  # @rbs () -> bool
   def password_required?
     return false if external?
 
     super
   end
 
+  # @rbs (String) -> bool
   def external_or_valid_password?(compare_password)
     # If encrypted_password is blank, we got the user from LDAP or PAM,
     # so credentials are already valid
@@ -328,18 +360,21 @@ class User < ApplicationRecord
     encrypted_password.blank? || valid_password?(compare_password)
   end
 
+  # @rbs () -> String
   def send_reset_password_instructions
     return false if encrypted_password.blank?
 
     super
   end
 
+  # @rbs (String, String) -> bool
   def reset_password(new_password, new_password_confirmation)
     return false if encrypted_password.blank?
 
     super
   end
 
+  # @rbs () -> nil
   def revoke_access!
     Doorkeeper::AccessGrant.by_resource_owner(self).update_all(revoked_at: Time.now.utc)
 
@@ -359,6 +394,7 @@ class User < ApplicationRecord
     end
   end
 
+  # @rbs () -> String
   def reset_password!
     # First, change password to something random and deactivate all sessions
     transaction do
@@ -375,6 +411,7 @@ class User < ApplicationRecord
 
   protected
 
+  # @rbs (Symbol, *String | Hash[untyped, untyped] | nil, **nil | String) -> (ActionMailer::MailDeliveryJob | Array[untyped])?
   def send_devise_notification(notification, *args, **kwargs)
     # This method can be called in `after_update` and `after_commit` hooks,
     # but we must make sure the mailer is actually called *after* commit,
@@ -394,6 +431,7 @@ class User < ApplicationRecord
 
   private
 
+  # @rbs () -> Array[untyped]
   def send_pending_devise_notifications
     pending_devise_notifications.each do |notification, args, kwargs|
       render_and_send_devise_message(notification, *args, **kwargs)
@@ -405,14 +443,17 @@ class User < ApplicationRecord
     pending_devise_notifications.clear
   end
 
+  # @rbs () -> Array[untyped]
   def pending_devise_notifications
     @pending_devise_notifications ||= []
   end
 
+  # @rbs (Symbol, *String | nil, **nil | String) -> ActionMailer::MailDeliveryJob?
   def render_and_send_devise_message(notification, *args, **kwargs)
     devise_mailer.send(notification, self, *args, **kwargs).deliver_later
   end
 
+  # @rbs () -> bool
   def set_approved
     self.approved = begin
       if sign_up_from_ip_requires_approval? || sign_up_email_requires_approval?
@@ -423,11 +464,13 @@ class User < ApplicationRecord
     end
   end
 
+  # @rbs () -> bool
   def grant_approval_on_confirmation?
     # Re-check approval on confirmation if the server has switched to open registrations
     open_registrations? && !sign_up_from_ip_requires_approval? && !sign_up_email_requires_approval?
   end
 
+  # @rbs () -> String?
   def wrap_email_confirmation
     new_user      = !confirmed?
     self.approved = true if grant_approval_on_confirmation?
@@ -447,10 +490,12 @@ class User < ApplicationRecord
     end
   end
 
+  # @rbs () -> bool
   def sign_up_from_ip_requires_approval?
     sign_up_ip.present? && IpBlock.severity_sign_up_requires_approval.exists?(['ip >>= ?', sign_up_ip.to_s])
   end
 
+  # @rbs () -> bool
   def sign_up_email_requires_approval?
     return false if email.blank?
 
@@ -472,10 +517,12 @@ class User < ApplicationRecord
     EmailDomainBlock.requires_approval?(records + [domain], attempt_ip: sign_up_ip)
   end
 
+  # @rbs () -> bool
   def open_registrations?
     Setting.registrations_mode == 'open'
   end
 
+  # @rbs () -> bool
   def external?
     !!@external
   end
@@ -484,10 +531,12 @@ class User < ApplicationRecord
     @bypass_invite_request_check
   end
 
+  # @rbs () -> nil
   def sanitize_role
     self.role = nil if role.present? && role.everyone?
   end
 
+  # @rbs () -> String?
   def prepare_new_user!
     BootstrapTimelineWorker.perform_async(account_id)
     ActivityTracker.increment('activity:accounts:local')
@@ -496,6 +545,7 @@ class User < ApplicationRecord
     TriggerWebhookWorker.perform_async('account.approved', 'Account', account_id)
   end
 
+  # @rbs () -> String?
   def prepare_returning_user!
     return unless confirmed?
 
@@ -503,6 +553,7 @@ class User < ApplicationRecord
     regenerate_feed! if needs_feed_update?
   end
 
+  # @rbs () -> nil
   def notify_staff_about_pending_account!
     User.those_who_can(:manage_users).includes(:account).find_each do |u|
       next unless u.allows_pending_account_emails?
@@ -511,26 +562,32 @@ class User < ApplicationRecord
     end
   end
 
+  # @rbs () -> String?
   def regenerate_feed!
     RegenerationWorker.perform_async(account_id) if redis.set("account:#{account_id}:regeneration", true, nx: true, ex: 1.day.seconds)
   end
 
+  # @rbs () -> bool
   def needs_feed_update?
     last_sign_in_at < ACTIVE_DURATION.ago
   end
 
+  # @rbs () -> bool
   def validate_email_dns?
     email_changed? && !external? && !self.class.skip_mx_check?
   end
 
+  # @rbs () -> ActiveModel::Error?
   def validate_role_elevation
     errors.add(:role_id, :elevated) if defined?(@current_account) && role&.overrides?(@current_account&.user_role)
   end
 
+  # @rbs () -> bool
   def invite_text_required?
     Setting.require_invite_text && !open_registrations? && !invited? && !external? && !bypass_invite_request_check?
   end
 
+  # @rbs () -> String?
   def trigger_webhooks
     TriggerWebhookWorker.perform_async('account.created', 'Account', account_id)
   end

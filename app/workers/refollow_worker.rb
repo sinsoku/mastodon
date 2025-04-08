@@ -5,6 +5,7 @@ class RefollowWorker
 
   sidekiq_options queue: 'pull', retry: false
 
+  # @rbs (Integer) -> nil
   def perform(target_account_id)
     target_account = Account.find(target_account_id)
     return unless target_account.activitypub?

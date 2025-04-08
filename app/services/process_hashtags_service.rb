@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ProcessHashtagsService < BaseService
+  # @rbs (Status, ?Array[untyped]) -> nil
   def call(status, raw_tags = [])
     @status        = status
     @account       = status.account
@@ -14,10 +15,12 @@ class ProcessHashtagsService < BaseService
 
   private
 
+  # @rbs () -> void
   def assign_tags!
     @status.tags = @current_tags = Tag.find_or_create_by_names(@raw_tags)
   end
 
+  # @rbs () -> nil
   def update_featured_tags!
     return unless @status.distributable?
 

@@ -37,36 +37,44 @@ class Appeal < ApplicationRecord
   scope :rejected, -> { where.not(rejected_at: nil) }
   scope :pending, -> { where(approved_at: nil, rejected_at: nil) }
 
+  # @rbs () -> bool
   def pending?
     !approved? && !rejected?
   end
 
+  # @rbs () -> bool
   def approved?
     approved_at.present?
   end
 
+  # @rbs () -> bool
   def rejected?
     rejected_at.present?
   end
 
+  # @rbs (Account) -> void
   def approve!(current_account)
     update!(approved_at: Time.now.utc, approved_by_account: current_account)
   end
 
+  # @rbs (Account) -> void
   def reject!(current_account)
     update!(rejected_at: Time.now.utc, rejected_by_account: current_account)
   end
 
+  # @rbs () -> String
   def to_log_human_identifier
     account.acct
   end
 
+  # @rbs () -> Integer
   def to_log_route_param
     account_warning_id
   end
 
   private
 
+  # @rbs () -> nil
   def validate_time_frame
     errors.add(:base, I18n.t('strikes.errors.too_late')) if strike.created_at < MAX_STRIKE_AGE.ago
   end

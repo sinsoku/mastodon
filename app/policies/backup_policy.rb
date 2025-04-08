@@ -3,6 +3,7 @@
 class BackupPolicy < ApplicationPolicy
   MIN_AGE = 6.days
 
+  # @rbs () -> bool
   def create?
     user_signed_in? && current_user.backups.where(created_at: MIN_AGE.ago..).count.zero?
   end

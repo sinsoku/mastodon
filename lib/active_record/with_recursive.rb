@@ -13,6 +13,7 @@
 
 module ActiveRecord
   module QueryMethodsExtensions
+    # @rbs (*Hash[untyped, untyped]) -> Notification::ActiveRecord_Relation
     def with_recursive(*args)
       @with_is_recursive = true
       check_if_method_has_arguments!(__callee__, args)
@@ -20,6 +21,7 @@ module ActiveRecord
     end
 
     # Like #with_recursive but modifies the relation in place.
+    # @rbs (*Hash[untyped, untyped]) -> Notification::ActiveRecord_Relation
     def with_recursive!(*args) # :nodoc:
       self.with_values += args
       @with_is_recursive = true
@@ -28,6 +30,7 @@ module ActiveRecord
 
     private
 
+    # @rbs (Arel::SelectManager) -> void
     def build_with(arel)
       return if with_values.empty?
 
@@ -41,12 +44,14 @@ module ActiveRecord
       @with_is_recursive ? arel.with(:recursive, with_statements) : arel.with(with_statements)
     end
 
+    # @rbs (Hash[untyped, untyped]) -> Array[untyped]
     def build_with_value_from_hash(hash)
       hash.map do |name, value|
         Arel::Nodes::TableAlias.new(build_with_expression_from_value(value), name)
       end
     end
 
+    # @rbs (Notification::ActiveRecord_AssociationRelation | Notification::ActiveRecord_Relation | Array[untyped]) -> (Arel::SelectManager | Arel::Nodes::UnionAll)
     def build_with_expression_from_value(value)
       case value
       when Arel::Nodes::SqlLiteral then Arel::Nodes::Grouping.new(value)

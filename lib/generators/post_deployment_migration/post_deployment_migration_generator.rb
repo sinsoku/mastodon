@@ -7,10 +7,12 @@ class PostDeploymentMigrationGenerator < Rails::Generators::NamedBase
 
   include Rails::Generators::Migration
 
+  # @rbs () -> String
   def create_post_deployment_migration
     migration_template 'migration.erb', "db/post_migrate/#{file_name}.rb"
   end
 
+  # @rbs (String) -> String
   def self.next_migration_number(path)
     ActiveRecord::Generators::Base.next_migration_number(path)
   end

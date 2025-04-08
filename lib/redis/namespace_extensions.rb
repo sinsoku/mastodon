@@ -2,6 +2,7 @@
 
 class Redis
   module NamespaceExtensions
+    # @rbs (*untyped, **untyped) -> bool
     def exists?(...)
       call_with_namespace('exists?', ...)
     end

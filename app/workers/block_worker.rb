@@ -3,6 +3,7 @@
 class BlockWorker
   include Sidekiq::Worker
 
+  # @rbs (Integer, Integer) -> nil
   def perform(account_id, target_account_id)
     AfterBlockService.new.call(
       Account.find(account_id),

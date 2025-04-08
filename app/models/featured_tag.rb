@@ -32,18 +32,22 @@ class FeaturedTag < ApplicationRecord
 
   LIMIT = 10
 
+  # @rbs () -> bool
   def sign?
     true
   end
 
+  # @rbs () -> String
   def display_name
     attributes['name'] || tag.display_name
   end
 
+  # @rbs (ActiveSupport::TimeWithZone) -> bool
   def increment(timestamp)
     update(statuses_count: statuses_count + 1, last_status_at: timestamp)
   end
 
+  # @rbs (Status) -> bool
   def decrement(deleted_status)
     if statuses_count <= 1
       update(statuses_count: 0, last_status_at: nil)
@@ -58,29 +62,35 @@ class FeaturedTag < ApplicationRecord
 
   private
 
+  # @rbs () -> Tag
   def set_tag
     self.tag = Tag.find_or_create_by_names(name)&.first
   end
 
+  # @rbs () -> ActiveSupport::TimeWithZone?
   def reset_data
     self.statuses_count = visible_tagged_account_statuses.count
     self.last_status_at = visible_tagged_account_statuses.pick(:created_at)
   end
 
+  # @rbs () -> ActiveModel::Error?
   def validate_featured_tags_limit
     return unless account.local?
 
     errors.add(:base, I18n.t('featured_tags.errors.limit')) if account.featured_tags.count >= LIMIT
   end
 
+  # @rbs () -> ActiveModel::Error?
   def validate_tag_uniqueness
     errors.add(:name, :taken) if tag_already_featured_for_account?
   end
 
+  # @rbs () -> bool
   def tag_already_featured_for_account?
     FeaturedTag.by_name(name).exists?(account_id: account_id)
   end
 
+  # @rbs () -> Status::ActiveRecord_AssociationRelation
   def visible_tagged_account_statuses
     account.statuses.distributable_visibility.tagged_with(tag)
   end

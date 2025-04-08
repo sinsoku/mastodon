@@ -3,6 +3,7 @@
 module Chewy
   class Strategy
     class Mastodon < Base
+      # @rbs () -> void
       def initialize
         super
 
@@ -13,6 +14,7 @@ module Chewy
         @stash[type].concat(type.root.id ? Array.wrap(objects) : type.adapter.identify(objects)) if Chewy.enabled?
       end
 
+      # @rbs () -> void
       def leave
         RedisConnection.with do |redis|
           redis.pipelined do |pipeline|

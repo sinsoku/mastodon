@@ -15,6 +15,7 @@
 module ActionDispatch
   class RemoteIp
     module GetIpExtensions
+      # @rbs () -> String
       def calculate_ip
         # Set by the Rack web server, this is a single value.
         remote_addr = ips_from(@req.remote_addr).last

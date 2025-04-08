@@ -6,6 +6,7 @@ class FetchOEmbedService
 
   attr_reader :url, :options, :format, :endpoint_url
 
+  # @rbs (String, ?Hash[untyped, untyped]) -> ActiveSupport::HashWithIndifferentAccess?
   def call(url, options = {})
     @url     = url
     @options = options
@@ -21,6 +22,7 @@ class FetchOEmbedService
 
   private
 
+  # @rbs () -> bool?
   def discover_endpoint!
     return if html.nil?
 
@@ -56,6 +58,7 @@ class FetchOEmbedService
     @endpoint_url = nil
   end
 
+  # @rbs () -> Symbol
   def parse_cached_endpoint!
     cached = @options[:cached_endpoint]
 
@@ -65,6 +68,7 @@ class FetchOEmbedService
     @format       = cached[:format]
   end
 
+  # @rbs () -> bool?
   def cache_endpoint!
     return unless URL_REGEX.match?(@endpoint_url)
 
@@ -78,6 +82,7 @@ class FetchOEmbedService
     Rails.cache.write("oembed_endpoint:#{url_domain}", endpoint_hash, expires_in: ENDPOINT_CACHE_EXPIRES_IN)
   end
 
+  # @rbs () -> ActiveSupport::HashWithIndifferentAccess?
   def fetch!
     return if @endpoint_url.blank?
 
@@ -90,6 +95,7 @@ class FetchOEmbedService
     nil
   end
 
+  # @rbs (String) -> ActiveSupport::HashWithIndifferentAccess?
   def parse_for_format(body)
     case @format
     when :json
@@ -99,10 +105,12 @@ class FetchOEmbedService
     end
   end
 
+  # @rbs (ActiveSupport::HashWithIndifferentAccess) -> ActiveSupport::HashWithIndifferentAccess
   def validate(oembed)
     oembed if oembed.present? && oembed[:version].to_s == '1.0' && oembed[:type].present?
   end
 
+  # @rbs () -> String?
   def html
     return @html if defined?(@html)
 

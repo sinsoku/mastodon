@@ -11,12 +11,14 @@ class AccountStatusesFilter
 
   attr_reader :params, :account, :current_account
 
+  # @rbs (Account, Account?, ?Hash[untyped, untyped] | ActionController::Parameters) -> void
   def initialize(account, current_account, params = {})
     @account         = account
     @current_account = current_account
     @params          = params
   end
 
+  # @rbs () -> (Status::ActiveRecord_AssociationRelation | Status::ActiveRecord_Relation)
   def results
     scope = initial_scope
 
@@ -31,6 +33,7 @@ class AccountStatusesFilter
 
   private
 
+  # @rbs () -> (Status::ActiveRecord_AssociationRelation | Status::ActiveRecord_Relation)
   def initial_scope
     return Status.none if account.unavailable?
 
@@ -45,6 +48,7 @@ class AccountStatusesFilter
     end
   end
 
+  # @rbs () -> Status::ActiveRecord_AssociationRelation
   def filtered_scope
     scope = account.statuses.left_outer_joins(:mentions)
 
@@ -54,6 +58,7 @@ class AccountStatusesFilter
     scope
   end
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def filtered_reblogs_scope
     scope = Status.left_outer_joins(reblog: :account)
     scope
@@ -69,22 +74,27 @@ class AccountStatusesFilter
       )
   end
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def only_media_scope
     Status.joins(:media_attachments).merge(account.media_attachments).group(Status.arel_table[:id])
   end
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def no_replies_scope
     Status.without_replies
   end
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def no_reblogs_scope
     Status.without_reblogs
   end
 
+  # @rbs () -> Status::ActiveRecord_AssociationRelation
   def pinned_scope
     account.pinned_statuses.group(Status.arel_table[:id], StatusPin.arel_table[:created_at])
   end
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def hashtag_scope
     tag = Tag.find_normalized(params[:tagged])
 
@@ -95,46 +105,57 @@ class AccountStatusesFilter
     end
   end
 
+  # @rbs () -> bool
   def anonymous?
     current_account.nil?
   end
 
+  # @rbs () -> bool
   def author?
     current_account.id == account.id
   end
 
+  # @rbs () -> bool
   def blocked?
     account.blocking?(current_account) || (current_account.domain.present? && account.domain_blocking?(current_account.domain))
   end
 
+  # @rbs () -> bool
   def follower?
     current_account.following?(account)
   end
 
+  # @rbs () -> bool
   def reblogs_may_occur?
     !exclude_reblogs? && !only_media? && !tagged?
   end
 
+  # @rbs () -> bool?
   def pinned?
     truthy_param?(:pinned)
   end
 
+  # @rbs () -> bool?
   def only_media?
     truthy_param?(:only_media)
   end
 
+  # @rbs () -> bool?
   def exclude_replies?
     truthy_param?(:exclude_replies)
   end
 
+  # @rbs () -> bool?
   def exclude_reblogs?
     truthy_param?(:exclude_reblogs)
   end
 
+  # @rbs () -> bool
   def tagged?
     params[:tagged].present?
   end
 
+  # @rbs (Symbol) -> bool?
   def truthy_param?(key)
     ActiveModel::Type::Boolean.new.cast(params[key])
   end

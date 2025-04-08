@@ -8,12 +8,14 @@ class HtmlAwareFormatter
   # @param [String] text
   # @param [Boolean] local
   # @param [Hash] options
+  # @rbs (String, bool, ?Hash[untyped, untyped]) -> void
   def initialize(text, local, options = {})
     @text    = text
     @local   = local
     @options = options
   end
 
+  # @rbs () -> ActiveSupport::SafeBuffer
   def to_s
     return ''.html_safe if text.blank?
 
@@ -28,10 +30,12 @@ class HtmlAwareFormatter
 
   private
 
+  # @rbs () -> String
   def reformat
     Sanitize.fragment(text, Sanitize::Config::MASTODON_STRICT)
   end
 
+  # @rbs () -> ActiveSupport::SafeBuffer
   def linkify
     TextFormatter.new(text, options).to_s
   end

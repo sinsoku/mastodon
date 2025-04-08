@@ -19,6 +19,7 @@ class NotificationMailer < ApplicationMailer
 
   layout 'mailer'
 
+  # @rbs () -> Mail::Message?
   def mention
     return if @status.blank?
 
@@ -27,12 +28,14 @@ class NotificationMailer < ApplicationMailer
     end
   end
 
+  # @rbs () -> Mail::Message
   def follow
     locale_for_account(@me) do
       mail subject: default_i18n_subject(name: @account.acct)
     end
   end
 
+  # @rbs () -> Mail::Message?
   def favourite
     return if @status.blank?
 
@@ -41,6 +44,7 @@ class NotificationMailer < ApplicationMailer
     end
   end
 
+  # @rbs () -> Mail::Message?
   def reblog
     return if @status.blank?
 
@@ -49,6 +53,7 @@ class NotificationMailer < ApplicationMailer
     end
   end
 
+  # @rbs () -> Mail::Message
   def follow_request
     locale_for_account(@me) do
       mail subject: default_i18n_subject(name: @account.acct)
@@ -57,6 +62,7 @@ class NotificationMailer < ApplicationMailer
 
   private
 
+  # @rbs () -> String
   def process_params
     @notification = params[:notification]
     @me = params[:recipient]
@@ -65,18 +71,22 @@ class NotificationMailer < ApplicationMailer
     @unsubscribe_url = unsubscribe_url(token: @user.to_sgid(for: 'unsubscribe').to_s, type: @type)
   end
 
+  # @rbs () -> Status?
   def set_status
     @status = @notification.target_status
   end
 
+  # @rbs () -> Account
   def set_account
     @account = @notification.from_account
   end
 
+  # @rbs () -> nil
   def verify_functional_user
     throw(:abort) unless @user.functional?
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def set_list_headers!
     headers(
       'List-ID' => "<#{@type}.#{@me.username}.#{Rails.configuration.x.local_domain}>",
@@ -85,6 +95,7 @@ class NotificationMailer < ApplicationMailer
     )
   end
 
+  # @rbs () -> Hash[untyped, untyped]?
   def thread_by_conversation!
     return if @status&.conversation.nil?
 

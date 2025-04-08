@@ -19,6 +19,7 @@ class StatusPin < ApplicationRecord
 
   after_destroy :invalidate_cleanup_info
 
+  # @rbs () -> nil
   def invalidate_cleanup_info
     return unless status&.account_id == account_id && account.local?
 

@@ -10,6 +10,7 @@ class UnfollowService < BaseService
   # @param [Account] target_account Which to unfollow
   # @param [Hash] options
   # @option [Boolean] :skip_unmerge
+  # @rbs (Account, Account, ?Hash[untyped, untyped]) -> Follow
   def call(source_account, target_account, options = {})
     @source_account = source_account
     @target_account = target_account
@@ -22,6 +23,7 @@ class UnfollowService < BaseService
 
   private
 
+  # @rbs () -> Follow
   def unfollow!
     follow = Follow.find_by(account: @source_account, target_account: @target_account)
 
@@ -48,18 +50,22 @@ class UnfollowService < BaseService
     follow_request
   end
 
+  # @rbs (Follow) -> String
   def create_notification(follow)
     ActivityPub::DeliveryWorker.perform_async(build_json(follow), follow.account_id, follow.target_account.inbox_url)
   end
 
+  # @rbs (Follow) -> String
   def create_reject_notification(follow)
     ActivityPub::DeliveryWorker.perform_async(build_reject_json(follow), follow.target_account_id, follow.account.inbox_url)
   end
 
+  # @rbs (Follow) -> String
   def build_json(follow)
     Oj.dump(serialize_payload(follow, ActivityPub::UndoFollowSerializer))
   end
 
+  # @rbs (Follow) -> String
   def build_reject_json(follow)
     Oj.dump(serialize_payload(follow, ActivityPub::RejectFollowSerializer))
   end

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class VerifyLinkService < BaseService
+  # @rbs (Account::Field) -> Time?
   def call(field)
     @link_back = ActivityPub::TagManager.instance.url_for(field.account)
     @url       = field.value_for_verification
@@ -17,12 +18,14 @@ class VerifyLinkService < BaseService
 
   private
 
+  # @rbs () -> void
   def perform_request!
     @body = Request.new(:get, @url).add_headers('Accept' => 'text/html').perform do |res|
       res.code == 200 ? res.truncated_body : nil
     end
   end
 
+  # @rbs () -> bool
   def link_back_present?
     return false if @body.blank?
 
@@ -37,6 +40,7 @@ class VerifyLinkService < BaseService
     end
   end
 
+  # @rbs (String?) -> bool
   def link_redirects_back?(test_url)
     return false if test_url.blank?
 

@@ -10,8 +10,10 @@ module Settings
     before_action :require_challenge!, only: :disable
     before_action :require_otp_enabled
 
+    # @rbs () -> nil
     def index; end
 
+    # @rbs () -> String
     def disable
       current_user.disable_two_factor!
       UserMailer.two_factor_disabled(current_user).deliver_later!
@@ -21,6 +23,7 @@ module Settings
 
     private
 
+    # @rbs () -> String?
     def require_otp_enabled
       redirect_to settings_otp_authentication_path unless current_user.otp_enabled?
     end

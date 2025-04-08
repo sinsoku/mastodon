@@ -12,22 +12,27 @@ module SignatureVerification
 
   class SignatureVerificationError < StandardError; end
 
+  # @rbs () -> String?
   def require_account_signature!
     render json: signature_verification_failure_reason, status: signature_verification_failure_code unless signed_request_account
   end
 
+  # @rbs () -> String?
   def require_actor_signature!
     render json: signature_verification_failure_reason, status: signature_verification_failure_code unless signed_request_actor
   end
 
+  # @rbs () -> bool
   def signed_request?
     request.headers['Signature'].present?
   end
 
+  # @rbs () -> Hash[untyped, untyped]?
   def signature_verification_failure_reason
     @signature_verification_failure_reason
   end
 
+  # @rbs () -> Integer
   def signature_verification_failure_code
     @signature_verification_failure_code || 401
   end
@@ -38,10 +43,12 @@ module SignatureVerification
     nil
   end
 
+  # @rbs () -> Account?
   def signed_request_account
     signed_request_actor.is_a?(Account) ? signed_request_actor : nil
   end
 
+  # @rbs () -> Account?
   def signed_request_actor
     return @signed_request_actor if defined?(@signed_request_actor)
 
@@ -88,12 +95,14 @@ module SignatureVerification
     fail_with! 'Fetching attempt skipped because of recent connection failure'
   end
 
+  # @rbs () -> String
   def request_body
     @request_body ||= request.raw_post
   end
 
   private
 
+  # @rbs (String, **nil) -> nil
   def fail_with!(message, **options)
     Rails.logger.debug { "Signature verification failed: #{message}" }
 
@@ -101,20 +110,24 @@ module SignatureVerification
     @signed_request_actor = nil
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def signature_params
     @signature_params ||= SignatureParser.parse(request.headers['Signature'])
   rescue SignatureParser::ParsingError
     raise SignatureVerificationError, 'Error parsing signature parameters'
   end
 
+  # @rbs () -> String
   def signature_algorithm
     signature_params.fetch('algorithm', 'hs2019')
   end
 
+  # @rbs () -> Array[untyped]
   def signed_headers
     signature_params.fetch('headers', signature_algorithm == 'hs2019' ? '(created)' : 'date').downcase.split
   end
 
+  # @rbs () -> void
   def verify_signature_strength!
     raise SignatureVerificationError, 'Mastodon requires the Date header or (created) pseudo-header to be signed' unless signed_headers.include?('date') || signed_headers.include?('(created)')
     raise SignatureVerificationError, 'Mastodon requires the Digest header or (request-target) pseudo-header to be signed' unless signed_headers.include?(HttpSignatureDraft::REQUEST_TARGET) || signed_headers.include?('digest')
@@ -122,6 +135,7 @@ module SignatureVerification
     raise SignatureVerificationError, 'Mastodon requires the Digest header to be signed when doing a POST request' if request.post? && !signed_headers.include?('digest')
   end
 
+  # @rbs () -> void
   def verify_body_digest!
     return unless signed_headers.include?('digest')
     raise SignatureVerificationError, 'Digest header missing' unless request.headers.key?('Digest')
@@ -143,6 +157,7 @@ module SignatureVerification
     raise SignatureVerificationError, "Invalid Digest value. Computed SHA-256 digest: #{body_digest}; given: #{sha256[1]}"
   end
 
+  # @rbs (Account, String, String) -> Account?
   def verify_signature(actor, signature, compare_signed_string)
     if actor.keypair.public_key.verify(OpenSSL::Digest.new('SHA256'), signature, compare_signed_string)
       @signed_request_actor = actor
@@ -152,6 +167,7 @@ module SignatureVerification
     nil
   end
 
+  # @rbs (?include_query_string: bool) -> String
   def build_signed_string(include_query_string: true)
     signed_headers.map do |signed_header|
       case signed_header
@@ -180,6 +196,7 @@ module SignatureVerification
     end.join("\n")
   end
 
+  # @rbs () -> bool?
   def matches_time_window?
     created_time = nil
     expires_time = nil
@@ -205,18 +222,22 @@ module SignatureVerification
     true
   end
 
+  # @rbs () -> String
   def body_digest
     @body_digest ||= Digest::SHA256.base64digest(request_body)
   end
 
+  # @rbs (String) -> String
   def to_header_name(name)
     name.split('-').map(&:capitalize).join('-')
   end
 
+  # @rbs () -> bool
   def missing_required_signature_parameters?
     signature_params['keyId'].blank? || signature_params['signature'].blank?
   end
 
+  # @rbs (String) -> Account?
   def actor_from_key_id(key_id)
     domain = key_id.start_with?('acct:') ? key_id.split('@').last : key_id
 
@@ -238,6 +259,7 @@ module SignatureVerification
     raise SignatureVerificationError, e.message
   end
 
+  # @rbs () -> Stoplight::Light
   def stoplight_wrapper
     Stoplight("source:#{request.remote_ip}")
       .with_threshold(1)
@@ -245,6 +267,7 @@ module SignatureVerification
       .with_error_handler { |error, handle| error.is_a?(HTTP::Error) || error.is_a?(OpenSSL::SSL::SSLError) ? handle.call(error) : raise(error) }
   end
 
+  # @rbs (Account) -> nil
   def actor_refresh_key!(actor)
     return if actor.local? || !actor.activitypub?
     return actor.refresh! if actor.respond_to?(:refresh!) && actor.possibly_stale?

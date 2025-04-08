@@ -56,6 +56,7 @@ class AccountStatusesCleanupPolicy < ApplicationRecord
 
   before_save :update_last_inspected
 
+  # @rbs (?Integer, ?Integer?, ?Integer?) -> Status::ActiveRecord_Relation
   def statuses_to_delete(limit = 50, max_id = nil, min_id = nil)
     scope = account_statuses
     scope.merge!(old_enough_scope(max_id))
@@ -77,6 +78,7 @@ class AccountStatusesCleanupPolicy < ApplicationRecord
   #
   # The idea is to limit expensive SQL queries when an account has lots of toots excluded from
   # deletion, while not starting anew on each run.
+  # @rbs () -> Integer?
   def compute_cutoff_id
     min_id = last_inspected || 0
     max_id = Mastodon::Snowflake.id_at(min_status_age.seconds.ago, with_random: false)
@@ -90,14 +92,17 @@ class AccountStatusesCleanupPolicy < ApplicationRecord
 
   # The most important thing about `last_inspected` is that any toot older than it is guaranteed
   # not to be kept by the policy regardless of its age.
+  # @rbs (Integer) -> String
   def record_last_inspected(last_id)
     redis.set("account_cleanup:#{account_id}", last_id, ex: 2.weeks.seconds)
   end
 
+  # @rbs () -> Integer?
   def last_inspected
     redis.get("account_cleanup:#{account_id}")&.to_i
   end
 
+  # @rbs (Status, Symbol) -> String?
   def invalidate_last_inspected(status, action)
     last_value = last_inspected
     return if last_value.nil? || status.id > last_value || status.account_id != account_id
@@ -116,6 +121,7 @@ class AccountStatusesCleanupPolicy < ApplicationRecord
 
   private
 
+  # @rbs () -> Integer?
   def update_last_inspected
     if EXCEPTION_BOOLS.filter_map { |name| attribute_change_to_be_saved(name) }.include?([true, false])
       # Policy has been widened in such a way that any previously-inspected status
@@ -125,14 +131,17 @@ class AccountStatusesCleanupPolicy < ApplicationRecord
     redis.del("account_cleanup:#{account_id}") if EXCEPTION_THRESHOLDS.filter_map { |name| attribute_change_to_be_saved(name) }.any? { |old, new| old.present? && (new.nil? || new > old) }
   end
 
+  # @rbs () -> ActiveModel::Error?
   def validate_local_account
     errors.add(:account, :invalid) unless account&.local?
   end
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def without_direct_scope
     Status.where.not(visibility: :direct)
   end
 
+  # @rbs (?Integer?) -> Status::ActiveRecord_Relation
   def old_enough_scope(max_id = nil)
     # Filtering on `id` rather than `min_status_age` ago will treat
     # non-snowflake statuses as older than they really are, but Mastodon
@@ -144,26 +153,32 @@ class AccountStatusesCleanupPolicy < ApplicationRecord
     Status.where(id: ..max_id)
   end
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def without_self_fav_scope
     Status.where.not(self_status_reference_exists(Favourite))
   end
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def without_self_bookmark_scope
     Status.where.not(self_status_reference_exists(Bookmark))
   end
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def without_pinned_scope
     Status.where.not(self_status_reference_exists(StatusPin))
   end
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def without_media_scope
     Status.where.not(status_media_reference_exists)
   end
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def without_poll_scope
     Status.where(poll_id: nil)
   end
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def without_popular_scope
     scope = Status.left_joins(:status_stat)
     scope = scope.where('COALESCE(status_stats.reblogs_count, 0) < ?', min_reblogs) unless min_reblogs.nil?
@@ -171,10 +186,12 @@ class AccountStatusesCleanupPolicy < ApplicationRecord
     scope
   end
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def account_statuses
     Status.where(account_id: account_id)
   end
 
+  # @rbs () -> Arel::Nodes::Exists
   def status_media_reference_exists
     MediaAttachment
       .where(MediaAttachment.arel_table[:status_id].eq Status.arel_table[:id])
@@ -183,6 +200,7 @@ class AccountStatusesCleanupPolicy < ApplicationRecord
       .exists
   end
 
+  # @rbs (Class) -> Arel::Nodes::Exists
   def self_status_reference_exists(model)
     model
       .where(model.arel_table[:account_id].eq Status.arel_table[:account_id])

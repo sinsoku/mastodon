@@ -21,15 +21,18 @@ class TextFormatter
   # @option options [Boolean] :with_domains
   # @option options [Boolean] :with_rel_me
   # @option options [Array<Account>] :preloaded_accounts
+  # @rbs (String, ?Hash[untyped, untyped]) -> void
   def initialize(text, options = {})
     @text    = text
     @options = DEFAULT_OPTIONS.merge(options)
   end
 
+  # @rbs () -> Array[untyped]
   def entities
     @entities ||= Extractor.extract_entities_with_indices(text, extract_url_without_protocol: false)
   end
 
+  # @rbs () -> ActiveSupport::SafeBuffer
   def to_s
     return ''.html_safe if text.blank?
 
@@ -52,6 +55,7 @@ class TextFormatter
     include ERB::Util
     include ActionView::Helpers::TagHelper
 
+    # @rbs (String, ?rel_me: nil) -> ActiveSupport::SafeBuffer
     def shortened_link(url, rel_me: false)
       url = Addressable::URI.parse(url).to_s
       rel = rel_me ? (DEFAULT_REL + %w(me)) : DEFAULT_REL
@@ -73,6 +77,7 @@ class TextFormatter
 
   private
 
+  # @rbs () -> String
   def rewrite
     entities.sort_by! do |entity|
       entity[:indices].first
@@ -92,10 +97,12 @@ class TextFormatter
     result
   end
 
+  # @rbs (Hash[untyped, untyped]) -> ActiveSupport::SafeBuffer
   def link_to_url(entity)
     TextFormatter.shortened_link(entity[:url], rel_me: with_rel_me?)
   end
 
+  # @rbs (Hash[untyped, untyped]) -> String
   def link_to_hashtag(entity)
     hashtag = entity[:hashtag]
     url     = tag_url(hashtag)
@@ -105,6 +112,7 @@ class TextFormatter
     HTML
   end
 
+  # @rbs (Hash[untyped, untyped]) -> String
   def link_to_mention(entity)
     username, domain = entity[:screen_name].split('@')
     domain           = nil if local_domain?(domain)
@@ -137,32 +145,39 @@ class TextFormatter
     HTML
   end
 
+  # @rbs () -> EntityCache
   def entity_cache
     @entity_cache ||= EntityCache.instance
   end
 
+  # @rbs () -> TagManager
   def tag_manager
     @tag_manager ||= TagManager.instance
   end
 
   delegate :local_domain?, to: :tag_manager
 
+  # @rbs () -> bool
   def multiline?
     options[:multiline]
   end
 
+  # @rbs () -> nil
   def with_domains?
     options[:with_domains]
   end
 
+  # @rbs () -> nil
   def with_rel_me?
     options[:with_rel_me]
   end
 
+  # @rbs () -> Array[untyped]
   def preloaded_accounts
     options[:preloaded_accounts]
   end
 
+  # @rbs () -> bool
   def preloaded_accounts?
     preloaded_accounts.present?
   end

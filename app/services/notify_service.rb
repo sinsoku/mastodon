@@ -27,6 +27,7 @@ class NotifyService < BaseService
       account_warning
     ).freeze
 
+    # @rbs (Notification) -> void
     def initialize(notification)
       @recipient = notification.account
       @sender = notification.from_account
@@ -37,23 +38,28 @@ class NotifyService < BaseService
 
     private
 
+    # @rbs () -> bool
     def filterable_type?
       Notification::PROPERTIES[@notification.type][:filterable]
     end
 
+    # @rbs () -> bool
     def not_following?
       !@recipient.following?(@sender)
     end
 
+    # @rbs () -> bool
     def not_follower?
       follow = Follow.find_by(account: @sender, target_account: @recipient)
       follow.nil? || follow.created_at > NEW_FOLLOWER_THRESHOLD.ago
     end
 
+    # @rbs () -> bool
     def new_account?
       @sender.created_at > NEW_ACCOUNT_THRESHOLD.ago
     end
 
+    # @rbs () -> bool
     def override_for_sender?
       NotificationPermission.exists?(account: @recipient, from_account: @sender)
     end
@@ -62,24 +68,29 @@ class NotifyService < BaseService
       @sender.silenced? && not_following?
     end
 
+    # @rbs () -> bool
     def message?
       @notification.type == :mention
     end
 
+    # @rbs () -> bool
     def from_staff?
       @from_staff
     end
 
+    # @rbs () -> bool
     def private_mention_not_in_response?
       @notification.type == :mention && @notification.target_status.direct_visibility? && !response_to_recipient?
     end
 
+    # @rbs () -> bool
     def response_to_recipient?
       return false if @notification.target_status.in_reply_to_id.nil?
 
       statuses_that_mention_sender.positive?
     end
 
+    # @rbs () -> Integer
     def statuses_that_mention_sender
       # This queries private mentions from the recipient to the sender up in the thread.
       # This allows up to 100 messages that do not match in the thread, allowing conversations
@@ -107,6 +118,7 @@ class NotifyService < BaseService
   end
 
   class DropCondition < BaseCondition
+    # @rbs () -> bool
     def drop?
       blocked   = @recipient.unavailable?
       blocked ||= from_self? && %i(poll severed_relationships moderation_warning).exclude?(@notification.type)
@@ -132,44 +144,54 @@ class NotifyService < BaseService
 
     private
 
+    # @rbs () -> bool
     def blocked_mention?
       FeedManager.instance.filter?(:mentions, @notification.target_status, @recipient)
     end
 
+    # @rbs () -> bool
     def from_self?
       @recipient.id == @sender.id
     end
 
+    # @rbs () -> bool
     def domain_blocking?
       @recipient.domain_blocking?(@sender.domain) && not_following?
     end
 
+    # @rbs () -> bool?
     def conversation_muted?
       @notification.target_status && @recipient.muting_conversation?(@notification.target_status.conversation)
     end
 
+    # @rbs () -> bool
     def blocked_by_not_following_policy?
       @policy.drop_not_following? && not_following?
     end
 
+    # @rbs () -> bool
     def blocked_by_not_followers_policy?
       @policy.drop_not_followers? && not_follower?
     end
 
+    # @rbs () -> bool
     def blocked_by_new_accounts_policy?
       @policy.drop_new_accounts? && new_account? && not_following?
     end
 
+    # @rbs () -> bool
     def blocked_by_private_mentions_policy?
       @policy.drop_private_mentions? && not_following? && private_mention_not_in_response?
     end
 
+    # @rbs () -> bool
     def blocked_by_limited_accounts_policy?
       @policy.drop_limited_accounts? && @sender.silenced? && not_following?
     end
   end
 
   class FilterCondition < BaseCondition
+    # @rbs () -> bool
     def filter?
       return false unless filterable_type?
       return false if override_for_sender?
@@ -184,27 +206,33 @@ class NotifyService < BaseService
 
     private
 
+    # @rbs () -> bool
     def filtered_by_not_following_policy?
       @policy.filter_not_following? && not_following?
     end
 
+    # @rbs () -> bool
     def filtered_by_not_followers_policy?
       @policy.filter_not_followers? && not_follower?
     end
 
+    # @rbs () -> bool
     def filtered_by_new_accounts_policy?
       @policy.filter_new_accounts? && new_account? && not_following?
     end
 
+    # @rbs () -> bool
     def filtered_by_private_mentions_policy?
       @policy.filter_private_mentions? && not_following? && private_mention_not_in_response?
     end
 
+    # @rbs () -> bool
     def filtered_by_limited_accounts_policy?
       @policy.filter_limited_accounts? && @sender.silenced? && not_following?
     end
   end
 
+  # @rbs (Account, String | Symbol, Mention | Follow | Status | Favourite | AccountWarning | FollowRequest | Report) -> (ActionMailer::MailDeliveryJob | bool)?
   def call(recipient, type, activity)
     return if recipient.user.nil?
 
@@ -236,14 +264,17 @@ class NotifyService < BaseService
 
   private
 
+  # @rbs () -> bool
   def drop?
     DropCondition.new(@notification).drop?
   end
 
+  # @rbs () -> bool
   def filter?
     FilterCondition.new(@notification).filter?
   end
 
+  # @rbs () -> bool?
   def update_notification_request!
     return unless @notification.type == :mention
 
@@ -252,6 +283,7 @@ class NotifyService < BaseService
     notification_request.save
   end
 
+  # @rbs () -> void
   def push_notification!
     push_to_streaming_api! if subscribed_to_streaming_api?
     push_to_web_push_subscriptions!
@@ -261,30 +293,37 @@ class NotifyService < BaseService
     redis.publish("timeline:#{@recipient.id}:notifications", Oj.dump(event: :notification, payload: InlineRenderer.render(@notification, @recipient, :notification)))
   end
 
+  # @rbs () -> bool
   def subscribed_to_streaming_api?
     redis.exists?("subscribed:timeline:#{@recipient.id}") || redis.exists?("subscribed:timeline:#{@recipient.id}:notifications")
   end
 
+  # @rbs () -> AccountConversation
   def push_to_conversation!
     AccountConversation.add_status(@recipient, @notification.target_status)
   end
 
+  # @rbs () -> bool
   def direct_message?
     @notification.type == :mention && @notification.target_status.direct_visibility?
   end
 
+  # @rbs () -> Array[untyped]
   def push_to_web_push_subscriptions!
     ::Web::PushNotificationWorker.push_bulk(web_push_subscriptions.select { |subscription| subscription.pushable?(@notification) }) { |subscription| [subscription.id, @notification.id] }
   end
 
+  # @rbs () -> Array[untyped]
   def web_push_subscriptions
     @web_push_subscriptions ||= ::Web::PushSubscription.where(user_id: @recipient.user.id).to_a
   end
 
+  # @rbs () -> bool
   def subscribed_to_web_push?
     web_push_subscriptions.any?
   end
 
+  # @rbs () -> ActionMailer::MailDeliveryJob
   def send_email!
     return unless NotificationMailer.respond_to?(@notification.type)
 
@@ -294,10 +333,12 @@ class NotifyService < BaseService
       .deliver_later(wait: 2.minutes)
   end
 
+  # @rbs () -> bool
   def email_needed?
     (!recipient_online? || always_send_emails?) && send_email_for_notification_type?
   end
 
+  # @rbs () -> bool
   def recipient_online?
     subscribed_to_streaming_api? || subscribed_to_web_push?
   end
@@ -306,6 +347,7 @@ class NotifyService < BaseService
     @recipient.user.settings.always_send_emails
   end
 
+  # @rbs () -> bool
   def send_email_for_notification_type?
     NON_EMAIL_TYPES.exclude?(@notification.type) && @recipient.user.settings["notification_emails.#{@notification.type}"]
   end

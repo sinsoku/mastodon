@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module ReactComponentHelper
+  # @rbs (Symbol | String, ?Hash[untyped, untyped]) -> ActiveSupport::SafeBuffer
   def react_component(name, props = {}, &block)
     data = { component: name.to_s.camelcase, props: Oj.dump(props) }
     if block.nil?
@@ -10,21 +11,25 @@ module ReactComponentHelper
     end
   end
 
+  # @rbs (Symbol | String, ?Hash[untyped, untyped]) -> ActiveSupport::SafeBuffer
   def react_admin_component(name, props = {})
     data = { 'admin-component': name.to_s.camelcase, props: Oj.dump(props) }
     div_tag_with_data(data)
   end
 
+  # @rbs (Array[untyped]) -> Array[untyped]
   def serialized_media_attachments(media_attachments)
     media_attachments.map { |attachment| serialized_attachment(attachment) }
   end
 
   private
 
+  # @rbs (Hash[untyped, untyped]) -> ActiveSupport::SafeBuffer
   def div_tag_with_data(data)
     content_tag(:div, nil, data: data)
   end
 
+  # @rbs (MediaAttachment | StatusEdit::PreservedMediaAttachment) -> Hash[untyped, untyped]
   def serialized_attachment(attachment)
     ActiveModelSerializers::SerializableResource.new(
       attachment,

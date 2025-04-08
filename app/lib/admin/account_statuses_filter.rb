@@ -3,6 +3,7 @@
 class Admin::AccountStatusesFilter < AccountStatusesFilter
   private
 
+  # @rbs () -> bool
   def blocked?
     false
   end

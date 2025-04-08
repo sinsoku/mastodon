@@ -14,6 +14,7 @@ class AccountDeletionRequest < ApplicationRecord
 
   belongs_to :account
 
+  # @rbs () -> ActiveSupport::TimeWithZone
   def due_at
     created_at + DELAY_TO_DELETION
   end

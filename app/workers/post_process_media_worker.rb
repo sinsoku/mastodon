@@ -19,6 +19,7 @@ class PostProcessMediaWorker
     Sidekiq.logger.error("Processing media attachment #{media_attachment_id} failed with #{msg['error_message']}")
   end
 
+  # @rbs (Integer) -> bool
   def perform(media_attachment_id)
     media_attachment = MediaAttachment.find(media_attachment_id)
     media_attachment.processing = :in_progress

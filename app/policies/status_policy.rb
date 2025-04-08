@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 
 class StatusPolicy < ApplicationPolicy
+  # @rbs (Account?, Status, ?Hash[untyped, untyped]) -> void
   def initialize(current_account, record, preloaded_relations = {})
     super(current_account, record)
 
     @preloaded_relations = preloaded_relations
   end
 
+  # @rbs () -> bool
   def show?
     return false if author.unavailable?
 
@@ -19,38 +21,46 @@ class StatusPolicy < ApplicationPolicy
     end
   end
 
+  # @rbs () -> bool
   def reblog?
     !requires_mention? && (!private? || owned?) && show? && !blocking_author?
   end
 
+  # @rbs () -> bool
   def favourite?
     show? && !blocking_author?
   end
 
+  # @rbs () -> bool
   def destroy?
     owned?
   end
 
   alias unreblog? destroy?
 
+  # @rbs () -> bool
   def update?
     owned?
   end
 
   private
 
+  # @rbs () -> bool
   def requires_mention?
     record.direct_visibility? || record.limited_visibility?
   end
 
+  # @rbs () -> bool
   def owned?
     author.id == current_account&.id
   end
 
+  # @rbs () -> bool
   def private?
     record.private_visibility?
   end
 
+  # @rbs () -> bool
   def mention_exists?
     return false if current_account.nil?
 
@@ -61,30 +71,35 @@ class StatusPolicy < ApplicationPolicy
     end
   end
 
+  # @rbs () -> bool
   def author_blocking_domain?
     return false if current_account.nil? || current_account.domain.nil?
 
     author.domain_blocking?(current_account.domain)
   end
 
+  # @rbs () -> bool
   def blocking_author?
     return false if current_account.nil?
 
     @preloaded_relations[:blocking] ? @preloaded_relations[:blocking][author.id] : current_account.blocking?(author)
   end
 
+  # @rbs () -> bool?
   def author_blocking?
     return false if current_account.nil?
 
     @preloaded_relations[:blocked_by] ? @preloaded_relations[:blocked_by][author.id] : author.blocking?(current_account)
   end
 
+  # @rbs () -> bool?
   def following_author?
     return false if current_account.nil?
 
     @preloaded_relations[:following] ? @preloaded_relations[:following][author.id] : current_account.following?(author)
   end
 
+  # @rbs () -> Account
   def author
     record.account
   end

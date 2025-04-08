@@ -4,6 +4,7 @@ require 'mime/types/columnar'
 
 module Paperclip
   class TypeCorrector < Paperclip::Processor
+    # @rbs () -> Paperclip::Tempfile
     def make
       return @file unless options[:format]
 

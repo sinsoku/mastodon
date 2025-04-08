@@ -12,6 +12,7 @@ class TagFeed < PublicFeed
   # @option [Boolean] :local
   # @option [Boolean] :remote
   # @option [Boolean] :only_media
+  # @rbs (Tag, Account?, ?Hash[untyped, untyped]) -> void
   def initialize(tag, account, options = {})
     @tag = tag
     super(account, options)
@@ -22,6 +23,7 @@ class TagFeed < PublicFeed
   # @param [Integer] since_id
   # @param [Integer] min_id
   # @return [Array<Status>]
+  # @rbs (Integer, ?nil, ?nil, ?nil) -> Array[untyped]
   def get(limit, max_id = nil, since_id = nil, min_id = nil)
     scope = public_scope
 
@@ -38,18 +40,22 @@ class TagFeed < PublicFeed
 
   private
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def tagged_with_any_scope
     Status.group(:id).tagged_with(tags_for(Array(@tag.name) | Array(options[:any])))
   end
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def tagged_with_all_scope
     Status.group(:id).tagged_with_all(tags_for(options[:all]))
   end
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def tagged_with_none_scope
     Status.group(:id).tagged_with_none(tags_for(options[:none]))
   end
 
+  # @rbs (Array[untyped]?) -> Array[untyped]?
   def tags_for(names)
     Tag.matching_name(Array(names).take(LIMIT_PER_MODE)).pluck(:id) if names.present?
   end

@@ -11,10 +11,12 @@ class ReportFilter
 
   attr_reader :params
 
+  # @rbs (ActionController::Parameters | Hash[untyped, untyped]) -> void
   def initialize(params)
     @params = params
   end
 
+  # @rbs () -> Report::ActiveRecord_Relation?
   def results
     scope = Report.unresolved
 
@@ -27,16 +29,19 @@ class ReportFilter
 
   private
 
+  # @rbs () -> (ActionController::Parameters | Hash[untyped, untyped])
   def relevant_params
     params.tap do |args|
       args.delete(:target_origin) if origin_is_remote_and_domain_present?
     end
   end
 
+  # @rbs () -> bool
   def origin_is_remote_and_domain_present?
     params[:target_origin] == 'remote' && params[:by_target_domain].present?
   end
 
+  # @rbs (String | Symbol, String | bool) -> Report::ActiveRecord_Relation?
   def scope_for(key, value)
     case key.to_sym
     when :by_target_domain

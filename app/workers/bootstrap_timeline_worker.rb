@@ -3,6 +3,7 @@
 class BootstrapTimelineWorker
   include Sidekiq::Worker
 
+  # @rbs (Integer) -> nil
   def perform(account_id)
     BootstrapTimelineService.new.call(Account.find(account_id))
   end

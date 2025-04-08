@@ -53,10 +53,12 @@ class UserSettings
     setting :must_be_following_dm, default: false
   end
 
+  # @rbs (Hash[untyped, untyped]) -> void
   def initialize(original_hash)
     @original_hash = original_hash || {}
   end
 
+  # @rbs (String | Symbol) -> (bool | String)?
   def [](key)
     definition = self.class.definition_for(key)
 
@@ -65,6 +67,7 @@ class UserSettings
     definition.value_for(key, @original_hash[definition.key])
   end
 
+  # @rbs (Symbol | String, bool | String | Symbol) -> (bool | String)?
   def []=(key, value)
     definition = self.class.definition_for(key)
 
@@ -81,6 +84,7 @@ class UserSettings
     end
   end
 
+  # @rbs (Hash[untyped, untyped] | ActiveSupport::HashWithIndifferentAccess | ActionController::Parameters) -> (ActiveSupport::HashWithIndifferentAccess | Hash[untyped, untyped] | ActionController::Parameters)
   def update(params)
     params.each do |k, v|
       self[k] = v unless v.nil?
@@ -93,6 +97,7 @@ class UserSettings
     end
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def as_json
     @original_hash
   end

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ExistingUsernameValidator < ActiveModel::EachValidator
+  # @rbs (Form::AdminSettings, Symbol, String?) -> ActiveModel::Error?
   def validate_each(record, attribute, value)
     @value = value
     return if @value.blank?
@@ -14,6 +15,7 @@ class ExistingUsernameValidator < ActiveModel::EachValidator
 
   private
 
+  # @rbs () -> Array[untyped]
   def usernames_and_domains
     @value.split(',').filter_map do |string|
       username, domain = string.strip.gsub(/\A@/, '').split('@', 2)
@@ -25,16 +27,19 @@ class ExistingUsernameValidator < ActiveModel::EachValidator
     end
   end
 
+  # @rbs () -> Array[untyped]
   def usernames_with_no_accounts
     usernames_and_domains.filter_map do |(string, username, domain)|
       string unless Account.find_remote(username, domain)
     end
   end
 
+  # @rbs () -> String
   def not_found_multiple_message
     I18n.t('existing_username_validator.not_found_multiple', usernames: usernames_with_no_accounts.join(', '))
   end
 
+  # @rbs () -> String
   def not_found_message
     I18n.t('existing_username_validator.not_found')
   end

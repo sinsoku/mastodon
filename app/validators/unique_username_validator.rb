@@ -3,6 +3,7 @@
 # See also: USERNAME_RE in the Account class
 
 class UniqueUsernameValidator < ActiveModel::Validator
+  # @rbs (Account | RSpec::Mocks::InstanceVerifyingDouble) -> ActiveModel::Error?
   def validate(account)
     return if account.username.blank?
 

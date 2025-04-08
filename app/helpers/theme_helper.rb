@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module ThemeHelper
+  # @rbs (String) -> ActiveSupport::SafeBuffer
   def theme_style_tags(theme)
     if theme == 'system'
       ''.html_safe.tap do |tags|
@@ -12,6 +13,7 @@ module ThemeHelper
     end
   end
 
+  # @rbs (String) -> ActiveSupport::SafeBuffer
   def theme_color_tags(theme)
     if theme == 'system'
       ''.html_safe.tap do |tags|
@@ -25,6 +27,7 @@ module ThemeHelper
 
   private
 
+  # @rbs (String) -> String
   def theme_color_for(theme)
     theme == 'mastodon-light' ? Themes::THEME_COLORS[:light] : Themes::THEME_COLORS[:dark]
   end

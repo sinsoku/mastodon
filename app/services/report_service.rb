@@ -3,6 +3,7 @@
 class ReportService < BaseService
   include Payloadable
 
+  # @rbs (Account, Account, ?Hash[untyped, untyped] | ActionController::Parameters) -> Report?
   def call(source_account, target_account, options = {})
     @source_account = source_account
     @target_account = target_account
@@ -28,6 +29,7 @@ class ReportService < BaseService
 
   private
 
+  # @rbs () -> void
   def create_report!
     @report = @source_account.reports.create!(
       target_account: @target_account,
@@ -41,6 +43,7 @@ class ReportService < BaseService
     )
   end
 
+  # @rbs () -> void
   def notify_staff!
     return if @report.unresolved_siblings?
 
@@ -50,6 +53,7 @@ class ReportService < BaseService
     end
   end
 
+  # @rbs () -> void
   def forward_to_origin!
     return unless forward_to_origin?
 
@@ -57,6 +61,7 @@ class ReportService < BaseService
     ActivityPub::DeliveryWorker.perform_async(payload, some_local_account.id, @target_account.inbox_url)
   end
 
+  # @rbs () -> Array[untyped]
   def forward_to_replied_to!
     # Send report to servers to which the account was replying to, so they also have a chance to act
     inbox_urls = Account.remote.where(domain: forward_to_domains).where(id: Status.where(id: reported_status_ids).where.not(in_reply_to_account_id: nil).select(:in_reply_to_account_id)).inboxes - [@target_account.inbox_url, @target_account.shared_inbox_url]
@@ -66,18 +71,22 @@ class ReportService < BaseService
     end
   end
 
+  # @rbs () -> bool?
   def forward?
     !@target_account.local? && ActiveModel::Type::Boolean.new.cast(@options[:forward])
   end
 
+  # @rbs () -> bool?
   def forward_to_origin?
     forward? && forward_to_domains.include?(@target_account.domain)
   end
 
+  # @rbs () -> Array[untyped]
   def forward_to_domains
     @forward_to_domains ||= (@options[:forward_to_domains] || [@target_account.domain]).filter_map { |domain| TagManager.instance.normalize_domain(domain&.strip) }.uniq
   end
 
+  # @rbs () -> Array[untyped]?
   def reported_status_ids
     return AccountStatusesFilter.new(@target_account, @source_account).results.with_discarded.find(Array(@status_ids)).pluck(:id) if @source_account.local?
 
@@ -91,10 +100,12 @@ class ReportService < BaseService
     scope.where(id: Array(@status_ids)).pluck(:id)
   end
 
+  # @rbs () -> String
   def payload
     Oj.dump(serialize_payload(@report, ActivityPub::FlagSerializer, account: some_local_account))
   end
 
+  # @rbs () -> Account
   def some_local_account
     @some_local_account ||= Account.representative
   end

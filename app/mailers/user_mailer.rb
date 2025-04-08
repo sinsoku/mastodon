@@ -14,6 +14,7 @@ class UserMailer < Devise::Mailer
 
   default to: -> { @resource.email }
 
+  # @rbs (User, String, *untyped, **untyped) -> Mail::Message
   def confirmation_instructions(user, token, *, **)
     @resource = user
     @token    = token
@@ -27,6 +28,7 @@ class UserMailer < Devise::Mailer
     end
   end
 
+  # @rbs (User, String, *untyped, **untyped) -> Mail::Message
   def reset_password_instructions(user, token, *, **)
     @resource = user
     @token    = token
@@ -38,6 +40,7 @@ class UserMailer < Devise::Mailer
     end
   end
 
+  # @rbs (User, *untyped, **untyped) -> Mail::Message
   def password_change(user, *, **)
     @resource = user
 
@@ -48,6 +51,7 @@ class UserMailer < Devise::Mailer
     end
   end
 
+  # @rbs (User, *untyped, **untyped) -> Mail::Message
   def email_changed(user, *, **)
     @resource = user
 
@@ -58,6 +62,7 @@ class UserMailer < Devise::Mailer
     end
   end
 
+  # @rbs (User, *untyped, **untyped) -> Mail::Message
   def two_factor_enabled(user, *, **)
     @resource = user
 
@@ -68,6 +73,7 @@ class UserMailer < Devise::Mailer
     end
   end
 
+  # @rbs (User, *untyped, **untyped) -> Mail::Message
   def two_factor_disabled(user, *, **)
     @resource = user
 
@@ -78,6 +84,7 @@ class UserMailer < Devise::Mailer
     end
   end
 
+  # @rbs (User, *untyped, **untyped) -> Mail::Message
   def two_factor_recovery_codes_changed(user, *, **)
     @resource = user
 
@@ -88,6 +95,7 @@ class UserMailer < Devise::Mailer
     end
   end
 
+  # @rbs (User, *untyped, **untyped) -> Mail::Message
   def webauthn_enabled(user, *, **)
     @resource = user
 
@@ -98,6 +106,7 @@ class UserMailer < Devise::Mailer
     end
   end
 
+  # @rbs (User, *untyped, **untyped) -> Mail::Message
   def webauthn_disabled(user, *, **)
     @resource = user
 
@@ -108,6 +117,7 @@ class UserMailer < Devise::Mailer
     end
   end
 
+  # @rbs (User, WebauthnCredential) -> Mail::Message
   def webauthn_credential_added(user, webauthn_credential)
     @resource = user
     @webauthn_credential = webauthn_credential
@@ -119,6 +129,7 @@ class UserMailer < Devise::Mailer
     end
   end
 
+  # @rbs (User, WebauthnCredential) -> Mail::Message
   def webauthn_credential_deleted(user, webauthn_credential)
     @resource = user
     @webauthn_credential = webauthn_credential
@@ -130,6 +141,7 @@ class UserMailer < Devise::Mailer
     end
   end
 
+  # @rbs (User) -> Mail::Message
   def welcome(user)
     @resource = user
 
@@ -146,6 +158,7 @@ class UserMailer < Devise::Mailer
     end
   end
 
+  # @rbs (User, Backup) -> Mail::Message
   def backup_ready(user, backup)
     @resource = user
     @backup   = backup
@@ -157,6 +170,7 @@ class UserMailer < Devise::Mailer
     end
   end
 
+  # @rbs (User, AccountWarning) -> Mail::Message
   def warning(user, warning)
     @resource = user
     @warning  = warning
@@ -167,6 +181,7 @@ class UserMailer < Devise::Mailer
     end
   end
 
+  # @rbs (User, Appeal) -> Mail::Message
   def appeal_approved(user, appeal)
     @resource = user
     @appeal   = appeal
@@ -176,6 +191,7 @@ class UserMailer < Devise::Mailer
     end
   end
 
+  # @rbs (User, Appeal) -> Mail::Message
   def appeal_rejected(user, appeal)
     @resource = user
     @appeal   = appeal
@@ -185,6 +201,7 @@ class UserMailer < Devise::Mailer
     end
   end
 
+  # @rbs (User, String, String, Time) -> Mail::Message
   def suspicious_sign_in(user, remote_ip, user_agent, timestamp)
     @resource   = user
     @remote_ip  = remote_ip
@@ -197,6 +214,7 @@ class UserMailer < Devise::Mailer
     end
   end
 
+  # @rbs (User, String, String, Time) -> Mail::Message
   def failed_2fa(user, remote_ip, user_agent, timestamp)
     @resource   = user
     @remote_ip  = remote_ip
@@ -211,14 +229,17 @@ class UserMailer < Devise::Mailer
 
   private
 
+  # @rbs () -> String
   def default_devise_subject
     I18n.t(:subject, scope: ['devise.mailer', action_name])
   end
 
+  # @rbs () -> String
   def set_instance
     @instance = Rails.configuration.x.local_domain
   end
 
+  # @rbs (?use_current_locale: bool) -> (Symbol | String)
   def locale(use_current_locale: false)
     @resource.locale.presence || (use_current_locale && I18n.locale) || I18n.default_locale
   end

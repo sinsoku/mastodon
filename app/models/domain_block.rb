@@ -32,10 +32,12 @@ class DomainBlock < ApplicationRecord
   scope :with_limitations, -> { where(severity: [:silence, :suspend]).or(where(reject_media: true)) }
   scope :by_severity, -> { in_order_of(:severity, %w(noop silence suspend)).order(:domain) }
 
+  # @rbs () -> String
   def to_log_human_identifier
     domain
   end
 
+  # @rbs () -> Array[untyped]
   def policies
     if suspend?
       [:suspend]
@@ -45,6 +47,7 @@ class DomainBlock < ApplicationRecord
   end
 
   class << self
+    # @rbs (String) -> bool
     def suspend?(domain)
       !!rule_for(domain)&.suspend?
     end
@@ -53,16 +56,19 @@ class DomainBlock < ApplicationRecord
       !!rule_for(domain)&.silence?
     end
 
+    # @rbs (String?) -> bool
     def reject_media?(domain)
       !!rule_for(domain)&.reject_media?
     end
 
+    # @rbs (String) -> bool
     def reject_reports?(domain)
       !!rule_for(domain)&.reject_reports?
     end
 
     alias blocked? suspend?
 
+    # @rbs (String?) -> DomainBlock?
     def rule_for(domain)
       return if domain.blank?
 
@@ -76,6 +82,7 @@ class DomainBlock < ApplicationRecord
     end
   end
 
+  # @rbs (DomainBlock) -> bool
   def stricter_than?(other_block)
     return true  if suspend?
     return false if other_block.suspend? && (silence? || noop?)
@@ -84,6 +91,7 @@ class DomainBlock < ApplicationRecord
     (reject_media || !other_block.reject_media) && (reject_reports || !other_block.reject_reports)
   end
 
+  # @rbs () -> String
   def public_domain
     return domain unless obfuscate?
 
@@ -99,6 +107,7 @@ class DomainBlock < ApplicationRecord
     end.join
   end
 
+  # @rbs () -> String
   def domain_digest
     Digest::SHA256.hexdigest(domain)
   end

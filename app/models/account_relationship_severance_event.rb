@@ -34,6 +34,7 @@ class AccountRelationshipSeveranceEvent < ApplicationRecord
 
   private
 
+  # @rbs () -> Integer
   def set_relationships_count!
     self.followers_count = severed_relationships.about_local_account(account).passive.count
     self.following_count = severed_relationships.about_local_account(account).active.count

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class UserEmailValidator < ActiveModel::Validator
+  # @rbs (User | RSpec::Mocks::InstanceVerifyingDouble) -> nil
   def validate(user)
     return if user.valid_invitation? || user.email.blank?
 
@@ -10,18 +11,22 @@ class UserEmailValidator < ActiveModel::Validator
 
   private
 
+  # @rbs (String, (String | IPAddr)?) -> bool
   def blocked_email_provider?(email, ip)
     disallowed_through_email_domain_block?(email, ip) || disallowed_through_configuration?(email) || not_allowed_through_configuration?(email)
   end
 
+  # @rbs (String) -> bool
   def blocked_canonical_email?(email)
     CanonicalEmailBlock.block?(email)
   end
 
+  # @rbs (String, (String | IPAddr)?) -> bool
   def disallowed_through_email_domain_block?(email, ip)
     EmailDomainBlock.block?(email, attempt_ip: ip)
   end
 
+  # @rbs (String) -> bool
   def not_allowed_through_configuration?(email)
     return false if Rails.configuration.x.email_domains_allowlist.blank?
 
@@ -31,6 +36,7 @@ class UserEmailValidator < ActiveModel::Validator
     email !~ regexp
   end
 
+  # @rbs (String) -> bool
   def disallowed_through_configuration?(email)
     return false if Rails.configuration.x.email_domains_denylist.blank?
 

@@ -2,6 +2,7 @@
 
 module Admin
   module RolesHelper
+    # @rbs (Symbol) -> ActiveSupport::SafeBuffer
     def privilege_label(privilege)
       safe_join(
         [
@@ -11,12 +12,14 @@ module Admin
       )
     end
 
+    # @rbs (Array[untyped]) -> Array[untyped]
     def disable_permissions?(permissions)
       permissions.filter { |privilege| role_flag_value(privilege).zero? }
     end
 
     private
 
+    # @rbs (Symbol) -> Integer
     def role_flag_value(privilege)
       UserRole::FLAGS[privilege] & current_user.role.computed_permissions
     end

@@ -50,20 +50,24 @@ class CustomFilter < ApplicationRecord
   before_destroy :prepare_cache_invalidation!
   after_commit :invalidate_cache!
 
+  # @rbs () -> nil
   def expires_in
     return nil if expires_at.nil?
 
     EXPIRATION_DURATIONS.find { |expires_in| expires_in.from_now >= expires_at }
   end
 
+  # @rbs (String) -> Symbol
   def irreversible=(value)
     self.action = ActiveModel::Type::Boolean.new.cast(value) ? :hide : :warn
   end
 
+  # @rbs () -> bool
   def irreversible?
     hide_action?
   end
 
+  # @rbs (Integer) -> Array[untyped]
   def self.cached_filters_for(account_id)
     active_filters = Rails.cache.fetch("filters:v3:#{account_id}") do
       filters_hash = {}
@@ -89,6 +93,7 @@ class CustomFilter < ApplicationRecord
     active_filters.reject { |custom_filter, _| custom_filter.expired? }
   end
 
+  # @rbs (Array[untyped], Status) -> Array[untyped]
   def self.apply_cached_filters(cached_filters, status)
     cached_filters.filter_map do |filter, rules|
       match = rules[:keywords].match(status.proper.searchable_text) if rules[:keywords].present?
@@ -102,10 +107,12 @@ class CustomFilter < ApplicationRecord
     end
   end
 
+  # @rbs () -> bool
   def prepare_cache_invalidation!
     @should_invalidate_cache = true
   end
 
+  # @rbs () -> Integer?
   def invalidate_cache!
     return unless @should_invalidate_cache
 
@@ -118,10 +125,12 @@ class CustomFilter < ApplicationRecord
 
   private
 
+  # @rbs () -> ActiveModel::Error?
   def context_must_be_valid
     errors.add(:context, I18n.t('filters.errors.invalid_context')) if invalid_context_value?
   end
 
+  # @rbs () -> bool
   def invalid_context_value?
     context.blank? || context.difference(VALID_CONTEXTS).any?
   end

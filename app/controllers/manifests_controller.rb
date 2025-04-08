@@ -5,6 +5,7 @@ class ManifestsController < ActionController::Base # rubocop:disable Rails/Appli
   # and thus re-issuing session cookies
   serialization_scope nil
 
+  # @rbs () -> String
   def show
     expires_in 3.minutes, public: true
     render json: InstancePresenter.new, serializer: ManifestSerializer, root: 'instance'

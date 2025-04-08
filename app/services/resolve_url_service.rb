@@ -6,6 +6,7 @@ class ResolveURLService < BaseService
 
   USERNAME_STATUS_RE = %r{/@(?<username>#{Account::USERNAME_RE})/(?<status_id>[0-9]+)\Z}
 
+  # @rbs (String, ?on_behalf_of: nil | Account) -> (Account | Status)?
   def call(url, on_behalf_of: nil)
     @url          = url
     @on_behalf_of = on_behalf_of
@@ -21,6 +22,7 @@ class ResolveURLService < BaseService
 
   private
 
+  # @rbs () -> Status
   def process_url
     if equals_or_includes_any?(type, ActivityPub::FetchRemoteActorService::SUPPORTED_TYPES)
       ActivityPub::FetchRemoteActorService.new.call(resource_url, prefetched_body: body)
@@ -31,6 +33,7 @@ class ResolveURLService < BaseService
     end
   end
 
+  # @rbs () -> (Account | Status)?
   def process_url_from_db
     if [500, 502, 503, 504, nil].include?(fetch_resource_service.response_code)
       account = Account.find_by(uri: @url)
@@ -58,34 +61,42 @@ class ResolveURLService < BaseService
     nil
   end
 
+  # @rbs () -> Array[untyped]?
   def fetched_resource
     @fetched_resource ||= fetch_resource_service.call(@url)
   end
 
+  # @rbs () -> (RSpec::Mocks::InstanceVerifyingDouble | FetchResourceService)
   def fetch_resource_service
     @fetch_resource_service ||= FetchResourceService.new
   end
 
+  # @rbs () -> String
   def resource_url
     fetched_resource.first
   end
 
+  # @rbs () -> String
   def body
     fetched_resource.second[:prefetched_body]
   end
 
+  # @rbs () -> String
   def type
     json_data['type']
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def json_data
     @json_data ||= body_to_json(body)
   end
 
+  # @rbs () -> bool
   def local_url?
     TagManager.instance.local_url?(@url)
   end
 
+  # @rbs () -> Status?
   def process_local_url
     recognized_params = Rails.application.routes.recognize_path(@url)
 
@@ -114,6 +125,7 @@ class ResolveURLService < BaseService
     end
   end
 
+  # @rbs (Status) -> Status?
   def check_local_status(status)
     return if status.nil?
 

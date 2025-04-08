@@ -13,26 +13,32 @@ module AccountOwnedConcern
 
   private
 
+  # @rbs () -> bool
   def account_required?
     true
   end
 
+  # @rbs () -> Account
   def set_account
     @account = Account.find_local!(username_param)
   end
 
+  # @rbs () -> String
   def username_param
     params[:account_username]
   end
 
+  # @rbs () -> (String | ActiveSupport::SafeBuffer)?
   def check_account_approval
     not_found if @account.local? && @account.user_pending?
   end
 
+  # @rbs () -> String?
   def check_account_confirmation
     not_found if @account.local? && !@account.user_confirmed?
   end
 
+  # @rbs () -> (String | ActiveSupport::SafeBuffer)?
   def check_account_suspension
     if @account.permanently_unavailable?
       permanent_unavailability_response
@@ -41,15 +47,18 @@ module AccountOwnedConcern
     end
   end
 
+  # @rbs () -> bool
   def skip_temporary_suspension_response?
     false
   end
 
+  # @rbs () -> (String | ActiveSupport::SafeBuffer)
   def permanent_unavailability_response
     expires_in(3.minutes, public: true)
     gone
   end
 
+  # @rbs () -> (String | ActiveSupport::SafeBuffer)
   def temporary_suspension_response
     expires_in(3.minutes, public: true)
     forbidden

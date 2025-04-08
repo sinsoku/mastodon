@@ -9,6 +9,7 @@ class FanOutOnWriteService < BaseService
   # @option options [Boolean] update
   # @option options [Array<Integer>] silenced_account_ids
   # @option options [Boolean] skip_notifications
+  # @rbs (Status, ?Hash[untyped, untyped]) -> Integer?
   def call(status, options = {})
     @status    = status
     @account   = status.account
@@ -24,6 +25,7 @@ class FanOutOnWriteService < BaseService
 
   private
 
+  # @rbs () -> void
   def check_race_condition!
     # I don't know why but at some point we had an issue where
     # this service was being executed with status objects
@@ -36,6 +38,7 @@ class FanOutOnWriteService < BaseService
     raise Mastodon::RaceConditionError if @status.visibility.nil?
   end
 
+  # @rbs () -> void
   def fan_out_to_local_recipients!
     deliver_to_self!
 
@@ -56,19 +59,23 @@ class FanOutOnWriteService < BaseService
     end
   end
 
+  # @rbs () -> nil
   def fan_out_to_public_recipients!
     deliver_to_hashtag_followers!
   end
 
+  # @rbs () -> Integer?
   def fan_out_to_public_streams!
     broadcast_to_hashtag_streams!
     broadcast_to_public_streams!
   end
 
+  # @rbs () -> void
   def deliver_to_self!
     FeedManager.instance.push_to_home(@account, @status, update: update?) if @account.local?
   end
 
+  # @rbs () -> void
   def notify_mentioned_accounts!
     @status.active_mentions.where.not(id: @options[:silenced_account_ids] || []).joins(:account).merge(Account.local).select(:id, :account_id).reorder(nil).find_in_batches do |mentions|
       LocalNotificationWorker.push_bulk(mentions) do |mention|
@@ -86,6 +93,7 @@ class FanOutOnWriteService < BaseService
     end
   end
 
+  # @rbs () -> nil
   def notify_about_update!
     @status.reblogged_by_accounts.merge(Account.local).select(:id).reorder(nil).find_in_batches do |accounts|
       LocalNotificationWorker.push_bulk(accounts) do |account|
@@ -94,6 +102,7 @@ class FanOutOnWriteService < BaseService
     end
   end
 
+  # @rbs () -> void
   def deliver_to_all_followers!
     @account.followers_for_local_distribution.select(:id).reorder(nil).find_in_batches do |followers|
       FeedInsertWorker.push_bulk(followers) do |follower|
@@ -102,6 +111,7 @@ class FanOutOnWriteService < BaseService
     end
   end
 
+  # @rbs () -> nil
   def deliver_to_hashtag_followers!
     TagFollow.for_local_distribution.where(tag_id: @status.tags.map(&:id)).select(:id, :account_id).reorder(nil).find_in_batches do |follows|
       FeedInsertWorker.push_bulk(follows) do |follow|
@@ -110,6 +120,7 @@ class FanOutOnWriteService < BaseService
     end
   end
 
+  # @rbs () -> nil
   def deliver_to_lists!
     @account.lists_for_local_distribution.select(:id).reorder(nil).find_in_batches do |lists|
       FeedInsertWorker.push_bulk(lists) do |list|
@@ -118,6 +129,7 @@ class FanOutOnWriteService < BaseService
     end
   end
 
+  # @rbs () -> nil
   def deliver_to_mentioned_followers!
     @status.mentions.joins(:account).merge(@account.followers_for_local_distribution).select(:id, :account_id).reorder(nil).find_in_batches do |mentions|
       FeedInsertWorker.push_bulk(mentions) do |mention|
@@ -126,6 +138,7 @@ class FanOutOnWriteService < BaseService
     end
   end
 
+  # @rbs () -> void
   def broadcast_to_hashtag_streams!
     @status.tags.map(&:name).each do |hashtag|
       redis.publish("timeline:hashtag:#{hashtag.mb_chars.downcase}", anonymous_payload)
@@ -133,6 +146,7 @@ class FanOutOnWriteService < BaseService
     end
   end
 
+  # @rbs () -> Integer?
   def broadcast_to_public_streams!
     return if @status.reply? && @status.in_reply_to_account_id != @account.id
 
@@ -145,14 +159,17 @@ class FanOutOnWriteService < BaseService
     end
   end
 
+  # @rbs () -> AccountConversation?
   def deliver_to_conversation!
     AccountConversation.add_status(@account, @status) unless update?
   end
 
+  # @rbs () -> void
   def warm_payload_cache!
     Rails.cache.write("fan-out/#{@status.id}", rendered_status)
   end
 
+  # @rbs () -> String
   def anonymous_payload
     @anonymous_payload ||= Oj.dump(
       event: update? ? :'status.update' : :update,
@@ -160,18 +177,22 @@ class FanOutOnWriteService < BaseService
     )
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def rendered_status
     @rendered_status ||= InlineRenderer.render(@status, nil, :status)
   end
 
+  # @rbs () -> bool?
   def update?
     @options[:update]
   end
 
+  # @rbs () -> bool
   def broadcastable?
     @status.public_visibility? && !@status.reblog? && !@account.silenced?
   end
 
+  # @rbs (Integer) -> bool
   def subscribed_to_streaming_api?(account_id)
     redis.exists?("subscribed:timeline:#{account_id}") || redis.exists?("subscribed:timeline:#{account_id}:notifications")
   end

@@ -18,6 +18,7 @@ module CacheConcern
   # Prevents high-entropy headers such as `Cookie`, `Signature` or `Authorization`
   # from being used as cache keys, while allowing to `Vary` on them (to not serve
   # anonymous cached data to authenticated requests when authentication matters)
+  # @rbs () -> Hash[untyped, untyped]?
   def enforce_cache_control!
     vary = response.headers['Vary']&.split&.map { |x| x.strip.downcase }
     return unless vary.present? && %w(cookie authorization signature).any? { |header| vary.include?(header) && request.headers[header].present? }
@@ -25,6 +26,7 @@ module CacheConcern
     response.cache_control.replace(private: true, no_store: true)
   end
 
+  # @rbs (**OauthMetadataPresenter | Class | String | ActiveSupport::Duration | Symbol | ActiveSupport::Duration | InstancePresenter | Class | String | CustomEmoji | String | Class | ActivityPub::CollectionPresenter | String | Class | Class | ActiveSupport::Duration | Account | String | Class | Hash[untyped, untyped] | Class | ActiveSupport::Duration | String | Status | String | Class | ActivityPub::ActivityPresenter | String | Class) -> bool
   def render_with_cache(**options)
     raise ArgumentError, 'Only JSON render calls are supported' unless options.key?(:json) || block_given?
 

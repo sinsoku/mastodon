@@ -29,6 +29,7 @@ class Instance < ApplicationRecord
   scope :by_domain_and_subdomains, ->(domain) { where("reverse('.' || domain) LIKE reverse(?)", "%.#{domain}") }
   scope :with_domain_follows, ->(domains) { where(domain: domains).where(domain_account_follows) }
 
+  # @rbs () -> Arel::Nodes::SqlLiteral
   def self.domain_account_follows
     Arel.sql(
       <<~SQL.squish
@@ -42,22 +43,27 @@ class Instance < ApplicationRecord
     )
   end
 
+  # @rbs () -> (DeliveryFailureTracker | RSpec::Mocks::InstanceVerifyingDouble)
   def delivery_failure_tracker
     @delivery_failure_tracker ||= DeliveryFailureTracker.new(domain)
   end
 
+  # @rbs () -> nil
   def purgeable?
     unavailable? || domain_block&.suspend?
   end
 
+  # @rbs () -> bool
   def unavailable?
     unavailable_domain.present?
   end
 
+  # @rbs () -> bool
   def failing?
     failure_days.present? || unavailable?
   end
 
+  # @rbs () -> String
   def to_param
     domain
   end
@@ -66,6 +72,7 @@ class Instance < ApplicationRecord
 
   delegate :exhausted_deliveries_days, to: :delivery_failure_tracker
 
+  # @rbs (Integer, ?Date) -> Array[untyped]
   def availability_over_days(num_days, end_date = Time.now.utc.to_date)
     failures_map    = exhausted_deliveries_days.index_with { true }
     period_end_at   = exhausted_deliveries_days.last || end_date

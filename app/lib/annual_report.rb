@@ -17,11 +17,13 @@ class AnnualReport
 
   SCHEMA = 1
 
+  # @rbs (Account, Integer) -> void
   def initialize(account, year)
     @account = account
     @year = year
   end
 
+  # @rbs () -> GeneratedAnnualReport
   def generate
     return if GeneratedAnnualReport.exists?(account: @account, year: @year)
 
@@ -35,6 +37,7 @@ class AnnualReport
 
   private
 
+  # @rbs () -> Hash[untyped, untyped]
   def data
     with_read_replica do
       SOURCES.each_with_object({}) { |klass, hsh| hsh.merge!(klass.new(@account, @year).generate) }

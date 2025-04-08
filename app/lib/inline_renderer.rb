@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 
 class InlineRenderer
+  # @rbs (Status | AnnouncementReaction | Announcement, Account?, Symbol) -> void
   def initialize(object, current_account, template)
     @object          = object
     @current_account = current_account
     @template        = template
   end
 
+  # @rbs (Status | AnnouncementReaction | Announcement, Account?, Symbol) -> Hash[untyped, untyped]
   def render
     case @template
     when :status
@@ -28,12 +30,14 @@ class InlineRenderer
     serializable_resource.as_json
   end
 
+  # @rbs (Status | AnnouncementReaction | Announcement, Account?, Symbol) -> Hash[untyped, untyped]
   def self.render(object, current_account, template)
     new(object, current_account, template).render
   end
 
   private
 
+  # @rbs () -> Array[untyped]
   def preload_associations_for_status
     ActiveRecord::Associations::Preloader.new(records: [@object], associations: {
       active_mentions: :account,
@@ -44,6 +48,7 @@ class InlineRenderer
     }).call
   end
 
+  # @rbs () -> User?
   def current_user
     @current_account&.user
   end

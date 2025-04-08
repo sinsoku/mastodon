@@ -31,26 +31,31 @@ class SessionActivation < ApplicationRecord
   DEFAULT_SCOPES = %w(read write follow).freeze
 
   class << self
+    # @rbs (String?) -> bool?
     def active?(id)
       id && exists?(session_id: id)
     end
 
+    # @rbs (**String? | String | User | String) -> SessionActivation?
     def activate(**options)
       activation = create!(**options)
       purge_old
       activation
     end
 
+    # @rbs (String?) -> nil
     def deactivate(id)
       return unless id
 
       where(session_id: id).destroy_all
     end
 
+    # @rbs () -> void
     def purge_old
       order('created_at desc').offset(Rails.configuration.x.max_session_activations).destroy_all
     end
 
+    # @rbs (String) -> Array[untyped]
     def exclusive(id)
       where.not(session_id: id).destroy_all
     end
@@ -58,10 +63,12 @@ class SessionActivation < ApplicationRecord
 
   private
 
+  # @rbs () -> Doorkeeper::AccessToken
   def assign_access_token
     self.access_token = Doorkeeper::AccessToken.create!(access_token_attributes)
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def access_token_attributes
     {
       application_id: Doorkeeper::Application.find_by(superapp: true)&.id,

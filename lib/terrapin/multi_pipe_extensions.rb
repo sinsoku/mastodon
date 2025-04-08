@@ -4,6 +4,7 @@ require 'fcntl'
 
 module Terrapin
   module MultiPipeExtensions
+    # @rbs () -> void
     def initialize
       @stdout_in, @stdout_out = IO.pipe
       @stderr_in, @stderr_out = IO.pipe
@@ -11,11 +12,13 @@ module Terrapin
       clear_nonblocking_flags!
     end
 
+    # @rbs () -> Hash[untyped, untyped]
     def pipe_options
       # Add some flags to explicitly close the other end of the pipes
       { :out => @stdout_out, :err => @stderr_out, @stdout_in => :close, @stderr_in => :close }
     end
 
+    # @rbs () -> void
     def read
       # While we are patching Terrapin, fix child process potentially getting stuck on writing
       # to stderr.
@@ -37,6 +40,7 @@ module Terrapin
     # @param [IO] io IO Stream to read until there is nothing to read
     # @param [String] result Mutable string to which read values will be appended to
     # @param [Array<IO>] fds_to_read Mutable array from which `io` should be removed on EOF
+    # @rbs (IO, String, Array[untyped]) -> IO?
     def read_nonblocking!(io, result, fds_to_read)
       while (partial_result = io.read_nonblock(8192))
         result << partial_result
@@ -47,6 +51,7 @@ module Terrapin
       fds_to_read.delete(io)
     end
 
+    # @rbs () -> Integer
     def clear_nonblocking_flags!
       # Ruby 3.0 sets pipes to non-blocking mode, and resets the flags as
       # needed when calling fork/exec-related syscalls, but posix-spawn does

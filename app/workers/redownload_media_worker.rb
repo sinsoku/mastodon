@@ -7,6 +7,7 @@ class RedownloadMediaWorker
 
   sidekiq_options queue: 'pull', retry: 3
 
+  # @rbs (Integer) -> bool?
   def perform(id)
     media_attachment = MediaAttachment.find(id)
 

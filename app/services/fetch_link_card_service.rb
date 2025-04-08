@@ -15,6 +15,7 @@ class FetchLinkCardService < BaseService
     )
   }iox
 
+  # @rbs (Status) -> nil
   def call(status)
     @status       = status
     @original_url = parse_urls
@@ -36,12 +37,14 @@ class FetchLinkCardService < BaseService
 
   private
 
+  # @rbs () -> bool?
   def process_url
     @card ||= PreviewCard.new(url: @url)
 
     attempt_oembed || attempt_opengraph
   end
 
+  # @rbs () -> String?
   def html
     return @html if defined?(@html)
 
@@ -66,6 +69,7 @@ class FetchLinkCardService < BaseService
     end
   end
 
+  # @rbs () -> nil
   def attach_card
     with_redis_lock("attach_card:#{@status.id}") do
       return if @status.with_preview_card?
@@ -76,6 +80,7 @@ class FetchLinkCardService < BaseService
     end
   end
 
+  # @rbs () -> Addressable::URI?
   def parse_urls
     urls = if @status.local?
              @status.text.scan(URL_PATTERN).map { |array| Addressable::URI.parse(array[1]).normalize }
@@ -89,22 +94,26 @@ class FetchLinkCardService < BaseService
     urls.reject { |uri| bad_url?(uri) }.first
   end
 
+  # @rbs (Addressable::URI) -> bool
   def bad_url?(uri)
     # Avoid local instance URLs and invalid URLs
     uri.host.blank? || TagManager.instance.local_url?(uri.to_s) || !%w(http https).include?(uri.scheme)
   end
 
+  # @rbs (Nokogiri::XML::Element) -> bool
   def mention_link?(anchor)
     @status.mentions.any? do |mention|
       anchor['href'] == ActivityPub::TagManager.instance.url_for(mention.account)
     end
   end
 
+  # @rbs (Nokogiri::XML::Element) -> bool
   def skip_link?(anchor)
     # Avoid links for hashtags and mentions (microformats)
     anchor['rel']&.include?('tag') || anchor['class']&.match?(/u-url|h-card/) || mention_link?(anchor)
   end
 
+  # @rbs () -> bool?
   def attempt_oembed
     service         = FetchOEmbedService.new
     url_domain      = Addressable::URI.parse(@url).normalized_host
@@ -149,6 +158,7 @@ class FetchLinkCardService < BaseService
     @card.save_with_optional_image!
   end
 
+  # @rbs () -> bool?
   def attempt_opengraph
     return if html.nil?
 

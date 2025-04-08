@@ -4,6 +4,7 @@ module Admin
   class DashboardController < BaseController
     include Redisable
 
+    # @rbs () -> Range[untyped]?
     def index
       authorize :dashboard, :index?
 

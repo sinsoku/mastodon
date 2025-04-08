@@ -4,6 +4,7 @@ module Admin
   class AccountActionsController < BaseController
     before_action :set_account
 
+    # @rbs () -> AccountWarningPreset::ActiveRecord_Relation
     def new
       authorize @account, :show?
 
@@ -11,6 +12,7 @@ module Admin
       @warning_presets = AccountWarningPreset.all
     end
 
+    # @rbs () -> String
     def create
       authorize @account, :show?
 
@@ -29,10 +31,12 @@ module Admin
 
     private
 
+    # @rbs () -> Account
     def set_account
       @account = Account.find(params[:account_id])
     end
 
+    # @rbs () -> ActionController::Parameters
     def resource_params
       params.require(:admin_account_action).permit(:type, :report_id, :warning_preset_id, :text, :send_email_notification, :include_statuses)
     end

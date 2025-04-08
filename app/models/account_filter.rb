@@ -16,10 +16,12 @@ class AccountFilter
 
   attr_reader :params
 
+  # @rbs (ActionController::Parameters | Hash[untyped, untyped]) -> void
   def initialize(params)
     @params = params.to_h.symbolize_keys
   end
 
+  # @rbs () -> Account::ActiveRecord_Relation?
   def results
     scope = Account.includes(:account_stat, user: [:ips, :invite_request]).without_instance_actor
 
@@ -34,16 +36,19 @@ class AccountFilter
 
   private
 
+  # @rbs () -> Hash[untyped, untyped]
   def relevant_params
     params.tap do |args|
       args.delete(:origin) if origin_is_remote_and_domain_present?
     end
   end
 
+  # @rbs () -> bool
   def origin_is_remote_and_domain_present?
     params[:origin] == 'remote' && params[:by_domain].present?
   end
 
+  # @rbs (Symbol, String | Array[untyped] | bool) -> Account::ActiveRecord_Relation?
   def scope_for(key, value)
     case key.to_s
     when 'origin'
@@ -71,6 +76,7 @@ class AccountFilter
     end
   end
 
+  # @rbs (String) -> Account::ActiveRecord_Relation
   def origin_scope(value)
     case value.to_s
     when 'local'
@@ -82,6 +88,7 @@ class AccountFilter
     end
   end
 
+  # @rbs (String) -> Account::ActiveRecord_Relation
   def status_scope(value)
     case value.to_s
     when 'active'
@@ -101,6 +108,7 @@ class AccountFilter
     end
   end
 
+  # @rbs (String) -> Account::ActiveRecord_Relation
   def order_scope(value)
     case value.to_s
     when 'active'
@@ -116,10 +124,12 @@ class AccountFilter
     Account.left_joins(user: :invite).merge(Invite.where(user_id: value.to_s))
   end
 
+  # @rbs (Array[untyped]) -> Account::ActiveRecord_Relation
   def role_scope(value)
     accounts_with_users.merge(User.where(role_id: Array(value).map(&:to_s)))
   end
 
+  # @rbs () -> Account::ActiveRecord_Relation
   def accounts_with_users
     Account.left_joins(:user)
   end

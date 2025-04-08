@@ -54,6 +54,7 @@ class Setting < ApplicationRecord
   class << self
     # get or set a variable with the variable as the called method
     # rubocop:disable Style/MissingRespondToMissing
+    # @rbs (Symbol, *nil | String | bool) -> (Array[untyped] | bool | String | Integer)?
     def method_missing(method, *args)
       # set a value for a variable
       if method.end_with?('=')
@@ -67,14 +68,17 @@ class Setting < ApplicationRecord
     end
     # rubocop:enable Style/MissingRespondToMissing
 
+    # @rbs () -> String
     def cache_prefix_by_startup
       @cache_prefix_by_startup ||= Digest::MD5.hexdigest(default_settings.to_s)
     end
 
+    # @rbs (String) -> String
     def cache_key(var_name)
       "rails_settings_cached/#{cache_prefix_by_startup}/#{var_name}"
     end
 
+    # @rbs (String) -> (Array[untyped] | bool | String | Integer)?
     def [](key)
       Rails.cache.fetch(cache_key(key)) do
         db_val = find_by(var: key)
@@ -83,12 +87,14 @@ class Setting < ApplicationRecord
     end
 
     # set a setting value by [] notation
+    # @rbs (String, (String | bool)?) -> bool
     def []=(var_name, value)
       record = find_or_initialize_by(var: var_name.to_s)
       record.value = value
       record.save!
     end
 
+    # @rbs () -> Hash[untyped, untyped]
     def default_settings
       return @default_settings if defined?(@default_settings)
 
@@ -99,15 +105,18 @@ class Setting < ApplicationRecord
   end
 
   # get the value field, YAML decoded
+  # @rbs () -> (String | bool | Integer)?
   def value
     YAML.safe_load(self[:value], permitted_classes: [ActiveSupport::HashWithIndifferentAccess, Symbol]) if self[:value].present?
   end
 
   # set the value field, YAML encoded
+  # @rbs ((String | bool | Integer)?) -> String
   def value=(new_value)
     self[:value] = new_value.to_yaml
   end
 
+  # @rbs () -> bool
   def rewrite_cache
     Rails.cache.write(cache_key, value)
   end
@@ -116,10 +125,12 @@ class Setting < ApplicationRecord
     Rails.cache.delete(cache_key)
   end
 
+  # @rbs (String) -> String
   def cache_key
     self.class.cache_key(var)
   end
 
+  # @rbs () -> String
   def to_param
     var
   end

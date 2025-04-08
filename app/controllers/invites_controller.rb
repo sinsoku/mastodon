@@ -8,6 +8,7 @@ class InvitesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_cache_headers
 
+  # @rbs () -> Invite?
   def index
     authorize :invite, :create?
 
@@ -15,6 +16,7 @@ class InvitesController < ApplicationController
     @invite  = Invite.new
   end
 
+  # @rbs () -> String?
   def create
     authorize :invite, :create?
 
@@ -29,6 +31,7 @@ class InvitesController < ApplicationController
     end
   end
 
+  # @rbs () -> String
   def destroy
     @invite = invites.find(params[:id])
     authorize @invite, :destroy?
@@ -38,14 +41,17 @@ class InvitesController < ApplicationController
 
   private
 
+  # @rbs () -> Invite::ActiveRecord_AssociationRelation
   def invites
     current_user.invites.order(id: :desc)
   end
 
+  # @rbs () -> ActionController::Parameters
   def resource_params
     params.require(:invite).permit(:max_uses, :expires_in, :autofollow, :comment)
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def set_cache_headers
     response.cache_control.replace(private: true, no_store: true)
   end

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module DomainControlHelper
+  # @rbs (String?) -> bool
   def domain_not_allowed?(uri_or_domain)
     return false if uri_or_domain.blank?
 
@@ -17,6 +18,7 @@ module DomainControlHelper
     end
   end
 
+  # @rbs () -> bool
   def limited_federation_mode?
     Rails.configuration.x.limited_federation_mode
   end

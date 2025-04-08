@@ -3,6 +3,7 @@
 class RemoveFromFollowersService < BaseService
   include Payloadable
 
+  # @rbs (Account, Account) -> void
   def call(source_account, target_accounts)
     source_account.passive_relationships.where(account_id: target_accounts).find_each do |follow|
       follow.destroy
@@ -13,10 +14,12 @@ class RemoveFromFollowersService < BaseService
 
   private
 
+  # @rbs (Follow) -> String
   def create_notification(follow)
     ActivityPub::DeliveryWorker.perform_async(build_json(follow), follow.target_account_id, follow.account.inbox_url)
   end
 
+  # @rbs (Follow) -> String
   def build_json(follow)
     Oj.dump(serialize_payload(follow, ActivityPub::RejectFollowSerializer))
   end

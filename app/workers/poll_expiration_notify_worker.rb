@@ -5,6 +5,7 @@ class PollExpirationNotifyWorker
 
   sidekiq_options lock: :until_executing
 
+  # @rbs (Integer?) -> bool?
   def perform(poll_id)
     @poll = Poll.find(poll_id)
 
@@ -17,6 +18,7 @@ class PollExpirationNotifyWorker
     true
   end
 
+  # @rbs (Integer) -> Array[untyped]
   def self.remove_from_scheduled(poll_id)
     queue = Sidekiq::ScheduledSet.new
     queue.select { |scheduled| scheduled.klass == name && scheduled.args[0] == poll_id }.map(&:delete)
@@ -24,23 +26,28 @@ class PollExpirationNotifyWorker
 
   private
 
+  # @rbs () -> bool
   def does_not_expire?
     @poll.expires_at.nil?
   end
 
+  # @rbs () -> bool
   def not_due_yet?
     @poll.expires_at.present? && !@poll.expired?
   end
 
+  # @rbs () -> String
   def requeue!
     PollExpirationNotifyWorker.perform_at(@poll.expires_at + 5.minutes, @poll.id)
   end
 
+  # @rbs () -> String
   def notify_remote_voters_and_owner!
     ActivityPub::DistributePollUpdateWorker.perform_async(@poll.status.id)
     LocalNotificationWorker.perform_async(@poll.account_id, @poll.id, 'Poll', 'poll')
   end
 
+  # @rbs () -> nil
   def notify_local_voters!
     @poll.voters.merge(Account.local).select(:id).find_in_batches do |accounts|
       LocalNotificationWorker.push_bulk(accounts) do |account|

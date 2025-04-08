@@ -7,6 +7,7 @@ class ScopeTransformer < Parslet::Transform
 
     attr_reader :namespace, :term
 
+    # @rbs (Hash[untyped, untyped]) -> void
     def initialize(scope)
       @namespace = scope[:namespace]&.to_s
       @access    = scope[:access] ? [scope[:access].to_s] : DEFAULT_ACCESS.dup
@@ -16,10 +17,12 @@ class ScopeTransformer < Parslet::Transform
       @access = %w(read) if @term == 'profile'
     end
 
+    # @rbs () -> String
     def key
       @key ||= [@namespace, @term].compact.join('/')
     end
 
+    # @rbs () -> String
     def access
       @access.join('/')
     end
@@ -28,6 +31,7 @@ class ScopeTransformer < Parslet::Transform
       clone.merge!(other_scope)
     end
 
+    # @rbs (ScopeTransformer::Scope) -> ScopeTransformer::Scope
     def merge!(other_scope)
       raise ArgumentError unless other_scope.namespace == namespace && other_scope.term == term
 

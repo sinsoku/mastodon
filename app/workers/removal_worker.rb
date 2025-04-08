@@ -3,6 +3,7 @@
 class RemovalWorker
   include Sidekiq::Worker
 
+  # @rbs (Integer, ?Hash[untyped, untyped]) -> (bool | Status)
   def perform(status_id, options = {})
     RemoveStatusService.new.call(Status.with_discarded.find(status_id), **options.symbolize_keys)
   rescue ActiveRecord::RecordNotFound

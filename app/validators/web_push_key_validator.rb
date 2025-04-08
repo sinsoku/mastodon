@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class WebPushKeyValidator < ActiveModel::Validator
+  # @rbs (Web::PushSubscription) -> (Hash[untyped, untyped] | ActiveModel::Error)
   def validate(subscription)
     begin
       Webpush::Encryption.encrypt('validation_test', subscription.key_p256dh, subscription.key_auth)

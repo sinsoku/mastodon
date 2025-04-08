@@ -6,14 +6,17 @@ class TagManager
   include Singleton
   include RoutingHelper
 
+  # @rbs (String?) -> bool
   def web_domain?(domain)
     domain.nil? || domain.delete_suffix('/').casecmp(Rails.configuration.x.web_domain).zero?
   end
 
+  # @rbs (String?) -> bool
   def local_domain?(domain)
     domain.nil? || domain.delete_suffix('/').casecmp(Rails.configuration.x.local_domain).zero?
   end
 
+  # @rbs (String?) -> String?
   def normalize_domain(domain)
     return if domain.nil?
 
@@ -22,6 +25,7 @@ class TagManager
     uri.normalized_host
   end
 
+  # @rbs (String) -> bool
   def local_url?(url)
     uri    = Addressable::URI.parse(url).normalize
     return false unless uri.host

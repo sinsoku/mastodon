@@ -4,6 +4,7 @@ class FeedInsertWorker
   include Sidekiq::Worker
   include DatabaseHelper
 
+  # @rbs (Integer?, Integer?, ?String | Symbol, ?Hash[untyped, untyped]) -> bool?
   def perform(status_id, id, type = 'home', options = {})
     with_primary do
       @type      = type.to_sym
@@ -28,6 +29,7 @@ class FeedInsertWorker
 
   private
 
+  # @rbs () -> nil
   def check_and_insert
     filter_result = feed_filter
 
@@ -40,6 +42,7 @@ class FeedInsertWorker
     perform_notify if notify?(filter_result)
   end
 
+  # @rbs () -> Symbol?
   def feed_filter
     case @type
     when :home
@@ -51,6 +54,7 @@ class FeedInsertWorker
     end
   end
 
+  # @rbs (Symbol?) -> bool?
   def notify?(filter_result)
     return false if @type != :home || @status.reblog? || (@status.reply? && @status.in_reply_to_account_id != @status.account_id) ||
                     filter_result == :filter
@@ -58,6 +62,7 @@ class FeedInsertWorker
     Follow.find_by(account: @follower, target_account: @status.account)&.notify?
   end
 
+  # @rbs () -> bool?
   def perform_push
     case @type
     when :home, :tags
@@ -80,6 +85,7 @@ class FeedInsertWorker
     LocalNotificationWorker.perform_async(@follower.id, @status.id, 'Status', 'status')
   end
 
+  # @rbs () -> nil
   def update?
     @options[:update]
   end

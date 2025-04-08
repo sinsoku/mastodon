@@ -1,17 +1,20 @@
 # frozen_string_literal: true
 
 class ValidationErrorFormatter
+  # @rbs (ActiveRecord::RecordInvalid, ?Hash[untyped, untyped]) -> void
   def initialize(error, aliases = {})
     @error   = error
     @aliases = aliases
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def as_json
     { error: @error.to_s, details: details }
   end
 
   private
 
+  # @rbs () -> Hash[untyped, untyped]
   def details
     h = {}
 
@@ -26,6 +29,7 @@ class ValidationErrorFormatter
     h
   end
 
+  # @rbs () -> ActiveModel::Errors
   def errors
     @errors ||= @error.record.errors
   end

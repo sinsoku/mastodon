@@ -5,11 +5,13 @@ class ActivityTracker
 
   EXPIRE_AFTER = 6.months.seconds
 
+  # @rbs (String, Symbol) -> void
   def initialize(prefix, type)
     @prefix = prefix
     @type   = type
   end
 
+  # @rbs (?Integer, ?Time) -> bool
   def add(value = 1, at_time = Time.now.utc)
     key = key_at(at_time)
 
@@ -23,6 +25,7 @@ class ActivityTracker
     redis.expire(key, EXPIRE_AFTER)
   end
 
+  # @rbs (Date, ?Date) -> Array[untyped]
   def get(start_at, end_at = Time.now.utc)
     (start_at.to_date..end_at.to_date).map do |date|
       key = key_at(date.to_time(:utc))
@@ -38,6 +41,7 @@ class ActivityTracker
     end
   end
 
+  # @rbs (ActiveSupport::TimeWithZone | Date, ?ActiveSupport::TimeWithZone | Time | Date) -> Integer
   def sum(start_at, end_at = Time.now.utc)
     keys = (start_at.to_date...end_at.to_date).flat_map { |date| [key_at(date.to_time(:utc)), legacy_key_at(date)] }.uniq
 
@@ -50,10 +54,12 @@ class ActivityTracker
   end
 
   class << self
+    # @rbs (String) -> bool
     def increment(prefix)
       new(prefix, :basic).add
     end
 
+    # @rbs (String, Integer) -> bool
     def record(prefix, value)
       new(prefix, :unique).add(value)
     end
@@ -61,10 +67,12 @@ class ActivityTracker
 
   private
 
+  # @rbs (Time) -> String
   def key_at(at_time)
     "#{@prefix}:#{at_time.beginning_of_day.to_i}"
   end
 
+  # @rbs (Date) -> String
   def legacy_key_at(at_time)
     "#{@prefix}:#{at_time.to_date.cweek}"
   end

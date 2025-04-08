@@ -2,6 +2,7 @@
 
 module Paperclip
   class BlurhashTranscoder < Paperclip::Processor
+    # @rbs () -> (Paperclip::Tempfile | File)
     def make
       return @file unless options[:style] == :small || options[:blurhash]
 
@@ -18,6 +19,7 @@ module Paperclip
 
     private
 
+    # @rbs () -> Array[untyped]
     def blurhash_params
       if Rails.configuration.x.use_vips
         image = Vips::Image.thumbnail(@file.path, 100)

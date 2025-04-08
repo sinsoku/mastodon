@@ -23,6 +23,7 @@ class AttachmentBatch
 
   attr_reader :klass, :records, :storage_mode
 
+  # @rbs (Class, Array[untyped]) -> void
   def initialize(klass, records)
     @klass            = klass
     @records          = records
@@ -30,11 +31,13 @@ class AttachmentBatch
     @attachment_names = klass.attachment_definitions.keys
   end
 
+  # @rbs () -> Integer
   def delete
     remove_files
     batch.delete_all
   end
 
+  # @rbs () -> Integer
   def clear
     remove_files
     batch.update_all(nullified_attributes)
@@ -42,10 +45,12 @@ class AttachmentBatch
 
   private
 
+  # @rbs () -> (PreviewCard::ActiveRecord_Relation | Account::ActiveRecord_Relation | MediaAttachment::ActiveRecord_Relation)
   def batch
     klass.where(id: records.map(&:id))
   end
 
+  # @rbs () -> void
   def remove_files
     keys = []
 
@@ -134,10 +139,12 @@ class AttachmentBatch
     @bucket ||= records.first.public_send(@attachment_names.first).s3_bucket
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def nullified_attributes
     @attachment_names.flat_map { |attachment_name| NULLABLE_ATTRIBUTES.map { |attribute| "#{attachment_name}_#{attribute}" } & klass.column_names }.index_with(nil)
   end
 
+  # @rbs () -> Logger
   def logger
     Rails.logger
   end

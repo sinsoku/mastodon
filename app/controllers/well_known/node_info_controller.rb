@@ -8,11 +8,13 @@ module WellKnown
     # and thus re-issuing session cookies
     serialization_scope nil
 
+    # @rbs () -> bool
     def index
       expires_in 3.days, public: true
       render_with_cache json: {}, serializer: NodeInfo::DiscoverySerializer, adapter: NodeInfo::Adapter, expires_in: 3.days, root: 'nodeinfo'
     end
 
+    # @rbs () -> bool
     def show
       expires_in 30.minutes, public: true
       render_with_cache json: {}, serializer: NodeInfo::Serializer, adapter: NodeInfo::Adapter, expires_in: 30.minutes, root: 'nodeinfo'

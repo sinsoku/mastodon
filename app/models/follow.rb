@@ -33,10 +33,12 @@ class Follow < ApplicationRecord
 
   scope :recent, -> { reorder(id: :desc) }
 
+  # @rbs () -> bool
   def local?
     false # Force uri_for to use uri attribute
   end
 
+  # @rbs () -> Follow
   def revoke_request!
     FollowRequest.create!(account: account, target_account: target_account, show_reblogs: show_reblogs, notify: notify, languages: languages, uri: uri)
     destroy!
@@ -51,30 +53,36 @@ class Follow < ApplicationRecord
 
   private
 
+  # @rbs () -> URI::HTTPS?
   def set_uri
     self.uri = ActivityPub::TagManager.instance.generate_uri_for(self) if uri.nil?
   end
 
+  # @rbs () -> Integer
   def remove_endorsements
     AccountPin.where(target_account_id: target_account_id, account_id: account_id).delete_all
   end
 
+  # @rbs () -> AccountStat?
   def increment_cache_counters
     account&.increment_count!(:following_count)
     target_account&.increment_count!(:followers_count)
   end
 
+  # @rbs () -> AccountStat?
   def decrement_cache_counters
     account&.decrement_count!(:following_count)
     target_account&.decrement_count!(:followers_count)
   end
 
+  # @rbs () -> bool?
   def invalidate_hash_cache
     return if account.local? && target_account.local?
 
     Rails.cache.delete("followers_hash:#{target_account_id}:#{account.synchronization_uri_prefix}")
   end
 
+  # @rbs () -> bool
   def invalidate_follow_recommendations_cache
     Rails.cache.delete("follow_recommendations/#{account_id}")
   end

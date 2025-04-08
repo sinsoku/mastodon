@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class UserSettingsSerializer
+  # @rbs (String?) -> UserSettings
   def self.load(value)
     json = begin
       if value.blank?
@@ -13,6 +14,7 @@ class UserSettingsSerializer
     UserSettings.new(json)
   end
 
+  # @rbs (UserSettings) -> String
   def self.dump(value)
     Oj.dump(value.as_json)
   end

@@ -1,27 +1,33 @@
 # frozen_string_literal: true
 
 module FormattingHelper
+  # @rbs (String, bool, ?Hash[untyped, untyped]) -> ActiveSupport::SafeBuffer
   def html_aware_format(text, local, options = {})
     HtmlAwareFormatter.new(text, local, options).to_s
   end
 
+  # @rbs (String, ?Hash[untyped, untyped]) -> ActiveSupport::SafeBuffer
   def linkify(text, options = {})
     TextFormatter.new(text, options).to_s
   end
 
+  # @rbs (PreviewCard) -> String
   def url_for_preview_card(preview_card)
     preview_card.url
   end
 
+  # @rbs (Status) -> String
   def extract_status_plain_text(status)
     PlainTextFormatter.new(status.text, status.local?).to_s
   end
   module_function :extract_status_plain_text
 
+  # @rbs (Status | StatusEdit) -> ActiveSupport::SafeBuffer
   def status_content_format(status)
     html_aware_format(status.text, status.local?, preloaded_accounts: [status.account] + (status.respond_to?(:active_mentions) ? status.active_mentions.map(&:account) : []))
   end
 
+  # @rbs (Status) -> String
   def rss_status_content_format(status)
     html = status_content_format(status)
 
@@ -53,10 +59,12 @@ module FormattingHelper
     ).to_str
   end
 
+  # @rbs (Account | REST::AccountSerializer::AccountDecorator) -> ActiveSupport::SafeBuffer
   def account_bio_format(account)
     html_aware_format(account.note, account.local?)
   end
 
+  # @rbs (Account::Field, ?with_rel_me: bool) -> ActiveSupport::SafeBuffer
   def account_field_value_format(field, with_rel_me: true)
     if field.verified? && !field.account.local?
       TextFormatter.shortened_link(field.value_for_verification)

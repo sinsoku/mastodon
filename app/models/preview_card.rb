@@ -80,18 +80,22 @@ class PreviewCard < ApplicationRecord
   # This can be set by the status when retrieving the preview card using the join model
   attr_accessor :original_url
 
+  # @rbs () -> bool
   def appropriate_for_trends?
     link? && article? && title.present? && description.present? && image.present? && provider_name.present?
   end
 
+  # @rbs () -> String
   def domain
     @domain ||= Addressable::URI.parse(url).normalized_host
   end
 
+  # @rbs () -> nil
   def provider
     @provider ||= PreviewCardProvider.matching_domain(domain)
   end
 
+  # @rbs () -> bool
   def trendable?
     if attributes['trendable'].nil?
       provider&.trendable?
@@ -100,6 +104,7 @@ class PreviewCard < ApplicationRecord
     end
   end
 
+  # @rbs () -> bool
   def requires_review?
     attributes['trendable'].nil? && (provider.nil? || provider.requires_review?)
   end
@@ -114,6 +119,7 @@ class PreviewCard < ApplicationRecord
 
   attr_writer :provider
 
+  # @rbs () -> bool
   def local?
     false
   end
@@ -122,6 +128,7 @@ class PreviewCard < ApplicationRecord
     width.present? && height.present? && image_file_name.blank?
   end
 
+  # @rbs () -> bool?
   def save_with_optional_image!
     save!
   rescue ActiveRecord::RecordInvalid
@@ -129,10 +136,12 @@ class PreviewCard < ApplicationRecord
     save!
   end
 
+  # @rbs () -> Trends::History
   def history
     @history ||= Trends::History.new('links', id)
   end
 
+  # @rbs () -> Array[untyped]
   def authors
     @authors ||= Array(serialized_authors)
   end
@@ -140,6 +149,7 @@ class PreviewCard < ApplicationRecord
   class Author < ActiveModelSerializers::Model
     attributes :name, :url, :account
 
+    # @rbs (PreviewCard) -> void
     def initialize(preview_card)
       super(
         name: preview_card.author_name,
@@ -152,6 +162,7 @@ class PreviewCard < ApplicationRecord
   class << self
     private
 
+    # @rbs (Paperclip::Attachment) -> Hash[untyped, untyped]
     def image_styles(file)
       styles = {
         original: {
@@ -169,6 +180,7 @@ class PreviewCard < ApplicationRecord
 
   private
 
+  # @rbs () -> PreviewCard::Author?
   def serialized_authors
     if author_name? || author_url? || author_account_id?
       PreviewCard::Author
@@ -176,6 +188,7 @@ class PreviewCard < ApplicationRecord
     end
   end
 
+  # @rbs () -> Integer?
   def extract_dimensions
     file = image.queued_for_write[:original]
 

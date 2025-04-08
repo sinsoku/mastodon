@@ -3,6 +3,7 @@
 class SearchService < BaseService
   QUOTE_EQUIVALENT_CHARACTERS = /[“”„«»「」『』《》]/
 
+  # @rbs (String, Account?, Integer, ?ActionController::Parameters | Hash[untyped, untyped]) -> Hash[untyped, untyped]
   def call(query, account, limit, options = {})
     @query     = query&.strip&.gsub(QUOTE_EQUIVALENT_CHARACTERS, '"')
     @account   = account
@@ -27,6 +28,7 @@ class SearchService < BaseService
 
   private
 
+  # @rbs () -> Array[untyped]
   def perform_accounts_search!
     AccountSearchService.new.call(
       @query,
@@ -52,6 +54,7 @@ class SearchService < BaseService
     )
   end
 
+  # @rbs () -> (Tag::ActiveRecord_Relation | Array[untyped])
   def perform_hashtags_search!
     TagSearchService.new.call(
       @query,
@@ -61,42 +64,52 @@ class SearchService < BaseService
     )
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def default_results
     { accounts: [], hashtags: [], statuses: [] }
   end
 
+  # @rbs () -> bool
   def url_query?
     @resolve && %r{\Ahttps?://}.match?(@query)
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def url_resource_results
     { url_resource_symbol => [url_resource] }
   end
 
+  # @rbs () -> (Status | Account)?
   def url_resource
     @url_resource ||= ResolveURLService.new.call(@query, on_behalf_of: @account)
   end
 
+  # @rbs () -> Symbol
   def url_resource_symbol
     url_resource.class.name.downcase.pluralize.to_sym
   end
 
+  # @rbs () -> bool
   def status_searchable?
     Chewy.enabled? && status_search? && @account.present?
   end
 
+  # @rbs () -> bool
   def account_searchable?
     account_search?
   end
 
+  # @rbs () -> bool
   def hashtag_searchable?
     hashtag_search?
   end
 
+  # @rbs () -> bool
   def account_search?
     @options[:type].blank? || @options[:type] == 'accounts'
   end
 
+  # @rbs () -> bool
   def hashtag_search?
     @options[:type].blank? || @options[:type] == 'hashtags'
   end

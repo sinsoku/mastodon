@@ -9,6 +9,7 @@ class PostStatusService < BaseService
   class UnexpectedMentionsError < StandardError
     attr_reader :accounts
 
+    # @rbs (String, Array[untyped]) -> void
     def initialize(message, accounts)
       super(message)
       @accounts = accounts
@@ -32,6 +33,7 @@ class PostStatusService < BaseService
   # @option [Boolean] :with_rate_limit
   # @option [Enumerable] :allowed_mentions Optional array of expected mentioned account IDs, raises `UnexpectedMentionsError` if unexpected accounts end up in mentions
   # @return [Status]
+  # @rbs (Account, ?Hash[untyped, untyped] | ActiveSupport::HashWithIndifferentAccess) -> (Status | ScheduledStatus)?
   def call(account, options = {})
     @account     = account
     @options     = options
@@ -61,6 +63,7 @@ class PostStatusService < BaseService
 
   private
 
+  # @rbs () -> void
   def preprocess_attributes!
     @sensitive    = (@options[:sensitive].nil? ? @account.user&.setting_default_sensitive : @options[:sensitive]) || @options[:spoiler_text].present?
     @text         = @options.delete(:spoiler_text) if @text.blank? && @options[:spoiler_text].present?
@@ -72,6 +75,7 @@ class PostStatusService < BaseService
     raise ActiveRecord::RecordInvalid
   end
 
+  # @rbs () -> bool?
   def process_status!
     @status = @account.statuses.new(status_attributes)
     process_mentions_service.call(@status, save_records: false)
@@ -84,6 +88,7 @@ class PostStatusService < BaseService
     end
   end
 
+  # @rbs (Status) -> void
   def safeguard_mentions!(status)
     return if @options[:allowed_mentions].nil?
 
@@ -95,6 +100,7 @@ class PostStatusService < BaseService
     raise UnexpectedMentionsError.new('Post would be sent to unexpected accounts', unexpected_accounts)
   end
 
+  # @rbs () -> ScheduledStatus?
   def schedule_status!
     status_for_validation = @account.statuses.build(status_attributes)
 
@@ -115,6 +121,7 @@ class PostStatusService < BaseService
     end
   end
 
+  # @rbs () -> void
   def postprocess_status!
     process_hashtags_service.call(@status)
     Trends.tags.register(@status)
@@ -124,6 +131,7 @@ class PostStatusService < BaseService
     PollExpirationNotifyWorker.perform_at(@status.poll.expires_at, @status.poll.id) if @status.poll
   end
 
+  # @rbs () -> void
   def validate_media!
     if @options[:media_ids].blank? || !@options[:media_ids].is_a?(Enumerable)
       @media = []
@@ -141,26 +149,32 @@ class PostStatusService < BaseService
     raise Mastodon::ValidationError, I18n.t('media_attachments.validations.not_ready') if @media.any?(&:not_processed?)
   end
 
+  # @rbs () -> (ProcessMentionsService | RSpec::Mocks::InstanceVerifyingDouble)
   def process_mentions_service
     ProcessMentionsService.new
   end
 
+  # @rbs () -> (ProcessHashtagsService | RSpec::Mocks::InstanceVerifyingDouble)
   def process_hashtags_service
     ProcessHashtagsService.new
   end
 
+  # @rbs () -> bool
   def scheduled?
     @scheduled_at.present?
   end
 
+  # @rbs () -> String
   def idempotency_key
     "idempotency:status:#{@account.id}:#{@options[:idempotency]}"
   end
 
+  # @rbs () -> bool
   def idempotency_given?
     @options[:idempotency].present?
   end
 
+  # @rbs () -> (Status | ScheduledStatus)
   def idempotency_duplicate
     if scheduled?
       @account.scheduled_statuses.find(@idempotency_duplicate)
@@ -169,20 +183,24 @@ class PostStatusService < BaseService
     end
   end
 
+  # @rbs () -> String?
   def idempotency_duplicate?
     @idempotency_duplicate = redis.get(idempotency_key)
   end
 
+  # @rbs () -> bool
   def scheduled_in_the_past?
     @scheduled_at.present? && @scheduled_at <= Time.now.utc
   end
 
+  # @rbs () -> bool?
   def bump_potential_friendship!
     return if !@status.reply? || @account.id == @status.in_reply_to_account_id
 
     ActivityTracker.increment('activity:interactions')
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def status_attributes
     {
       text: @text,
@@ -199,6 +217,7 @@ class PostStatusService < BaseService
     }.compact
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def scheduled_status_attributes
     {
       scheduled_at: @scheduled_at,
@@ -207,12 +226,14 @@ class PostStatusService < BaseService
     }
   end
 
+  # @rbs () -> nil
   def poll_attributes
     return if @options[:poll].blank?
 
     @options[:poll].merge(account: @account, voters_count: 0)
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def scheduled_options
     @options.dup.tap do |options_hash|
       options_hash[:in_reply_to_id]  = options_hash.delete(:thread)&.id

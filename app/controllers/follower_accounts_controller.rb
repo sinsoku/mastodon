@@ -11,6 +11,7 @@ class FollowerAccountsController < ApplicationController
   skip_around_action :set_locale, if: -> { request.format == :json }
   skip_before_action :require_functional!, unless: :limited_federation_mode?
 
+  # @rbs () -> String
   def index
     respond_to do |format|
       format.html do
@@ -33,6 +34,7 @@ class FollowerAccountsController < ApplicationController
 
   private
 
+  # @rbs () -> Follow::ActiveRecord_Relation
   def follows
     return @follows if defined?(@follows)
 
@@ -41,22 +43,27 @@ class FollowerAccountsController < ApplicationController
     @follows = scope.recent.page(params[:page]).per(FOLLOW_PER_PAGE).preload(:account)
   end
 
+  # @rbs () -> bool
   def page_requested?
     params[:page].present?
   end
 
+  # @rbs (Integer?) -> String?
   def page_url(page)
     account_followers_url(@account, page: page) unless page.nil?
   end
 
+  # @rbs () -> nil
   def next_page_url
     page_url(follows.next_page) if follows.respond_to?(:next_page)
   end
 
+  # @rbs () -> nil
   def prev_page_url
     page_url(follows.prev_page) if follows.respond_to?(:prev_page)
   end
 
+  # @rbs () -> ActivityPub::CollectionPresenter
   def collection_presenter
     if page_requested?
       ActivityPub::CollectionPresenter.new(
@@ -78,6 +85,7 @@ class FollowerAccountsController < ApplicationController
     end
   end
 
+  # @rbs () -> Array[untyped]?
   def restrict_fields_to
     if page_requested? || !@account.hide_collections?
       # Return all fields

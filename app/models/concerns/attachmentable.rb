@@ -37,18 +37,21 @@ module Attachmentable
 
   private
 
+  # @rbs (Paperclip::Attachment) -> void
   def set_file_content_type(attachment) # rubocop:disable Naming/AccessorMethodName
     return if attachment.blank? || attachment.queued_for_write[:original].blank? || !INCORRECT_CONTENT_TYPES.include?(attachment.instance_read(:content_type))
 
     attachment.instance_write :content_type, calculated_content_type(attachment)
   end
 
+  # @rbs (Paperclip::Attachment) -> String
   def set_file_extension(attachment) # rubocop:disable Naming/AccessorMethodName
     return if attachment.blank?
 
     attachment.instance_write :file_name, [Paperclip::Interpolations.basename(attachment, :original), appropriate_extension(attachment)].compact_blank!.join('.')
   end
 
+  # @rbs (Paperclip::Attachment) -> void
   def check_image_dimension(attachment)
     return if attachment.blank? || !/image.*/.match?(attachment.content_type) || attachment.queued_for_write[:original].blank?
 
@@ -62,6 +65,7 @@ module Attachmentable
     end
   end
 
+  # @rbs (Paperclip::Attachment) -> String
   def appropriate_extension(attachment)
     mime_type = MIME::Types[attachment.content_type]
 
@@ -74,12 +78,14 @@ module Attachmentable
     extension
   end
 
+  # @rbs (Paperclip::Attachment) -> String
   def calculated_content_type(attachment)
     Paperclip.run('file', '-b --mime :file', file: attachment.queued_for_write[:original].path).split(/[:;\s]+/).first.chomp
   rescue Terrapin::CommandLineError
     ''
   end
 
+  # @rbs (Paperclip::Attachment) -> void
   def obfuscate_file_name(attachment)
     return if attachment.blank? || attachment.queued_for_write[:original].blank? || attachment.options[:preserve_files]
 

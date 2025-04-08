@@ -33,16 +33,19 @@ class Favourite < ApplicationRecord
 
   private
 
+  # @rbs () -> bool
   def increment_cache_counters
     status&.increment_count!(:favourites_count)
   end
 
+  # @rbs () -> bool
   def decrement_cache_counters
     return if association(:status).loaded? && status.marked_for_destruction?
 
     status&.decrement_count!(:favourites_count)
   end
 
+  # @rbs () -> String?
   def invalidate_cleanup_info
     return unless status&.account_id == account_id && account.local?
 

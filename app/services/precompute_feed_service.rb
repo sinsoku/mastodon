@@ -3,6 +3,7 @@
 class PrecomputeFeedService < BaseService
   include Redisable
 
+  # @rbs (Account) -> Array[untyped]
   def call(account)
     FeedManager.instance.populate_home(account)
 

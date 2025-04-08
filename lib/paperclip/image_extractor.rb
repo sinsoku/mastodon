@@ -4,6 +4,7 @@ require 'mime/types/columnar'
 
 module Paperclip
   class ImageExtractor < Paperclip::Processor
+    # @rbs () -> Paperclip::FileAdapter
     def make
       return @file unless options[:style] == :original
 
@@ -30,6 +31,7 @@ module Paperclip
 
     private
 
+    # @rbs () -> Paperclip::Tempfile
     def extract_image_from_file!
       dst = Tempfile.new([File.basename(@file.path, '.*'), '.png'])
       dst.binmode

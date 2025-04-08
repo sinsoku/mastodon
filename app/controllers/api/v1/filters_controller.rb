@@ -7,6 +7,7 @@ class Api::V1::FiltersController < Api::BaseController
   before_action :set_filters, only: :index
   before_action :set_filter, only: [:show, :update, :destroy]
 
+  # @rbs () -> CustomFilter::ActiveRecord_AssociationRelation
   def index
     render json: @filters, each_serializer: REST::V1::FilterSerializer
   end
@@ -15,6 +16,7 @@ class Api::V1::FiltersController < Api::BaseController
     render json: @filter, serializer: REST::V1::FilterSerializer
   end
 
+  # @rbs () -> String
   def create
     ApplicationRecord.transaction do
       filter_category = current_account.custom_filters.create!(filter_params)
@@ -24,6 +26,7 @@ class Api::V1::FiltersController < Api::BaseController
     render json: @filter, serializer: REST::V1::FilterSerializer
   end
 
+  # @rbs () -> String
   def update
     ApplicationRecord.transaction do
       @filter.update!(keyword_params)
@@ -36,6 +39,7 @@ class Api::V1::FiltersController < Api::BaseController
     render json: @filter, serializer: REST::V1::FilterSerializer
   end
 
+  # @rbs () -> String
   def destroy
     @filter.destroy!
     render_empty
@@ -47,10 +51,12 @@ class Api::V1::FiltersController < Api::BaseController
     @filters = CustomFilterKeyword.includes(:custom_filter).where(custom_filter: { account: current_account })
   end
 
+  # @rbs () -> CustomFilter
   def set_filter
     @filter = CustomFilterKeyword.includes(:custom_filter).where(custom_filter: { account: current_account }).find(params[:id])
   end
 
+  # @rbs () -> ActionController::Parameters
   def resource_params
     params.permit(:phrase, :expires_in, :irreversible, :whole_word, context: [])
   end

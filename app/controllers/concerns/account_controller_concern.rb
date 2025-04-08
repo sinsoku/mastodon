@@ -14,6 +14,7 @@ module AccountControllerConcern
 
   private
 
+  # @rbs () -> String
   def set_link_headers
     response.headers['Link'] = LinkHeader.new(
       [
@@ -23,6 +24,7 @@ module AccountControllerConcern
     ).to_s
   end
 
+  # @rbs () -> Array[untyped]
   def webfinger_account_link
     [
       webfinger_account_url,
@@ -30,6 +32,7 @@ module AccountControllerConcern
     ]
   end
 
+  # @rbs () -> Array[untyped]
   def actor_url_link
     [
       ActivityPub::TagManager.instance.uri_for(@account),
@@ -37,6 +40,7 @@ module AccountControllerConcern
     ]
   end
 
+  # @rbs () -> String
   def webfinger_account_url
     webfinger_url(resource: @account.to_webfinger_s)
   end

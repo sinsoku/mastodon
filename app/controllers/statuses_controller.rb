@@ -21,6 +21,7 @@ class StatusesController < ApplicationController
     policy.frame_ancestors(false)
   end
 
+  # @rbs () -> (Time | bool)?
   def show
     respond_to do |format|
       format.html do
@@ -34,11 +35,13 @@ class StatusesController < ApplicationController
     end
   end
 
+  # @rbs () -> bool
   def activity
     expires_in 3.minutes, public: @status.distributable? && public_fetch_mode?
     render_with_cache json: ActivityPub::ActivityPresenter.from_status(@status), content_type: 'application/activity+json', serializer: ActivityPub::ActivitySerializer, adapter: ActivityPub::Adapter
   end
 
+  # @rbs () -> ActiveSupport::SafeBuffer
   def embed
     return not_found if @status.hidden? || @status.reblog?
 
@@ -50,12 +53,14 @@ class StatusesController < ApplicationController
 
   private
 
+  # @rbs () -> String
   def set_link_headers
     response.headers['Link'] = LinkHeader.new(
       [[ActivityPub::TagManager.instance.uri_for(@status), [%w(rel alternate), %w(type application/activity+json)]]]
     ).to_s
   end
 
+  # @rbs () -> (Status | ActiveSupport::SafeBuffer | String)
   def set_status
     @status = @account.statuses.find(params[:id])
     authorize @status, :show?
@@ -63,6 +68,7 @@ class StatusesController < ApplicationController
     not_found
   end
 
+  # @rbs () -> String?
   def redirect_to_original
     redirect_to(ActivityPub::TagManager.instance.url_for(@status.reblog), allow_other_host: true) if @status.reblog?
   end

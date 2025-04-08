@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 
 module HomeHelper
+  # @rbs () -> Hash[untyped, untyped]
   def default_props
     {
       locale: I18n.locale,
     }
   end
 
+  # @rbs (Account?, ?String, ?path: String | nil) -> ActiveSupport::SafeBuffer
   def account_link_to(account, button = '', path: nil)
     content_tag(:div, class: 'account account--minimal') do
       content_tag(:div, class: 'account__wrapper') do
@@ -39,6 +41,7 @@ module HomeHelper
     end
   end
 
+  # @rbs (Integer) -> String
   def obscured_counter(count)
     if count <= 0
       '0'
@@ -49,6 +52,7 @@ module HomeHelper
     end
   end
 
+  # @rbs (RSpec::Mocks::InstanceVerifyingDouble) -> String
   def custom_field_classes(field)
     if field.verified?
       'verified'
@@ -57,6 +61,7 @@ module HomeHelper
     end
   end
 
+  # @rbs () -> String
   def sign_up_message
     if closed_registrations?
       t('auth.registration_closed', instance: site_hostname)

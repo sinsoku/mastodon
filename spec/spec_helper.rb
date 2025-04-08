@@ -53,3 +53,15 @@ def expect_push_bulk_to_match(klass, matcher)
     'args' => matcher,
   }))
 end
+
+require 'rbs-trace'
+
+RSpec.configure do |config|
+  trace = RBS::Trace.new
+
+  config.before(:suite) { trace.enable }
+  config.after(:suite) do
+    trace.disable
+    trace.save_files(out_dir: "tmp/sig-#{ENV.fetch('TEST_ENV_NUMBER', nil)}")
+  end
+end

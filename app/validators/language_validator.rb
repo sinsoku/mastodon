@@ -3,6 +3,7 @@
 class LanguageValidator < ActiveModel::EachValidator
   include LanguagesHelper
 
+  # @rbs (FollowRequest | Follow, Symbol, (Array[untyped] | String)?) -> ActiveModel::Error?
   def validate_each(record, attribute, value)
     @value = value
 
@@ -11,6 +12,7 @@ class LanguageValidator < ActiveModel::EachValidator
 
   private
 
+  # @rbs () -> bool
   def valid_locale_value?
     if @value.nil?
       true

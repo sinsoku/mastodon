@@ -13,6 +13,7 @@ module Arel
     class ToSql
       private
 
+        # @rbs (Arel::Nodes::UnionAll, Arel::Collectors::Composite, String, ?bool) -> Arel::Collectors::Composite
         def infix_value_with_paren(o, collector, value, suppress_parens = false)
           collector << "( " unless suppress_parens
           collector = if o.left.class == o.class
@@ -30,6 +31,7 @@ module Arel
           collector
         end
 
+        # @rbs (Arel::SelectManager, Arel::Collectors::Composite, ?bool) -> Arel::Collectors::Composite
         def select_parentheses(o, collector, always_wrap_selects = true)
           if o.is_a?(Nodes::SelectStatement) && (always_wrap_selects || require_parentheses?(o))
             collector << "("

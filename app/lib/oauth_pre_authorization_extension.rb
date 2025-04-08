@@ -7,6 +7,7 @@ module OauthPreAuthorizationExtension
     validate :code_challenge_method_s256, error: Doorkeeper::Errors::InvalidCodeChallengeMethod
   end
 
+  # @rbs () -> bool
   def validate_code_challenge_method_s256
     code_challenge.blank? || code_challenge_method == 'S256'
   end

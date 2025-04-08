@@ -6,18 +6,21 @@ module Admin
 
     PER_PAGE = 20
 
+    # @rbs () -> Tag::ActiveRecord_Relation
     def index
       authorize :tag, :index?
 
       @tags = filtered_tags.page(params[:page]).per(PER_PAGE)
     end
 
+    # @rbs () -> Range[untyped]
     def show
       authorize @tag, :show?
 
       @time_period = (6.days.ago.to_date...Time.now.utc.to_date)
     end
 
+    # @rbs () -> (ActiveSupport::SafeBuffer | String)
     def update
       authorize @tag, :update?
 
@@ -32,18 +35,22 @@ module Admin
 
     private
 
+    # @rbs () -> Tag
     def set_tag
       @tag = Tag.find(params[:id])
     end
 
+    # @rbs () -> ActionController::Parameters
     def tag_params
       params.require(:tag).permit(:name, :display_name, :trendable, :usable, :listable)
     end
 
+    # @rbs () -> Tag::ActiveRecord_Relation
     def filtered_tags
       TagFilter.new(filter_params.with_defaults(order: 'newest')).results
     end
 
+    # @rbs () -> ActionController::Parameters
     def filter_params
       params.slice(:page, *TagFilter::KEYS).permit(:page, *TagFilter::KEYS)
     end

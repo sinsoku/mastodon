@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class UnmuteService < BaseService
+  # @rbs (Account, Account) -> String?
   def call(account, target_account)
     return unless account.muting?(target_account)
 

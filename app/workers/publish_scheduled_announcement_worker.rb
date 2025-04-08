@@ -4,6 +4,7 @@ class PublishScheduledAnnouncementWorker
   include Sidekiq::Worker
   include Redisable
 
+  # @rbs (Integer) -> nil
   def perform(announcement_id)
     @announcement = Announcement.find(announcement_id)
 
@@ -21,6 +22,7 @@ class PublishScheduledAnnouncementWorker
 
   private
 
+  # @rbs () -> void
   def refresh_status_ids!
     @announcement.status_ids = Status.from_text(@announcement.text).map(&:id)
     @announcement.save

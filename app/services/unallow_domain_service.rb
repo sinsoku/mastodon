@@ -3,6 +3,7 @@
 class UnallowDomainService < BaseService
   include DomainControlHelper
 
+  # @rbs (DomainAllow) -> DomainAllow
   def call(domain_allow)
     suspend_accounts!(domain_allow.domain) if limited_federation_mode?
 
@@ -11,6 +12,7 @@ class UnallowDomainService < BaseService
 
   private
 
+  # @rbs (String) -> String
   def suspend_accounts!(domain)
     Account.where(domain: domain).in_batches.update_all(suspended_at: Time.now.utc)
     AfterUnallowDomainWorker.perform_async(domain)

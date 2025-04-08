@@ -7,6 +7,7 @@ class Api::V1::TagsController < Api::BaseController
 
   override_rate_limit_headers :follow, family: :follows
 
+  # @rbs () -> (String | Time)?
   def show
     cache_if_unauthenticated!
     render json: @tag, serializer: REST::TagSerializer

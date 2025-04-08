@@ -5,6 +5,7 @@ class MergeWorker
   include Redisable
   include DatabaseHelper
 
+  # @rbs (Integer, Integer) -> nil
   def perform(from_account_id, into_account_id)
     with_primary do
       @from_account = Account.find(from_account_id)

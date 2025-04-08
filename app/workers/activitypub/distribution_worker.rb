@@ -3,6 +3,7 @@
 class ActivityPub::DistributionWorker < ActivityPub::RawDistributionWorker
   # Distribute a new status or an edit of a status to all the places
   # where the status is supposed to go or where it was interacted with
+  # @rbs (Integer, ?Hash[untyped, untyped]) -> Integer?
   def perform(status_id)
     @status  = Status.find(status_id)
     @account = @status.account

@@ -8,6 +8,7 @@ class PublicFeed
   # @option [Boolean] :local
   # @option [Boolean] :remote
   # @option [Boolean] :only_media
+  # @rbs (Account?, ?Hash[untyped, untyped]) -> void
   def initialize(account, options = {})
     @account = account
     @options = options
@@ -18,6 +19,7 @@ class PublicFeed
   # @param [Integer] since_id
   # @param [Integer] min_id
   # @return [Array<Status>]
+  # @rbs (Integer, ?nil, ?nil, ?nil) -> Array[untyped]
   def get(limit, max_id = nil, since_id = nil, min_id = nil)
     scope = public_scope
 
@@ -36,58 +38,72 @@ class PublicFeed
 
   attr_reader :account, :options
 
+  # @rbs () -> nil
   def with_reblogs?
     options[:with_reblogs]
   end
 
+  # @rbs () -> nil
   def with_replies?
     options[:with_replies]
   end
 
+  # @rbs () -> bool?
   def local_only?
     options[:local] && !options[:remote]
   end
 
+  # @rbs () -> bool?
   def remote_only?
     options[:remote] && !options[:local]
   end
 
+  # @rbs () -> bool
   def account?
     account.present?
   end
 
+  # @rbs () -> bool?
   def media_only?
     options[:only_media]
   end
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def public_scope
     Status.public_visibility.joins(:account).merge(Account.without_suspended.without_silenced)
   end
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def local_only_scope
     Status.local
   end
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def remote_only_scope
     Status.remote
   end
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def without_replies_scope
     Status.without_replies
   end
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def without_reblogs_scope
     Status.without_reblogs
   end
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def media_only_scope
     Status.joins(:media_attachments).group(:id)
   end
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def language_scope
     Status.where(language: account.chosen_languages)
   end
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def account_filters_scope
     Status.not_excluded_by_account(account).tap do |scope|
       scope.merge!(Status.not_domain_blocked_by_account(account)) unless local_only?

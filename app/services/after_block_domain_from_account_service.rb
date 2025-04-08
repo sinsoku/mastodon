@@ -6,6 +6,7 @@ class AfterBlockDomainFromAccountService < BaseService
   # This service does not create an AccountDomainBlock record,
   # it's meant to be called after such a record has been created
   # synchronously, to "clean up"
+  # @rbs (Account, String) -> String
   def call(account, domain)
     @account = account
     @domain  = domain
@@ -21,6 +22,7 @@ class AfterBlockDomainFromAccountService < BaseService
 
   private
 
+  # @rbs () -> void
   def remove_follows!
     @account.active_relationships.where(target_account: Account.where(domain: @domain)).includes(:target_account).reorder(nil).in_batches do |follows|
       domain_block_event.import_from_active_follows!(follows)
@@ -28,14 +30,17 @@ class AfterBlockDomainFromAccountService < BaseService
     end
   end
 
+  # @rbs () -> void
   def clear_notifications!
     Notification.where(account: @account).where(from_account: Account.where(domain: @domain)).in_batches.delete_all
   end
 
+  # @rbs () -> void
   def clear_notification_permissions!
     NotificationPermission.where(account: @account, from_account: Account.where(domain: @domain)).in_batches.delete_all
   end
 
+  # @rbs () -> void
   def reject_existing_followers!
     @account.passive_relationships.where(account: Account.where(domain: @domain)).includes(:account).reorder(nil).in_batches do |follows|
       domain_block_event.import_from_passive_follows!(follows)
@@ -43,12 +48,14 @@ class AfterBlockDomainFromAccountService < BaseService
     end
   end
 
+  # @rbs () -> void
   def reject_pending_follow_requests!
     FollowRequest.where(target_account: @account).where(account: Account.where(domain: @domain)).includes(:account).reorder(nil).find_each do |follow_request|
       reject_follow!(follow_request)
     end
   end
 
+  # @rbs (Follow) -> String
   def reject_follow!(follow)
     follow.destroy
 
@@ -57,6 +64,7 @@ class AfterBlockDomainFromAccountService < BaseService
     ActivityPub::DeliveryWorker.perform_async(Oj.dump(serialize_payload(follow, ActivityPub::RejectFollowSerializer)), @account.id, follow.account.inbox_url)
   end
 
+  # @rbs () -> String
   def notify_of_severed_relationships!
     return if @domain_block_event.nil?
 
@@ -64,6 +72,7 @@ class AfterBlockDomainFromAccountService < BaseService
     LocalNotificationWorker.perform_async(@account.id, event.id, 'AccountRelationshipSeveranceEvent', 'severed_relationships')
   end
 
+  # @rbs () -> RelationshipSeveranceEvent
   def domain_block_event
     @domain_block_event ||= RelationshipSeveranceEvent.create!(type: :user_domain_block, target_name: @domain)
   end

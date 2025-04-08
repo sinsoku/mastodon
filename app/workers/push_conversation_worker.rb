@@ -4,6 +4,7 @@ class PushConversationWorker
   include Sidekiq::Worker
   include Redisable
 
+  # @rbs (nil) -> bool
   def perform(conversation_account_id)
     conversation = AccountConversation.find(conversation_account_id)
     message      = InlineRenderer.render(conversation, conversation.account, :conversation)

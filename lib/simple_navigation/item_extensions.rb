@@ -2,6 +2,7 @@
 
 module SimpleNavigation
   module ItemExtensions
+    # @rbs () -> String
     def url
       if @url.nil? && @sub_navigation
         @sub_navigation.items.first.url

@@ -180,92 +180,113 @@ class Account < ApplicationRecord
 
   update_index('accounts', :self)
 
+  # @rbs () -> bool
   def local?
     domain.nil?
   end
 
+  # @rbs () -> bool
   def moved?
     moved_to_account_id.present?
   end
 
+  # @rbs () -> bool
   def bot?
     AUTOMATED_ACTOR_TYPES.include?(actor_type)
   end
 
+  # @rbs () -> bool
   def instance_actor?
     id == INSTANCE_ACTOR_ID
   end
 
   alias bot bot?
 
+  # @rbs (bool | String) -> String
   def bot=(val)
     self.actor_type = ActiveModel::Type::Boolean.new.cast(val) ? 'Service' : 'Person'
   end
 
+  # @rbs () -> bool
   def group?
     actor_type == 'Group'
   end
 
   alias group group?
 
+  # @rbs () -> String
   def acct
     local? ? username : "#{username}@#{domain}"
   end
 
+  # @rbs () -> String
   def pretty_acct
     local? ? username : "#{username}@#{Addressable::IDNA.to_unicode(domain)}"
   end
 
+  # @rbs () -> String
   def local_username_and_domain
     "#{username}@#{Rails.configuration.x.local_domain}"
   end
 
+  # @rbs () -> Integer
   def local_followers_count
     Follow.where(target_account_id: id).count
   end
 
+  # @rbs () -> String
   def to_webfinger_s
     "acct:#{local_username_and_domain}"
   end
 
+  # @rbs () -> bool
   def possibly_stale?
     last_webfingered_at.nil? || last_webfingered_at <= 1.day.ago
   end
 
+  # @rbs () -> void
   def schedule_refresh_if_stale!
     return unless last_webfingered_at.present? && last_webfingered_at <= BACKGROUND_REFRESH_INTERVAL.ago
 
     AccountRefreshWorker.perform_in(rand(6.hours.to_i), id)
   end
 
+  # @rbs () -> nil
   def refresh!
     ResolveAccountService.new.call(acct) unless local?
   end
 
+  # @rbs () -> bool
   def silenced?
     silenced_at.present?
   end
 
+  # @rbs (?Time) -> bool
   def silence!(date = Time.now.utc)
     update!(silenced_at: date)
   end
 
+  # @rbs () -> void
   def unsilence!
     update!(silenced_at: nil)
   end
 
+  # @rbs () -> bool
   def sensitized?
     sensitized_at.present?
   end
 
+  # @rbs (?Time) -> bool
   def sensitize!(date = Time.now.utc)
     update!(sensitized_at: date)
   end
 
+  # @rbs () -> void
   def unsensitize!
     update!(sensitized_at: nil)
   end
 
+  # @rbs () -> bool
   def memorialize!
     update!(memorial: true)
   end
@@ -274,18 +295,22 @@ class Account < ApplicationRecord
     boolean_with_default('trendable', Setting.trendable_by_default)
   end
 
+  # @rbs () -> bool
   def sign?
     true
   end
 
+  # @rbs () -> Integer
   def previous_strikes_count
     strikes.where(overruled_at: nil).count
   end
 
+  # @rbs () -> OpenSSL::PKey::RSA
   def keypair
     @keypair ||= OpenSSL::PKey::RSA.new(private_key || public_key)
   end
 
+  # @rbs (Array[untyped]) -> Hash[untyped, untyped]
   def tags_as_strings=(tag_names)
     hashtags_map = Tag.find_or_create_by_names(tag_names).index_by(&:name)
 
@@ -304,10 +329,12 @@ class Account < ApplicationRecord
     end
   end
 
+  # @rbs () -> Array[untyped]
   def also_known_as
     self[:also_known_as] || []
   end
 
+  # @rbs () -> Array[untyped]
   def fields
     (self[:fields] || []).filter_map do |f|
       Account::Field.new(self, f)
@@ -316,6 +343,7 @@ class Account < ApplicationRecord
     end
   end
 
+  # @rbs (ActiveSupport::HashWithIndifferentAccess) -> Array[untyped]
   def fields_attributes=(attributes)
     fields     = []
     old_fields = self[:fields] || []
@@ -336,6 +364,7 @@ class Account < ApplicationRecord
     self[:fields] = fields
   end
 
+  # @rbs () -> Array[untyped]
   def build_fields
     return if fields.size >= DEFAULT_FIELDS_SIZE
 
@@ -349,6 +378,7 @@ class Account < ApplicationRecord
     self.fields = tmp
   end
 
+  # @rbs () -> bool
   def save_with_optional_media!
     save!
   rescue ActiveRecord::RecordInvalid => e
@@ -364,38 +394,47 @@ class Account < ApplicationRecord
     save!
   end
 
+  # @rbs () -> bool
   def hides_followers?
     hide_collections?
   end
 
+  # @rbs () -> bool
   def hides_following?
     hide_collections?
   end
 
+  # @rbs () -> Symbol
   def object_type
     :person
   end
 
+  # @rbs () -> String
   def to_param
     username
   end
 
+  # @rbs () -> String
   def to_log_human_identifier
     acct
   end
 
+  # @rbs () -> Array[untyped]
   def excluded_from_timeline_account_ids
     Rails.cache.fetch("exclude_account_ids_for:#{id}") { block_relationships.pluck(:target_account_id) + blocked_by_relationships.pluck(:account_id) + mute_relationships.pluck(:target_account_id) }
   end
 
+  # @rbs () -> Array[untyped]
   def excluded_from_timeline_domains
     Rails.cache.fetch("exclude_domains_for:#{id}") { domain_blocks.pluck(:domain) }
   end
 
+  # @rbs () -> String
   def preferred_inbox_url
     shared_inbox_url.presence || inbox_url
   end
 
+  # @rbs () -> String
   def synchronization_uri_prefix
     return 'local' if local?
 
@@ -407,6 +446,7 @@ class Account < ApplicationRecord
       super - %w(statuses_count following_count followers_count)
     end
 
+    # @rbs () -> Array[untyped]
     def inboxes
       urls = reorder(nil).activitypub.group(:preferred_inbox_url).pluck(Arel.sql("coalesce(nullif(accounts.shared_inbox_url, ''), accounts.inbox_url) AS preferred_inbox_url"))
       DeliveryFailureTracker.without_unavailable(urls)
@@ -420,6 +460,7 @@ class Account < ApplicationRecord
       )
     end
 
+    # @rbs (String) -> Array[untyped]
     def from_text(text)
       return [] if text.blank?
 
@@ -448,6 +489,7 @@ class Account < ApplicationRecord
   inverse_alias :show_collections, :hide_collections
   inverse_alias :unlocked, :locked
 
+  # @rbs () -> Array[untyped]
   def emojis
     @emojis ||= CustomEmoji.from_text(emojifiable_text, domain)
   end
@@ -456,6 +498,7 @@ class Account < ApplicationRecord
   before_create :generate_keys
   before_destroy :clean_feed_manager
 
+  # @rbs () -> void
   def ensure_keys!
     return unless local? && private_key.blank? && public_key.blank?
 
@@ -465,11 +508,13 @@ class Account < ApplicationRecord
 
   private
 
+  # @rbs () -> String?
   def prepare_contents
     display_name&.strip!
     note&.strip!
   end
 
+  # @rbs () -> String?
   def generate_keys
     return unless local? && private_key.blank? && public_key.blank?
 
@@ -478,20 +523,24 @@ class Account < ApplicationRecord
     self.public_key  = keypair.public_key.to_pem
   end
 
+  # @rbs () -> String?
   def normalize_domain
     return if local?
 
     super
   end
 
+  # @rbs () -> String
   def emojifiable_text
     [note, display_name, fields.map(&:name), fields.map(&:value)].join(' ')
   end
 
+  # @rbs () -> nil
   def clean_feed_manager
     FeedManager.instance.clean_feeds!(:home, [id])
   end
 
+  # @rbs () -> CanonicalEmailBlock?
   def create_canonical_email_block!
     return unless local? && user_email.present?
 
@@ -502,6 +551,7 @@ class Account < ApplicationRecord
     end
   end
 
+  # @rbs () -> Integer?
   def destroy_canonical_email_block!
     return unless local?
 
@@ -509,6 +559,7 @@ class Account < ApplicationRecord
   end
 
   # NOTE: the `account.created` webhook is triggered by the `User` model, not `Account`.
+  # @rbs () -> String?
   def trigger_update_webhooks
     TriggerWebhookWorker.perform_async('account.updated', 'Account', id) if local?
   end

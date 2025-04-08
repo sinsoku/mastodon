@@ -5,6 +5,7 @@ class AccountMergingWorker
 
   sidekiq_options queue: 'pull'
 
+  # @rbs (Integer) -> nil
   def perform(account_id)
     account = Account.find(account_id)
 

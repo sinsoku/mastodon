@@ -4,6 +4,7 @@ module Admin
   class ReportNotesController < BaseController
     before_action :set_report_note, only: [:destroy]
 
+    # @rbs () -> (ActiveSupport::SafeBuffer | String)
     def create
       authorize :report_note, :create?
 
@@ -30,6 +31,7 @@ module Admin
       end
     end
 
+    # @rbs () -> String
     def destroy
       authorize @report_note, :destroy?
       @report_note.destroy!
@@ -38,6 +40,7 @@ module Admin
 
     private
 
+    # @rbs () -> String
     def after_create_redirect_path
       if params[:create_and_resolve]
         admin_reports_path
@@ -46,6 +49,7 @@ module Admin
       end
     end
 
+    # @rbs () -> ActionController::Parameters
     def resource_params
       params.require(:report_note).permit(
         :content,
@@ -53,6 +57,7 @@ module Admin
       )
     end
 
+    # @rbs () -> ReportNote
     def set_report_note
       @report_note = ReportNote.find(params[:id])
     end

@@ -209,6 +209,8 @@ group :development, :test do
 
   # RSpec runner for rails
   gem 'rspec-rails', '~> 7.0'
+
+  gem 'rbs-trace'
 end
 
 group :production do
