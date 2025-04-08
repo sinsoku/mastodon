@@ -11,12 +11,14 @@ module SessionTrackingConcern
 
   private
 
+  # @rbs () -> nil
   def set_session_activity
     return unless session_needs_update?
 
     current_session.touch
   end
 
+  # @rbs () -> bool
   def session_needs_update?
     !current_session.nil? && current_session.updated_at < SESSION_UPDATE_FREQUENCY.ago
   end

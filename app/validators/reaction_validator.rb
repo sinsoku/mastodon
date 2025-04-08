@@ -5,6 +5,7 @@ class ReactionValidator < ActiveModel::Validator
 
   LIMIT = 8
 
+  # @rbs (AnnouncementReaction) -> ActiveModel::Error?
   def validate(reaction)
     return if reaction.name.blank?
 
@@ -14,14 +15,17 @@ class ReactionValidator < ActiveModel::Validator
 
   private
 
+  # @rbs (String) -> bool
   def unicode_emoji?(name)
     SUPPORTED_EMOJIS.include?(name)
   end
 
+  # @rbs (AnnouncementReaction) -> bool
   def new_reaction?(reaction)
     !reaction.announcement.announcement_reactions.exists?(name: reaction.name)
   end
 
+  # @rbs (AnnouncementReaction) -> bool
   def limit_reached?(reaction)
     reaction.announcement.announcement_reactions.where.not(name: reaction.name).count('distinct name') >= LIMIT
   end

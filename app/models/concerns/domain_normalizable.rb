@@ -21,6 +21,7 @@ module DomainNormalizable
 
   private
 
+  # @rbs () -> (String | ActiveModel::Error)?
   def normalize_domain
     self.domain = TagManager.instance.normalize_domain(domain&.strip)
   rescue Addressable::URI::InvalidURIError

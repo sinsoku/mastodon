@@ -4,6 +4,7 @@ class PublishAnnouncementReactionWorker
   include Sidekiq::Worker
   include Redisable
 
+  # @rbs (Integer, String) -> bool
   def perform(announcement_id, name)
     announcement = Announcement.find(announcement_id)
 

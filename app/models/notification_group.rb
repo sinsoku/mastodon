@@ -6,6 +6,7 @@ class NotificationGroup < ActiveModelSerializers::Model
   # Try to keep this consistent with `app/javascript/mastodon/models/notification_group.ts`
   SAMPLE_ACCOUNTS_SIZE = 8
 
+  # @rbs (Array[untyped], ?pagination_range: Range[untyped] | nil, ?grouped_types: nil | Array[untyped]) -> Array[untyped]
   def self.from_notifications(notifications, pagination_range: nil, grouped_types: nil)
     return [] if notifications.empty?
 
@@ -56,6 +57,7 @@ class NotificationGroup < ActiveModelSerializers::Model
   class << self
     private
 
+    # @rbs (Integer, Array[untyped], ?pagination_range: Range[untyped] | nil) -> Hash[untyped, untyped]
     def load_groups_data(account_id, group_keys, pagination_range: nil)
       return {} if group_keys.empty?
 

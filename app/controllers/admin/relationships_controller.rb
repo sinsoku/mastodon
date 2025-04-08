@@ -6,6 +6,7 @@ module Admin
 
     PER_PAGE = 40
 
+    # @rbs () -> Form::AccountBatch
     def index
       authorize @account, :show?
 
@@ -15,10 +16,12 @@ module Admin
 
     private
 
+    # @rbs () -> Account
     def set_account
       @account = Account.find(params[:account_id])
     end
 
+    # @rbs () -> ActionController::Parameters
     def filter_params
       params.slice(*RelationshipFilter::KEYS).permit(*RelationshipFilter::KEYS)
     end

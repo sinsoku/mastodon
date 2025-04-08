@@ -22,6 +22,7 @@ class AccountPin < ApplicationRecord
 
   private
 
+  # @rbs () -> nil
   def validate_follow_relationship
     errors.add(:base, I18n.t('accounts.pin_errors.following')) unless account.following?(target_account)
   end

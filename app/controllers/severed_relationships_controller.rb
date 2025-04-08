@@ -8,16 +8,19 @@ class SeveredRelationshipsController < ApplicationController
 
   before_action :set_event, only: [:following, :followers]
 
+  # @rbs () -> AccountRelationshipSeveranceEvent::ActiveRecord_Relation
   def index
     @events = AccountRelationshipSeveranceEvent.where(account: current_account)
   end
 
+  # @rbs () -> String
   def following
     respond_to do |format|
       format.csv { send_data following_data, filename: "following-#{@event.target_name}-#{@event.created_at.to_date.iso8601}.csv" }
     end
   end
 
+  # @rbs () -> String
   def followers
     respond_to do |format|
       format.csv { send_data followers_data, filename: "followers-#{@event.target_name}-#{@event.created_at.to_date.iso8601}.csv" }
@@ -26,10 +29,12 @@ class SeveredRelationshipsController < ApplicationController
 
   private
 
+  # @rbs () -> AccountRelationshipSeveranceEvent
   def set_event
     @event = AccountRelationshipSeveranceEvent.find(params[:id])
   end
 
+  # @rbs () -> String
   def following_data
     CSV.generate(headers: ['Account address', 'Show boosts', 'Notify on new posts', 'Languages'], write_headers: true) do |csv|
       @event.severed_relationships.active.about_local_account(current_account).includes(:remote_account).reorder(id: :desc).each do |follow|
@@ -38,6 +43,7 @@ class SeveredRelationshipsController < ApplicationController
     end
   end
 
+  # @rbs () -> String
   def followers_data
     CSV.generate(headers: ['Account address'], write_headers: true) do |csv|
       @event.severed_relationships.passive.about_local_account(current_account).includes(:remote_account).reorder(id: :desc).each do |follow|
@@ -50,6 +56,7 @@ class SeveredRelationshipsController < ApplicationController
     account.local? ? account.local_username_and_domain : account.acct
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def set_cache_headers
     response.cache_control.replace(private: true, no_store: true)
   end

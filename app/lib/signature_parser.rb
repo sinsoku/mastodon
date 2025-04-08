@@ -16,6 +16,7 @@ class SignatureParser
   QUOTED_STRING_RE = /"([^\\"]|(\\.))*"/
   PARAM_RE = /(?<key>#{TOKEN_RE})\s*=\s*((?<value>#{TOKEN_RE})|(?<quoted_value>#{QUOTED_STRING_RE}))/
 
+  # @rbs (String) -> Hash[untyped, untyped]?
   def self.parse(raw_signature)
     # Old versions of node-http-signature add an incorrect "Signature " prefix to the header
     raw_signature = raw_signature.delete_prefix('Signature ')

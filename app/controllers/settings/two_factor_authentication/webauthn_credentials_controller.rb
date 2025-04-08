@@ -9,9 +9,12 @@ module Settings
       before_action :redirect_invalid_otp, unless: -> { current_user.otp_enabled? }
       before_action :redirect_invalid_webauthn, only: [:index, :destroy], unless: -> { current_user.webauthn_enabled? }
 
+      # @rbs () -> nil
       def index; end
+      # @rbs () -> nil
       def new; end
 
+      # @rbs () -> String
       def options
         current_user.update(webauthn_id: WebAuthn.generate_user_id) unless current_user.webauthn_id
 
@@ -30,6 +33,7 @@ module Settings
         render json: options_for_create, status: 200
       end
 
+      # @rbs () -> String
       def create
         webauthn_credential = WebAuthn::Credential.from_create(params[:credential])
 
@@ -62,6 +66,7 @@ module Settings
         render json: { redirect_path: settings_two_factor_authentication_methods_path }, status: status
       end
 
+      # @rbs () -> String
       def destroy
         credential = current_user.webauthn_credentials.find_by(id: params[:id])
         if credential
@@ -85,11 +90,13 @@ module Settings
 
       private
 
+      # @rbs () -> String
       def redirect_invalid_otp
         flash[:error] = t('webauthn_credentials.otp_required')
         redirect_to settings_two_factor_authentication_methods_path
       end
 
+      # @rbs () -> String
       def redirect_invalid_webauthn
         flash[:error] = t('webauthn_credentials.not_enabled')
         redirect_to settings_two_factor_authentication_methods_path

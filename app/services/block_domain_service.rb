@@ -3,6 +3,7 @@
 class BlockDomainService < BaseService
   attr_reader :domain_block
 
+  # @rbs (DomainBlock, ?bool) -> nil
   def call(domain_block, update = false)
     @domain_block = domain_block
     @domain_block_event = nil
@@ -14,6 +15,7 @@ class BlockDomainService < BaseService
 
   private
 
+  # @rbs () -> Integer?
   def process_retroactive_updates!
     # If the domain block severity has been changed, undo the appropriate limitations
     scope = Account.by_domain_and_subdomains(domain_block.domain)
@@ -22,6 +24,7 @@ class BlockDomainService < BaseService
     scope.where(suspended_at: domain_block.created_at).in_batches.update_all(suspended_at: nil, suspension_origin: nil) unless domain_block.suspend?
   end
 
+  # @rbs () -> void
   def process_domain_block!
     if domain_block.silence?
       silence_accounts!
@@ -32,10 +35,12 @@ class BlockDomainService < BaseService
     DomainClearMediaWorker.perform_async(domain_block.id) if domain_block.reject_media?
   end
 
+  # @rbs () -> Integer
   def silence_accounts!
     blocked_domain_accounts.without_silenced.in_batches.update_all(silenced_at: @domain_block.created_at)
   end
 
+  # @rbs () -> nil
   def suspend_accounts!
     blocked_domain_accounts.without_suspended.in_batches.update_all(suspended_at: @domain_block.created_at, suspension_origin: :local)
 
@@ -44,6 +49,7 @@ class BlockDomainService < BaseService
     end
   end
 
+  # @rbs () -> nil
   def notify_of_severed_relationships!
     return if @domain_block_event.nil?
 
@@ -54,14 +60,17 @@ class BlockDomainService < BaseService
     end
   end
 
+  # @rbs () -> String
   def blocked_domain
     domain_block.domain
   end
 
+  # @rbs () -> RelationshipSeveranceEvent
   def domain_block_event
     @domain_block_event ||= RelationshipSeveranceEvent.create!(type: :domain_block, target_name: blocked_domain)
   end
 
+  # @rbs () -> Account::ActiveRecord_Relation
   def blocked_domain_accounts
     Account.by_domain_and_subdomains(blocked_domain)
   end

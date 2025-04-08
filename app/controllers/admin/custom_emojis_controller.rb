@@ -2,6 +2,7 @@
 
 module Admin
   class CustomEmojisController < BaseController
+    # @rbs () -> Form::CustomEmojiBatch
     def index
       authorize :custom_emoji, :index?
 
@@ -9,12 +10,14 @@ module Admin
       @form          = Form::CustomEmojiBatch.new
     end
 
+    # @rbs () -> CustomEmoji
     def new
       authorize :custom_emoji, :create?
 
       @custom_emoji = CustomEmoji.new
     end
 
+    # @rbs () -> (ActiveSupport::SafeBuffer | String)
     def create
       authorize :custom_emoji, :create?
 
@@ -28,6 +31,7 @@ module Admin
       end
     end
 
+    # @rbs () -> String
     def batch
       authorize :custom_emoji, :index?
 
@@ -43,14 +47,17 @@ module Admin
 
     private
 
+    # @rbs () -> ActionController::Parameters
     def resource_params
       params.require(:custom_emoji).permit(:shortcode, :image, :visible_in_picker)
     end
 
+    # @rbs () -> CustomEmoji::ActiveRecord_Relation
     def filtered_custom_emojis
       CustomEmojiFilter.new(filter_params).results
     end
 
+    # @rbs () -> ActionController::Parameters
     def filter_params
       params.slice(:page, *CustomEmojiFilter::KEYS).permit(:page, *CustomEmojiFilter::KEYS)
     end
@@ -73,6 +80,7 @@ module Admin
       end
     end
 
+    # @rbs () -> nil
     def form_custom_emoji_batch_params
       params.require(:form_custom_emoji_batch).permit(:action, :category_id, :category_name, custom_emoji_ids: [])
     end

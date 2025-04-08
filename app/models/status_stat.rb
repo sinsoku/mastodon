@@ -16,14 +16,17 @@
 class StatusStat < ApplicationRecord
   belongs_to :status, inverse_of: :status_stat
 
+  # @rbs () -> Integer
   def replies_count
     [attributes['replies_count'], 0].max
   end
 
+  # @rbs () -> Integer
   def reblogs_count
     [attributes['reblogs_count'], 0].max
   end
 
+  # @rbs () -> Integer
   def favourites_count
     [attributes['favourites_count'], 0].max
   end

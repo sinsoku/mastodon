@@ -19,6 +19,7 @@ module ChallengableConcern
 
   CHALLENGE_TIMEOUT = 1.hour.freeze
 
+  # @rbs () -> (String | Time | ActiveSupport::SafeBuffer)?
   def require_challenge!
     return if skip_challenge?
 
@@ -41,22 +42,27 @@ module ChallengableConcern
     end
   end
 
+  # @rbs () -> (ActiveSupport::SafeBuffer | String)
   def render_challenge
     render 'auth/challenges/new', layout: 'auth'
   end
 
+  # @rbs () -> bool
   def challenge_passed?
     current_user.valid_password?(challenge_params[:current_password])
   end
 
+  # @rbs () -> bool
   def skip_challenge?
     current_user.encrypted_password.blank?
   end
 
+  # @rbs () -> bool
   def challenge_passed_recently?
     session[:challenge_passed_at].present? && session[:challenge_passed_at] >= CHALLENGE_TIMEOUT.ago
   end
 
+  # @rbs () -> ActionController::Parameters
   def challenge_params
     params.require(:form_challenge).permit(:current_password, :return_to)
   end

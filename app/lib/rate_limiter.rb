@@ -20,6 +20,7 @@ class RateLimiter
     }.freeze,
   }.freeze
 
+  # @rbs (Account, ?Hash[untyped, untyped]) -> void
   def initialize(by, options = {})
     @by     = by
     @family = options[:family]
@@ -27,6 +28,7 @@ class RateLimiter
     @period = FAMILIES[@family][:period].to_i
   end
 
+  # @rbs () -> Integer?
   def record!
     count = redis.get(key)
 
@@ -44,6 +46,7 @@ class RateLimiter
     redis.decr(key)
   end
 
+  # @rbs (?Time) -> Hash[untyped, untyped]
   def to_headers(now = Time.now.utc)
     {
       'X-RateLimit-Limit' => @limit.to_s,
@@ -54,10 +57,12 @@ class RateLimiter
 
   private
 
+  # @rbs () -> String
   def key
     @key ||= "rate_limit:#{@by.id}:#{@family}:#{(last_epoch_time / @period).to_i}"
   end
 
+  # @rbs () -> Integer
   def last_epoch_time
     @last_epoch_time ||= Time.now.to_i
   end

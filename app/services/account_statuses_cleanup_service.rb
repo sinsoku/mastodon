@@ -4,6 +4,7 @@ class AccountStatusesCleanupService < BaseService
   # @param [AccountStatusesCleanupPolicy] account_policy
   # @param [Integer] budget
   # @return [Integer]
+  # @rbs (AccountStatusesCleanupPolicy, ?Integer) -> Integer
   def call(account_policy, budget = 50)
     return 0 unless account_policy.enabled?
 

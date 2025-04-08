@@ -33,6 +33,7 @@ class Announcement < ApplicationRecord
   before_validation :set_published, on: :create
 
   class << self
+    # @rbs () -> Arel::Nodes::SqlLiteral
     def coalesced_chronology_timestamps
       Arel.sql(
         <<~SQL.squish
@@ -42,22 +43,27 @@ class Announcement < ApplicationRecord
     end
   end
 
+  # @rbs () -> String
   def to_log_human_identifier
     text
   end
 
+  # @rbs () -> void
   def publish!
     update!(published: true, published_at: Time.now.utc, scheduled_at: nil)
   end
 
+  # @rbs () -> void
   def unpublish!
     update!(published: false, scheduled_at: nil)
   end
 
+  # @rbs () -> Array[untyped]
   def mentions
     @mentions ||= Account.from_text(text)
   end
 
+  # @rbs () -> (Array[untyped] | Status::ActiveRecord_Relation)
   def statuses
     @statuses ||= begin
       if status_ids.nil?
@@ -68,14 +74,17 @@ class Announcement < ApplicationRecord
     end
   end
 
+  # @rbs () -> Array[untyped]
   def tags
     @tags ||= Tag.find_or_create_by_names(Extractor.extract_hashtags(text))
   end
 
+  # @rbs () -> Array[untyped]
   def emojis
     @emojis ||= CustomEmoji.from_text(text)
   end
 
+  # @rbs (?Account?) -> Array[untyped]
   def reactions(account = nil)
     grouped_ordered_announcement_reactions.select(
       [:name, :custom_emoji_id, 'COUNT(*) as count'].tap do |values|
@@ -88,6 +97,7 @@ class Announcement < ApplicationRecord
 
   private
 
+  # @rbs () -> AnnouncementReaction::ActiveRecord_AssociationRelation
   def grouped_ordered_announcement_reactions
     announcement_reactions
       .group(:announcement_id, :name, :custom_emoji_id)
@@ -96,6 +106,7 @@ class Announcement < ApplicationRecord
       )
   end
 
+  # @rbs (Account?) -> String
   def value_for_reaction_me_column(account)
     if account.nil?
       'FALSE AS me'
@@ -112,6 +123,7 @@ class Announcement < ApplicationRecord
     end
   end
 
+  # @rbs () -> Time?
   def set_published
     return unless scheduled_at.blank? || scheduled_at.past?
 

@@ -28,10 +28,12 @@ class Mute < ApplicationRecord
 
   private
 
+  # @rbs () -> bool
   def invalidate_blocking_cache
     Rails.cache.delete("exclude_account_ids_for:#{account_id}")
   end
 
+  # @rbs () -> bool
   def invalidate_follow_recommendations_cache
     Rails.cache.delete("follow_recommendations/#{account_id}")
   end

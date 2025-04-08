@@ -2,6 +2,7 @@
 
 module Admin
   class EmailDomainBlocksController < BaseController
+    # @rbs () -> Form::EmailDomainBlockBatch
     def index
       authorize :email_domain_block, :index?
 
@@ -9,6 +10,7 @@ module Admin
       @form                = Form::EmailDomainBlockBatch.new
     end
 
+    # @rbs () -> String
     def batch
       authorize :email_domain_block, :index?
 
@@ -22,11 +24,13 @@ module Admin
       redirect_to admin_email_domain_blocks_path
     end
 
+    # @rbs () -> EmailDomainBlock
     def new
       authorize :email_domain_block, :create?
       @email_domain_block = EmailDomainBlock.new(domain: params[:_domain])
     end
 
+    # @rbs () -> (String | ActiveSupport::SafeBuffer)
     def create
       authorize :email_domain_block, :create?
 
@@ -57,6 +61,7 @@ module Admin
 
     private
 
+    # @rbs () -> void
     def set_resolved_records
       Resolv::DNS.open do |dns|
         dns.timeouts = 5
@@ -64,14 +69,17 @@ module Admin
       end
     end
 
+    # @rbs () -> ActionController::Parameters
     def resource_params
       params.require(:email_domain_block).permit(:domain, :allow_with_approval, other_domains: [])
     end
 
+    # @rbs () -> nil
     def form_email_domain_block_batch_params
       params.require(:form_email_domain_block_batch).permit(email_domain_block_ids: [])
     end
 
+    # @rbs () -> String?
     def action_from_button
       if params[:delete]
         'delete'

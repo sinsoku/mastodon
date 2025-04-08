@@ -8,6 +8,7 @@ class FetchResourceService < BaseService
 
   attr_reader :response_code
 
+  # @rbs (String) -> Array[untyped]?
   def call(url)
     return if url.blank?
 
@@ -19,12 +20,14 @@ class FetchResourceService < BaseService
 
   private
 
+  # @rbs (String, ?terminal: bool) -> Array[untyped]?
   def process(url, terminal: false)
     @url = url
 
     perform_request { |response| process_response(response, terminal) }
   end
 
+  # @rbs () -> Array[untyped]?
   def perform_request(&block)
     Request.new(:get, @url).tap do |request|
       request.add_headers('Accept' => ACCEPT_HEADER)
@@ -40,6 +43,7 @@ class FetchResourceService < BaseService
     end.perform(&block)
   end
 
+  # @rbs (HTTP::Response, ?bool) -> Array[untyped]?
   def process_response(response, terminal = false)
     @response_code = response.code
     return nil if response.code != 200
@@ -68,10 +72,12 @@ class FetchResourceService < BaseService
     end
   end
 
+  # @rbs (Hash[untyped, untyped]) -> bool
   def expected_type?(json)
     equals_or_includes_any?(json['type'], ActivityPub::Activity::Create::SUPPORTED_TYPES + ActivityPub::Activity::Create::CONVERTED_TYPES)
   end
 
+  # @rbs (HTTP::Response) -> Array[untyped]
   def process_html(response)
     page      = Nokogiri::HTML5(response.body_with_limit)
     json_link = page.xpath('//link[@rel="alternate"]').find { |link| ACTIVITY_STREAM_LINK_TYPES.include?(link['type']) }
@@ -79,12 +85,14 @@ class FetchResourceService < BaseService
     process(json_link['href'], terminal: true) unless json_link.nil?
   end
 
+  # @rbs (LinkHeader) -> Array[untyped]
   def process_link_headers(link_header)
     json_link = link_header.find_link(%w(rel alternate), %w(type application/activity+json)) || link_header.find_link(%w(rel alternate), ['type', 'application/ld+json; profile="https://www.w3.org/ns/activitystreams"'])
 
     process(json_link.href, terminal: true) unless json_link.nil?
   end
 
+  # @rbs (HTTP::Response) -> LinkHeader
   def parse_link_header(response)
     LinkHeader.parse(response['Link'].is_a?(Array) ? response['Link'].first : response['Link'])
   end

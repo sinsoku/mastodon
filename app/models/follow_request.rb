@@ -31,6 +31,7 @@ class FollowRequest < ApplicationRecord
   validates :account_id, uniqueness: { scope: :target_account_id }
   validates :languages, language: true
 
+  # @rbs () -> FollowRequest
   def authorize!
     follow = account.follow!(target_account, reblogs: show_reblogs, notify: notify, languages: languages, uri: uri, bypass_limit: true)
     ListAccount.where(follow_request: self).update_all(follow_request_id: nil, follow_id: follow.id)
@@ -40,6 +41,7 @@ class FollowRequest < ApplicationRecord
 
   alias reject! destroy!
 
+  # @rbs () -> bool
   def local?
     false # Force uri_for to use uri attribute
   end
@@ -49,10 +51,12 @@ class FollowRequest < ApplicationRecord
 
   private
 
+  # @rbs () -> URI::HTTPS?
   def set_uri
     self.uri = ActivityPub::TagManager.instance.generate_uri_for(self) if uri.nil?
   end
 
+  # @rbs () -> bool
   def invalidate_follow_recommendations_cache
     Rails.cache.delete("follow_recommendations/#{account_id}")
   end

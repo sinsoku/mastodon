@@ -11,6 +11,7 @@ module LegacyOtpSecret
   # Decrypt and return the `encrypted_otp_secret` attribute which was used in
   # prior versions of devise-two-factor
   # @return [String] The decrypted OTP secret
+  # @rbs () -> String?
   def legacy_otp_secret
     return nil unless self[:encrypted_otp_secret]
     return nil unless self.class.otp_secret_encryption_key

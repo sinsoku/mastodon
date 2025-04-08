@@ -20,6 +20,7 @@ class FollowRecommendationMute < ApplicationRecord
 
   private
 
+  # @rbs () -> bool
   def invalidate_follow_recommendations_cache
     Rails.cache.delete("follow_recommendations/#{account_id}")
   end

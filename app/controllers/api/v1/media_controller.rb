@@ -6,6 +6,7 @@ class Api::V1::MediaController < Api::BaseController
   before_action :set_media_attachment, except: [:create]
   before_action :check_processing, except: [:create]
 
+  # @rbs () -> String
   def show
     render json: @media_attachment, serializer: REST::MediaAttachmentSerializer, status: status_code_for_media_attachment
   end
@@ -31,6 +32,7 @@ class Api::V1::MediaController < Api::BaseController
     @media_attachment.not_processed? ? 206 : 200
   end
 
+  # @rbs () -> MediaAttachment?
   def set_media_attachment
     @media_attachment = current_account.media_attachments.where(status_id: nil).find(params[:id])
   end

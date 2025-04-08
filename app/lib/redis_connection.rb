@@ -9,6 +9,7 @@ class RedisConnection
 
     delegate :with, to: :pool
 
+    # @rbs () -> ConnectionPool
     def pool
       @pool ||= establish_pool(pool_size)
     end
@@ -24,10 +25,12 @@ class RedisConnection
 
   attr_reader :config
 
+  # @rbs () -> void
   def initialize
     @config = REDIS_CONFIGURATION.base
   end
 
+  # @rbs () -> Redis::Namespace
   def connection
     namespace = config[:namespace]
     if namespace.present?
@@ -39,6 +42,7 @@ class RedisConnection
 
   private
 
+  # @rbs () -> Redis
   def raw_connection
     Redis.new(**config)
   end

@@ -23,18 +23,22 @@ class LinkDetailsExtractor
       WebPage
     ).freeze
 
+    # @rbs (String) -> void
     def initialize(data)
       @data = data
     end
 
+    # @rbs () -> String
     def headline
       json['headline']
     end
 
+    # @rbs () -> String
     def description
       json['description']
     end
 
+    # @rbs () -> String
     def language
       lang = json['inLanguage']
       lang = lang.first if lang.is_a?(Array)
@@ -53,6 +57,7 @@ class LinkDetailsExtractor
       obj
     end
 
+    # @rbs () -> String
     def date_published
       json['datePublished']
     end
@@ -61,6 +66,7 @@ class LinkDetailsExtractor
       json['dateModified']
     end
 
+    # @rbs () -> String
     def author_name
       name = author['name']
       name.is_a?(Array) ? name.join(', ') : name
@@ -70,6 +76,7 @@ class LinkDetailsExtractor
       author['url']
     end
 
+    # @rbs () -> String
     def publisher_name
       publisher['name']
     end
@@ -78,39 +85,47 @@ class LinkDetailsExtractor
       publisher.dig('logo', 'url')
     end
 
+    # @rbs () -> bool?
     def valid?
       json.present?
     end
 
     private
 
+    # @rbs () -> Hash[untyped, untyped]
     def author
       first_of_value(json['author']) || {}
     end
 
+    # @rbs () -> Hash[untyped, untyped]
     def publisher
       first_of_value(json['publisher']) || {}
     end
 
+    # @rbs (Hash[untyped, untyped]) -> Hash[untyped, untyped]
     def first_of_value(arr)
       arr.is_a?(Array) ? arr.first : arr
     end
 
+    # @rbs ((Hash[untyped, untyped] | Array[untyped])?) -> Array[untyped]
     def root_array(root)
       root.is_a?(Array) ? root : [root]
     end
 
+    # @rbs () -> Hash[untyped, untyped]?
     def json
       @json ||= root_array(Oj.load(@data)).compact.find { |obj| SUPPORTED_TYPES.include?(obj['@type']) } || {}
     end
   end
 
+  # @rbs (String, String, String?) -> void
   def initialize(original_url, html, html_charset)
     @original_url = Addressable::URI.parse(original_url)
     @html         = html
     @html_charset = html_charset
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def to_preview_card_attributes
     {
       title: title || '',
@@ -132,10 +147,12 @@ class LinkDetailsExtractor
     }
   end
 
+  # @rbs () -> Symbol
   def type
     player_url.present? ? :video : :link
   end
 
+  # @rbs () -> Symbol
   def link_type
     if structured_data&.type == 'NewsArticle' || opengraph_tag('og:type') == 'article'
       :article
@@ -144,66 +161,82 @@ class LinkDetailsExtractor
     end
   end
 
+  # @rbs () -> nil
   def html
     player_url.present? ? content_tag(:iframe, nil, src: player_url, width: width, height: height, allowfullscreen: 'true', allowtransparency: 'true', scrolling: 'no', frameborder: '0') : nil
   end
 
+  # @rbs () -> nil
   def width
     opengraph_tag('twitter:player:width')
   end
 
+  # @rbs () -> nil
   def height
     opengraph_tag('twitter:player:height')
   end
 
+  # @rbs () -> String
   def title
     html_entities.decode(structured_data&.headline || opengraph_tag('og:title') || document.xpath('//title').map(&:content).first)&.strip
   end
 
+  # @rbs () -> String
   def description
     html_entities.decode(structured_data&.description || opengraph_tag('og:description') || meta_tag('description'))
   end
 
+  # @rbs () -> String?
   def published_at
     structured_data&.date_published || opengraph_tag('article:published_time')
   end
 
+  # @rbs () -> String?
   def image
     valid_url_or_nil(opengraph_tag('og:image'))
   end
 
+  # @rbs () -> String?
   def image_alt
     opengraph_tag('og:image:alt')
   end
 
+  # @rbs () -> String
   def canonical_url
     valid_url_or_nil(link_tag('canonical') || opengraph_tag('og:url'), same_origin_only: true) || @original_url.to_s
   end
 
+  # @rbs () -> String
   def provider_name
     html_entities.decode(structured_data&.publisher_name || opengraph_tag('og:site_name'))
   end
 
+  # @rbs () -> nil
   def provider_url
     valid_url_or_nil(host_to_url(opengraph_tag('og:site')))
   end
 
+  # @rbs () -> String
   def author_name
     html_entities.decode(structured_data&.author_name || opengraph_tag('og:author') || opengraph_tag('og:author:username'))
   end
 
+  # @rbs () -> nil
   def author_url
     structured_data&.author_url
   end
 
+  # @rbs () -> nil
   def author_account
     opengraph_tag('fediverse:creator')
   end
 
+  # @rbs () -> nil
   def embed_url
     valid_url_or_nil(opengraph_tag('twitter:player:stream'))
   end
 
+  # @rbs () -> String?
   def language
     valid_locale_or_nil(structured_data&.language || opengraph_tag('og:locale') || document.xpath('//html').pick('lang'))
   end
@@ -214,16 +247,19 @@ class LinkDetailsExtractor
 
   private
 
+  # @rbs () -> nil
   def player_url
     valid_url_or_nil(opengraph_tag('twitter:player'))
   end
 
+  # @rbs (nil) -> nil
   def host_to_url(str)
     return if str.blank?
 
     str.start_with?(%r{https?://}) ? str : "http://#{str}"
   end
 
+  # @rbs (String?, ?same_origin_only: bool) -> String?
   def valid_url_or_nil(str, same_origin_only: false)
     return if str.blank? || str == 'null' || str == 'undefined'
 
@@ -236,18 +272,22 @@ class LinkDetailsExtractor
     nil
   end
 
+  # @rbs (String) -> String?
   def link_tag(name)
     document.xpath("//link[@rel=\"#{name}\"]").pick('href')
   end
 
+  # @rbs (String) -> String?
   def opengraph_tag(name)
     document.xpath("//meta[@property=\"#{name}\" or @name=\"#{name}\"]").pick('content')
   end
 
+  # @rbs (String) -> String?
   def meta_tag(name)
     document.xpath("//meta[@name=\"#{name}\"]").pick('content')
   end
 
+  # @rbs () -> LinkDetailsExtractor::StructuredData?
   def structured_data
     # Some publications have more than one JSON-LD definition on the page,
     # and some of those definitions aren't valid JSON either, so we have
@@ -269,10 +309,12 @@ class LinkDetailsExtractor
     end.first
   end
 
+  # @rbs () -> Nokogiri::HTML5::Document
   def document
     @document ||= detect_encoding_and_parse_document
   end
 
+  # @rbs () -> Nokogiri::HTML5::Document
   def detect_encoding_and_parse_document
     html = nil
     encoding = nil
@@ -290,11 +332,13 @@ class LinkDetailsExtractor
     Nokogiri::HTML5(html, nil, encoding)
   end
 
+  # @rbs () -> String?
   def detect_encoding
     guess = detector.detect(@html, @html_charset)
     guess&.fetch(:confidence, 0).to_i > 60 ? guess&.fetch(:encoding, nil) : nil
   end
 
+  # @rbs () -> String?
   def header_encoding
     Encoding.find(@html_charset).name if @html_charset
   rescue ArgumentError
@@ -302,12 +346,14 @@ class LinkDetailsExtractor
     nil
   end
 
+  # @rbs () -> CharlockHolmes::EncodingDetector
   def detector
     @detector ||= CharlockHolmes::EncodingDetector.new.tap do |detector|
       detector.strip_tags = true
     end
   end
 
+  # @rbs () -> HTMLEntities
   def html_entities
     @html_entities ||= HTMLEntities.new(:expanded)
   end

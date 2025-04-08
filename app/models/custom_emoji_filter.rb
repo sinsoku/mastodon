@@ -10,10 +10,12 @@ class CustomEmojiFilter
 
   attr_reader :params
 
+  # @rbs (ActionController::Parameters | Hash[untyped, untyped]) -> void
   def initialize(params)
     @params = params
   end
 
+  # @rbs () -> CustomEmoji::ActiveRecord_Relation?
   def results
     scope = CustomEmoji.alphabetic
 
@@ -28,6 +30,7 @@ class CustomEmojiFilter
 
   private
 
+  # @rbs (Symbol, bool | String) -> CustomEmoji::ActiveRecord_Relation?
   def scope_for(key, value)
     case key.to_s
     when 'local'

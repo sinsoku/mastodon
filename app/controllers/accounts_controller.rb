@@ -14,6 +14,7 @@ class AccountsController < ApplicationController
   skip_around_action :set_locale, if: -> { [:json, :rss].include?(request.format&.to_sym) }
   skip_before_action :require_functional!, unless: :limited_federation_mode?
 
+  # @rbs () -> (Time | bool | Array[untyped])?
   def show
     respond_to do |format|
       format.html do
@@ -37,6 +38,7 @@ class AccountsController < ApplicationController
 
   private
 
+  # @rbs () -> Status::ActiveRecord_AssociationRelation
   def filtered_statuses
     default_statuses.tap do |statuses|
       statuses.merge!(hashtag_scope)    if tag_requested?
@@ -45,18 +47,22 @@ class AccountsController < ApplicationController
     end
   end
 
+  # @rbs () -> Status::ActiveRecord_AssociationRelation
   def default_statuses
     @account.statuses.distributable_visibility
   end
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def only_media_scope
     Status.joins(:media_attachments).merge(@account.media_attachments).group(:id)
   end
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def no_replies_scope
     Status.without_replies
   end
 
+  # @rbs () -> Status::ActiveRecord_Relation
   def hashtag_scope
     tag = Tag.find_normalized(params[:tag])
 
@@ -67,14 +73,17 @@ class AccountsController < ApplicationController
     end
   end
 
+  # @rbs () -> String
   def username_param
     params[:username]
   end
 
+  # @rbs () -> bool
   def skip_temporary_suspension_response?
     request.format == :json
   end
 
+  # @rbs () -> String
   def rss_url
     if tag_requested?
       short_account_tag_url(@account, params[:tag], format: 'rss')
@@ -84,18 +93,22 @@ class AccountsController < ApplicationController
   end
   helper_method :rss_url
 
+  # @rbs () -> bool
   def media_requested?
     path_without_format.end_with?('/media') && !tag_requested?
   end
 
+  # @rbs () -> bool
   def replies_requested?
     path_without_format.end_with?('/with_replies') && !tag_requested?
   end
 
+  # @rbs () -> bool
   def tag_requested?
     path_without_format.end_with?(Addressable::URI.parse("/tagged/#{params[:tag]}").normalize)
   end
 
+  # @rbs () -> String
   def path_without_format
     request.path.split('.').first
   end

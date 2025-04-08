@@ -11,12 +11,14 @@ module StatusesHelper
     direct: 'alternate_email',
   }.freeze
 
+  # @rbs (?String) -> ActiveSupport::SafeBuffer
   def nothing_here(extra_classes = '')
     content_tag(:div, class: "nothing-here #{extra_classes}") do
       t('accounts.nothing_here')
     end
   end
 
+  # @rbs (Status) -> String?
   def media_summary(status)
     attachments = { image: 0, video: 0, audio: 0 }
 
@@ -37,18 +39,21 @@ module StatusesHelper
     I18n.t('statuses.attached.description', attached: text)
   end
 
+  # @rbs (Status) -> String?
   def status_text_summary(status)
     return if status.spoiler_text.blank?
 
     I18n.t('statuses.content_warning', warning: status.spoiler_text)
   end
 
+  # @rbs (Status) -> nil
   def poll_summary(status)
     return unless status.preloadable_poll
 
     status.preloadable_poll.options.map { |o| "[ ] #{o}" }.join("\n")
   end
 
+  # @rbs (Status) -> String
   def status_description(status)
     components = [[media_summary(status), status_text_summary(status)].compact_blank.join(' · ')]
 
@@ -60,18 +65,22 @@ module StatusesHelper
     components.compact_blank.join("\n\n")
   end
 
+  # @rbs () -> String?
   def stream_link_target
     embedded_view? ? '_blank' : nil
   end
 
+  # @rbs (Status) -> String
   def visibility_icon(status)
     VISIBLITY_ICONS[status.visibility.to_sym]
   end
 
+  # @rbs () -> bool
   def embedded_view?
     params[:controller] == EMBEDDED_CONTROLLER && params[:action] == EMBEDDED_ACTION
   end
 
+  # @rbs () -> bool?
   def prefers_autoplay?
     ActiveModel::Type::Boolean.new.cast(params[:autoplay]) || current_user&.setting_auto_play_gif
   end

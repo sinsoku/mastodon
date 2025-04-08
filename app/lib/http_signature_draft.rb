@@ -6,12 +6,14 @@
 class HttpSignatureDraft
   REQUEST_TARGET = '(request-target)'
 
+  # @rbs (OpenSSL::PKey::RSA, String, ?full_path: bool) -> void
   def initialize(keypair, key_id, full_path: true)
     @keypair = keypair
     @key_id = key_id
     @full_path = full_path
   end
 
+  # @rbs (Symbol, Addressable::URI) -> String
   def request_target(verb, url)
     if url.query.nil? || !@full_path
       "#{verb} #{url.path}"
@@ -20,6 +22,7 @@ class HttpSignatureDraft
     end
   end
 
+  # @rbs (Hash[untyped, untyped], Symbol, Addressable::URI) -> String
   def sign(signed_headers, verb, url)
     signed_headers = signed_headers.merge(REQUEST_TARGET => request_target(verb, url))
     signed_string = signed_headers.map { |key, value| "#{key.downcase}: #{value}" }.join("\n")

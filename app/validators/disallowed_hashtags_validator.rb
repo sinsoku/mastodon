@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class DisallowedHashtagsValidator < ActiveModel::Validator
+  # @rbs (Status | RSpec::Mocks::InstanceVerifyingDouble) -> nil
   def validate(status)
     return unless status.local? && !status.reblog?
 

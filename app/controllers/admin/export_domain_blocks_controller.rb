@@ -8,15 +8,18 @@ module Admin
 
     before_action :set_dummy_import!, only: [:new]
 
+    # @rbs () -> Symbol
     def new
       authorize :domain_block, :create?
     end
 
+    # @rbs () -> String
     def export
       authorize :instance, :index?
       send_export_file
     end
 
+    # @rbs () -> (ActiveSupport::SafeBuffer | Array[untyped])
     def import
       authorize :domain_block, :create?
 
@@ -58,18 +61,22 @@ module Admin
 
     private
 
+    # @rbs () -> Instance::ActiveRecord_Relation
     def instances_from_imported_blocks
       Instance.with_domain_follows(@domain_blocks.map(&:domain))
     end
 
+    # @rbs () -> String
     def export_filename
       'domain_blocks.csv'
     end
 
+    # @rbs () -> Array[untyped]
     def export_headers
       %w(#domain #severity #reject_media #reject_reports #public_comment #obfuscate)
     end
 
+    # @rbs () -> String
     def export_data
       CSV.generate(headers: export_headers, write_headers: true) do |content|
         DomainBlock.with_limitations.order(id: :asc).each do |instance|

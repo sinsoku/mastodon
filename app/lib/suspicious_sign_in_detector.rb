@@ -4,28 +4,34 @@ class SuspiciousSignInDetector
   IPV6_TOLERANCE_MASK = 64
   IPV4_TOLERANCE_MASK = 16
 
+  # @rbs (User) -> void
   def initialize(user)
     @user = user
   end
 
+  # @rbs (RSpec::Mocks::InstanceVerifyingDouble | ActionDispatch::Request | ActionController::TestRequest) -> bool
   def suspicious?(request)
     !sufficient_security_measures? && !freshly_signed_up? && !previously_seen_ip?(request)
   end
 
   private
 
+  # @rbs () -> bool
   def sufficient_security_measures?
     @user.otp_required_for_login?
   end
 
+  # @rbs (RSpec::Mocks::InstanceVerifyingDouble | ActionDispatch::Request | ActionController::TestRequest) -> bool
   def previously_seen_ip?(request)
     @user.ips.exists?(['ip <<= ?', masked_ip(request)])
   end
 
+  # @rbs () -> bool
   def freshly_signed_up?
     @user.current_sign_in_at.blank?
   end
 
+  # @rbs (RSpec::Mocks::InstanceVerifyingDouble | ActionDispatch::Request | ActionController::TestRequest) -> String
   def masked_ip(request)
     masked_ip_addr = begin
       ip_addr = IPAddr.new(request.remote_ip)

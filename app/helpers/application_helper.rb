@@ -8,6 +8,7 @@ module ApplicationHelper
     he
   ).freeze
 
+  # @rbs (Integer, **nil) -> ActiveSupport::SafeBuffer
   def friendly_number_to_human(number, **options)
     # By default, the number of precision digits used by number_to_human
     # is looked up from the locales definition, and rails-i18n comes with
@@ -22,18 +23,22 @@ module ApplicationHelper
     number_to_human(number, **options)
   end
 
+  # @rbs () -> bool
   def open_registrations?
     Setting.registrations_mode == 'open'
   end
 
+  # @rbs () -> bool
   def approved_registrations?
     Setting.registrations_mode == 'approved'
   end
 
+  # @rbs () -> bool
   def closed_registrations?
     Setting.registrations_mode == 'none'
   end
 
+  # @rbs () -> String
   def available_sign_up_path
     if closed_registrations? || omniauth_only?
       'https://joinmastodon.org/#getting-started'
@@ -46,6 +51,7 @@ module ApplicationHelper
     ENV['OMNIAUTH_ONLY'] == 'true'
   end
 
+  # @rbs (?String, ?nil) -> ActiveSupport::SafeBuffer
   def link_to_login(name = nil, html_options = nil, &block)
     target = new_user_session_path
 
@@ -69,6 +75,7 @@ module ApplicationHelper
     link_to label, omniauth_authorize_path(:user, provider), class: "button button-#{provider}", method: :post
   end
 
+  # @rbs () -> String
   def locale_direction
     if RTL_LOCALES.include?(I18n.locale)
       'rtl'
@@ -77,6 +84,7 @@ module ApplicationHelper
     end
   end
 
+  # @rbs () -> ActiveSupport::SafeBuffer
   def html_title
     safe_join(
       [content_for(:page_title), title]
@@ -85,10 +93,12 @@ module ApplicationHelper
     )
   end
 
+  # @rbs () -> String
   def title
     Rails.env.production? ? site_title : "#{site_title} (Dev)"
   end
 
+  # @rbs (String) -> ActiveSupport::SafeBuffer
   def label_for_scope(scope)
     safe_join [
       tag.samp(scope, class: { 'scope-danger' => SessionActivation::DEFAULT_SCOPES.include?(scope.to_s) }),
@@ -96,12 +106,14 @@ module ApplicationHelper
     ]
   end
 
+  # @rbs (Symbol, Symbol | Account | AccountWarning | User | AccountModerationNote | ReportNote | UserRole | Webhook | Announcement) -> bool
   def can?(action, record)
     return false if record.nil?
 
     policy(record).public_send(:"#{action}?")
   end
 
+  # @rbs (String, ?Hash[untyped, untyped]) -> ActiveSupport::SafeBuffer
   def material_symbol(icon, attributes = {})
     safe_join(
       [
@@ -116,6 +128,7 @@ module ApplicationHelper
     )
   end
 
+  # @rbs () -> ActiveSupport::SafeBuffer
   def check_icon
     inline_svg_tag 'check.svg'
   end
@@ -132,6 +145,7 @@ module ApplicationHelper
     end
   end
 
+  # @rbs (AccountRelationshipsPresenter, Integer) -> ActiveSupport::SafeBuffer
   def interrelationships_icon(relationships, account_id)
     if relationships.following[account_id] && relationships.followed_by[account_id]
       material_symbol('sync_alt', title: I18n.t('relationships.mutual'), class: 'active passive')
@@ -142,6 +156,7 @@ module ApplicationHelper
     end
   end
 
+  # @rbs (CustomEmoji) -> ActiveSupport::SafeBuffer
   def custom_emoji_tag(custom_emoji)
     if prefers_autoplay?
       image_tag(custom_emoji.image.url, class: 'emojione', alt: ":#{custom_emoji.shortcode}:")
@@ -150,10 +165,12 @@ module ApplicationHelper
     end
   end
 
+  # @rbs (String, String | ActiveSupport::SafeBuffer) -> ActiveSupport::SafeBuffer
   def opengraph(property, content)
     tag.meta(content: content, property: property)
   end
 
+  # @rbs () -> String
   def body_classes
     output = body_class_string.split
     output << content_for(:body_classes)
@@ -164,27 +181,33 @@ module ApplicationHelper
     output.compact_blank.join(' ')
   end
 
+  # @rbs () -> nil
   def cdn_host
     Rails.configuration.action_controller.asset_host
   end
 
+  # @rbs () -> bool
   def cdn_host?
     cdn_host.present?
   end
 
+  # @rbs () -> String
   def storage_host
     "https://#{storage_host_var}"
   end
 
+  # @rbs () -> bool
   def storage_host?
     storage_host_var.present?
   end
 
+  # @rbs (String, ?line_width: Integer, ?break_sequence: String) -> String
   def quote_wrap(text, line_width: 80, break_sequence: "\n")
     text = word_wrap(text, line_width: line_width - 2, break_sequence: break_sequence)
     text.split("\n").map { |line| "> #{line}" }.join("\n")
   end
 
+  # @rbs () -> ActiveSupport::SafeBuffer
   def render_initial_state
     state_params = {
       settings: {},
@@ -217,6 +240,7 @@ module ApplicationHelper
     # rubocop:enable Rails/OutputSafety
   end
 
+  # @rbs (Doorkeeper::OAuth::Scopes) -> Array[untyped]
   def grouped_scopes(scopes)
     scope_parser      = ScopeParser.new
     scope_transformer = ScopeTransformer.new
@@ -232,18 +256,22 @@ module ApplicationHelper
     end.values
   end
 
+  # @rbs (ActiveSupport::SafeBuffer, Array[untyped], ?Hash[untyped, untyped]) -> ActiveSupport::SafeBuffer
   def prerender_custom_emojis(html, custom_emojis, other_options = {})
     EmojiFormatter.new(html, custom_emojis, other_options.merge(animate: prefers_autoplay?)).to_s
   end
 
+  # @rbs () -> String
   def mascot_url
     full_asset_url(instance_presenter.mascot&.file&.url || frontend_asset_path('images/elephant_ui_plane.svg'))
   end
 
+  # @rbs (?Hash[untyped, untyped]) -> ActiveSupport::SafeBuffer
   def copyable_input(options = {})
     tag.input(type: :text, maxlength: 999, spellcheck: false, readonly: true, **options)
   end
 
+  # @rbs (Tag) -> String
   def recent_tag_usage(tag)
     people = tag.history.aggregate(2.days.ago.to_date..Time.zone.today).accounts
     I18n.t 'user_mailer.welcome.hashtags_recent_count', people: number_with_delimiter(people), count: people
@@ -251,6 +279,7 @@ module ApplicationHelper
 
   private
 
+  # @rbs () -> String?
   def storage_host_var
     ENV.fetch('S3_ALIAS_HOST', nil) || ENV.fetch('S3_CLOUDFRONT_HOST', nil) || ENV.fetch('AZURE_ALIAS_HOST', nil)
   end

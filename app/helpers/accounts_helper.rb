@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module AccountsHelper
+  # @rbs (Account, **nil | bool) -> (String | ActiveSupport::SafeBuffer)
   def display_name(account, **options)
     str = account.display_name.presence || account.username
 
@@ -11,6 +12,7 @@ module AccountsHelper
     end
   end
 
+  # @rbs (Account) -> String
   def acct(account)
     if account.local?
       "@#{account.acct}@#{site_hostname}"
@@ -19,10 +21,12 @@ module AccountsHelper
     end
   end
 
+  # @rbs (Integer) -> ActiveSupport::SafeBuffer
   def account_formatted_stat(value)
     number_to_human(value, precision: 3, strip_insignificant_zeros: true)
   end
 
+  # @rbs (Account) -> String
   def account_description(account)
     prepend_str = [
       [

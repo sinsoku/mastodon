@@ -26,6 +26,7 @@ class Api::V1::AccountsController < Api::BaseController
     render json: @accounts, each_serializer: REST::AccountSerializer
   end
 
+  # @rbs () -> (Time | bool | Array[untyped])?
   def show
     cache_if_unauthenticated!
     render json: @account, serializer: REST::AccountSerializer

@@ -12,12 +12,14 @@ class GifReader
 
   class CannotParseImage < GifReaderException; end
 
+  # @rbs (String) -> bool
   def self.animated?(path)
     new(path).animated
   rescue GifReaderException
     false
   end
 
+  # @rbs (String, ?Integer) -> void
   def initialize(path, max_frames = 2)
     @path      = path
     @nb_frames = 0
@@ -76,6 +78,7 @@ class GifReader
 
   private
 
+  # @rbs (File) -> nil
   def skip_extension_block!(file)
     if EXTENSION_LABELS.include?(file.read(1).unpack1('C'))
       block_size, = file.read(1).unpack('C')
@@ -87,6 +90,7 @@ class GifReader
   end
 
   # Skip sub-blocks up until block end marker
+  # @rbs (File) -> nil
   def skip_sub_blocks!(file)
     loop do
       size, = file.read(1).unpack('C')
@@ -103,6 +107,7 @@ module Paperclip
   # to convert animated GIFs to videos
 
   class GifTranscoder < Paperclip::Processor
+    # @rbs () -> (File | Paperclip::Tempfile)
     def make
       return File.open(@file.path) unless needs_convert?
 
@@ -119,6 +124,7 @@ module Paperclip
 
     private
 
+    # @rbs () -> bool
     def needs_convert?
       GifReader.animated?(file.path)
     end

@@ -8,6 +8,7 @@ class ActivityPub::FetchRemoteStatusService < BaseService
   DISCOVERIES_PER_REQUEST = 1000
 
   # Should be called when uri has already been checked for locality
+  # @rbs (String, ?prefetched_body: nil | String, ?request_id: String | nil) -> Status?
   def call(uri, prefetched_body: nil, on_behalf_of: nil, expected_actor_uri: nil, request_id: nil)
     return if domain_not_allowed?(uri)
 

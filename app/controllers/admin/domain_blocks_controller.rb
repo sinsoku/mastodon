@@ -16,6 +16,7 @@ module Admin
 
     PERMITTED_UPDATE_PARAMS = PERMITTED_PARAMS.without(:domain).freeze
 
+    # @rbs () -> String
     def batch
       authorize :domain_block, :create?
       @form = Form::DomainBlockBatch.new(form_domain_block_batch_params.merge(current_account: current_account, action: action_from_button))
@@ -28,15 +29,18 @@ module Admin
       redirect_to admin_instances_path(limited: '1'), notice: I18n.t('admin.domain_blocks.created_msg')
     end
 
+    # @rbs () -> DomainBlock
     def new
       authorize :domain_block, :create?
       @domain_block = DomainBlock.new(domain: params[:_domain])
     end
 
+    # @rbs () -> Symbol
     def edit
       authorize :domain_block, :create?
     end
 
+    # @rbs () -> (ActiveSupport::SafeBuffer | String)
     def create
       authorize :domain_block, :create?
 
@@ -69,6 +73,7 @@ module Admin
       end
     end
 
+    # @rbs () -> (ActiveSupport::SafeBuffer | String)
     def update
       authorize :domain_block, :update?
 
@@ -86,6 +91,7 @@ module Admin
       end
     end
 
+    # @rbs () -> String
     def destroy
       authorize @domain_block, :destroy?
       UnblockDomainService.new.call(@domain_block)
@@ -95,10 +101,12 @@ module Admin
 
     private
 
+    # @rbs () -> DomainBlock
     def set_domain_block
       @domain_block = DomainBlock.find(params[:id])
     end
 
+    # @rbs () -> ActionController::Parameters
     def update_params
       params
         .require(:domain_block)
@@ -106,6 +114,7 @@ module Admin
         .permit(*PERMITTED_UPDATE_PARAMS)
     end
 
+    # @rbs () -> ActionController::Parameters
     def resource_params
       params
         .require(:domain_block)
@@ -113,14 +122,17 @@ module Admin
         .permit(*PERMITTED_PARAMS)
     end
 
+    # @rbs () -> ActionController::Parameters
     def form_domain_block_batch_params
       params.require(:form_domain_block_batch).permit(domain_blocks_attributes: [:enabled, :domain, :severity, :reject_media, :reject_reports, :private_comment, :public_comment, :obfuscate])
     end
 
+    # @rbs () -> String
     def action_from_button
       'save' if params[:save]
     end
 
+    # @rbs () -> bool
     def requires_confirmation?
       @domain_block.valid? && (@domain_block.new_record? || @domain_block.severity_changed?) && @domain_block.severity.to_s == 'suspend' && !params[:confirm]
     end

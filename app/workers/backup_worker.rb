@@ -16,6 +16,7 @@ class BackupWorker
     end
   end
 
+  # @rbs (Integer) -> ActionMailer::MailDeliveryJob
   def perform(backup_id)
     backup = Backup.find(backup_id)
     user   = backup.user

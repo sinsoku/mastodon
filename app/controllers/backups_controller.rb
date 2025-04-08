@@ -11,6 +11,7 @@ class BackupsController < ApplicationController
 
   BACKUP_LINK_TIMEOUT = 1.hour.freeze
 
+  # @rbs () -> String
   def download
     case Paperclip::Attachment.default_options[:storage]
     when :s3, :azure
@@ -28,6 +29,7 @@ class BackupsController < ApplicationController
 
   private
 
+  # @rbs () -> Backup
   def set_backup
     @backup = current_user.backups.find(params[:id])
   end

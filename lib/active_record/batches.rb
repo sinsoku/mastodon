@@ -2,6 +2,7 @@
 
 module ActiveRecord
   module Batches
+    # @rbs (*Symbol) -> void
     def pluck_each(*column_names)
       relation = self
 

@@ -8,16 +8,19 @@ module Admin
 
     PER_PAGE = 20
 
+    # @rbs () -> Admin::StatusBatchAction
     def index
       authorize [:admin, :status], :index?
 
       @status_batch_action = Admin::StatusBatchAction.new
     end
 
+    # @rbs () -> Status
     def show
       authorize [:admin, @status], :show?
     end
 
+    # @rbs () -> (Integer | String)
     def batch
       authorize [:admin, :status], :index?
 
@@ -31,15 +34,18 @@ module Admin
 
     private
 
+    # @rbs () -> Enumerator
     def batched_ordered_status_edits
       @status.edits.includes(:account, status: [:account]).find_each(order: :asc)
     end
     helper_method :batched_ordered_status_edits
 
+    # @rbs () -> ActionController::Parameters?
     def admin_status_batch_action_params
       params.require(:admin_status_batch_action).permit(status_ids: [])
     end
 
+    # @rbs () -> String
     def after_create_redirect_path
       report_id = @status_batch_action&.report_id || params[:report_id]
 
@@ -50,26 +56,32 @@ module Admin
       end
     end
 
+    # @rbs () -> Account
     def set_account
       @account = Account.find(params[:account_id])
     end
 
+    # @rbs () -> Status
     def set_status
       @status = @account.statuses.find(params[:id])
     end
 
+    # @rbs () -> Status::ActiveRecord_AssociationRelation
     def set_statuses
       @statuses = Admin::StatusFilter.new(@account, filter_params).results.preload(:application, :preloadable_poll, :media_attachments, active_mentions: :account, reblog: [:account, :application, :preloadable_poll, :media_attachments, active_mentions: :account]).page(params[:page]).per(PER_PAGE)
     end
 
+    # @rbs () -> ActionController::Parameters
     def filter_params
       params.slice(*Admin::StatusFilter::KEYS).permit(*Admin::StatusFilter::KEYS)
     end
 
+    # @rbs () -> ActionController::Parameters
     def current_params
       params.slice(:media, :page).permit(:media, :page)
     end
 
+    # @rbs () -> String
     def action_from_button
       if params[:report]
         'report'

@@ -39,6 +39,7 @@ class Api::V1::Admin::AccountsController < Api::BaseController
     render json: @accounts, each_serializer: REST::Admin::AccountSerializer
   end
 
+  # @rbs () -> (Time | bool | Array[untyped])?
   def show
     authorize @account, :show?
     render json: @account, serializer: REST::Admin::AccountSerializer

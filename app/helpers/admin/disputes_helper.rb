@@ -2,6 +2,7 @@
 
 module Admin
   module DisputesHelper
+    # @rbs (Appeal) -> ActiveSupport::SafeBuffer
     def strike_action_label(appeal)
       t(key_for_action(appeal),
         scope: 'admin.strikes.actions',
@@ -12,6 +13,7 @@ module Admin
 
     private
 
+    # @rbs (Appeal) -> String
     def key_for_action(appeal)
       AccountWarning.actions.slice(appeal.strike.action).keys.first
     end

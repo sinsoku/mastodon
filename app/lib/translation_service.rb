@@ -17,6 +17,7 @@ class TranslationService
     end
   end
 
+  # @rbs () -> bool
   def self.configured?
     ENV['DEEPL_API_KEY'].present? || ENV['LIBRE_TRANSLATE_ENDPOINT'].present?
   end

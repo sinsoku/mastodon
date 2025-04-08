@@ -6,6 +6,7 @@ class FollowMigrationService < FollowService
   # @param [Account] target_account Account to follow
   # @param [Account] old_target_account Account to unfollow once the follow request has been sent to the new one
   # @option [Boolean] bypass_locked Whether to immediately follow the new account even if it is locked
+  # @rbs (Account, Account, Account, ?bypass_locked: bool) -> (FollowRequest | Follow)
   def call(source_account, target_account, old_target_account, bypass_locked: false)
     @old_target_account = old_target_account
 
@@ -19,6 +20,7 @@ class FollowMigrationService < FollowService
 
   private
 
+  # @rbs () -> FollowRequest
   def request_follow!
     follow_request = @source_account.request_follow!(@target_account, **follow_options.merge(rate_limit: @options[:with_rate_limit], bypass_limit: @options[:bypass_limit]))
     migrate_list_accounts!
@@ -33,16 +35,19 @@ class FollowMigrationService < FollowService
     follow_request
   end
 
+  # @rbs () -> Follow
   def change_follow_options!
     migrate_list_accounts!
     super
   end
 
+  # @rbs () -> FollowRequest
   def change_follow_request_options!
     migrate_list_accounts!
     super
   end
 
+  # @rbs () -> Follow
   def direct_follow!
     follow = super
 
@@ -52,6 +57,7 @@ class FollowMigrationService < FollowService
     follow
   end
 
+  # @rbs () -> void
   def migrate_list_accounts!
     ListAccount.where(follow_id: @original_follow.id).includes(:list).find_each do |list_account|
       list_account.list.accounts << @target_account

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class TagSearchService < BaseService
+  # @rbs (String, ?Hash[untyped, untyped]) -> (Tag::ActiveRecord_Relation | Array[untyped])
   def call(query, options = {})
     MastodonOTELTracer.in_span('TagSearchService#call') do |span|
       @query   = query.strip.delete_prefix('#')
@@ -111,6 +112,7 @@ class TagSearchService < BaseService
     }
   end
 
+  # @rbs () -> (Tag::ActiveRecord_Relation | Array[untyped])
   def from_database
     Tag.search_for(@query, @limit, @offset, @options)
   end

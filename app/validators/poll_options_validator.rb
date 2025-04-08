@@ -4,6 +4,7 @@ class PollOptionsValidator < ActiveModel::Validator
   MAX_OPTIONS      = 4
   MAX_OPTION_CHARS = 50
 
+  # @rbs (RSpec::Mocks::InstanceVerifyingDouble | Poll) -> nil
   def validate(poll)
     poll.errors.add(:options, I18n.t('polls.errors.too_few_options')) unless poll.options.size > 1
     poll.errors.add(:options, I18n.t('polls.errors.too_many_options', max: MAX_OPTIONS)) if poll.options.size > MAX_OPTIONS

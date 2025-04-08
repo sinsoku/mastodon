@@ -2,6 +2,7 @@
 
 module Paperclip
   class LazyThumbnail < Paperclip::Thumbnail
+    # @rbs () -> Paperclip::Tempfile
     def make
       return File.open(@file.path) unless needs_convert?
 
@@ -19,19 +20,23 @@ module Paperclip
 
     private
 
+    # @rbs () -> bool
     def needs_convert?
       needs_different_geometry? || needs_different_format? || needs_metadata_stripping?
     end
 
+    # @rbs () -> bool?
     def needs_different_geometry?
       (options[:geometry] && @current_geometry.width != @target_geometry.width && @current_geometry.height != @target_geometry.height) ||
         (options[:pixels] && @current_geometry.width * @current_geometry.height > options[:pixels])
     end
 
+    # @rbs () -> bool
     def needs_different_format?
       @format.present? && @current_format != @format
     end
 
+    # @rbs () -> bool
     def needs_metadata_stripping?
       @attachment.instance.respond_to?(:local?) && @attachment.instance.local?
     end

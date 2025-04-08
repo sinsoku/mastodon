@@ -108,10 +108,12 @@ class Notification < ApplicationRecord
   scope :without_suspended, -> { joins(:from_account).merge(Account.without_suspended) }
   scope :by_group_key, ->(group_key) { group_key&.start_with?('ungrouped-') ? where(id: group_key.delete_prefix('ungrouped-')) : where(group_key: group_key) }
 
+  # @rbs () -> Symbol
   def type
     @type ||= (super || LEGACY_TYPE_CLASS_MAP[activity_type]).to_sym
   end
 
+  # @rbs () -> Status?
   def target_status
     case type
     when :status, :update
@@ -127,6 +129,7 @@ class Notification < ApplicationRecord
     end
   end
 
+  # @rbs () -> void
   def set_group_key!
     return if filtered? || Notification::GROUPABLE_NOTIFICATION_TYPES.exclude?(type)
 
@@ -152,6 +155,7 @@ class Notification < ApplicationRecord
   end
 
   class << self
+    # @rbs (?types: Array[untyped], ?exclude_types: Array[untyped], ?from_account_id: nil | String, ?include_filtered: nil | bool) -> Notification::ActiveRecord_AssociationRelation
     def browserable(types: [], exclude_types: [], from_account_id: nil, include_filtered: false)
       requested_types = if types.empty?
                           TYPES
@@ -168,6 +172,7 @@ class Notification < ApplicationRecord
       end
     end
 
+    # @rbs (Integer, Symbol, ?grouped_types: nil | Array[untyped]) -> Notification::ActiveRecord_Relation
     def paginate_groups(limit, pagination_order, grouped_types: nil)
       raise ArgumentError unless %i(asc desc).include?(pagination_order)
 
@@ -231,6 +236,7 @@ class Notification < ApplicationRecord
 
     # This returns notifications from the request page, but with at most one notification per group.
     # Notifications that have no `group_key` each count as a separate group.
+    # @rbs (Integer, ?max_id: nil | Integer, ?since_id: nil | String | Integer, ?grouped_types: nil | Array[untyped]) -> Notification::ActiveRecord_Relation
     def paginate_groups_by_max_id(limit, max_id: nil, since_id: nil, grouped_types: nil)
       query = reorder(id: :desc)
       query = query.where(id: ...(max_id.to_i)) if max_id.present?
@@ -241,6 +247,7 @@ class Notification < ApplicationRecord
     # Differs from :paginate_groups_by_max_id in that it gives the results immediately following min_id,
     # whereas since_id gives the items with largest id, but with since_id as a cutoff.
     # Results will be in ascending order by id.
+    # @rbs (Integer, ?max_id: nil | Integer, ?min_id: String | nil | Integer, ?grouped_types: nil | Array[untyped]) -> Notification::ActiveRecord_Relation
     def paginate_groups_by_min_id(limit, max_id: nil, min_id: nil, grouped_types: nil)
       query = reorder(id: :asc)
       query = query.where(id: (min_id.to_i + 1)...) if min_id.present?
@@ -248,6 +255,7 @@ class Notification < ApplicationRecord
       query.paginate_groups(limit, :asc, grouped_types: grouped_types)
     end
 
+    # @rbs (Integer, ?ActionController::Parameters) -> Array[untyped]
     def to_a_grouped_paginated_by_id(limit, options = {})
       if options[:min_id].present?
         paginate_groups_by_min_id(limit, min_id: options[:min_id], max_id: options[:max_id], grouped_types: options[:grouped_types]).reverse
@@ -256,6 +264,7 @@ class Notification < ApplicationRecord
       end
     end
 
+    # @rbs (Array[untyped]) -> Array[untyped]
     def preload_cache_collection_target_statuses(notifications, &_block)
       notifications.group_by(&:type).each do |type, grouped_notifications|
         associations = TARGET_STATUS_INCLUDES_BY_TYPE[type]
@@ -300,6 +309,7 @@ class Notification < ApplicationRecord
 
   private
 
+  # @rbs () -> Integer?
   def set_from_account
     return unless new_record?
 
@@ -318,6 +328,7 @@ class Notification < ApplicationRecord
     end
   end
 
+  # @rbs () -> nil
   def remove_from_notification_request
     notification_request = NotificationRequest.find_by(account_id: account_id, from_account_id: from_account_id)
     notification_request&.reconsider_existence!

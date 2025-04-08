@@ -3,6 +3,7 @@
 class CustomCssController < ActionController::Base # rubocop:disable Rails/ApplicationController
   before_action :set_user_roles
 
+  # @rbs () -> ActiveSupport::SafeBuffer
   def show
     expires_in 3.minutes, public: true
     render content_type: 'text/css'
@@ -10,11 +11,13 @@ class CustomCssController < ActionController::Base # rubocop:disable Rails/Appli
 
   private
 
+  # @rbs () -> String?
   def custom_css_styles
     Setting.custom_css
   end
   helper_method :custom_css_styles
 
+  # @rbs () -> UserRole::ActiveRecord_Relation
   def set_user_roles
     @user_roles = UserRole.providing_styles
   end

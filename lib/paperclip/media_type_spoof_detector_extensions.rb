@@ -4,6 +4,7 @@ module Paperclip
   module MediaTypeSpoofDetectorExtensions
     MARCEL_MIME_TYPES = %w(audio/mpeg image/avif).freeze
 
+    # @rbs () -> String
     def calculated_content_type
       return @calculated_content_type if defined?(@calculated_content_type)
 
@@ -14,6 +15,7 @@ module Paperclip
       @calculated_content_type
     end
 
+    # @rbs () -> String
     def type_from_marcel
       @type_from_marcel ||= Marcel::MimeType.for Pathname.new(@file.path),
                                                  name: @file.path

@@ -7,6 +7,7 @@ class BatchedRemoveStatusService < BaseService
   # @param [Enumerable<Status>] statuses An array of statuses
   # @param [Hash] options
   # @option [Boolean] :skip_side_effects Do not modify feeds and send updates to streaming API
+  # @rbs (Array[untyped] | Status::ActiveRecord_AssociationRelation, **nil | bool) -> Array[untyped]?
   def call(statuses, **options)
     ActiveRecord::Associations::Preloader.new(
       records: statuses,
@@ -63,6 +64,7 @@ class BatchedRemoveStatusService < BaseService
 
   private
 
+  # @rbs (Account, Array[untyped]) -> void
   def unpush_from_home_timelines(account, statuses)
     account.followers_for_local_distribution.includes(:user).reorder(nil).find_each do |follower|
       statuses.each do |status|
@@ -71,6 +73,7 @@ class BatchedRemoveStatusService < BaseService
     end
   end
 
+  # @rbs (Account, Array[untyped]) -> nil
   def unpush_from_list_timelines(account, statuses)
     account.lists_for_local_distribution.select(:id, :account_id).includes(account: :user).reorder(nil).find_each do |list|
       statuses.each do |status|
@@ -79,6 +82,7 @@ class BatchedRemoveStatusService < BaseService
     end
   end
 
+  # @rbs (Status, Redis::Namespace) -> Array[untyped]
   def unpush_from_public_timelines(status, pipeline)
     return unless status.public_visibility? && status.id > @status_id_cutoff
 

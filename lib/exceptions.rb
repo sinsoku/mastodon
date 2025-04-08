@@ -16,6 +16,7 @@ module Mastodon
   class UnexpectedResponseError < Error
     attr_reader :response
 
+    # @rbs (?HTTP::Response?) -> void
     def initialize(response = nil)
       @response = response
 
@@ -30,6 +31,7 @@ module Mastodon
   class PrivateNetworkAddressError < HostValidationError
     attr_reader :host
 
+    # @rbs (String) -> void
     def initialize(host)
       @host = host
       super()

@@ -6,6 +6,7 @@ class IntentsController < ApplicationController
   before_action :handle_invalid_uri, unless: :valid_uri?
   rescue_from Addressable::URI::InvalidURIError, with: :handle_invalid_uri
 
+  # @rbs () -> (ActiveSupport::SafeBuffer | String)
   def show
     case uri.host
     when 'follow'
@@ -19,14 +20,17 @@ class IntentsController < ApplicationController
 
   private
 
+  # @rbs () -> bool?
   def valid_uri?
     uri.present? && uri.scheme == EXPECTED_SCHEME
   end
 
+  # @rbs () -> ActiveSupport::SafeBuffer
   def handle_invalid_uri
     not_found
   end
 
+  # @rbs () -> Addressable::URI?
   def uri
     @uri ||= Addressable::URI.parse(params[:uri])
   end

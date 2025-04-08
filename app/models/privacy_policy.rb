@@ -6,6 +6,7 @@ class PrivacyPolicy < ActiveModelSerializers::Model
 
   attributes :updated_at, :text
 
+  # @rbs () -> PrivacyPolicy
   def self.current
     custom = Setting.find_by(var: 'site_terms')
 

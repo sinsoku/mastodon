@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module PremailerBundledAssetStrategy
+  # @rbs (String) -> String
   def load(url)
     asset_host = ENV['CDN_HOST'] || ENV['WEB_DOMAIN'] || ENV.fetch('LOCAL_DOMAIN', nil)
 

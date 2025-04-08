@@ -11,6 +11,7 @@ module Mastodon
       interrupt this migration if you are not ready.
     WARNING_MESSAGE
 
+    # @rbs (?String?) -> Integer
     def migration_duration_warning(explanation = nil)
       return unless valid_environment?
 
@@ -21,6 +22,7 @@ module Mastodon
 
     private
 
+    # @rbs () -> Integer
     def announce_countdown
       WARNING_SECONDS.downto(1) do |i|
         say "Continuing in #{i} second#{i == 1 ? '' : 's'}...", true
@@ -32,10 +34,12 @@ module Mastodon
       $stdout.isatty && Rails.env.production?
     end
 
+    # @rbs (String?) -> void
     def announce_warning(explanation)
       announce_message prepare_message(explanation)
     end
 
+    # @rbs (String) -> nil
     def announce_message(text)
       say ''
       text.each_line do |line|
@@ -44,6 +48,7 @@ module Mastodon
       say ''
     end
 
+    # @rbs (String?) -> String
     def prepare_message(explanation)
       if explanation.blank?
         DEFAULT_WARNING

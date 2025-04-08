@@ -25,6 +25,7 @@ class Relay < ApplicationRecord
 
   alias enabled? accepted?
 
+  # @rbs () -> void
   def enable!
     activity_id = ActivityPub::TagManager.instance.generate_uri_for(nil)
     payload     = Oj.dump(follow_activity(activity_id))
@@ -34,6 +35,7 @@ class Relay < ApplicationRecord
     ActivityPub::DeliveryWorker.perform_async(payload, some_local_account.id, inbox_url)
   end
 
+  # @rbs () -> void
   def disable!
     activity_id = ActivityPub::TagManager.instance.generate_uri_for(nil)
     payload     = Oj.dump(unfollow_activity(activity_id))
@@ -45,6 +47,7 @@ class Relay < ApplicationRecord
 
   private
 
+  # @rbs (URI::HTTPS) -> Hash[untyped, untyped]
   def follow_activity(activity_id)
     {
       '@context': ActivityPub::TagManager::CONTEXT,
@@ -55,6 +58,7 @@ class Relay < ApplicationRecord
     }
   end
 
+  # @rbs (URI::HTTPS) -> Hash[untyped, untyped]
   def unfollow_activity(activity_id)
     {
       '@context': ActivityPub::TagManager::CONTEXT,
@@ -70,10 +74,12 @@ class Relay < ApplicationRecord
     }
   end
 
+  # @rbs () -> Account
   def some_local_account
     @some_local_account ||= Account.representative
   end
 
+  # @rbs () -> nil
   def ensure_disabled
     disable! if enabled?
   end

@@ -42,6 +42,7 @@ class BulkImport < ApplicationRecord
 
   validates :type, presence: true
 
+  # @rbs (Integer, ?imported: bool) -> bool?
   def self.progress!(bulk_import_id, imported: false)
     # Use `increment_counter` so that the incrementation is done atomically in the database
     BulkImport.increment_counter(:processed_items, bulk_import_id)

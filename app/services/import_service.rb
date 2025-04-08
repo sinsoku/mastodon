@@ -8,6 +8,7 @@ require 'csv'
 class ImportService < BaseService
   ROWS_PROCESSING_LIMIT = 20_000
 
+  # @rbs (Import) -> void
   def call(import)
     @import  = import
     @account = @import.account
@@ -28,6 +29,7 @@ class ImportService < BaseService
 
   private
 
+  # @rbs () -> Array[untyped]
   def import_follows!
     parse_import_data!(['Account address'])
     import_relationships!('follow', 'unfollow', @account.following, ROWS_PROCESSING_LIMIT, reblogs: { header: 'Show boosts', default: true }, notify: { header: 'Notify on new posts', default: false }, languages: { header: 'Languages', default: nil })
@@ -38,6 +40,7 @@ class ImportService < BaseService
     import_relationships!('block', 'unblock', @account.blocking, ROWS_PROCESSING_LIMIT)
   end
 
+  # @rbs () -> Array[untyped]
   def import_mutes!
     parse_import_data!(['Account address'])
     import_relationships!('mute', 'unmute', @account.muting, ROWS_PROCESSING_LIMIT, notifications: { header: 'Hide notifications', default: true })
@@ -68,6 +71,7 @@ class ImportService < BaseService
     end
   end
 
+  # @rbs (String, String, Account::ActiveRecord_Associations_CollectionProxy, Integer, ?Hash[untyped, untyped]) -> Array[untyped]
   def import_relationships!(action, undo_action, overwrite_scope, limit, extra_fields = {})
     local_domain_suffix = "@#{Rails.configuration.x.local_domain}"
     items = @data.take(limit).map { |row| [row['Account address']&.strip&.delete_suffix(local_domain_suffix), extra_fields.to_h { |key, field_settings| [key, row[field_settings[:header]]&.strip || field_settings[:default]] }] }.reject { |(id, _)| id.blank? }
@@ -94,6 +98,7 @@ class ImportService < BaseService
     end
   end
 
+  # @rbs () -> Array[untyped]
   def import_bookmarks!
     parse_import_data!(['#uri'])
     items = @data.take(ROWS_PROCESSING_LIMIT).map { |row| row['#uri'].strip }
@@ -132,12 +137,14 @@ class ImportService < BaseService
     end
   end
 
+  # @rbs (Array[untyped]) -> void
   def parse_import_data!(default_headers)
     data = CSV.parse(import_data, headers: true)
     data = CSV.parse(import_data, headers: default_headers) unless data.headers&.first&.strip&.include?(' ')
     @data = data.compact_blank
   end
 
+  # @rbs () -> String
   def import_data
     Paperclip.io_adapters.for(@import.data).read.force_encoding(Encoding::UTF_8)
   end

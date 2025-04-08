@@ -6,6 +6,7 @@ class StatusRelationshipsPresenter
   attr_reader :reblogs_map, :favourites_map, :mutes_map, :pins_map,
               :bookmarks_map, :filters_map, :attributes_map
 
+  # @rbs (Array[untyped] | Status::ActiveRecord_Relation, ?Integer?, **nil | Hash[untyped, untyped]) -> void
   def initialize(statuses, current_account_id = nil, **options)
     if current_account_id.nil?
       @reblogs_map    = {}
@@ -32,6 +33,7 @@ class StatusRelationshipsPresenter
 
   private
 
+  # @rbs (Array[untyped], Integer) -> Hash[untyped, untyped]
   def build_filters_map(statuses, current_account_id)
     active_filters = CustomFilter.cached_filters_for(current_account_id)
 

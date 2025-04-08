@@ -10,6 +10,7 @@ class ManifestSerializer < ActiveModel::Serializer
              :display, :start_url, :scope,
              :share_target, :shortcuts
 
+  # @rbs () -> String
   def id
     # This is set to `/home` because that was the old value of `start_url` and
     # thus the fallback ID computed by Chrome:
@@ -17,14 +18,17 @@ class ManifestSerializer < ActiveModel::Serializer
     '/home'
   end
 
+  # @rbs () -> String
   def name
     object.title
   end
 
+  # @rbs () -> String
   def short_name
     object.title
   end
 
+  # @rbs () -> Array[untyped]
   def icons
     SiteUpload::ANDROID_ICON_SIZES.map do |size|
       src = app_icon_path(size.to_i)
@@ -39,26 +43,32 @@ class ManifestSerializer < ActiveModel::Serializer
     end
   end
 
+  # @rbs () -> String
   def theme_color
     '#191b22'
   end
 
+  # @rbs () -> String
   def background_color
     '#191b22'
   end
 
+  # @rbs () -> String
   def display
     'standalone'
   end
 
+  # @rbs () -> String
   def start_url
     '/'
   end
 
+  # @rbs () -> String
   def scope
     '/'
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def share_target
     {
       url_template: 'share?title={title}&text={text}&url={url}',
@@ -73,6 +83,7 @@ class ManifestSerializer < ActiveModel::Serializer
     }
   end
 
+  # @rbs () -> Array[untyped]
   def shortcuts
     [
       {

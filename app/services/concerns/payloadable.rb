@@ -10,6 +10,7 @@ module Payloadable
   # @option options [String] :sign_with
   # @option options [Boolean] :always_sign
   # @return [Hash]
+  # @rbs (Favourite | Account | PollVote | Follow | ActivityPub::ActivityPresenter | Status | FollowRequest | AccountMigration | FeaturedTag | Report | Block, Class, ?Hash[untyped, untyped]) -> (Hash[untyped, untyped] | ActiveSupport::HashWithIndifferentAccess)
   def serialize_payload(record, serializer, options = {})
     signer      = options.delete(:signer)
     sign_with   = options.delete(:sign_with)
@@ -24,6 +25,7 @@ module Payloadable
     end
   end
 
+  # @rbs () -> bool
   def signing_enabled?
     !authorized_fetch_mode?
   end

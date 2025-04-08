@@ -40,22 +40,27 @@ class Webhook < ApplicationRecord
   normalizes :events, with: ->(events) { events.filter_map { |event| event.strip.presence } }
   before_validation :generate_secret
 
+  # @rbs () -> bool
   def rotate_secret!
     update!(secret: SecureRandom.hex(20))
   end
 
+  # @rbs () -> bool
   def enable!
     update!(enabled: true)
   end
 
+  # @rbs () -> bool
   def disable!
     update!(enabled: false)
   end
 
+  # @rbs () -> Array[untyped]
   def required_permissions
     events.map { |event| Webhook.permission_for_event(event) }
   end
 
+  # @rbs (String) -> Symbol
   def self.permission_for_event(event)
     case event
     when 'account.approved', 'account.created', 'account.updated'
@@ -69,18 +74,22 @@ class Webhook < ApplicationRecord
 
   private
 
+  # @rbs () -> ActiveModel::Error
   def events_validation_error
     errors.add(:events, :invalid)
   end
 
+  # @rbs () -> bool
   def invalid_events?
     events.blank? || events.difference(EVENTS).any?
   end
 
+  # @rbs () -> nil
   def validate_permissions
     errors.add(:events, :invalid_permissions) if defined?(@current_account) && required_permissions.any? { |permission| !@current_account.user_role.can?(permission) }
   end
 
+  # @rbs () -> nil
   def validate_template
     return if template.blank?
 
@@ -92,6 +101,7 @@ class Webhook < ApplicationRecord
     end
   end
 
+  # @rbs () -> String?
   def generate_secret
     self.secret = SecureRandom.hex(20) if secret.blank?
   end

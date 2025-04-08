@@ -3,6 +3,7 @@
 class LanguagePresenter < ActiveModelSerializers::Model
   attributes :code, :name, :native_name
 
+  # @rbs (Symbol) -> void
   def initialize(code)
     super()
 
@@ -10,6 +11,7 @@ class LanguagePresenter < ActiveModelSerializers::Model
     @item = LanguagesHelper::SUPPORTED_LOCALES[code]
   end
 
+  # @rbs () -> String
   def name
     @item[0]
   end

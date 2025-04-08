@@ -26,12 +26,14 @@ class ListAccount < ApplicationRecord
 
   private
 
+  # @rbs () -> (Follow | FollowRequest)?
   def set_follow
     self.follow = Follow.find_by!(account_id: list.account_id, target_account_id: account.id)
   rescue ActiveRecord::RecordNotFound
     self.follow_request = FollowRequest.find_by!(account_id: list.account_id, target_account_id: account.id)
   end
 
+  # @rbs () -> nil
   def validate_relationship
     return if list.account_id == account_id
 
@@ -40,6 +42,7 @@ class ListAccount < ApplicationRecord
     errors.add(:follow_request, 'mismatched accounts') if follow_request_id.present? && follow_request.target_account_id != account_id
   end
 
+  # @rbs () -> bool
   def list_owner_account_is_account?
     list.account_id == account_id
   end

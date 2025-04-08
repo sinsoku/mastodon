@@ -17,19 +17,23 @@ class DomainAllow < ApplicationRecord
 
   validates :domain, presence: true, uniqueness: true, domain: true
 
+  # @rbs () -> String
   def to_log_human_identifier
     domain
   end
 
   class << self
+    # @rbs (String) -> bool
     def allowed?(domain)
       !rule_for(domain).nil?
     end
 
+    # @rbs () -> DomainAllow::ActiveRecord_Relation
     def allowed_domains
       select(:domain)
     end
 
+    # @rbs (String) -> DomainAllow?
     def rule_for(domain)
       return if domain.blank?
 

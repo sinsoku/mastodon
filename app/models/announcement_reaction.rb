@@ -26,10 +26,12 @@ class AnnouncementReaction < ApplicationRecord
 
   private
 
+  # @rbs () -> CustomEmoji?
   def set_custom_emoji
     self.custom_emoji = CustomEmoji.local.enabled.find_by(shortcode: name) if name.present?
   end
 
+  # @rbs () -> String
   def queue_publish
     PublishAnnouncementReactionWorker.perform_async(announcement_id, name) unless announcement.destroyed?
   end

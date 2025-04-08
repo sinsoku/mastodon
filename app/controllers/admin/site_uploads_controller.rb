@@ -4,6 +4,7 @@ module Admin
   class SiteUploadsController < BaseController
     before_action :set_site_upload
 
+    # @rbs () -> String
     def destroy
       authorize :settings, :destroy?
 
@@ -14,6 +15,7 @@ module Admin
 
     private
 
+    # @rbs () -> SiteUpload
     def set_site_upload
       @site_upload = SiteUpload.find(params[:id])
     end

@@ -24,20 +24,24 @@ class RelationshipSeveranceEvent < ApplicationRecord
 
   scope :about_local_account, ->(account) { where(id: SeveredRelationship.about_local_account(account).select(:relationship_severance_event_id)) }
 
+  # @rbs (Follow::ActiveRecord_AssociationRelation | Follow::ActiveRecord_Associations_CollectionProxy) -> ActiveRecord::Result
   def import_from_active_follows!(follows)
     import_from_follows!(follows, true)
   end
 
+  # @rbs (Follow::ActiveRecord_AssociationRelation | Follow::ActiveRecord_Associations_CollectionProxy) -> ActiveRecord::Result
   def import_from_passive_follows!(follows)
     import_from_follows!(follows, false)
   end
 
+  # @rbs () -> Account::ActiveRecord_Relation
   def affected_local_accounts
     Account.where(id: severed_relationships.select(:local_account_id))
   end
 
   private
 
+  # @rbs (Follow::ActiveRecord_AssociationRelation | Follow::ActiveRecord_Associations_CollectionProxy, bool) -> ActiveRecord::Result
   def import_from_follows!(follows, active)
     SeveredRelationship.insert_all(
       follows.pluck(:account_id, :target_account_id, :show_reblogs, :notify, :languages).map do |account_id, target_account_id, show_reblogs, notify, languages|

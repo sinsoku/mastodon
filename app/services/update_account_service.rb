@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class UpdateAccountService < BaseService
+  # @rbs (Account, Hash[untyped, untyped] | ActionController::Parameters, ?raise_error: bool) -> bool
   def call(account, params, raise_error: false)
     was_locked    = account.locked
     update_method = raise_error ? :update! : :update
@@ -19,6 +20,7 @@ class UpdateAccountService < BaseService
 
   private
 
+  # @rbs (Account) -> Array[untyped]
   def authorize_all_follow_requests(account)
     follow_requests = FollowRequest.where(target_account: account)
     follow_requests = follow_requests.preload(:account).reject { |req| req.account.silenced? }
@@ -27,12 +29,14 @@ class UpdateAccountService < BaseService
     end
   end
 
+  # @rbs (Account) -> void
   def check_links(account)
     return unless account.fields.any?(&:requires_verification?)
 
     VerifyAccountLinksWorker.perform_async(account.id)
   end
 
+  # @rbs (Account) -> Array[untyped]
   def process_hashtags(account)
     account.tags_as_strings = Extractor.extract_hashtags(account.note)
   end

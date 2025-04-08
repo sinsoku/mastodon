@@ -12,6 +12,7 @@ class InitialStateSerializer < ActiveModel::Serializer
   has_one :push_subscription, serializer: REST::WebPushSubscriptionSerializer
   has_one :role, serializer: REST::RoleSerializer
 
+  # @rbs () -> Hash[untyped, untyped]
   def meta
     store = default_meta_store
 
@@ -44,6 +45,7 @@ class InitialStateSerializer < ActiveModel::Serializer
     store
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def compose
     store = {}
 
@@ -59,6 +61,7 @@ class InitialStateSerializer < ActiveModel::Serializer
     store
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def accounts
     store = {}
 
@@ -76,16 +79,19 @@ class InitialStateSerializer < ActiveModel::Serializer
     store
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def media_attachments
     { accept_content_types: MediaAttachment.supported_file_extensions + MediaAttachment.supported_mime_types }
   end
 
+  # @rbs () -> Array[untyped]
   def languages
     LanguagesHelper::SUPPORTED_LOCALES.map { |(key, value)| [key, value[0], value[1]] }
   end
 
   private
 
+  # @rbs () -> Hash[untyped, untyped]
   def default_meta_store
     {
       access_token: object.token,
@@ -112,18 +118,22 @@ class InitialStateSerializer < ActiveModel::Serializer
     }
   end
 
+  # @rbs () -> User
   def object_account_user
     object.current_account.user
   end
 
+  # @rbs (Account) -> ActiveModelSerializers::SerializableResource
   def serialized_account(account)
     ActiveModelSerializers::SerializableResource.new(account, serializer: REST::AccountSerializer)
   end
 
+  # @rbs () -> InstancePresenter
   def instance_presenter
     @instance_presenter ||= InstancePresenter.new
   end
 
+  # @rbs () -> nil
   def sso_redirect
     "/auth/auth/#{Devise.omniauth_providers[0]}" if ENV['ONE_CLICK_SSO_LOGIN'] == 'true' && ENV['OMNIAUTH_ONLY'] == 'true' && Devise.omniauth_providers.length == 1
   end

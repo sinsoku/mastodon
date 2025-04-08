@@ -8,6 +8,7 @@ module Paperclip
       end
     end
 
+    # @rbs (ResponseWithLimit, ?Hash[untyped, untyped]) -> void
     def initialize(target, options = {})
       super
       cache_current_values
@@ -15,6 +16,7 @@ module Paperclip
 
     private
 
+    # @rbs () -> Integer?
     def cache_current_values
       @target.response.require_limit_not_exceeded!(@target.limit)
 
@@ -24,6 +26,7 @@ module Paperclip
       @size = File.size(@tempfile)
     end
 
+    # @rbs (ResponseWithLimit) -> Paperclip::Tempfile?
     def copy_to_tempfile(source)
       bytes_read = 0
 
@@ -44,6 +47,7 @@ module Paperclip
       source.response.connection.close
     end
 
+    # @rbs () -> String
     def truncated_filename
       filename = filename_from_content_disposition.presence || filename_from_path.presence || 'data'
       extension = File.extname(filename)
@@ -51,11 +55,13 @@ module Paperclip
       [basename[...20], extension[..4]].compact_blank.join
     end
 
+    # @rbs () -> String?
     def filename_from_content_disposition
       disposition = @target.response.headers['content-disposition']
       disposition&.match(/filename="([^"]*)"/)&.captures&.first
     end
 
+    # @rbs () -> String?
     def filename_from_path
       @target.response.uri.path.split('/').last
     end

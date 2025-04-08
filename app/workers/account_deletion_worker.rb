@@ -5,6 +5,7 @@ class AccountDeletionWorker
 
   sidekiq_options queue: 'pull', lock: :until_executed, lock_ttl: 1.week.to_i
 
+  # @rbs (Integer, ?Hash[untyped, untyped]) -> AccountDeletionRequest
   def perform(account_id, options = {})
     account = Account.find(account_id)
     return unless account.unavailable?

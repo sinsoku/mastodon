@@ -9,10 +9,12 @@ class InstanceFilter
 
   attr_reader :params
 
+  # @rbs (ActionController::Parameters) -> void
   def initialize(params)
     @params = params
   end
 
+  # @rbs () -> Instance::ActiveRecord_Relation
   def results
     scope = Instance.includes(:domain_block, :domain_allow, :unavailable_domain).order(accounts_count: :desc)
 
@@ -25,6 +27,7 @@ class InstanceFilter
 
   private
 
+  # @rbs (String, String) -> Instance::ActiveRecord_Relation
   def scope_for(key, value)
     case key.to_s
     when 'limited'

@@ -13,6 +13,7 @@ class ApplicationRecord < ActiveRecord::Base
     end
   end
 
+  # @rbs (String, bool) -> bool
   def boolean_with_default(key, default_value)
     value = attributes[key]
 

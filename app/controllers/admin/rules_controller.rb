@@ -4,6 +4,7 @@ module Admin
   class RulesController < BaseController
     before_action :set_rule, except: [:index, :create]
 
+    # @rbs () -> Rule
     def index
       authorize :rule, :index?
 
@@ -11,10 +12,12 @@ module Admin
       @rule  = Rule.new
     end
 
+    # @rbs () -> Rule
     def edit
       authorize @rule, :update?
     end
 
+    # @rbs () -> (ActiveSupport::SafeBuffer | String)
     def create
       authorize :rule, :create?
 
@@ -28,6 +31,7 @@ module Admin
       end
     end
 
+    # @rbs () -> (ActiveSupport::SafeBuffer | String)
     def update
       authorize @rule, :update?
 
@@ -38,6 +42,7 @@ module Admin
       end
     end
 
+    # @rbs () -> String
     def destroy
       authorize @rule, :destroy?
 
@@ -48,10 +53,12 @@ module Admin
 
     private
 
+    # @rbs () -> Rule
     def set_rule
       @rule = Rule.find(params[:id])
     end
 
+    # @rbs () -> ActionController::Parameters
     def resource_params
       params.require(:rule).permit(:text, :hint, :priority)
     end

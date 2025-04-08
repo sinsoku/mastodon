@@ -35,10 +35,12 @@ class AccountMigration < ApplicationRecord
 
   attr_accessor :current_password, :current_username
 
+  # @rbs () -> ActiveSupport::TimeWithZone
   def self.cooldown_duration_ago
     Time.current - COOLDOWN_PERIOD
   end
 
+  # @rbs (User) -> bool
   def save_with_challenge(current_user)
     if current_user.encrypted_password.present?
       errors.add(:current_password, :invalid) unless current_user.valid_password?(current_password)
@@ -53,22 +55,26 @@ class AccountMigration < ApplicationRecord
     end
   end
 
+  # @rbs () -> ActiveSupport::TimeWithZone
   def cooldown_at
     created_at + COOLDOWN_PERIOD
   end
 
   private
 
+  # @rbs () -> Account?
   def set_target_account
     self.target_account = ResolveAccountService.new.call(acct, skip_cache: true)
   rescue Webfinger::Error, HTTP::Error, OpenSSL::SSL::SSLError, Mastodon::Error, Addressable::URI::InvalidURIError
     # Validation will take care of it
   end
 
+  # @rbs () -> Integer
   def set_followers_count
     self.followers_count = account.followers_count
   end
 
+  # @rbs () -> ActiveModel::Error?
   def validate_target_account
     if target_account.nil?
       errors.add(:acct, I18n.t('migrations.errors.not_found'))
@@ -79,6 +85,7 @@ class AccountMigration < ApplicationRecord
     end
   end
 
+  # @rbs () -> ActiveModel::Error?
   def validate_migration_cooldown
     errors.add(:base, I18n.t('migrations.errors.on_cooldown')) if account.migrations.within_cooldown.exists?
   end

@@ -15,14 +15,17 @@ class MediaController < ApplicationController
     policy.frame_ancestors(false)
   end
 
+  # @rbs () -> String
   def show
     redirect_to @media_attachment.file.url(:original)
   end
 
+  # @rbs () -> nil
   def player; end
 
   private
 
+  # @rbs () -> MediaAttachment?
   def set_media_attachment
     id = params[:id] || params[:medium_id]
     return if id.nil?
@@ -32,16 +35,19 @@ class MediaController < ApplicationController
     @media_attachment = id.size == 19 ? scope.find_by!(shortcode: id) : scope.find(id)
   end
 
+  # @rbs () -> (Status | ActiveSupport::SafeBuffer)
   def verify_permitted_status!
     authorize @media_attachment.status, :show?
   rescue Mastodon::NotPermittedError
     not_found
   end
 
+  # @rbs () -> nil
   def check_playable
     not_found unless @media_attachment.larger_media_format?
   end
 
+  # @rbs () -> String
   def allow_iframing
     response.headers.delete('X-Frame-Options')
   end

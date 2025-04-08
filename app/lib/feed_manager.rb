@@ -17,6 +17,7 @@ class FeedManager
   # Execute block for every active account
   # @yield [Account]
   # @return [void]
+  # @rbs () -> nil
   def with_active_accounts(&block)
     Account.joins(:user).merge(User.signed_in_recently).find_each(&block)
   end
@@ -26,6 +27,7 @@ class FeedManager
   # @param [Integer] id
   # @param [Symbol] subtype
   # @return [String]
+  # @rbs (Symbol, Integer, ?String?) -> String
   def key(type, id, subtype = nil)
     return "feed:#{type}:#{id}" unless subtype
 
@@ -37,6 +39,7 @@ class FeedManager
   # @param [Status] status
   # @param [Account|List] receiver
   # @return [void|Symbol] nil, :filter, or :skip_home
+  # @rbs (Symbol, Status, Account | List) -> Symbol?
   def filter(timeline_type, status, receiver)
     case timeline_type
     when :home
@@ -55,6 +58,7 @@ class FeedManager
   # @param [Status] status
   # @param [Account|List] receiver
   # @return [Boolean]
+  # @rbs (Symbol, Status, Account | List) -> bool
   def filter?(timeline_type, status, receiver)
     !!filter(timeline_type, status, receiver)
   end
@@ -64,6 +68,7 @@ class FeedManager
   # @param [Status] status
   # @param [Boolean] update
   # @return [Boolean]
+  # @rbs (Account, Status, ?update: bool | nil) -> bool
   def push_to_home(account, status, update: false)
     return false unless account.user&.signed_in_recently?
     return false unless add_to_feed(:home, account.id, status, aggregate_reblogs: account.user&.aggregates_reblogs?)
@@ -78,6 +83,7 @@ class FeedManager
   # @param [Status] status
   # @param [Boolean] update
   # @return [Boolean]
+  # @rbs (Account, Status, ?update: bool) -> bool
   def unpush_from_home(account, status, update: false)
     return false unless remove_from_feed(:home, account.id, status, aggregate_reblogs: account.user&.aggregates_reblogs?)
 
@@ -90,6 +96,7 @@ class FeedManager
   # @param [Status] status
   # @param [Boolean] update
   # @return [Boolean]
+  # @rbs (List, Status, ?update: bool) -> bool
   def push_to_list(list, status, update: false)
     return false if filter_from_list?(status, list)
     return false unless list.account.user&.signed_in_recently?
@@ -105,6 +112,7 @@ class FeedManager
   # @param [Status] status
   # @param [Boolean] update
   # @return [Boolean]
+  # @rbs (List, Status, ?update: bool) -> bool
   def unpush_from_list(list, status, update: false)
     return false unless remove_from_feed(:list, list.id, status, aggregate_reblogs: list.account.user&.aggregates_reblogs?)
 
@@ -116,6 +124,7 @@ class FeedManager
   # @param [Account] from_account
   # @param [Account] into_account
   # @return [void]
+  # @rbs (Account, Account) -> nil
   def merge_into_home(from_account, into_account)
     return unless into_account.user&.signed_in_recently?
 
@@ -172,6 +181,7 @@ class FeedManager
   # @param [Account] from_account
   # @param [Account] into_account
   # @return [void]
+  # @rbs (Account, Account) -> nil
   def unmerge_from_home(from_account, into_account)
     timeline_key        = key(:home, into_account.id)
     timeline_status_ids = redis.zrange(timeline_key, 0, -1)
@@ -198,6 +208,7 @@ class FeedManager
   # @param [Tag] from_tag
   # @param [Account] into_account
   # @return [void]
+  # @rbs (Tag, Account) -> nil
   def unmerge_tag_from_home(from_tag, into_account)
     timeline_key        = key(:home, into_account.id)
     timeline_status_ids = redis.zrange(timeline_key, 0, -1)
@@ -219,6 +230,7 @@ class FeedManager
   # @param [Account] account
   # @param [Account] target_account
   # @return [void]
+  # @rbs (Account, Account) -> Array[untyped]
   def clear_from_home(account, target_account)
     timeline_key        = key(:home, account.id)
     timeline_status_ids = redis.zrange(timeline_key, 0, -1)
@@ -239,6 +251,7 @@ class FeedManager
   # @param [List] list
   # @param [Account] target_account
   # @return [void]
+  # @rbs (List, Account) -> Array[untyped]
   def clear_from_list(list, target_account)
     timeline_key        = key(:list, list.id)
     timeline_status_ids = redis.zrange(timeline_key, 0, -1)
@@ -259,6 +272,7 @@ class FeedManager
   # @param [Account] account
   # @param [Account] target_account
   # @return [void]
+  # @rbs (Account, Account) -> nil
   def clear_from_lists(account, target_account)
     List.where(account: account).find_each do |list|
       clear_from_list(list, target_account)
@@ -268,6 +282,7 @@ class FeedManager
   # Populate home feed of account from scratch
   # @param [Account] account
   # @return [void]
+  # @rbs (Account) -> void
   def populate_home(account)
     limit        = FeedManager::MAX_ITEMS / 2
     aggregate    = account.user&.aggregates_reblogs?
@@ -313,6 +328,7 @@ class FeedManager
   # Populate list feed of account from scratch
   # @param [List] list
   # @return [void]
+  # @rbs (List) -> nil
   def populate_list(list)
     limit        = FeedManager::MAX_ITEMS / 2
     aggregate    = list.account.user&.aggregates_reblogs?
@@ -355,6 +371,7 @@ class FeedManager
   # @param [Symbol] type
   # @param [Array<Integer>] ids
   # @return [void]
+  # @rbs (Symbol, Array[untyped]) -> nil
   def clean_feeds!(type, ids)
     reblogged_id_sets = {}
 
@@ -387,6 +404,7 @@ class FeedManager
   # @param [Symbol] type
   # @param [Integer] timeline_id
   # @return [void]
+  # @rbs (Symbol, Integer) -> nil
   def trim(type, timeline_id)
     timeline_key = key(type, timeline_id)
     reblog_key   = key(type, timeline_id, 'reblogs')
@@ -418,6 +436,7 @@ class FeedManager
   # for the given feed
   # @param [String] timeline_key
   # @return [Boolean]
+  # @rbs (String) -> bool
   def push_update_required?(timeline_key)
     redis.exists?("subscribed:#{timeline_key}")
   end
@@ -426,6 +445,7 @@ class FeedManager
   # @param [Integer] receiver_id
   # @param [Array<Integer>] account_ids
   # @param [Symbol] context
+  # @rbs (Integer, Array[untyped], Symbol) -> bool
   def blocks_or_mutes?(receiver_id, account_ids, context)
     Block.where(account_id: receiver_id, target_account_id: account_ids).any? ||
       (context == :home ? Mute.where(account_id: receiver_id, target_account_id: account_ids).any? : Mute.where(account_id: receiver_id, target_account_id: account_ids, hide_notifications: true).any?)
@@ -436,6 +456,7 @@ class FeedManager
   # @param [Integer] receiver_id
   # @param [Hash] crutches
   # @return [void|Symbol] nil, :skip_home, or :filter
+  # @rbs (Status, Integer, Hash[untyped, untyped], ?Symbol) -> Symbol?
   def filter_from_home(status, receiver_id, crutches, timeline_type = :home)
     return            if receiver_id == status.account_id
     return :filter    if status.reply? && (status.in_reply_to_id.nil? || status.in_reply_to_account_id.nil?)
@@ -473,6 +494,7 @@ class FeedManager
   # @param [Status] status
   # @param [Integer] receiver_id
   # @return [Boolean]
+  # @rbs (Status, Integer) -> bool
   def filter_from_mentions?(status, receiver_id)
     return true if receiver_id == status.account_id
 
@@ -489,6 +511,7 @@ class FeedManager
   # @param [Status] status
   # @param [List] list
   # @return [Boolean]
+  # @rbs (Status, List) -> bool
   def filter_from_list?(status, list)
     if status.reply? && status.in_reply_to_account_id != status.account_id                                                       # Status is a reply to account other than status account
       should_filter = status.in_reply_to_account_id != list.account_id                                                           # Status replies to account id other than list account
@@ -524,6 +547,7 @@ class FeedManager
   # @param [Status] status
   # @param [Boolean] aggregate_reblogs
   # @return [Boolean]
+  # @rbs (Symbol, Integer, Status, ?aggregate_reblogs: bool) -> bool
   def add_to_feed(timeline_type, account_id, status, aggregate_reblogs: true)
     timeline_key = key(timeline_type, account_id)
     reblog_key   = key(timeline_type, account_id, 'reblogs')
@@ -572,6 +596,7 @@ class FeedManager
   # @param [Status] status
   # @param [Boolean] aggregate_reblogs
   # @return [Boolean]
+  # @rbs (Symbol, Integer, Status, ?aggregate_reblogs: bool) -> bool
   def remove_from_feed(timeline_type, account_id, status, aggregate_reblogs: true)
     timeline_key = key(timeline_type, account_id)
     reblog_key   = key(timeline_type, account_id, 'reblogs')
@@ -612,6 +637,7 @@ class FeedManager
   # @param [Array<Status>] statuses
   # @param [List] list
   # @return [Hash]
+  # @rbs (Integer, Array[untyped], ?list: nil | List) -> Hash[untyped, untyped]
   def build_crutches(receiver_id, statuses, list: nil)
     crutches = {}
 
@@ -641,11 +667,13 @@ class FeedManager
     crutches
   end
 
+  # @rbs (Integer, Array[untyped]) -> Hash[untyped, untyped]
   def crutches_exclusive_list_users(recipient_id, statuses)
     lists = List.where(account_id: recipient_id, exclusive: true)
     ListAccount.where(list: lists, account_id: statuses.map(&:account_id)).pluck(:account_id).index_with(true)
   end
 
+  # @rbs (Integer, Array[untyped], List?) -> Hash[untyped, untyped]
   def crutches_following(recipient_id, statuses, list)
     if list.blank? || list.show_followed?
       Follow.where(account_id: recipient_id, target_account_id: statuses.filter_map(&:in_reply_to_account_id)).pluck(:target_account_id).index_with(true)
@@ -656,6 +684,7 @@ class FeedManager
     end
   end
 
+  # @rbs (Array[untyped]) -> Hash[untyped, untyped]
   def crutches_active_mentions(statuses)
     Mention
       .active

@@ -10,6 +10,7 @@ class Webfinger
 
     attr_reader :uri
 
+    # @rbs (String, String) -> void
     def initialize(uri, body)
       @uri  = uri
       @json = Oj.load(body, mode: :strict)
@@ -17,36 +18,43 @@ class Webfinger
       validate_response!
     end
 
+    # @rbs () -> String
     def subject
       @json['subject']
     end
 
+    # @rbs (String, String) -> String
     def link(rel, attribute)
       links.dig(rel, 0, attribute)
     end
 
+    # @rbs () -> String
     def self_link_href
       self_link.fetch('href')
     end
 
     private
 
+    # @rbs () -> Hash[untyped, untyped]
     def links
       @links ||= @json.fetch('links', []).group_by { |link| link['rel'] }
     end
 
+    # @rbs () -> Hash[untyped, untyped]?
     def self_link
       links.fetch('self', []).find do |link|
         ACTIVITYPUB_READY_TYPE.include?(link['type'])
       end
     end
 
+    # @rbs () -> nil
     def validate_response!
       raise Webfinger::Error, "Missing subject in response for #{@uri}" if subject.blank?
       raise Webfinger::Error, "Missing self link in response for #{@uri}" if self_link.blank?
     end
   end
 
+  # @rbs (String) -> void
   def initialize(uri)
     _, @domain = uri.split('@')
 
@@ -55,6 +63,7 @@ class Webfinger
     @uri = uri
   end
 
+  # @rbs () -> Webfinger::Response?
   def perform
     Response.new(@uri, body_from_webfinger)
   rescue Oj::ParseError
@@ -65,6 +74,7 @@ class Webfinger
 
   private
 
+  # @rbs (?String, ?bool) -> String?
   def body_from_webfinger(url = standard_url, use_fallback = true)
     webfinger_request(url).perform do |res|
       if res.code == 200
@@ -82,6 +92,7 @@ class Webfinger
     end
   end
 
+  # @rbs () -> nil
   def body_from_host_meta
     host_meta_request.perform do |res|
       if res.code == 200
@@ -92,6 +103,7 @@ class Webfinger
     end
   end
 
+  # @rbs (String) -> String
   def url_from_template(str)
     link = Nokogiri::XML(str).at_xpath('//xmlns:Link[@rel="lrdd"]')
 
@@ -104,14 +116,17 @@ class Webfinger
     raise Webfinger::Error, "Invalid XML encountered in host-meta for #{@uri}"
   end
 
+  # @rbs () -> Request
   def host_meta_request
     Request.new(:get, host_meta_url).add_headers('Accept' => 'application/xrd+xml, application/xml, text/xml')
   end
 
+  # @rbs (String) -> Request
   def webfinger_request(url)
     Request.new(:get, url).add_headers('Accept' => 'application/jrd+json, application/json')
   end
 
+  # @rbs () -> String
   def standard_url
     if @domain.end_with? '.onion'
       "http://#{@domain}/.well-known/webfinger?resource=#{@uri}"
@@ -120,6 +135,7 @@ class Webfinger
     end
   end
 
+  # @rbs () -> String
   def host_meta_url
     if @domain.end_with? '.onion'
       "http://#{@domain}/.well-known/host-meta"

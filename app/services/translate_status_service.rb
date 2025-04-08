@@ -6,6 +6,7 @@ class TranslateStatusService < BaseService
   include ERB::Util
   include FormattingHelper
 
+  # @rbs (Status, String) -> Translation
   def call(status, target_language)
     @status = status
     @source_texts = source_texts
@@ -27,28 +28,34 @@ class TranslateStatusService < BaseService
 
   private
 
+  # @rbs () -> (RSpec::Mocks::InstanceVerifyingDouble | TranslationService)
   def translation_backend
     @translation_backend ||= TranslationService.configured
   end
 
+  # @rbs () -> bool
   def permitted?
     return false unless @status.distributable? && TranslationService.configured?
 
     target_languages.include?(@target_language)
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def languages
     Rails.cache.fetch('translation_service/languages', expires_in: 7.days, race_condition_ttl: 1.hour) { translation_backend.languages }
   end
 
+  # @rbs () -> Array[untyped]
   def target_languages
     languages[@status.language] || []
   end
 
+  # @rbs () -> String
   def content_hash
     Digest::SHA256.base64digest(@source_texts.transform_keys { |key| key.respond_to?(:id) ? "#{key.class}-#{key.id}" : key }.to_json)
   end
 
+  # @rbs () -> Hash[untyped, untyped]
   def source_texts
     texts = {}
     texts[:content] = wrap_emoji_shortcodes(status_content_format(@status)) if @status.content.present?
@@ -65,6 +72,7 @@ class TranslateStatusService < BaseService
     texts
   end
 
+  # @rbs (Array[untyped]) -> Translation
   def build_status_translation(translations)
     status_translation = Translation.new(
       detected_source_language: translations.first&.detected_source_language,
@@ -101,10 +109,12 @@ class TranslateStatusService < BaseService
     status_translation
   end
 
+  # @rbs (ActiveSupport::SafeBuffer) -> ActiveSupport::SafeBuffer
   def wrap_emoji_shortcodes(text)
     EmojiFormatter.new(text, @status.emojis, { raw_shortcode: true }).to_s
   end
 
+  # @rbs (String) -> Nokogiri::HTML5::DocumentFragment
   def unwrap_emoji_shortcodes(html)
     fragment = Nokogiri::HTML5.fragment(html)
     fragment.css('span[translate="no"]').each do |element|
@@ -114,6 +124,7 @@ class TranslateStatusService < BaseService
     fragment
   end
 
+  # @rbs () -> HTMLEntities
   def html_entities
     HTMLEntities.new
   end

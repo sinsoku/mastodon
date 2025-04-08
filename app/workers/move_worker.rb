@@ -3,6 +3,7 @@
 class MoveWorker
   include Sidekiq::Worker
 
+  # @rbs (Integer, Integer) -> nil
   def perform(source_account_id, target_account_id)
     @source_account = Account.find(source_account_id)
     @target_account = Account.find(target_account_id)
@@ -28,6 +29,7 @@ class MoveWorker
 
   private
 
+  # @rbs () -> Integer
   def rewrite_follows!
     num_moved = 0
 
@@ -69,6 +71,7 @@ class MoveWorker
     num_moved
   end
 
+  # @rbs () -> nil
   def queue_follow_unfollows!
     bypass_locked = @target_account.local?
 
@@ -79,6 +82,7 @@ class MoveWorker
     end
   end
 
+  # @rbs () -> void
   def copy_account_notes!
     AccountNote.where(target_account: @source_account).find_each do |note|
       text = I18n.with_locale(note.account.user&.locale.presence || I18n.default_locale) do
@@ -102,6 +106,7 @@ class MoveWorker
     end
   end
 
+  # @rbs () -> void
   def carry_blocks_over!
     @source_account.blocked_by_relationships.where(account: Account.local).find_each do |block|
       unless block.account.blocking?(@target_account) || block.account.following?(@target_account)
@@ -113,6 +118,7 @@ class MoveWorker
     end
   end
 
+  # @rbs () -> void
   def carry_mutes_over!
     @source_account.muted_by_relationships.where(account: Account.local).find_each do |mute|
       MuteService.new.call(mute.account, @target_account, notifications: mute.hide_notifications) unless mute.account.muting?(@target_account) || mute.account.following?(@target_account)
@@ -122,6 +128,7 @@ class MoveWorker
     end
   end
 
+  # @rbs (Account, String) -> AccountNote
   def add_account_note_if_needed!(account, id)
     unless AccountNote.exists?(account: account, target_account: @target_account)
       text = I18n.with_locale(account.user&.locale.presence || I18n.default_locale) do

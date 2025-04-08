@@ -10,8 +10,10 @@ class MailSubscriptionsController < ApplicationController
 
   protect_from_forgery with: :null_session
 
+  # @rbs () -> nil
   def show; end
 
+  # @rbs () -> bool
   def create
     @user.settings[email_type_from_param] = false
     @user.save!
@@ -19,15 +21,18 @@ class MailSubscriptionsController < ApplicationController
 
   private
 
+  # @rbs () -> ActiveSupport::SafeBuffer?
   def set_user
     @user = GlobalID::Locator.locate_signed(params[:token], for: 'unsubscribe')
     not_found unless @user
   end
 
+  # @rbs () -> (String | ActiveSupport::SafeBuffer)
   def set_type
     @type = email_type_from_param
   end
 
+  # @rbs () -> (String | ActiveSupport::SafeBuffer)
   def email_type_from_param
     case params[:type]
     when 'follow', 'reblog', 'favourite', 'mention', 'follow_request'

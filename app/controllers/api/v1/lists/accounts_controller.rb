@@ -9,6 +9,7 @@ class Api::V1::Lists::AccountsController < Api::BaseController
 
   after_action :insert_pagination_headers, only: :show
 
+  # @rbs () -> (Time | bool | Array[untyped])?
   def show
     @accounts = load_accounts
     render json: @accounts, each_serializer: REST::AccountSerializer

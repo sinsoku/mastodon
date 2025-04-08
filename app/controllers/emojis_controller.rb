@@ -5,6 +5,7 @@ class EmojisController < ApplicationController
 
   vary_by -> { 'Signature' if authorized_fetch_mode? }
 
+  # @rbs () -> bool
   def show
     expires_in 3.minutes, public: true
     render_with_cache json: @emoji, content_type: 'application/activity+json', serializer: ActivityPub::EmojiSerializer, adapter: ActivityPub::Adapter
@@ -12,6 +13,7 @@ class EmojisController < ApplicationController
 
   private
 
+  # @rbs () -> CustomEmoji
   def set_emoji
     @emoji = CustomEmoji.local.find(params[:id])
   end

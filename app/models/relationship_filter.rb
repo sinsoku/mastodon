@@ -14,6 +14,7 @@ class RelationshipFilter
 
   attr_reader :params, :account
 
+  # @rbs (Account, Hash[untyped, untyped] | ActionController::Parameters) -> void
   def initialize(account, params)
     @account = account
     @params  = params
@@ -21,6 +22,7 @@ class RelationshipFilter
     set_defaults!
   end
 
+  # @rbs () -> Account::ActiveRecord_AssociationRelation
   def results
     scope = scope_for('relationship', params['relationship'].to_s.strip)
 
@@ -35,11 +37,13 @@ class RelationshipFilter
 
   private
 
+  # @rbs () -> String?
   def set_defaults!
     params['relationship'] = 'following' if params['relationship'].blank?
     params['order']        = 'recent' if params['order'].blank?
   end
 
+  # @rbs (String, String) -> (Account::ActiveRecord_AssociationRelation | Account::ActiveRecord_Relation | Follow::ActiveRecord_Relation)
   def scope_for(key, value)
     case key
     when 'relationship'
@@ -59,6 +63,7 @@ class RelationshipFilter
     end
   end
 
+  # @rbs (String) -> Account::ActiveRecord_AssociationRelation
   def relationship_scope(value)
     case value
     when 'following'
@@ -100,6 +105,7 @@ class RelationshipFilter
     end
   end
 
+  # @rbs (String) -> (Account::ActiveRecord_Relation | Follow::ActiveRecord_Relation)
   def order_scope(value)
     case value
     when 'active'
@@ -111,6 +117,7 @@ class RelationshipFilter
     end
   end
 
+  # @rbs (String) -> Account::ActiveRecord_Relation
   def activity_scope(value)
     case value
     when 'dormant'

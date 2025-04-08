@@ -215,34 +215,42 @@ class MediaAttachment < ApplicationRecord
 
   attr_accessor :skip_download
 
+  # @rbs () -> bool
   def local?
     remote_url.blank?
   end
 
+  # @rbs () -> bool
   def not_processed?
     processing.present? && !processing_complete?
   end
 
+  # @rbs () -> bool
   def needs_redownload?
     file.blank? && remote_url.present?
   end
 
+  # @rbs () -> bool
   def significantly_changed?
     description_previously_changed? || thumbnail_updated_at_previously_changed? || file_meta_previously_changed?
   end
 
+  # @rbs () -> bool
   def larger_media_format?
     video? || gifv? || audio?
   end
 
+  # @rbs () -> bool
   def audio_or_video?
     audio? || video?
   end
 
+  # @rbs () -> String
   def to_param
     shortcode.presence || id&.to_s
   end
 
+  # @rbs (Array[untyped]?) -> ActiveSupport::HashWithIndifferentAccess?
   def focus=(point)
     return if point.blank?
 
@@ -254,6 +262,7 @@ class MediaAttachment < ApplicationRecord
     file.instance_write(:meta, meta)
   end
 
+  # @rbs () -> String
   def focus
     x = file.meta&.dig('focus', 'x')
     y = file.meta&.dig('focus', 'y')
@@ -265,10 +274,12 @@ class MediaAttachment < ApplicationRecord
 
   attr_writer :delay_processing
 
+  # @rbs () -> bool?
   def delay_processing?
     @delay_processing && larger_media_format?
   end
 
+  # @rbs (Symbol) -> bool?
   def delay_processing_for_attachment?(attachment_name)
     delay_processing? && attachment_name == :file
   end
@@ -285,16 +296,19 @@ class MediaAttachment < ApplicationRecord
   after_post_process :set_meta
 
   class << self
+    # @rbs () -> Array[untyped]
     def supported_mime_types
       IMAGE_MIME_TYPES + VIDEO_MIME_TYPES + AUDIO_MIME_TYPES
     end
 
+    # @rbs () -> Array[untyped]
     def supported_file_extensions
       IMAGE_FILE_EXTENSIONS + VIDEO_FILE_EXTENSIONS + AUDIO_FILE_EXTENSIONS
     end
 
     private
 
+    # @rbs (Paperclip::Attachment) -> Hash[untyped, untyped]
     def file_styles(attachment)
       if attachment.instance.file_content_type == 'image/gif' || VIDEO_CONVERTIBLE_MIME_TYPES.include?(attachment.instance.file_content_type)
         VIDEO_CONVERTED_STYLES
@@ -309,6 +323,7 @@ class MediaAttachment < ApplicationRecord
       end
     end
 
+    # @rbs (MediaAttachment) -> Array[untyped]
     def file_processors(instance)
       if instance.file_content_type == 'image/gif'
         [:gif_transcoder, :blurhash_transcoder]
@@ -324,10 +339,12 @@ class MediaAttachment < ApplicationRecord
 
   private
 
+  # @rbs () -> Symbol?
   def set_unknown_type
     self.type = :unknown if file.blank? && !type_changed?
   end
 
+  # @rbs () -> Symbol
   def set_type_and_extension
     self.type = begin
       if VIDEO_MIME_TYPES.include?(file_content_type)
@@ -340,10 +357,12 @@ class MediaAttachment < ApplicationRecord
     end
   end
 
+  # @rbs () -> Symbol
   def set_processing
     self.processing = delay_processing? ? :queued : :complete
   end
 
+  # @rbs () -> nil
   def check_video_dimensions
     return unless (video? || gifv?) && file.queued_for_write[:original].present?
 
@@ -356,10 +375,12 @@ class MediaAttachment < ApplicationRecord
     raise Mastodon::DimensionsValidationError, "#{movie.frame_rate.floor}fps videos are not supported" if movie.frame_rate.floor > MAX_VIDEO_FRAME_RATE
   end
 
+  # @rbs () -> ActiveSupport::HashWithIndifferentAccess
   def set_meta
     file.instance_write :meta, populate_meta
   end
 
+  # @rbs () -> ActiveSupport::HashWithIndifferentAccess
   def populate_meta
     meta = (file.instance_read(:meta) || {}).with_indifferent_access.slice(*META_KEYS)
 
@@ -372,6 +393,7 @@ class MediaAttachment < ApplicationRecord
     meta
   end
 
+  # @rbs (Paperclip::FileAdapter) -> Hash[untyped, untyped]
   def image_geometry(file)
     width, height = FastImage.size(file.path)
 
@@ -385,6 +407,7 @@ class MediaAttachment < ApplicationRecord
     }
   end
 
+  # @rbs (Paperclip::FileAdapter | Paperclip::UploadedFileAdapter) -> Hash[untyped, untyped]
   def video_metadata(file)
     movie = ffmpeg_data(file.path)
 
@@ -402,19 +425,23 @@ class MediaAttachment < ApplicationRecord
   # We call this method about 3 different times on potentially different
   # paths but ultimately the same file, so it makes sense to memoize the
   # result while disregarding the path
+  # @rbs (?String) -> VideoMetadataExtractor
   def ffmpeg_data(path = nil)
     @ffmpeg_data ||= VideoMetadataExtractor.new(path)
   end
 
+  # @rbs () -> String?
   def enqueue_processing
     PostProcessMediaWorker.perform_async(id) if delay_processing?
   end
 
+  # @rbs () -> bool?
   def reset_parent_cache
     Rails.cache.delete("v3:statuses/#{status_id}") if status_id.present?
   end
 
   # Record the cache keys to burst before the file get actually deleted
+  # @rbs () -> Array[untyped]?
   def prepare_cache_bust!
     return unless Rails.configuration.x.cache_buster_enabled
 
@@ -432,6 +459,7 @@ class MediaAttachment < ApplicationRecord
 
   # Once Paperclip has deleted the files, we can't recover the cache keys,
   # so use the previously-saved ones
+  # @rbs () -> Array[untyped]?
   def bust_cache!
     return unless Rails.configuration.x.cache_buster_enabled
 

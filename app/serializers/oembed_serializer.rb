@@ -43,34 +43,42 @@ class OEmbedSerializer < ActiveModel::Serializer
              :author_url, :provider_name, :provider_url,
              :cache_age, :html, :width, :height
 
+  # @rbs () -> String
   def type
     'rich'
   end
 
+  # @rbs () -> String
   def version
     '1.0'
   end
 
+  # @rbs () -> String
   def author_name
     object.account.display_name.presence || object.account.username
   end
 
+  # @rbs () -> String
   def author_url
     short_account_url(object.account)
   end
 
+  # @rbs () -> String
   def provider_name
     Rails.configuration.x.local_domain
   end
 
+  # @rbs () -> String
   def provider_url
     root_url
   end
 
+  # @rbs () -> Integer
   def cache_age
     86_400
   end
 
+  # @rbs () -> String
   def html
     <<~HTML.squish
       <blockquote class="mastodon-embed" data-embed-url="#{embed_short_account_status_url(object.account, object)}" style="#{INLINE_STYLES[:blockquote]}">
@@ -84,10 +92,12 @@ class OEmbedSerializer < ActiveModel::Serializer
     HTML
   end
 
+  # @rbs () -> Integer
   def width
     (instance_options[:width] || DEFAULT_WIDTH).to_i
   end
 
+  # @rbs () -> nil
   def height
     instance_options[:height].presence&.to_i
   end

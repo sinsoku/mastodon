@@ -3,6 +3,7 @@
 class TagRelationshipsPresenter
   attr_reader :following_map
 
+  # @rbs (Array[untyped] | Trends::Query | Tag::ActiveRecord_Relation, ?Integer?, **nil) -> void
   def initialize(tags, current_account_id = nil, **options)
     @following_map = if current_account_id.nil?
                        {}

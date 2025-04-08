@@ -4,6 +4,7 @@ class PushUpdateWorker
   include Sidekiq::Worker
   include Redisable
 
+  # @rbs (nil, nil, ?nil, ?Hash[untyped, untyped]) -> bool
   def perform(account_id, status_id, timeline_id = nil, options = {})
     @status      = Status.find(status_id)
     @account_id  = account_id
